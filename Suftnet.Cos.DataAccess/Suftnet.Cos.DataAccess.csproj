@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3CBB4B7A-71EA-4ECC-840F-2F1D3DF79190}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Suftnet.Cos.DataAccess</RootNamespace>
+    <AssemblyName>Suftnet.Cos.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="Suftnet.Cos.Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Debug\Suftnet.Cos.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interface\IAddon.cs" />
+    <Compile Include="Interface\ICommonType.cs" />
+    <Compile Include="Interface\IAddOnType.cs" />
+    <Compile Include="Interface\IUnit.cs" />
+    <Compile Include="Interface\IDiscount.cs" />
+    <Compile Include="Interface\ITax.cs" />
+    <Compile Include="Interface\ITenantAddress.cs" />
+    <Compile Include="Interface\ICategory.cs" />
+    <Compile Include="Interface\IFaq.cs" />
+    <Compile Include="Interface\IUserAccount.cs" />
+    <Compile Include="Interface\IMenu.cs" />
+    <Compile Include="Interface\IOrder.cs" />
+    <Compile Include="Interface\IOrderPayment.cs" />
+    <Compile Include="Interface\IOrderWrapper.cs" />
+    <Compile Include="Interface\IPayment.cs" />
+    <Compile Include="Interface\IReport.cs" />
+    <Compile Include="Interface\ISubTopic.cs" />
+    <Compile Include="Interface\ITable.cs" />
+    <Compile Include="Interface\ITopic.cs" />
+    <Compile Include="Interface\IUser.cs" />
+    <Compile Include="Interface\IOrderDetail.cs" />
+    <Compile Include="LinqtoSql\Action\Addon.cs" />
+    <Compile Include="LinqtoSql\Action\AddonType.cs" />
+    <Compile Include="LinqtoSql\Action\PaymentStatus.cs" />
+    <Compile Include="LinqtoSql\Action\TenantAddress.cs" />
+    <Compile Include="LinqtoSql\Action\Address.cs" />
+    <Compile Include="LinqtoSql\Action\AspNetRole.cs" />
+    <Compile Include="LinqtoSql\Action\AspNetUser.cs" />
+    <Compile Include="LinqtoSql\Action\AspNetUserClaim.cs" />
+    <Compile Include="LinqtoSql\Action\AspNetUserLogin.cs" />
+    <Compile Include="LinqtoSql\Action\AspNetUserRole.cs" />
+    <Compile Include="LinqtoSql\Action\Category.cs" />
+    <Compile Include="LinqtoSql\Action\Chapter.cs" />
+    <Compile Include="LinqtoSql\Action\Common.cs" />
+    <Compile Include="LinqtoSql\Action\DataContext.cs" />
+    <Compile Include="LinqtoSql\Action\Device.cs" />
+    <Compile Include="LinqtoSql\Action\Discount.cs" />
+    <Compile Include="LinqtoSql\Action\Editor.cs" />
+    <Compile Include="LinqtoSql\Action\Faq.cs" />
+    <Compile Include="LinqtoSql\Action\Global.cs" />
+    <Compile Include="LinqtoSql\Action\LogViewer.cs" />
+    <Compile Include="LinqtoSql\Action\Menu.cs" />
+    <Compile Include="LinqtoSql\Action\MobilePermission.cs" />
+    <Compile Include="LinqtoSql\Action\Order.cs" />
+    <Compile Include="LinqtoSql\Action\OrderDetail.cs" />
+    <Compile Include="LinqtoSql\Action\OrderPayment.cs" />
+    <Compile Include="LinqtoSql\Action\OrderStatus.cs" />
+    <Compile Include="LinqtoSql\Action\TenantStatus.cs" />
+    <Compile Include="LinqtoSql\Action\OrderType.cs" />
+    <Compile Include="LinqtoSql\Action\Payment.cs" />
+    <Compile Include="LinqtoSql\Action\PaymentMethod.cs" />
+    <Compile Include="LinqtoSql\Action\Permission.cs" />
+    <Compile Include="LinqtoSql\Action\Plan.cs" />
+    <Compile Include="LinqtoSql\Action\PlanFeature.cs" />
+    <Compile Include="LinqtoSql\Action\Setting.cs" />
+    <Compile Include="LinqtoSql\Action\Slider.cs" />
+    <Compile Include="LinqtoSql\Action\SubscriptionStatu.cs" />
+    <Compile Include="LinqtoSql\Action\SubTopic.cs" />
+    <Compile Include="LinqtoSql\Action\Table.cs" />
+    <Compile Include="LinqtoSql\Action\Tax.cs" />
+    <Compile Include="LinqtoSql\Action\Tenant.cs" />
+    <Compile Include="LinqtoSql\Action\Topic.cs" />
+    <Compile Include="LinqtoSql\Action\Tour.cs" />
+    <Compile Include="LinqtoSql\Action\Unit.cs" />
+    <Compile Include="LinqtoSql\Action\UserAccount.cs" />
+    <Compile Include="LinqtoSql\DataContextFactory.cs" />
+    <Compile Include="LinqtoSql\Identity\ApplicationRole.cs" />
+    <Compile Include="LinqtoSql\Identity\ApplicationUser.cs" />
+    <Compile Include="Interface\IMobilePermission.cs" />
+    <Compile Include="Interface\IDevice.cs" />
+    <Compile Include="Interface\IChapter.cs" />
+    <Compile Include="Interface\IPermission.cs" />
+    <Compile Include="Interface\IPlan.cs" />
+    <Compile Include="Interface\IPlanFeature.cs" />
+    <Compile Include="Interface\ITour.cs" />
+    <Compile Include="Interface\ISlider.cs" />
+    <Compile Include="Interface\ILogViewer.cs" />
+    <Compile Include="Interface\ITenantCommon.cs" />
+    <Compile Include="Interface\ITenant.cs" />
+    <Compile Include="Interface\IBaseRepository.cs" />
+    <Compile Include="Interface\IGlobal.cs" />
+    <Compile Include="Interface\IEditor.cs" />
+    <Compile Include="Interface\IAddress.cs" />
+    <Compile Include="Interface\ICommon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\IRepository.cs" />
+    <Compile Include="Interface\ISettings.cs" />
+    <Compile Include="LinqtoSql\Implementation\Addon.cs" />
+    <Compile Include="LinqtoSql\Implementation\PaymentStatus.cs" />
+    <Compile Include="LinqtoSql\Implementation\PaymentMethod.cs" />
+    <Compile Include="LinqtoSql\Implementation\OrderStatus.cs" />
+    <Compile Include="LinqtoSql\Implementation\OrderType.cs" />
+    <Compile Include="LinqtoSql\Implementation\AddOnType.cs" />
+    <Compile Include="LinqtoSql\Implementation\Unit.cs" />
+    <Compile Include="LinqtoSql\Implementation\Discount.cs" />
+    <Compile Include="LinqtoSql\Implementation\Tax.cs" />
+    <Compile Include="LinqtoSql\Implementation\TenantAddress.cs" />
+    <Compile Include="LinqtoSql\Implementation\Category.cs" />
+    <Compile Include="LinqtoSql\Implementation\Slider.cs" />
+    <Compile Include="LinqtoSql\Implementation\UserAccount.cs" />
+    <Compile Include="LinqtoSql\Implementation\Menu.cs" />
+    <Compile Include="LinqtoSql\Implementation\MobilePermission.cs" />
+    <Compile Include="LinqtoSql\Implementation\Device.cs" />
+    <Compile Include="LinqtoSql\Implementation\Order.cs" />
+    <Compile Include="LinqtoSql\Implementation\OrderDetail.cs" />
+    <Compile Include="LinqtoSql\Implementation\OrderPayment.cs" />
+    <Compile Include="LinqtoSql\Implementation\OrderWrapper.cs" />
+    <Compile Include="LinqtoSql\Implementation\Payment.cs" />
+    <Compile Include="LinqtoSql\Implementation\Report.cs" />
+    <Compile Include="LinqtoSql\Implementation\SubTopic.cs" />
+    <Compile Include="LinqtoSql\Implementation\Table.cs" />
+    <Compile Include="LinqtoSql\Implementation\Topic.cs" />
+    <Compile Include="LinqtoSql\Implementation\Chapter.cs" />
+    <Compile Include="LinqtoSql\Implementation\Faq.cs" />
+    <Compile Include="LinqtoSql\Implementation\Permission.cs" />
+    <Compile Include="LinqtoSql\Implementation\Plan.cs" />
+    <Compile Include="LinqtoSql\Implementation\PlanFeature.cs" />
+    <Compile Include="LinqtoSql\Implementation\Tour.cs" />
+    <Compile Include="LinqtoSql\Implementation\Tenant.cs" />
+    <Compile Include="LinqtoSql\Implementation\LogViewer.cs" />
+    <Compile Include="LinqtoSql\Implementation\Common.cs" />
+    <Compile Include="LinqtoSql\Implementation\Address.cs" />
+    <Compile Include="LinqtoSql\Implementation\Global.cs" />
+    <Compile Include="LinqtoSql\Implementation\Editor.cs" />
+    <Compile Include="LinqtoSql\Implementation\User.cs" />
+    <Compile Include="LinqtoSql\Implementation\Settings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="LinqtoSql\VersionConverter.cs" />
+    <Compile Include="Registry\DataAccessMobileRegistry.cs" />
+    <Compile Include="Registry\DataAccessSystemRegistry.cs" />
+    <Compile Include="Registry\DataAccessBackOfficeRegistry.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="LinqtoSql\app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.10.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2008 Express</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

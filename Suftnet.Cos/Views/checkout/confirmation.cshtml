@@ -1,0 +1,43 @@
+﻿@using Suftnet.Cos.Extension
+@model Suftnet.Cos.Web.ViewModel.StripePlanModel
+
+@{
+    Layout = "~/Views/Shared/maviaLayout.cshtml";
+    ViewBag.Title = "SUFTNET | SUBSCRIPTION CONFIRMATION ";
+}
+
+<main>
+    <div id="form_container">
+        <div class="row">           
+            <div class="col-md-12">
+                <div id="wizard_container">
+                    <div class="subscription-success">
+                        <img src="https://img.icons8.com/ultraviolet/120/000000/ok.png">
+                        <h5>Congratulation! Your subscription for Jerur is successful</h5>
+                        <p>Your account is now setup and ready to use. </p>
+                        <a id="myDashboard" href="@Url.Action("Index", "Dashboard", new { area="BackOffice" } )" class="btn-round">Click here to go My Dashboard</a>                        
+                    </div>
+              
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <div class="hide">
+        <span id="spriteUrl" name="spriteUrl" data-spriteUrl="@Url.SpriteUrl("sprites2.png")"></span>
+    </div>
+   
+</main>
+
+@Styles.Render("~/bundle/font-awesome")
+@Scripts.Render("~/bundle/LoadingSpinnerSprite")
+
+<script type="text/javascript">
+
+    $(function () {
+
+        spinner.init();
+    });
+
+</script>
+

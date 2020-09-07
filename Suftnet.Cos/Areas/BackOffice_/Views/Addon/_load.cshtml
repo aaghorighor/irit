@@ -1,0 +1,85 @@
+﻿@using Suftnet.Cos.Extension
+
+@model List<Suftnet.Cos.DataAccess.AddonDto>
+
+<table id="tdAddon" class="display">
+    <thead>
+        <tr>
+            <th align="left">Id#</th>
+            <th align="left">Name</th>
+            <th align="left">Price</th>
+            <th align="left">AddonType</th>
+            <th align="left">Active</th>
+            <th style="text-align:center">Actions</th> 
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var _item in Model)
+        {
+            <tr id="@_item.Id">
+                <td align="left">@_item.Id</td>              
+                <td align="left">@_item.Name</td>
+                <td align="left">@_item.Price.DecimalNullToCurrency()</td>
+                <td align="left">@_item.AddonType</td>
+                <td align="left">@_item.Active</td>
+                <td style="text-align:center">
+                    <a href="javascript:void(0)">
+                        <span style="margin:10px;" id="Edit" editid="@_item.Id" title="Edit this row">
+                            <img src="@Url.Asset("edit.png")" alt="" />
+                        </span>
+                    </a>
+                    <a href="javascript:void(0)">
+                        <span id="Delete" style="margin:10px;" deleteid="@_item.Id" title="Delete this row">
+                            <img src="@Url.Asset("delete.png")" alt="" />
+                        </span>
+                    </a>
+
+                </td>
+            </tr>
+        }  
+       
+    </tbody>
+</table> 
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $(document).on("click", "#Delete", function (e) {
+          
+            e.preventDefault();
+
+            js.confirm('@Url.Action("Delete", "Addon")', { Id: $(this).attr("DeleteId") }, $(this).attr("DeleteId"), "#tdAddon").then(
+                function (data) {
+
+                });
+        });
+
+        $(document).on("click", "#Edit", function (e) {
+
+            e.preventDefault();
+           
+            js.ajaxGet('@Url.Action("Get", "Addon")', { Id: $(this).attr("EditId") }).then(
+            function (data) {
+
+                var dataobject = data.dataobject;
+
+                $("#Name").val(dataobject.Name);
+                $("#AddonTypeId").val(dataobject.AddonTypeId);
+               
+                if (dataobject.Price != null) {
+                    $("#Price").val(dataobject.Price);
+                } else {
+                    $("#Price").val(0);
+                }
+               
+                $("#Id").val(dataobject.Id);
+                $("#Active").attr('checked', dataobject.Active);
+
+            });
+        });      
+
+        suftnet_Settings.TableInit('#tdAddon', [0, 2, 3, 4, 5]);
+    });
+
+ </script>

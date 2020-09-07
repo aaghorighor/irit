@@ -1,0 +1,17 @@
+﻿@using Suftnet.Cos.Extension;
+
+<div id="header">
+    <div id="account_info">
+        <a id="toggle_menu" href="javascrip:void(0)" style="float:left; margin-left :0px; margin-top : 10px;"><img src="~/Content/zice-onechurch/images/icon/color_18/menu.png" /></a>
+        <div class="tooltip" title="Welcome"><b>Welcome </b> <b class="red">@Url.CurrentUserName()</b></div>        
+        <div class="User" title="User"><a href="@Url.Action("Index", "User")">User</a></div>
+        <div class="Subscription" title="Subscription"><a href="@Url.Action("Index", "Dashboard", new { area= "Subscription" })">Subscription </a></div>
+        <div class="Settings" title="Settings"><a href="@Url.Action("Index", "Settings", new { area= "BackOffice" })">Settings</a></div>
+        <div class="Disconnect tooltip" title="Disconnect"><b><a href="@Url.LogoutHref()">Logout</a></b></div>
+    </div>
+</div>
+
+@Html.Partial("_collapsibleMenu")
+
+
+ 

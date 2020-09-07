@@ -1,0 +1,219 @@
+﻿
+@{
+    ViewBag.Title = "SUFTNET |ORDER";   
+    Layout = "~/Areas/BackOffice/Views/Shared/_OrderLayout.cshtml";
+}
+
+<div id="MainCollapsible" style="display:none ">
+
+    <h6><a href="#">Table</a></h6>
+    <div style="box-shadow :0px -1px 17px -2px rgba(0,0,0,1);">
+        <div id="UITab">
+                     
+            <ul class="tabs">
+                <li><a href="#tab1"> Dine In </a></li>
+                <li><a href="#tab2"> Reservations </a></li>              
+                <li><a href="#tab3"> View All</a></li>
+            </ul>
+
+            <div class="tab_container">
+
+                <div id="tab1" class="tab_content">
+                    <div id="tableContainers">
+                            @Html.Partial("_table")
+                    </div>
+                </div>
+
+                <div id="tab2" class="tab_content">
+
+                    <ul style="margin-left:0px; float:left; margin-top :5px" class="">
+                        <li><span class="etip"><a class="uibutton icon add normal " id="btnNewReservation" title="New reservation">New Reservation</a></span></li>                       
+                    </ul>
+
+                    <div class="clear"></div>
+
+                    @Html.Partial("_reservedOrder")
+                </div>
+                             
+                <div id="tab3" class="tab_content">
+                    <div class="widgets">
+                        <div class="widget">
+                            <div class="header"></div>
+                            <div class="content">
+                                @Html.Partial("_load")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <h6><a href="#">Order</a></h6>
+    <div style="box-shadow :0px -1px 17px -2px rgba(0,0,0,1);">
+        <div class="widgets">
+
+            <div class="twoOne">
+                
+                <div id="categoryContainer" style="margin-top:0px; margin-bottom:10px;">
+                    @Html.Partial("_category")
+                </div>
+
+                <div class="clear"></div>
+                
+                <div id="productContainer">                   
+                                     
+                    @Html.Partial("_orderMenu")
+
+                 </div>
+            </div>
+
+            <div class="oneThree">                   
+                      
+                <table class="table" style="width:100%; margin-top:1px; margin-bottom:5px" border="1">
+                    <thead>
+                        <tr>
+                            <th style="width:45%;text-align:left"><strong>Order No</strong></th>
+                            <th style="text-align:left"><strong>Table</strong></th>
+                        </tr>                       
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align:left"><span id="orderNo"></span></td>
+                            <td style="text-align:left"><span id="tableNo"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                @Html.Partial("_cart")                
+
+                <div id="orderSummaryContainer" style="height:180px; z-index:10; margin-top:5px; margin-bottom:15px; background-color:#F9FAFA;">
+
+                    <table class="table" style="width:100%; padding-top :10px; margin-left:0px; margin-top:1px;" border="1">
+                        <tbody>
+                            <tr>
+                                <td style="width:45%; text-align:left; background-color:lightgray"></td>
+                                <td style="width:55%; text-align:left; background-color:lightgray"></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right"><strong>Total Item</strong></td>
+                                <td style="text-align:right" class="saleSummary"><span data-bind='text: totalItems'> </span></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right">
+                                    <strong>Subtotal</strong>
+                                </td>
+                                <td style="text-align:right" class="saleSummary"><span data-bind='text: computeTotal'> </span></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right"><strong>Tax</strong></td>
+                                <td style="text-align:right" class="saleSummary"><span data-bind='text: displayTax'> </span></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right"><strong>Discount</strong></td>
+                                <td style="text-align:right" class="saleSummary"><span data-bind='text: displayDiscount'> </span></td>
+                            </tr>                           
+                                                       
+                            <tr>
+                                <td style="text-align:right"><strong>Total</strong></td>
+                                <td style="text-align:right" class="saleSummary"><span data-bind='text: computeGrandTotal'> </span></td>
+                            </tr>  
+
+                            <tr>
+                                <td style="text-align:right">
+                                    <strong>Amount Paid</strong>
+                                </td>
+                                <td style="text-align:right" class="saleSummary"><span data-bind='text: displayAmountPaid'> </span></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right">
+                                    <strong>Balance</strong>
+                                </td>
+                                <td style="text-align:right; font-weight:bold; font-size :18px; color :Red; background-color:black" class="saleSummary"><span data-bind='text: computeBalance'> </span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>   
+
+                <ul style="margin-left:0px; margin-top :30px" class="uibutton-group">               
+                    <li><span class="etip"><a class="uibutton special " id="btnPayment" title="Payment">Tender</a></span></li>
+                    <li><span class="etip"><a class="uibutton normal" id="btnDrawer" title="Cash Drawer">Cash Drawer</a></span></li>
+                    <li><span class="etip"><a class="uibutton icon prev normal " id="btnback" title="Back">Back</a></span></li>
+                </ul>    
+
+            </div>      
+
+       </div>     
+    </div>
+</div> 
+
+<div id="PaymentDialog" style="display :none">
+       <div id="paymenyContainer">
+           <div class="widget">
+               <div class="header"><span><span class="ico gray window"></span></span></div>
+               <div class="content" style="min-height:440px">
+                   @Html.Partial("_payment")
+               </div>
+           </div>         
+    </div>
+</div>
+
+<div id="orderDialog" style="display :none">
+    <div class="widget">
+        <div class="header"><span><span class="ico gray window"></span></span></div>
+        <div class="content">
+             @Html.Partial("_form")
+        </div>
+    </div>                   
+</div>
+
+<div id="reservationOrderDialog" style="display :none">
+    <div class="widget">
+        <div class="header"><span><span class="ico gray window"></span></span></div>
+        <div class="content">
+            @Html.Partial("_reservationform")
+        </div>
+    </div>
+</div>
+
+<div id="MenuAddonDialog" style="display :none">
+    @Html.Partial("_menuAddon")
+   
+</div>
+
+<div class="hide">
+    <span id="createOrderDetail" name="createOrderDetailUrl" data-createOrderDetailUrl="@Url.Action("Create", "OrderDetail")"></span>
+    <span id="getMenuByCategoryId" name="getMenuByCategoryId" data-getMenuByCategoryIdUrl="@Url.Action("GetMenuByCategoryId", "Order")"></span>
+    <span id="getMenuByMenuId" name="getMenuByMenuId" data-getMenuByMenuIdUrl="@Url.Action("getMenuByMenuId", "Order")"></span>
+    <span id="getOrderDetailById" name="getOrderDetailById" data-getOrderDetailByIdUrl="@Url.Action("getOrderDetailById", "OrderDetail")"></span>
+    <span id="GetCategoryById" name="GetCategoryById" data-getCategoryByCategoryIdUrl="@Url.Action("GetCategoryById", "Order")"></span>
+    <span id="testPrint" name="testPrint" data-testPrintUrl="@Url.Action("testPrint", "OrderDetail")"></span>
+    <span id="openCashDrawer" name="openCashDrawer" data-openCashDrawerUrl="@Url.Action("openCashDrawer", "OrderDetail")"></span>
+    <span id="getOrderByReservation" name="getOrderByReservation" data-getOrderByReservationUrl="@Url.Action("getOrderByReservation", "Order")"></span>
+    <span id="pending" name="pending" data-pendingUrl="@Url.Action("pending", "PoleDisplay")"></span>
+    <span id="complete" name="complete" data-completeUrl="@Url.Action("complete", "PoleDisplay")"></span>
+    <span id="clear" name="clear" data-clearUrl="@Url.Action("clear", "PoleDisplay")"></span>
+    <span id="getMenus" name="getMenus" data-getMenusUrl="@Url.Action("getMenus", "Order")"></span>
+    <span id="delete" name="delete" data-deleteUrl="@Url.Action("delete", "Order")"></span>
+    <span id="changeStatus" name="changeStatus" data-changeStatusUrl="@Url.Action("changeStatus", "Order")"></span>
+    <span id="getCommonById" name="getCommonById" data-getCommonByIdUrl="@Url.Action("getCommonById", "Order")"></span>
+    <span id="getOrderByDelivery" name="getOrderByDelivery" data-getOrderByDeliveryUrl="@Url.Action("getOrderByDelivery", "Order")"></span>
+    <span id="changeDeliveryStatus" name="changeDeliveryStatus" data-changeDeliveryStatusUrl="@Url.Action("changeDeliveryStatus", "Order")"></span>
+    <span id="getTableById" name="getTableById" data-getTableByIdUrl="@Url.Action("getTableById", "Order")"></span>
+    <span id="imageUrl" name="imageUrl" data-imageUrl="@Url.Content("~/Content/Photo/Category/180x120/")"></span>
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        jsInit();
+    });
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCkDI4RPI6s-GkqZ0axj0EEg-Xav-s-3RI" type="text/javascript"></script>
+
+
+

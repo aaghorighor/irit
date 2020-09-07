@@ -1,0 +1,100 @@
+﻿
+<div class="tableName">
+
+    <table id="tdSalesOrder" class="display">
+        <thead>
+            <tr>
+                <th align="left">Id#</th>
+                <th align="left">Modified Date</th>
+                <th align="left">Modified By</th>
+                <th align="left">Order Type</th>
+                <th align="left">Contact</th>
+                <th align="left">Time In</th>           
+                <th align="left">Table</th>
+                <th align="left">Number of Guest</th>
+                <th align="left">Status</th>
+                <th align="left" style="width:80px">Total</th>
+                <th align="left" style="width:80px">Paid</th>
+                <th align="left" style="width:80px">Balance</th>
+                <th style="padding-left:20px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<style>
+    #tdSalesOrder td:nth-child(13),
+    #tdSalesOrder th:nth-child(13) {
+        text-align: center;
+    }
+</style>
+
+<input id="rowindex" name="rowindex" type="hidden" />
+@Scripts.Render("~/bundle/order")
+
+<script type="text/javascript">
+
+    var orderTable;
+
+    $(function () {
+
+        $(document).on("click", "#__orderDetail", function () {
+
+            settings.reset();
+
+            settings.orderId = $(this).attr("salesOrderid");         
+
+            js.ajaxGet('@Url.Action("Get", "Order")', { Id: $(this).attr("salesOrderid") }).then(
+                function (data) {
+                  
+                    if (data.dataobject.OrderTypeId != OrderType.Delivery)
+                    {
+                        $("#tableNo").text(data.dataobject.Table);
+                    } else {
+                        $("#tableNo").text("Delivery");
+                    }
+                   
+                    settings.orderStatusId = data.dataobject.StatusId;
+                });          
+
+            $("#SalesOrderId").val($(this).attr("salesOrderid"));
+            $("#Paid").val($(this).attr("payment"));
+
+            $("#orderNo").text($(this).attr("salesOrderid"));
+
+            var tr = $(this).closest('tr');
+            var rowIndex = tr.index();
+
+            $("#rowindex").val(rowIndex);
+
+            getOrderDetails($("#SalesOrderId").val());
+
+
+        });
+
+        $(document).on("click", "#__delete", function () {
+
+            var tr = $(this).closest('tr');
+            var rowIndex = tr.index();
+
+            $("#rowindex").val(rowIndex);
+
+            js.confirm('@Url.Action("Delete", "Order")', { Id: $(this).attr("DeleteId") }, $(this).attr("DeleteId")).then(
+                function (data) {
+
+                    orderTable.fnDeleteRow($("#rowindex").val(), null, true);
+
+                    LoadReserveOrder();
+                    LoadDeliveryOrders();
+            });
+        });        
+
+        __order.orderTableInit('@Url.Action("init", "Order")');
+    });
+
+</script>
+
+
+
+

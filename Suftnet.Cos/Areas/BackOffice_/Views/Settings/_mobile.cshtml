@@ -1,0 +1,17 @@
+﻿@using Suftnet.Cos.Common;
+@using Suftnet.Cos.Extension;
+
+<div class="forms">
+       
+    <div class="grid-6-12">
+        <label class="forms-lbl">Start up banner (Mobile): </label>
+        @Html.Dropdown("SliderHomeOptionId", "", (int)eSettings.MobileDeliveryOptions)
+    </div>   
+
+    <div class="grid-6-12">
+        <label class="forms-lbl">Youtube Playlist Id: </label>
+        <input type="text" name="PlaylistId" id="PlaylistId" class="forms-txt " maxlength="200" />
+    </div>    
+
+</div>
+

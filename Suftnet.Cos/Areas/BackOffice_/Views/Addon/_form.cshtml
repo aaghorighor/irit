@@ -1,0 +1,90 @@
+﻿
+@using Suftnet.Cos.Extension
+
+<form action="@Url.Action("Create", "Addon")" method="post"  id="form">
+ <div class="forms" >      
+
+    <input id="Id" name="Id" type="hidden" value="0" />  
+    <input id="MenuId" name="MenuId" type="hidden" value="@this.ViewContext.RouteData.Values["menuId"].ToString()" />   
+            
+    <div class="grid-6-12">                
+        <label class="forms-lbl">Name:</label>  
+        <input type="text" name="Name" id="Name" class="forms-txt validate[required]" maxlength="50" />   
+    </div> 
+
+     <div class="grid-6-12">
+         <label class="forms-lbl">Price: </label>
+         <input type="text" name="Price" id="Price"  class="forms-txt validate[required]" size="9" maxlength="9" />  
+     </div>    
+     
+     <div class="grid-6-12">
+         <label class="forms-lbl">Addon Type: </label>
+         @Html.TagDropdown("AddonTypeId", "validate[required]", (int)Suftnet.Cos.Common.eSettings.AddonType)
+     </div>  
+         
+     <div class="grid-12-12">
+         <label class="form-lbl">Active</label> <input name="Active" id="Active" type="checkbox" value="true" /> 
+      </div>
+
+     <div class="grid-12-12">
+
+         <ul class="display">
+             <li class="display"><span class="etip"><a class="uibutton normal " id="btnSubmit" title="Save Changes">Save Changes</a></span></li>  
+         </ul>
+     </div>
+
+     </div> 
+    
+</form>
+
+<script type="text/javascript" >
+
+    $(function () {
+               
+     $(document).on("click", "#btnSubmit", function (event)
+     {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+
+            if (!suftnet_validation.isValid("form")) {
+            return false;
+        }
+
+        if ($('#Active').is(':checked')) {
+            $("#Active").val(true);
+        } else {
+            $("#Active").val(false);
+        }
+              
+        js.ajaxPost($("#form").attr("action"), $("#form").serialize()).then(
+             function (data) {
+
+                 switch (data.flag) {
+                     case 1:                                         
+
+                         suftnet_grid.addAddon(data.objrow);
+
+                         break;
+                     case 2: 
+
+                         suftnet_grid.updateAddon(data.objrow);
+                         break;
+                     default:;
+                 }              
+
+             });
+
+       
+        $("#Active").attr('checked', false);
+        $("#Id").val(0);
+
+        iuHelper.resetForm("#form");
+
+    });      
+
+   suftnet_Settings.ClearErrorMessages("#form");
+    
+}); 
+
+</script>
+

@@ -1,0 +1,29 @@
+﻿<div class="main_container" id="_itemcontainer" style="max-height:500px" data-bind="foreach: products">
+    <div class="pin">
+        <div class="holder" style="margin-bottom:15px;" data-bind="click: $parent.getItem">
+
+            <a class="etip" href='#' data-bind='click: $parent.addToOrder, attr: { title: Description }'>
+                <table class="table" style="margin-top:5px; margin-bottom :5px; border-color:gray" border="1">
+                    <tr>
+                        <td class="width20">Item</td>
+                        <td class="width80"><span class="etip" data-bind="text: Title"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="width20 ">Price</td>
+                        <td class="width80 "><span class="etip" data-bind="text: sellingPrice"></span></td>
+                    </tr>
+                    <tr>
+                        <td class="width20 ">Category</td>
+                        <td class="width80 "><span class="etip" data-bind="text: Category"></span></td>
+                    </tr>
+                </table>
+
+                <span data-bind="value:ProductId" style="display:none"></span>
+                <span data-bind="value:Price" style="display:none"></span>
+            </a>            
+
+        </div>
+
+    </div>
+</div>
+

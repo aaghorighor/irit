@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewBag.Title = "SUFTNET | ORDER ";
+}
+
+<div class="lg_m">
+
+        <ul class="tabs">
+            <li><a href="#tab1">Dine In </a></li>
+            <li><a href="#tab2">Reservations </a></li>
+            <li><a href="#tab3">Deliveries </a></li>
+        </ul>
+
+        <div class="tab_container">
+
+            <div id="tab1" class="tab_content">
+
+                <div class="widgets">
+                    <div class="widget">
+                        <div class="header"><span><span class="ico  gray help2 tooltip"></span></span></div>
+                        <div class="content">
+                            <div class="tableName">
+                                @Html.Partial("_loadDineIn")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="tab2" class="tab_content">
+
+                <div class="widgets">
+                    <div class="widget">
+                        <div class="header"><span><a id="btnOpen" href="javascript:void(0)"><span class="ico  gray add tooltip" title="Create new reservation Order"></span></a></span></div>
+                        <div class="content">
+                            <div class="tableName">
+                                @Html.Partial("_loadReservation")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="tab3" class="tab_content">
+
+                <div class="widgets">
+                    <div class="widget">
+                        <div class="header"><span><span class="ico  gray add tooltip"></span></span></div>
+                        <div class="content">
+                            <div class="tableName">
+                                @Html.Partial("_loadDelivery")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+<div id="reservationDialog" style="display :none">
+    <div class="widget">
+        <div class="header"><span><span class="ico  gray help2 tooltip" title="Create or Edit Reservation Order"></span></span></div>
+        <div class="content">
+            @Html.Partial("_reservationform")
+        </div>
+    </div>
+</div>
+
+<div id="dineInDialog" style="display :none">
+    <div class="widget">
+        <div class="header"><span><span class="ico  gray help2 tooltip" title="Edit Order"></span></span></div>
+        <div class="content">
+            @Html.Partial("_dineInform")
+        </div>
+    </div>
+</div>
+
+<div id="deliveryDialog" style="display :none">
+    <div class="widget">
+        <div class="header"><span><span class="ico  gray help2 tooltip" title="Create or Edit Delivery order"></span></span></div>
+        <div class="content">
+          
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+ $(function () {
+
+     order.pageInit();
+     delivery.pageInit();
+     reservation.pageInit();
+ });
+
+</script>   
+
+          
+
+
+
+
+

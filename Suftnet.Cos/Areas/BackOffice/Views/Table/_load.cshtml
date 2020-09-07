@@ -1,0 +1,20 @@
+﻿<table id="tblTable" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th align="left">Date</th>
+            <th align="left">Number</th>
+            <th align="left">Size</th>
+            <th align="left">Active</th>
+            <th class="align-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<div class="hide">
+    <span id="loadUrl" name="loadUrl" data-loadUrl="@Url.Action("fetch", "table")"></span>  >
+    <span id="editUrl" name="editUrl" data-editUrl="@Url.Action("edit", "table")"></span>
+    <span id="createUrl" name="createUrl" data-createUrl="@Url.Action("create", "table")"></span>
+    <span id="deleteUrl" name="deleteUrl" data-deleteUrl="@Url.Action("delete", "table")"></span>
+</div>
+

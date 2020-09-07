@@ -1,0 +1,131 @@
+﻿
+@model Suftnet.Cos.DataAccess.GlobalDto
+
+@{
+    ViewBag.Title = "SUFTNET  | SETTINGS";  
+}
+
+<div class="content">
+    <!-- Third width -->
+    <form action="@Url.Action("Create", "Settings")" method="post" id="form">
+        <input type="hidden" id="Id" name="Id" />
+        <input type="hidden" id="AddressId" name="AddressId" />
+
+        <div class="widgets">
+
+            <div class="oneTwo">
+
+                <div class="widget">
+                    <div class="header"><span><span class="ico gray window"></span>Mail Server </span></div>
+                    <div class="content">
+                        @Html.Partial("_Smtp")
+                    </div>
+
+                </div>
+
+                <div class="widget">
+                    <div class="header"><span><span class="ico gray window"></span>Others </span></div>
+                    <div class="content">
+                        @Html.Partial("_General")
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="oneTwo">
+                <div class="widget">
+                    <div class="header"><span><span class="ico gray window"></span>Profile </span></div>
+                    <div class="content">
+                        <div class="forms">
+                            <div class="grid-12-12">
+                                <label class="forms-lbl">Company: </label>
+                                <input type="text" name="Company" id="Company" class="forms-txt" value="" maxlength="50" />
+                            </div>
+
+                            <div class="grid-6-12">
+                                <label class="forms-lbl">Telephone: </label>
+                                <input type="text" name="Telephone" id="Telephone" class="forms-txt" value="" maxlength="20" />
+                            </div>
+
+                            <div class="grid-6-12">
+                                <label class="forms-lbl">Mobile: </label>
+                                <input type="text" name="Mobile" id="Mobile" class="forms-txt" value="" maxlength="20" />
+                            </div>
+
+                            <div class="grid-12-12">
+                                <label class="forms-lbl">Email:</label>
+                                <input type="text" name="Email" id="Email" class="forms-txt" value="" maxlength="50" />
+                            </div>
+
+                            <div class="grid-12-12">
+                                <label class="form-lbl">Description :</label>
+                                <div style="margin:5px;"></div>
+                                <textarea id="Description" name="Description" rows="200" cols="200" onkeypress="return imposeMaxLength(event, this, 499);" class=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget">
+                    <div class="header"><span><span class="ico gray window"></span>Address </span></div>
+                    <div class="content">
+                        @Html.Partial("_Address")
+                    </div>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+
+            <ul style="margin-left:2px; margin-top :5px" class="uibutton-group">
+                <li><span class="etip"><a class="uibutton icon add normal " id="btnsave" title="Save Changes">Save Changes</a></span></li>
+            </ul>
+
+        </div>
+
+    </form>
+
+</div><!-- End content -->
+
+<script type="text/javascript">
+
+    $(function () {
+        $("#Id").val('@Model.Id');
+        $("#Server").val('@Model.Server');
+        $("#Email").val('@Model.Email');
+        $("#ServerEmail").val('@Model.ServerEmail');
+        $("#UserName").val('@Model.UserName');
+        $("#Password").val('@Model.Password');
+        $("#Port").val('@Model.Port');
+
+        $("#DateTimeFormat").val('@Model.DateTimeFormat');
+        $("#CurrencyId").val('@Model.CurrencyId');
+
+        $("#Company").val('@Model.Company');
+        $("#Telephone").val('@Model.Telephone');
+        $("#Mobile").val('@Model.Mobile');
+        $("#Description").val('@Model.Description');
+
+        $("#AddressId").val('@Model.AddressId');
+        $("#AddressLine1").val('@Model.AddressLine1');
+        $("#AddressLine2").val('@Model.AddressLine2');
+        $("#AddressLine3").val('@Model.AddressLine3');
+        $("#PostCode").val('@Model.PostCode');
+        $("#Country").val('@Model.Country');
+        $("#TaxRate").val('@Model.TaxRate');
+
+        $("#btnsave").click(function (e) {
+
+            e.preventDefault();
+
+            if (!suftnet_validation.isValid("form")) { //// Call validation routine
+                return false;
+            }
+            js.ajaxPost($("#form").attr("action"), $("#form").serialize()).then(
+            function (data) {
+
+            });
+
+        });
+
+    });
+</script> 
+    

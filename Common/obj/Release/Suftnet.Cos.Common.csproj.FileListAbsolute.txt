@@ -1,0 +1,33 @@
+D:\Branches\Suftnet.Web\12.500\Suftnet.Church.StandAlones-Beta1.0.2\Common\bin\Release\Suftnet.Cos.Common.dll
+D:\Branches\Suftnet.Web\12.500\Suftnet.Church.StandAlones-Beta1.0.2\Common\bin\Release\Suftnet.Cos.Common.pdb
+D:\Branches\Suftnet.Web\12.500\Suftnet.Church.StandAlones-Beta1.0.2\Common\bin\Release\log4net.dll
+D:\Branches\Suftnet.Web\12.500\Suftnet.Church.StandAlones-Beta1.0.2\Common\bin\Release\StructureMap.dll
+D:\Branches\Suftnet.Web\12.500\Suftnet.Church.StandAlones-Beta1.0.2\Common\bin\Release\Suftnet.Cos.Business.dll
+D:\Branches\Suftnet.Web\12.500\Suftnet.Church.StandAlones-Beta1.0.2\Common\bin\Release\Suftnet.Cos.DataAccess.dll
+D:\Branches\Suftnet.Web\12.500\Suftnet.Church.StandAlones-Beta1.0.2\Common\bin\Release\Suftnet.Cos.Business.pdb
+D:\Branches\Suftnet.Web\12.500\Suftnet.Church.StandAlones-Beta1.0.2\Common\bin\Release\Suftnet.Cos.DataAccess.pdb
+D:\Branches\Suftnet.Web\12.500\Suftnet.Church.StandAlones-Beta1.0.2\Common\obj\Release\Suftnet.Cos.Common.dll
+D:\Branches\Suftnet.Web\12.500\Suftnet.Church.StandAlones-Beta1.0.2\Common\obj\Release\Suftnet.Cos.Common.pdb
+D:\Branches\Suftnet.Web\12.500\Suftnet.Church.StandAlones-Beta1.0.2\Common\obj\Release\Suftnet.Cos.Common.csprojResolveAssemblyReference.cache
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Common\bin\Release\Suftnet.Cos.Common.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Common\bin\Release\Suftnet.Cos.Common.pdb
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Common\bin\Release\log4net.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Common\bin\Release\StructureMap.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Common\obj\Release\Suftnet.Cos.Common.csprojResolveAssemblyReference.cache
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Common\obj\Release\Suftnet.Cos.Common.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Common\obj\Release\Suftnet.Cos.Common.pdb
+C:\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Common\bin\Release\Suftnet.Cos.Common.dll
+C:\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Common\bin\Release\Suftnet.Cos.Common.pdb
+C:\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Common\bin\Release\log4net.dll
+C:\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Common\bin\Release\StructureMap.dll
+C:\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Common\obj\Release\Suftnet.Cos.Common.dll
+C:\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Common\obj\Release\Suftnet.Cos.Common.pdb
+C:\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Common\obj\Release\Suftnet.Cos.Common.csprojResolveAssemblyReference.cache
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Common\bin\Release\Suftnet.Cos.Common.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Common\bin\Release\Suftnet.Cos.Common.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Common\obj\Release\Suftnet.Cos.Common.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Common\obj\Release\Suftnet.Cos.Common.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Common\obj\Release\Suftnet.Cos.Common.csprojResolveAssemblyReference.cache
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Common\bin\Release\Suftnet.Cos.Common.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Common\obj\Release\Suftnet.Cos.Common.csproj.CoreCompileInputs.cache
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Common\obj\Release\Suftnet.Cos.Common.dll

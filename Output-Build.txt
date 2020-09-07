@@ -1,0 +1,18 @@
+﻿1>------ Rebuild All started: Project: Suftnet.Cos.Model, Configuration: Debug Any CPU ------
+1>  Suftnet.Cos.Model -> C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Debug\Suftnet.Cos.Model.dll
+2>------ Rebuild All started: Project: Suftnet.Cos.DataAccess, Configuration: Debug Any CPU ------
+3>------ Rebuild All started: Project: Suftnet.Cos.Common, Configuration: Debug Any CPU ------
+3>  Suftnet.Cos.Common -> C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Common\bin\Debug\Suftnet.Cos.Common.dll
+4>------ Rebuild All started: Project: Suftnet.Cos.Stripe, Configuration: Debug Any CPU ------
+2>  Suftnet.Cos.DataAccess -> C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Debug\Suftnet.Cos.DataAccess.dll
+5>------ Rebuild All started: Project: Suftnet.Cos.Core, Configuration: Debug Any CPU ------
+4>C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\ServiceProvider\SubscriptionProvider.cs(55,17,55,23): warning CS0618: 'SubscriptionSharedOptions.PlanId' is obsolete: 'Use Items'
+4>  Suftnet.Cos.Stripe -> C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Debug\Suftnet.Cos.Stripe.dll
+5>C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\Implementation\SimpleCacheService.cs(13,15,13,22): warning CS0169: The field 'SimpleCacheService.m_Timer' is never used
+5>  Suftnet.Cos.Core -> C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Core.dll
+6>------ Skipped Rebuild All: Project: Suftnet.Cos.Business, Configuration: Debug x86 ------
+6>Project not selected to build for this solution configuration 
+7>------ Rebuild All started: Project: Suftnet.Cos.Web, Configuration: Debug Any CPU ------
+7>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(1820,5): warning MSB3277: Found conflicts between different versions of the same dependent assembly that could not be resolved.  These reference conflicts are listed in the build log when log verbosity is set to detailed.
+7>  Suftnet.Cos.Web -> C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos\bin\Suftnet.Cos.Web.dll
+========== Rebuild All: 6 succeeded, 0 failed, 1 skipped ==========

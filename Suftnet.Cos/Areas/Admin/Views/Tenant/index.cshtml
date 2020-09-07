@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "SUFTNET | TENANTS ";  
+}
+
+<div class="widgets" style="display:none ">
+    <div class="widget">
+
+        <div class="header"><span><span class="ico  gray random"></span>Tenants</span></div>
+        <div class="content">
+            @Html.Partial("_LoadTenant")
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+
+ $(function () {
+
+        setTimeout(function () {
+            $(".widgets").show();
+        }, 0);
+
+     });
+</script>
+
+
+
+

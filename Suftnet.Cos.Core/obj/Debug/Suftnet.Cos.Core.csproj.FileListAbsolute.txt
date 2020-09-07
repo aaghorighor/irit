@@ -1,0 +1,170 @@
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.csprojResolveAssemblyReference.cache
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Core.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Core.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\log4net.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.Practices.ServiceLocation.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\StructureMap.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Common.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.DataAccess.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Model.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\System.Web.Http.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\FluentValidation.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Newtonsoft.Json.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Common.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.DataAccess.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\log4net.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.Practices.ServiceLocation.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.Practices.ServiceLocation.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Model.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\System.Web.Http.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\de\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\es\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\fr\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\it\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\ko\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\nl\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\pl\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\pt\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\ru\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\sv\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\tr\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.pdb
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Core.dll.config
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Core.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Core.pdb
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\log4net.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.Practices.ServiceLocation.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\StructureMap.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Common.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.DataAccess.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Model.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\System.Web.Http.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.Core.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\EntityFramework.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\FluentValidation.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Newtonsoft.Json.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Common.pdb
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.DataAccess.pdb
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\log4net.xml
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.Practices.ServiceLocation.pdb
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.Practices.ServiceLocation.xml
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Model.pdb
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\System.Web.Http.xml
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.Core.xml
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\EntityFramework.xml
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\de\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\es\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\fr\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\it\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\ko\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\nl\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\pl\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\pt\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\ru\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\sv\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\tr\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.csprojResolveAssemblyReference.cache
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.dll
+C:\SUT-CS-100\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.pdb
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Core.dll.config
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Core.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Core.pdb
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\log4net.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.Practices.ServiceLocation.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\StructureMap.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Common.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.DataAccess.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Model.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\System.Web.Http.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\EntityFramework.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\FluentValidation.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Newtonsoft.Json.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.Core.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Common.pdb
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.DataAccess.pdb
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.DataAccess.dll.config
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\log4net.xml
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.Practices.ServiceLocation.pdb
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.Practices.ServiceLocation.xml
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\System.Web.Http.xml
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\EntityFramework.xml
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.Core.xml
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\de\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\es\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\fr\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\it\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\ko\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\nl\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\pl\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\pt\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\ru\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\sv\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\tr\FluentValidation.resources.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.csprojAssemblyReference.cache
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.csproj.CoreCompileInputs.cache
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.csproj.CopyComplete
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.pdb
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Newtonsoft.Json.xml
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Core.dll.config
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Core.dll
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Core.pdb
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\log4net.dll
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.Practices.ServiceLocation.dll
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Newtonsoft.Json.dll
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\StructureMap.dll
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Common.dll
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.DataAccess.dll
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Model.dll
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\System.Web.Http.dll
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\EntityFramework.dll
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.Core.dll
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Common.pdb
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.DataAccess.pdb
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.DataAccess.dll.config
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\log4net.xml
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.Practices.ServiceLocation.pdb
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.Practices.ServiceLocation.xml
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Newtonsoft.Json.xml
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\System.Web.Http.xml
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\EntityFramework.xml
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.Core.xml
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.csprojAssemblyReference.cache
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.csproj.CoreCompileInputs.cache
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.csproj.CopyComplete
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.dll
+C:\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.pdb
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Core.dll.config
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Core.dll
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Core.pdb
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\log4net.dll
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Newtonsoft.Json.dll
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\StructureMap.dll
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Common.dll
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.DataAccess.dll
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Model.dll
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\System.Web.Http.dll
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\EntityFramework.dll
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.Core.dll
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Common.pdb
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.DataAccess.pdb
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.DataAccess.dll.config
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\log4net.xml
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Newtonsoft.Json.xml
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\System.Web.Http.xml
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\EntityFramework.xml
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.Core.xml
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.csprojAssemblyReference.cache
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.csproj.CopyComplete
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.dll
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.pdb
+E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.csproj.CoreCompileInputs.cache

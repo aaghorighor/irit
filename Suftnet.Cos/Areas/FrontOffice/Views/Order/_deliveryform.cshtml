@@ -1,0 +1,49 @@
+﻿<form action="@Url.Action("Create", "Order")" method="post" id="form">
+
+    @Html.AntiForgeryToken()
+
+    <div class="forms">
+
+        <input type="hidden" name="Id" id="Id" value="c7a037e8-3045-4996-9e02-1794e08622c6" />
+        <input id="TableId" name="TableId" type="hidden" value="c7a037e8-3045-4996-9e02-1794e08622c6" />
+
+        <div class="grid-12-12">
+            <label class="forms-lbl">Expected Guest:</label>
+            <input type="text" name="ExpectedGuest" id="ExpectedGuest" onkeyup="numonly(this);" value="1" class="forms-txt validate[required]" maxlength="9" />
+        </div>
+
+        <div class="grid-12-12 ">
+            <label class="forms-lbl">FirstName (Optional):</label>
+            <input type="text" name="FirstName" id="FirstName" class="forms-txt" maxlength="50" />
+        </div>
+
+        <div class="grid-12-12 ">
+            <label class="forms-lbl">LastName (Optional):</label>
+            <input type="text" name="LastName" id="LastName" class="forms-txt" maxlength="50" />
+        </div>
+
+        <div class="grid-6-12">
+            <label class="forms-lbl">In Time : </label>
+            <input type="text" name="Time" id="Time" readonly="readonly" class="forms-txt-date validate[required]" value="1" maxlength="9" />
+        </div>
+
+        <div class="grid-6-12">
+            <label class="forms-lbl">Date:</label>
+            <input type="text" name="StartDt" id="StartDt" readonly="readonly" class="forms-txt-date validate[required]" value="@DateTime.Now.ToShortDateString()" maxlength="9" />
+        </div>
+
+    </div>
+
+    <ul style="margin-left:5px; margin-top :5px" class="uibutton-group">
+        <li><span class="etip"><a class="uibutton icon add normal " id="btnSubmit" title="Save Changes">Save Changes</a></span></li>
+        <li><span class="etip"><a class="uibutton icon prev normal " id="btnClose" title="Close">Close</a></span></li>
+    </ul>
+
+</form>
+
+
+
+
+
+
+

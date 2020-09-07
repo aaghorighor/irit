@@ -1,0 +1,58 @@
+﻿@using Suftnet.Cos.Extension;
+@using Suftnet.Cos.Common;
+@model Suftnet.Cos.DataAccess.TenantDto
+
+<div class="forms">
+    <div class="grid-6-12">
+        <label class="forms-lbl">Church Name: </label>
+        <input type="text" name="Name" id="Name" class="forms-txt" value="@Model.Name" maxlength="50" />
+    </div>
+
+    <div class="grid-6-12">
+        <label class="forms-lbl">Denomination: </label>
+        @Html.Dropdown("DenominationId", "", (int)eLookUp.Denomination)
+    </div>  
+
+    <div class="grid-12-12">
+        <label class="forms-lbl">Mission: </label>
+        <input type="text" name="Mission" id="Mission" class="forms-txt" value="@Model.Mission" maxlength="50" />
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="grid-6-12">
+        <label class="forms-lbl">FirstName: </label>
+        <input type="text" name="FirstName" id="FirstName" class="forms-txt" value="@Model.FirstName" maxlength="50" />
+    </div>
+
+    <div class="grid-6-12">
+        <label class="forms-lbl">LastName: </label>
+        <input type="text" name="LastName" id="LastName" class="forms-txt" value="@Model.LastName" maxlength="50" />
+    </div>
+
+    <div class="grid-6-12">
+        <label class="forms-lbl">Telephone: </label>
+        <input type="text" name="Telephone" id="Telephone" class="forms-txt" value="@Model.Telephone" maxlength="20" />
+    </div>
+
+    <div class="grid-6-12">
+        <label class="forms-lbl">Mobile: </label>
+        <input type="text" name="Mobile" id="Mobile" class="forms-txt" value="@Model.Mobile" maxlength="20" />
+    </div>
+
+    <div class="grid-12-12">
+        <label class="forms-lbl">Email:</label>
+        <input type="text" name="Email" id="Email" class="forms-txt" value="@Model.Email" maxlength="50" />
+    </div>
+
+    <div class="grid-12-12">
+        <label class="forms-lbl">WebSite Url:</label>
+        <input type="text" name="WebsiteUrl" id="WebsiteUrl" class="forms-txt" value="@Model.WebsiteUrl" maxlength="250" />
+    </div>
+
+    <div class="grid-12-12">
+        <label class="form-lbl">Description :</label>
+        <div style="margin:5px;"></div>
+        <textarea id="Description" name="Description" rows="200" cols="200" onkeypress="return imposeMaxLength(event, this, 499);" class="">@Model.Description</textarea>
+    </div>
+</div>   

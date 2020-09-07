@@ -1,0 +1,57 @@
+﻿@using Suftnet.Cos.Extension;
+@model List<Suftnet.Cos.DataAccess.NotificationDto>
+
+<table id="tdNotification" class="display" >
+<thead>
+<tr>  
+    <th>Id#</th>    
+    <th align="left">Created On</th>       
+    <th align="left">Message Type</th>       
+    <th align="left">Status</th>      
+    <th style="text-align:center">Actions</th> 
+</tr>
+</thead>
+<tbody>
+   
+@foreach (var _item in Model)
+{       
+    <tr id="@_item.Id"> 
+    <td align="left">@_item.Id</td>
+    <td align="left">@_item.CreatedOn</td>  
+    <td align="left">@_item.MessageType</td>   
+    <td align="left">@_item.Status</td>      
+        <td style="text-align:center">
+            <a href="javascript:void(0)">
+                <span id="EditLink"  editid="@_item.Id" title="Edit this row">
+                    <img src="@Url.Asset("edit.png")" alt="" />
+                </span>
+            </a>
+            <a href="javascript:void(0)">
+                <span id="Delete" style="margin:15px;"  deleteid="@_item.Id" title="Delete this row">
+                    <img src="@Url.Asset("delete.png")" alt="" />
+                </span>
+            </a>
+        </td>
+    </tr>   
+}             
+                    
+</tbody>
+</table>
+
+<div class="hide">
+    <span id="getUrl" name="getUrl" data-getUrl="@Url.Action("Get", "Notification")"></span>
+    <span id="deleteUrl" name="deleteUrl" data-deleteUrl="@Url.Action("Delete", "Notification")"></span>   
+</div>
+
+
+<script type="text/javascript">
+
+    $(function () {
+
+        notification.load();
+    });
+
+</script>
+
+
+

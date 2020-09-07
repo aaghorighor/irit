@@ -1,0 +1,24 @@
+﻿@using Suftnet.Cos.Extension;
+@using Suftnet.Cos.Common;
+
+<div id="header">
+    <div id="account_info">
+
+        <div class="" title="Welcome"><b>Welcome </b> <b class="red">@Url.CurrentUserName()</b></div>    
+        
+        @if (this.ViewContext.IsUserArea((int)eArea.Administrator))
+        {
+            <div class="" title="Back office"><b><a href="@Url.Action("Index", "Dashboard", new { area = "" })">Back <img src="@Url.HeaderAsset("connect.png")" class="connect" alt="Back office"></a></b></div>
+        }          
+       
+        <div class="" title="Printer Setting"><b><a id="printerSetting" href="javascript:void(0)">Settings</a></b></div>     
+        <div class="" title="Disconnect"><b><a href="@Url.LogoutHref()">Logout</a></b></div>
+
+    </div>
+</div>
+
+<div id="PrinterSettingDialog" style="display :none">
+    @Html.Partial("_printerSettings")   
+</div>
+
+

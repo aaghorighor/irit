@@ -1,0 +1,38 @@
+﻿
+<script type="text/javascript">
+
+    $(function () {
+
+         @*js.ajaxGet('@Url.Action("OverView", "Dashboard")').then(
+           function (data) {
+
+                 var model = data.summary;
+                                 
+                 if (model.memberCount == 1)
+                 {
+                     $("#memberHeader").text("Member");
+                     $("#members").text(1);
+                 } else {
+                     $("#memberHeader").text("Members");
+                     $("#members").text(model.memberCount);
+                 }
+
+                 if (model.eventCount == 1) {
+                     $("#eventHeader").text("Up Coming Event");
+                     $("#events").text(1);
+                 } else {
+                     $("#eventHeader").text("Up Coming Events");
+                     $("#events").text(model.eventCount);
+                 }
+
+                 if (model.birthDayCount == 1) {
+                     $("#birthDayHeader").text("BirthDay of the Month");
+                     $("#birthDays").text(1);
+                 } else {
+                     $("#birthDayHeader").text("BirthDays of the Month");
+                     $("#birthDays").text(model.birthDayCount);
+                 }
+             });*@
+    });
+
+</script>

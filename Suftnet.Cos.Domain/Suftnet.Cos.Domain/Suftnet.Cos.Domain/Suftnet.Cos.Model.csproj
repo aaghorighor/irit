@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{43215680-887C-4C7F-8C92-320E3E54280C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Suftnet.Cos.Model</RootNamespace>
+    <AssemblyName>Suftnet.Cos.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentValidation">
+      <HintPath>..\..\..\packages\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Suftnet.Cos.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Common\bin\Debug\Suftnet.Cos.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dto\AddonDto.cs" />
+    <Compile Include="Dto\CommonTypeDto.cs" />
+    <Compile Include="Dto\CommonDto.cs" />
+    <Compile Include="Dto\AddonTypeDto.cs" />
+    <Compile Include="Dto\UnitDto.cs" />
+    <Compile Include="Dto\DiscountDto.cs" />
+    <Compile Include="Dto\TenantAddressDto.cs" />
+    <Compile Include="Dto\AddressDto.cs" />
+    <Compile Include="Dto\BestSellerDto.cs" />
+    <Compile Include="Dto\CategoryDto.cs" />
+    <Compile Include="Dto\ChartDto.cs" />
+    <Compile Include="Dto\Item.cs" />
+    <Compile Include="Dto\MenuCategoryWrapper.cs" />
+    <Compile Include="Dto\MenuDto.cs" />
+    <Compile Include="Dto\MobilePermissionDto.cs" />
+    <Compile Include="Dto\DeviceDto.cs" />
+    <Compile Include="Dto\OrderDeliveryWrapperDto.cs" />
+    <Compile Include="Dto\OrderDetailDto.cs" />
+    <Compile Include="Dto\OrderDetailWrapperDto.cs" />
+    <Compile Include="Dto\OrderDto.cs" />
+    <Compile Include="Dto\OrderedItemDto.cs" />
+    <Compile Include="Dto\OrderItemDto.cs" />
+    <Compile Include="Dto\OrderItemWrapperDto.cs" />
+    <Compile Include="Dto\OrderPaymentDto.cs" />
+    <Compile Include="Dto\OrderSummaryDto.cs" />
+    <Compile Include="Dto\OrderWrapperDto.cs" />
+    <Compile Include="Dto\PaymentAdapterDTO.cs" />
+    <Compile Include="Dto\PaymentDetailDto.cs" />
+    <Compile Include="Dto\PaymentDto.cs" />
+    <Compile Include="Dto\RequestDto.cs" />
+    <Compile Include="Dto\SliderDto.cs" />
+    <Compile Include="Dto\SubTopicDto.cs" />
+    <Compile Include="Dto\TableDto.cs" />
+    <Compile Include="Dto\TermDto.cs" />
+    <Compile Include="Dto\TopicDto.cs" />
+    <Compile Include="Dto\ChapterDto.cs" />
+    <Compile Include="Dto\FaqDto.cs" />
+    <Compile Include="Dto\FilterModel.cs" />
+    <Compile Include="Dto\LoginDto.cs" />
+    <Compile Include="Dto\MobileSliderDto.cs" />
+    <Compile Include="Dto\TenantShortDto.cs" />
+    <Compile Include="Dto\Tour.cs" />
+    <Compile Include="Dto\PermissionDto.cs" />
+    <Compile Include="Dto\PlanDto.cs" />
+    <Compile Include="Dto\PlanFeatureDto.cs" />
+    <Compile Include="Dto\PlanFeatureAdapter.cs" />
+    <Compile Include="Dto\BaseDto.cs" />
+    <Compile Include="Dto\TaxDto.cs" />
+    <Compile Include="Dto\EditorDto.cs" />
+    <Compile Include="Dto\GlobalDto.cs" />
+    <Compile Include="Dto\LogDto.cs" />
+    <Compile Include="Dto\OptionDto.cs" />
+    <Compile Include="Dto\NotificationDto.cs" />
+    <Compile Include="Dto\SettingsDto.cs" />
+    <Compile Include="Dto\TenantAdapetrDto.cs" />
+    <Compile Include="Dto\TenantCommonDto.cs" />
+    <Compile Include="Dto\TenantDto.cs" />
+    <Compile Include="Dto\UserAccountDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\RsaService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

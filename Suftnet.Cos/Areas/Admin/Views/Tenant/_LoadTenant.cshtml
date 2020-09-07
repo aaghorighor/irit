@@ -1,0 +1,62 @@
+﻿@using Suftnet.Cos.Extension
+@model IEnumerable<Suftnet.Cos.DataAccess.TenantDto>
+
+<div class="tableName">    
+          
+<table id="tdTenant" class="display" >
+    <thead>
+        <tr>   
+            <th align="left">StripeId</th>    
+            <th align="left">Created On</th>                                   
+            <th align="left">Tenant</th>           
+            <th align="left">Email</th>      
+            <th align="left">Mobile</th>    
+            <th align="left">Expire</th>    
+            <th align="left">Status</th>                   
+            <th style="text-align:center;">Actions</th>    
+        </tr>
+    </thead>
+    <tbody> 
+    
+    @foreach (var _item in Model)
+    {    
+        <tr  id="@_item.Id">   
+            <td align="left">@_item.CustomerStripeId</td>  
+            <td align="left">@_item.CreatedOn</td>  
+            <td align="left">@_item.Name</td>    
+            <td align="left">@_item.Email</td>  
+            <td align="left">@_item.Mobile</td>                                
+            <td align="left">@_item.ExpireDate</td>    
+            <td align="left">@_item.Status</td>                           
+
+            <td style="text-align:center">
+
+                <a href="@Url.Action("Entry", "MyTenant", new { tenantId = @_item.Id })">
+                    <span  title="View Tenant Profile">
+                        <img src="@Url.Asset("document.png")" alt="" />
+                    </span>
+                </a>
+
+                <a href="@Url.Action("Entry", "User", new { tenantId = @_item.Id })">
+                    <span style="margin:10px;" title="View Tenant Account">
+                        <img src="@Url.Asset("file.png")" alt="" />
+                    </span>
+                </a>
+            </td>
+        </tr>   
+    }  
+            
+    </tbody>
+</table>               
+</div>
+
+<script>
+    $(function () {       
+
+        suftnet_Settings.TableInit('#tdTenant', [3,5,7]);
+
+    });
+</script>
+
+
+

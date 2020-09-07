@@ -1,0 +1,136 @@
+﻿@using Suftnet.Cos.Extension
+
+<form action="@Url.Action("Create", "Order")" method="post" id="orderform">
+
+    <div class="forms">
+
+        <input id="Id" name="Id" type="hidden" />
+
+        <input id="TableId" name="TableId" type="hidden" value="0" />
+        <input id="SalesOrderId" name="SalesOrderId" type="hidden" />  
+           
+        <input id="StatusId" name="StatusId" type="hidden" />
+        <input id="OrderTypeId" name="OrderTypeId" type="hidden" />
+     
+        <div class="grid-6-12">
+            <label class="forms-lbl">Number of Guest:</label>
+            <input type="text" name="NumberOfGuest" id="NumberOfGuest" onkeyup="numonly(this);" value="1" class="forms-txt validate[required]" maxlength="9" />
+        </div>
+
+        <div class="grid-6-12 ">
+            <label class="forms-lbl">Host Name(Optional):</label>
+            <input type="text" name="FirstName" id="FirstName" class="forms-txt" maxlength="50" />
+        </div>
+
+        <div class="grid-6-12">
+            <label class="forms-lbl">Time : </label>
+            <input type="text" name="Time" id="Time" readonly="readonly" class="forms-txt-date validate[required]" value="1" maxlength="9" />
+        </div>
+
+        <div class="grid-6-12">
+            <label class="forms-lbl">Date:</label>
+            <input type="text" name="CreatedDT" id="CreatedDT" readonly="readonly" class="forms-txt-date validate[required]" value="@DateTime.Now.ToShortDateString()" maxlength="9" />
+        </div>      
+        
+    </div>
+
+    <ul style="margin-left:5px; margin-top :5px" class="uibutton-group">
+        <li><span class="etip"><a class="uibutton icon add normal " id="btnSubmitOrder" title="Save Changes">Save Changes</a></span></li>
+        <li><span class="etip"><a class="uibutton icon prev normal " id="btnCloseOrder" title="Close">Close</a></span></li>
+    </ul>
+
+</form>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $("#Time").timepicker({
+            showOn: "button",
+            buttonImage: suftnet_Settings.icon + "calendar.png",
+            buttonText: "Open datepicker",
+            buttonImageOnly: true
+        });
+
+        $("#CreatedDT").datepicker({
+            showOn: "button",
+            buttonImage: suftnet_Settings.icon + "calendar.png",
+            buttonText: "Open datepicker",
+            dateFormat: suftnet_Settings.dateTimeFormat,
+            buttonImageOnly: true
+        });
+
+        $("#btnCloseOrder").click(function (e) {
+
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            $("#delivery").hide();
+
+            iuHelper.resetForm("#orderform");
+
+            $("#orderDialog").dialog("close");
+        });
+
+        $("#btnSubmitOrder").bind("click", function (e) {
+
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            if (!suftnet_validation.isValid("orderform")) {
+                return false;
+            }
+
+            js.ajaxPost($("#orderform").attr("action"), $("#orderform").serialize()).then(function (data) {
+
+                switch (data.flag) {
+                    case 1: //// add
+
+                        orderTable.DataTable().fnDraw();
+
+                        break;
+                    case 2: //// update
+
+                        orderTable.fnUpdate(data.objrow.CreatedOn, parseInt($("#rowindex").val()), 1, false, false);
+                        orderTable.fnUpdate(data.objrow.CreatedBy, parseInt($("#rowindex").val()), 2, false, false);
+                        orderTable.fnUpdate(data.objrow.OrderType, parseInt($("#rowindex").val()), 3, false, false);
+                        orderTable.fnUpdate(data.objrow.Reference, parseInt($("#rowindex").val()), 4, false, false);
+                        orderTable.fnUpdate(data.objrow.Time, parseInt($("#rowindex").val()), 5, false, false);
+                        orderTable.fnUpdate(data.objrow.Table, parseInt($("#rowindex").val()), 6, false, false);
+                        orderTable.fnUpdate(data.objrow.NumberGuest, parseInt($("#rowindex").val()), 7, false, false);
+                        orderTable.fnUpdate(data.objrow.Status, parseInt($("#rowindex").val()), 8, false, false);
+
+                        orderTable.fnUpdate(suftnet_grid.formatCurrency(data.objrow.GrandTotal), parseInt($("#rowindex").val()), 9, false, false);
+                        orderTable.fnUpdate(suftnet_grid.formatCurrency(data.objrow.Payment), parseInt($("#rowindex").val()), 10, false, false);
+
+                        if (data.objrow.Balance > 0) {
+                            orderTable.fnUpdate(suftnet_grid.formatCurrency(data.objrow.Balance), parseInt($("#rowindex").val()), 11, false, false);
+                        }
+
+                        break;
+                    default:
+                        break;
+                }
+
+                tableViewModel.update(data.objrow);
+
+                $("#Id").val(0);
+
+                $("#OrderStatusId").val(0);
+                $("#OrderTypeId").val(0);
+
+                iuHelper.resetForm("#orderform");
+
+                $("#orderDialog").dialog("close");
+            });
+        });
+
+        suftnet_Settings.ClearErrorMessages("#orderform");
+    });
+
+</script>
+
+
+
+
+

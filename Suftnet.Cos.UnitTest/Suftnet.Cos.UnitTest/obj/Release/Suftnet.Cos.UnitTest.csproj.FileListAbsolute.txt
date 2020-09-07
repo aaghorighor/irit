@@ -1,0 +1,1 @@
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\obj\Release\Suftnet.Cos.UnitTest.csprojResolveAssemblyReference.cache

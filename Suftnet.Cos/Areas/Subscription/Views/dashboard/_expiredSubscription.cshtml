@@ -1,0 +1,37 @@
+﻿@model Suftnet.Cos.Web.StripeAdapterModel
+@using Suftnet.Cos.Common
+
+@switch (Model.Subscription.Plan.Id)
+{
+    case PlanType.Basic:
+    case PlanType.Premium:
+
+        <div class="card card-dash-headline">
+            <h4>Introducing the responsive admin dashboard template made with Bootstrap 4</h4>
+            <p>Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus...</p>
+                <div class="row row-sm">
+                    <div class="col-sm-2">
+                    </div>
+                    <div class="col-sm-2">
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="@Url.Action("entry","Plan", new { area = "Subscription" })" class="btn btn-primary btn-block center">Upgrade Subscription</a>                   
+                    </div>
+                    <div class="col-sm-2">
+                    </div>
+                    <div class="col-sm-2">
+                    </div>
+                </div>  
+        </div><!-- card -->
+
+        break;
+
+    case PlanType.PremiumPlus:
+
+        <div class="card card-dash-headline">
+            <h4>Introducing the responsive admin dashboard template made with Bootstrap 4</h4>
+            <p>Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus...</p>
+        </div><!-- card -->
+
+        break;
+}

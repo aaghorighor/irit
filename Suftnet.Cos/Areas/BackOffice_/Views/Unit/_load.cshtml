@@ -1,0 +1,74 @@
+﻿@using Suftnet.Cos.Extension
+@model List<Suftnet.Cos.DataAccess.TenantCommonDto>
+ 
+<table id="tdUnit" class="display">
+    <thead>
+        <tr>
+            <th align="left">Id#</th>
+            <th align="left">Sort Order</th>
+            <th align="left">Name</th>
+            <th align="left">Active</th>
+            <th style="text-align:center">Actions</th> 
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var _item in Model)
+        {
+            <tr id="@_item.ID">
+                <td align="left">@_item.ID</td>
+                <td align="left">@_item.Indexno</td>
+                <td align="left">@_item.Title</td>            
+                <td>@_item.Active</td>
+                <td style="text-align:center">
+                    <a>
+                        <span id="Edit" style="margin:15px;" editid="@_item.ID" title="Edit this Unit">
+                            <img src="@Url.Asset("edit.png")" alt="" />
+                        </span>
+                    </a>
+                    <a>
+                        <span id="Delete" style="margin:15px;" deleteid="@_item.ID" title="Delete this Unit">
+                            <img src="@Url.Asset("delete.png")" alt="" />
+                        </span>
+                    </a>
+                </td>
+            </tr>
+        }
+       
+    </tbody>
+</table> 
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $(document).on("click", "#Delete", function (e) {
+
+            e.preventDefault();
+
+            js.confirm('@Url.Action("Delete", "TenantCommon", new { area = "BackOffice" })', { Id: $(this).attr("deleteid") }, $(this).attr("deleteid"), "#tdUnit");
+        });
+
+        $(document).on("click", "#Edit", function (e) {
+
+            e.preventDefault();
+          
+            js.ajaxGet('@Url.Action("Get", "TenantCommon", new { area = "BackOffice" })', { Id: $(this).attr("editid") }).then(
+            function (data) {
+
+                var dataobject = data.dataobject;
+
+                $("#Title").val(dataobject.Title);
+                $("#code").val(dataobject.code);
+                $("#Indexno").val(dataobject.Indexno);
+                $("#ImageUrl").val(dataobject.ImageUrl);
+                $("#ID").val(dataobject.ID);
+                $("#SettingId").val(dataobject.SettingId);
+                $("#Active").attr('checked', dataobject.Active);
+
+            });
+        });       
+
+        suftnet_Settings.TableInit('#tdUnit', [0, 3, 4]);
+    });
+
+</script>

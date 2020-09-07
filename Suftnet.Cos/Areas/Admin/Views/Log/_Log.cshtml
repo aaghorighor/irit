@@ -1,0 +1,56 @@
+﻿<div class="tableName">
+
+    <table id="tdLogViewer" class="display">
+        <thead>
+            <tr>
+                <th align="left">Id#</th>
+                <th align="left" style="width:10%">Date</th>
+                <th align="left" style="width:5%">User</th>
+                <th align="left">Description</th>
+                <th style="text-align:center ">Action</th>
+            </tr>
+        </thead>
+
+    </table>
+
+</div>
+
+<style>
+    #tdLogViewer td:nth-child(5),
+    #tdLogViewer th:nth-child(5) {
+        text-align: center;
+    }
+</style>
+
+<div class="hide">   
+    <span id="deleteUrl" name="deleteUrl" data-deleteUrl="@Url.Action("Delete", "Log")"></span>
+    <span id="viewUrl" name="viewUrl" data-viewUrl="@Url.Action("Init", "Log")"></span>
+    <input id="rowindex" name="rowindex" type="hidden" />
+</div>
+
+<script>
+    $(function () {
+
+        $("#delete").on("click", function (e)
+        {
+            e.preventDefault();
+
+            var tr = $(this).closest('tr');
+            var rowIndex = tr.index();
+
+            $("#rowindex").val(rowIndex);
+
+            js.dyconfirm($("#deleteUrl").attr("data-deleteUrl"), { Id: $(this).attr("deleteId") }, $(this).attr("deleteId"), "#tdLogViewer").then(
+                function (data) {
+                    logTable.fnDeleteRow($("#rowindex").val(), null, true);
+                });
+        });
+
+        suftnet_dynamicTable.initLog($("#viewUrl").attr("data-viewUrl"));
+    });
+</script>
+
+
+
+
+

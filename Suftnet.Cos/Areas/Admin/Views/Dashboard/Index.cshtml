@@ -1,0 +1,54 @@
+﻿@using Suftnet.Cos.Extension;
+
+@{
+    ViewBag.Title = "SUFTNET  | ADMIN DASHBOARD";
+    Layout = "~/Areas/Admin/Views/Shared/_DashboardLayout.cshtml";
+}
+
+@Styles.Render("~/Content/slim/lib/font-awesome/css")
+@Styles.Render("~/bundle/slim-lib-css")
+@Styles.Render("~/bundle/slim-dashboard-css")
+
+<div class="row row-xs">
+    <div class="col-sm-4 col-lg-4 mg-t-10 mg-sm-t-0">
+        <div class="card card-status">
+            <div class="media">
+                <i class="icon ion-ios-bookmarks-outline tx-teal"></i>
+                <div class="media-body">
+                    <h1>0</h1>
+                    <p>Active</p>
+                </div><!-- media-body -->
+            </div><!-- media -->
+        </div><!-- card -->
+    </div><!-- col-3 -->
+    <div class="col-sm-4 col-lg-4 mg-t-10 mg-sm-t-0">
+        <div class="card card-status">
+            <div class="media">
+                <i class="icon ion-ios-analytics-outline tx-pink"></i>
+                <div class="media-body">
+                    <h1>0</h1>
+                    <p>Expired</p>
+                </div><!-- media-body -->
+            </div><!-- media -->
+        </div><!-- card -->
+    </div><!-- col-3 -->
+    <div class="col-sm-4 col-lg-4 mg-t-10 mg-sm-t-0">
+        <div class="card card-status">
+            <div class="media">
+                <i class="icon ion-ios-analytics-outline tx-pink"></i>
+                <div class="media-body">
+                    <h1>0</h1>
+                    <p>Trials</p>
+                </div><!-- media-body -->
+            </div><!-- media -->
+        </div><!-- card -->
+    </div><!-- col-3 -->
+</div>
+
+
+
+
+
+
+
+

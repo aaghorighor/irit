@@ -1,0 +1,23 @@
+﻿
+<div class="profileSetting">
+    <div class="avartar">
+        <img id="TempUrl" src="@Url.Content("~/Content/Photo/Blank.jpg")" width="216" height="196" alt="avatar" />
+    </div>
+    <div class="avartar">
+        <input type="file" name="file_upload[]" id="file_upload" />
+    </div>
+</div>
+
+<div class="hide">
+    <span id="buttonText" name="buttonText">Add Image</span>
+    <span id="photoUrl" name="photoUrl" data-photoUrl="@Url.Content("~/Content/Photo/Blank.jpg")">Add Image</span>
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        suftnet_upload.init('@Url.Action("Upload", "Menu")');
+    });
+
+</script>

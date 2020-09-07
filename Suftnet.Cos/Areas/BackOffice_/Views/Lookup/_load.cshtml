@@ -1,0 +1,21 @@
+﻿<table id="tblCommon" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th align="left">Date</th>
+            <th align="left">Sort Order</th>
+            <th align="left">Title</th>
+            <th align="left">Active</th>
+            <th style="text-align:center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>       
+    </tbody>
+</table> 
+
+<div class="hide">
+    <span id="loadUrl" name="loadUrl" data-loadUrl="@Url.Action("fetch", "Lookup", new { Id = ViewContext.RouteData.Values["settingId"].ToString() })"></span>
+    <span id="deleteUrl" name="deleteUrl" data-deleteUrl="@Url.Action("delete", "Lookup")"></span>
+    <span id="editUrl" name="editUrl" data-editUrl="@Url.Action("edit", "Lookup")"></span>
+    <span id="createUrl" name="createUrl" data-createUrl="@Url.Action("create", "Lookup")"></span>
+</div>
+

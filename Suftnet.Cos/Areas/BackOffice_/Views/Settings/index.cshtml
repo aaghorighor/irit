@@ -1,0 +1,159 @@
+﻿@using Suftnet.Cos.Extension;
+
+@{
+    ViewBag.Title = "SUFTNET | SETTINGS";
+}
+
+@Styles.Render("~/bundle/baze-css")
+
+<div id="settingsContanier" style="display :none">
+
+    <ul class="tabs">
+        <li><a href="#tab1">Profile </a></li>
+        <li><a href="#tab2">About us </a></li>
+        <li><a href="#tab3">Statement of Faith</a></li>
+        <li><a href="#tab4">Mission</a></li>
+    </ul>
+
+    <form action="@Url.Action("Edit", "Settings")" method="post" id="form">
+
+        @Html.AntiForgeryToken()
+
+        <input type="hidden" id="CurrencyCode" name="CurrencyCode" />
+        <input type="hidden" id="LogoUrl" name="LogoUrl" />
+        <input type="hidden" id="PastorUrl" name="PastorUrl" />
+        <input type="hidden" id="BackgroundUrl" name="BackgroundUrl" />
+        <input type="hidden" id="Id" name="Id" />
+        <input type="hidden" id="Latitude" name="Latitude" />
+        <input type="hidden" id="Longitude" name="Longitude" />
+        <input type="hidden" id="AddressId" name="AddressId" />
+
+        <div class="tab_container">
+
+            <div id="tab1" class="tab_content">
+                <div class="widgets">
+
+                    <div class="oneTwo">
+
+                        <div class="widget">
+                            <div class="header">
+                                <span>
+                                    <span class="ico gray help2 tooltip" title="..........You will be receiving a few emails over the next few days with some hints and tips about how to get the most from Jerur,
+but please remember - if you do have any questions, please drop an email to support@suftnet.com, or give us a call at (+44)-020 3286 2416.
+We hope you enjoy our services."></span>General
+                                </span>
+                            </div>
+                            <div class="content">
+                                @Html.Partial("_general")
+                            </div>
+                        </div>
+
+                        <div class="widget">
+                            <div class="header">
+                                <span>
+                                    <span class="ico gray help2 tooltip" title="...You will be receiving a few emails over the next few days with some hints and tips about how to get the most from Jerur,
+but please remember - if you do have any questions, please drop an email to support@suftnet.com, or give us a call at (+44)-020 3286 2416.
+We hope you enjoy our services."></span>Stripe
+                                </span>
+                            </div>
+                            <div class="content">
+                                @Html.Partial("_stripe")
+                            </div>
+                        </div>
+
+                        <div class="widget">
+                            <div class="header">
+                                <span>
+                                    <span class="ico gray help2 tooltip" title="...You will be receiving a few emails over the next few days with some hints and tips about how to get the most from Jerur,
+but please remember - if you do have any questions, please drop an email to support@suftnet.com, or give us a call at (+44)-020 3286 2416.
+We hope you enjoy our services."></span>Bank
+                                </span>
+                            </div>
+                            <div class="content">
+                                @Html.Partial("_bank")
+                            </div>
+                        </div>
+
+                        <div class="widget">
+                            <div class="header"><span><span class="ico gray help2"></span>Mobile </span></div>
+                            <div class="content">
+                                @Html.Partial("_mobile")
+                            </div>
+                        </div>
+
+                        <div class="widget">
+                            <div class="header"><span><span class="ico gray help2"></span>Send Grid </span></div>
+                            <div class="content">
+                                @Html.Partial("_sendGrid")
+                            </div>
+                        </div>
+
+                        <div class="widget">
+                            <div class="header"><span><span class="ico gray help2"></span>Disclaimer </span></div>
+                            <div class="content">
+                                @Html.Partial("_disclaimer")
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="oneTwo">
+
+                        <div class="widget">
+                            <div class="header"><span><span class="ico gray help2"></span>Profile </span></div>
+                            <div class="content">
+                                @Html.Partial("_profile")
+                            </div>
+                        </div>
+
+                        <div class="widget">
+                            <div class="header"><span><span class="ico gray help2"></span>Pastor </span></div>
+                            <div class="content">
+                                @Html.Partial("_pastor")
+                            </div>
+                        </div>
+
+                        <div class="widget">
+                            <div class="header"><span><span class="ico gray help2"></span>Address </span></div>
+                            <div class="content">
+                                @Html.Partial("_address")
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab2" class="tab_content">
+                <div class="widgets">
+                    @Html.Partial("_aboutus")
+                </div>
+            </div>
+
+            <div id="tab3" class="tab_content">
+                <div class="widgets">
+                    @Html.Partial("_statementOffaith")
+                </div>
+            </div>
+
+            <div id="tab4" class="tab_content">
+                <div class="widgets">
+                    @Html.Partial("_mission")
+                </div>
+            </div>
+
+        </div>
+
+        <br />
+        <input name="Publish" id="Publish" type="checkbox" /><label class="form-lbl">Publish in Jerur Directory</label>
+
+        <input name="PushNotification" id="PushNotification" type="checkbox" /> <label class="form-lbl">Push Notification</label>
+        <div class="clear"></div><br />
+        <span class="etip"><a class="uibutton normal padding-top" id="btnSaveChanges" title="Save Changes">Save Changes</a></span>
+
+    </form>
+    
+</div>
+
+@Html.Partial("_settingsScripts")
+

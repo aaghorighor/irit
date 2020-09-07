@@ -1,0 +1,90 @@
+﻿@using Suftnet.Cos.Extension;
+@model Suftnet.Cos.DataAccess.TenantDto
+
+@{
+    ViewBag.Title = "SUFTNET | SETTINGS"; 
+}
+
+@Styles.Render("~/bundle/baze-css")
+
+<ul style="margin-left:2px; margin-top :5px" class="uibutton-group">
+    <li><span class="etip"><a href="@Url.Action("Index","Tenant", new { area ="Admin" })" class="uibutton icon prev normal" title="Back to Tenant">Back</a></span></li>
+</ul>
+
+<div class="topcolumn">
+    <ul id="shortcut">       
+        @*<li> <a href="@Url.Action("Index", "Dashboard", new { area = "Subscription" })" title="Subscription Dashboard"><img src="@Url.AssetShortCut("report_check.png")" alt="Subscription Dashboard" /></a> </li>*@    
+       </ul>
+    <div class="clear"></div>
+</div>
+
+<div class="content">
+    <!-- Third width -->
+    <form action="@Url.Action("Create", "MyTenant", new { area ="Admin" })" method="post" id="form">
+
+        <input type="hidden" id="Id" name="Id" value="@Model.Id" />
+        <input type="hidden" id="Latitude" name="Latitude" value="@Model.Address.Latitude" />
+        <input type="hidden" id="Logitude" name="Logitude" value="@Model.Address.Logitude" />
+        <input type="hidden" id="AddressId" name="AddressId" value="@Model.AddressId" />
+        <input type="hidden" name="TenantId" value="@ViewContext.RouteData.Values["tenantId"].ToString().ToInt()" id="TenantId" />
+
+        <div class="widgets">
+
+            <div class="oneTwo">
+
+                <div class="widget">
+                    <div class="header"><span><span class="ico gray window"></span>General </span></div>
+                    <div class="content">
+                        @Html.Partial("_general", Model)
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <div class="header"><span><span class="ico gray window"></span>Address </span></div>
+                    <div class="content">
+                        @Html.Partial("_address", Model)
+                    </div>
+                </div>                
+
+            </div>
+
+            <div class="oneTwo">
+
+                <div class="widget">
+                    <div class="header"><span><span class="ico gray window"></span>Profile </span></div>
+                    <div class="content">
+                        @Html.Partial("_profile")
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="clear"></div>
+
+            <ul style="margin-left:2px; margin-top :5px" class="uibutton-group">
+                <li><span class="etip"><a class="uibutton icon add normal " id="btnSaveChanges" title="Save Changes">Save Changes</a></span></li>
+            </ul>
+
+        </div>
+
+    </form>
+
+</div><!-- End content -->
+
+<div class="hide">     
+    <div class="hide" id="map-item"></div>
+</div>
+
+@Scripts.Render("~/bundle/baze")
+
+@Html.Partial("_mapScript")
+
+<script type="text/javascript">
+
+    $(function ()
+    {      
+        setting.pageEvent('@Model.Id', '@Model.CurrencyId', '@Model.DenominationId');
+    });
+
+</script> 
+    

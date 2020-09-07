@@ -1,0 +1,47 @@
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Suftnet.Cos.Stripe.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Suftnet.Cos.Stripe.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Newtonsoft.Json.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Stripe.net.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Suftnet.Cos.Common.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Suftnet.Cos.Common.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Newtonsoft.Json.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.csprojResolveAssemblyReference.cache
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\StructureMap.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Collections.Immutable.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Stripe.net.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Stripe.net.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Collections.Immutable.xml
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.csprojAssemblyReference.cache
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.csproj.CoreCompileInputs.cache
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Suftnet.Cos.Stripe.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Newtonsoft.Json.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Stripe.net.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\StructureMap.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Suftnet.Cos.Common.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Collections.Immutable.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Newtonsoft.Json.xml
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Stripe.net.pdb
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Stripe.net.xml
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Collections.Immutable.xml
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.csproj.CopyComplete
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Data.Common.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.StackTrace.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.Tracing.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Globalization.Extensions.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.IO.Compression.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Net.Http.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Net.Sockets.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.Serialization.Primitives.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Security.Cryptography.Algorithms.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Security.SecureString.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Threading.Overlapped.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Xml.XPath.XDocument.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Threading.Tasks.Extensions.xml

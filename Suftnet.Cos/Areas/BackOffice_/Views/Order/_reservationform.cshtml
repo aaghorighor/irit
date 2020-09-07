@@ -1,0 +1,155 @@
+﻿@using Suftnet.Cos.Extension
+
+<form action="@Url.Action("Create", "Order")" method="post" id="reservationOrderform">
+
+    <div class="forms">
+
+        <input id="ReservationId" name="ReservationId" type="hidden" />
+     
+        <div class="grid-6-12">
+            <label class="forms-lbl">Expected Guest:</label>
+            <input type="text" name="NumberOfGuest" id="NumberOfGuest" onkeyup="numonly(this);" value="1" class="forms-txt validate[required]" maxlength="9" />
+        </div>
+
+        <div class="grid-6-12 ">
+            <label class="forms-lbl">Mobile:</label>
+            <input type="text" name="Mobile" id="Mobile" class="forms-txt" maxlength="50" />
+        </div>
+
+        <div class="grid-6-12 ">
+            <label class="forms-lbl">FirstName:</label>
+            <input type="text" name="FirstName" id="FirstName" class="forms-txt" maxlength="50" />
+        </div>
+
+        <div class="grid-6-12 ">
+            <label class="forms-lbl">LastName:</label>
+            <input type="text" name="LastName" id="LastName" class="forms-txt" maxlength="50" />
+        </div>
+
+        <div class="grid-6-12">
+            <label class="forms-lbl">Time : </label>
+            <input type="text" name="ReservationTime" id="ReservationTime" readonly="readonly" class="forms-txt-date validate[required]" value="1" maxlength="9" />
+        </div>
+
+        <div class="grid-6-12">
+            <label class="forms-lbl">Date:</label>
+            <input type="text" name="ReservationDate" id="ReservationDate" readonly="readonly" class="forms-txt-date validate[required]" maxlength="9" />
+        </div>
+
+        <div class="grid-12-12" id="tabledropdown">
+            <label class="forms-lbl">Table: </label>
+            @Html.TableDropdown("ReservationTableId", "validate[required]")
+        </div>   
+        
+    </div>
+
+    <ul style="margin-left:5px; margin-top :5px" class="uibutton-group">
+        <li><span class="etip"><a class="uibutton icon add normal " id="btnSubmitReservationOrder" title="Save Changes">Save Changes</a></span></li>
+        <li><span class="etip"><a class="uibutton icon prev normal " id="btnCloseReservationOrder" title="Close">Close</a></span></li>
+    </ul>
+
+</form>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $("#ReservationTime").timepicker({
+            showOn: "button",
+            buttonImage: suftnet_Settings.icon + "calendar.png",
+            buttonText: "Open datepicker",
+            buttonImageOnly: true
+        });
+
+        $("#ReservationDate").datepicker({
+            showOn: "button",
+            buttonImage: suftnet_Settings.icon + "calendar.png",
+            buttonText: "Open datepicker",
+            dateFormat: suftnet_Settings.dateTimeFormat,
+            buttonImageOnly: true
+        });
+
+        $("#btnCloseReservationOrder").click(function (e) {
+
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            iuHelper.resetForm("#reservationOrderform");
+
+            $("#reservationOrderDialog").dialog("close");
+        });
+
+        $("#btnSubmitReservationOrder").bind("click", function (e) {
+
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            if (!suftnet_validation.isValid("reservationOrderform")) {
+                return false;
+            }
+
+            $("#reservationOrderform").append("<input class=\"hide\" id=\"OrderTypeId\" name=\"OrderTypeId\" value=" + $("#OrderTypeId").val() + " type=\"hidden\" /> ");
+            $("#reservationOrderform").append("<input class=\"hide\" id=\"StatusId\" name=\"StatusId\" value=" + $("#StatusId").val() + " type=\"hidden\" /> ");
+
+            js.ajaxPost($("#reservationOrderform").attr("action"), $("#reservationOrderform").serialize()).then(function (data) {
+
+                switch (data.flag) {
+                    case 1: //// add
+
+                        orderTable.DataTable().fnDraw();
+
+                        reservationViewModel.addReservation(data.objrow);
+
+                        break;
+                    case 2: //// update
+
+                        reservationViewModel.editReservation(data.objrow);
+
+                        orderTable.fnUpdate(data.objrow.CreatedOn, parseInt($("#rowindex").val()), 1, false, false);
+                        orderTable.fnUpdate(data.objrow.CreatedBy, parseInt($("#rowindex").val()), 2, false, false);
+                        orderTable.fnUpdate(data.objrow.OrderType, parseInt($("#rowindex").val()), 3, false, false);
+                        orderTable.fnUpdate(data.objrow.Reference, parseInt($("#rowindex").val()), 4, false, false);
+
+                        orderTable.fnUpdate(data.objrow.Time, parseInt($("#rowindex").val()), 5, false, false);
+                        orderTable.fnUpdate(data.objrow.Table, parseInt($("#rowindex").val()), 6, false, false);
+                        orderTable.fnUpdate(data.objrow.NumberOfGuest, parseInt($("#rowindex").val()), 7, false, false);
+                        orderTable.fnUpdate(data.objrow.Status, parseInt($("#rowindex").val()), 8, false, false);
+
+                        orderTable.fnUpdate(suftnet_grid.formatCurrency(data.objrow.GrandTotal), parseInt($("#rowindex").val()), 9, false, false);
+                        orderTable.fnUpdate(suftnet_grid.formatCurrency(data.objrow.Payment), parseInt($("#rowindex").val()), 10, false, false);
+
+                        if (data.objrow.Balance > 0) {
+                            orderTable.fnUpdate(suftnet_grid.formatCurrency(data.objrow.Balance), parseInt($("#rowindex").val()), 11, false, false);
+                        }
+
+                        break;
+                    default:
+                        break;
+                }
+
+                tableViewModel.update(data.objrow);
+
+            });
+
+            $("#ReservationId").val(0);
+
+            $("#OrderStatusId").val(0);
+            $("#OrderTypeId").val(0);
+
+            $("#reservationOrderform").removeClass("hide");
+
+            iuHelper.resetForm("#reservationOrderform");
+
+            $("#reservationOrderDialog").dialog("close");
+
+        });
+
+        suftnet_Settings.ClearErrorMessages("#reservationOrderform");
+    });
+
+</script>
+
+
+
+
+

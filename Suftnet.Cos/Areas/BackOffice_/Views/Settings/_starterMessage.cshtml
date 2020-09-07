@@ -1,0 +1,19 @@
+﻿@using Suftnet.Cos.Extension
+@using Suftnet.Cos.Common
+
+@{
+    var cms = Url.Cms(CmsType.WelcomeToJerur);
+}
+
+<div class="bzm-content" id="welcomeTips" data-title="@cms.Title">
+    @Html.Raw(cms.Contents)
+</div>
+
+<div class="hide">
+    <button id="startup" name="startup" data-target="#welcomeTips"></button>   
+    <span id="updateStartUpUrl" name="updateStartUpUrl" data-updateStartUpUrl="@Url.Action("UpdateStartUp", "Settings")"></span>  
+</div>
+
+<script>
+    welcome.startup();
+</script>

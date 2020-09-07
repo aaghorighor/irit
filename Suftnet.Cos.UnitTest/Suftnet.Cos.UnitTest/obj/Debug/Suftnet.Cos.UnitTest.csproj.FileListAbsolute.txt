@@ -1,0 +1,135 @@
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\obj\Debug\Suftnet.Cos.UnitTest.csprojResolveAssemblyReference.cache
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.UnitTest.dll.config
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.UnitTest.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.UnitTest.pdb
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Moq.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Newtonsoft.Json.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\nunit.framework.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\StructureMap.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Business.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Common.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Core.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.DataAccess.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Domain.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Web.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.Http.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\DayPilot.Web.Mvc.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\log4net.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\WebMatrix.WebData.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Net.Http.Formatting.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\PayPal.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\ImageResizer.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Stimulsoft.Report.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\com.esendex.sdk.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.Optimization.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.Http.WebHost.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\WebMatrix.Data.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Stimulsoft.Base.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Web.pdb
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Moq.xml
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\nunit.framework.xml
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Business.pdb
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Common.pdb
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Core.pdb
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.DataAccess.pdb
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Domain.pdb
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.Http.xml
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\WebMatrix.WebData.xml
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Net.Http.Formatting.xml
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\PayPal.xml
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Stimulsoft.Report.xml
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.Optimization.xml
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.Http.WebHost.xml
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\WebMatrix.Data.xml
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Stimulsoft.Base.xml
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\obj\Debug\Suftnet.Cos.UnitTest.dll
+C:\Visual Studio\Branch\4.2015\Suftnet.Church.StandAlones-Beta1.0.2\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\obj\Debug\Suftnet.Cos.UnitTest.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\obj\Debug\Suftnet.Cos.UnitTest.csprojResolveAssemblyReference.cache
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.UnitTest.dll.config
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.UnitTest.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.UnitTest.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Moq.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Newtonsoft.Json.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\nunit.framework.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\StructureMap.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Business.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Common.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Core.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.DataAccess.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Model.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Web.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.Http.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.Mvc.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\HtmlAgilityPack.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\SendGrid.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Twilio.Api.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.WebPages.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Net.Http.Formatting.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Stripe.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Stripe.net.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Stimulsoft.Report.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\log4net.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\WebMatrix.WebData.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\RecurrenceGenerator.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Stimulsoft.Report.Mvc.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\ImageResizer.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\FluentValidation.Mvc.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.Optimization.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.Http.WebHost.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\FluentValidation.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.Razor.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.WebPages.Razor.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\RestSharp.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Stimulsoft.Base.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\WebMatrix.Data.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.Helpers.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Web.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Moq.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\nunit.framework.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Business.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Common.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Core.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.DataAccess.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Model.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.Http.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.Mvc.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\HtmlAgilityPack.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\HtmlAgilityPack.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\SendGrid.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\SendGrid.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.WebPages.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Net.Http.Formatting.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\Suftnet.Cos.Stripe.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\log4net.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\WebMatrix.WebData.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\FluentValidation.Mvc.pdb
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\FluentValidation.Mvc.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.Http.WebHost.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.Razor.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.WebPages.Razor.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\RestSharp.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\WebMatrix.Data.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\System.Web.Helpers.xml
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\de\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\es\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\fr\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\it\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\ko\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\nl\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\pl\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\pt\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\ru\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\sv\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\bin\Debug\tr\FluentValidation.resources.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\obj\Debug\Suftnet.Cos.UnitTest.dll
+C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.UnitTest\Suftnet.Cos.UnitTest\obj\Debug\Suftnet.Cos.UnitTest.pdb

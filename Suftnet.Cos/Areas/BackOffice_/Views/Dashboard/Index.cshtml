@@ -1,0 +1,132 @@
+﻿@using Suftnet.Cos.Extension
+@using Suftnet.Cos.Common
+
+@using System.Web.Script.Serialization;
+
+@{
+    ViewBag.Title = "SUFTNET  | DASHBOARD";
+    Layout = "~/Areas/BackOffice/Views/Shared/_backofficeLayout-dashboard.cshtml";
+}
+
+@Styles.Render("~/bundle/slim-lib-css")
+@Styles.Render("~/bundle/slim-dashboard-css")
+
+<div class="row row-xs">
+    <div class="col-sm-6 col-lg-3 mg-t-10 mg-sm-t-0">
+        <div class="card card-status">
+            <div class="media">
+                <i class="icon ion-android-restaurant tx-teal"></i>
+                <div class="media-body">
+                @{
+                    var dine = Url.ToDineTable().Result;
+
+                    <h1 class="h1-normal">@dine</h1>
+                    <p class="h1-normal">                                              
+
+                        @if (dine > 1)
+                        {
+                            <span>Dine In Tables</span>
+                        }
+                        else
+                        {
+                            <span>Dine In Table</span>
+                        }                       
+                      
+                    </p>
+                 }
+                </div><!-- media-body -->
+            </div><!-- media -->
+        </div><!-- card -->
+    </div><!-- col-3 -->
+    <div class="col-sm-6 col-lg-3 mg-t-10 mg-lg-t-0">
+        <div class="card card-status">
+            <div class="media">
+                <i class="icon ion-android-cart tx-pink"></i>
+                <div class="media-body">
+                @{ 
+                    var status = Url.ToOrderStatusCount((int)OrderStatus.Reserved).Result;
+
+                    <h1 class="h1-normal">@status</h1>
+                    <p class="h1-normal">
+                  
+                        @if (status > 1)
+                        {
+                            <span>Reserved Tables</span>
+                        }
+                        else
+                        {
+                            <span>Reserved Table</span>
+                        }
+
+                    </p>
+                  }
+                </div><!-- media-body -->
+            </div><!-- media -->
+        </div><!-- card -->
+    </div><!-- col-3 -->
+    <div class="col-sm-6 col-lg-3 mg-t-10 mg-lg-t-0">
+        <div class="card card-status">
+            <div class="media">
+                <i class="icon ion-android-folder-open tx-dark"></i>
+                <div class="media-body">
+
+                @{
+                    var freeTable = Url.ToFreeTable().Result;
+
+                    <h1 class="h1-normal">@freeTable</h1>
+                    <p class="h1-normal">
+
+                        @if (freeTable > 1)
+                        {
+                            <span> Free Table</span>
+                        }
+                        else
+                        {
+                            <span> Free Tables</span>
+                        }
+
+                    </p>
+                }
+                   
+                </div><!-- media-body -->
+            </div><!-- media -->
+        </div><!-- card -->
+    </div><!-- col-3 -->
+    <div class="col-sm-6 col-lg-3 mg-t-10 mg-lg-t-0">
+        <div class="card card-status">
+            <div class="media">
+                <i class="icon ion-ios-arrow-thin-down tx-gray-900"></i>
+                <div class="media-body">
+
+                @{
+                    var cutOff = Url.CutOffCount().Result;
+
+                    <h1 class="h1-normal">@cutOff</h1>
+                    <p class="h1-normal">
+                        @if (cutOff > 1)
+                        {
+                            <span>Items Out Of Stock</span>
+                        }
+                        else
+                        {
+                            <span>Item Out Of Stock</span>
+                        }
+                    </p>
+                }
+                    
+                </div><!-- media-body -->
+            </div><!-- media -->
+        </div><!-- card -->
+    </div><!-- col-3 -->
+</div>
+
+@Scripts.Render("~/bundle/slim-lib-jquery")
+@Scripts.Render("~/bundle/slim-lib-js")
+@Scripts.Render("~/bundle/slim-js")
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+﻿input.error{
+	background: #f8dbdb;
+	border-color: #e77776;
+}
+
+select.error{
+	background: #f8dbdb;
+	border-color: #e77776;
+}
+textarea.error {
+	background: #f8dbdb;
+	border-color: #e77776;
+}
+
+ input.has-error  {
+        border-color: purple;
+        background: #f8dbdb;
+        border-width: 2px;
+    }
+
+input.has-no-error {
+    border-color: purple;
+    background: #ffffff;
+    border-width: 2px;
+    color: #000000
+}
+
+.validation.text-danger:after {
+        content: 'Validation failed';
+    }
+
+.validation.text-success:after {
+        content: 'Validation passed';
+    }
+
+.required .mandatory .emailrequired .daterequired{}
+
+.ContactAgentRequired .ContactAgentMandatory .ContactAgentEmailRequired {}
+.loginRequired .loginMandatory .loginEmailRequired {}
+.forgottenRequired .forgottenMandatory .forgottenEmailRequired {}
+.registrationRequired .registrationMandatory .registrationEmailRequired {}
+.registerRequired .registerUserNameRequired {}
+.propertyDetailsRequired {}
+.addressRequired {}
+.featuresRequired .featureNumbersOnlyRequired {}

@@ -1,0 +1,18 @@
+﻿@using Suftnet.Cos.Extension;
+
+<div id="header">
+    <div id="account_info">
+        <div class="tooltip" title="Welcome"><b>Welcome </b> <b class="red">@Url.CurrentUserName()</b></div>
+        <div class="tooltip" title="Tables"><a href="@Url.Action("index", "table", new { area = "frontoffice" })">Tables</a></div>
+        <div class="tooltip" title="Orders"><a href="@Url.Action("index", "order")">Orders</a></div>       
+        <div class="tooltip" title="Back Office"><a href="@Url.Action("index", "dashboard", new { area= "BackOffice" })">Back Office</a></div>
+        <div class="Disconnect tooltip" title="Disconnect"><b><a href="@Url.LogoutHref()">Logout</a></b></div>
+    </div>
+</div>
+
+<div id="PrinterSettingDialog" style="display :none">
+    @Html.Partial("_printerSettings")
+</div>
+
+
+ 

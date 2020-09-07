@@ -1,0 +1,68 @@
+﻿<div class="main_container" data-bind="foreach: tables">
+    <div class="tablepin">
+        <div class="holder" style="margin-bottom:15px;" data-bind="click: $parent.getItem">
+
+            <a href="javascript:void(0)">
+                <table class="ordertable" style="margin:0px; " border="1">
+
+                    <tr>
+                        <th>Table</th>
+                        <th><span data-bind="text: Number"></span></th>
+                    </tr>
+
+                    <tr data-bind="style: { 'background-color':'#f2f2f2', 'color' :'#000000' }">
+                        <td>Size</td>
+                        <td><span data-bind="text: Size"></span></td>
+                    </tr>
+
+                    <!-- ko if: OrderId() != "" -->
+                    <tr data-bind="style: { 'background-color':'#006666', 'color' :'#ffffff' }">
+                        <td>Status</td>
+                        <td><span data-bind="text: Status"></span></td>
+                    </tr>
+                    <!-- /ko -->
+                    <!-- ko ifnot: OrderId() != "" -->
+                    <tr data-bind="style: { 'background-color': '#660066', 'color' :'#ffffff' }">
+                        <td>Status</td>
+                        <td><span data-bind="text: Status"></span></td>
+                    </tr>
+                    <!-- /ko -->
+
+                </table>
+            </a>
+
+            <span data-bind="value:Id" style="display:none"></span>
+            <span data-bind="value:OrderId" style="display:none"></span>         
+            <span data-bind="value:index" style="display:none"></span>
+
+        </div>
+
+    </div>
+    
+</div>
+<div class="clear"></div>
+
+<div class="main_container">
+    <div class="tablepin">
+        <div class="holder" style="margin-bottom:15px;">
+            <a href="javascript:void(0)" title="Take Away" class="barandtakeway" tableId="515" orderType="522" statusId="458">
+                <table class="ordertable" style="margin:0px; " border="1">
+                    <tr>
+                        <th>Take Away</th>                   
+                    </tr>
+                </table>
+            </a>
+        </div>
+    </div>
+    <div class="tablepin">
+        <div class="holder" style="margin-bottom:15px;">
+            <a href="javascript:void(0)" title="Bar" class="barandtakeway" tableId="514" orderType="519" statusId="458">
+                <table class="ordertable" style="margin:0px;" border="1">
+                    <tr>
+                        <th>Bar</th>                  
+                    </tr>
+                </table>
+            </a>
+        </div>
+    </div>
+</div>

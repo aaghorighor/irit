@@ -1,0 +1,18 @@
+﻿    .validation-summary-errors ul li {
+        font-weight: normal;
+        list-style-type: circle;
+        list-style: none;       
+    }
+
+    .has-error input {
+        border-color: purple;
+        border-width: 2px;
+    }
+
+    .validation.text-danger:after {
+        content: 'Validation failed';
+    }
+
+    .validation.text-success:after {
+        content: 'Validation passed';
+    }

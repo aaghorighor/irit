@@ -1,0 +1,129 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Suftnet.Cos.Web", "Suftnet.Cos\Suftnet.Cos.Web.csproj", "{E5AEFB50-F87C-4277-A849-1BC7E02D7D0C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7B0D3E50-8A26-4C38-9450-5FE63013C398} = {7B0D3E50-8A26-4C38-9450-5FE63013C398}
+		{43215680-887C-4C7F-8C92-320E3E54280C} = {43215680-887C-4C7F-8C92-320E3E54280C}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Suftnet.Cos.DataAccess", "Suftnet.Cos.DataAccess\Suftnet.Cos.DataAccess.csproj", "{3CBB4B7A-71EA-4ECC-840F-2F1D3DF79190}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43215680-887C-4C7F-8C92-320E3E54280C} = {43215680-887C-4C7F-8C92-320E3E54280C}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Suftnet.Cos.Common", "Common\Suftnet.Cos.Common.csproj", "{7B0D3E50-8A26-4C38-9450-5FE63013C398}"
+	ProjectSection(ProjectDependencies) = postProject
+		{43215680-887C-4C7F-8C92-320E3E54280C} = {43215680-887C-4C7F-8C92-320E3E54280C}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Suftnet.Cos.Core", "Suftnet.Cos.Core\Suftnet.Cos.Core.csproj", "{A81A825A-0256-46FE-A2DE-6AE8B3E87233}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3CBB4B7A-71EA-4ECC-840F-2F1D3DF79190} = {3CBB4B7A-71EA-4ECC-840F-2F1D3DF79190}
+		{43215680-887C-4C7F-8C92-320E3E54280C} = {43215680-887C-4C7F-8C92-320E3E54280C}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Suftnet.Cos.Model", "Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Model.csproj", "{43215680-887C-4C7F-8C92-320E3E54280C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Suftnet.Cos.Stripe", "Suftnet.Cos.Stripe\Suftnet.Cos.Stripe.csproj", "{EF069C98-54C2-4706-AF14-C6AF05FDAB48}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5AEFB50-F87C-4277-A849-1BC7E02D7D0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5AEFB50-F87C-4277-A849-1BC7E02D7D0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5AEFB50-F87C-4277-A849-1BC7E02D7D0C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E5AEFB50-F87C-4277-A849-1BC7E02D7D0C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E5AEFB50-F87C-4277-A849-1BC7E02D7D0C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E5AEFB50-F87C-4277-A849-1BC7E02D7D0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5AEFB50-F87C-4277-A849-1BC7E02D7D0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5AEFB50-F87C-4277-A849-1BC7E02D7D0C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E5AEFB50-F87C-4277-A849-1BC7E02D7D0C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E5AEFB50-F87C-4277-A849-1BC7E02D7D0C}.Release|x86.ActiveCfg = Release|Any CPU
+		{3CBB4B7A-71EA-4ECC-840F-2F1D3DF79190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CBB4B7A-71EA-4ECC-840F-2F1D3DF79190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CBB4B7A-71EA-4ECC-840F-2F1D3DF79190}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3CBB4B7A-71EA-4ECC-840F-2F1D3DF79190}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3CBB4B7A-71EA-4ECC-840F-2F1D3DF79190}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3CBB4B7A-71EA-4ECC-840F-2F1D3DF79190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CBB4B7A-71EA-4ECC-840F-2F1D3DF79190}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CBB4B7A-71EA-4ECC-840F-2F1D3DF79190}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3CBB4B7A-71EA-4ECC-840F-2F1D3DF79190}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3CBB4B7A-71EA-4ECC-840F-2F1D3DF79190}.Release|x86.ActiveCfg = Release|Any CPU
+		{7B0D3E50-8A26-4C38-9450-5FE63013C398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B0D3E50-8A26-4C38-9450-5FE63013C398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B0D3E50-8A26-4C38-9450-5FE63013C398}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7B0D3E50-8A26-4C38-9450-5FE63013C398}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7B0D3E50-8A26-4C38-9450-5FE63013C398}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7B0D3E50-8A26-4C38-9450-5FE63013C398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B0D3E50-8A26-4C38-9450-5FE63013C398}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B0D3E50-8A26-4C38-9450-5FE63013C398}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7B0D3E50-8A26-4C38-9450-5FE63013C398}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7B0D3E50-8A26-4C38-9450-5FE63013C398}.Release|x86.ActiveCfg = Release|Any CPU
+		{A81A825A-0256-46FE-A2DE-6AE8B3E87233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A81A825A-0256-46FE-A2DE-6AE8B3E87233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A81A825A-0256-46FE-A2DE-6AE8B3E87233}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A81A825A-0256-46FE-A2DE-6AE8B3E87233}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A81A825A-0256-46FE-A2DE-6AE8B3E87233}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A81A825A-0256-46FE-A2DE-6AE8B3E87233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A81A825A-0256-46FE-A2DE-6AE8B3E87233}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A81A825A-0256-46FE-A2DE-6AE8B3E87233}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A81A825A-0256-46FE-A2DE-6AE8B3E87233}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A81A825A-0256-46FE-A2DE-6AE8B3E87233}.Release|x86.ActiveCfg = Release|Any CPU
+		{43215680-887C-4C7F-8C92-320E3E54280C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43215680-887C-4C7F-8C92-320E3E54280C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43215680-887C-4C7F-8C92-320E3E54280C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{43215680-887C-4C7F-8C92-320E3E54280C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{43215680-887C-4C7F-8C92-320E3E54280C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{43215680-887C-4C7F-8C92-320E3E54280C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43215680-887C-4C7F-8C92-320E3E54280C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43215680-887C-4C7F-8C92-320E3E54280C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{43215680-887C-4C7F-8C92-320E3E54280C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{43215680-887C-4C7F-8C92-320E3E54280C}.Release|x86.ActiveCfg = Release|Any CPU
+		{EF069C98-54C2-4706-AF14-C6AF05FDAB48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF069C98-54C2-4706-AF14-C6AF05FDAB48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF069C98-54C2-4706-AF14-C6AF05FDAB48}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{EF069C98-54C2-4706-AF14-C6AF05FDAB48}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{EF069C98-54C2-4706-AF14-C6AF05FDAB48}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EF069C98-54C2-4706-AF14-C6AF05FDAB48}.Debug|x86.Build.0 = Debug|Any CPU
+		{EF069C98-54C2-4706-AF14-C6AF05FDAB48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF069C98-54C2-4706-AF14-C6AF05FDAB48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF069C98-54C2-4706-AF14-C6AF05FDAB48}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{EF069C98-54C2-4706-AF14-C6AF05FDAB48}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{EF069C98-54C2-4706-AF14-C6AF05FDAB48}.Release|x86.ActiveCfg = Release|Any CPU
+		{EF069C98-54C2-4706-AF14-C6AF05FDAB48}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74301745-5022-4B36-B72A-DDF7D4B19481}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://user1-tosh:8080/tfs/suftnet
+		SccProjectUniqueName0 = Suftnet.Hotel\\Suftnet.Payroll.csproj
+		SccProjectName0 = Suftnet.Hotel
+		SccAuxPath0 = http://user1-tosh:8080/tfs/suftnet
+		SccLocalPath0 = Suftnet.Hotel
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = Suftnet.Hotel.DataAccess\\Suftnet.Hotel.DataAccess.csproj
+		SccProjectName1 = Suftnet.Hotel.DataAccess
+		SccAuxPath1 = http://user1-tosh:8080/tfs/suftnet
+		SccLocalPath1 = Suftnet.Hotel.DataAccess
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Suftnet.Cms.vsmdi
+	EndGlobalSection
+EndGlobal
