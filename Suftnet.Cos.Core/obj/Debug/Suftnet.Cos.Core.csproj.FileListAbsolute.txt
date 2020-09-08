@@ -168,3 +168,30 @@ E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS
 E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.dll
 E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.pdb
 E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.csproj.CoreCompileInputs.cache
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Core.dll.config
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Core.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Core.pdb
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\log4net.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\Newtonsoft.Json.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\StructureMap.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Common.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.DataAccess.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Model.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\System.Web.Http.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\EntityFramework.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.Core.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.Common.pdb
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.DataAccess.pdb
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\Suftnet.Cos.DataAccess.dll.config
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\log4net.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\Newtonsoft.Json.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\System.Web.Http.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\EntityFramework.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\bin\debug\Microsoft.AspNet.Identity.Core.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.csprojAssemblyReference.cache
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.csproj.CoreCompileInputs.cache
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.csproj.CopyComplete
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\obj\Debug\Suftnet.Cos.Core.pdb

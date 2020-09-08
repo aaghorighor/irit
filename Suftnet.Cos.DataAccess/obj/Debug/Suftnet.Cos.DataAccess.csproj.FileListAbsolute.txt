@@ -176,3 +176,36 @@ E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS
 E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.DataAccess\obj\Debug\Suftnet.Cos.DataAccess.dll
 E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.DataAccess\obj\Debug\Suftnet.Cos.DataAccess.pdb
 E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos.DataAccess\obj\Debug\Suftnet.Cos.DataAccess.csproj.CoreCompileInputs.cache
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Suftnet.Cos.DataAccess.dll.config
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Suftnet.Cos.DataAccess.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Suftnet.Cos.DataAccess.pdb
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\EntityFramework.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Microsoft.Owin.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Microsoft.Owin.Security.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Newtonsoft.Json.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Owin.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\StructureMap.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Suftnet.Cos.Model.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\EntityFramework.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Microsoft.Owin.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Microsoft.Owin.Security.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Debug\Newtonsoft.Json.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\obj\Debug\Suftnet.Cos.DataAccess.csprojAssemblyReference.cache
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\obj\Debug\Suftnet.Cos.DataAccess.csproj.CoreCompileInputs.cache
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\obj\Debug\Suftnet.Cos.DataAccess.csproj.CopyComplete
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\obj\Debug\Suftnet.Cos.DataAccess.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\obj\Debug\Suftnet.Cos.DataAccess.pdb

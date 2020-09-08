@@ -49,3 +49,8 @@ E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS
 E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Common\obj\Debug\Suftnet.Cos.Common.dll
 E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Common\obj\Debug\Suftnet.Cos.Common.pdb
 E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Common\obj\Debug\Suftnet.Cos.Common.csproj.CoreCompileInputs.cache
+E:\Git\Web\Irit\Irit\Common\bin\Debug\Suftnet.Cos.Common.dll
+E:\Git\Web\Irit\Irit\Common\bin\Debug\Suftnet.Cos.Common.pdb
+E:\Git\Web\Irit\Irit\Common\obj\Debug\Suftnet.Cos.Common.csproj.CoreCompileInputs.cache
+E:\Git\Web\Irit\Irit\Common\obj\Debug\Suftnet.Cos.Common.dll
+E:\Git\Web\Irit\Irit\Common\obj\Debug\Suftnet.Cos.Common.pdb
