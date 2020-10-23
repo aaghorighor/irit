@@ -61,6 +61,11 @@
                     objToUpdate.Size = entity.Size;
                     objToUpdate.Number = entity.Number;
 
+                    if(entity.IsReset)
+                    {
+                        objToUpdate.OrderId = null;
+                    }
+
                     try
                     {
                         context.SaveChanges();

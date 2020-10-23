@@ -43,13 +43,6 @@
             }
         }
 
-        public string Email { get; set; }
-        public string ReservationTime { get; set; }
-        public int? ReservationExpectedGuest { get; set; }
-        public string ReservationFirstName { get; set; }
-        public string ReservationLastName { get; set; }
-        public Guid ReservationTableId { get; set; }   
-        public Guid ReservationStatusId { get; set; }
-        public Guid ReservationId { get; set; }
+        public string Email { get; set; }      
     }   
 }

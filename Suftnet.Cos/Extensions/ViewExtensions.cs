@@ -111,6 +111,11 @@
         {
             int output = 0;
 
+            if (string.IsNullOrEmpty(value))
+            {
+                return 0;
+            }
+
             if (int.TryParse(value, out output)) 
             {
                 return output;
@@ -121,6 +126,11 @@
 
         public static bool ToBoolean(this string value)
         {
+            if(string.IsNullOrEmpty(value))
+            {
+                return false;
+            }
+
             switch (value.ToLower())
             {
                 case "true":
@@ -143,6 +153,11 @@
         {
             try
             {
+                if (string.IsNullOrEmpty(datetime))
+                {
+                    return DateTime.UtcNow;
+                }
+
                 datetime = datetime.Trim();
                 datetime = datetime.Replace("  ", " ");
                 string[] body = datetime.Split(' ');
@@ -169,7 +184,12 @@
         }
 
         public static DateTime ToDate(this string value)
-        {           
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return DateTime.UtcNow;
+            }
+
             return DateTime.Parse(value);
         }        
               
@@ -206,10 +226,7 @@
             return string.Empty;
         }
                                           
-        public static int ProductId(this UrlHelper helper)
-        {
-            return (int)eProduct.OneChurch;
-        }              
+                  
         public static MvcHtmlString Dropdown(this HtmlHelper helper, string elementId, string cssClassName, int lookId, int tenantId)
         {
             var service = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenantCommon>();
@@ -586,6 +603,7 @@
 
             return new MvcHtmlString("");
         }
+
         public static MvcHtmlString CategoryDropdown(this HtmlHelper helper, string elementId, string cssClassName)
         {
             TagBuilder select = new TagBuilder("select");
@@ -644,7 +662,7 @@
             if (test != null)
             {
                 var tenantId = test.Claims.Where(x => x.Type == Identity.TenantId).Select(x => x.Value).SingleOrDefault();
-                var items = services.GetAll(tenantId.ToGuid());
+                var items = services.GetAll(tenantId.ToUpper().ToGuid());
 
                 foreach (var item in items)
                 {
@@ -656,6 +674,48 @@
                     TagBuilder option = new TagBuilder("option");
                     option.InnerHtml = item.Name;
                     option.MergeAttribute("value", item.Id.ToString());
+                    option.MergeAttribute("rate", item.Rate.ToString());
+
+                    select.InnerHtml += option.ToString();
+                }
+
+
+                return new MvcHtmlString(select.ToString(TagRenderMode.Normal));
+            }
+
+            return new MvcHtmlString("");
+        }
+        public static MvcHtmlString DiscountDropdown(this HtmlHelper helper, string elementId, string cssClassName)
+        {
+            TagBuilder select = new TagBuilder("select");
+            select.MergeAttribute("id", elementId);
+            select.MergeAttribute("name", elementId);
+            select.AddCssClass(cssClassName);
+
+            TagBuilder headerOption = new TagBuilder("option");
+            headerOption.MergeAttribute("value", "");
+            headerOption.InnerHtml = "-- SELECT --";
+            select.InnerHtml += headerOption.ToString();
+
+            var services = GeneralConfiguration.Configuration.DependencyResolver.GetService<IDiscount>();
+            var test = ((ClaimsIdentity)helper.ViewContext.RequestContext.HttpContext.User.Identity);
+
+            if (test != null)
+            {
+                var tenantId = test.Claims.Where(x => x.Type == Identity.TenantId).Select(x => x.Value).SingleOrDefault();
+                var items = services.GetAll(tenantId.ToUpper().ToGuid());
+
+                foreach (var item in items)
+                {
+                    if (!item.Active)
+                    {
+                        continue;
+                    }
+
+                    TagBuilder option = new TagBuilder("option");
+                    option.InnerHtml = item.Name;
+                    option.MergeAttribute("value", item.Id.ToString());
+                    option.MergeAttribute("rate", item.Rate.ToString());
 
                     select.InnerHtml += option.ToString();
                 }
@@ -834,8 +894,7 @@
             }
 
             return new MvcHtmlString(div.ToString(TagRenderMode.Normal));
-        }     
-              
+        }                   
         public static EditorDTO Cms(this object value, int contentId)
         {
             var iEditor = GeneralConfiguration.Configuration.DependencyResolver.GetService<IEditor>();
@@ -864,8 +923,7 @@
             DateTime date = DateTime.Now;
             string uniqueID = String.Format("{0:0000}{1:00}{2:00}{3:00}{4:00}{5:00}{6:000}", date.Year, date.Month, date.Day, date.Hour, date.Minute, date.Second, date.Millisecond);
             return uniqueID.Substring(1, 12);
-        }        
-      
+        }              
         public static Task<int> TenantCount(this UrlHelper helper)
         {
             var iTenant = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenant>();
@@ -1002,7 +1060,7 @@
 
         public static string ArrayToString(this string[] array)
         {
-            if(array.Length == 0 || array == null)
+            if(array == null)
             {
                 return string.Empty;
             }
@@ -1018,7 +1076,7 @@
 
         public static string ToShortDescription(this string description)
         {
-            if(description == null)
+            if(string.IsNullOrEmpty(description))
             {
                 return string.Empty;
             }
@@ -1038,21 +1096,21 @@
 
         public static string ToImage(this string imageUrl)
         {
-            if (imageUrl == null)
+            if (string.IsNullOrEmpty(imageUrl))
             {
                 return string.Empty;
-            }           
-           
+            }
+
             return imageUrl;
         }
 
         public static Guid ToGuid(this string value)
         {
-            if (value == null)
+            if (string.IsNullOrEmpty(value))
             {
                 return new Guid();
             }
-
+           
             return new Guid(value);
         }
 

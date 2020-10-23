@@ -62,6 +62,7 @@ namespace Suftnet.Cos.DataAccess.Action
         public virtual DbSet<SubscriptionStatu> SubscriptionStatus { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
         public virtual DbSet<TenantAddress> TenantAddress { get; set; }
+        public virtual DbSet<DeliveryAddress> DeliveryAddresses { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -11,6 +11,18 @@ var table = {
             if (!suftnet_validation.isValid("form")) {
                 return false;
             }
+
+            if ($('#Active').is(':checked')) {
+                $("#Active").val(true);
+            } else {
+                $("#Active").val(false);
+            }
+
+            if ($('#IsReset').is(':checked')) {
+                $("#IsReset").val(true);
+            } else {
+                $("#IsReset").val(false);
+            }
                        
             js.ajaxPost($("#form").attr("action"), $("#form").serialize()).then(
                 function (data) {

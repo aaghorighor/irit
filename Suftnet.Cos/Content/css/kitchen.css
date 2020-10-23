@@ -82,9 +82,9 @@
 
 /* photo pins - general styles */
 .main_container {
-    margin: 0 auto;
+    /*margin: 0 auto;
     padding: 10px 10px 0;
-    position: relative;
+    position: relative;*/
 }
 .button {
     background-color: #F0EDED;
@@ -232,16 +232,18 @@
     margin-right: 10px;
 }
 
+
 .tablepin {
     background-color: #FFFFFF;
-    box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
-    float: left;
+    box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);  
+    float:left;
     font-size: 12px;
     margin: 0 7px 7px 0;
     padding: 15px 15px 0;
     position: relative;
-    width: 6%;
+    width: 8%;
 }
+
 .tablepin .holder {
     position: relative;
 }

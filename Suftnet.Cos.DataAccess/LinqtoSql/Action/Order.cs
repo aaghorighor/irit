@@ -49,7 +49,6 @@ namespace Suftnet.Cos.DataAccess.Action
         [StringLength(50)]
         public string UpdateBy { get; set; }
         [StringLength(1000)]
-        public string Note { get; set; }
-
+        public string Note { get; set; }       
     }
 }

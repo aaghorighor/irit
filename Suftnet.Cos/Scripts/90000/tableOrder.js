@@ -8,7 +8,7 @@ var tableOder = {
         tableOder.load();    
         tableOder.listener();
 
-        $("#orderDialog").dialog({ autoOpen: false, width: 400, height: 490, modal: false, title: 'Order' });
+        $("#orderDialog").dialog({ autoOpen: false, width: 400, height: 310, modal: false, title: 'Create' });
     },
     load: function () {
 
@@ -32,14 +32,14 @@ var tableOder = {
         $("#Time").timepicker({
             showOn: "button",
             buttonImage: suftnet_Settings.icon + "calendar.png",
-            buttonText: "Open datepicker",
+            buttonText: "Open Picker",
             buttonImageOnly: true
         });
 
         $("#StartDt").datepicker({
             showOn: "button",
             buttonImage: suftnet_Settings.icon + "calendar.png",
-            buttonText: "Open datepicker",
+            buttonText: "Open Date Picker",
             dateFormat: suftnet_Settings.dateTimeFormat,
             buttonImageOnly: true
         });

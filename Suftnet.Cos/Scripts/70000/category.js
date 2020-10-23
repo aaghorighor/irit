@@ -39,8 +39,7 @@ var category = {
                   });
         });
 
-        suftnet_Settings.ClearErrorMessages("#form");
-        suftnet_upload.init($("#uploadUrl").attr("data-uploadUrl")); 
+        suftnet_Settings.ClearErrorMessages("#form");      
     },
   
     edit: function (obj) {
@@ -70,9 +69,11 @@ var category = {
 
     },
     pageInit: function () {
-                    
+
+        suftnet_upload.init($("#uploadUrl").attr("data-uploadUrl")); 
+
         category.create();
-        category.load();
+        category.load();       
     },
     load: function () {
         _dataTables.category = $('#tblCategory').DataTable({        

@@ -124,6 +124,7 @@
     <Compile Include="Interface\IAddon.cs" />
     <Compile Include="Interface\ICommonType.cs" />
     <Compile Include="Interface\IAddOnType.cs" />
+    <Compile Include="Interface\IDeliveryAddress.cs" />
     <Compile Include="Interface\IUnit.cs" />
     <Compile Include="Interface\IDiscount.cs" />
     <Compile Include="Interface\ITax.cs" />
@@ -145,6 +146,7 @@
     <Compile Include="LinqtoSql\Action\Addon.cs" />
     <Compile Include="LinqtoSql\Action\AddonType.cs" />
     <Compile Include="LinqtoSql\Action\PaymentStatus.cs" />
+    <Compile Include="LinqtoSql\Action\DeliveryAddress.cs" />
     <Compile Include="LinqtoSql\Action\TenantAddress.cs" />
     <Compile Include="LinqtoSql\Action\Address.cs" />
     <Compile Include="LinqtoSql\Action\AspNetRole.cs" />
@@ -210,6 +212,7 @@
     <Compile Include="Interface\IRepository.cs" />
     <Compile Include="Interface\ISettings.cs" />
     <Compile Include="LinqtoSql\Implementation\Addon.cs" />
+    <Compile Include="LinqtoSql\Implementation\DeliveryAddress.cs" />
     <Compile Include="LinqtoSql\Implementation\PaymentStatus.cs" />
     <Compile Include="LinqtoSql\Implementation\PaymentMethod.cs" />
     <Compile Include="LinqtoSql\Implementation\OrderStatus.cs" />

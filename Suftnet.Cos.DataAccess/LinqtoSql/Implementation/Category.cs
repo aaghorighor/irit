@@ -85,7 +85,7 @@
             {
                 var objResult = (from o in context.Categories
                                  where o.TenantId == tenantId
-                                 orderby o.Id descending
+                                 orderby o.IndexNo ascending
                                  select new CategoryDto { IndexNo = o.IndexNo, Description = o.Description, ImageUrl = o.ImageUrl, Name = o.Name, Status = o.Status, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
                 return objResult;
             }
@@ -95,11 +95,11 @@
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var objResult = (from o in context.Categories                              
+                var obj = (from o in context.Categories                              
                                  where o.TenantId == tenantId && o.Status == status
-                                 orderby o.Id descending
+                                 orderby o.IndexNo ascending
                                  select new CategoryDto { IndexNo = o.IndexNo, Description = o.Description, ImageUrl = o.ImageUrl, Name = o.Name, Status = o.Status, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
-                return objResult;
+                return obj;
             }
         }
     }

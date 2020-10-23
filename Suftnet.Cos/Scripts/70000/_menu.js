@@ -39,8 +39,9 @@ var _menu = {
                         default:;
                     }
 
-                    $("#Id").val(0);
+              
                     $("#Active").attr("checked", false);
+                    $("#IsKitchen").attr("checked", false);
                     $("#imageSrc").attr('src', "/content/photo/blank.jpg");                     
                                   
                     $("#form").attr("action", $("#createUrl").attr("data-createUrl"));    
@@ -49,8 +50,7 @@ var _menu = {
 
         });
 
-        suftnet_Settings.ClearErrorMessages("#form");
-        suftnet_upload.init($("#uploadUrl").attr("data-uploadUrl")); 
+        suftnet_Settings.ClearErrorMessages("#form");   
     },
   
     edit: function (obj) {
@@ -105,6 +105,7 @@ var _menu = {
                
         _menu.create();
         _menu.load();
+         suftnet_upload.init($("#uploadUrl").attr("data-uploadUrl")); 
     },
     load: function () {
         _dataTables._menu = $('#tblMenu').DataTable({

@@ -16,5 +16,15 @@ var constants = {
         takeAway: "D6609F66-29D2-4CBA-9F53-9BA5C94B2350",
         bar: "C9BA3829-EC56-4C1F-915E-B57A66EDC78B",
         dineIn: "BFF4A1B2-8D64-4919-A91D-4E96E61E1A5B"
+    },
+
+    addOn: {
+        optionModel: 0,
+        index : -1
+    }    ,
+    paymentMethod: {
+        cash: "C9BA3829-EC56-4C1F-915E-B57A66EDC78B",
+        creditCard: "BFF4A1B2-8D64-4919-A91D-4E96E61E1A5B"
     }
+
 }

@@ -1,10 +1,69 @@
 ﻿var _dataTables = {};
 
 var delivery = {
-      
+
+    create: function () {
+
+        $(document).on("click", "#btnSubmit", function (e) {
+
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            if (!suftnet_validation.isValid("form")) {
+                return false;
+            }
+                       
+            js.ajaxPost($("#form").attr("action"), $("#form").serialize()).then(
+                function (data) {
+                    switch (data.flag) {
+
+                        case 1: //// add                  
+                            _dataTables.delivery.draw();
+                            break;
+                        case 2: //// update  
+                            _dataTables.delivery.draw();
+                            break;
+
+                        default: ;
+                    }
+
+                    $("#deliveryDialog").dialog("close");
+                    $("#form").attr("action", $("#createUrl").attr("data-createUrl"));   
+
+                }).catch(function (error) {
+                    console.log(error);
+                });
+        });
+
+        $("#form").attr("action", $("#createUrl").attr("data-createUrl"));   
+
+    },
     edit: function (obj)
     {
         var dataobject = _dataTables.delivery.row($(obj).parents('tr')).data();     
+
+        iuHelper.resetForm("#form");
+        
+        $("#Id").val(dataobject.Id);       
+        $("#FirstName").val(dataobject.FirstName);
+        $("#LastName").val(dataobject.LastName);
+        $("#Email").val(dataobject.Email)
+        $("#Mobile").val(dataobject.Mobile)
+        $("#Note").val(dataobject.Note);
+        $("#Time").val(dataobject.Time);
+        $("#StatusId").val(dataobject.StatusId);
+
+        $("#DeliveryId").val(dataobject.DeliveryId);
+        $("#Latitude").val(dataobject.Latitude);
+        $("#Logitude").val(dataobject.Logitude);
+        $("#AddressLine").val(dataobject.AddressLine);
+        $("#Duration").val(dataobject.Duration);
+        $("#Distance").val(dataobject.Distance);
+
+        $("#form").attr("action", $("#editUrl").attr("data-editUrl"));   
+        $("#deliveryDialog").dialog("open");
+
+        suftnet.tab(1);
         
     },   
     delete: function (obj) {
@@ -22,11 +81,39 @@ var delivery = {
     view: function (obj) {
 
         var dataobject = _dataTables.delivery.row($(obj).parents('tr')).data();
-        window.location.href = $("#cartUrl").attr("data-cartUrl") + "/" + dataobject.Id;
+        window.location.href = $("#cartUrl").attr("data-cartUrl") + "/" + dataobject.Id + "/" + dataobject.OrderTypeId + "/" + dataobject.OrderType;
     },
-    pageInit: function () {       
-             
-        delivery.load();
+    pageInit: function () {      
+
+        $("#Time").timepicker({
+            showOn: "button",
+            buttonImage: suftnet_Settings.icon + "calendar.png",
+            buttonText: "Open time picker",
+            buttonImageOnly: true
+        });
+
+        $("#StartDt").datepicker({
+            showOn: "button",
+            buttonImage: suftnet_Settings.icon + "calendar.png",
+            buttonText: "Open datepicker",
+            dateFormat: suftnet_Settings.dateTimeFormat,
+            buttonImageOnly: true
+        });       
+
+        $(document).on("click", "#btnOpen", function () {
+         
+            $("#deliveryDialog").dialog("open");
+        });      
+
+        $(document).on("click", "#btnClose", function () {
+        
+            $("#deliveryDialog").dialog("close");
+        }); 
+
+        delivery.create();    
+        delivery.load();     
+
+        $("#deliveryDialog").dialog({ autoOpen: false, width: 580, height: 800, modal: false, title: 'Delivery Order' });
     },
     load: function ()
     {          
@@ -37,7 +124,7 @@ var delivery = {
             "pageLength": 10,
             "pagingType": "full_numbers",
             "ajax": {
-                url: $("#loadDeliveryUrl").attr("data-loadDeliveryUrl"),
+                url: $("#loadUrl").attr("data-loadUrl"),
                 type: 'POST'
             },
             "columns": [

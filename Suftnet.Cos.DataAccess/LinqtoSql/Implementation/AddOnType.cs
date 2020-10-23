@@ -47,7 +47,7 @@
             Guid id;
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.AddonType() { Id = entity.Id,  TenantId = entity.TenantId, Active = entity.Active, IndexNo = entity.IndexNo,  Name = entity.Name, CreatedBy = entity.CreatedBy, CreatedDt = entity.CreatedDT };
+                var obj = new Action.AddonType() { Id = entity.Id, TenantId = entity.TenantId, Active = entity.Active, IndexNo = entity.IndexNo,  Name = entity.Name, CreatedBy = entity.CreatedBy, CreatedDt = entity.CreatedDT };
                 context.AddonTypes.Add(obj);
                 context.SaveChanges();
                 id = obj.Id;

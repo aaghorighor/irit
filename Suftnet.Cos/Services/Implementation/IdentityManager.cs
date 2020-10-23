@@ -58,11 +58,19 @@
             {
                 var tenant = _tenant.Get(account.TenantId);
 
-                claims.Add(new Claim("TenantId", account.TenantId.ToString()));
+                claims.Add(new Claim("TenantId", account.TenantId.ToString().ToUpper()));
                 claims.Add(new Claim("IsExpired", account.IsExpired.ToString()));
                 claims.Add(new Claim("ExpirationDate", account.ExpirationDate.ToString()));
                 claims.Add(new Claim("TenantName", account.TenantName));
-                claims.Add(new Claim("CurrencyCode", tenant.CurrencyCode ?? Constant.DefaultHexCurrencySymbol));
+
+                if(!string.IsNullOrEmpty(tenant.CurrencyCode))
+                {
+                    claims.Add(new Claim("CurrencyCode", tenant.CurrencyCode));
+                }else
+                {
+                    claims.Add(new Claim("CurrencyCode", Constant.DefaultHexCurrencySymbol));
+                }
+               
             }           
         }
     }

@@ -29,6 +29,14 @@
                 var objToDelete = context.Orders.SingleOrDefault(o => o.Id == orderId);
                 if (objToDelete != null)
                 {
+                    var objToDeliveryAddresses = context.DeliveryAddresses.SingleOrDefault(o => o.Id == orderId);
+
+                    if(objToDeliveryAddresses != null)
+                    {
+                        context.DeliveryAddresses.Remove(objToDeliveryAddresses);
+                        context.SaveChanges();
+                    }
+
                     context.Orders.Remove(objToDelete);
                     context.SaveChanges();
                     response = true;
@@ -116,6 +124,40 @@
                 return response;
             }            
         }
+        public bool UpdateDelivery(OrderDto entity)
+        {
+            bool response = false;
+
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objToUpdate = context.Orders.SingleOrDefault(o => o.Id == entity.Id);
+
+                if (objToUpdate != null)
+                {                 
+                    objToUpdate.Time = entity.Time;
+                    objToUpdate.Mobile = entity.Mobile;
+                    objToUpdate.Email = entity.Email;
+                    objToUpdate.FirstName = entity.FirstName;
+                    objToUpdate.LastName = entity.LastName;
+                    objToUpdate.StatusId = entity.StatusId;
+
+                    objToUpdate.UpdateBy = entity.UpdateBy;
+                    objToUpdate.UpdateDt = entity.UpdateDate;
+
+                    try
+                    {
+                        context.SaveChanges();
+                        response = true;
+                    }
+                    catch (ChangeConflictException)
+                    {
+                        response = false;
+                    }
+                }
+
+                return response;
+            }
+        }
         public bool UpdateReserve(OrderDto entity)
         {
             bool response = false;
@@ -191,19 +233,19 @@
             }
         }     
       
-        public List<OrderDto> GetDeliveryOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch)
+        public List<DeliveryAddressDto> GetDeliveryOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch)
         {
             if (!string.IsNullOrEmpty(isearch))
             {
                 using (var context = DataContextFactory.CreateContext())
                 {
-                    var objResult = (from o in context.Orders
-                                     join s in context.OrderStatuses on o.StatusId equals s.Id
-                                     join t in context.Tables on o.TableId equals t.Id
-                                     join r in context.OrderTypes on o.OrderTypeId equals r.Id
-                                     where o.TenantId == tenantId && (o.OrderTypeId == orderTypeId)
-                                     orderby o.CreatedDt descending
-                                     select new OrderDto { UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, Time = o.Time, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, Table = t.Number, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
+                    var objResult = (from o in context.DeliveryAddresses.Include("Order")
+                                     join s in context.OrderStatuses on o.Order.StatusId equals s.Id                                  
+                                     join r in context.OrderTypes on o.Order.OrderTypeId equals r.Id
+                                     let order = o.Order
+                                     where (o.Order.TenantId == tenantId && o.Order.OrderTypeId == orderTypeId) && (order.Mobile.Contains(isearch) || order.Email.Contains(isearch) || order.FirstName.Contains(isearch) || order.LastName.Contains(isearch) || s.Name.Contains(isearch) || r.Name.Contains(isearch) || o.AddressLine.Contains(isearch))
+                                     orderby o.Order.CreatedDt descending
+                                     select new DeliveryAddressDto { DeliveryId = o.Id, Email = order.Email, AddressLine = o.AddressLine, Distance = o.Distance, Duration = o.Duration, Latitude = o.Latitude, Logitude = o.Logitude, UpdateDate = order.UpdateDt, UpdateBy = order.UpdateBy, OrderType = r.Name, Mobile = order.Mobile, FirstName = order.FirstName, LastName = order.LastName, Time = order.Time, Balance = order.Balance, Payment = order.Payment, TotalTax = order.TotalTax, StatusId = order.StatusId, TableId = order.TableId, Status = s.Name, GrandTotal = order.GrandTotal,  OrderTypeId = order.OrderTypeId, Total = order.Total, CreatedBy = o.CreatedBy, Id = order.Id }).Skip(iskip).Take(itake).ToList();
                     return objResult;
                 }
             }else
@@ -212,22 +254,22 @@
             }
         }
 
-        public List<OrderDto> GetDeliveryOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake)
+        public List<DeliveryAddressDto> GetDeliveryOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake)
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var objResult = (from o in context.Orders
-                                 join s in context.OrderStatuses on o.StatusId equals s.Id
-                                 join t in context.Tables on o.TableId equals t.Id
-                                 join r in context.OrderTypes on o.OrderTypeId equals r.Id
-                                 where o.TenantId == tenantId && (o.OrderTypeId == orderTypeId)
-                                 orderby o.CreatedDt descending
-                                 select new OrderDto { UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, Time = o.Time, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, Table = t.Number, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
+                var objResult = (from o in context.DeliveryAddresses.Include("Order")
+                                 join s in context.OrderStatuses on o.Order.StatusId equals s.Id
+                                 join r in context.OrderTypes on o.Order.OrderTypeId equals r.Id
+                                 let order = o.Order
+                                 where o.Order.TenantId == tenantId && (o.Order.OrderTypeId == orderTypeId)
+                                 orderby o.Order.CreatedDt descending
+                                 select new DeliveryAddressDto { DeliveryId = o.Id, Email = order.Email, AddressLine = o.AddressLine, Distance = o.Distance, Duration = o.Duration, Latitude = o.Latitude, Logitude = o.Logitude, UpdateDate = order.UpdateDt, UpdateBy = order.UpdateBy, OrderType = r.Name, Mobile = order.Mobile, FirstName = order.FirstName, LastName = order.LastName, Time = order.Time, Balance = order.Balance, Payment = order.Payment, TotalTax = order.TotalTax, StatusId = order.StatusId, TableId = order.TableId, Status = s.Name, GrandTotal = order.GrandTotal, OrderTypeId = order.OrderTypeId, Total = order.Total, CreatedBy = o.CreatedBy, Id = order.Id }).Skip(iskip).Take(itake).ToList();
                 return objResult;
             }
         }
 
-        public List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid statusId, Guid tenantId, int iskip, int itake, string isearch)
+        public List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch)
         {
             if (!string.IsNullOrEmpty(isearch))
             {
@@ -237,7 +279,7 @@
                                      join s in context.OrderStatuses on o.StatusId equals s.Id
                                      join t in context.Tables on o.TableId equals t.Id
                                      join r in context.OrderTypes on o.OrderTypeId equals r.Id
-                                     where o.TenantId == tenantId && (o.OrderTypeId == orderTypeId)
+                                     where (o.TenantId == tenantId && o.OrderTypeId == orderTypeId) && (o.Mobile.Contains(isearch) || o.Email.Contains(isearch) || o.FirstName.Contains(isearch) || o.LastName.Contains(isearch) || s.Name.Contains(isearch) || r.Name.Contains(isearch))
                                      orderby o.CreatedDt descending
                                      select new OrderDto { Email = o.Email, Note = o.Note, StartDt = o.StartDt, UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, Table = t.Number, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
                     return objResult;
@@ -245,11 +287,11 @@
             }
             else
             {
-                return GetReserveOrders(orderTypeId, statusId, tenantId, iskip, itake);
+                return GetReserveOrders(orderTypeId, tenantId, iskip, itake);
             }
         }
 
-        public List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid statusId, Guid tenantId, int iskip, int itake)
+        public List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake)
         {
             using (var context = DataContextFactory.CreateContext())
             {
@@ -429,6 +471,17 @@
             {
                 var objResult = (from o in context.Orders
                                  where o.TenantId == tenantId && o.StatusId == statusId && o.OrderTypeId == orderTypeId
+                                 select o
+                                 ).Count();
+                return objResult;
+            }
+        }
+        public int CountByOrderType(Guid tenantId, Guid orderTypeId)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objResult = (from o in context.Orders
+                                 where o.TenantId == tenantId && o.OrderTypeId == orderTypeId
                                  select o
                                  ).Count();
                 return objResult;

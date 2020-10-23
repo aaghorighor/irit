@@ -14,43 +14,24 @@
             {
                 var logger = GeneralConfiguration.Configuration.DependencyResolver.GetService<ILogger>();
 
-                if (filterContext.Exception is DbEntityValidationException)
+                if (!filterContext.Exception.Data.Contains("Controller"))
                 {
-                    var e = filterContext.Exception as DbEntityValidationException;
+                    filterContext.Exception.Data.Add("Controller", filterContext.Controller.GetType().FullName);
+                }
+                if (!filterContext.Exception.Data.Contains("RawUrl"))
+                {
+                    filterContext.Exception.Data.Add("RawUrl", filterContext.HttpContext.Request.RawUrl);
+                }
 
-                    foreach (var eve in e.EntityValidationErrors)
-                    {
-                        logger.Log(string.Format(Constant.EntityValidationErrors,
-                            eve.Entry.Entity.GetType().Name, eve.Entry.State), EventLogSeverity.Fatal);
-
-                        foreach (var ve in eve.ValidationErrors)
-                        {
-                            logger.Log(string.Format(Constant.ValidationErrors,
-                                ve.PropertyName, ve.ErrorMessage), EventLogSeverity.Fatal);
-                        }
-                    }
+                if (filterContext.Exception.InnerException != null)
+                {
+                    logger.LogError(filterContext.Exception.InnerException);
                 }
                 else
                 {
-                    if(filterContext.Exception.InnerException != null)
-                    {
-                        logger.LogError(filterContext.Exception.InnerException);
-                    }
-                    else
-                    {
-                        logger.LogError(filterContext.Exception);
-                    }                    
+                    logger.LogError(filterContext.Exception);
+                }               
 
-                    if (!filterContext.Exception.Data.Contains("Controller"))
-                    {
-                        filterContext.Exception.Data.Add("Controller", filterContext.Controller.GetType().FullName);
-                    }
-                    if (!filterContext.Exception.Data.Contains("RawUrl"))
-                    {
-                        filterContext.Exception.Data.Add("RawUrl", filterContext.HttpContext.Request.RawUrl);
-                    }                  
-                }
-                
                 Chanllenge(filterContext);
             }
 

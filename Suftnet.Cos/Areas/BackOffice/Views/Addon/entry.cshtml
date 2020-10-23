@@ -4,7 +4,7 @@
 }
 
 <ul style="margin-left:0px; margin-top :5px" class="uibutton-group">
-    <li><span class="etip"><a href="@Url.Action("Index", "Menu")" class="uibutton icon prev normal " title="Back to Addon">Back</a></span></li>
+    <li><span class="etip"><a href="@Url.Action("Index", "menu")" class="uibutton icon prev normal " title="Back to Addon">Back</a></span></li>
     <li><span class="etip"><a href="@Url.Action("entry", "addonType", new { name = this.ViewContext.RouteData.Values["name"].ToString(),menuId = this.ViewContext.RouteData.Values["menuId"].ToString() })" class="uibutton icon add normal " title="Add Addon Type">Addon Type</a></span></li>
 </ul>
 

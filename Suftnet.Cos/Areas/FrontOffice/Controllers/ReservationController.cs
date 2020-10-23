@@ -24,15 +24,20 @@
         }
 
         #endregion       
+        [OutputCache(Duration = 0, VaryByParam = "*")]
+        public virtual ActionResult Index()
+        {
+            return View();
+        }
         public JsonResult Fetch(DataTableAjaxPostModel param)
         {
-            var model = _order.GetReserveOrders(new Guid(eOrderType.Reservation), new Guid(eOrderStatus.Reservation), this.TenantId, param.start, param.length, param.search.value);
+            var model = _order.GetReserveOrders(new Guid(eOrderType.Reservation), this.TenantId, param.start, param.length, param.search.value);
 
             return Json(new
             {
                 draw = param.draw,
                 recordsTotal = model.Count(),
-                recordsFiltered = _order.Count(new Guid(eOrderType.Reservation),new Guid(eOrderStatus.Reservation), this.TenantId),
+                recordsFiltered = _order.CountByOrderType(new Guid(eOrderType.Reservation), this.TenantId),
                 data = model
             },
                       JsonRequestBehavior.AllowGet);
@@ -54,9 +59,7 @@
                     errors = ModelState.AjaxErrors()
                 });
             }
-
-            Map(entityToCreate);
-
+         
             entityToCreate.CreatedDT = DateTime.UtcNow;
             entityToCreate.CreatedBy = this.UserName;
 
@@ -90,9 +93,7 @@
                     errors = ModelState.AjaxErrors()
                 });
             }
-
-            Map(entityToCreate);
-
+          
             entityToCreate.UpdateDate = DateTime.UtcNow;
             entityToCreate.UpdateBy = this.UserName;
                       
@@ -102,16 +103,12 @@
             return Json(new { ok = true, flag = entityToCreate.flag }, JsonRequestBehavior.AllowGet);
         }
 
-        private void Map(OrderDto entityToCreate)
+        [HttpPost]
+        [PermissionFilter(BackOfficeViews.Member, PermissionType.Remove)]
+        public virtual JsonResult Delete(string Id)
         {
-            entityToCreate.FirstName = entityToCreate.ReservationFirstName;
-            entityToCreate.LastName = entityToCreate.ReservationLastName;
-            entityToCreate.StatusId = entityToCreate.ReservationStatusId;
-            entityToCreate.TableId = entityToCreate.ReservationTableId;
-            entityToCreate.Time = entityToCreate.ReservationTime;
-            entityToCreate.ExpectedGuest = entityToCreate.ReservationExpectedGuest;
-            entityToCreate.Id = entityToCreate.ReservationId;
-           
+            Ensure.NotNull(Id);
+            return Json(new { ok = _order.Delete(new Guid(Id)) }, JsonRequestBehavior.AllowGet);
         }
 
     }

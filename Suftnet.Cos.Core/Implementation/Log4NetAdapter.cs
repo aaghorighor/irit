@@ -47,8 +47,16 @@
 
         public void LogError(Exception ex)
         {
-             this.Logger(ex.Message);
-            _log.Error(ex.Message);
+            if(ex.InnerException != null)
+            {
+                this.Logger(ex.InnerException.Message);
+                _log.Error(ex.InnerException.Message);
+            }
+            else
+            {
+                this.Logger(ex.Message);
+                _log.Error(ex.Message);
+            }            
         }
 
         private void Logger(string message)

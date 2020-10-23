@@ -1,4 +1,5 @@
 ﻿@using Suftnet.Cos.Common
+@using Suftnet.Cos.Extension
 
 @Scripts.Render("~/bundle/LoadingSpinnerSprite")
 @Scripts.Render("~/bundle/zebra_tooltips_js")
@@ -6,6 +7,7 @@
 @Scripts.Render("~/bundle/jsSuftnet")
 @Scripts.Render("~/bundle/lib")
 @Scripts.Render("~/bundle/90000")
+@Scripts.Render("~/bundle/50000")
 @Scripts.Render("~/bundle/confirmDialog-js")
 @Scripts.Render("~/bundle/jqueryUi")
 @Scripts.Render("~/bundle/validationEngine")
@@ -16,6 +18,8 @@
         src="@Url.Content("~/Content/zice-OneChurch/components/ui/timepicker.js")">
 </script>
 
+<span style="display :none " id="currencySymbol">@Url.Currency()</span>
+
 <script type="text/javascript">
 
     new $.Zebra_Tooltips($('.tooltip'), {
@@ -25,7 +29,7 @@
         animation_offset: 20
     });
 
-    suftnet_Settings.SetCurrencySymbol('@Constant.CurrencySymbol');
+    suftnet_Settings.SetCurrencySymbol($('#currencySymbol').text());
     suftnet_Settings.SetDateTimeFormat('@Constant.DefaultDateTimeFormat');
     suftnet_Settings.SetCalendarIcon('\/Content/zice-OneChurch/images/icon/color_18/');
     //suftnet_Settings.SetImageAssetUrl('\/Content/Photo/Category/32x32/');

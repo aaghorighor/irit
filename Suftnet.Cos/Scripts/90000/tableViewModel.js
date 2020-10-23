@@ -18,8 +18,10 @@
             iuHelper.resetForm("#form"); 
             $("#orderDialog").dialog("open");
 
-        } else {                                                     
-            window.location.href = '$("#cartUrl").attr("data-cartUrl")'; }
+        } else {    
+           
+            window.location.href = $("#cartUrl").attr("data-cartUrl") + "/" + order.OrderId() + "/" + constants.orderType.dineIn + "/" + "Dine-In";
+        }
     };
 
     self.update = function(data)

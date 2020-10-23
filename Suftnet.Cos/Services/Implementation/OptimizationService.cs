@@ -121,8 +121,7 @@
                        "~/Scripts/lib/perfect-scrollbar.jquery.min.js",
                        "~/Scripts/lib/jquery.easytabs.min.js",
                        "~/Scripts/lib/moment.js",
-                       "~/Scripts/lib/masonry.js",
-                       "~/Scripts/lib/multislider.js",
+                       "~/Scripts/lib/masonry.js",                   
                        "~/Scripts/lib/knockout.js"
             ));
 
@@ -141,7 +140,7 @@
                         "~/Scripts/viewModelRestaurant/Suftnet.CategoryViewModel.js",
                         "~/Scripts/viewModelRestaurant/Suftnet.ProductViewModel.js",                  
                         "~/Scripts/viewModelRestaurant/Suftnet.MenuAddonModel.js",
-                        "~/Scripts/viewModelRestaurant/Suftnet.DeliveryViewModel.js"
+                        "~/Scripts/viewModelRestaurant/Suftnet.DeliveryViewModel.js"                        
            ));
 
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/ckeditor").Include(
@@ -213,11 +212,18 @@
                    "~/Scripts/60000/support.js"
             ));
 
+            BundleTable.Bundles.Add(new ScriptBundle("~/bundle/20000").Include(
+                  "~/Scripts/20000/locationPicker.js"
+           ));
+
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/90000")
                 .IncludeDirectory("~/Scripts/90000", "*.js"));
 
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/70000")
                .IncludeDirectory("~/Scripts/70000", "*.js"));
+
+            BundleTable.Bundles.Add(new ScriptBundle("~/bundle/50000")
+              .IncludeDirectory("~/Scripts/50000", "*.js"));
 
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/zice-OneChurch/dashbaord").Include(              
                     "~/Content/zice-OneChurch/js/jquery.cookie.js",
@@ -242,11 +248,7 @@
 
             BundleTable.Bundles.Add(new StyleBundle("~/bundle/baze-css").Include(
                     "~/Content/css/baze.modal.css"
-            ));
-
-            BundleTable.Bundles.Add(new StyleBundle("~/bundle/multislider-css").Include(
-                    "~/Content/css/multislider.css"
-            ));
+            ));           
 
             BundleTable.Bundles.Add(new StyleBundle("~/bundle/custom-1").Include(
                     "~/Content/frontoffice/css/custom-1.css"

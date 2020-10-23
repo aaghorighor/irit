@@ -19,14 +19,16 @@
         IEnumerable<OrderDto> GetAllOrderByStatus(TermDto term);
         List<OrderDto> Filter(Guid tenantId, DateTime filterDate, Guid orderTypeId);
         List<OrderDto> Filter(Guid tenantId, DateTime filterDate);
-        List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid statusId, Guid tenantId, int iskip, int itake, string isearch);
-        List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid statusId, Guid tenantId, int iskip, int itake);
-        List<OrderDto> GetDeliveryOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch);
-        List<OrderDto> GetDeliveryOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake);
+        List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch);
+        List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake);
+        List<DeliveryAddressDto> GetDeliveryOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch);
+        List<DeliveryAddressDto> GetDeliveryOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake);
         List<OrderDto> GetByOrderType(Guid tenantId, Guid orderTypeId);
         int Count(Guid tenantId);
         int Count(Guid statusId, Guid tenantId);
         int Count(Guid statusId, Guid tenantId, Guid orderTypeId);
         bool UpdateReserve(OrderDto entity);
+        int CountByOrderType(Guid tenantId, Guid orderTypeId);
+        bool UpdateDelivery(OrderDto entity);
     }
 }

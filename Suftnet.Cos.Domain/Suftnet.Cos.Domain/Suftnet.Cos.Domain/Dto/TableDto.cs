@@ -10,6 +10,7 @@ namespace Suftnet.Cos.DataAccess
       public string TimeIn { get; set; }
       public Guid? OrderId { get; set; }
       public bool Active { get; set; }
+      public bool IsReset { get; set; }
 
     }
 }

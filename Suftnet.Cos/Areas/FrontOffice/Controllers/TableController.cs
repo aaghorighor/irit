@@ -1,15 +1,7 @@
 ﻿namespace Suftnet.Cos.FrontOffice
 {
-    using System;
     using System.Web.Mvc;
-
     using Suftnet.Cos.DataAccess;
-    using Suftnet.Cos.Common;
-    using Suftnet.Cos.CommonController.Controllers;
-    using Suftnet.Cos.Extension;
-    using Service;
-    using System.Linq;
-    using Suftnet.Cos.Web;
     using System.Threading.Tasks;
 
     public class TableController : FrontOfficeBaseController
@@ -23,7 +15,7 @@
             _table = table;             
         }
         #endregion
-        [OutputCache(Duration = 10, VaryByParam = "*")]
+        [OutputCache(Duration = 0, VaryByParam = "*")]
         public ActionResult Index()
         {           
             return View();         

@@ -8,20 +8,20 @@ var reservation = {
 
         iuHelper.resetForm("#form");
 
-        $("#ReservationId").val(dataobject.Id);
-        $("#ReservationTableId").val(dataobject.TableId);
-        $("#ReservationFirstName").val(dataobject.FirstName);
-        $("#ReservationLastName").val(dataobject.LastName);
+        $("#Id").val(dataobject.Id);
+        $("#TableId").val(dataobject.TableId);
+        $("#FirstName").val(dataobject.FirstName);
+        $("#LastName").val(dataobject.LastName);
         $("#Email").val(dataobject.Email);
         $("#Mobile").val(dataobject.Mobile);
-        $("#ReservationExpectedGuest").val(dataobject.ExpectedGuest);
-        $("#ReservationTime").val(dataobject.Time);
+        $("#ExpectedGuest").val(dataobject.ExpectedGuest);
+        $("#Time").val(dataobject.Time);
         $("#StartDt").val(dataobject.StartOn);
         $("#Note").val(dataobject.Note);
-        $("#ReservationStatusId").val(dataobject.StatusId);
+        $("#StatusId").val(dataobject.StatusId);
 
         $("#reservationDialog").dialog("open");
-        $("#form").attr("action", $("#editReservationUrl").attr("data-editReservationUrl"));
+        $("#form").attr("action", $("#editUrl").attr("data-editUrl"));
         
     },   
     delete: function (obj) {
@@ -29,7 +29,7 @@ var reservation = {
         var dataobject = _dataTables.reservation.row($(obj).parents('tr')).data();
                                           
         if (dataobject != null) {
-            js.dyconfirm($("#deleteReservationUrl").attr("data-deleteReservationUrl"), { Id: dataobject.Id }, dataobject.Id, "#tblReservation").then(
+            js.dyconfirm($("#deleteUrl").attr("data-deleteUrl"), { Id: dataobject.Id }, dataobject.Id, "#tblReservation").then(
                 function (data) {                                    
                     _dataTables.reservation.row($(obj).parents('tr')).remove().draw();                    
                 });
@@ -39,7 +39,7 @@ var reservation = {
     view: function (obj) {
 
         var dataobject = _dataTables.reservation.row($(obj).parents('tr')).data();
-        window.location.href = $("#cartUrl").attr("data-cartUrl") + "/" + dataobject.Id;
+        window.location.href = $("#cartUrl").attr("data-cartUrl") + "/" + dataobject.Id + "/" + dataobject.OrderTypeId + "/" + dataobject.OrderType;
     },
     create: function () {
 
@@ -119,7 +119,7 @@ var reservation = {
     },
     pageInit: function () {       
 
-        $("#reservationDialog").dialog({ autoOpen: false, width: 580, height: 700, modal: false, title: 'Reservation' });
+        $("#reservationDialog").dialog({ autoOpen: false, width: 580, height: 700, modal: false, title: 'Reservation Order' });
 
         reservation.create();
         reservation.listener();
@@ -134,7 +134,7 @@ var reservation = {
             "pageLength": 10,
             "pagingType": "full_numbers",
             "ajax": {
-                url: $("#loadReservationUrl").attr("data-loadReservationUrl"),
+                url: $("#loadUrl").attr("data-loadUrl"),
                 type: 'POST'
             },
             "columns": [

@@ -1,0 +1,52 @@
+﻿<div id="addonContainer">
+    <div class="widget">
+        <div class="header"><span><span class="ico gray window"></span></span><span class="marginTop11" data-bind="text:Name"></span></div>
+        <div class="content">
+
+            <table class="table" style="width:100%; margin-top:1px; margin-bottom:5px" border="1">
+                <thead>
+                    <tr>
+                        <th style="width:5%; text-align:left"></th>
+                        <th style="text-align:left">Name</th>
+                        <th style="text-align:left">Addon Type</th>
+                        <th style="text-align:right">Price</th>
+                     
+                    </tr>
+                </thead>
+                <tbody data-bind='foreach: menuAddons'>
+                    <tr>
+                        <td>
+                            <input type="checkbox" data-bind="checked: selected, attr: { id: menuId }" />
+                        </td>
+                        <td style="text-align:left">
+                            <span data-bind='text: name'> </span>
+                        </td>
+                        <td style="text-align:left">
+                            <span data-bind='text: addonType'> </span>
+                        </td>
+                        <td style="text-align:right">
+                            <span data-bind='text: sellingPrice'> </span>
+                            <span data-bind='text: price' class="hide"> </span>
+                        </td>        
+                   </tr>
+                </tbody>
+            </table>   
+
+            <ul style="margin-left:0px; margin-top :0px" class="uibutton-group">
+                <li><span class="etip"><button class="uibutton icon add normal" data-bind="click :submit()" title="Submits">Submit</button></span></li>
+                <li><span class="etip"><button class="uibutton normal " data-bind="click : close()" title="Close Dialog">Close</button></span></li>
+            </ul>   
+
+        </div>       
+
+    </div>  
+</div>
+
+
+    
+
+
+
+
+
+

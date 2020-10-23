@@ -22,5 +22,6 @@ namespace Suftnet.Cos.DataAccess
         int Count(DateTime datetime, Guid tenantId);
         void UpdateMenuQuantity(int quantity, Guid menuId);
         List<MenuDto> GetAll(Guid tenantId);
+        List<MenuDto> GetByDefault(Guid tenantId, int take);
     }
 }

@@ -9,30 +9,45 @@ var order = {
             e.preventDefault();
             e.stopImmediatePropagation();
 
-            if (!suftnet_validation.isValid("orderform")) {
+            if (!suftnet_validation.isValid("editform")) {
                 return false;
+            }
+                       
+            var params = {
+                Id: $("#editId").val(),  
+                tableId: $("#editTableId").val(),               
+                ExpectedGuest: $("#editExpectedGuest").val(),
+                ChangeTable: false,
+                Time: $("#editTime").val(),                
+                StatusId: $("#editStatusId").val(),
             }
 
             if ($('#ChangeTable').is(':checked')) {
-                $("#ChangeTable").val(true);
+                params.ChangeTable =true;
             } else {
-                $("#ChangeTable").val(false);
+                params.ChangeTable = false;
             }
 
-            js.ajaxPost($("#orderform").attr("action"), $("#orderform").serialize()).then(
+            console.log(params);
+            console.log($("#editform").attr("action"));
+
+            js.ajaxPost($("#editform").attr("action"), params).then(
                 function (data) {
                     switch (data.flag) {
 
                         case 1: //// add                  
-                            _dataTables.order.draw();
+                            
                             break;
                         case 2: //// update  
-                            _dataTables.order.draw();
+                          
                             break;
 
-                        default: ;
+                        default:
+
+                            break;
                     }
 
+                    _dataTables.order.draw();
                     $("#dineInDialog").dialog("close");
 
                 }).catch(function (error) {
@@ -43,17 +58,15 @@ var order = {
     },
     edit: function (obj)
     {
-        iuHelper.resetForm("#orderform");
+        iuHelper.resetForm("#editform");
 
-        var dataobject = _dataTables.order.row($(obj).parents('tr')).data();     
-
-        $("#Id").val(dataobject.Id);
-        $("#TableId").val(dataobject.TableId);
-        $("#FirstName").val(dataobject.FirstName);
-        $("#LastName").val(dataobject.LastName);       
+        var dataobject = _dataTables.order.row($(obj).parents('tr')).data(); 
+     
+        $("#editId").val(dataobject.Id);
+        $("#editTableId").val(dataobject.TableId);         
         $("#ExpectedGuest").val(dataobject.ExpectedGuest);
-        $("#Time").val(dataobject.Time);       
-        $("#StatusId").val(dataobject.StatusId);
+        $("#editTime").val(dataobject.Time);       
+        $("#editStatusId").val(dataobject.StatusId);
 
         $("#dineInDialog").dialog("open");
         
@@ -72,8 +85,8 @@ var order = {
     },
     view: function (obj) {
 
-        var dataobject = _dataTables.order.row($(obj).parents('tr')).data();
-        window.location.href = $("#cartUrl").attr("data-cartUrl") + "/" + dataobject.Id;
+        var dataobject = _dataTables.order.row($(obj).parents('tr')).data();     
+        window.location.href = $("#cartUrl").attr("data-cartUrl") + "/" + dataobject.Id + "/" + dataobject.OrderTypeId + "/" + dataobject.OrderType;
     },
     listener: function () {
 
@@ -82,19 +95,19 @@ var order = {
             e.preventDefault();
             e.stopImmediatePropagation();
 
-            iuHelper.resetForm("#orderform");
+            iuHelper.resetForm("#editform");
 
             $("#dineInDialog").dialog("close");
         });
 
     },
     pageInit: function () {       
-
-        $("#dineInDialog").dialog({ autoOpen: false, width: 580, height: 480, modal: false, title: 'Dine In' });
-
+       
         order.load();
         order.listener();
         order.create();
+
+        $("#dineInDialog").dialog({ autoOpen: false, width: 580, height: 400, modal: false, title: 'Edit' });
     },
     load: function ()
     {          
@@ -105,15 +118,14 @@ var order = {
             "pageLength": 10,
             "pagingType": "full_numbers",
             "ajax": {
-                url: $("#loadUrl").attr("data-loadUrl"),
+                url: $("#fetchUrl").attr("data-fetchUrl"),
                 type: 'POST'
             },
             "columns": [
                 { "data": "Id", "visible": false, "defaultContent": "<i>-</i>" },
                 { "data": "UpdatedOn", "visible": true, "defaultContent": "<i>-</i>" },
                 { "data": "Time", "defaultContent": "<i>-</i>" },
-                { "data": "Table", "defaultContent": "<i>-</i>" },  
-                { "data": "FullName", "defaultContent": "<i>-</i>" },   
+                { "data": "Table", "defaultContent": "<i>-</i>" },                  
                 { "data": "Status", "defaultContent": "<i>-</i>"  },              
                 {
                     "data": "Total", render: function (data, type, row) {
@@ -154,8 +166,8 @@ var order = {
             ],            
             columnDefs: [
             { "targets":[] , "visible": false, "searchable": false },
-                { "orderable": false, "targets": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11] },
-                { className: "text-left", "targets": [0, 1, 2, 3, 4, 5, 6, 7,8,9,10,11] }],    
+                { "orderable": false, "targets": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10] },
+                { className: "text-left", "targets": [0, 1, 2, 3, 4, 5, 6, 7,8,9,10] }],    
             destroy: true
         });
     }

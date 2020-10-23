@@ -175,6 +175,25 @@
                 return objResult;
             }
         }
+        public List<MenuDto> GetByDefault(Guid tenantId, int take)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objResult = (from o in context.Menus
+                                 join c in context.Categories on o.CategoryId equals c.Id
+                                 join u in context.Units on o.UnitId equals u.Id
+                                 let addons = (from x in context.Addons
+                                               join c in context.AddonTypes on x.AddonTypeId equals c.Id
+                                               where x.MenuId == o.Id
+                                               orderby x.Id descending
+                                               select new AddonDto { AddonType = c.Name, AddonTypeId = x.AddonTypeId, Active = x.Active, Price = x.Price, MenuId = x.MenuId, Name = x.Name, CreatedDT = x.CreatedDt, CreatedBy = x.CreatedBy, Id = x.Id }).ToList()
+
+                                 where o.TenantId == tenantId & o.Active == true
+                                 orderby o.Id descending
+                                 select new MenuDto { AddonDto = addons, ImageUrl = o.ImageUrl, IsKitchen = o.IsKitchen, CutOff = o.CutOff, SubStractId = o.SubstractId, Name = o.Name, Quantity = o.Quantity, Active = o.Active, Unit = u.Name, Category = c.Name, CategoryId = o.CategoryId, Description = o.Description, UnitId = o.UnitId, Price = o.Price, CreatedBy = o.CreatedBy, Id = o.Id }).Take(take).ToList();
+                return objResult;
+            }
+        }
         public List<MenuDto> GetByCategoryId(Guid categoryId, Guid tenantId)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -182,12 +201,12 @@
                 var objResult = (from o in context.Menus
                                  join c in context.Categories on o.CategoryId equals c.Id
                                  join u in context.Units on o.UnitId equals u.Id
-                                 let addons = (from o in context.Addons
-                                               join c in context.AddonTypes on o.AddonTypeId equals c.Id
-                                               where o.MenuId == o.Id
-                                               orderby o.Id descending
-                                               select new AddonDto { AddonType = c.Name, AddonTypeId = o.AddonTypeId, Active = o.Active, Price = o.Price, MenuId = o.MenuId, Name = o.Name, CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).ToList()
-                where o.TenantId == tenantId && (o.CategoryId == categoryId && o.Active == true)                              
+                                 let addons = (from x in context.Addons
+                                               join c in context.AddonTypes on x.AddonTypeId equals c.Id
+                                               where x.MenuId == o.Id
+                                               orderby x.Id descending
+                                               select new AddonDto { AddonType = c.Name, AddonTypeId = x.AddonTypeId, Active = x.Active, Price = x.Price, MenuId = x.MenuId, Name = x.Name, CreatedDT = x.CreatedDt, CreatedBy = x.CreatedBy, Id = x.Id }).ToList()
+                                 where o.TenantId == tenantId && (o.CategoryId == categoryId && o.Active == true)                              
                                  orderby o.Id descending
                                  select new MenuDto { ImageUrl = o.ImageUrl, AddonDto = addons, IsKitchen = o.IsKitchen, CutOff = o.CutOff, SubStractId = o.SubstractId, Name = o.Name, Quantity = o.Quantity, Active = o.Active, Unit = u.Name, Category = c.Name, CategoryId = o.CategoryId, Description = o.Description, UnitId = o.UnitId, Price = o.Price, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
                 return objResult;

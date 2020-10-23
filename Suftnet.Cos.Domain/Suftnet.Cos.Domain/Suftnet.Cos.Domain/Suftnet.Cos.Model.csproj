@@ -58,6 +58,7 @@
     <Compile Include="Dto\CommonTypeDto.cs" />
     <Compile Include="Dto\CommonDto.cs" />
     <Compile Include="Dto\AddonTypeDto.cs" />
+    <Compile Include="Dto\DeliveryAddressDto.cs" />
     <Compile Include="Dto\UnitDto.cs" />
     <Compile Include="Dto\DiscountDto.cs" />
     <Compile Include="Dto\TenantAddressDto.cs" />
@@ -80,7 +81,7 @@
     <Compile Include="Dto\OrderPaymentDto.cs" />
     <Compile Include="Dto\OrderSummaryDto.cs" />
     <Compile Include="Dto\OrderWrapperDto.cs" />
-    <Compile Include="Dto\PaymentAdapterDTO.cs" />
+    <Compile Include="Dto\PaymentAdapterDto.cs" />
     <Compile Include="Dto\PaymentDetailDto.cs" />
     <Compile Include="Dto\PaymentDto.cs" />
     <Compile Include="Dto\RequestDto.cs" />

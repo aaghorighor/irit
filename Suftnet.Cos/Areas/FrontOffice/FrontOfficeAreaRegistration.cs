@@ -18,13 +18,20 @@ namespace Suftnet.Cos.FrontOffice
             context.Routes.AppendTrailingSlash = false;
 
             context.MapRoute(
-              "AddonType___",
-              "front-office/addonType/entry/{name}/{menuId}",
-              new { AreaName = "FrontOffice", Controller = "addonType", action = "entry", menuId = UrlParameter.Optional, name = UrlParameter.Optional },             
+              "CART_",
+              "front-office/cart/entry/{orderId}/{orderTypeId}/{orderType}",
+              new { AreaName = "FrontOffice", Controller = "cart", action = "entry", orderId = UrlParameter.Optional, orderTypeId = UrlParameter.Optional, orderType = UrlParameter.Optional },             
               new string[] { "Suftnet.Cos.FrontOffice" }
-            );               
-                      
-                        
+            );
+
+            context.MapRoute(
+              "MENU_BY_CATEGORY_",
+              "front-office/cart/fetchMenuByCategory/{categoryId}",
+              new { AreaName = "FrontOffice", Controller = "cart", action = "fetchMenuByCategory", categoryId = UrlParameter.Optional },
+              new string[] { "Suftnet.Cos.FrontOffice" }
+            );
+
+
             context.MapRoute(
                 "FrontOffice_default",
                 "front-office/{controller}/{action}/{id}",
