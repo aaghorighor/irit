@@ -28,10 +28,10 @@ var CartViewModel = function () {
     self.isKitchenPrinter = ko.observable(false),
 
     self.selectedOptionValue = ko.observable();
-    selectedPaymentMethod = ko.observable();
+    self.selectedPaymentMethod = ko.observable();
 
     self.optionValues = ko.observableArray([new Status("Completed", constants.orderStatus.completed), new Status("Dine In", constants.orderStatus.occupied), new Status("Pending", constants.orderStatus.pending)]);
-    self.paymentMethods = ko.observableArray([new PaymentMethod("Card", constants.paymentMethod.creditCard), new PaymentMethod("Cash", constants.paymentMethod.cash)]);
+    self.paymentMethods = ko.observableArray([new PaymentMethod("Card", constants.paymentMethod.card), new PaymentMethod("Cash", constants.paymentMethod.cash)]);
              
     self.reset = function ()
     {
@@ -280,85 +280,64 @@ var CartViewModel = function () {
         return ret;
     };
        
-    self.getSelectedStatus = function(statusId)
+    self.getSelectedStatus = function(statusId, orderTypeId)
     {       
-        self.optionValues.removeAll();       
-
-        switch (statusId)
+        self.optionValues.removeAll();     
+      
+        switch (orderTypeId)
         {
-            case OrderStatus.Reservation: //// Reservation
+            case constants.orderType.reservation: 
                
-                self.optionValues.push(new Status("Pending", OrderStatus.Reservation));              
+                self.optionValues.push(new Status("Pending", constants.orderStatus.pending));              
 
                 break;
 
-            case OrderStatus.Occupied: //// Dine In
-            case OrderStatus.Processing:
+            case constants.orderType.dineIn: 
 
-                self.optionValues.push(new Status("Dine In", OrderStatus.Occupied));
-                //self.optionValues.push(new Status("Processing", OrderStatus.Processing));
-                self.optionValues.push(new Status("Completed", OrderStatus.Completed));
+                self.optionValues.push(new Status("Pending", constants.orderStatus.pending));  
+                self.optionValues.push(new Status("Completed", constants.orderStatus.completed));  
 
                 break;
 
-            case OrderStatus.Completed: //// Completed
-                              
-                self.optionValues.push(new Status("Completed", OrderStatus.Completed));
+            case constants.orderType.delivery:
 
-                break;          
+                self.optionValues.push(new Status("Pending", constants.orderStatus.pending));
+                self.optionValues.push(new Status("Processing", constants.orderStatus.processing));
+
+                break;
+                       
+            case constants.orderType.bar:
+            case constants.orderType.takeAway:
+
+                self.optionValues.push(new Status("Completed", constants.orderStatus.completed)); 
+                break;
+            default:
+                break;
 
         }       
 
         self.selectedOptionValue(self.optionValues.getStatusByStatusId(statusId));
-
         self.orderStatus(statusId);
-    }
+    } 
 
-    self.getDeliveryStatus = function (statusId) {
-        self.optionValues.removeAll();
-
-        switch (statusId) {
-            case OrderStatus.Reservation: //// Reservation
-
-                self.optionValues.push(new Status("Pending", OrderStatus.Reservation));
-
-                break;
-
-            case OrderStatus.Occupied: //// Dine In
-            case OrderStatus.Processing:
-
-                self.optionValues.push(new Status("Dine In", OrderStatus.Occupied));
-                //self.optionValues.push(new Status("Processing", OrderStatus.Processing));
-                self.optionValues.push(new Status("Completed", OrderStatus.Completed));
-
-                break;
-
-            case OrderStatus.Completed: //// Completed
-
-                self.optionValues.push(new Status("Completed", OrderStatus.Completed));
-
-                break;
-
-                self.selectedOptionValue(self.optionValues.getStatusByStatusId(statusId));
-                self.orderStatus(statusId);
-        }
-    }
-
-    self.removeItem = function (item) {
+    self.remove = function (item) {
         var index = self.items.indexOf(item);
         self.items.splice(index, 1);
     }
 
-    self.editItem = function (cart)
+    self.edit = function (cart)
     {
-        productViewModel.findProduct(cart.id(), cart.optionIds, self.items.indexOf(cart));
+        console.log(cart);
+
+        menuViewModel.find(cart.id(), cart.optionIds, self.items.indexOf(cart));
     }      
 
     self.save = function ()
     {
         var amountPaid = 0;
         var basket = [];
-        var itemsToSave = $.map(self.items(), function (data)
+
+        $.map(self.items(), function (data)
         {
             var item = {
                 MenuId: data.id(),
@@ -376,50 +355,34 @@ var CartViewModel = function () {
 
             self.amountPaid(amountPaid.toFixed(2));
         }
-                                  
+                                              
         var orderSummary = {         
-            OrderId: self.orderId(),
-            PaymentMethodId: selectedPaymentMethod(),
-            AmountPaid: self.amountPaid(),      
-            OrderStatusId: self.selectedOptionValue().OrderStatusId,
-            orderedItems: basket,
-            IpAddress: $("#IpAddress").val(),
-            TableId: $("#TableId").val(),
-            OrderTypeId: $("#OrderTypeId").val(),
+            OrderId: $("#orderId").attr("data-orderId"),
+            OrderTypeId: $("#orderTypeId").attr("data-orderTypeId"),
             Note: $("#Note").val(),
-            TotalDiscount: self.totalDiscount(),
+            PaymentMethodId: self.selectedPaymentMethod(),
+            AmountPaid: self.amountPaid(),                 
             DiscountRate: self.discountRate(),
             TotalTax: self.totalTax(),
             TaxRate: self.taxRate(),
             Balance: self.balance(),
             DeliveryCost: 0,
-            IsKitchenReceipt: self.isKitchenPrinter(),
-            IsPrintReceipt: self.isReceiptPrinter()
+            OrderStatusId: self.selectedOptionValue().OrderStatusId,
+            orderedItems: basket,
+            TotalDiscount: self.totalDiscount()
         }
 
-        js.ajaxPost(settings.orderUrl,
-            {
-                orderedItems: basket,
-                entityToCreate: orderSummary
-
+        js.ajaxPost($("#createUrl").attr("data-createUrl"),
+            { entityToCreate: orderSummary
             }).then(
-            function (data) {
-                                                               
-                if (data.receipt.Order == OrderStatus.Completed) {
+            function (data) {                                                               
+               cartViewModel.reset(); 
+               $("#paymentDialog").dialog("close");
 
-                    tableViewModel.remove(data.receipt.Order);
-
-                } else {
-
-                    tableViewModel.update(data.receipt.Order);
-                }
-                                              
-                $("#tdSalesOrder").DataTable().fnDraw();
-
-                $("#btnPaymentCloseDialog").trigger("click");
-                $("#btnback").trigger("click");                          
-
-                $("#MainCollapsible").accordion("activate", 0);
+                    setTimeout(function () {
+                        window.location.href = $("#dineInUrl").attr("data-dineInUrl");
+                    }, 5000);                            
+            
             }
         );
     };
@@ -456,20 +419,18 @@ function CreateCart(menuId, data) {
     
 };
 
-function getOrderDetails(orderId)
+function loadCart()
 {  
     var param = {
-        Id: orderId
+        Id: $("#orderId").attr("data-orderId")
     };
         
-    js.ajaxGet(settings.OrderDetailUrl, param).then(function (data) {
+    js.ajaxGet($("#loadUrl").attr("data-loadUrl"), param).then(function (data) {
 
         cartViewModel.reset();       
 
         if (data.dataobject.Order != null)
-        {
-            $("#OrderTypeId").val(data.dataobject.Order.OrderTypeId);
-
+        {          
             cartViewModel.orderType(data.dataobject.Order.OrderTypeId);
             cartViewModel.orderId(data.dataobject.Order.Id);
             cartViewModel.paid(data.dataobject.Order.Payment);
@@ -480,31 +441,23 @@ function getOrderDetails(orderId)
             cartViewModel.totalTax(data.dataobject.Order.TotalTax);
             cartViewModel.taxRate(data.dataobject.Order.Tax);
 
-            if (data.dataobject.Order.OrderTypeId != OrderType.Delivery)
-            {
-                cartViewModel.getSelectedStatus(data.dataobject.Order.StatusId);
-            }
+            cartViewModel.getSelectedStatus(data.dataobject.Order.StatusId, data.dataobject.Order.OrderTypeId);
         }
 
         $.each(data.dataobject.OrderDetail, function (i, value)
         {
             var item = new CartModel(value.MenuId, value);
             cartViewModel.addItem(item);
-        });
-
-        $("#MainCollapsible").accordion("activate", 1);
+        });      
 
     }).catch(function (error) {
-
         console.log(error);
     });;
 }
-
 function Status(text, value) {
     this.OrderStatusId = value;
     this.Title = text;
 };
-
 function PaymentMethod(text, value) {
     this.PaymentMethodId = value;
     this.Title = text;

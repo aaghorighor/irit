@@ -53,6 +53,9 @@ var cart = {
             event.preventDefault();
             event.stopImmediatePropagation();
 
+            cartViewModel.getSelectedStatus($("#orderStatusId").attr("data-orderStatusId"),
+                $("#orderTypeId").attr("data-orderTypeId"));
+
             $("#paymentDialog").dialog("open");
 
         });
@@ -60,7 +63,7 @@ var cart = {
         $(document).on("click", "#btnCloseTender", function (event) {
 
             event.preventDefault();
-            event.stopImmediatePropagation();
+            event.stopImmediatePropagation();          
 
             $("#paymentDialog").dialog("close");
 
@@ -91,10 +94,25 @@ var cart = {
             }
                        
         });
+
+        $(document).on("click", "#TaxId", function (event) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+
+            var option = $('option:selected', this).attr('rate');
+            cartViewModel.computeTax(0);
+
+            if (option != undefined) {
+                cartViewModel.computeTax(option);
+            }
+
+        });
     },
 
-    load: function () {
+    load: function ()
+    {
         loadCategory();
         loadMenu();
+        loadCart();
     }
 }

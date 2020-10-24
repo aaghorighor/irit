@@ -11,7 +11,7 @@
         <tbody data-bind='foreach: items'>
             <tr>
                 <td>
-                    <a style="color:black" data-bind="click: $parent.editItem">
+                    <a style="color:black" data-bind="click: $parent.edit">
                         <span data-bind="value:id" style="display:none"></span>
                         <span data-bind="value:optionIds" style="display:none"></span>
                         <span data-bind='text: name'> </span>
@@ -30,7 +30,7 @@
                     <!-- /ko -->
 
                     <!-- ko ifnot: isProcessed -->
-                    <a href='#' data-bind='click: $parent.removeItem'>
+                    <a href='#' data-bind='click: $parent.remove'>
                         <img src="@Url.Content("~/Content/zice-OneChurch/images/icon/color_18/delete.png")" />
                     </a>
                     <!-- /ko -->

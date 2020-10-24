@@ -67,7 +67,8 @@
             entityToCreate.UpdateBy = this.UserName;
 
             entityToCreate.OrderTypeId = new Guid(eOrderType.Reservation);
-           
+            entityToCreate.StatusId = new Guid(eOrderStatus.Pending);
+
             entityToCreate.TenantId = this.TenantId;
             entityToCreate.Id = Guid.NewGuid();
 

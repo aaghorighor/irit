@@ -141,9 +141,9 @@
         }       
 
         #region private function
-        public void LogError(Exception exception)
+        public void LogError(Exception ex)
         {
-            GeneralConfiguration.Configuration.DependencyResolver.GetService<ILogger>().LogError(exception);         
+            GeneralConfiguration.Configuration.DependencyResolver.GetService<ILogger>().LogError(ex);         
         }       
 
         #endregion

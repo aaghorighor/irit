@@ -30,7 +30,7 @@
         {          
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.OrderPayment() { CreatedBy = entity.CreatedBy, CreatedDt = entity.CreatedDT, PaymentId = entity.PaymentId, OrderId = entity.OrderId };
+                var obj = new Action.OrderPayment() { Id = entity.Id, CreatedBy = entity.CreatedBy, CreatedDt = entity.CreatedDT, PaymentId = entity.PaymentId, OrderId = entity.OrderId };
                 context.OrderPayments.Add(obj);
                 context.SaveChanges();
                 return obj.Id;
@@ -81,8 +81,8 @@
                 var obj = (from o in context.OrderPayments
                                  join b in context.Payments on o.PaymentId equals b.Id                                
                                  where o.OrderId == orderId
-                                 select b).Sum(x=>x.Amount);
-                return obj;
+                                 select b).ToList();
+                return obj.Sum(x => x.Amount);
             }
         }
     }

@@ -43,7 +43,8 @@
                 x.For<ISendGridMessager>().Use<SendGridMessager>();             
                 x.For<IJwToken>().Use<JwToken>();
                 x.For<IApiUserManger>().Use<ApiUserManager>();
-                x.For<IClaimManager>().Use<ClaimManager>();               
+                x.For<IClaimManager>().Use<ClaimManager>();
+                x.For<IOrderCommand>().Use<OrderCommand>();
             });           
         }
     }

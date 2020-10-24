@@ -294,8 +294,10 @@
     <Compile Include="Command\FactoryCommand.cs" />
     <Compile Include="Command\ICommand.cs" />
     <Compile Include="Command\IFactoryCommand.cs" />
+    <Compile Include="Command\IOrderCommand.cs" />
     <Compile Include="Command\PermissionCommand.cs" />
     <Compile Include="Command\PushNotificationCommand.cs" />
+    <Compile Include="Command\OrderCommand.cs" />
     <Compile Include="Command\SendSubscriptionConfirmationCommand.cs" />
     <Compile Include="Content\reports\MenuItem.cs">
       <SubType>Component</SubType>

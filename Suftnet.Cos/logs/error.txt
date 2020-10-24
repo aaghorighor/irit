@@ -1,72 +1,12 @@
-20201023 17:33:48 [50] ERROR Web [(null)] - The partial view '_menuAddon' was not found or no view engine supports the searched locations. The following locations were searched:
-~/Areas/FrontOffice/Views/cart/_menuAddon.aspx
-~/Areas/FrontOffice/Views/cart/_menuAddon.ascx
-~/Areas/FrontOffice/Views/Shared/_menuAddon.aspx
-~/Areas/FrontOffice/Views/Shared/_menuAddon.ascx
-~/Views/cart/_menuAddon.aspx
-~/Views/cart/_menuAddon.ascx
-~/Views/Shared/_menuAddon.aspx
-~/Views/Shared/_menuAddon.ascx
-~/Areas/FrontOffice/Views/cart/_menuAddon.cshtml
-~/Areas/FrontOffice/Views/cart/_menuAddon.vbhtml
-~/Areas/FrontOffice/Views/Shared/_menuAddon.cshtml
-~/Areas/FrontOffice/Views/Shared/_menuAddon.vbhtml
-~/Views/cart/_menuAddon.cshtml
-~/Views/cart/_menuAddon.vbhtml
-~/Views/Shared/_menuAddon.cshtml
-~/Views/Shared/_menuAddon.vbhtml
+20201024 20:15:47 [16] ERROR Web [(null)] - The controller for path '/bundle/slim-lib-css' was not found or does not implement IController.
 --------------------------------------------------------------------------------------------
-20201023 17:33:48 [50] ERROR Web [(null)] - The partial view '_menuAddon' was not found or no view engine supports the searched locations. The following locations were searched:
-~/Areas/FrontOffice/Views/cart/_menuAddon.aspx
-~/Areas/FrontOffice/Views/cart/_menuAddon.ascx
-~/Areas/FrontOffice/Views/Shared/_menuAddon.aspx
-~/Areas/FrontOffice/Views/Shared/_menuAddon.ascx
-~/Views/cart/_menuAddon.aspx
-~/Views/cart/_menuAddon.ascx
-~/Views/Shared/_menuAddon.aspx
-~/Views/Shared/_menuAddon.ascx
-~/Areas/FrontOffice/Views/cart/_menuAddon.cshtml
-~/Areas/FrontOffice/Views/cart/_menuAddon.vbhtml
-~/Areas/FrontOffice/Views/Shared/_menuAddon.cshtml
-~/Areas/FrontOffice/Views/Shared/_menuAddon.vbhtml
-~/Views/cart/_menuAddon.cshtml
-~/Views/cart/_menuAddon.vbhtml
-~/Views/Shared/_menuAddon.cshtml
-~/Views/Shared/_menuAddon.vbhtml
+20201024 20:21:33 [8] ERROR Web [(null)] - The controller for path '/bundle/slim-lib-css' was not found or does not implement IController.
 --------------------------------------------------------------------------------------------
-20201023 17:33:48 [50] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
+20201024 20:54:24 [10] ERROR Web [(null)] - The controller for path '/FrontOffice/Table/Index' was not found or does not implement IController.
 --------------------------------------------------------------------------------------------
-20201023 17:33:48 [50] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
---------------------------------------------------------------------------------------------
-20201023 17:33:48 [50] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
---------------------------------------------------------------------------------------------
-20201023 17:33:48 [50] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
---------------------------------------------------------------------------------------------
-20201023 17:33:48 [50] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
---------------------------------------------------------------------------------------------
-20201023 17:33:48 [50] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
---------------------------------------------------------------------------------------------
-20201023 17:33:48 [50] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
---------------------------------------------------------------------------------------------
-20201023 17:33:48 [50] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
---------------------------------------------------------------------------------------------
-20201023 17:33:48 [50] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
---------------------------------------------------------------------------------------------
-20201023 17:33:48 [50] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
---------------------------------------------------------------------------------------------
-20201023 17:34:11 [10] ERROR Web [(null)] - The controller for path '/FrontOffice/cart/entry' was not found or does not implement IController.
---------------------------------------------------------------------------------------------
-20201023 22:03:01 [11] ERROR Web [(null)] - A public action method 'fetchMenues' was not found on controller 'Suftnet.Cos.FrontOffice.CartController'.
---------------------------------------------------------------------------------------------
-20201023 22:08:39 [11] ERROR Web [(null)] - The parameters dictionary contains a null entry for parameter 'categoryId' of non-nullable type 'System.Guid' for method 'System.Web.Mvc.JsonResult FetchMenuByCategory(System.Guid)' in 'Suftnet.Cos.FrontOffice.CartController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+20201024 21:05:38 [28] ERROR Web [(null)] - The parameters dictionary contains a null entry for parameter 'orderId' of non-nullable type 'System.Guid' for method 'System.Web.Mvc.JsonResult FetchCart(System.Guid)' in 'Suftnet.Cos.FrontOffice.CartController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
 Parameter name: parameters
 --------------------------------------------------------------------------------------------
-20201023 22:08:39 [11] ERROR Web [(null)] - The parameters dictionary contains a null entry for parameter 'categoryId' of non-nullable type 'System.Guid' for method 'System.Web.Mvc.JsonResult FetchMenuByCategory(System.Guid)' in 'Suftnet.Cos.FrontOffice.CartController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
-Parameter name: parameters
---------------------------------------------------------------------------------------------
-20201023 22:08:42 [11] ERROR Web [(null)] - The parameters dictionary contains a null entry for parameter 'categoryId' of non-nullable type 'System.Guid' for method 'System.Web.Mvc.JsonResult FetchMenuByCategory(System.Guid)' in 'Suftnet.Cos.FrontOffice.CartController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
-Parameter name: parameters
---------------------------------------------------------------------------------------------
-20201023 22:08:42 [11] ERROR Web [(null)] - The parameters dictionary contains a null entry for parameter 'categoryId' of non-nullable type 'System.Guid' for method 'System.Web.Mvc.JsonResult FetchMenuByCategory(System.Guid)' in 'Suftnet.Cos.FrontOffice.CartController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+20201024 21:05:38 [28] ERROR Web [(null)] - The parameters dictionary contains a null entry for parameter 'orderId' of non-nullable type 'System.Guid' for method 'System.Web.Mvc.JsonResult FetchCart(System.Guid)' in 'Suftnet.Cos.FrontOffice.CartController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
 Parameter name: parameters
 --------------------------------------------------------------------------------------------

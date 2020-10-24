@@ -50,7 +50,7 @@ namespace Suftnet.Cos.DataAccess.Action
         [MaxLength(8)]
         [Timestamp]
         public byte[] TimeStamp { get; set; }
-        public DateTime? UpdateDate { get; set; }
+        public DateTime? UpdateDt { get; set; }
         [StringLength(50)]
         public string UpdateBy { get; set; }
     }

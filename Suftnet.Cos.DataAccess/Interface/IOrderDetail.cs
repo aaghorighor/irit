@@ -9,7 +9,7 @@
         List<OrderDetailWrapperDto> GetByTableOrders(Guid statusId, Guid secondarystatusId, Guid tenantId);
         OrderDetailDto Get(Guid Id);
         bool Delete(Guid Id);
-        void ClearOrderDetailByOrderId(Guid Id);
+        void ClearOrderDetailByOrderId(Guid orderId);
         Guid Insert(OrderDetailDto entity);
         List<OrderDetailDto> GetAll(Guid orderId);
     }

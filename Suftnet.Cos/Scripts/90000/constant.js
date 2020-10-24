@@ -12,9 +12,7 @@ var constants = {
 
     orderType: {
         delivery: "ED9EB336-D246-4747-ADB1-42FD95D98E4C",
-        reservation: "FFA01FE4-8B49-41E9-A630-70FD7E756ECC",
-        takeAway: "D6609F66-29D2-4CBA-9F53-9BA5C94B2350",
-        bar: "C9BA3829-EC56-4C1F-915E-B57A66EDC78B",
+        reservation: "FFA01FE4-8B49-41E9-A630-70FD7E756ECC",       
         dineIn: "BFF4A1B2-8D64-4919-A91D-4E96E61E1A5B"
     },
 
@@ -23,8 +21,8 @@ var constants = {
         index : -1
     }    ,
     paymentMethod: {
-        cash: "C9BA3829-EC56-4C1F-915E-B57A66EDC78B",
-        creditCard: "BFF4A1B2-8D64-4919-A91D-4E96E61E1A5B"
+        cash: "E0DF7037-BE71-4D90-871D-04AD8E4AD960",
+        card: "FD55F6B4-30C2-48C7-B331-79A505D8F8C2"
     }
 
 }

@@ -18,7 +18,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="clear"></div>
                 <div id="menuContainer">
                     @Html.Partial("_menu")
@@ -79,19 +78,24 @@
    @Html.Partial("_menuAddon")
 </div>
 
-<div class="hide">     
-    <span id="loadUrl" name="loadUrl" data-loadUrl="@Url.Action("fetch", "cart")"></span>
+<div class="hide">
+    <span id="loadUrl" name="loadUrl" data-loadUrl="@Url.Action("fetchCart", "cart", new { orderId=this.ViewContext.RouteData.Values["orderId"].ToString() })"></span>
     <span id="menuByCategoryUrl" name="menuByCategoryUrl" data-menuByCategoryUrl="@Url.Action("FetchMenuByCategory", "cart")"></span>
     <span id="createUrl" name="createUrl" data-createUrl="@Url.Action("create", "cart")"></span>
     <span id="categoryUrl" name="categoryUrl" data-categoryUrl="@Url.Action("fetchCategories", "cart")"></span>
     <span id="defaultMenuUrl" name="defaultMenuUrl" data-defaultMenuUrl="@Url.Action("fetchDefaultMenues", "cart")"></span>
     <span id="menuUrl" name="menuUrl" data-menuUrl="@Url.Action("fetchMenues", "cart")"></span>
+    <span id="orderTypeId" name="orderTypeId" data-orderTypeId="@this.ViewContext.RouteData.Values["orderTypeId"].ToString().ToUpper()"></span>
+    <span id="orderStatusId" name="orderStatusId" data-orderStatusId="@this.ViewContext.RouteData.Values["orderStatusId"].ToString().ToUpper()"></span>
+    <span id="orderId" name="orderId" data-orderId="@this.ViewContext.RouteData.Values["orderId"].ToString()"></span>
     <span id="imageUrl" name="imageUrl" data-imageUrl="@Url.Content("~/content/photo/category/180x120/")"></span>
+    <span id="dineInUrl" name="dineInUrl" data-dineInUrl="@Url.Action("index", "table", new { area = "frontoffice" })"></span>
 </div>
+
 @Scripts.Render("~/bundle/multislider-js")
 <script type="text/javascript">
     $(function () {
-        cart.init();          
+        cart.init();
     });
 </script>
 

@@ -13,6 +13,7 @@
         List<TableDto> GetAll(Guid tenantId);
         List<TableDto> GetByStatus(bool status, Guid tenantId);     
         bool UpdateStatus(Guid statusId, Guid tableId, Guid orderId, DateTime updatedDt, string updateBy);
+        bool Reset(TableDto entity);
     }
 }
 

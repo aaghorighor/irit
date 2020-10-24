@@ -52,6 +52,7 @@ namespace Suftnet.Cos.Common
         public const string TopicExist = "Topic exist already";
         public const string SuccessCode = "1000";
         public const string DangerCode = "2000";
+        public const string CompletedOrder = "This order is closed and cannot be modify any more";
     }
 
     public static class Identity
@@ -209,7 +210,13 @@ namespace Suftnet.Cos.Common
         public const int SendNow = 5182;
         public const int SendLater = 5183;      
     }
-   
+
+    public static class SubStract
+    {
+        public const int Yes = 2033;
+        public const int No = 6241;
+    }
+
     public static class BackOfficeViews
     {
         public const int Member = 5131;
@@ -278,9 +285,7 @@ namespace Suftnet.Cos.Common
     public static class eOrderType
     {
         public const string Delivery = "ED9EB336-D246-4747-ADB1-42FD95D98E4C";
-        public const string Reservation = "FFA01FE4-8B49-41E9-A630-70FD7E756ECC";
-        public const string TakeAway = "D6609F66-29D2-4CBA-9F53-9BA5C94B2350";
-        public const string Bar = "C9BA3829-EC56-4C1F-915E-B57A66EDC78B";
+        public const string Reservation = "FFA01FE4-8B49-41E9-A630-70FD7E756ECC";       
         public const string DineIn = "BFF4A1B2-8D64-4919-A91D-4E96E61E1A5B";             
     }
 
@@ -291,17 +296,13 @@ namespace Suftnet.Cos.Common
         public const string Processing = "85616F94-1826-43B1-ACFF-819B37F028E4";
         public const string Reservation = "54F834F8-8F7B-42C0-8331-E1FE5AE50C83";
         public const string Occupied = "C84F0A40-4C93-4200-9531-E6AB0D8FF5D7";
+        public const string Completed = "58EE00D9-D449-4EBF-B4E8-769F51FE7EFE";
     }
 
     public static class ePaymentMethod
     {
-        public const string Events = "284";
-        public const string TimeLine = "3337";
-        public const string Asset = "279";
-        public const string Giving = "277";
-        public const string SERVICETIME = "2312";
-        public const string SERVICETIMELINE = "2317";
-        public const string PRAYERTYPE = "294";
+        public const string CARD = "FD55F6B4-30C2-48C7-B331-79A505D8F8C2";
+        public const string CASH = "E0DF7037-BE71-4D90-871D-04AD8E4AD960";       
     }
 
     public static class PaymentStatus

@@ -71,9 +71,9 @@
         {
             var match = ko.utils.arrayFirst(cartViewModel.items(), function (item)
             {               
-                return settings.index === item.index();
+                return constants.addOn.index === item.index();
             });
-
+           
             match.name(optionNames);
             match.optionIds =optionIds;
             match.price(suftnet_grid.formatCurrency(total));

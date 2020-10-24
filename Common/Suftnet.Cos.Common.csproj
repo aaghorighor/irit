@@ -48,7 +48,7 @@
     <Compile Include="Currency.cs" />
     <Compile Include="CurrencyModel.cs" />
     <Compile Include="Enums\Types.cs" />
-    <Compile Include="Extension\Extension.cs" />
+    <Compile Include="Extension\Util.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

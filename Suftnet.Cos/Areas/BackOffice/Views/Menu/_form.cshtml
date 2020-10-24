@@ -31,7 +31,6 @@
              <input type="text" name="Price" id="Price" onkeyup="numonly(this);" class="forms-txt validate[required]" size="9" maxlength="9" />
          </div>
 
-
          <div class="grid-6-12">
              <label class="forms-lbl">Quantity: </label>
              <input type="text" name="Quantity" id="Quantity" onkeyup="numonly(this);" class="forms-txt validate[required, custom[number]]" size="9" maxlength="9" />
@@ -56,9 +55,8 @@
          <div class="clear"></div>
 
          <div class="grid-12-12">
-             <label class="forms-lbl">Description: </label>
-             <div style="margin:5px;"></div>
-             <textarea id="Description" name="Description" rows="" cols="" onkeypress="return imposeMaxLength(event, this, 490);" class="form-txt positionrequired"></textarea>
+             <label class="forms-lbl">Description: </label>           
+             <textarea id="Description" name="Description" rows="" cols="" onkeypress="return imposeMaxLength(event, this, 490);" class="form-txt validate[required]"></textarea>
          </div>
 
          <div class="grid-12-12">
@@ -71,7 +69,7 @@
 
          <div class="grid-12-12">
              <ul class="display">
-                 <li class="display"><span class="etip"><a class="uibutton normal " id="btnSaveChanges" title="Save Changes">Save Changes</a></span></li>
+                 <li class="display"><span class="etip"><a class="uibutton normal" id="btnSaveChanges" title="Save Changes">Save Changes</a></span></li>
              </ul>
          </div>
      </div>   

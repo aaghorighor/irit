@@ -38,11 +38,11 @@
             return response;          
         }
 
-        public void ClearOrderDetailByOrderId(Guid Id)
+        public void ClearOrderDetailByOrderId(Guid orderId)
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var objToDelete = context.OrderDetails.Where(o => o.OrderId == Id);
+                var objToDelete = context.OrderDetails.Where(o => o.OrderId == orderId);
                 if (objToDelete != null)
                 {
                     context.OrderDetails.RemoveRange(objToDelete);
@@ -56,7 +56,7 @@
         {          
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.OrderDetail() { IsKitchen = entity.IsKitchen, ItemName = entity.ItemName, IsProcessed = entity.IsProcessed, Discount = entity.Discount, Tax = entity.TaxRate, MenuId = entity.MenuId, OrderId = entity.OrderId, LineTotal = entity.LineTotal, Quantity = entity.Quantity, Price = entity.Price, CreatedDt = entity.CreatedDT, CreatedBy = entity.CreatedBy };
+                var obj = new Action.OrderDetail() { Id = entity.Id, IsKitchen = entity.IsKitchen, ItemName = entity.ItemName, IsProcessed = entity.IsProcessed, Discount = entity.Discount, Tax = entity.TaxRate, MenuId = entity.MenuId, OrderId = entity.OrderId, LineTotal = entity.LineTotal, Quantity = entity.Quantity, Price = entity.Price, CreatedDt = entity.CreatedDT, CreatedBy = entity.CreatedBy };
                 context.OrderDetails.Add(obj);
                 context.SaveChanges();
                 return obj.Id;
@@ -79,7 +79,7 @@
                             objToUpdate.Quantity = entity.Quantity;
                             objToUpdate.MenuId = entity.MenuId;
 
-                            objToUpdate.UpdateDate = entity.UpdateDate;
+                            objToUpdate.UpdateDt = entity.UpdateDate;
                             objToUpdate.UpdateBy = entity.UpdateBy;
 
                     try
@@ -114,7 +114,7 @@
                         objToUpdate.IsKitchen = true;      
                         
                         objToUpdate.UpdateBy = Environment.UserName;
-                        objToUpdate.UpdateDate = DateTime.UtcNow;
+                        objToUpdate.UpdateDt = DateTime.UtcNow;
 
                         try
                         {

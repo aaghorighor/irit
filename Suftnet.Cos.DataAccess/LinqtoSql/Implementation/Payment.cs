@@ -48,7 +48,7 @@
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.Payment() { Reference = entity.Reference, PaymentMethodId = entity.PaymentMethodId,  Amount = entity.Amount, CreatedDt = entity.CreatedDT, CreatedBy = entity.CreatedBy };
+                var obj = new Action.Payment() { Id = entity.Id, TenantId = entity.TenantId, Reference = entity.Reference, PaymentMethodId = entity.PaymentMethodId,  Amount = entity.Amount, CreatedDt = entity.CreatedDT, CreatedBy = entity.CreatedBy };
                 context.Payments.Add(obj);
                 context.SaveChanges();
                 return obj.Id;

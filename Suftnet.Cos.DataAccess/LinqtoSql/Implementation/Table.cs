@@ -81,6 +81,35 @@
             }
         }
 
+        public bool Reset(TableDto entity)
+        {
+            bool response = false;
+
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objToUpdate = context.Tables.SingleOrDefault(o => o.Id == entity.Id);
+
+                if (objToUpdate != null)
+                {             
+                    objToUpdate.OrderId = null;
+                    objToUpdate.UpdateBy = entity.UpdateBy;
+                    objToUpdate.UpdateDt = entity.UpdateDate;
+
+                    try
+                    {
+                        context.SaveChanges();
+                        response = true;
+                    }
+                    catch (ChangeConflictException)
+                    {
+                        response = false;
+                    }
+                }
+
+                return response;
+            }
+        }
+
         public bool UpdateStatus(Guid statusId, Guid tableId, Guid orderId, DateTime updatedDt,string updateBy)
         {
             bool response = false;

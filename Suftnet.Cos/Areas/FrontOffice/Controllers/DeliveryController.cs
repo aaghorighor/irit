@@ -121,8 +121,7 @@
         {
             Ensure.NotNull(Id);
             return Json(new { ok = _order.Delete(new Guid(Id)) }, JsonRequestBehavior.AllowGet);
-        }
-       
+        }      
         
     }
 }

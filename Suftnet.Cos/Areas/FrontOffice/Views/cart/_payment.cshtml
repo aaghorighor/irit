@@ -5,6 +5,8 @@
         <form action="@Url.Action("create", "cart")" method="post" id="paymentform">
             <div class="forms">
 
+                @Html.AntiForgeryToken()
+
                 <div class="grid-6-12">
                     <label class="forms-lbl">Amount Payable:</label>
                     <input style="background-color :Black; color :Red; font-weight:bold; font-size:20px;" class="forms-txt" maxlength="9" data-bind='value: computeBalance' />
@@ -51,7 +53,7 @@
                 <div class="grid-12-12">
                     <label class="forms-lbl">Note:</label>
                     <input id="Note" name="Note" class="forms-txt validate[required]" maxlength="100" />
-                </div>               
+                </div>
 
             </div>
 
