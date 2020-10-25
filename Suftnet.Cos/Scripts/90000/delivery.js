@@ -60,6 +60,13 @@ var delivery = {
         $("#Duration").val(dataobject.Duration);
         $("#Distance").val(dataobject.Distance);
 
+
+        $("#StatusId").val(dataobject.StatusId);
+
+        $("#StatusId").append('<option value="E4E6975E-4881-459D-BB2D-2AD841FBA835">Ready</option>');
+        $("#StatusId").append('<option value="85616F94-1826-43B1-ACFF-819B37F028E4">Processing</option>');
+        $("#StatusId").append('<option value="12BC2434-5CD8-42A2-8345-C1A3ECBC8E3B">Cancel</option>');
+
         $("#form").attr("action", $("#editUrl").attr("data-editUrl"));   
         $("#deliveryDialog").dialog("open");
 

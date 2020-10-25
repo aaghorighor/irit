@@ -56,7 +56,7 @@
         {          
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.OrderDetail() { Id = entity.Id, IsKitchen = entity.IsKitchen, ItemName = entity.ItemName, IsProcessed = entity.IsProcessed, Discount = entity.Discount, Tax = entity.TaxRate, MenuId = entity.MenuId, OrderId = entity.OrderId, LineTotal = entity.LineTotal, Quantity = entity.Quantity, Price = entity.Price, CreatedDt = entity.CreatedDT, CreatedBy = entity.CreatedBy };
+                var obj = new Action.OrderDetail() { DiscountRate = 0, TaxRate =0, Id = entity.Id, IsKitchen = entity.IsKitchen, ItemName = entity.ItemName, IsProcessed = entity.IsProcessed, Discount = entity.Discount, Tax = entity.TaxRate, MenuId = entity.MenuId, OrderId = entity.OrderId, LineTotal = entity.LineTotal, Quantity = entity.Quantity, Price = entity.Price, CreatedDt = entity.CreatedDT, CreatedBy = entity.CreatedBy };
                 context.OrderDetails.Add(obj);
                 context.SaveChanges();
                 return obj.Id;
@@ -74,8 +74,7 @@
                     if (objToUpdate != null)
                     {
                             objToUpdate.OrderId = entity.OrderId;                      
-                            objToUpdate.Price = entity.Price;
-                            objToUpdate.Tax = entity.TaxRate;                          
+                            objToUpdate.Price = entity.Price;                                                 
                             objToUpdate.Quantity = entity.Quantity;
                             objToUpdate.MenuId = entity.MenuId;
 

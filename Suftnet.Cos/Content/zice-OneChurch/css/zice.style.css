@@ -3726,6 +3726,10 @@ border-radius:35px;
 	width: 99%;
 	padding: 10px;	
 }
-
+a.disabled {
+	opacity: 0.5;
+	pointer-events: none;
+	cursor: default;
+}
 	
 	

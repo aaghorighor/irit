@@ -82,7 +82,7 @@
             _order.Insert(entityToCreate);
             entityToCreate.flag = (int)flag.Add;
 
-            UpdateTable(entityToCreate);
+            SetOrderTable(entityToCreate);
 
             return Json(new { ok = true, order = new {orderId = entityToCreate.Id, tableId= entityToCreate.TableId, orderStatusId = entityToCreate.StatusId, orderType = entityToCreate.OrderTypeId }, flag = entityToCreate.flag }, JsonRequestBehavior.AllowGet);
         }
@@ -115,7 +115,7 @@
 
             if(entityToCreate.ChangeTable)
             {
-                UpdateTable(entityToCreate);
+                SetOrderTable(entityToCreate);
             }
                  
             return Json(new { ok = true, flag = entityToCreate.flag }, JsonRequestBehavior.AllowGet);
@@ -127,15 +127,17 @@
         {
             Ensure.NotNull(Id);
             return Json(new { ok = _order.Delete( new Guid(Id)) }, JsonRequestBehavior.AllowGet);
-        }     
+        }
 
-        private void UpdateTable(OrderDto entityToCreate)
+        #region private function
+        private void SetOrderTable(OrderDto entityToCreate)
         {
             if (entityToCreate.StatusId == new Guid(eOrderStatus.Occupied))
             {
                 Task.Run(() => _table.UpdateStatus(entityToCreate.StatusId, entityToCreate.TableId, entityToCreate.Id, DateTime.UtcNow, this.UserName));
-            }        
+            }
         }
+        #endregion
 
     }
 }

@@ -294,7 +294,7 @@ namespace Suftnet.Cos.Common
         public const string Pending = "DCDC8A0D-E38A-43B5-8091-F167B001F0B5";
         public const string Ready = "E4E6975E-4881-459D-BB2D-2AD841FBA835";
         public const string Processing = "85616F94-1826-43B1-ACFF-819B37F028E4";
-        public const string Reservation = "54F834F8-8F7B-42C0-8331-E1FE5AE50C83";
+        public const string Reserved = "54F834F8-8F7B-42C0-8331-E1FE5AE50C83";
         public const string Occupied = "C84F0A40-4C93-4200-9531-E6AB0D8FF5D7";
         public const string Completed = "58EE00D9-D449-4EBF-B4E8-769F51FE7EFE";
     }

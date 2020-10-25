@@ -41,7 +41,10 @@
 
          <div class="grid-6-12">
              <label class="forms-lbl">Status: </label>
-             @Html.OrderStatusDropdown("StatusId", "validate[required]")
+             <select class="validate[required]" id="StatusId" name="StatusId" style="padding: 6px;">
+                 <option value="">-- SELECT --</option>
+                 <option value="DCDC8A0D-E38A-43B5-8091-F167B001F0B5">Pending</option>                 
+             </select>
          </div>
 
          <div class="grid-12-12">

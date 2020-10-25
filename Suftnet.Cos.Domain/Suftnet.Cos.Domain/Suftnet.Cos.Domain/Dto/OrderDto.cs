@@ -1,6 +1,7 @@
 ﻿namespace Suftnet.Cos.DataAccess
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
     public class OrderDto : Base2Dto
@@ -12,8 +13,8 @@
         public string Note { get; set; }
         public Guid OrderTypeId { get; set; }
         public string OrderType { get; set; }
-        public decimal? Tax { get; set; }
-        public decimal? Discount { get; set; }
+        public decimal? TaxRate { get; set; }
+        public decimal? DiscountRate { get; set; }
         public decimal? Payment { get; set; }
         public decimal? TotalDiscount { get; set; }
         public decimal? TotalTax { get; set; }
@@ -44,5 +45,10 @@
         }
 
         public string Email { get; set; }      
-    }   
+    }
+    public class CartOrderDto 
+    {
+        public OrderDto Order { get; set; }
+        public List<OrderDetailDto> Carts { get; set; }
+    }
 }

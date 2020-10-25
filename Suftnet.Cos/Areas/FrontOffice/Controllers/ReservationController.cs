@@ -9,6 +9,7 @@
     using Suftnet.Cos.CommonController.Controllers;
     using Suftnet.Cos.Service;
     using Suftnet.Cos.Extension;
+    using System.Threading.Tasks;
 
     public class ReservationController : FrontOfficeBaseController
     {     
@@ -67,7 +68,7 @@
             entityToCreate.UpdateBy = this.UserName;
 
             entityToCreate.OrderTypeId = new Guid(eOrderType.Reservation);
-            entityToCreate.StatusId = new Guid(eOrderStatus.Pending);
+            entityToCreate.StatusId = new Guid(eOrderStatus.Reserved);
 
             entityToCreate.TenantId = this.TenantId;
             entityToCreate.Id = Guid.NewGuid();
@@ -97,7 +98,15 @@
           
             entityToCreate.UpdateDate = DateTime.UtcNow;
             entityToCreate.UpdateBy = this.UserName;
-                      
+
+            if (entityToCreate.StatusId == new Guid(eOrderStatus.Completed))
+            {
+                entityToCreate.OrderTypeId = new Guid(eOrderType.DineIn);
+                entityToCreate.StatusId = new Guid(eOrderStatus.Occupied);
+
+                SetOrderTable(entityToCreate);
+            }
+
             _order.UpdateReserve(entityToCreate);
             entityToCreate.flag = (int)flag.Update;
 
@@ -111,6 +120,16 @@
             Ensure.NotNull(Id);
             return Json(new { ok = _order.Delete(new Guid(Id)) }, JsonRequestBehavior.AllowGet);
         }
+
+        #region private function
+        private void SetOrderTable(OrderDto entityToCreate)
+        {
+            if (entityToCreate.StatusId == new Guid(eOrderStatus.Occupied))
+            {
+                Task.Run(() => _table.UpdateStatus(entityToCreate.StatusId, entityToCreate.TableId, entityToCreate.Id, DateTime.UtcNow, this.UserName));
+            }
+        }
+        #endregion
 
     }
 }

@@ -39,9 +39,14 @@ var cart = {
             duration: 0,
             interval: 0
         });
+     
+        if ($("#orderStatusId").attr("data-orderStatusId") == constants.orderStatus.completed)
+        {       
+            $('#btnOpenTender').addClass('disabled');
+        }
 
         $('#cartContainer').perfectScrollbar({ suppressScrollX: true });
-        $('#_itemcontainer').perfectScrollbar({ suppressScrollX: true });
+        $('#itemContainer').perfectScrollbar({ suppressScrollX: true });
 
         $("#addonDialog").dialog({ autoOpen: false, width: 450, height: 435, modal: false, title: 'Add On' });
         $("#paymentDialog").dialog({ autoOpen: false, width: 853, height: 590, modal: false, title: 'Tender' });
@@ -57,7 +62,6 @@ var cart = {
                 $("#orderTypeId").attr("data-orderTypeId"));
 
             $("#paymentDialog").dialog("open");
-
         });
 
         $(document).on("click", "#btnCloseTender", function (event) {
@@ -66,7 +70,6 @@ var cart = {
             event.stopImmediatePropagation();          
 
             $("#paymentDialog").dialog("close");
-
         });  
 
         $(document).on("change", "#DiscountId", function (event) {      
@@ -79,7 +82,6 @@ var cart = {
             if (option != undefined) {
                 cartViewModel.computeDiscount(option);
             } 
-
         });
 
         $(document).on("change", "#TaxId", function (event) {       
@@ -91,8 +93,7 @@ var cart = {
 
             if (option != undefined) {
                 cartViewModel.computeTax(option);
-            }
-                       
+            }                       
         });
 
         $(document).on("click", "#TaxId", function (event) {
@@ -105,8 +106,11 @@ var cart = {
             if (option != undefined) {
                 cartViewModel.computeTax(option);
             }
-
         });
+
+        $(document).on("click", "#btnClose", function (event) {
+            window.location.href = $("#dineInUrl").attr("data-dineInUrl");           
+        });  
     },
 
     load: function ()

@@ -30,5 +30,7 @@
         bool UpdateReserve(OrderDto entity);
         int CountByOrderType(Guid tenantId, Guid orderTypeId);
         bool UpdateDelivery(OrderDto entity);
+        CartOrderDto FetchOrder(Guid orderId);
+        OrderDto FetchDeliveryOrder(Guid orderId);
     }
 }

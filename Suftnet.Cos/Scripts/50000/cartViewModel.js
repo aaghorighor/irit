@@ -288,7 +288,7 @@ var CartViewModel = function () {
         {
             case constants.orderType.reservation: 
                
-                self.optionValues.push(new Status("Pending", constants.orderStatus.pending));              
+                self.optionValues.push(new Status("Reserved", constants.orderStatus.reserve));              
 
                 break;
 
@@ -302,15 +302,12 @@ var CartViewModel = function () {
             case constants.orderType.delivery:
 
                 self.optionValues.push(new Status("Pending", constants.orderStatus.pending));
+                self.optionValues.push(new Status("Ready", constants.orderStatus.ready));
                 self.optionValues.push(new Status("Processing", constants.orderStatus.processing));
+                self.optionValues.push(new Status("Completed", constants.orderStatus.completed));
 
-                break;
-                       
-            case constants.orderType.bar:
-            case constants.orderType.takeAway:
-
-                self.optionValues.push(new Status("Completed", constants.orderStatus.completed)); 
-                break;
+                break;                       
+          
             default:
                 break;
 
@@ -381,7 +378,7 @@ var CartViewModel = function () {
 
                     setTimeout(function () {
                         window.location.href = $("#dineInUrl").attr("data-dineInUrl");
-                    }, 5000);                            
+                    }, 2500);             
             
             }
         );
@@ -427,28 +424,28 @@ function loadCart()
         
     js.ajaxGet($("#loadUrl").attr("data-loadUrl"), param).then(function (data) {
 
-        cartViewModel.reset();       
-
-        if (data.dataobject.Order != null)
-        {          
+        cartViewModel.reset();      
+              
+        if (data.dataobject.Carts.length > 0)
+        {
             cartViewModel.orderType(data.dataobject.Order.OrderTypeId);
             cartViewModel.orderId(data.dataobject.Order.Id);
             cartViewModel.paid(data.dataobject.Order.Payment);
 
             cartViewModel.totalDiscount(data.dataobject.Order.TotalDiscount);
-            cartViewModel.discountRate(data.dataobject.Order.Discount);
+            cartViewModel.discountRate(data.dataobject.Order.DiscountRate);
 
             cartViewModel.totalTax(data.dataobject.Order.TotalTax);
-            cartViewModel.taxRate(data.dataobject.Order.Tax);
+            cartViewModel.taxRate(data.dataobject.Order.TaxRate);
 
             cartViewModel.getSelectedStatus(data.dataobject.Order.StatusId, data.dataobject.Order.OrderTypeId);
-        }
 
-        $.each(data.dataobject.OrderDetail, function (i, value)
-        {
-            var item = new CartModel(value.MenuId, value);
-            cartViewModel.addItem(item);
-        });      
+            $.each(data.dataobject.Carts, function (i, value) {
+                var item = new CreateCart(value.MenuId, value);
+                cartViewModel.add(item);
+            });            
+        }
+       
 
     }).catch(function (error) {
         console.log(error);

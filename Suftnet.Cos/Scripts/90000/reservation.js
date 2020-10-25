@@ -20,6 +20,9 @@ var reservation = {
         $("#Note").val(dataobject.Note);
         $("#StatusId").val(dataobject.StatusId);
 
+        $("#StatusId").append('<option value="58EE00D9-D449-4EBF-B4E8-769F51FE7EFE">Completed</option>');
+        $("#StatusId").append('<option value="12BC2434-5CD8-42A2-8345-C1A3ECBC8E3B">Cancel</option>');
+
         $("#reservationDialog").dialog("open");
         $("#form").attr("action", $("#editUrl").attr("data-editUrl"));
         

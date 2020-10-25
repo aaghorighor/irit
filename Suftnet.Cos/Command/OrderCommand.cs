@@ -3,7 +3,10 @@
     using System;
     using System.Collections.Generic;
     using Suftnet.Cos.DataAccess;
-    using Suftnet.Cos.Common;   
+    using Suftnet.Cos.Common;
+    using Suftnet.Cos.Core;
+    using System.Threading.Tasks;
+
     public class OrderCommand : IOrderCommand
     {
        private readonly IOrderDetail _cart;
@@ -11,24 +14,34 @@
        private readonly IOrderPayment _orderPayment;   
        private readonly IMenu _menu;
        private readonly IPayment _payment;
-      
-       public OrderCommand(
+       private readonly ITable _table;
+
+        public OrderCommand(
            IPayment payment, IOrderPayment
-           orderPayment, IOrder order, IMenu menu, IOrderDetail cart)
+           orderPayment, ITable table, IOrder order, IMenu menu, IOrderDetail cart)
        {
            _cart = cart;
            _order = order;
            _payment = payment;
            _orderPayment = orderPayment;
-           _menu = menu;         
+           _menu = menu;
+           _table = table;
        }
 
         public void Execute()
         {
             decimal total = 0m;                          
             bool isProcessing = true;
-          
-            var order = _order.Get(this.OrderId);
+            var order = new OrderDto();
+
+            if(this.OrderTypeId == new Guid(eOrderType.Delivery.ToLower()))
+            {
+                order = _order.FetchDeliveryOrder(this.OrderId);
+            }else
+            {
+                order = _order.Get(this.OrderId);
+            }         
+
             var totalPayment = _orderPayment.GetTotalPaymentByOrderId(this.OrderId);                 
 
             if (order != null)
@@ -49,7 +62,7 @@
 
                         if (order.OrderTypeId == new Guid(eOrderType.Reservation.ToLower()))
                         {
-                            isProcessing = false;
+                            isProcessing = false;                       
                         } 
                         
                         if(menu.IsKitchen != null)
@@ -119,15 +132,23 @@
                        CreatedBy = CreatedBy
                    });     
                 }
-                                
+
+                if (order.OrderTypeId == new Guid(eOrderType.DineIn.ToLower()))
+                {
+                    if (this.OrderStatusId == new Guid(eOrderStatus.Completed.ToLower()))
+                    {
+                        ResetTableOrder(order);
+                    }
+                }
+
                 order.TotalDiscount =TotalDiscount;
                 order.TotalTax = TotalTax;
+                order.TaxRate = TaxRate;
+                order.DiscountRate = DiscountRate;
                 order.Total = total;
                 order.GrandTotal = (total + DeliveryCost + TotalTax) - TotalDiscount;
-                order.StatusId = this.OrderStatusId;
-                order.Tax = TaxRate;
-                order.Note = this.Note;
-                order.Discount = DiscountRate;
+                order.StatusId = this.OrderStatusId;              
+                order.Note = this.Note;              
                 order.Balance = Util.Balance(order.GrandTotal, order.Payment);
 
                 order.UpdateDate = CreatedDt;
@@ -155,6 +176,13 @@
             get
             {
                 return this.OrderedSummary.OrderStatusId;
+            }
+        }
+        private Guid OrderTypeId
+        {
+            get
+            {
+                return this.OrderedSummary.OrderTypeId;
             }
         }
         public Guid TenantId { get; set; }
@@ -193,14 +221,7 @@
             {
                 return this.OrderedSummary.DeliveryCost;
             }
-        }
-        private decimal Total
-        {
-            get
-            {
-                return this.OrderedSummary.Total;
-            }
-        }
+        }       
         private string Note
         {
             get
@@ -225,5 +246,24 @@
             }
         }
         public OrderedSummaryDto OrderedSummary { get; set; }
+
+        private void ResetTableOrder(OrderDto order)
+        {
+            var param = new TableDto
+            {
+                Id = order.TableId,
+                UpdateBy = this.CreatedBy,
+                UpdateDate =this.CreatedDt
+            };
+
+            try
+            {
+                Task.Run(() => _table.Reset(param));
+            }
+            catch (Exception ex)
+            {
+                GeneralConfiguration.Configuration.DependencyResolver.GetService<ILogger>().LogError(ex);
+            }
+        }
     }
 }

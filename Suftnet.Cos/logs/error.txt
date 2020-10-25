@@ -1,12 +1,4 @@
-20201024 20:15:47 [16] ERROR Web [(null)] - The controller for path '/bundle/slim-lib-css' was not found or does not implement IController.
+20201025 11:56:27 [11] ERROR Web [(null)] - The controller for path '/bundle/slim-lib-css' was not found or does not implement IController.
 --------------------------------------------------------------------------------------------
-20201024 20:21:33 [8] ERROR Web [(null)] - The controller for path '/bundle/slim-lib-css' was not found or does not implement IController.
---------------------------------------------------------------------------------------------
-20201024 20:54:24 [10] ERROR Web [(null)] - The controller for path '/FrontOffice/Table/Index' was not found or does not implement IController.
---------------------------------------------------------------------------------------------
-20201024 21:05:38 [28] ERROR Web [(null)] - The parameters dictionary contains a null entry for parameter 'orderId' of non-nullable type 'System.Guid' for method 'System.Web.Mvc.JsonResult FetchCart(System.Guid)' in 'Suftnet.Cos.FrontOffice.CartController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
-Parameter name: parameters
---------------------------------------------------------------------------------------------
-20201024 21:05:38 [28] ERROR Web [(null)] - The parameters dictionary contains a null entry for parameter 'orderId' of non-nullable type 'System.Guid' for method 'System.Web.Mvc.JsonResult FetchCart(System.Guid)' in 'Suftnet.Cos.FrontOffice.CartController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
-Parameter name: parameters
+20201025 12:28:59 [21] ERROR Web [(null)] - The controller for path '/tester' was not found or does not implement IController.
 --------------------------------------------------------------------------------------------

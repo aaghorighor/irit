@@ -16,17 +16,15 @@
 
         private readonly ICategory _category;
         private readonly IMenu _menu;    
-        private readonly IOrder _order;
-        private readonly ITable _table;
+        private readonly IOrder _order;    
         private readonly IOrderCommand _orderCommand;
 
         public CartController(ICategory category, IMenu menu, IOrderCommand orderCommand,
-          IOrder order, ITable table)
+          IOrder order)
         {           
             _menu = menu;
             _category = category;
-            _order = order;
-            _table = table;
+            _order = order;      
             _orderCommand = orderCommand;
         }
         #endregion
@@ -39,7 +37,7 @@
         [HttpGet]
         public JsonResult FetchCart(Guid orderId)
         {
-            return Json(new { ok = true, dataobject = _order.Get(orderId) }, JsonRequestBehavior.AllowGet);
+            return Json(new { ok = true, dataobject = _order.FetchOrder(orderId) }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -65,54 +63,15 @@
         public JsonResult Create(OrderedSummaryDto entityToCreate)
         {
             Ensure.Argument.NotNull(entityToCreate);
-
-            if (entityToCreate.OrderStatusId == new Guid(eOrderStatus.Completed.ToLower()))
-            {
-                if (entityToCreate.AmountPaid < entityToCreate.Balance)
-                {
-                    return Json(new { ok = false, msg = Constant.CompletedOrder }, JsonRequestBehavior.AllowGet);
-                }
-            }
-
+                        
             _orderCommand.TenantId = this.TenantId;
             _orderCommand.OrderedSummary = entityToCreate;
             _orderCommand.CreatedBy = this.UserName;
             _orderCommand.CreatedDt = DateTime.UtcNow;
-            _orderCommand.Execute(); 
-
-            if (entityToCreate.OrderTypeId == new Guid(eOrderType.DineIn.ToLower()))
-            {
-                if (entityToCreate.OrderStatusId == new Guid(eOrderStatus.Completed.ToLower()))
-                {
-                    ResetTable(entityToCreate);
-                }
-            }
+            _orderCommand.Execute();                        
 
             return Json(new { ok = true});
-        }
-
-        #region Private function
-
-        private void ResetTable(OrderedSummaryDto entityToCreate)
-        {
-            var param = new TableDto
-            {
-                  Id = entityToCreate.TableId,                 
-                  UpdateBy = this.UserName,
-                  UpdateDate = DateTime.UtcNow
-            };
-
-            try
-            {
-                Task.Run(() => _table.Reset(param));
-            }
-            catch(Exception ex)
-            {
-                GeneralConfiguration.Configuration.DependencyResolver.GetService<ILogger>().LogError(ex);
-            }           
-        }
-
-        #endregion
+        }       
 
     }
 }
