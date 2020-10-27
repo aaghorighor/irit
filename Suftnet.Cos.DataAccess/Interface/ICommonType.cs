@@ -32,4 +32,9 @@
     {
 
     }
+
+    public interface ITenantStatus : ICommonType
+    {
+
+    }
 }

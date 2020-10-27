@@ -70,6 +70,12 @@ namespace Suftnet.Cos.Common
         public const string ExpirationDate = "ExpirationDate";
         public const string IsExpired = "IsExpired";
         public const string CurrencyCode = "CurrencyCode";
+        public const string DeliveryRate = "DeliveryRate";
+        public const string DeliveryUnit = "DeliveryUnit";
+        public const string IsFlatRate = "IsFlatRate";
+        public const string DeliveryNote = "DeliveryNote";
+        public const string FlatRate = "FlatRate";
+        public const string CompleteAddress = "CompleteAddress";
     }
 
     public class PlanType

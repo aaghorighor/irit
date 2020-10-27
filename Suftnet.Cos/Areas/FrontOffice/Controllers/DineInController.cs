@@ -31,9 +31,9 @@
         {           
             return View();         
         }
-        public virtual JsonResult Fetch(DataTableAjaxPostModel param)
+        public virtual async Task<JsonResult> Fetch(DataTableAjaxPostModel param)
         {
-            var model = _order.GetAll(new Guid(eOrderType.DineIn),this.TenantId, param.start, param.length, param.search.value);
+            var model = await Task.Run(() => _order.GetAll(new Guid(eOrderType.DineIn),this.TenantId, param.start, param.length, param.search.value));
 
             return Json(new
             {

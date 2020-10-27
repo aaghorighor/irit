@@ -170,7 +170,7 @@
     <Compile Include="LinqtoSql\Action\OrderDetail.cs" />
     <Compile Include="LinqtoSql\Action\OrderPayment.cs" />
     <Compile Include="LinqtoSql\Action\OrderStatus.cs" />
-    <Compile Include="LinqtoSql\Action\TenantStatus.cs" />
+    <Compile Include="LinqtoSql\Action\TenantState.cs" />
     <Compile Include="LinqtoSql\Action\OrderType.cs" />
     <Compile Include="LinqtoSql\Action\Payment.cs" />
     <Compile Include="LinqtoSql\Action\PaymentMethod.cs" />
@@ -179,7 +179,7 @@
     <Compile Include="LinqtoSql\Action\PlanFeature.cs" />
     <Compile Include="LinqtoSql\Action\Setting.cs" />
     <Compile Include="LinqtoSql\Action\Slider.cs" />
-    <Compile Include="LinqtoSql\Action\SubscriptionStatu.cs" />
+    <Compile Include="LinqtoSql\Action\SubscriptionStatus.cs" />
     <Compile Include="LinqtoSql\Action\SubTopic.cs" />
     <Compile Include="LinqtoSql\Action\Table.cs" />
     <Compile Include="LinqtoSql\Action\Tax.cs" />
@@ -213,6 +213,7 @@
     <Compile Include="Interface\ISettings.cs" />
     <Compile Include="LinqtoSql\Implementation\Addon.cs" />
     <Compile Include="LinqtoSql\Implementation\DeliveryAddress.cs" />
+    <Compile Include="LinqtoSql\Implementation\TenantStatus.cs" />
     <Compile Include="LinqtoSql\Implementation\PaymentStatus.cs" />
     <Compile Include="LinqtoSql\Implementation\PaymentMethod.cs" />
     <Compile Include="LinqtoSql\Implementation\OrderStatus.cs" />

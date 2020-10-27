@@ -53,7 +53,7 @@ namespace Suftnet.Cos.DataAccess.Action
         [Column(TypeName = "timestamp")]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [MaxLength(8)]
-        public byte[] TimeStamp { get; set; }
-      
+        public byte[] TimeStamp { get; set; }        
+
     }
 }

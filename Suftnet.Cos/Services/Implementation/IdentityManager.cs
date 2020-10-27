@@ -55,17 +55,34 @@
             var account = _memberAccount.GetByUserId(user.Id);        
 
             if (account != null)
-            {
-                var tenant = _tenant.Get(account.TenantId);
-
+            {              
                 claims.Add(new Claim("TenantId", account.TenantId.ToString().ToUpper()));
                 claims.Add(new Claim("IsExpired", account.IsExpired.ToString()));
                 claims.Add(new Claim("ExpirationDate", account.ExpirationDate.ToString()));
                 claims.Add(new Claim("TenantName", account.TenantName));
+                claims.Add(new Claim("DeliveryRate", account.DeliveryRate.ToString()));
+                claims.Add(new Claim("CompleteAddress", account.CompleteAddress));
+                claims.Add(new Claim("IsFlatRate", account.IsFlatRate.ToString()));
 
-                if(!string.IsNullOrEmpty(tenant.CurrencyCode))
+                if (string.IsNullOrEmpty(account.DeliveryUnit))
                 {
-                    claims.Add(new Claim("CurrencyCode", tenant.CurrencyCode));
+                    claims.Add(new Claim("DeliveryUnit", "0"));
+                }else
+                {
+                    claims.Add(new Claim("DeliveryUnit", account.DeliveryUnit));
+                }           
+          
+                if(account.DeliveryLimitNote == null)
+                {
+                    claims.Add(new Claim("DeliveryLimitNote", ""));
+                }else
+                {
+                    claims.Add(new Claim("DeliveryLimitNote", account.DeliveryLimitNote));
+                }              
+
+                if (!string.IsNullOrEmpty(account.CurrencyCode))
+                {
+                    claims.Add(new Claim("CurrencyCode", account.CurrencyCode));
                 }else
                 {
                     claims.Add(new Claim("CurrencyCode", Constant.DefaultHexCurrencySymbol));

@@ -23,9 +23,8 @@
 
         [HttpGet]
         public async Task<JsonResult> Fetch()
-        {
-            var model = await Task.Run(() => _table.GetAll(this.TenantId));
-            return Json(new { ok = true, dataobject = model }, JsonRequestBehavior.AllowGet);
+        {           
+            return Json(new { ok = true, dataobject = await Task.Run(() => _table.GetAll(this.TenantId)) }, JsonRequestBehavior.AllowGet);
         }
     }
 }

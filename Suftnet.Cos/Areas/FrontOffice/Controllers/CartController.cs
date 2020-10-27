@@ -35,27 +35,27 @@
         }
 
         [HttpGet]
-        public JsonResult FetchCart(Guid orderId)
+        public async Task<JsonResult> FetchCart(Guid orderId)
         {
-            return Json(new { ok = true, dataobject = _order.FetchOrder(orderId) }, JsonRequestBehavior.AllowGet);
+            return Json(new { ok = true, dataobject = await Task.Run(() => _order.FetchOrder(orderId)) }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
-        public JsonResult FetchCategories()
+        public async Task<JsonResult> FetchCategories()
         {
-            return Json(new { ok = true, dataobject = _category.GetByStatus(true, this.TenantId) }, JsonRequestBehavior.AllowGet);
+            return Json(new { ok = true, dataobject = await Task.Run(() => _category.GetByStatus(true, this.TenantId)) }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
-        public JsonResult FetchDefaultMenues()
+        public async Task<JsonResult> FetchDefaultMenues()
         {
-            return Json(new { ok = true, dataobject = _menu.GetByDefault(this.TenantId, 10) }, JsonRequestBehavior.AllowGet);
+            return Json(new { ok = true, dataobject = await Task.Run(() => _menu.GetByDefault(this.TenantId, 10)) }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
-        public JsonResult FetchMenuByCategory(Guid categoryId)
-        {
-            return Json(new { ok = true, dataobject = _menu.GetByCategoryId(categoryId, this.TenantId) }, JsonRequestBehavior.AllowGet);
+        public async Task<JsonResult> FetchMenuByCategory(Guid categoryId)
+        {           
+            return Json(new { ok = true, dataobject = await Task.Run(() => _menu.GetByCategoryId(categoryId, this.TenantId)) }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]       

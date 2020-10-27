@@ -1,6 +1,7 @@
 ﻿namespace Suftnet.Cos.Web.ViewModel
 {
     using DataAccess;
+    using System;
     using System.ComponentModel.DataAnnotations;
 
     public class TenantModel : TenantAddressDto
@@ -24,7 +25,13 @@
         public string StripeSecretKey { get; set; }   
         public bool PushNotification { get; set; }
         public string CurrencyCode { get; set; }
-        public string BackgroundUrl { get; set; }      
+        public string BackgroundUrl { get; set; }
+        public decimal DeliveryRate { get; set; }
+        public string DeliveryUnitId { get; set; }
+        public string DeliveryLimitNote { get; set; }
+        public bool? IsFlatRate { get; set; }
+        public Guid StatusId { get; set; }
+        public decimal? FlatRate { get; set; }
 
     }
 }

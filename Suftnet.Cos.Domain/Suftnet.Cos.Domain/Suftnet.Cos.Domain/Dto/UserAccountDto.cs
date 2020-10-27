@@ -28,7 +28,12 @@
         public string FullName { get {
                 return FirstName + " " + LastName;
             }
-        }
-
+        }       
+        public string CompleteAddress { get; set; }
+        public decimal DeliveryRate { get; set; }
+        public string DeliveryUnit { get; set; }
+        public string CurrencyCode { get; set; }
+        public bool IsFlatRate { get; set; }
+        public string DeliveryLimitNote { get; set; }
     }
 }

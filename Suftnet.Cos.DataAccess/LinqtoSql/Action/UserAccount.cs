@@ -23,6 +23,8 @@ namespace Suftnet.Cos.DataAccess.Action
         public string CreatedBy { get; set; }
 
         public Guid TenantId { get; set; }
+        [ForeignKey("TenantId")]
+        public virtual Tenant Tenants { get; set; }        
         
     }
 }

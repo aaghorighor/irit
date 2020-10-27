@@ -30,9 +30,9 @@
         {
             return View();
         }
-        public JsonResult Fetch(DataTableAjaxPostModel param)
+        public async Task<JsonResult> Fetch(DataTableAjaxPostModel param)
         {
-            var model = _order.GetReserveOrders(new Guid(eOrderType.Reservation), this.TenantId, param.start, param.length, param.search.value);
+            var model = await Task.Run(() => _order.GetReserveOrders(new Guid(eOrderType.Reservation), this.TenantId, param.start, param.length, param.search.value));
 
             return Json(new
             {

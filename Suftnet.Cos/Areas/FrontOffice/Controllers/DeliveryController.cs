@@ -9,7 +9,8 @@
     using Suftnet.Cos.CommonController.Controllers;
     using Suftnet.Cos.Service;
     using Suftnet.Cos.Extension;
-   
+    using System.Threading.Tasks;
+
     public class DeliveryController : FrontOfficeBaseController
     {     
         #region Resolving dependencies
@@ -29,9 +30,9 @@
         {
             return View();
         }
-        public JsonResult Fetch(DataTableAjaxPostModel param)
+        public async Task<JsonResult> Fetch(DataTableAjaxPostModel param)
         {
-            var model = _order.GetDeliveryOrders(new Guid(eOrderType.Delivery), this.TenantId, param.start, param.length, param.search.value);
+            var model = await Task.Run(() => _order.GetDeliveryOrders(new Guid(eOrderType.Delivery), this.TenantId, param.start, param.length, param.search.value));
 
             return Json(new
             {

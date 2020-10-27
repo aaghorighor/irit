@@ -53,11 +53,11 @@
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var objResult = (from o in context.UserAccounts
-                                 join u in context.Users on o.UserId equals u.Id
-                                 join t in context.Tenants on o.TenantId equals t.Id
+                var objResult = (from o in context.UserAccounts.Include("Tenants").Include("TenantAddresses")
+                                 join u in context.Users on o.UserId equals u.Id   
+                                 let t = o.Tenants
                                  where o.UserId == userId
-                                 select new UserAccountDto { ExpirationDate = t.ExpirationDate, IsExpired = t.IsExpired, TenantName = t.Name, UserId = u.Id, Id = u.Id, AreaId = u.AreaId, Area = u.Area, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, UserName = u.UserName, Active = u.Active, TenantId = o.TenantId }).FirstOrDefault();
+                                 select new UserAccountDto { CurrencyCode = t.CurrencyCode, DeliveryRate =t.DeliveryRate, DeliveryUnit = t.DeliveryUnitId, CompleteAddress = t.TenantAddresses.CompleteAddress, ExpirationDate = t.ExpirationDate, IsExpired = t.IsExpired, TenantName = t.Name, UserId = u.Id, Id = u.Id, AreaId = u.AreaId, Area = u.Area, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, UserName = u.UserName, Active = u.Active, TenantId = o.TenantId }).FirstOrDefault();
                 return objResult;
             }
         }

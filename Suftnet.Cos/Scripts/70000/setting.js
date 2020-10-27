@@ -30,7 +30,11 @@ var setting = {
                 $("#Publish").val(false);
             }
 
-            //$("#Description").val(tinymce.activeEditor.getContent());          
+            if ($('#IsFlatRate').is(':checked')) {
+                $("#IsFlatRate").val(true);
+            } else {
+                $("#IsFlatRate").val(false);
+            }                           
 
             js.ajaxPost($("#form").attr("action"), $("#form").serialize()).then(
               function (data) {
@@ -59,7 +63,8 @@ var setting = {
                 $("#County").val(model.County); 
                 $("#PostCode").val(model.PostCode);
                 $("#Country").val(model.Country);
-                $("#AddressId").val(model.AddressId);                              
+                $("#AddressId").val(model.AddressId);         
+                $("#StatusId").val(model.StatusId);  
                                
                 $("#Name").val(model.Name);               
                 $("#Telephone").val(model.Telephone);
@@ -67,6 +72,17 @@ var setting = {
                 $("#Email").val(model.Email);
                 $("#WebsiteUrl").val(model.WebsiteUrl);
                 $("#Description").val(model.Description);
+
+                if (model.IsFlatRate === true) {
+                    $("#IsFlatRate").attr("checked", true);
+                } else {
+                    $("#IsFlatRate").attr("checked", false);
+                }
+              
+                $("#DeliveryRate").val(model.DeliveryRate);
+                $("#DeliveryUnitId").val(model.DeliveryUnitId);
+                $("#DeliveryLimitNote").val(model.DeliveryLimitNote);
+                $("#FlatRate").val(model.FlatRate);
               
                 $("#StripePublishableKey").val(model.StripePublishableKey);
                 $("#StripeSecretKey").val(model.StripeSecretKey);
@@ -76,12 +92,7 @@ var setting = {
                 } else {
                     $("#Publish").attr("checked", false);
                 }
-
-                //if (model.Description != null) {
-                //    if (tinymce != undefined) {
-                //        tinymce.get('Description').setContent(model.Description); 
-                //    }
-                //}                                 
+                                                                
                                      
             }).catch(function (e) {
                 console.log(e);

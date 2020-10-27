@@ -13,9 +13,7 @@ namespace Suftnet.Cos.DataAccess.Action
 
         [Required]
         [StringLength(50)]
-        public string Name { get; set; }
-
-        public Guid AddressId { get; set; }
+        public string Name { get; set; }      
 
         [StringLength(20)]
         public string Mobile { get; set; }
@@ -35,8 +33,7 @@ namespace Suftnet.Cos.DataAccess.Action
 
         [Column(TypeName = "smalldatetime")]
         public DateTime CreatedDt { get; set; }
-
-        public Guid StatusId { get; set; }
+       
 
         [StringLength(200)]
         public string CustomerStripeId { get; set; }
@@ -74,13 +71,25 @@ namespace Suftnet.Cos.DataAccess.Action
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [MaxLength(8)]
         public byte[] TimeStamp { get; set; }
-
         public int? SubscriptionId { get; set; }
-
         [StringLength(50)]
         public string CurrencyCode { get; set; }
-
         [StringLength(50)]
-        public string BackgroundUrl { get; set; }       
+        public string BackgroundUrl { get; set; }         
+        public decimal DeliveryRate { get; set; }
+        [StringLength(15)]
+        public string DeliveryUnitId { get; set; }
+        public Guid AddressId { get; set; }
+        public Guid StateId { get; set; }
+
+        [ForeignKey("AddressId")]
+        public virtual TenantAddress TenantAddresses { get; set; }
+        [ForeignKey("StateId")]
+        public virtual TenantState TenantStates { get; set; }
+        [StringLength(250)]
+        public string DeliveryLimitNote { get; set; }
+        public bool? IsFlatRate { get; set; }
+        public decimal? FlatRate { get; set; }
+
     }
 }

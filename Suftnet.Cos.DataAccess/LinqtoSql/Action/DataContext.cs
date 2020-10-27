@@ -57,15 +57,22 @@ namespace Suftnet.Cos.DataAccess.Action
         public virtual DbSet<OrderStatus> OrderStatuses { get; set; }
         public virtual DbSet<OrderType> OrderTypes { get; set; }
         public virtual DbSet<PaymentStatus> PaymentStatuses { get; set; }
-        public virtual DbSet<TenantStatus> TenantStatus { get; set; }
+        public virtual DbSet<TenantState> TenantStates { get; set; }
         public virtual DbSet<Device> Devices { get; set; }
-        public virtual DbSet<SubscriptionStatu> SubscriptionStatus { get; set; }
+        public virtual DbSet<SubscriptionStatus> SubscriptionStatus { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
         public virtual DbSet<TenantAddress> TenantAddress { get; set; }
         public virtual DbSet<DeliveryAddress> DeliveryAddresses { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
+        {                 
+                        
+            modelBuilder.Entity<Tenant>()
+             .HasRequired(e => e.TenantAddresses);         
+
+            modelBuilder.Entity<Tenant>()
+            .HasRequired(e => e.TenantStates);
+
             base.OnModelCreating(modelBuilder);
         }
         public static DataContext Create()

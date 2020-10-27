@@ -251,6 +251,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\Admin\Controllers\TenantStatusController.cs" />
     <Compile Include="Areas\Admin\Controllers\OrderStatusController.cs" />
     <Compile Include="Areas\Admin\Controllers\PaymentMethodController.cs" />
     <Compile Include="Areas\Admin\Controllers\PaymentStatusController.cs" />
@@ -5281,6 +5282,10 @@
     <Content Include="Areas\FrontOffice\Views\cart\_payment.cshtml" />
     <Content Include="Areas\FrontOffice\Views\cart\_menuAddon.cshtml" />
     <Content Include="Areas\FrontOffice\Views\cart\_cartSummary.cshtml" />
+    <Content Include="Areas\Admin\Views\TenantStatus\_form.cshtml" />
+    <Content Include="Areas\Admin\Views\TenantStatus\_load.cshtml" />
+    <Content Include="Areas\Admin\Views\TenantStatus\index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Settings\_delivery.cshtml" />
     <None Include="Properties\PublishProfiles\OneChurch - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\OneChurch - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\OneChurch1.0.0.pubxml" />

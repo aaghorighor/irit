@@ -1,11 +1,15 @@
-﻿
+﻿@using Suftnet.Cos.Extension
+
 <div>
 
     <div class="forms">
+        <input type="hidden" id="deliveryUnit" name="deliveryUnit" value="@Url.DeliveryUnit()" />
+        <input type="hidden" id="deliveryRate" name="deliveryRate" value="@Url.DeliveryRate()" />
+        <input type="hidden" id="IsFlatRate" name="IsFlatRate" value="@Url.DeliveryRate()" />
 
         <div class="grid-12-12 ">
             <label class="forms-lbl">Pick Up:</label>
-            <input type="text" name="pickUp" id="pickUp" class="forms-txt validate[required]" maxlength="200" />
+            <input type="text" name="pickUp" id="pickUp" class="forms-txt validate[required]" value="@Url.CompleteAddress();" maxlength="200" />
         </div>
 
         <div class="grid-12-12 ">

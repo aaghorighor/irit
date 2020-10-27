@@ -105,8 +105,80 @@
             }
 
             return "UnKnown User";
-        }        
-   
+        }
+
+        public static string CompleteAddress(this UrlHelper helper)
+        {
+            var test = ((ClaimsIdentity)helper.RequestContext.HttpContext.User.Identity);
+
+            if (test != null)
+            {
+                return test.Claims.Where(x => x.Type == Identity.CompleteAddress).Select(x => x.Value).SingleOrDefault();
+            }
+
+            return "UnKnown Tenant";
+        }
+
+        public static string DeliveryRate(this UrlHelper helper)
+        {
+            var test = ((ClaimsIdentity)helper.RequestContext.HttpContext.User.Identity);
+
+            if (test != null)
+            {
+                return test.Claims.Where(x => x.Type == Identity.DeliveryRate).Select(x => x.Value).SingleOrDefault();
+            }
+
+            return "0";
+        }
+
+        public static string IsFlatRate(this UrlHelper helper)
+        {
+            var test = ((ClaimsIdentity)helper.RequestContext.HttpContext.User.Identity);
+
+            if (test != null)
+            {
+                return test.Claims.Where(x => x.Type == Identity.IsFlatRate).Select(x => x.Value).SingleOrDefault();
+            }
+
+            return "0";
+        }
+
+        public static string DeliveryNote(this UrlHelper helper)
+        {
+            var test = ((ClaimsIdentity)helper.RequestContext.HttpContext.User.Identity);
+
+            if (test != null)
+            {
+                return test.Claims.Where(x => x.Type == Identity.DeliveryNote).Select(x => x.Value).SingleOrDefault();
+            }
+
+            return "";
+        }
+
+        public static string FlatRate(this UrlHelper helper)
+        {
+            var test = ((ClaimsIdentity)helper.RequestContext.HttpContext.User.Identity);
+
+            if (test != null)
+            {
+                return test.Claims.Where(x => x.Type == Identity.FlatRate).Select(x => x.Value).SingleOrDefault();
+            }
+
+            return "0";
+        }
+
+        public static string DeliveryUnit(this UrlHelper helper)
+        {
+            var test = ((ClaimsIdentity)helper.RequestContext.HttpContext.User.Identity);
+
+            if (test != null)
+            {
+                return test.Claims.Where(x => x.Type == Identity.DeliveryUnit).Select(x => x.Value).SingleOrDefault();
+            }
+
+            return "0";
+        }
+
         public static int ToInt(this string value)
         {
             int output = 0;
@@ -928,7 +1000,7 @@
         {
             var iTenant = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenant>();
 
-            return System.Threading.Tasks.Task.Run(() => iTenant.Count());           
+            return System.Threading.Tasks.Task.Run(() => iTenant.Count(false));           
         }
         public static string StripHTML(this string HTMLText)
         {

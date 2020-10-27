@@ -23,9 +23,8 @@
       public string PlanTypeId { get; set; }    
       public DateTime ExpirationDate { get; set; }
       public DateTime? StartDate { get; set; }   
-      public int? SubscriptionId { get; set; }   
-     
-        public string ExpireDate
+      public int? SubscriptionId { get; set; }        
+      public string ExpireDate
         {
             get
             {
@@ -46,6 +45,11 @@
       public string StripePublishableKey { get; set; }
       public string StripeSecretKey { get; set; }     
       public string CurrencyCode { get; set; }
-      public string BackgroundUrl { get; set; }    
+      public string BackgroundUrl { get; set; }
+      public decimal DeliveryRate { get; set; }    
+      public string DeliveryUnitId { get; set; }       
+      public string DeliveryLimitNote { get; set; }
+      public bool? IsFlatRate { get; set; }
+      public decimal? FlatRate { get; set; }
     }
 }

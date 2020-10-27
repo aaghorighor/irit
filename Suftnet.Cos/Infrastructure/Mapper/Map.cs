@@ -30,6 +30,13 @@
             _model.LogoUrl = model.LogoUrl;
             _model.Publish = model.Publish;            
             _model.CurrencyCode = model.CurrencyCode;
+            _model.AddressId = model.AddressId;
+            _model.DeliveryUnitId = model.DeliveryUnitId;
+            _model.DeliveryLimitNote = model.DeliveryLimitNote;
+            _model.IsFlatRate = model.IsFlatRate;
+            _model.DeliveryRate = model.DeliveryRate;
+            _model.FlatRate = model.FlatRate;
+            _model.StatusId = model.StatusId;
 
             _model.CreatedDT = model.CreatedDT;
             _model.CreatedBy = model.CreatedBy;

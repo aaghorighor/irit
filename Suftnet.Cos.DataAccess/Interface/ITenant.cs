@@ -14,17 +14,11 @@
         bool UpdateStatus(Guid tenantId, bool isExpired);
         bool UpdateStartUp(Guid tenantId, bool status);
         bool Update(TenantDto entity);
-        bool CancelTrial(RequestDto entity);
-        List<TenantDto> GetAll();
-        List<TenantDto> GetAll(int statusId);
-        List<TenantDto> Startup(int statusId);
-        List<TenantShortDto> GetByFilterByPostCode(string postcode);
-        List<TenantShortDto> GetByFilterByCoordinate(string latitude, string longitude);
-        List<TenantShortDto> GetByFilterByAddress(string completeAddress);
-        List<TenantShortDto> GetByFilterByName(string name);
-        List<TenantShortDto> GetAll(int iskip, int itake);
-        int Count();
+        bool CancelTrial(RequestDto entity);      
+        List<TenantShortDto> GetAll(int iskip, int itake, bool status);     
         bool UpdateCustomer(TenantDto tenant);
-       
+        int Count(bool status);
+
+
     }
 }

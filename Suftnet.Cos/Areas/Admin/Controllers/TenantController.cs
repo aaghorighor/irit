@@ -17,10 +17,9 @@
 
         #endregion
            
-        public async Task<ActionResult> Index()
-        {
-            var model = await System.Threading.Tasks.Task.Run(() => _tenant.GetAll());
-            return View(model);
+        public ActionResult Index()
+        {            
+            return View();
         }     
 
     }

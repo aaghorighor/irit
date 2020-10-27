@@ -31,6 +31,7 @@
             For<IPaymentMethod>().Use<PaymentMethod>();
             For<IPaymentStatus>().Use<PaymentStatus>();
             For<IDeliveryAddress>().Use<DeliveryAddress>();
+            For<ITenantStatus>().Use<TenantStatus>();
         }
 
    } 
