@@ -5,7 +5,8 @@
     <div class="forms">
         <input type="hidden" id="deliveryUnit" name="deliveryUnit" value="@Url.DeliveryUnit()" />
         <input type="hidden" id="deliveryRate" name="deliveryRate" value="@Url.DeliveryRate()" />
-        <input type="hidden" id="IsFlatRate" name="IsFlatRate" value="@Url.DeliveryRate()" />
+        <input type="hidden" id="isFlatRate" name="isFlatRate" value="@Url.IsFlatRate()" />
+        <input type="hidden" id="flatRate" name="flatRate" value="@Url.FlatRate()" />
 
         <div class="grid-12-12 ">
             <label class="forms-lbl">Pick Up:</label>
@@ -26,26 +27,35 @@
         <div class="clear"></div>
 
         <div class="grid-6-12">
-            <label class="forms-lbl">Distance (Meter): </label>
+            <label class="forms-lbl">Distance:(<span id="unit"></span>) </label>
             <input type="text" name="edistance" id="edistance" readonly="readonly" class="forms-txt" />
         </div>
 
         <div class="grid-6-12">
-            <label class="forms-lbl">Duration (Minute): </label>
+            <label class="forms-lbl">Duration: (Minute): </label>
             <input type="text" name="eduration" id="eduration" readonly="readonly" class="forms-txt" />
         </div>
 
         <div class="clear"></div>
 
-        <ul style="margin-left:6px; margin-top :5px" class="display">
-            <li class="display"><span class="etip"><a class="uibutton normal " id="btnContinue" title="Continue">Continue</a></span></li>
-        </ul>
+        <div class="grid-6-12">
+            <label class="forms-lbl">Delivery Cost: </label>
+            <input type="text" style="background-color:#000000; color:#ffffff" name="cost" id="cost" readonly="readonly" class="forms-txt" />
+          
+        </div>
+        <div class="grid-12-12">
+            <span id="costNote"></span>
+        </div>
 
+       <div class="clear"></div>
+       <ul style="margin-left:6.5px; margin-top :5px" class="display">
+                <li class="display"><span class="etip"><a class="uibutton normal " id="btnContinue" title="Continue">Continue</a></span></li>
+            </ul>
 
-        <div id="dvMap" style="min-height:250px;margin-left:6px;"></div>
-    </div>
+      <div id="dvMap" style="min-height:250px;margin-left:6px;"></div>
+       </div>
 
-</div>
+  </div>
 
 
 

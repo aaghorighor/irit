@@ -59,13 +59,18 @@ var delivery = {
         $("#AddressLine").val(dataobject.AddressLine);
         $("#Duration").val(dataobject.Duration);
         $("#Distance").val(dataobject.Distance);
-
-
-        $("#StatusId").val(dataobject.StatusId);
-
+        $("#DeliveryCost").val(dataobject.DeliveryCost);
+     
         $("#StatusId").append('<option value="E4E6975E-4881-459D-BB2D-2AD841FBA835">Ready</option>');
         $("#StatusId").append('<option value="85616F94-1826-43B1-ACFF-819B37F028E4">Processing</option>');
+        $("#StatusId").append('<option value="58EE00D9-D449-4EBF-B4E8-769F51FE7EFE">Completed</option>');
         $("#StatusId").append('<option value="12BC2434-5CD8-42A2-8345-C1A3ECBC8E3B">Cancel</option>');
+               
+        $("#StatusId").val(dataobject.StatusId.toUpperCase());
+
+        if (dataobject.StatusId.toUpperCase() === constants.orderStatus.completed) {
+            $('#btnSubmit').addClass('disabled');
+        }
 
         $("#form").attr("action", $("#editUrl").attr("data-editUrl"));   
         $("#deliveryDialog").dialog("open");
@@ -88,7 +93,7 @@ var delivery = {
     view: function (obj) {
 
         var dataobject = _dataTables.delivery.row($(obj).parents('tr')).data();
-        window.location.href = $("#cartUrl").attr("data-cartUrl") + "/" + dataobject.Id + "/" + dataobject.OrderTypeId + "/" + dataobject.OrderType + "/" + dataobject.StatusId;
+        window.location.href = $("#cartUrl").attr("data-cartUrl") + "/" + dataobject.Id + "/" + dataobject.OrderTypeId + "/" + dataobject.OrderType + "/" + dataobject.StatusId + "/" + dataobject.DeliveryCost;
     },
     pageInit: function () {      
 
@@ -108,8 +113,11 @@ var delivery = {
         });       
 
         $(document).on("click", "#btnOpen", function () {
-         
+
+            iuHelper.resetForm("#form");           
             $("#deliveryDialog").dialog("open");
+
+            suftnet.tab(0);
         });      
 
         $(document).on("click", "#btnClose", function () {

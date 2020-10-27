@@ -30,7 +30,7 @@
                                  join s in context.OrderStatuses on o.StatusId equals s.Id                             
                                  join r in context.OrderTypes on o.OrderTypeId equals r.Id
                                  where o.Id == orderId
-                                 select new OrderDto { OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, TotalTax = o.TotalTax, TotalDiscount = o.TotalDiscount, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).FirstOrDefault();
+                                 select new OrderDto { DeliveryCost = o.DeliveryCost, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, TotalTax = o.TotalTax, TotalDiscount = o.TotalDiscount, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).FirstOrDefault();
                 return objResult;
             }
         }
@@ -43,7 +43,7 @@
                                  let carts = (from x in context.OrderDetails                                                                                                 
                                                     where x.OrderId == o.Id 
                                                     select new OrderDetailDto { IsProcessed = x.IsProcessed, ItemName = x.ItemName, MenuId = x.MenuId, Quantity = x.Quantity, Price = x.Price, Id = x.Id }).ToList()
-                                 let order = new OrderDto { DiscountRate =o.DiscountRate, TaxRate = o.TaxRate, Balance = o.Balance, Payment = o.Payment, StatusId = o.StatusId, TotalTax = o.TotalTax, TotalDiscount = o.TotalDiscount, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, Id = o.Id }                               
+                                 let order = new OrderDto { DeliveryCost = o.DeliveryCost, DiscountRate =o.DiscountRate, TaxRate = o.TaxRate, Balance = o.Balance, Payment = o.Payment, StatusId = o.StatusId, TotalTax = o.TotalTax, TotalDiscount = o.TotalDiscount, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, Id = o.Id }                               
                                  where o.Id == orderId
                                  select new CartOrderDto { Carts = carts, Order = order }).FirstOrDefault();
                 return objResult;
@@ -78,7 +78,7 @@
         {          
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.Order() { DiscountRate = 0,  TaxRate = 0, Note = entity.Note, UpdateBy = entity.UpdateBy, UpdateDt = entity.UpdateDate, Email = entity.Email, GrandTotal = 0, Total = 0, TotalDiscount = 0, TotalTax = 0, StartDt = entity.StartDt, TenantId = entity.TenantId, Mobile = entity.Mobile, FirstName = entity.FirstName, LastName = entity.LastName, Balance = entity.Balance, ExpectedGuest = entity.ExpectedGuest, Time = entity.Time, Payment = 0, TableId = entity.TableId, StatusId = entity.StatusId, CreatedDt = entity.CreatedDT, OrderTypeId = entity.OrderTypeId, CreatedBy = entity.CreatedBy, Id = entity.Id };
+                var obj = new Action.Order() { DeliveryCost = entity.DeliveryCost, DiscountRate = 0,  TaxRate = 0, Note = entity.Note, UpdateBy = entity.UpdateBy, UpdateDt = entity.UpdateDate, Email = entity.Email, GrandTotal = 0, Total = 0, TotalDiscount = 0, TotalTax = 0, StartDt = entity.StartDt, TenantId = entity.TenantId, Mobile = entity.Mobile, FirstName = entity.FirstName, LastName = entity.LastName, Balance = entity.Balance, ExpectedGuest = entity.ExpectedGuest, Time = entity.Time, Payment = 0, TableId = entity.TableId, StatusId = entity.StatusId, CreatedDt = entity.CreatedDT, OrderTypeId = entity.OrderTypeId, CreatedBy = entity.CreatedBy, Id = entity.Id };
                 context.Orders.Add(obj);
                 context.SaveChanges();
                 return obj.Id;
@@ -277,7 +277,7 @@
                                      let order = o.Order
                                      where (o.Order.TenantId == tenantId && o.Order.OrderTypeId == orderTypeId) && (order.Mobile.Contains(isearch) || order.Email.Contains(isearch) || order.FirstName.Contains(isearch) || order.LastName.Contains(isearch) || s.Name.Contains(isearch) || r.Name.Contains(isearch) || o.AddressLine.Contains(isearch))
                                      orderby o.Order.CreatedDt descending
-                                     select new DeliveryAddressDto { DeliveryId = o.Id, Email = order.Email, AddressLine = o.AddressLine, Distance = o.Distance, Duration = o.Duration, Latitude = o.Latitude, Logitude = o.Logitude, UpdateDate = order.UpdateDt, UpdateBy = order.UpdateBy, OrderType = r.Name, Mobile = order.Mobile, FirstName = order.FirstName, LastName = order.LastName, Time = order.Time, Balance = order.Balance, Payment = order.Payment, TotalTax = order.TotalTax, StatusId = order.StatusId, TableId = order.TableId, Status = s.Name, GrandTotal = order.GrandTotal,  OrderTypeId = order.OrderTypeId, Total = order.Total, CreatedBy = o.CreatedBy, Id = order.Id }).Skip(iskip).Take(itake).ToList();
+                                     select new DeliveryAddressDto { DeliveryCost = order.DeliveryCost, DeliveryId = o.Id, Email = order.Email, AddressLine = o.AddressLine, Distance = o.Distance, Duration = o.Duration, Latitude = o.Latitude, Logitude = o.Logitude, UpdateDate = order.UpdateDt, UpdateBy = order.UpdateBy, OrderType = r.Name, Mobile = order.Mobile, FirstName = order.FirstName, LastName = order.LastName, Time = order.Time, Balance = order.Balance, Payment = order.Payment, TotalTax = order.TotalTax, StatusId = order.StatusId, TableId = order.TableId, Status = s.Name, GrandTotal = order.GrandTotal,  OrderTypeId = order.OrderTypeId, Total = order.Total, CreatedBy = o.CreatedBy, Id = order.Id }).Skip(iskip).Take(itake).ToList();
                     return objResult;
                 }
             }else
@@ -296,7 +296,7 @@
                                  let order = o.Order
                                  where o.Order.TenantId == tenantId && (o.Order.OrderTypeId == orderTypeId)
                                  orderby o.Order.CreatedDt descending
-                                 select new DeliveryAddressDto { DeliveryId = o.Id, Email = order.Email, AddressLine = o.AddressLine, Distance = o.Distance, Duration = o.Duration, Latitude = o.Latitude, Logitude = o.Logitude, UpdateDate = order.UpdateDt, UpdateBy = order.UpdateBy, OrderType = r.Name, Mobile = order.Mobile, FirstName = order.FirstName, LastName = order.LastName, Time = order.Time, Balance = order.Balance, Payment = order.Payment, TotalTax = order.TotalTax, StatusId = order.StatusId, TableId = order.TableId, Status = s.Name, GrandTotal = order.GrandTotal, OrderTypeId = order.OrderTypeId, Total = order.Total, CreatedBy = o.CreatedBy, Id = order.Id }).Skip(iskip).Take(itake).ToList();
+                                 select new DeliveryAddressDto { DeliveryCost = order.DeliveryCost, DeliveryId = o.Id, Email = order.Email, AddressLine = o.AddressLine, Distance = o.Distance, Duration = o.Duration, Latitude = o.Latitude, Logitude = o.Logitude, UpdateDate = order.UpdateDt, UpdateBy = order.UpdateBy, OrderType = r.Name, Mobile = order.Mobile, FirstName = order.FirstName, LastName = order.LastName, Time = order.Time, Balance = order.Balance, Payment = order.Payment, TotalTax = order.TotalTax, StatusId = order.StatusId, TableId = order.TableId, Status = s.Name, GrandTotal = order.GrandTotal, OrderTypeId = order.OrderTypeId, Total = order.Total, CreatedBy = o.CreatedBy, Id = order.Id }).Skip(iskip).Take(itake).ToList();
                 return objResult;
             }
         }

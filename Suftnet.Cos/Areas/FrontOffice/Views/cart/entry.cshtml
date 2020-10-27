@@ -49,7 +49,7 @@
                         @Html.Partial("_cart")
                         @Html.Partial("_cartSummary")
 
-                        <ul style="margin-left:0px; margin-top :30px" class="uibutton-group">
+                        <ul style="margin-left:0px; margin-top :50px" class="uibutton-group">
                             <li><span class="etip"><a class="uibutton special" id="btnOpenTender" title="Payment">Tender</a></span></li>     
                             <li><span class="etip"><a class="uibutton icon prev normal " id="btnClose" title="Go to Dine in ">Close</a></span></li>
                         </ul>
@@ -88,6 +88,7 @@
     <span id="orderTypeId" name="orderTypeId" data-orderTypeId="@this.ViewContext.RouteData.Values["orderTypeId"].ToString().ToUpper()"></span>
     <span id="orderStatusId" name="orderStatusId" data-orderStatusId="@this.ViewContext.RouteData.Values["orderStatusId"].ToString().ToUpper()"></span>
     <span id="orderId" name="orderId" data-orderId="@this.ViewContext.RouteData.Values["orderId"].ToString()"></span>
+    <span id="deliveryCost" name="deliveryCost" data-deliveryCost="@this.ViewContext.RouteData.Values["deliveryCost"].ToString()"></span>
     <span id="imageUrl" name="imageUrl" data-imageUrl="@Url.Content("~/content/photo/category/180x120/")"></span>
     <span id="dineInUrl" name="dineInUrl" data-dineInUrl="@Url.Action("index", "table", new { area = "frontoffice" })"></span>
 </div>

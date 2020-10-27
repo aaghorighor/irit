@@ -33,7 +33,7 @@
             _model.AddressId = model.AddressId;
             _model.DeliveryUnitId = model.DeliveryUnitId;
             _model.DeliveryLimitNote = model.DeliveryLimitNote;
-            _model.IsFlatRate = model.IsFlatRate;
+            _model.IsFlatRate = model.IsFlatRate == null ? false : model.IsFlatRate;
             _model.DeliveryRate = model.DeliveryRate;
             _model.FlatRate = model.FlatRate;
             _model.StatusId = model.StatusId;

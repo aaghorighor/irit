@@ -42,7 +42,7 @@ var reservation = {
     view: function (obj) {
 
         var dataobject = _dataTables.reservation.row($(obj).parents('tr')).data();
-        window.location.href = $("#cartUrl").attr("data-cartUrl") + "/" + dataobject.Id + "/" + dataobject.OrderTypeId + "/" + dataobject.OrderType + "/" + dataobject.StatusId;
+        window.location.href = $("#cartUrl").attr("data-cartUrl") + "/" + dataobject.Id + "/" + dataobject.OrderTypeId + "/" + dataobject.OrderType + "/" + dataobject.StatusId + "/" + "0";
     },
     create: function () {
 

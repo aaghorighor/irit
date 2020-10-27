@@ -68,6 +68,10 @@ var order = {
         $("#editTime").val(dataobject.Time);       
         $("#editStatusId").val(dataobject.StatusId);
 
+        if (dataobject.StatusId.toUpperCase() === constants.orderStatus.completed) {
+            $('#btnSaveChanges').addClass('disabled');
+        }
+
         $("#dineInDialog").dialog("open");
         
     },   
@@ -86,7 +90,7 @@ var order = {
     view: function (obj) {
 
         var dataobject = _dataTables.order.row($(obj).parents('tr')).data();     
-        window.location.href = $("#cartUrl").attr("data-cartUrl") + "/" + dataobject.Id + "/" + dataobject.OrderTypeId + "/" + dataobject.OrderType + "/" + dataobject.StatusId;
+        window.location.href = $("#cartUrl").attr("data-cartUrl") + "/" + dataobject.Id + "/" + dataobject.OrderTypeId + "/" + dataobject.OrderType + "/" + dataobject.StatusId + "/" + "0";
     },
     listener: function () {
 

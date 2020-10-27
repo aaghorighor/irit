@@ -57,7 +57,7 @@
                                  join u in context.Users on o.UserId equals u.Id   
                                  let t = o.Tenants
                                  where o.UserId == userId
-                                 select new UserAccountDto { CurrencyCode = t.CurrencyCode, DeliveryRate =t.DeliveryRate, DeliveryUnit = t.DeliveryUnitId, CompleteAddress = t.TenantAddresses.CompleteAddress, ExpirationDate = t.ExpirationDate, IsExpired = t.IsExpired, TenantName = t.Name, UserId = u.Id, Id = u.Id, AreaId = u.AreaId, Area = u.Area, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, UserName = u.UserName, Active = u.Active, TenantId = o.TenantId }).FirstOrDefault();
+                                 select new UserAccountDto { FlatRate=t.FlatRate, IsFlatRate= t.IsFlatRate, CurrencyCode = t.CurrencyCode, DeliveryRate =t.DeliveryRate, DeliveryUnit = t.DeliveryUnitId, CompleteAddress = t.TenantAddresses.CompleteAddress, ExpirationDate = t.ExpirationDate, IsExpired = t.IsExpired, TenantName = t.Name, UserId = u.Id, Id = u.Id, AreaId = u.AreaId, Area = u.Area, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, UserName = u.UserName, Active = u.Active, TenantId = o.TenantId }).FirstOrDefault();
                 return objResult;
             }
         }

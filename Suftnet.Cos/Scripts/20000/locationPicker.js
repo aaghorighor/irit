@@ -63,17 +63,27 @@ var locationPicker = {
         directionsService.route(request, function (response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
                 
-                var distance = 0;
-                var minute = 0.00;
+                var originalDistance = 0;
+                var expectedDistance = 0;
+                var duration = 0.00;
                 var lat = 0;
                 var lng = 0;
-                var startAddress = ""
-                var endAddress = ""
+                var totalCost = 0.00
+                var startAddress = "";
+                var endAddress = "";
+                var unit = "";
+                var costNote = "Delivery cost is calculated using Flat Rate";
+                var isFlatRate = document.getElementById("isFlatRate").value;
+                var deliveryRate = document.getElementById("deliveryRate").value;
+                var deliveryUnit = document.getElementById("deliveryUnit").value;
+                var flatRate = document.getElementById("flatRate").value;
 
-                response.routes[0].legs.forEach(function (item, index) {
-                    if (index < response.routes[0].legs.length - 1) {
-                        distance = distance + parseInt(item.distance.text);
-                        minute = parseFloat(minute) + parseFloat(item.duration.value / 60);
+                response.routes[0].legs.forEach(function (item, index)
+                {
+                    if (index < response.routes[0].legs.length - 1)
+                    {
+                        originalDistance = originalDistance + parseInt(item.distance.text);
+                        duration = parseFloat(duration) + parseFloat(item.duration.value / 60);
 
                         startAddress = source;
                         endAddress = item.end_address;
@@ -81,14 +91,31 @@ var locationPicker = {
                         lat = response.routes[0].legs[response.routes[0].legs.length - 1].end_location.lat();
                         lng = response.routes[0].legs[response.routes[0].legs.length - 1].end_location.lng();  
 
-                        $("#edistance").val(distance);
-                        $("#eduration").val(minute.toFixed(2));
-                        $("#Distance").val(distance);
-                        $("#Duration").val(minute.toFixed(2));
+                        if (!isNaN(flatRate)) {
+                            totalCost = parseFloat(flatRate);
+                        }    
+
+                        var miles = locationPicker.conveter.meterToMiles(originalDistance);
+
+                        if (constants.matrix.kilomater == deliveryUnit) {
+                            expectedDistance = locationPicker.conveter.milesToKilometer(miles);
+                            unit = "Kilometer";
+                        } else if (constants.matrix.miles == deliveryUnit) {
+                            expectedDistance = miles;
+                            unit = "Miles";
+                        }                              
+
+                        $("#edistance").val(expectedDistance.toFixed(2));
+                        $("#eduration").val(duration.toFixed(2));
+                        $("#Distance").val(expectedDistance.toFixed(2));
+                        $("#Duration").val(duration.toFixed(2));
                         $("#Latitude").val(lat);
                         $("#Logitude").val(lng);
                         $("#AddressLine").val(endAddress);   
-                     
+                        $("#unit").text(unit);
+                        $("#costNote").text(costNote);
+                        $("#DeliveryCost").val(totalCost);                        
+                        $("#cost").val(totalCost.toFixed(2));                     
                     }
                 });
 
@@ -110,6 +137,47 @@ var locationPicker = {
         $(document).on("click", "#btnContinue", function () {
             suftnet.tab(1);
         }); 
+    }, 
+    conveter: {
+        kilometerToMiles: function (i) {
 
-    }    
+            if (i == null) {
+                return 0;
+            };
+
+            return (i * 0.621371).toFixed(2);
+        },
+        milesToKilometer: function (i) {
+
+            if (i == null) {
+                return 0;
+            };
+
+            return (i * 1.6093).toFixed(2);
+        },
+        meterToMiles: function (i) {
+
+            if (i == null) {
+                return 0;
+            };
+
+            return i * 0.000621371192;
+        },
+        milesToMeter: function (i) {
+
+            if (i == null) {
+                return 0;
+            };
+
+            return i * 1609.344;
+        }
+        
+    }
 }
+
+
+//if (isFlatRate === "false")
+                        //{                          
+                        //    costNote = "Delivery cost is calculated using distance per " + unit;
+                        //    totalCost = parseFloat(expectedDistance) * parseFloat(deliveryRate);
+                        //}  

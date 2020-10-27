@@ -10,6 +10,7 @@ var cart = {
         cart.ui();
         cart.ko();      
         cart.listener();
+        cart.boostrap();
         cart.load();
     },
     ko: function () {
@@ -28,6 +29,9 @@ var cart = {
         addonViewModel = new AddonViewModel();
         ko.applyBindings(addonViewModel, document.getElementById("addonContainer"));
 
+    },
+    boostrap: function () {
+        cartViewModel.deliveryCost($("#deliveryCost").attr("data-deliveryCost"));
     },
     ui: function ()
     {

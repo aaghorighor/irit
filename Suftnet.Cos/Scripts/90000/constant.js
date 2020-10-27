@@ -23,6 +23,10 @@ var constants = {
     paymentMethod: {
         cash: "E0DF7037-BE71-4D90-871D-04AD8E4AD960",
         card: "FD55F6B4-30C2-48C7-B331-79A505D8F8C2"
+    },
+    matrix: {
+        kilomater: "2663",
+        miles: "2664"
     }
 
 }

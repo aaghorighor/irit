@@ -16,11 +16,12 @@ var CartViewModel = function () {
  
     self.paid = ko.observable(0);
 
-    self.totalDiscount = ko.observable();
-    self.discountRate = ko.observable();
+    self.totalDiscount = ko.observable(0);
+    self.discountRate = ko.observable(0);
+    self.deliveryCost = ko.observable(0);
 
-    self.taxRate = ko.observable();
-    self.totalTax = ko.observable();
+    self.taxRate = ko.observable(0);
+    self.totalTax = ko.observable(0);
         
     self.items = ko.observableArray([]);
 
@@ -102,6 +103,10 @@ var CartViewModel = function () {
             total = parseFloat(total) + parseFloat(self.totalTax());
         }       
 
+        if (self.deliveryCost() > 0) {
+            total = parseFloat(total) + parseFloat(self.deliveryCost());
+        }    
+
         self.grandTotal(total);
 
         return suftnet_grid.formatCurrency(total);
@@ -143,6 +148,10 @@ var CartViewModel = function () {
     self.displayTax = ko.computed(function ()
     {
         return suftnet_grid.formatCurrency(self.totalTax());
+    });
+
+    self.displayDeliveryCost = ko.computed(function () {
+        return suftnet_grid.formatCurrency(self.deliveryCost());
     });
 
     self.displayAmountPaid = ko.computed(function ()
@@ -363,7 +372,7 @@ var CartViewModel = function () {
             TotalTax: self.totalTax(),
             TaxRate: self.taxRate(),
             Balance: self.balance(),
-            DeliveryCost: 0,
+            DeliveryCost: $("#deliveryCost").attr("data-deliveryCost"),
             OrderStatusId: self.selectedOptionValue().OrderStatusId,
             orderedItems: basket,
             TotalDiscount: self.totalDiscount()
@@ -434,6 +443,7 @@ function loadCart()
 
             cartViewModel.totalDiscount(data.dataobject.Order.TotalDiscount);
             cartViewModel.discountRate(data.dataobject.Order.DiscountRate);
+            cartViewModel.deliveryCost(data.dataobject.Order.DeliveryCost);
 
             cartViewModel.totalTax(data.dataobject.Order.TotalTax);
             cartViewModel.taxRate(data.dataobject.Order.TaxRate);

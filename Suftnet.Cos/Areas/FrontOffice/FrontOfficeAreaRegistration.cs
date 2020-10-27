@@ -19,8 +19,8 @@ namespace Suftnet.Cos.FrontOffice
 
             context.MapRoute(
               "CART_",
-              "front-office/cart/entry/{orderId}/{orderTypeId}/{orderType}/{orderStatusId}",
-              new { AreaName = "FrontOffice", Controller = "cart", action = "entry", orderId = UrlParameter.Optional, orderTypeId = UrlParameter.Optional, orderType = UrlParameter.Optional , orderStatusId = UrlParameter.Optional },             
+              "front-office/cart/entry/{orderId}/{orderTypeId}/{orderType}/{orderStatusId}/{deliveryCost}",
+              new { AreaName = "FrontOffice", Controller = "cart", action = "entry", orderId = UrlParameter.Optional, orderTypeId = UrlParameter.Optional, orderType = UrlParameter.Optional , orderStatusId = UrlParameter.Optional, deliveryCost = UrlParameter.Optional },             
               new string[] { "Suftnet.Cos.FrontOffice" }
             );
 

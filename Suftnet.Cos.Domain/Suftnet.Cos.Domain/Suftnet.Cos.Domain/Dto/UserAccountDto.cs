@@ -33,7 +33,8 @@
         public decimal DeliveryRate { get; set; }
         public string DeliveryUnit { get; set; }
         public string CurrencyCode { get; set; }
-        public bool IsFlatRate { get; set; }
+        public bool? IsFlatRate { get; set; }
         public string DeliveryLimitNote { get; set; }
+        public decimal? FlatRate { get; set; }
     }
 }

@@ -20,7 +20,7 @@
 
         } else {    
            
-            window.location.href = $("#cartUrl").attr("data-cartUrl") + "/" + order.OrderId() + "/" + constants.orderType.dineIn + "/" + "Dine-In" + "/" + constants.orderStatus.occupied;
+            window.location.href = $("#cartUrl").attr("data-cartUrl") + "/" + order.OrderId() + "/" + constants.orderType.dineIn + "/" + "Dine-In" + "/" + constants.orderStatus.occupied + "/" + "0";
         }
     };
 

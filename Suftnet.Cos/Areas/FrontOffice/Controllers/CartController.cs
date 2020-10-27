@@ -29,7 +29,7 @@
         }
         #endregion
         [OutputCache(Duration = 0, VaryByParam = "*")]
-        public ActionResult Entry(string orderId, string orderTypeId, string orderType, string orderStatusId)
+        public ActionResult Entry(string orderId, string orderTypeId, string orderType, string orderStatusId, string deliveryCost)
         {
             return View();
         }

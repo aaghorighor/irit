@@ -59,10 +59,19 @@
                 claims.Add(new Claim("TenantId", account.TenantId.ToString().ToUpper()));
                 claims.Add(new Claim("IsExpired", account.IsExpired.ToString()));
                 claims.Add(new Claim("ExpirationDate", account.ExpirationDate.ToString()));
-                claims.Add(new Claim("TenantName", account.TenantName));
-                claims.Add(new Claim("DeliveryRate", account.DeliveryRate.ToString()));
+                claims.Add(new Claim("TenantName", account.TenantName));              
                 claims.Add(new Claim("CompleteAddress", account.CompleteAddress));
-                claims.Add(new Claim("IsFlatRate", account.IsFlatRate.ToString()));
+                claims.Add(new Claim("DeliveryRate", account.DeliveryRate.ToString()));             
+                claims.Add(new Claim("FlatRate", account.FlatRate.ToString()));
+
+                if ((bool)account.IsFlatRate == true)
+                {
+                    claims.Add(new Claim("IsFlatRate", "true"));
+                }
+                else
+                {
+                    claims.Add(new Claim("IsFlatRate", "false"));
+                }
 
                 if (string.IsNullOrEmpty(account.DeliveryUnit))
                 {
