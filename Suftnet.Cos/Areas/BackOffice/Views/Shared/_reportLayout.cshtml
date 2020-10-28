@@ -25,25 +25,25 @@
     @Html.Partial("_menu")
     <!-- End Menu -->
 
-    <div id="content">
-        <div class="inner">
-            <div style="margin-top:20px"></div>
-            <div class="clear"></div>
+<div id="content">
+    <div class="inner">
+        <div style="margin-top:20px"></div>
+        <div class="clear"></div>
 
-            @RenderBody()
+        @RenderBody()
 
-            <!-- Footer -->
-            @Html.Partial("_footer")
-            <!-- End Footer -->
-
-        </div>
-
-        <span style="display :none " id="currencySymbol">@this.ToCurrencyCodeSymbol()</span>
-        <div id="InvoiceDialog">
-            <iframe id="ifInvoice" style="width:100%; height:750px"></iframe>
-        </div>
+        <!-- Footer -->
+        @Html.Partial("_footer")
+        <!-- End Footer -->
 
     </div>
+  
+    <span style="display :none " id="currencySymbol">@Html.CurrencySymbol()</span>
+    <div id="InvoiceDialog">
+        <iframe id="ifInvoice" style="width:100%; height:750px"></iframe>
+    </div>
+
+</div>
 
 </body>
 </html>

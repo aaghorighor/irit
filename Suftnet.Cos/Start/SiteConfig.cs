@@ -59,8 +59,14 @@
             settings.PushNotificationServerkey = ConfigurationSettings.AppSettings["PushNotificationServerkey"];
             settings.PushNotificationSenderId = ConfigurationSettings.AppSettings["PushNotificationSenderId"];
             settings.PushNotificationUrl = ConfigurationSettings.AppSettings["PushNotificationUrl"];
-                       
-            GeneralConfiguration.Configuration.HosterName = ConfigurationSettings.AppSettings["HostName"] ?? "Jerur";
+
+            settings.CaptchaSiteKey = ConfigurationSettings.AppSettings["CaptchaSiteKey"];
+            settings.CaptchaSecretKey = ConfigurationSettings.AppSettings["CaptchaSecretKey"];
+
+            settings.MobileLink = ConfigurationSettings.AppSettings["mobilelink"];
+            settings.OnlineLink = ConfigurationSettings.AppSettings["onlinelink"];
+
+            GeneralConfiguration.Configuration.HosterName = ConfigurationSettings.AppSettings["HostName"] ?? "Irit";
             GeneralConfiguration.Configuration.Settings = settings;
             GeneralConfiguration.Configuration.Logger.Log("Website configuration enabled", Cos.Common.EventLogSeverity.Information);
         }

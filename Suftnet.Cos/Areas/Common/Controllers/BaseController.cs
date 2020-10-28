@@ -81,6 +81,21 @@
             }
         }
 
+        public string Email
+        {
+            get
+            {
+                var test = ((ClaimsIdentity)this.HttpContext.User.Identity);
+
+                if (test != null)
+                {
+                    return test.Claims.Where(x => x.Type == Identity.Email).Select(x => x.Value).SingleOrDefault();
+                }
+
+                return "UnKnown User";
+            }
+        }
+
         public Guid TenantId
         {
             get
@@ -111,7 +126,55 @@
 
                 return "";
             }
-        }       
+        }
+
+        public string TenantEmail
+        {
+            get
+            {
+                var test = ((ClaimsIdentity)this.HttpContext.User.Identity);
+
+                if (test != null)
+                {
+                    var name = test.Claims.Where(x => x.Type == Identity.TenantEmail).Select(x => x.Value).SingleOrDefault();
+                    return name;
+                }
+
+                return "";
+            }
+        }
+
+        public string TenantMobile
+        {
+            get
+            {
+                var test = ((ClaimsIdentity)this.HttpContext.User.Identity);
+
+                if (test != null)
+                {
+                    var name = test.Claims.Where(x => x.Type == Identity.TenantMobile).Select(x => x.Value).SingleOrDefault();
+                    return name;
+                }
+
+                return "";
+            }
+        }
+
+        public string TenantAddress
+        {
+            get
+            {
+                var test = ((ClaimsIdentity)this.HttpContext.User.Identity);
+
+                if (test != null)
+                {
+                    var name = test.Claims.Where(x => x.Type == Identity.CompleteAddress).Select(x => x.Value).SingleOrDefault();
+                    return name;
+                }
+
+                return "";
+            }
+        }
 
         protected override RedirectResult Redirect(string url)
         {

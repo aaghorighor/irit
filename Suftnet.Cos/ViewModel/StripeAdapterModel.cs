@@ -3,6 +3,7 @@
     using global::Stripe;
     using Stripe;
     using Suftnet.Cos.DataAccess;
+    using Suftnet.Cos.Web.Areas.Subscription.Models;
     using System.Collections.Generic;
 
     public class StripeAdapterModel
@@ -16,5 +17,6 @@
         public List<CustomerInvoice> Invoices { get; set; }
         public CustomerInvoice Invoice { get; set; }
         public PlanFeatureAdapter PlanFeatureAdapter { get; set; }
+        public DeleteCard DeleteCard { get; set; }
     }
 }

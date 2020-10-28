@@ -6,52 +6,74 @@
         <Alias>Setting</Alias>
         <BusinessObjects isList="true" count="0" />
         <Category>Settings</Category>
-        <Columns isList="true" count="36">
+        <Columns isList="true" count="56">
           <value>Active,System.Boolean</value>
-          <value>AddressId,System.Int32</value>
+          <value>AddressId,System.Guid</value>
           <value>AddressLine,System.String</value>
           <value>AddressLine1,System.String</value>
           <value>AddressLine2,System.String</value>
           <value>AddressLine3,System.String</value>
-          <value>Company,System.String</value>
+          <value>BackgroundUrl,System.String</value>
           <value>CompleteAddress,System.String</value>
           <value>Country,System.String</value>
           <value>County,System.String</value>
           <value>CreatedBy,System.String</value>
           <value>CreatedDT,System.DateTime</value>
           <value>CreatedOn,System.String</value>
+          <value>CurrencyCode,System.String</value>
           <value>CurrencyId,System.Nullable`1[System.Int32]</value>
           <value>CurrencySymbol,System.String</value>
-          <value>DateTimeFormat,System.String</value>
+          <value>CustomerStripeId,System.String</value>
+          <value>DeliveryLimitNote,System.String</value>
+          <value>DeliveryRate,System.Decimal</value>
+          <value>DeliveryUnitId,System.String</value>
           <value>Description,System.String</value>
           <value>Email,System.String</value>
+          <value>ExpirationDate,System.DateTime</value>
+          <value>ExpireDate,System.String</value>
           <value>ExternalId,System.String</value>
-          <value>ExternalTenantId,System.String</value>
           <value>flag,System.Int32</value>
+          <value>FlatRate,System.Nullable`1[System.Decimal]</value>
           <value>FullAddress,System.String</value>
-          <value>Id,System.Int32</value>
+          <value>Id,System.Guid</value>
+          <value>IsExpired,System.Boolean</value>
+          <value>IsFlatRate,System.Nullable`1[System.Boolean]</value>
           <value>Latitude,System.String</value>
-          <value>Logitude,System.String</value>
+          <value>LogoUrl,System.String</value>
+          <value>Longitude,System.String</value>
           <value>Mobile,System.String</value>
-          <value>Password,System.String</value>
-          <value>Port,System.Nullable`1[System.Int32]</value>
+          <value>Name,System.String</value>
+          <value>PhotoFlag,System.Nullable`1[System.Int32]</value>
+          <value>PlanType,System.String</value>
+          <value>PlanTypeId,System.String</value>
           <value>PostCode,System.String</value>
-          <value>Server,System.String</value>
-          <value>ServerEmail,System.String</value>
-          <value>TaxRate,System.Nullable`1[System.Decimal]</value>
+          <value>Publish,System.Nullable`1[System.Boolean]</value>
+          <value>StartDate,System.Nullable`1[System.DateTime]</value>
+          <value>Startup,System.Nullable`1[System.Boolean]</value>
+          <value>Status,System.String</value>
+          <value>StatusId,System.Guid</value>
+          <value>StripePublishableKey,System.String</value>
+          <value>StripeSecretKey,System.String</value>
+          <value>SubscriptionId,System.Nullable`1[System.Int32]</value>
           <value>Telephone,System.String</value>
-          <value>TenantId,System.Int32</value>
+          <value>TenantId,System.Guid</value>
+          <value>Total,System.Decimal</value>
           <value>Town,System.String</value>
-          <value>UserName,System.String</value>
+          <value>UpdateBy,System.String</value>
+          <value>UpdateDate,System.Nullable`1[System.DateTime]</value>
+          <value>UpdatedOn,System.String</value>
+          <value>WebsiteUrl,System.String</value>
         </Columns>
         <Dictionary isRef="1" />
         <Guid>be44dfe141b347d9a4f11eeb30f15ca4</Guid>
+        <Key>dd9ec22f33cd4074bf21420205ae84ff</Key>
         <Name>Setting</Name>
       </Setting>
     </BusinessObjects>
     <Databases isList="true" count="1">
       <MenuConnection Ref="3" type="Stimulsoft.Report.Dictionary.StiXmlDatabase" isKey="true">
         <Alias>MenuConnection</Alias>
+        <Key />
         <Name>MenuConnection</Name>
         <PathData />
         <PathSchema />
@@ -71,6 +93,7 @@
           <value>IndexNo,System.SByte</value>
         </Columns>
         <Dictionary isRef="1" />
+        <Key>c7e3d4015c52425db3850d83a4b2b283</Key>
         <Name>Category</Name>
         <NameInSource>MenuConnection.Category</NameInSource>
       </Category>
@@ -100,6 +123,7 @@
           <value>IsKitchen,System.String</value>
         </Columns>
         <Dictionary isRef="1" />
+        <Key>dd91753729ee4cf6a8797452fb50184e</Key>
         <Name>Menu</Name>
         <NameInSource>MenuConnection.Menu</NameInSource>
       </Menu>
@@ -121,10 +145,12 @@
       </Mc>
     </Relations>
     <Report isRef="0" />
+    <Resources isList="true" count="0" />
     <Variables isList="true" count="0" />
   </Dictionary>
   <EngineVersion>EngineV2</EngineVersion>
   <GlobalizationStrings isList="true" count="0" />
+  <Key>886a6782dc054910a91b47e9269a05ff</Key>
   <MetaTags isList="true" count="0" />
   <Pages isList="true" count="1">
     <MenuReport Ref="7" type="Page" isKey="true">
@@ -145,8 +171,8 @@
               <Name>Text1</Name>
               <Page isRef="7" />
               <Parent isRef="8" />
-              <Text>Menu Items</Text>
-              <TextBrush>[127:127:127]</TextBrush>
+              <Text>Menus</Text>
+              <TextBrush>[12:12:12]</TextBrush>
               <Type>Expression</Type>
             </Text1>
             <company Ref="10" type="Text" isKey="true">
@@ -161,8 +187,8 @@
               <Name>company</Name>
               <Page isRef="7" />
               <Parent isRef="8" />
-              <Text>{Setting.Company}</Text>
-              <TextBrush>[127:127:127]</TextBrush>
+              <Text>{Setting.Name}</Text>
+              <TextBrush>[12:12:12]</TextBrush>
               <Type>Expression</Type>
             </company>
             <invoice Ref="11" type="Text" isKey="true">
@@ -191,7 +217,7 @@
               <Page isRef="7" />
               <Parent isRef="8" />
               <Text>{Setting.Email}</Text>
-              <TextBrush>[127:127:127]</TextBrush>
+              <TextBrush>[12:12:12]</TextBrush>
               <Type>DataColumn</Type>
             </email>
             <mobile Ref="13" type="Text" isKey="true">
@@ -206,7 +232,7 @@
               <Page isRef="7" />
               <Parent isRef="8" />
               <Text>{Setting.Mobile}</Text>
-              <TextBrush>[127:127:127]</TextBrush>
+              <TextBrush>[12:12:12]</TextBrush>
               <Type>DataColumn</Type>
             </mobile>
             <address Ref="14" type="Text" isKey="true">
@@ -221,9 +247,9 @@
               <Name>address</Name>
               <Page isRef="7" />
               <Parent isRef="8" />
-              <Text>{Setting.FullAddress}</Text>
-              <TextBrush>[127:127:127]</TextBrush>
-              <Type>Expression</Type>
+              <Text>{Setting.CompleteAddress}</Text>
+              <TextBrush>[12:12:12]</TextBrush>
+              <Type>DataColumn</Type>
             </address>
           </Components>
           <Conditions isList="true" count="0" />
@@ -235,10 +261,10 @@
           <Brush>Transparent</Brush>
           <BusinessObjectGuid isNull="true" />
           <ClientRectangle>0,4.6,27.7,1.6</ClientRectangle>
-          <Components isList="true" count="7">
+          <Components isList="true" count="9">
             <Text32 Ref="16" type="Text" isKey="true">
               <Border>All;[38:38:38];1;Solid;False;4;Black</Border>
-              <Brush>[216:216:216]</Brush>
+              <Brush>White</Brush>
               <ClientRectangle>1,0.8,5,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,12</Font>
@@ -254,10 +280,10 @@
             </Text32>
             <Text33 Ref="17" type="Text" isKey="true">
               <Border>All;[38:38:38];1;Solid;False;4;Black</Border>
-              <Brush>[216:216:216]</Brush>
+              <Brush>White</Brush>
               <ClientRectangle>21.2,0.8,2.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12</Font>
+              <Font>Arial,11</Font>
               <Guid>bbe4a4c9672d488fa0c7edee106c553c</Guid>
               <Margins>4,4,4,4</Margins>
               <Name>Text33</Name>
@@ -270,10 +296,10 @@
             </Text33>
             <Text35 Ref="18" type="Text" isKey="true">
               <Border>All;[38:38:38];1;Solid;False;4;Black</Border>
-              <Brush>[216:216:216]</Brush>
+              <Brush>White</Brush>
               <ClientRectangle>6,0.8,12.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12</Font>
+              <Font>Arial,11</Font>
               <Guid>8e439f698057454285e4be9a702df0f5</Guid>
               <Margins>4,4,4,4</Margins>
               <Name>Text35</Name>
@@ -286,7 +312,7 @@
             </Text35>
             <Text36 Ref="19" type="Text" isKey="true">
               <Border>All;[38:38:38];1;Solid;False;4;Black</Border>
-              <Brush>[216:216:216]</Brush>
+              <Brush>White</Brush>
               <ClientRectangle>0,0.8,1,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,11</Font>
@@ -302,10 +328,10 @@
             </Text36>
             <Text12 Ref="20" type="Text" isKey="true">
               <Border>All;[38:38:38];1;Solid;False;4;Black</Border>
-              <Brush>[216:216:216]</Brush>
+              <Brush>White</Brush>
               <ClientRectangle>24,0.8,3.7,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12</Font>
+              <Font>Arial,11</Font>
               <Guid>b5f5c50ab86849f0a7a1be2d8bb183d4</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>4,4,4,4</Margins>
@@ -319,10 +345,10 @@
             </Text12>
             <Text3 Ref="21" type="Text" isKey="true">
               <Border>All;[38:38:38];1;Solid;False;4;Black</Border>
-              <Brush>[216:216:216]</Brush>
+              <Brush>White</Brush>
               <ClientRectangle>18.4,0.8,2.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>Arial,11</Font>
               <Guid>dbed115fac33414eba2ee2db5e42d658</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>4,4,4,4</Margins>
@@ -351,6 +377,38 @@
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text17>
+            <Text2 Ref="23" type="Text" isKey="true">
+              <Border>All;[38:38:38];1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>1,0.8,5,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,11</Font>
+              <Guid>1244c678ca0a4bd385753e0fa3460fe3</Guid>
+              <Margins>4,4,4,4</Margins>
+              <Name>Text2</Name>
+              <Page isRef="7" />
+              <Parent isRef="15" />
+              <Text>Item Name</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+            <Text4 Ref="24" type="Text" isKey="true">
+              <Border>All;[38:38:38];1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>0,0.8,1,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,11</Font>
+              <Guid>801cbfa6422f40ac824471cfd9de2c81</Guid>
+              <Margins>4,4,4,4</Margins>
+              <Name>Text4</Name>
+              <Page isRef="7" />
+              <Parent isRef="15" />
+              <Text>Sn#</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text4>
           </Components>
           <Conditions isList="true" count="0" />
           <DataRelationName isNull="true" />
@@ -361,27 +419,28 @@
           <Parent isRef="7" />
           <Sort isList="true" count="0" />
         </DataBand2>
-        <DataBand1 Ref="23" type="DataBand" isKey="true">
+        <DataBand1 Ref="25" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
           <ClientRectangle>0,7,27.7,0.6</ClientRectangle>
           <Components isList="true" count="6">
-            <Text37 Ref="24" type="Text" isKey="true">
+            <Text37 Ref="26" type="Text" isKey="true">
               <Border>All;[216:216:216];1;Dot;False;4;Black</Border>
               <Brush>White</Brush>
               <ClientRectangle>1,0,5,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12</Font>
+              <Font>Arial,11</Font>
               <Guid>51479a52b49e4b8fb6c936d07ba13b29</Guid>
               <Margins>4,4,4,4</Margins>
               <Name>Text37</Name>
               <Page isRef="7" />
-              <Parent isRef="23" />
+              <Parent isRef="25" />
               <Text>{Menu.Name}</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text37>
-            <Text39 Ref="25" type="Text" isKey="true">
+            <Text39 Ref="27" type="Text" isKey="true">
               <Border>All;[216:216:216];1;Dot;False;4;Black</Border>
               <Brush>White</Brush>
               <ClientRectangle>21.2,0,2.8,0.6</ClientRectangle>
@@ -391,46 +450,46 @@
               <Margins>4,4,4,4</Margins>
               <Name>Text39</Name>
               <Page isRef="7" />
-              <Parent isRef="23" />
+              <Parent isRef="25" />
               <Text>{Menu.Unit}</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text39>
-            <Text40 Ref="26" type="Text" isKey="true">
+            <Text40 Ref="28" type="Text" isKey="true">
               <Border>All;[216:216:216];1;Dot;False;4;Black</Border>
               <Brush>White</Brush>
               <ClientRectangle>24,0,3.7,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12</Font>
+              <Font>Arial,11</Font>
               <Guid>10c4ff4bc5c14a87b73ced5f39265daf</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>4,4,4,4</Margins>
               <Name>Text40</Name>
               <Page isRef="7" />
-              <Parent isRef="23" />
+              <Parent isRef="25" />
               <Text>{Setting.CurrencySymbol}{Menu.Price}</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text40>
-            <Text41 Ref="27" type="Text" isKey="true">
+            <Text41 Ref="29" type="Text" isKey="true">
               <Border>All;[216:216:216];1;Solid;False;4;Black</Border>
               <Brush>White</Brush>
               <ClientRectangle>0,0,1,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12</Font>
+              <Font>Arial,11</Font>
               <Guid>3eb72e8d025a4c40a1f7a104ffd06e62</Guid>
               <Margins>4,4,4,4</Margins>
               <Name>Text41</Name>
               <Page isRef="7" />
-              <Parent isRef="23" />
+              <Parent isRef="25" />
               <Text>{Line}</Text>
               <TextBrush>Black</TextBrush>
               <Type>SystemVariables</Type>
               <VertAlignment>Center</VertAlignment>
             </Text41>
-            <Text13 Ref="28" type="Text" isKey="true">
+            <Text13 Ref="30" type="Text" isKey="true">
               <Border>All;[216:216:216];1;Dot;False;4;Black</Border>
               <Brush>White</Brush>
               <ClientRectangle>6,0,12.4,0.6</ClientRectangle>
@@ -440,25 +499,25 @@
               <Margins>4,4,4,4</Margins>
               <Name>Text13</Name>
               <Page isRef="7" />
-              <Parent isRef="23" />
+              <Parent isRef="25" />
               <Text>{Menu.Description}</Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text13>
-            <Text5 Ref="29" type="Text" isKey="true">
+            <Text5 Ref="31" type="Text" isKey="true">
               <Border>All;[216:216:216];1;Dot;False;4;Black</Border>
               <Brush>White</Brush>
               <ClientRectangle>18.4,0,2.9,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12</Font>
+              <Font>Arial,11</Font>
               <Guid>51db3cd6075b4adda143c7f6c3779273</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>4,4,4,4</Margins>
               <Name>Text5</Name>
               <Page isRef="7" />
-              <Parent isRef="23" />
+              <Parent isRef="25" />
               <Text>{Menu.Quantity}</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
@@ -475,11 +534,11 @@
           <Parent isRef="7" />
           <Sort isList="true" count="0" />
         </DataBand1>
-        <FooterBand1 Ref="30" type="FooterBand" isKey="true">
+        <FooterBand1 Ref="32" type="FooterBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,8.4,27.7,1</ClientRectangle>
           <Components isList="true" count="1">
-            <Text6 Ref="31" type="Text" isKey="true">
+            <Text6 Ref="33" type="Text" isKey="true">
               <Border>All;White;1;Dot;False;4;Black</Border>
               <Brush>White</Brush>
               <ClientRectangle>24.4,0.2,3.2,0.6</ClientRectangle>
@@ -489,7 +548,7 @@
               <Margins>0,0,0,0</Margins>
               <Name>Text6</Name>
               <Page isRef="7" />
-              <Parent isRef="30" />
+              <Parent isRef="32" />
               <Text>Count: {Count()}</Text>
               <TextBrush>[89:89:89]</TextBrush>
               <Type>Expression</Type>
@@ -509,13 +568,8 @@
       <PageHeight>21</PageHeight>
       <PageWidth>29.7</PageWidth>
       <Report isRef="0" />
-      <Watermark Ref="32" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
-        <Font>Arial,100</Font>
-        <TextBrush>[50:0:0:0]</TextBrush>
-      </Watermark>
     </MenuReport>
   </Pages>
-  <PrinterSettings Ref="33" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
   <ReferencedAssemblies isList="true" count="8">
     <value>System.Dll</value>
     <value>System.Drawing.Dll</value>
@@ -527,13 +581,13 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Suftnet.Menu</ReportAlias>
-  <ReportChanged>9/7/2019 2:39:48 PM</ReportChanged>
+  <ReportChanged>10/28/2020 4:48:08 PM</ReportChanged>
   <ReportCreated>4/12/2013 11:56:34 PM</ReportCreated>
-  <ReportFile>C:\SUT-DV-200\Git\Suftnet.eRestaurant.Package\Suftnet.eRestaurant.SaaS.1.0.0\Suftnet.Cos\Content\Reports\MenuItem.mrt</ReportFile>
-  <ReportGuid>0e0089a19acf44e78a52b7a7ea46c753</ReportGuid>
+  <ReportFile>E:\Git\Web\Irit\Irit\Suftnet.Cos\Content\reports\MenuItem.mrt</ReportFile>
+  <ReportGuid>078f05f1f4fe4035a13fccd3f8990266</ReportGuid>
   <ReportName>Suftnet.Menu</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
-  <ReportVersion>2015.1.0</ReportVersion>
+  <ReportVersion>2020.3.2.0</ReportVersion>
   <Script>using System;
 using System.Drawing;
 using System.Windows.Forms;

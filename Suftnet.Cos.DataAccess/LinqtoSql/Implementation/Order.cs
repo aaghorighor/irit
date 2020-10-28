@@ -35,6 +35,20 @@
             }
         }
 
+        public List<OrderDto> FetchDeliveryByStatus(Guid tenantId, Guid statusId)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objResult = (from o in context.Orders
+                                 join s in context.OrderStatuses on o.StatusId equals s.Id
+                                 join r in context.OrderTypes on o.OrderTypeId equals r.Id
+                                 where o.Id == tenantId && o.StatusId == statusId
+                                 orderby o.CreatedDt descending
+                                 select new OrderDto { DeliveryCost = o.DeliveryCost, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, TotalTax = o.TotalTax, TotalDiscount = o.TotalDiscount, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
+                return objResult;
+            }
+        }
+
         public CartOrderDto FetchOrder(Guid orderId)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -336,50 +350,8 @@
                                  select new OrderDto { Email = o.Email, Note = o.Note, StartDt = o.StartDt, UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, Table = t.Number, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
                 return objResult;
             }
-        }
-
-        public List<OrderDto> GetByOrderType(Guid tenantId, Guid orderTypeId)
-        {
-            using (var context = DataContextFactory.CreateContext())
-            {
-                var objResult = (from o in context.Orders
-                                 join s in context.OrderStatuses on o.StatusId equals s.Id
-                                 join t in context.Tables on o.TableId equals t.Id
-                                 join r in context.OrderTypes on o.OrderTypeId equals r.Id
-                                 where (o.TenantId == tenantId && o.OrderTypeId == orderTypeId)
-                                 orderby o.Id descending
-                                 select new OrderDto { UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, Table = t.Number, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
-                return objResult;
-            }
-        }
-        public List<OrderDto> Filter(Guid tenantId, DateTime filterDate, Guid orderTypeId)
-        {
-            using (var context = DataContextFactory.CreateContext())
-            {
-                var objResult = (from o in context.Orders
-                                 join s in context.OrderStatuses on o.StatusId equals s.Id
-                                 join t in context.Tables on o.TableId equals t.Id
-                                 join r in context.OrderTypes on o.OrderTypeId equals r.Id
-                                 where o.TenantId == tenantId && (o.OrderTypeId == orderTypeId && o.CreatedDt >= filterDate)
-                                 orderby o.Id descending
-                                 select new OrderDto { UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, Table = t.Number, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
-                return objResult;
-            }
-        }
-        public List<OrderDto> Filter(Guid tenantId, DateTime filterDate)
-        {
-            using (var context = DataContextFactory.CreateContext())
-            {
-                var objResult = (from o in context.Orders
-                                 join s in context.OrderStatuses on o.StatusId equals s.Id
-                                 join t in context.Tables on o.TableId equals t.Id
-                                 join r in context.OrderTypes on o.OrderTypeId equals r.Id
-                                 where (o.TenantId == tenantId && o.CreatedDt.Date >= filterDate.Date)
-                                 orderby o.Id descending
-                                 select new OrderDto { UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, Table = t.Number, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
-                return objResult;
-            }
-        }
+        }    
+       
         public IEnumerable<OrderDto> GetAllOrderByStatus(TermDto term)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -392,30 +364,7 @@
                 return objResult;
             }
         }
-        public IEnumerable<OrderDto> GetAllSales(TermDto term)
-        {
-            using (var context = DataContextFactory.CreateContext())
-            {
-                var objResult = (from o in context.Orders
-                                 join s in context.OrderStatuses on o.StatusId equals s.Id
-                                 where o.TenantId == term.TenantId && (o.CreatedDt >= term.StartDate && o.CreatedDt <= term.EndDate)
-                                 orderby o.Id descending
-                                 select new OrderDto { Balance = o.Balance, Payment = o.Payment, StatusId = o.StatusId, Status = s.Name, GrandTotal = o.GrandTotal, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
-                return objResult;
-            }
-        }
-        public IEnumerable<OrderDto> GetAllSalesByUserName(TermDto term)
-        {
-            using (var context = DataContextFactory.CreateContext())
-            {
-                var objResult = (from o in context.Orders
-                                 join s in context.OrderStatuses on o.StatusId equals s.Id
-                                 where o.TenantId == term.TenantId && ((o.CreatedDt >= term.StartDate.Date && o.CreatedDt <= term.EndDate.Date) && o.CreatedBy == term.UserName)
-                                 orderby o.Id descending
-                                 select new OrderDto { Balance = o.Balance, Payment = o.Payment, StatusId = o.StatusId, Status = s.Name, GrandTotal = o.GrandTotal, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
-                return objResult;
-            }
-        }
+       
         public bool UpdateOrderStatus(Guid tenantId, Guid orderId, Guid statusId, Guid orderTypeId, DateTime createDt, string createdBy)
         {
             bool response = false;

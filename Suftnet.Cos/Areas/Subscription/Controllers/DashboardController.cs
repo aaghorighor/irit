@@ -20,11 +20,14 @@
             var adapter = new StripeAdapterModel();
             adapter.Settings = GeneralConfiguration.Configuration.Settings.General;
             adapter.Tenant = tenant.Get(this.TenantId);    
-            
-            if (adapter.Tenant == null)
+                      
+            if (adapter.Tenant.CustomerStripeId.IsNullOrEmpty() &&(
+                   adapter.Tenant.PlanTypeId == PlanType.Basic
+                || adapter.Tenant.PlanTypeId == PlanType.Premium
+                || adapter.Tenant.PlanTypeId == PlanType.PremiumPlus))
             {
-
-            }    
+                return RedirectToAction("index", "error", new { area = "" });
+            }
 
             if (!string.IsNullOrEmpty(adapter.Tenant.CustomerStripeId))
             {              
@@ -33,9 +36,10 @@
                 ISubscriptionProvider _subscriptionProvider = new SubscriptionProvider(GeneralConfiguration.Configuration.Settings.StripeSecretKey);
 
                 adapter.PaymentCards = _cardProvider.GetAll(adapter.Tenant.CustomerStripeId);
-                adapter.Subscription = _subscriptionProvider.Get(adapter.Tenant.SubscriptionId.ToString());
+                adapter.Subscription = _subscriptionProvider.Get(adapter.Tenant.SubscriptionId);
                 adapter.Invoices = _invoiceProvider.GetCurrent(adapter.Tenant.CustomerStripeId);             
-                adapter.Tenant.IsExpired = adapter.Subscription.CurrentPeriodEnd < DateTime.UtcNow.Date ? true : false;             
+                adapter.Tenant.IsExpired = adapter.Subscription.CurrentPeriodEnd < DateTime.UtcNow.Date ? true : false;     
+                
             }else
             { adapter.Tenant.IsExpired = adapter.Tenant.ExpirationDate.Date < DateTime.UtcNow.Date ? true : false;}               
 
@@ -47,11 +51,7 @@
             var tenant = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenant>();
             var stripeAdapterModel = new StripeAdapterModel();
             stripeAdapterModel.Tenant = tenant.Get(this.TenantId);
-            if (stripeAdapterModel.Tenant == null)
-            {
-
-            }
-
+           
             IInvoiceProvider _invoiceProvider = new InvoiceProvider(GeneralConfiguration.Configuration.Settings.StripeSecretKey);
             stripeAdapterModel.Invoices = _invoiceProvider.GetAll(stripeAdapterModel.Tenant.CustomerStripeId);
             stripeAdapterModel.Settings = GeneralConfiguration.Configuration.Settings.General;
@@ -64,11 +64,7 @@
             var tenant = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenant>();          
             var stripeAdapterModel = new StripeAdapterModel();
             stripeAdapterModel.Tenant = tenant.Get(this.TenantId);
-            if (stripeAdapterModel.Tenant == null)
-            {
-
-            }
-
+            
             IInvoiceProvider _invoiceProvider = new InvoiceProvider(GeneralConfiguration.Configuration.Settings.StripeSecretKey);
             stripeAdapterModel.Invoice = _invoiceProvider.Get(stripeAdapterModel.Tenant.CustomerStripeId, id);           
             stripeAdapterModel.Settings = GeneralConfiguration.Configuration.Settings.General;

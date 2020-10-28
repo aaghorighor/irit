@@ -2,7 +2,9 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Text;
+    using System.Xml;
 
     public static class Util
     {
@@ -77,6 +79,59 @@
             var result = percentage * tempValue;
 
             return result;
+        }
+
+        public static string Serialize<T>(T item)
+        {
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(T));
+
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Encoding = Encoding.Unicode;
+            settings.Indent = false;
+            settings.OmitXmlDeclaration = false;
+            settings.CheckCharacters = true;
+
+            using (StringWriter textWriter = new StringWriter())
+            {
+                using (XmlWriter xmlWriter = XmlWriter.Create(textWriter, settings))
+                {
+                    serializer.Serialize(xmlWriter, item);
+                }
+                return textWriter.ToString();
+            }
+        }
+
+        public static string SerializeListOfItem<T>(List<T> item)
+        {
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(List<T>));
+
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Encoding = Encoding.Unicode;
+            settings.Indent = false;
+            settings.OmitXmlDeclaration = false;
+            settings.CheckCharacters = true;
+
+            using (StringWriter textWriter = new StringWriter())
+            {
+                using (XmlWriter xmlWriter = XmlWriter.Create(textWriter, settings))
+                {
+                    serializer.Serialize(xmlWriter, item);
+                }
+                return textWriter.ToString();
+            }
+        }
+
+        public static string Serializer(object obj)
+        {
+            System.Xml.XmlDocument xmlDoc = new System.Xml.XmlDocument();
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(obj.GetType());
+            using (System.IO.MemoryStream ms = new System.IO.MemoryStream())
+            {
+                serializer.Serialize(ms, obj);
+                ms.Position = 0;
+                xmlDoc.Load(ms);
+                return xmlDoc.InnerXml;
+            }
         }
 
     }

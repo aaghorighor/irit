@@ -36,5 +36,7 @@
         public bool? IsFlatRate { get; set; }
         public string DeliveryLimitNote { get; set; }
         public decimal? FlatRate { get; set; }
+        public string TenantEmail { get; set; }
+        public string TenantMobile { get; set; }
     }
 }

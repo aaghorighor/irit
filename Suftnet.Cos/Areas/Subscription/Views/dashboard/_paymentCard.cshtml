@@ -27,16 +27,14 @@
                             <td>
                                 <a href="Javascript:void(0)" class="tx-inverse tx-14 tx-medium d-block">@card.Brand</a>
                             </td>
-
                             <td>
                                 <a href="Javascript:void(0)" class="tx-inverse tx-14 tx-medium d-block">@card.ExpMonth/@card.ExpYear @Html.Raw(strSpacer) @Html.Raw(strSpacer)</a>
                             </td>
-
                             <td>
                                 <a href="Javascript:void(0)" class="tx-inverse tx-14 tx-medium tx-left d-block"> **** **** **** @card.Last4 @Html.Raw(strSpacer)</a>
                             </td>
                             <td class="valign-middle tx-center">
-                                <a href="Javascript:void(0)" class="tx-gray-600 tx-24"><i class="icon ion-android-more-horizontal"></i></a>
+                                <a href="@Url.Action("delete","card", new { area = "subscription", cardId  = card.Id })" class="tx-gray-600 tx-24"><i class="icon ion-android-more-horizontal"></i></a>
                             </td>
                         </tr>
                     }

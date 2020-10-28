@@ -1,18 +1,20 @@
 ﻿namespace Suftnet.Cos.Web
 {
     using Common;
-    using Core;    
+    using Core;
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Net;
     using System.Web.Mvc;
 
-    using global::Stripe;   
+    using global::Stripe;
     using Model;
-    using Cos.Services;
+    using Cos.Services;  
     using Suftnet.Cos.DataAccess;
     using Suftnet.Cos.Stripe;
+    using Suftnet.Cos.Web.ViewModel;
+    using System.Linq;
 
     [AllowAnonymous]
     public class StripeWebhookController : CommonController.Controllers.BaseController
@@ -38,7 +40,7 @@
         [HttpPost]
         public ActionResult Index()
         {
-            var req = Request.InputStream;        
+            var req = Request.InputStream;
             var json = new StreamReader(req).ReadToEndAsync().Result;
 
             GeneralConfiguration.Configuration.Logger.Log("Incoming stripe object" + json, EventLogSeverity.Debug);
@@ -77,23 +79,12 @@
                         {
                             return test;
                         }
-                      
-                        _tenant.UpdateCustomer(new TenantDto
-                        {
-                            Id = tenantId,
-                            StartDate = obj.CurrentPeriodStart,
-                            IsExpired = true,
-                            SubscriptionId = obj.Id,
-                            CustomerStripeId = obj.CustomerId,
-                            PlanTypeId = obj.Plan.Id,
-                            ExpirationDate = obj.CurrentPeriodEnd
-                        });
 
                         editor = _editor.Get((int)eEditor.SubscriptionCreated);
-                        emailBody = FormatSubscriptionCreatedContent(editor.Contents, Constant.ProductName, tenantName,
-                            obj.Plan.Amount.ToString(), (int)obj.Plan.IntervalCount, obj.Plan.Nickname);
+                        emailBody = FormatSubscriptionCreatedContent(editor.Contents, Constant.ProductName, tenantName, customer.Email,
+                           CalculatePrice(obj.Plan.Amount), (int)obj.Plan.IntervalCount, obj.Plan.Nickname);
 
-                        CreateEmail(editor.Title, emailBody, customer.Email);
+                        SendEmailFactory(editor.Title, emailBody, customer.Email);
 
                         break;
 
@@ -108,9 +99,9 @@
 
                         editor = _editor.Get((int)eEditor.SubscriptionUpdated);
                         emailBody = FormatSubscriptionUpdateContent(editor.Contents, Constant.ProductName, tenantName,
-                             obj.Plan.Amount.ToString(), (int)obj.Plan.IntervalCount, obj.Plan.Nickname);
+                             CalculatePrice(obj.Plan.Amount), (int)obj.Plan.IntervalCount, obj.Plan.Nickname);
 
-                        CreateEmail(editor.Title, emailBody, customer.Email);
+                        SendEmailFactory(editor.Title, emailBody, customer.Email);
 
                         break;
 
@@ -127,7 +118,7 @@
                         emailBody = FormatSubscriptionDeleteContent(editor.Contents, Constant.ProductName, tenantName,
                              obj.Plan.Nickname, obj.CanceledAt);
 
-                        CreateEmail(editor.Title, emailBody, customer.Email);
+                        SendEmailFactory(editor.Title, emailBody, customer.Email);
 
                         break;
 
@@ -140,14 +131,19 @@
                             return test;
                         }
 
-                        _tenant.UpdateStatus(tenantId,false);
+                        try
+                        {
+                            System.Threading.Tasks.Task.Run(() => _tenant.UpdateStatus(tenantId, false));
+                        }
+                        catch (Exception ex)
+                        { GeneralConfiguration.Configuration.Logger.LogError(ex); }
 
                         editor = _editor.Get((int)eEditor.ChargeSucceeded);
                         emailBody = FormatChargeSucceededContent(editor.Contents,
-                            Constant.ProductName, tenantName,
-                            obj.Charge != null ? obj.Charge.Amount.ToString() : "0");
+                            Constant.ProductName, tenantName, customer.Email, obj.HostedInvoiceUrl,
+                            obj.AmountPaid);
 
-                        CreateEmail(editor.Title, emailBody, customer.Email);                                   
+                        SendEmailFactory(editor.Title, emailBody, customer.Email);
 
                         break;
 
@@ -160,22 +156,18 @@
                             return test;
                         }
 
-                        _tenant.UpdateCustomer(new TenantDto
+                        try
                         {
-                            Id = tenantId,
-                            IsExpired = true
-                        });
+                            System.Threading.Tasks.Task.Run(() => _tenant.UpdateStatus(tenantId, true));
+                        }
+                        catch (Exception ex)
+                        { GeneralConfiguration.Configuration.Logger.LogError(ex); }
 
                         editor = _editor.Get((int)eEditor.ChargeFailed);
-                        
-                        if(obj.Charge != null)
-                        {
-                            emailBody = FormatPaymentFailed(editor.Contents, Constant.ProductName, tenantName,
-                                obj.Charge.Amount.ToString(), obj.Charge.Source.Object,
-                                obj.Charge.Created.ToShortDateString());
+                        emailBody = FormatPaymentFailed(editor.Contents, tenantName,
+                                obj.HostedInvoiceUrl);
 
-                            CreateEmail(editor.Title, emailBody, customer.Email);
-                        }
+                        SendEmailFactory(editor.Title, emailBody, customer.Email);
 
                         break;
 
@@ -190,35 +182,29 @@
 
                         editor = _editor.Get((int)eEditor.ChargeRefunded);
 
-                        if (obj.Charge != null)
-                        {
-                            if (obj.Charge.Refunded == true)
-                            {
-                                emailBody = FormatPaymentRefunded(editor.Contents, Constant.ProductName,
-                                    tenantName, obj.Charge.Amount.ToString(),
-                                    obj.Charge.Source.Object, obj.Charge.Created.ToShortDateString());
+                        emailBody = FormatPaymentRefunded(editor.Contents, tenantName,
+                                    obj.AmountRefunded.ToString(), obj.ReceiptUrl,
+                                    obj.PaymentMethodDetails.Card.Last4, obj.Created.ToShortDateString());
 
-                                CreateEmail(editor.Title, emailBody, customer.Email);
-                            }
-                        }                                    
+                        SendEmailFactory(editor.Title, emailBody, customer.Email);
 
                         break;
-                }         
-                              
+                }
+
                 return new HttpStatusCodeResult(HttpStatusCode.OK);
             }
             catch (Exception ex)
             {
                 GeneralConfiguration.Configuration.Logger.LogError(ex);
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Unable to parse incoming event request");
-            }           
+            }
         }
 
         #region private function
 
         private HttpStatusCodeResult StripeEventType(Event stripeEvent)
-        {           
-            switch(stripeEvent.Type)
+        {
+            switch (stripeEvent.Type)
             {
                 case "customer.subscription.created":
 
@@ -231,7 +217,7 @@
                     customerId = obj.CustomerId;
 
                     break;
-              
+
                 case "invoice.payment_succeeded":
                     obj = stripeEvent.Data.Object;
                     customerId = obj.CustomerId;
@@ -264,19 +250,19 @@
 
             ICustomerProvider _customerProvider = new CustomerProvider(GeneralConfiguration.Configuration.Settings.StripeSecretKey);
             customer = _customerProvider.GetCustomer(customerId);
-           
+
             if (customer == null)
             {
                 GeneralConfiguration.Configuration.Logger.Log("Customer cannot be found " + customerId, EventLogSeverity.Debug);
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Tenant cannot be found");
             }
 
-            if (customer.Metadata == null)
+            if (customer.Metadata.Count == 0)
             {
                 GeneralConfiguration.Configuration.Logger.Log("Tenant ID cannot be found " + customerId, EventLogSeverity.Debug);
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Tenant cannot be found");
             }
-                      
+
             tenantId = new Guid(customer.Metadata["tenantId"].ToString());
             tenantName = customer.Metadata["tenantName"].ToString();
 
@@ -287,26 +273,6 @@
             var eventService = new EventService(GeneralConfiguration.Configuration.Settings.StripeSecretKey);
             stripeEvent = eventService.Get(stripeEvent.Id);
             return stripeEvent;
-        }
-        private void CreateEmail(string title, string message, string email)
-        {
-            var messageModel = new MessageModel();
-            var mailMessage = new System.Net.Mail.MailMessage();
-
-            mailMessage.From = new System.Net.Mail.MailAddress(GeneralConfiguration.Configuration.Settings.General.Email, GeneralConfiguration.Configuration.Settings.General.Company);
-            mailMessage.To.Add(email);
-            mailMessage.Body = message;
-            mailMessage.Subject = title.Replace("[title]", Constant.ProductName);
-            messageModel.MailMessage = new MailMessage(mailMessage);
-
-            try
-            {
-                _messenger.MailProcessor(messageModel);
-            }
-            catch (Exception ex)
-            {
-                GeneralConfiguration.Configuration.Logger.LogError(ex);
-            }
         }
         private string FormatContent(string content, string product, string userName)
         {
@@ -340,15 +306,18 @@
 
             return content;
         }
-        private string FormatChargeSucceededContent(string content, string product, string userName, string amount)
+        private string FormatChargeSucceededContent(string content, string product, string userName, string email, string hosted_invoice_url, decimal amount)
         {
             Dictionary<string, string> sb = new Dictionary<string, string>();
             string results = string.Empty;
 
             sb.Add("[customer]", userName);
             sb.Add("[product]", product);
-            sb.Add("[amount]", amount);
-           
+            sb.Add("[email]", email);
+            sb.Add("[hosted_invoice_url]", hosted_invoice_url);
+
+            sb.Add("[Amount]", Constant.CurrencySymbol + "" + Round(amount));
+
             foreach (KeyValuePair<string, string> _token in sb)
             {
                 content = content.Replace(_token.Key, _token.Value);
@@ -356,12 +325,13 @@
 
             return content;
         }
-        private string FormatSubscriptionCreatedContent(string content, string product, string userName, string amount, int billingCycle, string plan)
+        private string FormatSubscriptionCreatedContent(string content, string product, string userName, string email, decimal amount, int billingCycle, string plan)
         {
             Dictionary<string, string> sb = new Dictionary<string, string>();
             string results = string.Empty;
 
             sb.Add("[customer]", userName);
+            sb.Add("[email]", email);
             sb.Add("[product]", product);
 
             if (plan == "Basic")
@@ -372,13 +342,16 @@
             {
                 sb.Add("[BillingCycle]", billingCycle.ToString() + " " + "Year");
             }
-            else 
+            else
             {
                 sb.Add("[BillingCycle]", billingCycle.ToString() + " " + "Months");
             }
 
             sb.Add("[Plan]", plan);
-            sb.Add("[Amount]", amount);
+            sb.Add("[Amount]", Constant.CurrencySymbol + "" + Round(amount));
+
+            sb.Add("[onlinelink]", GeneralConfiguration.Configuration.Settings.OnlineLink);
+            sb.Add("[mobilelink]", GeneralConfiguration.Configuration.Settings.MobileLink);
 
             foreach (KeyValuePair<string, string> _token in sb)
             {
@@ -387,7 +360,7 @@
 
             return content;
         }
-        private string FormatSubscriptionUpdateContent(string content, string product, string userName, string amount, int billingCycle, string plan)
+        private string FormatSubscriptionUpdateContent(string content, string product, string userName, decimal amount, int billingCycle, string plan)
         {
             Dictionary<string, string> sb = new Dictionary<string, string>();
             string results = string.Empty;
@@ -409,7 +382,7 @@
             }
 
             sb.Add("[Plan]", plan);
-            sb.Add("[Amount]", amount);
+            sb.Add("[Amount]", Constant.CurrencySymbol + "" + Round(amount));
 
             foreach (KeyValuePair<string, string> _token in sb)
             {
@@ -418,15 +391,29 @@
 
             return content;
         }
-        private string FormatPaymentFailed(string content, string product, string userName, string amount, string cardigit, string date)
+        private string FormatPaymentFailed(string content, string userName, string hosted_invoice_url)
         {
             Dictionary<string, string> sb = new Dictionary<string, string>();
-            string results = string.Empty;
+      
+            sb.Add("[customer]", userName);
+            sb.Add("[hosted_invoice_url]", hosted_invoice_url);
 
+            foreach (KeyValuePair<string, string> _token in sb)
+            {
+                content = content.Replace(_token.Key, _token.Value);
+            }
+
+            return content;
+        }
+        private string FormatPaymentRefunded(string content, string userName, decimal amount, string receiptUrl, string cardigit, string date)
+        {
+            Dictionary<string, string> sb = new Dictionary<string, string>();
+     
             sb.Add("[customer]", userName);
             sb.Add("[date]", date);
             sb.Add("[cardigit]", cardigit);
-            sb.Add("[Amount]", amount);
+            sb.Add("[amount]", Constant.CurrencySymbol + "" + Round(amount));
+            sb.Add("[receiptUrl]", receiptUrl);
 
             foreach (KeyValuePair<string, string> _token in sb)
             {
@@ -435,24 +422,70 @@
 
             return content;
         }
-        private string FormatPaymentRefunded(string content, string product, string userName, string amount, string cardigit, string date)
+
+        private void SendEmailFactory(string title, string message, string email)
         {
-            Dictionary<string, string> sb = new Dictionary<string, string>();
-            string results = string.Empty;
-
-            sb.Add("[customer]", userName);
-            sb.Add("[date]", date);
-            sb.Add("[cardigit]", cardigit);          
-            sb.Add("[Amount]", amount);
-
-            foreach (KeyValuePair<string, string> _token in sb)
+            if (GeneralConfiguration.Configuration.ExecutingContext.Equals(ExecutingContext.TEST))
             {
-                content = content.Replace(_token.Key, _token.Value);
+                SendSmtpEmail(title, message, email);
             }
-
-            return content;
+            else if (GeneralConfiguration.Configuration.ExecutingContext.Equals(ExecutingContext.LIVE))
+            {
+                SendGridEmail(title, message, email);
+            }
         }
-            
+
+        private void SendSmtpEmail(string title, string message, string email)
+        {
+            var messageModel = new MessageModel();
+            var mailMessage = new System.Net.Mail.MailMessage();
+
+            mailMessage.From = new System.Net.Mail.MailAddress(GeneralConfiguration.Configuration.Settings.General.Email, GeneralConfiguration.Configuration.Settings.General.Company);
+            mailMessage.To.Add(email);
+            mailMessage.Body = message;
+            mailMessage.Subject = title.Replace("[title]", Constant.ProductName);
+            messageModel.MailMessage = new MailMessage(mailMessage);
+
+            try
+            {
+                _messenger.MailProcessor(messageModel);
+            }
+            catch (Exception ex)
+            {
+                GeneralConfiguration.Configuration.Logger.LogError(ex);
+            }
+        }
+        private void SendGridEmail(string title, string body, string email)
+        {
+            var recipients = new List<RecipientModel>();
+            var sendGrid = GeneralConfiguration.Configuration.DependencyResolver.GetService<ISendGridMessager>();
+
+            recipients.Add(new RecipientModel { Email = email });
+            try
+            {
+                if (recipients.Any())
+                {
+                    sendGrid.Recipients = recipients;
+                    sendGrid.SendMail(body, true, title.Replace("[title]", Constant.ProductName));
+                }
+            }
+            catch (Exception ex)
+            {
+                GeneralConfiguration.Configuration.Logger.LogError(ex);
+            }
+        }
+        private decimal? CalculatePrice(decimal amount)
+        {
+            var taxRate = GeneralConfiguration.Configuration.Settings.General?.TaxRate;
+            var vat = taxRate != null ? amount * (taxRate / 100) : 1;
+            var total = vat + amount;
+            return total;
+        }
+        private decimal Round(decimal? amount)
+        {
+            var totalAmount = (amount / 100);
+            return Math.Round((decimal)totalAmount, 2);
+        }
         #endregion
     }
 }

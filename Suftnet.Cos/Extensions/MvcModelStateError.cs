@@ -36,5 +36,22 @@
 
             return errors;
         }
+
+        public static IList<ErrorReasonInfo> EmailErrors(this ModelStateDictionary modelState)
+        {
+            var errors = new List<ErrorReasonInfo>();
+            var builder = new StringBuilder();
+            var logger = GeneralConfiguration.Configuration.DependencyResolver.GetService<ILogger>();
+
+            var err = new ErrorReasonInfo { PropertyName = "Email" };
+            err.Error = "Email already exist";
+
+            builder.Append(err.Error);
+            builder.AppendLine();
+
+            logger.LogError(new Exception(builder.ToString()));
+
+            return errors;
+        }
     }
 }

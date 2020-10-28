@@ -1,10 +1,8 @@
 ﻿namespace Suftnet.Cos.Web.Services
 {
-    using System;   
-    using System.Text;
-    using System.Threading.Tasks;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
+
     using Suftnet.Cos.Common;
     using Suftnet.Cos.Core;
     using Suftnet.Cos.DataAccess;
@@ -12,6 +10,13 @@
     using Suftnet.Cos.DataAccess.Identity;
     using Suftnet.Cos.Model;
     using Suftnet.Cos.Services;
+    using Suftnet.Cos.Web.ViewModel;
+
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
 
     public class ApiUserManager : IApiUserManger, IDisposable
     {
@@ -19,31 +24,32 @@
         private UserManager<ApplicationUser> _userManager;
         private readonly ISmtp _messenger;
         private readonly IEditor _editor;
+        private readonly Suftnet.Cos.DataAccess.IUser _user;
 
-        public ApiUserManager(IUserAccount userAccount, ISmtp messenger, IEditor editor)
+        public ApiUserManager(IUserAccount userAccount, ISmtp messenger, IEditor editor, Suftnet.Cos.DataAccess.IUser user)
         {
+            _user = user;
             _editor = editor;
             _messenger = messenger;
             _userAccount = userAccount;
             _userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new DataContext()));
         }
-        public async Task<ApplicationUser> CreateAsync(ApplicationUser model, Guid tenantId, string password, bool isSend, bool isBackoffice)
+        public ApplicationUser CreateAsync(UserManager<ApplicationUser> userManager, ApplicationUser model, Guid tenantId, string password, bool isSend, bool isBackoffice)
         {
             var identityResult = new IdentityResult();
+            var user = _user.CheckEmailAddress(model.Email, tenantId);
 
-            var user = await _userManager.FindByEmailAsync(model.Email);
-
-            if (user == null)
+            if (user == false)
             {
-                model.AreaId = isBackoffice == true ? (int)eArea.BackOffice : (int)eArea.MemberOffice;
-                model.Area = GetArea(isBackoffice == true ? (int)eArea.BackOffice : (int)eArea.MemberOffice);
+                model.AreaId = isBackoffice == true ? (int)eArea.BackOffice : (int)eArea.FrontOffice;
+                model.Area = isBackoffice == true ? "BackOffice" : "FrontOffice";
                 
                 if(string.IsNullOrEmpty(password))
                 {
                     password = Constant.DefaultPassword;
                 }
 
-                identityResult = await _userManager.CreateAsync(model, password);
+                identityResult = userManager.Create(model, password);
 
                 if (identityResult.Succeeded)
                 {
@@ -61,7 +67,7 @@
 
                     if(isSend)
                     {
-                        await Task.Run(() => SendEmailConfirmation(model, tenantId, password));
+                        Task.Run(() => SendEmailFactory(model, tenantId, password));
                     }             
                     _user.TenantId = tenantId;
 
@@ -70,6 +76,43 @@
             }
 
             return null;
+        }
+      
+        private void SendGridEmailConfirmation(ApplicationUser entityToCreate, string password, Guid tenantId)
+        {
+            try
+            {
+                var iTenant = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenant>();
+                var tenant = iTenant.Get(tenantId);
+                var editor = _editor.Get((int)eEditor.MemberRegistration);
+                var body = this.CreateConfirmationMessage(entityToCreate, editor, tenant, password);
+                var recipients = new List<RecipientModel>();
+                var sendGrid = GeneralConfiguration.Configuration.DependencyResolver.GetService<ISendGridMessager>();
+
+                recipients.Add(new RecipientModel { Email = entityToCreate.Email });
+
+                if (recipients.Any())
+                {
+                    sendGrid.Recipients = recipients;
+                    sendGrid.SendMail(body, true, $"Thanks for your registration with {tenant.Name}");
+                }
+
+            }
+            catch (Exception exception)
+            {
+                GeneralConfiguration.Configuration.Logger.LogError(exception);
+            }
+        }
+        private void SendEmailFactory(ApplicationUser model, Guid tenantId, string password)
+        {
+            if (GeneralConfiguration.Configuration.ExecutingContext.Equals(ExecutingContext.TEST))
+            {
+                SendEmailConfirmation(model, tenantId, password);
+            }
+            else if (GeneralConfiguration.Configuration.ExecutingContext.Equals(ExecutingContext.LIVE))
+            {
+                SendGridEmailConfirmation(model, password, tenantId);
+            }
         }
         private void SendEmailConfirmation(ApplicationUser entityToCreate, Guid tenantId, string password)
         {
@@ -82,7 +125,7 @@
                 var tenant = iTenant.Get(tenantId);
 
                 var contentTemplate = new EditorDTO();
-                var emailContent = this.PrepareConfirmationMessage(entityToCreate, _editor.Get((int)eEditor.MemberRegistration), tenant, password);
+                var emailContent = this.CreateConfirmationMessage(entityToCreate, _editor.Get((int)eEditor.MemberRegistration), tenant, password);
 
                 mailMessage.From = new System.Net.Mail.MailAddress(GeneralConfiguration.Configuration.Settings.General.ServerEmail, GeneralConfiguration.Configuration.Settings.General.Company);
                 mailMessage.To.Add(entityToCreate.Email);
@@ -98,11 +141,15 @@
                 GeneralConfiguration.Configuration.Logger.LogError(exception);
             }
         }
-        private string PrepareConfirmationMessage(ApplicationUser entityToCreate, EditorDTO editor, TenantDto tenant, string password)
+        public ApplicationUser FindByEmail(string email)
+        {
+            return _userManager.FindByEmail(email);
+        }
+        private string CreateConfirmationMessage(ApplicationUser entityToCreate, EditorDTO editor, TenantDto tenant, string password)
         {
             var sb = new StringBuilder(editor.Contents);
 
-            sb.Replace("[member]", entityToCreate.FirstName);
+            sb.Replace("[customer]", entityToCreate.FirstName + " " + entityToCreate.LastName);
             sb.Replace("[email]", entityToCreate.Email);
             sb.Replace("[password]", password);
 
@@ -112,13 +159,7 @@
 
             return sb.ToString();
         }
-        private string GetArea(int? areaId)
-        {
-            var service = GeneralConfiguration.Configuration.DependencyResolver.GetService<ICommon>();
-            var model = service.Get((int)areaId);
-            return model.Title;
-        }
-
+       
         public void Dispose()
         {           
             _userManager.Dispose();

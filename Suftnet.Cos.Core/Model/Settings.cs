@@ -40,6 +40,10 @@
         public string PushNotificationUrl { get; set; }
         public GlobalDto General { get; set; }
         public FormatSettings FormatSettings { get; set; }
-      
+        public string CaptchaSiteKey { get; set; }
+        public string CaptchaSecretKey { get; set; }
+        public string OnlineLink { get; set; }
+        public string MobileLink { get; set; }
+
     }
 }

@@ -19,5 +19,7 @@
         IList<UserAccountDto> GetAll(int iskip, int itake, string isearch);
         IList<UserAccountDto> GetAll(int iskip, int itake);
         int Count();
+        ApplicationUser GetByUserId(string userId);
+        bool CheckEmailAddress(string email, Guid tenantId);
     }
 }

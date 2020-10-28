@@ -13,7 +13,7 @@
        public DateTime StartDate { get; set; }
        public string UserName { get; set; }
        public string Cashier { get; set; }
-       public int UserId { get; set; }
+       public string UserId { get; set; }
        public DateTime EndDate { get; set; }     
        public string Title { get; set; }       
        public Guid OrderId { get; set; }     

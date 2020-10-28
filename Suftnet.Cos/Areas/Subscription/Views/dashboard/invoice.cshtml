@@ -29,22 +29,22 @@
 
                 <div class="row mg-t-20">
                     <div class="col-md">
-                        <label class="section-label-sm tx-gray-500">Billed To</label>
+                        <label class="section-label-sm tx-gray-500">Bill To</label>
                         <div class="billed-to">
                             <h6 class="tx-gray-800">@Model.Tenant.Name</h6>
                             <p>
                                 @Model.Tenant.CompleteAddress <br>
-                                Tel No: @Model.Tenant.Telephone<br>
+                                Tel No: @Model.Tenant.Mobile<br>
                                 Email: @Model.Tenant.Email
                             </p>
                         </div>
                     </div><!-- col -->
                     <div class="col-md">
-                        <label class="section-label-sm tx-gray-500">Invoice Information</label>
+                        <label class="section-label-sm tx-gray-500"></label>
                         <p class="invoice-info-row">
-                            <span>Invoice No</span>
-                            <span>@Model.Invoice.Id</span>
-                        </p>     
+                            <span>Invoice number</span>
+                            <span>@Model.Invoice.Number</span>
+                        </p>
                         <p class="invoice-info-row">
                             <span>Status</span>
 
@@ -57,11 +57,11 @@
                                 <span>UnPaid</span>
                             }
 
-                        </p>                  
-                        <p class="invoice-info-row">
-                            <span>Date:</span>
-                            <span>@Model.Invoice.PeriodEnd.Value.ToString("MMMM dd, yyyy")</span>
                         </p>
+                        <p class="invoice-info-row">
+                            <span>Date of issue:</span>
+                            <span>@Model.Invoice.Date.Value.ToString("MMMM dd, yyyy")</span>
+                        </p>                       
                     </div><!-- col -->
                 </div><!-- row -->
 

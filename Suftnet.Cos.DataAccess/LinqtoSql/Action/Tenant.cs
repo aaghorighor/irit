@@ -71,7 +71,7 @@ namespace Suftnet.Cos.DataAccess.Action
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [MaxLength(8)]
         public byte[] TimeStamp { get; set; }
-        public int? SubscriptionId { get; set; }
+        public string SubscriptionId { get; set; }
         [StringLength(50)]
         public string CurrencyCode { get; set; }
         [StringLength(50)]

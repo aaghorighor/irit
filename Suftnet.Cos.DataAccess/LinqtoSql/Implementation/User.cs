@@ -7,7 +7,20 @@
     using System.Collections.Generic;
 
     public class User : IUser
-    {      
+    {
+        public bool CheckEmailAddress(string email, Guid tenantId)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var obj = (from o in context.UserAccounts
+                           join u in context.Users on o.UserId equals u.Id
+                           where u.Email == email && o.TenantId == tenantId
+                           select o).FirstOrDefault();
+
+                return obj != null ? true : false;
+            }
+        }
+
         public bool CheckEmailAddress(string userName)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -21,7 +34,6 @@
 
             return false;
         }
-
         public ApplicationUser GetUserByPhone(string phoneNumber, Guid tenantId)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -39,7 +51,6 @@
                 return null;
             }
         }
-
         public ApplicationUser GetUserByUserName(string userName)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -64,16 +75,27 @@
                 var obj = (from o in context.UserAccounts
                            join u in context.Users on o.UserId equals u.Id
                            where o.UserId == userId
-                           select new { UserName = u.UserName, PhoneNumber = u.PhoneNumber, Active = u.Active, AreaId = u.AreaId, TenantId = o.TenantId, Id = u.Id }).FirstOrDefault();
+                           select new { FirstName = u.FirstName, LastName = u.LastName, UserName = u.UserName, PhoneNumber = u.PhoneNumber, Active = u.Active, AreaId = u.AreaId, TenantId = o.TenantId, Id = u.Id }).FirstOrDefault();
 
                 if (obj != null)
                 {
-                    return new ApplicationUser { UserName = obj.UserName, PhoneNumber = obj.PhoneNumber, Active = obj.Active, AreaId = obj.AreaId, Id = obj.Id, TenantId = obj.TenantId };
+                    return new ApplicationUser { FirstName = obj.FirstName, LastName = obj.LastName, UserName = obj.UserName, PhoneNumber = obj.PhoneNumber, Active = obj.Active, AreaId = obj.AreaId, Id = obj.Id, TenantId = obj.TenantId };
                 }
 
                 return null;
             }
-        }      
+        }
+        public ApplicationUser GetByUserId(string userId)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var obj = (from u in context.Users                        
+                           where u.Id == userId
+                           select u).FirstOrDefault();       
+
+                return obj;
+            }
+        }
 
         public bool UpdateAccessCode(string phoneNumber, Guid tenantId, string otp)
         {
@@ -99,7 +121,6 @@
 
             return false;
         }
-
         public ApplicationUser VerifyAccessCode(string otp, string phoneNumber, Guid tenantId)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -124,7 +145,6 @@
 
             return null;
         }
-
         public IList<UserAccountDto> GetById(Guid tenantId)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -137,7 +157,6 @@
                 return objResult;
             }
         }
-
         public IList<UserAccountDto> GetAll(Guid tenantId, int iskip, int itake, string isearch)
         {
             if(!string.IsNullOrEmpty(isearch))
@@ -157,7 +176,6 @@
                 return GetAll(tenantId, iskip, itake);
             }           
         }
-
         public IList<UserAccountDto> GetAll(Guid tenantId, int iskip, int itake)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -170,7 +188,6 @@
                 return objResult;
             }
         }
-
         public IList<UserAccountDto> GetAll(int iskip, int itake, string isearch)
         {
             if (!string.IsNullOrEmpty(isearch))
@@ -189,7 +206,6 @@
                 return GetAll(iskip, itake);
             }
         }
-
         public IList<UserAccountDto> GetAll(int iskip, int itake)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -200,7 +216,6 @@
                 return objResult;
             }
         }
-
         public int Count(Guid TenantId)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -213,7 +228,6 @@
                 return objResult;
             }
         }
-
         public int Count()
         {
             using (var context = DataContextFactory.CreateContext())

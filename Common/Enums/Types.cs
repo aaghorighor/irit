@@ -166,7 +166,7 @@ namespace Suftnet.Cos.Common
         Basic = 31,
         PremiumPlus = 367,
         Premium = 181
-    }    
+    }   
 
     public enum eClass : ushort
     {
@@ -187,6 +187,6 @@ namespace Suftnet.Cos.Common
     public enum eProduct : ushort
     {
         OneChurch = 1015        
-    }  
-   
+    }    
+
 }

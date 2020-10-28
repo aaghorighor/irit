@@ -23,7 +23,7 @@
       public string PlanTypeId { get; set; }    
       public DateTime ExpirationDate { get; set; }
       public DateTime? StartDate { get; set; }   
-      public int? SubscriptionId { get; set; }        
+      public string SubscriptionId { get; set; }        
       public string ExpireDate
         {
             get

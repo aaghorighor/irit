@@ -4,13 +4,11 @@
     using CommonController.Controllers;
     using Core;
     using Suftnet.Cos.DataAccess;
-    using Suftnet.Cos.Stripe;
     using Suftnet.Cos.Web;
-
     using System.Web.Mvc;
-    using Web.Services.Interface;
+   
 
-    [AuthorizeActionFilter(Constant.BackOfficeOnly)]
+    [SubscriptionAuthorizeActionFilter(Constant.BackOfficeOnly)]
     public class PlanController : BaseController
     {     
         private readonly IPlan _plan;
@@ -24,11 +22,7 @@
         {
             var tenant = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenant>();
             var model = tenant.Get(this.TenantId);
-            if (model == null)
-            {
-
-            }
-
+           
             var stripeAdapterModel = new StripeAdapterModel
             {
                 PlanFeatureAdapter = _plan.GetPlanFeatures((int)eProduct.OneChurch),
@@ -42,10 +36,7 @@
         {
             var tenant = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenant>();
             var model = tenant.Get(this.TenantId);
-            if (model == null)
-            {
-
-            }
+           
             var stripeAdapterModel = new StripeAdapterModel
             {
                 Tenant = model,

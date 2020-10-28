@@ -63,7 +63,9 @@
                 claims.Add(new Claim("CompleteAddress", account.CompleteAddress));
                 claims.Add(new Claim("DeliveryRate", account.DeliveryRate.ToString()));             
                 claims.Add(new Claim("FlatRate", account.FlatRate.ToString()));
-
+                claims.Add(new Claim("TenantEmail", account.TenantEmail));
+                claims.Add(new Claim("TenantMobile", account.TenantMobile));
+            
                 if ((bool)account.IsFlatRate == true)
                 {
                     claims.Add(new Claim("IsFlatRate", "true"));

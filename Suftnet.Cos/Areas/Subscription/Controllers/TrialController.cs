@@ -7,16 +7,13 @@
     using System.Web.Mvc;
     using Web;
     using Web.Command;
-    using Web.Services.Interface;
-
+   
     [AuthorizeActionFilter(Constant.BackOfficeOnly)]
     public class TrialController : BaseController
-    {
-        private readonly ITenant _tenant;
+    {    
         private readonly IFactoryCommand _factoryCommand;
-        public TrialController(ITenant tenant, IFactoryCommand factoryCommand)
-        {
-            _tenant = tenant;
+        public TrialController(IFactoryCommand factoryCommand)
+        {        
             _factoryCommand = factoryCommand;
         }
 
@@ -26,11 +23,7 @@
             var tenant = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenant>();
             var adapter = new StripeAdapterModel();
             var model = tenant.Get(this.TenantId);
-            if (model == null)
-            {
-
-            }
-          
+                      
             adapter.Tenant = model;
             return View(adapter);
         }
@@ -50,24 +43,20 @@
             var tenant = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenant>();
             var model = tenant.Get(this.TenantId);
             var adapter = new StripeAdapterModel();
-            if (model == null)
-            {
-
-            }
-          
+                      
             adapter.Tenant = model;
             return View(adapter);
         }
 
-        [HttpGet]
-        public ActionResult Download()
-        {
-            var command = _factoryCommand.Create<DownloadCommand>();
-            command.TenantId = this.TenantId;
-            command.Execute();
+        //[HttpGet]
+        //public ActionResult Download()
+        //{
+        //    var command = _factoryCommand.Create<DownloadCommand>();
+        //    command.TenantId = this.TenantId;
+        //    command.Execute();
            
-            return File(command.Content.ToArray(), "application/zip", this.UserName +".zip");                      
-        }      
+        //    return File(command.Content.ToArray(), "application/zip", this.UserName +".zip");                      
+        //}      
 
     }
 }

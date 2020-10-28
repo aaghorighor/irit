@@ -1,21 +1,22 @@
 ﻿@using Suftnet.Cos.Extension;
 @using Suftnet.Cos.Common
+@using System.Linq;
 
 @model Suftnet.Cos.Web.StripeAdapterModel
 
 <div class="col-lg-6 mg-t-20 mg-lg-t-0">
     <div class="card card-table">
-        <div class="card-header">            
+        <div class="card-header">
             <div class="row row-sm">
                 <div class="col-lg-6"><h6 class="slim-card-title">Latest Invoice</h6></div>
                 <div class="col-lg-6"><a href="@Url.Action("Invoices","dashboard", new { area ="subscription" } )" class="forward pull-right">History</a></div>
-            </div>   
+            </div>
         </div><!-- card-header -->
         <div class="table-responsive">
             <table class="table mg-b-0 tx-13">
                 <thead>
                     <tr class="tx-10">
-                        <th class="pd-y-5">Created On</th>
+                        <th class="pd-y-5">Created AT</th>
                         <th class="pd-y-5">Status</th>
                         <th class="pd-y-5">Amount Due</th>
                         <th class="pd-y-5 tx-center">Action</th>
@@ -58,11 +59,11 @@
 
                                 </td>
                                 <td class="valign-middle tx-center">
-                                    <a href="@Url.Action("Invoice", "Dashboard", new { area="Subscription", id = @invoice.Id})" class="tx-gray-600 tx-24"><i class="icon ion-android-more-horizontal"></i></a>
+                                    <a href="@invoice.Hosted_invoice_url" target="_blank" class="tx-gray-600 tx-24"><i class="icon ion-android-more-horizontal"></i></a>
                                 </td>
                             </tr>
-                          }
-                      }                   
+                        }
+                    }
 
                 </tbody>
             </table>

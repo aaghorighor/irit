@@ -1,5 +1,6 @@
 ﻿@model Suftnet.Cos.Web.StripeAdapterModel
 @using Suftnet.Cos.Extension;
+@using System.Linq;
 
 <div class="slim-mainpanel">
 
@@ -25,7 +26,7 @@
                         <table class="table mg-b-0 tx-13">
                             <thead>
                                 <tr class="tx-10">
-                                    <th class="pd-y-5">Created On</th>
+                                    <th class="pd-y-5">Created At</th>
                                     <th class="pd-y-5">Status</th>
                                     <th class="pd-y-5">Start Period</th>
                                     <th class="pd-y-5">End Period</th>
@@ -111,7 +112,7 @@
 
                                     </td>
                                     <td class="valign-middle tx-center">
-                                        <a href="@Url.Action("Invoice", "Dashboard", new { area="Subscription", id = invoice.Id})" class="tx-gray-600 tx-24"><i class="icon ion-android-more-horizontal"></i></a>
+                                        <a href="@invoice.Hosted_invoice_url" target="_blank" class="tx-gray-600 tx-24"><i class="icon ion-android-more-horizontal"></i></a>
                                     </td>
                                 </tr>
                                   }

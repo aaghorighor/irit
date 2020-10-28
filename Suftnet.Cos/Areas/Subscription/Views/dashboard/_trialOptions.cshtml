@@ -1,19 +1,6 @@
 ﻿@using Suftnet.Cos.Extension;
 
-<div class="col-lg-4">
-    <div class="card card-info">
-        <div class="card-body pd-40">
-            <div class="d-flex justify-content-center mg-b-30">
-                <img src="@Url.SlimImage("icons8-subscription-80.png")" alt="">
-            </div>
-            <h5 class="tx-inverse mg-b-20">Start Subscription</h5>
-            <p>You can change your plan to one of our subscription plan.</p>
-            <a href="@Url.Action("entry","Plan", new { area = "Subscription" })" class="btn btn-primary">Start</a>
-        </div><!-- card -->
-    </div><!-- card -->
-</div><!-- col-4 -->
-
-<div class="col-lg-4 mg-t-20 mg-lg-t-0">
+<div class="col-lg-6 mg-t-20 mg-lg-t-0">
     <div class="card card-info">
         <div class="card-body pd-40">
             <div class="d-flex justify-content-center mg-b-30">
@@ -25,14 +12,14 @@
         </div><!-- card-body -->
     </div><!-- card -->
 </div><!-- col-4 -->
-<div class="col-lg-4 mg-t-20 mg-lg-t-0">
+<div class="col-lg-6 mg-t-20 mg-lg-t-0">
     <div class="card card-info">
         <div class="card-body pd-40">
             <div class="d-flex justify-content-center mg-b-30">
                 <img src="@Url.SlimImage("icons8-downloading-updates-80.png")" alt="">
             </div>
             <h5 class="tx-inverse mg-b-20">Download </h5>
-            <p>You are free to download your church data.</p><br />
+            <p>You are free to download your church data.</p>
             <a href="@Url.Action("download","trial", new { area = "subscription" })" target="_self" class="btn btn-primary">Download</a>
         </div><!-- card-body -->
     </div><!-- card -->

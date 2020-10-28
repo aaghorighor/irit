@@ -15,7 +15,7 @@ namespace Suftnet.Cos.DataAccess
 
         public OrderWrapperDto Fetch(Guid tenantId, Guid orderTypeId)
         {
-           return new OrderWrapperDto { Menu = _menu.GetAll(tenantId), Order = _order.GetByOrderType(tenantId,orderTypeId) };     
+           return new OrderWrapperDto { Menu = _menu.GetAll(tenantId) };     
         }
     }
 }

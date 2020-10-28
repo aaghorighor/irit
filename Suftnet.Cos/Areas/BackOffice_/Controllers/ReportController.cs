@@ -214,28 +214,13 @@
                 }
             }
 
-            return StiMvcViewer.GetReportSnapshotResult(HttpContext, report);
+            return StiMvcViewer.GetReportResult(report);
         }
 
         public ActionResult ViewerEvent()
         {
-            return StiMvcViewer.ViewerEventResult(HttpContext);
+            return StiMvcViewer.ViewerEventResult();
         }
-
-        public ActionResult PrintReport()
-        {
-            return StiMvcViewer.PrintReportResult(HttpContext);
-        }
-
-        public FileResult ExportReport()
-        {
-            return StiMvcViewer.ExportReportResult(HttpContext);
-        }
-
-        public ActionResult Interaction()
-        {
-            return StiMvcViewer.InteractionResult(HttpContext);
-        }       
 
     }
 

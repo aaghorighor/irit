@@ -9,13 +9,10 @@
         IEnumerable<OrderDto> GetSalesByUserName(TermDto term);     
         IEnumerable<MenuDto> GetMenus(Guid tenantId);    
         IEnumerable<PaymentDto> GetPaymentByDates(TermDto term);
-        IEnumerable<PaymentDto> GetPaymentByDatesAndAccount(TermDto term);
         IEnumerable<PaymentDto> GetPaymentByDatesAndUsername(TermDto term);
-        IEnumerable<BestSellerDto> GetBestSellers(TermDto term);
-        IEnumerable<OrderDetailDto> GetItemsSoled(TermDto term);
-        IEnumerable<OrderDto> GetOrders(TermDto term);
-        List<OrderDto> GetDelivery(Guid statusId, Guid tenantId);
-        IEnumerable<OrderDeliveryWrapperDto> GetDelivery(TermDto term);
+        IEnumerable<BestSellerDto> GetBestSellers(TermDto term);    
+        IEnumerable<OrderDto> GetOrders(TermDto term);       
+        IEnumerable<OrderDto> GetReservationOrders(TermDto term);
 
      }
 }

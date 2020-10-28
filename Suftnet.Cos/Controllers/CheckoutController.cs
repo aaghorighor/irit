@@ -2,9 +2,7 @@
 {
     using Suftnet.Cos.Core;
     using Suftnet.Cos.DataAccess;
-
     using Suftnet.Cos.Extension;
-
     using System;
     using System.Web.Mvc;
 
@@ -13,8 +11,7 @@
     using Command;
     using Common;
     using global::Stripe;
-    using Stripe;
-    using Cos.Services;
+    using Stripe;   
     using Services.Implementation;
     using Microsoft.AspNet.Identity.Owin;
     using System.Web;
@@ -25,6 +22,7 @@
     using Suftnet.Cos.Web.Services;
     using System.Collections.Generic;
     using Suftnet.Cos.Service;
+    using Suftnet.Cos.Web.Infrastructure.ActionFilter;
 
     public class CheckoutController : AccountBaseController
     {
@@ -32,18 +30,13 @@
         private ApplicationUserManager _userManager;
         private readonly IPlan _plan;
         private readonly IFactoryCommand _factoryCommand;
-        private readonly ISms _messenger;
-        private readonly IEditor _editor;
-            
+      
         public CheckoutController(
-            IPlan plan, IFactoryCommand factoryCommand, ISms messenger, IEditor editor)
+            IPlan plan, IFactoryCommand factoryCommand)
         {
-            _plan = plan;
-            _messenger = messenger;
-            _editor = editor;                 
-            _factoryCommand = factoryCommand;               
+            _plan = plan;           
+            _factoryCommand = factoryCommand;
         }
-
         public ApplicationUserManager UserManager
         {
             get
@@ -72,7 +65,7 @@
             }
         }
 
-        [OutputCache(Duration = 10, VaryByParam = "*")]
+        [OutputCache(Duration = 0, VaryByParam = "*")]
         public ActionResult Entry(int planId, string planTypeId)
         {
             switch (planTypeId)
@@ -91,26 +84,25 @@
                     break;
 
             }
-
-            return View(this.CreatePlanForCheckout(planId, planTypeId));        
+            return View(this.CreatePlanForCheckout(planId, planTypeId));
         }
 
-        [OutputCache(Duration = 10, VaryByParam = "*")]
-        public ActionResult Trial(int planId, string planTypeId)
-        {          
+        [OutputCache(Duration = 0, VaryByParam = "*")]
+        public ActionResult Trial()
+        {
             var model = new StripePlanModel
             {
                 PlanId = (int)ePlan.Trial,
                 PlanTypeId = PlanType.Trial,
                 Amount = 0,
-                Plan = this.CreatePlanName(planTypeId),
+                Plan = this.CreatePlanName(PlanType.Trial),
                 BillingCycle = this.CreateBillingCycleDescription(PlanType.Trial),
                 Total = 0,
                 Vat = 0
             };
 
             return View(model);
-        }       
+        }
         public ActionResult Confirmation()
         {
             return View();
@@ -130,69 +122,85 @@
 
             return Json(new { ok = flag }, JsonRequestBehavior.AllowGet);
         }
+
         [HttpPost]
-        [ValidateAntiForgeryToken()]    
-        public JsonResult Create(CheckoutModel checkoutModel)
+        [ValidateCaptchaAttribute]
+        [ValidateAntiForgeryToken()]
+        public async Task<JsonResult> Create(CheckoutModel checkoutModel)
         {
-            try
-            {
-                Ensure.Argument.NotNull(checkoutModel);
+            Ensure.Argument.NotNull(checkoutModel);
 
-                if (!ModelState.IsValid)
+            if (!ModelState.IsValid)
+            {
+                return Json(new
                 {
-                    return Json(new
-                    {
-                        ok = false,
-                        isValid = true,
-                        errors = ModelState.AjaxErrors()
-                    });
-                }
-
-                this.CreateCustomerSubscription(checkoutModel);
-
-                return Json(new { ok = true }, JsonRequestBehavior.AllowGet);
+                    ok = false,
+                    isValid = true,
+                    errors = ModelState.AjaxErrors()
+                });
             }
-            catch (StripeException ex)
+
+            var command = _factoryCommand.Create<CheckForExtingCustomerCommand>();
+            command.UserName = checkoutModel.Email;
+            command.Execute();
+
+            if (command.IsCustomerNew)
             {
-                return Json(new { ok = true, msg = this.CreateException(ex) }, JsonRequestBehavior.AllowGet);                   
-            }           
-        }      
+                return Json(new
+                {
+                    ok = false,
+                    isValid = true,
+                    errors = ModelState.EmailErrors()
+                });
+            }
+
+            var success = await this.CreateCustomerSubscription(checkoutModel);
+            return success == true ? Json(new { ok = true }, JsonRequestBehavior.AllowGet) : Json(new { ok = false }, JsonRequestBehavior.AllowGet);
+        }
+
         [HttpPost]
-        [ValidateAntiForgeryToken()]    
-        public  JsonResult CreateTrial(CheckoutModel checkoutModel)
+        [ValidateCaptchaAttribute]
+        [ValidateAntiForgeryToken()]
+        public async Task<JsonResult> CreateTrial(CheckoutModel checkoutModel)
         {
-            try
-            {
-                Ensure.Argument.NotNull(checkoutModel);
+            Ensure.Argument.NotNull(checkoutModel);
 
-                if (!ModelState.IsValid)
+            if (!ModelState.IsValid)
+            {
+                return Json(new
                 {
-                    return Json(new
-                    {
-                        ok = false,
-                        isValid = true,
-                        errors = ModelState.AjaxErrors()
-                    });
-                }
-
-                this.CreateCustomerSubscription(checkoutModel);
-
-                return Json(new { ok = true }, JsonRequestBehavior.AllowGet);
+                    ok = false,
+                    isValid = true,
+                    errors = ModelState.AjaxErrors()
+                });
             }
-            catch (StripeException ex)
+
+            var command = _factoryCommand.Create<CheckForExtingCustomerCommand>();
+            command.UserName = checkoutModel.Email;
+            command.Execute();
+
+            if (command.IsCustomerNew)
             {
-                return Json(new { ok = true, msg = this.CreateException(ex) }, JsonRequestBehavior.AllowGet);
+                return Json(new
+                {
+                    ok = false,
+                    isValid = true,
+                    errors = ModelState.EmailErrors()
+                });
             }
+
+            var success = await this.CreateCustomerSubscription(checkoutModel);
+            return success == true ? Json(new { ok = true }, JsonRequestBehavior.AllowGet) : Json(new { ok = false, isApplication = true }, JsonRequestBehavior.AllowGet);
         }
         #region private function
-      
+
         private decimal? CreatePlanPrice(int planId, string planType)
         {
             var plan = _plan.Get(planId);
 
             if (plan != null)
             {
-                switch(planType)
+                switch (planType)
                 {
                     case PlanType.Basic:
                         return plan.BasicPrice;
@@ -202,51 +210,77 @@
                         return plan.ProfessionalPrice;
                     default:
                         return 0;
-                }           
+                }
             }
 
             return 0;
 
-        }    
-        private async void CreateCustomerSubscription(CheckoutModel checkoutModel)
-        {            
-            var addressCommand = _factoryCommand.Create<CreateAddressCommand>();
-            addressCommand.AddressModel = checkoutModel;
-            addressCommand.CreatedBy = checkoutModel.Email;
-            addressCommand.Execute();
-
-            var customerCommand = _factoryCommand.Create<CreateTenantCommand>();
-            customerCommand.AddressId = addressCommand.AddressId;     
-            customerCommand.TenantModel = checkoutModel;
-            customerCommand.CutOff = this.CreatePlanCutOff(checkoutModel.PlanTypeId);
-            customerCommand.ExpirationDate = this.CreatePlanExpirationDate(checkoutModel.PlanTypeId);
-            customerCommand.StartDate = DateTime.UtcNow;
-            customerCommand.StatusId = this.CreatePlanStatus(checkoutModel.PlanTypeId);
-            customerCommand.CreatedBy = checkoutModel.Email;                                  
-            customerCommand.Execute();
-
-            if(checkoutModel.PlanTypeId != PlanType.Trial)
+        }
+        private async Task<bool> CreateCustomerSubscription(CheckoutModel checkoutModel)
+        {
+            var success = false;
+            try
             {
-                await Task.Run(() => CreateStripeSubscription(checkoutModel, customerCommand.TenantId));
-            }          
 
-            var _user= await CreateUser(checkoutModel, customerCommand.TenantId);
-          
-            var permissionCommand = _factoryCommand.Create<CreateUserPermissionCommand>();
-            permissionCommand.CreatedBy = checkoutModel.Email;
-            permissionCommand.UserId = _user.Id;           
-          
-            await Task.Run(() => permissionCommand.Execute());
-                       
-            var sendSubscriptionCommand = _factoryCommand.Create<SendSubscriptionConfirmationCommand>();
-            sendSubscriptionCommand.SubscriptionModel = checkoutModel;
-            sendSubscriptionCommand.Amount = this.CreatePlanRateType(checkoutModel.PlanTypeId);
-            sendSubscriptionCommand.BillingCycle = this.CreateBillingCyle(checkoutModel.PlanTypeId);
-            sendSubscriptionCommand.Plan = this.CreatePlanName(checkoutModel.PlanTypeId);         
-         
-            await Task.Run(() => sendSubscriptionCommand.Execute());
-                       
-            await SignInAsync(_user, true);
+                var addressCommand = _factoryCommand.Create<CreateAddressCommand>();
+                addressCommand.AddressModel = checkoutModel;
+                addressCommand.CreatedBy = checkoutModel.Email;
+                addressCommand.Execute();
+
+                var customerCommand = _factoryCommand.Create<CreateTenantCommand>();
+                customerCommand.AddressId = addressCommand.AddressId;
+                customerCommand.TenantModel = checkoutModel;
+                customerCommand.CutOff = this.CreatePlanCutOff(checkoutModel.PlanTypeId);
+                customerCommand.ExpirationDate = this.CreatePlanExpirationDate(checkoutModel.PlanTypeId);
+                customerCommand.StartDate = DateTime.UtcNow;
+                customerCommand.StatusId = this.CreatePlanStatus(checkoutModel.PlanTypeId);
+                customerCommand.CreatedBy = checkoutModel.Email;
+                customerCommand.Execute();
+
+                if (checkoutModel.PlanTypeId != PlanType.Trial)
+                {
+                    await Task.Run(() => CreateStripeSubscription(checkoutModel, customerCommand.TenantId));
+                }
+
+                var _user = CreateUser(checkoutModel, customerCommand.TenantId);
+
+                var permissionCommand = _factoryCommand.Create<CreateUserPermissionCommand>();
+                permissionCommand.CreatedBy = checkoutModel.Email;
+                permissionCommand.UserId = _user.Id;
+
+                await Task.Run(() => permissionCommand.Execute());
+
+                var sendSubscriptionCommand = _factoryCommand.Create<SendSubscriptionConfirmationCommand>();
+                sendSubscriptionCommand.SubscriptionModel = checkoutModel;
+                sendSubscriptionCommand.Amount = this.CreatePlanRateType(checkoutModel.PlanTypeId);
+                sendSubscriptionCommand.BillingCycle = this.CreateBillingCyle(checkoutModel.PlanTypeId);
+                sendSubscriptionCommand.Plan = this.CreatePlanName(checkoutModel.PlanTypeId);
+
+                if (checkoutModel.PlanTypeId == PlanType.Trial)
+                {
+                    await Task.Run(() => sendSubscriptionCommand.Execute());
+                }
+
+                await SignInAsync(_user, true);
+
+                success = true;
+
+            }
+            catch (StripeException ex)
+            {
+                var logger = GeneralConfiguration.Configuration.DependencyResolver.GetService<ILogger>();
+                logger.LogError(ex);
+                success = false;
+            }
+            catch (Exception ex)
+            {
+
+                var logger = GeneralConfiguration.Configuration.DependencyResolver.GetService<ILogger>();
+                logger.LogError(ex);
+                success = false;
+            }
+
+            return success;
         }
         private void CreateStripeSubscription(CheckoutModel checkoutModel, Guid tenantId)
         {
@@ -258,8 +292,9 @@
                 {"tenantName",checkoutModel.Name}
             };
 
-            _customerProvider.Create(checkoutModel.Email, checkoutModel.StripeToken,
-                   checkoutModel.PlanTypeId, this.CreateTaxRate(), metaData);
+            var stripeCustomerId = _customerProvider.Create(checkoutModel.Email, checkoutModel.StripeToken,
+                    checkoutModel.PlanTypeId, this.CreateTaxRate(), metaData);
+            UpdateTenant(stripeCustomerId, tenantId);
         }
         private StripePlanModel CreatePlanForCheckout(int planId, string planTypeId)
         {
@@ -268,7 +303,7 @@
 
             if (planPrice != 0)
             {
-                var vat = taxRate != null ? planPrice * (taxRate / 100) : planPrice;
+                var vat = taxRate != null ? planPrice * (taxRate / 100) : 1;
 
                 var stripePlanModel = new StripePlanModel
                 {
@@ -288,7 +323,7 @@
         }
         private int CreatePlanCutOff(string planTypeId)
         {
-            switch(planTypeId)
+            switch (planTypeId)
             {
                 case PlanType.Basic:
                     return CutOff.Basic;
@@ -306,8 +341,8 @@
         {
             switch (planTypeId)
             {
-                case PlanType.Basic:                  
-                case PlanType.Premium:                   
+                case PlanType.Basic:
+                case PlanType.Premium:
                 case PlanType.PremiumPlus:
                     return new Guid(SubscriptionStatus.Active);
                 case PlanType.Trial:
@@ -358,13 +393,9 @@
                     return PlanNameType.Premium;
                 case PlanType.PremiumPlus:
                     return PlanNameType.PremiumPlus;
-               default:
+                default:
                     return PlanNameType.Trial;
             }
-        }          
-        private string CreatePassword(int count = 10)
-        {          
-            return this.RandomPassword();
         }
         private decimal CreatePlanRateType(string planTypeId)
         {
@@ -402,59 +433,42 @@
         {
             return GeneralConfiguration.Configuration.Settings.General.TaxRate ?? 1;
         }
-        private string CreateException(Exception ex)
-        {
-            GeneralConfiguration.Configuration.Logger.LogError(ex);
-            return ex.Message;
-        }       
-        private string CreateEditor(int Id)
-        {
-            var editor = _editor.Get(Id);
-            return editor.Contents;
-        }
         private async Task SignInAsync(ApplicationUser user, bool isPersistent)
-        {           
+        {
             var authenticationManager = HttpContext.GetOwinContext().Authentication;
             authenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie);
             var identity = await SignInManager.CreateUserIdentityAsync(user);
-            authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = isPersistent }, identity);          
+            authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = isPersistent }, identity);
         }
-        private SignInStatus StatusCode(SignInStatus statusId)
+        private ApplicationUser CreateUser(CheckoutModel userModel, Guid tenantId)
         {
-            switch (statusId)
-            {
-                case SignInStatus.Success:
-                    return SignInStatus.Success;
-                case SignInStatus.LockedOut:
-                    return SignInStatus.LockedOut;
-                case SignInStatus.RequiresVerification:
-                    return SignInStatus.RequiresVerification;
-                case SignInStatus.Failure:
-                    return SignInStatus.Failure;
-                default:
-                    return SignInStatus.Failure;
-            }
-        }
-        private async Task<ApplicationUser> CreateUser(CheckoutModel model, Guid tenantId)
-        {
-            var apiUserManger = GeneralConfiguration.Configuration.DependencyResolver.GetService<IApiUserManger>();
-
-            var applicationUser = new ApplicationUser
-            {               
-                FirstName = model.FirstName,
-                LastName = model.LastName,
-                Active = true,
-                Email = model.Email,
-                PhoneNumber = model.Mobile,
-                UserName = model.Email       
-            };
-
-            var user = await apiUserManger.CreateAsync(applicationUser, tenantId, model.Password, false, true);
+            var apiUserManger = GeneralConfiguration.Configuration.DependencyResolver.GetService<IApiUserManger>();                       
+            var user = apiUserManger.CreateAsync(UserManager, new ApplicationUser { Email = userModel .Email, FirstName = userModel.FirstName, LastName = userModel.LastName }, tenantId, userModel.Password, false, false);
 
             return user;
         }
        
-        
+        private void UpdateTenant(string stripeCustomerId, Guid tenantId)
+        {
+            var _tenant = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenant>();
+            SubscriptionProvider _subscriptionProvider = new SubscriptionProvider(GeneralConfiguration.Configuration.Settings.StripeSecretKey);
+            var obj = _subscriptionProvider.GetSubscriptionByCustomerId(stripeCustomerId);
+
+            if (obj != null)
+            {
+                _tenant.UpdateCustomer(new TenantDto
+                {
+                    Id = tenantId,
+                    StartDate = obj.CurrentPeriodStart,
+                    IsExpired = false,
+                    SubscriptionId = obj.Id,
+                    CustomerStripeId = obj.CustomerId,
+                    PlanTypeId = obj.Plan.Id,
+                    ExpirationDate =(DateTime)obj.CurrentPeriodEnd
+                });
+            }
+        }
+
         #endregion
     }
 }

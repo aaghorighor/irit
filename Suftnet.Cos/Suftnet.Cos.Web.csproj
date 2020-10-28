@@ -148,21 +148,21 @@
       <HintPath>..\packages\Sendgrid.9.9.0\lib\net452\SendGrid.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Stimulsoft.Base, Version=2017.1.4.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+    <Reference Include="Stimulsoft.Base, Version=2015.3.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\SUT-DL-300\Stimusoft Report 2015\Stimulsoft.Base.dll</HintPath>
+      <HintPath>..\SharedAssembly\Stimulsoft.Base.dll</HintPath>
     </Reference>
-    <Reference Include="Stimulsoft.Report, Version=2017.1.4.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+    <Reference Include="Stimulsoft.Report, Version=2015.3.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\SUT-DL-300\Stimusoft Report 2015\Stimulsoft.Report.dll</HintPath>
+      <HintPath>..\SharedAssembly\Stimulsoft.Report.dll</HintPath>
     </Reference>
-    <Reference Include="Stimulsoft.Report.Mvc, Version=2017.1.4.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+    <Reference Include="Stimulsoft.Report.Mvc, Version=2015.3.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\SUT-DL-300\Stimusoft Report 2015\Stimulsoft.Report.Mvc.dll</HintPath>
+      <HintPath>..\SharedAssembly\Stimulsoft.Report.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Stimulsoft.Report.Web, Version=2017.1.4.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+    <Reference Include="Stimulsoft.Report.Web, Version=2015.3.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\SUT-DL-300\Stimusoft Report 2015\Stimulsoft.Report.Web.dll</HintPath>
+      <HintPath>..\SharedAssembly\Stimulsoft.Report.Web.dll</HintPath>
     </Reference>
     <Reference Include="Stripe.net, Version=25.15.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Stripe.net.25.15.0\lib\net45\Stripe.net.dll</HintPath>
@@ -195,6 +195,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -263,6 +264,7 @@
     <Compile Include="Areas\BackOffice\Controllers\DashboardController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\CategoryController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\AddonTypeController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\ReportController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\UnitController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\DiscountController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TaxController.cs" />
@@ -286,6 +288,12 @@
     <Compile Include="Areas\SiteAdmin\Controllers\BackendController.cs" />
     <Compile Include="Areas\SiteAdmin\Controllers\CommonController.cs" />
     <Compile Include="Areas\SiteAdmin\Controllers\TopicController.cs" />
+    <Compile Include="Areas\Subscription\Controllers\CardController.cs" />
+    <Compile Include="Areas\Subscription\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Subscription\Controllers\PaidController.cs" />
+    <Compile Include="Areas\Subscription\Controllers\PlanController.cs" />
+    <Compile Include="Areas\Subscription\Controllers\TrialController.cs" />
+    <Compile Include="Areas\Subscription\Models\DeleteCard.cs" />
     <Compile Include="Command\AdministratorPermissionCommand.cs" />
     <Compile Include="Command\CheckForExtingCustomerCommand.cs" />
     <Compile Include="Command\CreateAddressCommand.cs" />
@@ -318,6 +326,7 @@
     <Compile Include="Infrastructure\ActionFilter\JwtAuthenticationAttribute.cs" />
     <Compile Include="Infrastructure\ActionFilter\LogExceptionFilter.cs" />
     <Compile Include="Infrastructure\ActionFilter\LogFilterAttribute.cs" />
+    <Compile Include="Infrastructure\ActionFilter\ValidateCaptchaAttribute.cs" />
     <Compile Include="Infrastructure\ActionFilter\ValidateHeaderAntiForgeryTokenAttribute.cs" />
     <Compile Include="Infrastructure\ActionFilter\ZeroCacheActionFilterAttribute.cs" />
     <Compile Include="Infrastructure\ActionFilter\AdminAuthorizeActionFilter.cs" />
@@ -348,9 +357,6 @@
     <Compile Include="Areas\Admin\Controllers\TemplateController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminBaseController.cs" />
-    <Compile Include="Areas\Subscription\Controllers\DashboardController.cs" />
-    <Compile Include="Areas\Subscription\Controllers\PaymentCardController.cs" />
-    <Compile Include="Areas\Subscription\Controllers\PlanController.cs" />
     <Compile Include="Infrastructure\AuthHandler.cs" />
     <Compile Include="Controllers\Api\v2\BaseController.cs" />
     <Compile Include="Controllers\Api\v2\DeviceController.cs" />
@@ -371,6 +377,8 @@
     <Compile Include="Controllers\PricingController.cs" />
     <Compile Include="Extensions\SiteExtensions.cs" />
     <Compile Include="Controllers\AccountBaseController.cs" />
+    <Compile Include="Infrastructure\Captcha\ReCaptchaResponse.cs" />
+    <Compile Include="Infrastructure\Captcha\ReCaptchaService.cs" />
     <Compile Include="Infrastructure\Mapper\Extensions.cs" />
     <Compile Include="Infrastructure\Mapper\Map.cs" />
     <Compile Include="Infrastructure\Routing\Implementation\DomainData.cs" />
@@ -464,8 +472,6 @@
     <Compile Include="ViewModel\LoginModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Subscription\Views\dashboard\index.cshtml" />
-    <Content Include="Areas\Subscription\Views\Web.config" />
     <Content Include="Content\css\dashboard.css" />
     <Content Include="Content\mavia\js\main.js" />
     <Content Include="Content\photo\category\Blank.jpg" />
@@ -4810,7 +4816,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Common\Models\" />
     <Folder Include="Areas\Common\Views\Shared\" />
-    <Folder Include="Areas\Subscription\Models\" />
     <Folder Include="Command_\" />
     <Folder Include="Content\knowledge\assets\content\" />
     <Folder Include="Content\photo\category\180x120\" />
@@ -4837,18 +4842,6 @@
     <Content Include="Areas\Admin\Views\Plan\_LoadPlanFeature.cshtml" />
     <Content Include="Areas\Admin\Views\Plan\_PlanFeatureform.cshtml" />
     <Content Include="Areas\Admin\Views\Plan\_Planform.cshtml" />
-    <Content Include="Areas\Subscription\Views\dashboard\invoice.cshtml" />
-    <Content Include="Areas\Subscription\Views\plan\Index.cshtml" />
-    <Content Include="Areas\Subscription\Views\paymentCard\index.cshtml" />
-    <Content Include="Areas\Subscription\Views\mySubscription\cancel.cshtml" />
-    <Content Include="Areas\Subscription\Views\dashboard\_paymentCard.cshtml" />
-    <Content Include="Areas\Subscription\Views\dashboard\_invoice.cshtml" />
-    <Content Include="Areas\Subscription\Views\dashboard\_subscriptionOptions.cshtml" />
-    <Content Include="Areas\Subscription\Views\dashboard\_trial.cshtml" />
-    <Content Include="Areas\Subscription\Views\dashboard\_subscription.cshtml" />
-    <Content Include="Areas\Subscription\Views\dashboard\_trialOptions.cshtml" />
-    <Content Include="Areas\Subscription\Views\plan\entry.cshtml" />
-    <Content Include="Areas\Subscription\Views\paymentCard\entry.cshtml" />
     <Content Include="Areas\Admin\Views\Slider\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Slider\_LoadSlider.cshtml" />
     <Content Include="Areas\Admin\Views\Slider\_Sliderform.cshtml" />
@@ -4860,11 +4853,6 @@
     <Content Include="Areas\Admin\Views\Tour\Index.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_collapsible.cshtml" />
-    <Content Include="Areas\Subscription\Views\trial\cancel.cshtml" />
-    <Content Include="Areas\Subscription\Views\mySubscription\confirmation.cshtml" />
-    <Content Include="Areas\Subscription\Views\trial\confirmation.cshtml" />
-    <Content Include="Areas\Subscription\Views\dashboard\_expiredTrail.cshtml" />
-    <Content Include="Areas\Subscription\Views\dashboard\_expiredSubscription.cshtml" />
     <Content Include="Areas\Admin\Views\User\_form.cshtml" />
     <Content Include="Areas\Admin\Views\User\_Photo.cshtml" />
     <Content Include="Areas\Admin\Views\User\_load.cshtml" />
@@ -4912,9 +4900,6 @@
     <Content Include="Areas\SiteAdmin\Views\PageHeader\index.cshtml" />
     <Content Include="Areas\Subscription\_ViewStart.cshtml" />
     <Content Include="Areas\Subscription\Web.config" />
-    <Content Include="Areas\Subscription\Views\dashboard\invoices.cshtml" />
-    <Content Include="Areas\Subscription\Views\Shared\_mavia-header.cshtml" />
-    <Content Include="Areas\Subscription\Views\Shared\maviaLayout.cshtml" />
     <Content Include="Views\Shared\_resetPassword.cshtml" />
     <Content Include="Areas\Admin\Views\User\_resetPassword.cshtml" />
     <Content Include="Areas\SiteAdmin\Views\Backend\_form.cshtml" />
@@ -5166,19 +5151,10 @@
     <Content Include="Content\frontoffice-2\fonts\fa-solid-900.woff" />
     <Content Include="Content\frontoffice-2\fonts\fa-solid-900.woff2" />
     <Content Include="Content\reports\BestSeller.mrt" />
-    <Content Include="Content\reports\BlankReport.mrt" />
-    <Content Include="Content\reports\Invoice.mrt" />
-    <Content Include="Content\reports\Lookup.mrt" />
     <Content Include="Content\reports\MenuItem.mrt" />
     <Content Include="Content\reports\OfsMenu.mrt" />
-    <Content Include="Content\reports\Order.mrt" />
-    <Content Include="Content\reports\OrderDelivery.mrt" />
-    <Content Include="Content\reports\OutStandingBill.mrt" />
-    <Content Include="Content\reports\OutStandingSalesReport.mrt" />
     <Content Include="Content\reports\Payment.mrt" />
     <Content Include="Content\reports\Sales.mrt" />
-    <Content Include="Content\reports\SalesOrderInvoice.mrt" />
-    <Content Include="Content\reports\User.mrt" />
     <Content Include="Areas\Admin\Views\User\_loadBy.cshtml" />
     <Content Include="Areas\Admin\Views\Permission\entry.cshtml" />
     <Content Include="Areas\Admin\Views\Permission\_form.cshtml" />
@@ -5286,6 +5262,41 @@
     <Content Include="Areas\Admin\Views\TenantStatus\_load.cshtml" />
     <Content Include="Areas\Admin\Views\TenantStatus\index.cshtml" />
     <Content Include="Areas\BackOffice\Views\Settings\_delivery.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Report\GetSalesReport.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Report\_Search.cshtml" />
+    <Content Include="Content\reports\Blank.mrt" />
+    <Content Include="Content\reports\DeliveryOrder.mrt" />
+    <Content Include="Content\reports\DineInOrder.mrt" />
+    <Content Include="Content\reports\ReservationOrder.mrt" />
+    <Content Include="Areas\Subscription\Views\card\delete.cshtml" />
+    <Content Include="Areas\Subscription\Views\card\entry.cshtml" />
+    <Content Include="Areas\Subscription\Views\card\index.cshtml" />
+    <Content Include="Areas\Subscription\Views\dashboard\index.cshtml" />
+    <Content Include="Areas\Subscription\Views\dashboard\invoice.cshtml" />
+    <Content Include="Areas\Subscription\Views\dashboard\invoices.cshtml" />
+    <Content Include="Areas\Subscription\Views\dashboard\_expiredSubscription.cshtml" />
+    <Content Include="Areas\Subscription\Views\dashboard\_expiredTrail.cshtml" />
+    <Content Include="Areas\Subscription\Views\dashboard\_invoice.cshtml" />
+    <Content Include="Areas\Subscription\Views\dashboard\_paymentCard.cshtml" />
+    <Content Include="Areas\Subscription\Views\dashboard\_subscription.cshtml" />
+    <Content Include="Areas\Subscription\Views\dashboard\_subscriptionOptions.cshtml" />
+    <Content Include="Areas\Subscription\Views\dashboard\_trial.cshtml" />
+    <Content Include="Areas\Subscription\Views\dashboard\_trialOptions.cshtml" />
+    <Content Include="Areas\Subscription\Views\paid\cancel.cshtml" />
+    <Content Include="Areas\Subscription\Views\paid\confirmation.cshtml" />
+    <Content Include="Areas\Subscription\Views\plan\entry.cshtml" />
+    <Content Include="Areas\Subscription\Views\plan\Index.cshtml" />
+    <Content Include="Areas\Subscription\Views\Shared\_slim-css.cshtml" />
+    <Content Include="Areas\Subscription\Views\Shared\_slim-font.cshtml" />
+    <Content Include="Areas\Subscription\Views\Shared\_slim-footer.cshtml" />
+    <Content Include="Areas\Subscription\Views\Shared\_slim-header.cshtml" />
+    <Content Include="Areas\Subscription\Views\Shared\_slim-js.cshtml" />
+    <Content Include="Areas\Subscription\Views\Shared\_slim-layout.cshtml" />
+    <Content Include="Areas\Subscription\Views\Shared\_slim-meta.cshtml" />
+    <Content Include="Areas\Subscription\Views\Shared\_slim-nav.cshtml" />
+    <Content Include="Areas\Subscription\Views\trial\cancel.cshtml" />
+    <Content Include="Areas\Subscription\Views\trial\confirmation.cshtml" />
+    <Content Include="Areas\Subscription\Views\Web.config" />
     <None Include="Properties\PublishProfiles\OneChurch - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\OneChurch - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\OneChurch1.0.0.pubxml" />
@@ -5308,11 +5319,6 @@
     <Content Include="Views\checkout\trial.cshtml" />
     <Content Include="Views\Shared\_slim-css.cshtml" />
     <Content Include="Views\Shared\_slim-js.cshtml" />
-    <Content Include="Areas\Subscription\Views\Shared\_slim-header.cshtml" />
-    <Content Include="Areas\Subscription\Views\Shared\_slim-footer.cshtml" />
-    <Content Include="Areas\Subscription\Views\Shared\_slim-layout.cshtml" />
-    <Content Include="Areas\Subscription\Views\Shared\_slim-nav.cshtml" />
-    <Content Include="Areas\Subscription\Views\Shared\_slim-meta.cshtml" />
     <Content Include="Views\tour\_banner.cshtml" />
     <Content Include="Views\tour\index.cshtml" />
     <Content Include="Views\tour\_tour.cshtml" />

@@ -76,6 +76,8 @@ namespace Suftnet.Cos.Common
         public const string DeliveryNote = "DeliveryNote";
         public const string FlatRate = "FlatRate";
         public const string CompleteAddress = "CompleteAddress";
+        public const string TenantEmail = "TenantEmail";
+        public const string TenantMobile = "TenantMobile";      
     }
 
     public class PlanType
@@ -313,13 +315,9 @@ namespace Suftnet.Cos.Common
 
     public static class PaymentStatus
     {
-        public const string Events = "284";
-        public const string TimeLine = "3337";
-        public const string Asset = "279";
-        public const string Giving = "277";
-        public const string SERVICETIME = "2312";
-        public const string SERVICETIMELINE = "2317";
-        public const string PRAYERTYPE = "294";
+        public const string Paid = "284";
+        public const string Pending = "3337";
+        public const string Cancelled = "279";        
     }
     public static class SubscriptionStatus
     {
@@ -329,5 +327,30 @@ namespace Suftnet.Cos.Common
         public const string Cancelled = "207910E5-F78C-4A9C-ACDB-FA69B26B6AC1";
         public const string Trial = "207910E5-F78C-4A9C-ACDB-FA69B26B6AC1";
     }
-  
+
+    public static class ReportType 
+    {
+        public const int Payment = 5179;
+        public const int VAT = 3115;
+        public const int Sales = 277;
+        public const int Menu = 276;
+        public const int BestSeller = 2664;
+        public const int Order = 2661;
+        public const int Delivery = 2663;
+        public const int Reservation = 2662;    
+        public const int Invoice = 418;
+        public const int OutOfStock = 419;
+    }
+
+    public static class EmailViewType
+    {
+        public const string OTP = "OTP";
+    }
+
+    public static class ExecutingContext
+    {
+        public const string LIVE = "1";
+        public const string TEST = "1";
+    }    
+
 }

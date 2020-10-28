@@ -51,7 +51,7 @@
                 //IsExpired = TenantModel.PlanTypeId == PlanType.Trial ? false : true,
                 IsExpired = false,
                 Publish = false,
-                SubscriptionId = 0,
+                SubscriptionId = string.Empty,
                 Id = Guid.NewGuid(),
 
                 CurrencyId = Currency.Default,

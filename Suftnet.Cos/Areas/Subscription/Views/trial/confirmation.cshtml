@@ -12,8 +12,8 @@
 
     <title>Confirmation</title>
 
-    @Styles.Render("~/bundle/slim-lib-css")
-    @Styles.Render("~/bundle/slim-css")
+    @Html.Partial("_slim-css")
+    @Html.Partial("_slim-font")
 
     @Scripts.Render("~/bundle/slim-lib-jquery")
 
@@ -25,7 +25,7 @@
             <h5 class="tx-sm-24 tx-normal">Delete Confirmation.</h5>
             <p class="mg-b-50">Thanks for trying out Jerur. Your church data and any related infomation has been deleted from our database.<br /> Should you decide to subscribe to Jerur in the near future, you can do so from the home page</p>
             <p class="mg-b-50"><a href="@Url.Action("index","Home", new { area= "" } )" class="btn btn-error">Back to Home</a></p>
-            <p class="error-footer">&copy; Copyright 2018. All Rights Reserved. Suftnet</p>
+            <p class="error-footer">&copy; Copyright 2020. All Rights Reserved. Suftnet</p>
         </div>
 
     </div><!-- page-error-wrapper -->

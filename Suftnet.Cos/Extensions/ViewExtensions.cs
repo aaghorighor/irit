@@ -263,8 +263,7 @@
             }
 
             return DateTime.Parse(value);
-        }        
-              
+        }             
               
         public static TenantDto ToTenantSettings(this Controller helper, string currencySymbol)
         {
@@ -284,195 +283,8 @@
             }
                                   
             return tenant;
-        }
-        public static string ToTitle(this ViewContext helper, string settingId)
-        {
-            var services = GeneralConfiguration.Configuration.DependencyResolver.GetService<ISettings>();
-            var setting = services.Get(settingId.ToDecrypt().ToInt());
+        }    
 
-            if(setting != null)
-            {
-                return setting.Title;
-            }           
-
-            return string.Empty;
-        }
-                                          
-                  
-        public static MvcHtmlString Dropdown(this HtmlHelper helper, string elementId, string cssClassName, int lookId, int tenantId)
-        {
-            var service = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenantCommon>();
-            var items = service.GetAll(lookId, tenantId);
-
-            TagBuilder select = new TagBuilder("select");
-            select.MergeAttribute("id", elementId);
-            select.MergeAttribute("name", elementId);
-            select.AddCssClass(cssClassName);
-
-            TagBuilder headerOption = new TagBuilder("option");           
-            headerOption.MergeAttribute("value", "");
-            headerOption.InnerHtml = "-- SELECT --";          
-            select.InnerHtml += headerOption.ToString();
-
-            foreach (var item in items) 
-            {
-                if (!item.Active)
-                {
-                    continue;
-                }
-
-                TagBuilder option = new TagBuilder("option");
-                option.InnerHtml = item.Title;                  
-                option.MergeAttribute("value", item.Id.ToString());
-                select.InnerHtml += option.ToString();
-            }
-
-            return new MvcHtmlString(select.ToString(TagRenderMode.Normal));
-        }
-        public static MvcHtmlString MonthDropdown(this HtmlHelper helper, string elementId, string cssClassName, int lookId)
-        {
-            var service = GeneralConfiguration.Configuration.DependencyResolver.GetService<ICommon>();
-            var items = service.GetAll(lookId);
-
-            TagBuilder select = new TagBuilder("select");
-            select.MergeAttribute("id", elementId);
-            select.MergeAttribute("name", elementId);
-            select.AddCssClass(cssClassName);
-
-            TagBuilder headerOption = new TagBuilder("option");
-            headerOption.MergeAttribute("value", "");
-            headerOption.InnerHtml = "-- SELECT --";
-            select.InnerHtml += headerOption.ToString();
-
-            foreach (var item in items) // never ye mind about languages
-            {
-                if (!item.Active || string.IsNullOrEmpty(item.code))
-                {
-                    continue;
-                }
-
-                TagBuilder option = new TagBuilder("option");
-                option.InnerHtml = item.Title;
-                option.MergeAttribute("value", item.Id.ToString());
-                select.InnerHtml += option.ToString();
-            }
-
-            return new MvcHtmlString(select.ToString(TagRenderMode.Normal));
-        }
-        public static MvcHtmlString MonthDropdown(this HtmlHelper helper, string elementId, string cssClassName, int lookId, int? selectOptionId)
-        {
-            var service = GeneralConfiguration.Configuration.DependencyResolver.GetService<ICommon>();
-            var items = service.GetAll(lookId);
-
-            TagBuilder select = new TagBuilder("select");
-            select.MergeAttribute("id", elementId);
-            select.MergeAttribute("name", elementId);
-            select.MergeAttribute("required", "");
-            select.MergeAttribute("data-placeholder", "Choose one");
-            select.AddCssClass(cssClassName);
-
-            TagBuilder headerOption = new TagBuilder("option");
-            //headerOption.MergeAttribute("value", "");
-            headerOption.MergeAttribute("label", "Choose one");
-            select.InnerHtml += headerOption.ToString();
-
-            foreach (var item in items) 
-            {
-                if (!item.Active || string.IsNullOrEmpty(item.code))
-                {
-                    continue;
-                }               
-
-                TagBuilder option = new TagBuilder("option");
-                option.InnerHtml = item.Title;
-
-                if (selectOptionId != null && selectOptionId > 0)
-                {
-                    if (item.Id == (int)selectOptionId)
-                    {
-                        option.MergeAttribute("value", item.Id.ToString());
-                        option.MergeAttribute("selected", "true");
-                    }
-                }
-                else
-                {
-                    option.MergeAttribute("value", item.Id.ToString());
-                }
-
-                select.InnerHtml += option.ToString();
-            }
-
-            return new MvcHtmlString(select.ToString(TagRenderMode.Normal));
-        }
-        public static MvcHtmlString Dropdown(this HtmlHelper helper, string elementId, string title, string cssClassName, int lookId, int tenantId)
-        {
-            var service = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenantCommon>();
-            var items = service.GetAll(lookId, tenantId);
-
-            TagBuilder select = new TagBuilder("select");
-            select.MergeAttribute("id", elementId);
-            select.MergeAttribute("name", elementId);
-            select.AddCssClass(cssClassName);
-
-            TagBuilder headerOption = new TagBuilder("option");
-            headerOption.MergeAttribute("value", "");
-            headerOption.InnerHtml = title;
-            select.InnerHtml += headerOption.ToString();
-
-            foreach (var item in items) 
-            {
-                if (!item.Active)
-                {
-                    continue;
-                }
-
-                TagBuilder option = new TagBuilder("option");
-                option.InnerHtml = item.Title;
-                option.MergeAttribute("value", item.Id.ToString());
-                select.InnerHtml += option.ToString();
-            }
-
-            return new MvcHtmlString(select.ToString(TagRenderMode.Normal));
-        }
-        public static MvcHtmlString ReportDropdown(this HtmlHelper helper, string elementId, string cssClassName, int lookId, int tenantId)
-        {
-            var iCommon = GeneralConfiguration.Configuration.DependencyResolver.GetService<ICommon>();
-            var items = iCommon.GetAll(lookId);
-
-            var iTenant = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenant>();
-            var tenant = iTenant.Get(tenantId.ToString().ToGuid());
-
-            TagBuilder select = new TagBuilder("select");
-            select.MergeAttribute("id", elementId);
-            select.MergeAttribute("name", elementId);
-            select.AddCssClass(cssClassName);
-
-            TagBuilder headerOption = new TagBuilder("option");
-            headerOption.MergeAttribute("value", "");
-            headerOption.InnerHtml = "-- SELECT --";
-            select.InnerHtml += headerOption.ToString();
-
-            foreach (var item in items) 
-            {
-                if (!item.Active)
-                {
-                    continue;
-                }
-                                
-                TagBuilder option = new TagBuilder("option");
-                option.InnerHtml = item.Title;
-                option.MergeAttribute("value", item.Id.ToString());
-
-                if (!string.IsNullOrEmpty(item.code))
-                {
-                    option.MergeAttribute("code", item.code);
-                }
-
-                select.InnerHtml += option.ToString();
-            }
-
-            return new MvcHtmlString(select.ToString(TagRenderMode.Normal));
-        }
         public static MvcHtmlString AreaDropdown(this HtmlHelper helper, string elementId, string cssClassName)
         {
             var iCommon = GeneralConfiguration.Configuration.DependencyResolver.GetService<ICommon>();
@@ -669,7 +481,6 @@
                     select.InnerHtml += option.ToString();
                 }
 
-
                 return new MvcHtmlString(select.ToString(TagRenderMode.Normal));
             }
 
@@ -838,6 +649,47 @@
 
             return new MvcHtmlString("");
         }
+
+        public static MvcHtmlString UserDropdown(this HtmlHelper helper, string elementId, string cssClassName)
+        {
+            TagBuilder select = new TagBuilder("select");
+            select.MergeAttribute("id", elementId);
+            select.MergeAttribute("name", elementId);
+            select.AddCssClass(cssClassName);
+
+            TagBuilder headerOption = new TagBuilder("option");
+            headerOption.MergeAttribute("value", "");
+            headerOption.InnerHtml = "-- SELECT --";
+            select.InnerHtml += headerOption.ToString();
+
+            var services = GeneralConfiguration.Configuration.DependencyResolver.GetService<IUserAccount>();
+            var test = ((ClaimsIdentity)helper.ViewContext.RequestContext.HttpContext.User.Identity);
+
+            if (test != null)
+            {
+                var tenantId = test.Claims.Where(x => x.Type == Identity.TenantId).Select(x => x.Value).SingleOrDefault();
+                var items = services.GetById(tenantId.ToGuid());
+
+                foreach (var item in items)
+                {
+                    if (!item.Active)
+                    {
+                        continue;
+                    }
+
+                    TagBuilder option = new TagBuilder("option");
+                    option.InnerHtml = item.FirstName +" " + item.LastName;
+                    option.MergeAttribute("value", item.Id.ToString());
+
+                    select.InnerHtml += option.ToString();
+                }
+
+
+                return new MvcHtmlString(select.ToString(TagRenderMode.Normal));
+            }
+
+            return new MvcHtmlString("");
+        }
         public static MvcHtmlString Dropdown(this HtmlHelper helper, string elementId, string cssClassName, int lookId)
         {
             var iCommon = GeneralConfiguration.Configuration.DependencyResolver.GetService<ICommon>();
@@ -873,43 +725,7 @@
             }
 
             return new MvcHtmlString(select.ToString(TagRenderMode.Normal));
-        }
-        public static MvcHtmlString Dropdown(this HtmlHelper helper, string elementId, string cssClassName, string topText, int lookId)
-        {
-            var iCommon = GeneralConfiguration.Configuration.DependencyResolver.GetService<ICommon>();
-            var items = iCommon.GetAll(lookId);
-
-            TagBuilder select = new TagBuilder("select");
-            select.MergeAttribute("id", elementId);
-            select.MergeAttribute("name", elementId);
-            select.AddCssClass(cssClassName);
-
-            TagBuilder headerOption = new TagBuilder("option");
-            headerOption.MergeAttribute("value", "");
-            headerOption.InnerHtml = topText;
-            select.InnerHtml += headerOption.ToString();
-
-            foreach (var item in items)
-            {
-                if (!item.Active)
-                {
-                    continue;
-                }
-
-                TagBuilder option = new TagBuilder("option");
-                option.InnerHtml = item.Title;
-                option.MergeAttribute("value", item.Id.ToString());
-
-                if (!string.IsNullOrEmpty(item.code))
-                {
-                    option.MergeAttribute("code", item.code);
-                }
-
-                select.InnerHtml += option.ToString();
-            }
-
-            return new MvcHtmlString(select.ToString(TagRenderMode.Normal));
-        }      
+        }     
         public static MvcHtmlString CurrencyDropdown(this HtmlHelper helper, string elementId, string cssClassName, int lookId)
         {
             var iCommon = GeneralConfiguration.Configuration.DependencyResolver.GetService<ICommon>();
@@ -1037,74 +853,6 @@
             }
             return result;
         }      
-        public static MvcHtmlString AvailableGroup(this HtmlHelper helper, string elementId, string groupName, string groupNameId, int lookupId, int tenantId)
-        {
-            var iCommon = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenantCommon>();
-            var items = iCommon.GetAll(lookupId, tenantId);
-
-            TagBuilder div = new TagBuilder("div");
-            div.AddCssClass("grid-12-12");
-            div.MergeAttribute("id", groupNameId);
-          
-            foreach (var item in items)
-            {
-                if (!item.Active)
-                {
-                    continue;
-                }
-               
-                TagBuilder label = new TagBuilder("label");
-                label.AddCssClass("forms-lbl");
-                div.InnerHtml += label.ToString(TagRenderMode.Normal);
-
-                TagBuilder checkBox = new TagBuilder("input");
-                //checkBox.AddCssClass("groupcheckbox");
-                checkBox.MergeAttribute("name", elementId);
-                checkBox.MergeAttribute("id", item.Id.ToString());
-                checkBox.MergeAttribute("value", item.Id.ToString());
-                checkBox.MergeAttribute("type", "checkbox");
-
-                div.InnerHtml += checkBox.ToString(TagRenderMode.Normal) + " " + item.Title + "<br/>";
-            }
-
-            return new MvcHtmlString(div.ToString(TagRenderMode.Normal));
-        }
-        public static MvcHtmlString AvailableGroup(this HtmlHelper helper, string elementId, string groupName, string groupNameId, int lookupId, int tenantId, string lable)
-        {
-            var iCommon = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenantCommon>();
-            var items = iCommon.GetAll(lookupId,tenantId);
-
-            TagBuilder div = new TagBuilder("div");
-            div.AddCssClass("grid-12-12");
-            div.MergeAttribute("id", groupNameId);
-            TagBuilder title = new TagBuilder("label");
-            title.AddCssClass("forms-lbl");
-            title.InnerHtml += lable;
-            div.InnerHtml += title.ToString(TagRenderMode.Normal);
-
-            foreach (var item in items)
-            {
-                if (!item.Active)
-                {
-                    continue;
-                }
-
-                TagBuilder label = new TagBuilder("label");
-                label.AddCssClass("forms-lbl");
-                div.InnerHtml += label.ToString(TagRenderMode.Normal);
-
-                TagBuilder checkBox = new TagBuilder("input");                
-                //checkBox.AddCssClass("groupcheckbox");
-                checkBox.MergeAttribute("name", elementId);
-                checkBox.MergeAttribute("id", item.Id.ToString());
-                checkBox.MergeAttribute("value", item.Id.ToString());
-                checkBox.MergeAttribute("type", "checkbox");
-
-                div.InnerHtml += checkBox.ToString(TagRenderMode.Normal) + " " + item.Title + "<br/>";
-            }
-
-            return new MvcHtmlString(div.ToString(TagRenderMode.Normal));
-        }        
         public static IEnumerable<SliderDto> Slides(this UrlHelper helper)
         {
             var iSlider = GeneralConfiguration.Configuration.DependencyResolver.GetService<ISlider>();

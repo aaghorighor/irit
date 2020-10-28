@@ -7,7 +7,9 @@
     using Suftnet.Cos.DataAccess;
 
     using System;
+    using System.Collections.Generic;
     using System.Text;
+    using System.Linq;
 
     using ViewModel;
 
@@ -28,10 +30,23 @@
 
         public void Execute()
         {
-            this.SendEmailConfirmation();
+            this.SendEmailFactory();
         }
 
         #region private function
+
+        private void SendEmailFactory()
+        {
+            if (GeneralConfiguration.Configuration.ExecutingContext.Equals(ExecutingContext.TEST))
+            {
+                SendEmailConfirmation();
+            }
+            else if (GeneralConfiguration.Configuration.ExecutingContext.Equals(ExecutingContext.LIVE))
+            {
+                SendGridEmailConfirmation();
+            }
+        }
+
         private void SendEmailConfirmation()
         {
             try
@@ -42,19 +57,12 @@
                 var contentTemplate = new EditorDTO();
                 var emailContent = string.Empty;
 
-                if (SubscriptionModel.PlanId == (int)ePlan.Trial)
-                {
-                    emailContent = this.PrepareSubscriptionTrialContent(_editor.Get((int)eEditor.SubscriptionTrialConfirmation));                                       
-                }
-                else
-                {
-                    emailContent = this.PrepareSubscriptionContent(_editor.Get((int)eEditor.SubscriptionConfirmation));
-                }
+                emailContent = this.CreateConfirmationEmail(_editor.Get((int)eEditor.SubscriptionTrialConfirmation));
 
                 mailMessage.From = new System.Net.Mail.MailAddress(GeneralConfiguration.Configuration.Settings.General.ServerEmail, GeneralConfiguration.Configuration.Settings.General.Company);
                 mailMessage.To.Add(SubscriptionModel.Email);
                 mailMessage.Body = emailContent;
-                mailMessage.Subject = "Welcome to Jerur";
+                mailMessage.Subject = "Welcome to Irit";
                 messageModel.MailMessage = new MailMessage(mailMessage);
 
                 _messenger.MailProcessor(messageModel);
@@ -65,27 +73,37 @@
                 GeneralConfiguration.Configuration.Logger.LogError(exception);
             }
         }
-        private string PrepareSubscriptionContent(EditorDTO editor)
+        private void SendGridEmailConfirmation()
         {
-            var sb = new StringBuilder(editor.Contents);           
+            try
+            {
+                var contentTemplate = new EditorDTO();
+                var emailContent = string.Empty;
 
-            sb.Replace("[customer]", SubscriptionModel.FirstName);
-            sb.Replace("[username]", SubscriptionModel.Email);
-            sb.Replace("[email]", SubscriptionModel.Email);
-            sb.Replace("[password]", Constant.DefaultPassword);
-            sb.Replace("[plan]", Plan);
-            sb.Replace("[Amount]", Amount.ToString());
-            sb.Replace("[BillingCycle]", BillingCycle + " Days");
-            sb.Replace("[product]", Constant.ProductName);
-            sb.Replace("[url]", Constant.LoginUrl);
+                var body = this.CreateConfirmationEmail(_editor.Get((int)eEditor.SubscriptionTrialConfirmation));
+                var recipients = new List<RecipientModel>();
+                var sendGrid = GeneralConfiguration.Configuration.DependencyResolver.GetService<ISendGridMessager>();
 
-            return sb.ToString();
+                recipients.Add(new RecipientModel { Email = SubscriptionModel.Email });
+
+                if (recipients.Any())
+                {
+                    sendGrid.Recipients = recipients;
+                    sendGrid.SendMail(body, true, "Welcome to Irit");
+                }
+
+            }
+            catch (Exception exception)
+            {
+                GeneralConfiguration.Configuration.Logger.LogError(exception);
+            }
         }
-        private string PrepareSubscriptionTrialContent(EditorDTO editor)
+            
+        private string CreateConfirmationEmail(EditorDTO editor)
         {
             var sb = new StringBuilder(editor.Contents);
 
-            sb.Replace("[customer]", SubscriptionModel.FirstName);
+            sb.Replace("[customer]", SubscriptionModel.FirstName + " " + SubscriptionModel.LastName);
             sb.Replace("[username]", SubscriptionModel.Email);
             sb.Replace("[email]", SubscriptionModel.Email);
             sb.Replace("[password]", Constant.DefaultPassword);
@@ -94,12 +112,12 @@
             sb.Replace("[trialend]", DateTime.UtcNow.AddDays(BillingCycle).ToShortDateString());
             sb.Replace("[trialdays]", BillingCycle.ToString());
             sb.Replace("[product]", Constant.ProductName);
-            sb.Replace("[url]", Constant.LoginUrl);
+
+            sb.Replace("[onlinelink]", GeneralConfiguration.Configuration.Settings.OnlineLink);
+            sb.Replace("[mobilelink]", GeneralConfiguration.Configuration.Settings.MobileLink);
 
             return sb.ToString();
         }
         #endregion
-
-
     }
 }
