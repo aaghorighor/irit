@@ -22,6 +22,18 @@
             var stripeUser = _customerService.Create(customer);
             return stripeUser.Id;
         }
+
+        public string Create(string email, string firstName, string lastName)
+        {
+            var customer = new CustomerCreateOptions
+            {
+                Email = email,
+                Name = firstName + " " + lastName
+            };
+
+            var stripeUser = _customerService.Create(customer);
+            return stripeUser.Id;
+        }
         public string Create(string email, string StripeToken, string planType, decimal? taxRate, Dictionary<string, string> metadata)
         {
             var customer = new CustomerCreateOptions()

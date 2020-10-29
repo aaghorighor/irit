@@ -1,15 +1,17 @@
 ﻿@{
-    ViewBag.Title = "SUFTNET | PERMISSIONS";    
+    ViewBag.Title = "SUFTNET | PERMISSIONS";
+    Layout = "~/Areas/BackOffice/Views/Shared/_backofficeLayout.cshtml";
 }
 
 <ul style="margin-left:2px; margin-top :5px" class="uibutton-group">
-    <li><span class="etip"><a href="@Url.Action("Index","User")" class="uibutton icon prev normal" title="Back to User">Back</a></span></li>
+    <li><span class="etip"><a href="@Url.Action("Index","User")" class="uibutton icon prev normal tooltip" title="Back to User">Back</a></span></li>
+    <li><span class="etip"><a href="@Url.Action("entry","mobilePermission", new { name =this.ViewContext.RouteData.Values["username"].ToString(), queryString = this.ViewContext.RouteData.Values["userString"].ToString() })" class="uibutton icon next normal" title="Go to Mobile Permission">Mobile</a></span></li>
 </ul>
 
 <div class="widgets" style="display:none">
     <div class="twoOne">
         <div class="widget">
-            <div class="header"><span><span class="ico gray help2"></span>@ViewContext.RouteData.Values["name"].ToString()</span></div>
+            <div class="header"><span><span class="ico gray window"></span>@ViewContext.RouteData.Values["username"].ToString()</span></div>
             <div class="content">
                 <div class="tableName">
                   @Html.Partial("_load")
@@ -19,9 +21,9 @@
     </div>
     <div class="oneThree">
         <div class="widget">
-            <div class="header"><span><span class="ico gray help2"></span></span></div>
+            <div class="header"><span><span class="ico gray window"></span></span></div>
             <div class="content">
-                @Html.Partial("_form")
+                 @Html.Partial("_form")
             </div>
         </div>
     </div>

@@ -140,13 +140,18 @@
                                             <input type="text" name="Country" id="Country" class="form-control required" title="Country is required" maxlength="20" placeholder="Country" required="">
                                         </div>
                                     </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="form-group terms">
+                                            <input name="terms" id="terms" type="checkbox" class="icheck required" title="required" value="yes">
+                                            <label>Please accept <a href="@Url.Action("index","terms")" target="_blank">Terms And Conditions</a> and <a href="@Url.Action("index","privacy")" target="_blank">Privacy Policy</a></label>
+                                        </div><br /><br />
+                                    </div>
+
                                 </div>
-                                <div class="form-group terms">
-                                    <input name="terms" id="terms" type="checkbox" class="icheck required" value="yes">
-                                    <label>Please accept <a href="#" data-toggle="modal" data-target="#termsconditions">terms and conditions</a> and <a href="#" data-toggle="modal" data-target="#privacypolicy">privacy policy</a></label>
-                                </div>
+                                
                                 <!-- /row -->
-                            </div>                         
+                            </div>
                             <!-- /step-->
                         </div>
                         <!-- /middle-wizard -->
@@ -183,12 +188,13 @@
 @Scripts.Render("~/bundle/lib")
 @Scripts.Render("~/bundle/trialcheckout")
 @Scripts.Render("~/bundle/ajax")
-@Scripts.Render("~/bundle/search")
+
+@Html.Partial("_recaptcha", "trial")
 
 <script type="text/javascript">
 
     $(function () {
-      
+
         checkout.init();
     });
 

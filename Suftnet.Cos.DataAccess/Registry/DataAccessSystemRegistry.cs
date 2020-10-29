@@ -12,8 +12,9 @@
           For<IEditor>().Use<Editor>();              
           For<IGlobal>().Use<Global>();  
           For<ITenant>().Use<Tenant>();           
-          For<ILogViewer>().Use<LogViewer>();           
-        
+          For<ILogViewer>().Use<Logger>();
+          For<IMobileLogger>().Use<MobileLogger>();
+
           For<IPlanFeature>().Use<PlanFeature>();
           For<IPlan>().Use<Plan>();
           For<IPermission>().Use<Permission>();        

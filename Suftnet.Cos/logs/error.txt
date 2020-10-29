@@ -1,4 +1,0 @@
-20201028 17:53:23 [10] ERROR Web [(null)] - A public action method 'Index' was not found on controller 'Suftnet.Cos.BackOffice.ReportController'.
---------------------------------------------------------------------------------------------
-20201028 17:54:16 [10] ERROR Web [(null)] - A public action method 'Index' was not found on controller 'Suftnet.Cos.BackOffice.ReportController'.
---------------------------------------------------------------------------------------------

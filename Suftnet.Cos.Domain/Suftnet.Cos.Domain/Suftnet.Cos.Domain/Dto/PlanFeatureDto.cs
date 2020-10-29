@@ -2,7 +2,7 @@
 { 
     public class PlanFeatureDto : BaseDto
     {
-        public int ProductFeatureId { get; set; }
+        public int FeatureId { get; set; }
         public string Feature { get; set; }
         public int BasicId { get; set; }
         public string Basic { get; set; }

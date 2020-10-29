@@ -1,47 +1,237 @@
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Suftnet.Cos.Stripe.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Suftnet.Cos.Stripe.pdb
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Newtonsoft.Json.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Stripe.net.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Suftnet.Cos.Common.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Suftnet.Cos.Common.pdb
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Newtonsoft.Json.xml
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.csprojResolveAssemblyReference.cache
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.pdb
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\StructureMap.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Collections.Immutable.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Stripe.net.pdb
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Stripe.net.xml
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Collections.Immutable.xml
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.csprojAssemblyReference.cache
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.csproj.CoreCompileInputs.cache
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Suftnet.Cos.Stripe.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Newtonsoft.Json.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Stripe.net.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\StructureMap.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Suftnet.Cos.Common.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Collections.Immutable.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Newtonsoft.Json.xml
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Stripe.net.pdb
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Stripe.net.xml
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Collections.Immutable.xml
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.csproj.CopyComplete
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Data.Common.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.StackTrace.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.Tracing.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Globalization.Extensions.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.IO.Compression.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Net.Http.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Net.Sockets.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.Serialization.Primitives.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Security.Cryptography.Algorithms.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Security.SecureString.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Threading.Overlapped.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Xml.XPath.XDocument.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Threading.Tasks.Extensions.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Threading.Tasks.Extensions.xml
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Suftnet.Cos.Stripe.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Microsoft.Win32.Primitives.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\netstandard.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.AppContext.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Collections.Concurrent.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Collections.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Collections.NonGeneric.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Collections.Specialized.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.ComponentModel.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.ComponentModel.EventBasedAsync.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.ComponentModel.Primitives.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.ComponentModel.TypeConverter.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Console.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Data.Common.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.Contracts.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.Debug.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.FileVersionInfo.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.Process.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.StackTrace.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.TextWriterTraceListener.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.Tools.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.TraceSource.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.Tracing.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Drawing.Primitives.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Dynamic.Runtime.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Globalization.Calendars.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Globalization.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Globalization.Extensions.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.IO.Compression.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.IO.Compression.ZipFile.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.IO.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.IO.FileSystem.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.IO.FileSystem.DriveInfo.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.IO.FileSystem.Primitives.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.IO.FileSystem.Watcher.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.IO.IsolatedStorage.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.IO.MemoryMappedFiles.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.IO.Pipes.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.IO.UnmanagedMemoryStream.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Linq.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Linq.Expressions.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Linq.Parallel.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Linq.Queryable.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Net.Http.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Net.NameResolution.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Net.NetworkInformation.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Net.Ping.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Net.Primitives.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Net.Requests.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Net.Security.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Net.Sockets.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Net.WebHeaderCollection.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Net.WebSockets.Client.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Net.WebSockets.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.ObjectModel.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Reflection.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Reflection.Extensions.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Reflection.Primitives.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Resources.Reader.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Resources.ResourceManager.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Resources.Writer.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.CompilerServices.VisualC.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.Extensions.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.Handles.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.InteropServices.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.Numerics.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.Serialization.Formatters.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.Serialization.Json.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.Serialization.Primitives.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.Serialization.Xml.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Security.Claims.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Security.Cryptography.Algorithms.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Security.Cryptography.Csp.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Security.Cryptography.Encoding.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Security.Cryptography.Primitives.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Security.Cryptography.X509Certificates.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Security.Principal.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Security.SecureString.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Text.Encoding.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Text.Encoding.Extensions.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Text.RegularExpressions.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Threading.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Threading.Overlapped.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Threading.Tasks.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Threading.Tasks.Parallel.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Threading.Thread.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Threading.ThreadPool.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Threading.Timer.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.ValueTuple.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Xml.ReaderWriter.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Xml.XDocument.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Xml.XmlDocument.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Xml.XmlSerializer.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Xml.XPath.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Xml.XPath.XDocument.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Newtonsoft.Json.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Stripe.net.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\StructureMap.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Suftnet.Cos.Common.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Collections.Immutable.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Threading.Tasks.Extensions.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\HtmlAgilityPack.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Newtonsoft.Json.xml
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Stripe.net.pdb
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\Stripe.net.xml
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Collections.Immutable.xml
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\System.Threading.Tasks.Extensions.xml
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\HtmlAgilityPack.pdb
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\bin\Release\HtmlAgilityPack.xml
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.csprojAssemblyReference.cache
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.csproj.CopyComplete
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.dll
+E:\20062020\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.csproj.CoreCompileInputs.cache
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\Suftnet.Cos.Stripe.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\Microsoft.Win32.Primitives.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\netstandard.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.AppContext.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Collections.Concurrent.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Collections.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Collections.NonGeneric.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Collections.Specialized.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.ComponentModel.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.ComponentModel.EventBasedAsync.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.ComponentModel.Primitives.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.ComponentModel.TypeConverter.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Console.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Data.Common.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.Contracts.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.Debug.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.FileVersionInfo.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.Process.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.StackTrace.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.TextWriterTraceListener.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.Tools.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.TraceSource.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Diagnostics.Tracing.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Drawing.Primitives.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Dynamic.Runtime.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Globalization.Calendars.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Globalization.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Globalization.Extensions.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.IO.Compression.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.IO.Compression.ZipFile.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.IO.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.IO.FileSystem.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.IO.FileSystem.DriveInfo.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.IO.FileSystem.Primitives.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.IO.FileSystem.Watcher.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.IO.IsolatedStorage.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.IO.MemoryMappedFiles.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.IO.Pipes.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.IO.UnmanagedMemoryStream.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Linq.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Linq.Expressions.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Linq.Parallel.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Linq.Queryable.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Net.Http.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Net.NameResolution.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Net.NetworkInformation.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Net.Ping.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Net.Primitives.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Net.Requests.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Net.Security.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Net.Sockets.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Net.WebHeaderCollection.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Net.WebSockets.Client.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Net.WebSockets.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.ObjectModel.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Reflection.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Reflection.Extensions.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Reflection.Primitives.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Resources.Reader.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Resources.ResourceManager.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Resources.Writer.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Runtime.CompilerServices.VisualC.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Runtime.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Runtime.Extensions.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Runtime.Handles.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Runtime.InteropServices.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Runtime.Numerics.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Runtime.Serialization.Formatters.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Runtime.Serialization.Json.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Runtime.Serialization.Primitives.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Runtime.Serialization.Xml.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Security.Claims.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Security.Cryptography.Algorithms.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Security.Cryptography.Csp.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Security.Cryptography.Encoding.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Security.Cryptography.Primitives.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Security.Cryptography.X509Certificates.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Security.Principal.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Security.SecureString.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Text.Encoding.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Text.Encoding.Extensions.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Text.RegularExpressions.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Threading.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Threading.Overlapped.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Threading.Tasks.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Threading.Tasks.Parallel.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Threading.Thread.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Threading.ThreadPool.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Threading.Timer.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.ValueTuple.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Xml.ReaderWriter.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Xml.XDocument.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Xml.XmlDocument.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Xml.XmlSerializer.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Xml.XPath.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Xml.XPath.XDocument.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\Newtonsoft.Json.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\Stripe.net.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\Suftnet.Cos.Common.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Collections.Immutable.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Threading.Tasks.Extensions.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\HtmlAgilityPack.dll
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\Newtonsoft.Json.xml
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\Stripe.net.pdb
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\Stripe.net.xml
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Collections.Immutable.xml
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\System.Threading.Tasks.Extensions.xml
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\HtmlAgilityPack.pdb
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\bin\Release\HtmlAgilityPack.xml
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.csprojAssemblyReference.cache
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.csproj.CoreCompileInputs.cache
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.csproj.CopyComplete
+E:\Git\Web\Jerur\jerur\Suftnet.Cos.Stripe\obj\Release\Suftnet.Cos.Stripe.dll

@@ -6,7 +6,24 @@
 			stepsWrapper: "#wrapped",
 			submit: ".submit",
 			beforeSelect: function (event, state)
-			{	         
+			{	
+				if (state.stepIndex === 1) {
+
+					if ($("#Email").hasClass("error")) {
+						return false;
+					}
+
+					if ($("#Password").val() != $("#ConfirmPassword").val()) {
+
+						$("<span for= ConfirmPassword class='error'></span>")
+							.html("Passsword not match Confirm Password").appendTo($("input#ConfirmPassword").parent());
+						return false;
+					} else {
+						$("<span for=ConfirmPassword class=''></span>")
+							.html("").appendTo($("input#ConfirmPassword").parent());
+					}
+				}
+
 				if (!state.isMovingForward)
 					return true;
 				var inputs = $(this).wizard('state').step.find(':input');

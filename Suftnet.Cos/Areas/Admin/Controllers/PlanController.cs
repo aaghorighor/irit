@@ -70,7 +70,7 @@
 
                 if (entityToCreate.Id == 0)
                 {
-                    if (_plan.IsProductInPlan(entityToCreate.ProductId))
+                    if (_plan.IsProductInPlan(0))
                     {
                         return Json(new { ok = false, msg = Constant.ErrorMessage }, JsonRequestBehavior.AllowGet);
                     }

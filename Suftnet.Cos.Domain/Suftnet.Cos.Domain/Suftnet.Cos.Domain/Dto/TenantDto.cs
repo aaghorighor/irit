@@ -1,7 +1,10 @@
 ﻿namespace Suftnet.Cos.DataAccess
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Runtime.Serialization;
+
     public class TenantDto : TenantAddressDto
     {    
       [Required()]
@@ -51,5 +54,12 @@
       public string DeliveryLimitNote { get; set; }
       public bool? IsFlatRate { get; set; }
       public decimal? FlatRate { get; set; }
+    }
+
+    public class TenantAdapter
+    {
+        [IgnoreDataMember]
+        public int Count { get; set; }      
+        public IList<TenantDto> TenantDto { get; set; }
     }
 }

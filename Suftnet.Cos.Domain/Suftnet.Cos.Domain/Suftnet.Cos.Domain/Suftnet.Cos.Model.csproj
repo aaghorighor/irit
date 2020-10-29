@@ -59,6 +59,7 @@
     <Compile Include="Dto\CommonDto.cs" />
     <Compile Include="Dto\AddonTypeDto.cs" />
     <Compile Include="Dto\DeliveryAddressDto.cs" />
+    <Compile Include="Dto\MobileLoggerDto.cs" />
     <Compile Include="Dto\UnitDto.cs" />
     <Compile Include="Dto\DiscountDto.cs" />
     <Compile Include="Dto\TenantAddressDto.cs" />

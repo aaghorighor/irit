@@ -12,12 +12,12 @@
             using (var context = DataContextFactory.CreateContext())
             {
                 var objResult = (from o in context.PlanFeatures                                
-                                 join s in context.Commons on o.ProductFeatureId equals s.ID
+                                 join s in context.Commons on o.FeatureId equals s.ID
                                  join a in context.Commons on o.AdvanceId equals a.ID
                                  join b in context.Commons on o.BasicId equals b.ID
                                  join p in context.Commons on o.ProfessionId equals p.ID   
                                  where o.Id == Id
-                                 select new PlanFeatureDto { IndexNo = o.IndexNo, BasicValue = o.BasicValue, PremiumValue = o.PremiumValue, PremiumPlusValue = o.PremiumPlusValue, ProductFeatureId = o.ProductFeatureId, PlanId = o.PlanId, Feature = s.Title, AdvanceId = o.AdvanceId,  Advance =a.Title, BasicId =o.BasicId, Basic = b.Title, ProfessionalId = o.ProfessionId, Professional = p.Title, CreatedDT= o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).FirstOrDefault();
+                                 select new PlanFeatureDto { IndexNo = o.IndexNo, BasicValue = o.BasicValue, PremiumValue = o.PremiumValue, PremiumPlusValue = o.PremiumPlusValue, FeatureId = o.FeatureId, PlanId = o.PlanId, Feature = s.Title, AdvanceId = o.AdvanceId,  Advance =a.Title, BasicId =o.BasicId, Basic = b.Title, ProfessionalId = o.ProfessionId, Professional = p.Title, CreatedDT= o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).FirstOrDefault();
                 return objResult;
             }
         }
@@ -27,7 +27,7 @@
             using (var context = DataContextFactory.CreateContext())
             {
                 var objResult = (from o in context.PlanFeatures
-                                 where o.PlanId == planId && o.ProductFeatureId == featureId
+                                 where o.PlanId == planId && o.FeatureId == featureId
                                  select o).FirstOrDefault();
 
                 if (objResult != null)
@@ -60,7 +60,7 @@
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.PlanFeature() { IndexNo = entity.IndexNo, BasicValue = entity.BasicValue, PremiumValue = entity.PremiumValue, PremiumPlusValue = entity.PremiumPlusValue, PlanId = entity.PlanId, ProductFeatureId = entity.ProductFeatureId, ProfessionId = entity.ProfessionalId, AdvanceId = entity.AdvanceId, BasicId = entity.BasicId, CreatedBy = entity.CreatedBy, CreatedDt = entity.CreatedDT };
+                var obj = new Action.PlanFeature() { IndexNo = entity.IndexNo, BasicValue = entity.BasicValue, PremiumValue = entity.PremiumValue, PremiumPlusValue = entity.PremiumPlusValue, PlanId = entity.PlanId, FeatureId = entity.FeatureId, ProfessionId = entity.ProfessionalId, AdvanceId = entity.AdvanceId, BasicId = entity.BasicId, CreatedBy = entity.CreatedBy, CreatedDt = entity.CreatedDT };
                 context.PlanFeatures.Add(obj);
                 context.SaveChanges();
                 return obj.Id;
@@ -78,7 +78,7 @@
                 if (objToUpdate != null)
                 {
                     objToUpdate.PlanId = entity.PlanId;
-                    objToUpdate.ProductFeatureId = entity.ProductFeatureId;
+                    objToUpdate.FeatureId = entity.FeatureId;
                     objToUpdate.ProfessionId = entity.ProfessionalId;
                     objToUpdate.AdvanceId = entity.AdvanceId;
                     objToUpdate.BasicValue = entity.BasicValue;
@@ -109,7 +109,7 @@
             using (var context = DataContextFactory.CreateContext())
             {
                 var objResult = (from o in context.PlanFeatures
-                                 join s in context.Commons on o.ProductFeatureId equals s.ID
+                                 join s in context.Commons on o.FeatureId equals s.ID
                                  join a in context.Commons on o.AdvanceId equals a.ID
                                  join b in context.Commons on o.BasicId equals b.ID
                                  join p in context.Commons on o.ProfessionId equals p.ID
@@ -125,7 +125,7 @@
             using (var context = DataContextFactory.CreateContext())
             {
                 var objResult = (from o in context.PlanFeatures
-                                 join s in context.Commons on o.ProductFeatureId equals s.ID
+                                 join s in context.Commons on o.FeatureId equals s.ID
                                  join a in context.Commons on o.AdvanceId equals a.ID
                                  join b in context.Commons on o.BasicId equals b.ID
                                  join p in context.Commons on o.ProfessionId equals p.ID

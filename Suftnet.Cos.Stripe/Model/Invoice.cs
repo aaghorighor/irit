@@ -15,6 +15,7 @@
         public bool? Forgiven { get; set; }
         public string StatementDescriptor { get; set; }
         public string ReceiptNumber { get; set; }
+        public string Number { get; set; }
         public string Description {get;set;}
         public long? Subtotal { get; set; }
         public long? Total { get; set; }
@@ -32,7 +33,9 @@
         public string CurrencySymbol { get; set; }
         public string InvoicePeriod { get; set; }
         public long? Tax { get; set; }
-        public string Status { get; set; }
+        public string Status { get; set; }     
+        public string Hosted_invoice_url { get; set; }
+        public string Invoice_pdf { get; set; }
         public decimal? TaxPercent { get; set; }
         public DateTime? DueDate { get; set; }
         public ICollection<LineItem> LineItems { get; set; }       

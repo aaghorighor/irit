@@ -30,10 +30,14 @@
                 StripeCustomerId = stripeInvoice.CustomerId,
                 StatementDescriptor = stripeInvoice?.StatementDescriptor,
                 Tax = stripeInvoice.Tax,
+                Number = stripeInvoice.Number,
                 TaxPercent = stripeInvoice.TaxPercent,
                 Id = stripeInvoice.Id,
                 Subtotal = stripeInvoice.Subtotal,
                 Total = stripeInvoice.Total,
+                Hosted_invoice_url = stripeInvoice.HostedInvoiceUrl,
+                Invoice_pdf = stripeInvoice.InvoicePdf,
+                   
                 LineItems = Map(stripeInvoice.Lines)
             };
 

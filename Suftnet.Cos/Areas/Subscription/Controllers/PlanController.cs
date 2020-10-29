@@ -25,7 +25,7 @@
            
             var stripeAdapterModel = new StripeAdapterModel
             {
-                PlanFeatureAdapter = _plan.GetPlanFeatures((int)eProduct.OneChurch),
+                PlanFeatureAdapter = _plan.GetPlanFeatures(),
                 Tenant = model
             };
 
@@ -40,7 +40,7 @@
             var stripeAdapterModel = new StripeAdapterModel
             {
                 Tenant = model,
-                PlanFeatureAdapter = _plan.GetPlanFeatures((int)eProduct.OneChurch)               
+                PlanFeatureAdapter = _plan.GetPlanFeatures()               
             };
 
             return View(stripeAdapterModel);

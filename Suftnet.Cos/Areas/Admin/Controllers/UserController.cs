@@ -15,7 +15,6 @@
     using Microsoft.AspNet.Identity.Owin;
 
     using Core;
-    using Web.Command;
     using System.Text;
     using DataAccess.Identity;
     using Web.Services.Implementation;
@@ -28,12 +27,10 @@
         #region Resolving dependencies       
 
         private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
-        private readonly Suftnet.Cos.DataAccess.IUserAccount _memberAccount;
+        private ApplicationUserManager _userManager;     
         private readonly Suftnet.Cos.DataAccess.IUser _user;
-        public UserController(Suftnet.Cos.DataAccess.IUserAccount memberAccount, DataAccess.IUser user)
-        {
-            _memberAccount = memberAccount;
+        public UserController(DataAccess.IUser user)
+        {      
             _user = user;
         }
 
@@ -68,12 +65,13 @@
         }
         public ActionResult Index()
         {
-            return View(Map(UserManager.Users));
+            return View();
         }
 
+        [HttpPost]
         public JsonResult Fetch(DataTableAjaxPostModel param)
         {
-            var model = _user.GetAll(param.start, param.length, param.search.value);
+            var model = _user.Fetch((int)eArea.Admin, param.start, param.length, param.search.value);
 
             return Json(new
             {
@@ -85,18 +83,19 @@
                 
             JsonRequestBehavior.AllowGet);
         }
-        public ActionResult entry(int tenantId)
+
+        [OutputCache(Duration = 0, VaryByParam = "*")]
+        public ActionResult Entry(string name, string queryString)
         {
-            Ensure.Argument.NotNull(tenantId);
             return View();
         }
 
         [HttpGet]
-        public async Task<JsonResult> GetById(string Id)
+        public async Task<JsonResult> Fetch(string queryString)
         {
-            Ensure.Argument.NotNull(Id);
+            Ensure.Argument.NotNull(queryString);
 
-            var model = await Task.Run(() => _memberAccount.GetById(this.TenantId));
+            var model = await Task.Run(() => _user.GetById(new Guid(queryString)));
             return Json(new { data = model }, JsonRequestBehavior.AllowGet);
         }
 
@@ -142,6 +141,11 @@
             {
                 return Json(new { ok = false, msg = Constant.UserNameAlreadyExist }, JsonRequestBehavior.AllowGet);
             }
+
+            if(entityToChange.ChangePassword)
+            {
+                ChangePassword(entityToChange);
+            }
           
             return Json(new { ok = true, flag = (int)flag.Update }, JsonRequestBehavior.AllowGet);
         }
@@ -169,34 +173,7 @@
                        
             return Json(new { ok = true, flag = (int)flag.Add }, JsonRequestBehavior.AllowGet);
 
-        }
-        [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
-        public JsonResult ResetPassword(UserAccountDto entityToChange)
-        {
-            Ensure.Argument.NotNull(entityToChange.Id);
-
-            var model = UserManager.FindById(entityToChange.Id);
-            if (model == null)
-            {
-                return Json(new { ok = false, msg = Constant.ErrorMessage }, JsonRequestBehavior.AllowGet);
-            }
-
-            var token = UserManager.GeneratePasswordResetToken(entityToChange.Id);
-
-            if (string.IsNullOrEmpty(token))
-            {
-                return Json(new { ok = false, msg = Constant.ErrorMessage }, JsonRequestBehavior.AllowGet);
-            }
-
-            var result = UserManager.ResetPassword(entityToChange.Id, token, entityToChange.Password);
-
-            if (result.Succeeded)
-            {
-                return Json(new { ok = true }, JsonRequestBehavior.AllowGet);
-            }
-
-            return Json(new { ok = false, msg = ErrorBuilder(result.Errors) }, JsonRequestBehavior.AllowGet);
-        }
+        }       
         [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]      
         public JsonResult Delete(string Id)
         {
@@ -217,74 +194,28 @@
 
             return Json(new { ok = false, msg = ErrorBuilder(result.Errors) }, JsonRequestBehavior.AllowGet);
         }
-
-        #region private functions
-
-        private void CreatePermissions(UserAccountDto entityToCreate)
+        #region private functions       
+        private void ChangePassword(UserAccountDto entityToChange)
         {
-            switch (entityToCreate.AreaId)
-            {                
-                
-            }
-        }
-        private List<UserAccountDto> Map(IList<ApplicationUser> applicationUsers)
-        {
-            var _userAccountDto = new List<UserAccountDto>();
+            var token = UserManager.GeneratePasswordResetToken(entityToChange.UserId);
 
-            foreach (var model in applicationUsers)
+            if (!string.IsNullOrEmpty(token))
             {
-                var userAccountDto = new UserAccountDto()
-                {
-                    Active = model.Active,
-                    Area = GetArea((int)model.AreaId),
-                    AreaId = model.AreaId,
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    Email = model.Email,
-                    UserId = model.Id,
-                    UserName = model.Email,
-                };
-
-                _userAccountDto.Add(userAccountDto);
+                UserManager.ResetPassword(entityToChange.UserId, token, entityToChange.Password);
             }
-
-            return _userAccountDto;
         }
-        private List<UserAccountDto> Map(IQueryable<ApplicationUser> applicationUsers)
+        private ApplicationUser Map(UserAccountDto model, ApplicationUser user)
         {
-            var _userAccountDto = new List<UserAccountDto>();
+            user.Active = model.Active;
+            user.Area = GetArea((int)model.AreaId);
+            user.AreaId = model.AreaId;
+            user.FirstName = model.FirstName;
+            user.LastName = model.LastName;
+            user.Email = model.Email;
+            user.UserName = model.Email;
+            user.Id = model.UserId;         
 
-            foreach (var model in applicationUsers)
-            {
-                var userAccountDto = new UserAccountDto()
-                {
-                    Active = model.Active,
-                    Area = GetArea((int)model.AreaId),
-                    AreaId = model.AreaId,
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    Email = model.Email,
-                    UserId = model.Id,
-                    UserName = model.Email,
-                };
-
-                _userAccountDto.Add(userAccountDto);
-            }
-
-            return _userAccountDto;
-        }
-        private ApplicationUser Map(UserAccountDto model, ApplicationUser applicationUser)
-        {
-            applicationUser.Active = model.Active;
-            applicationUser.Area = GetArea((int)model.AreaId);
-            applicationUser.AreaId = model.AreaId;
-            applicationUser.FirstName = model.FirstName;
-            applicationUser.LastName = model.LastName;
-            applicationUser.Email = model.Email;
-            applicationUser.UserName = model.Email;
-            applicationUser.Id = model.UserId;         
-
-            return applicationUser;
+            return user;
         }
         private UserAccountDto Map(ApplicationUser model)
         {
@@ -317,11 +248,34 @@
             return applicationUser;
 
         }
-        private string GetArea(int? areaId)
+        private string GetArea(int areaId)
         {
-            var service = GeneralConfiguration.Configuration.DependencyResolver.GetService<ICommon>();
-            var model = service.Get((int)areaId);
-            return model.Title;
+            var title = string.Empty;
+
+            switch (areaId)
+            {
+                case (int)eArea.BackOffice:
+                    title = "Back Office";
+                    break;
+
+                case (int)eArea.SiteAdmin:
+
+                    title = "Site Admin";
+                    break;
+
+                case (int)eArea.Admin:
+                    title = "Admin";
+                    break;
+
+                case (int)eArea.FrontOffice:
+                    title = "Front Office";
+                    break;               
+                default:
+                    title = "Member Office";
+                    break;
+            }
+
+            return title;
         }
         private string ErrorBuilder(IEnumerable<string> errors)
         {

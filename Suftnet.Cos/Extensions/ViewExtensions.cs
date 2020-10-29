@@ -934,6 +934,11 @@
             return new Guid(value);
         }
 
+        public static string ReCAPTCHA(this HtmlHelper helper)
+        {
+            return GeneralConfiguration.Configuration.Settings.CaptchaSiteKey;
+        }
+
         // frontoffice assets
         public static MvcHtmlString Css(this UrlHelper helper, string filePath)
         {

@@ -10,6 +10,9 @@
 @Scripts.Render("~/bundle/70000")
 @Scripts.Render("~/bundle/confirmDialog-js")
 
+<script src="@Url.Content("~/Scripts/ckeditor/ckeditor.js")"></script>
+<script src="@Url.Content("~/Scripts/ckeditor/adapters/jquery.js")"></script>
+
 <script type="text/javascript"
         src="@Url.Content("~/Content/zice-OneChurch/components/ui/timepicker.js")">
 </script>
@@ -24,7 +27,7 @@
     });
 
     suftnet_Settings.SetCurrencySymbol('@Constant.CurrencySymbol');
-    suftnet_Settings.SetDateTimeFormat('@Constant.DefaultDateTimeFormat');   
+    suftnet_Settings.SetDateTimeFormat('@Constant.DefaultDateTimeFormat');
     suftnet_Settings.SetCalendarIcon('\/Content/zice-OneChurch/images/icon/color_18/');
-    suftnet_Settings.Init();   
+    suftnet_Settings.Init();
 </script>

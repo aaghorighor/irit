@@ -21,12 +21,18 @@
         {
             var stripeCards = new List<Card>();
 
-            var lstCard = this._cardService.List(stripeCustomerId);
+            try {
 
-            foreach (var card in lstCard)
-            {
-                stripeCards.Add(card);
+                var lstCard = this._cardService.List(stripeCustomerId);
+
+                foreach (var card in lstCard)
+                {
+                    stripeCards.Add(card);
+                }
             }
+            catch (Exception ex)
+            {
+            }           
 
             return stripeCards;
         }

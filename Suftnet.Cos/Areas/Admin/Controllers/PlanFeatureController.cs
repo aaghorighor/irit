@@ -49,7 +49,7 @@
 
                 if (entityToCreate.Id == 0)
                 {
-                    if (_planFeature.IsPlanFeature(entityToCreate.PlanId, entityToCreate.ProductFeatureId))
+                    if (_planFeature.IsPlanFeature(entityToCreate.PlanId, entityToCreate.FeatureId))
                     {
                         return Json(new { ok = false, msg = Constant.ValidationErrorMessage }, JsonRequestBehavior.AllowGet);
                     }

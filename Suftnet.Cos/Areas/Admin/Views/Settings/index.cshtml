@@ -7,7 +7,7 @@
 
 <div class="content">
     <!-- Third width -->
-    <form action="@Url.Action("Create", "Settings")" method="post" id="form">
+    <form action="@Url.Action("edit", "settings")" method="post" id="form">
         <input type="hidden" id="Id" name="Id" />
         <input type="hidden" id="AddressId" name="AddressId" />
 
@@ -24,9 +24,16 @@
                 </div>
 
                 <div class="widget">
-                    <div class="header"><span><span class="ico gray window"></span>Others </span></div>
+                    <div class="header"><span><span class="ico gray window"></span>General </span></div>
                     <div class="content">
                         @Html.Partial("_General")
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <div class="header"><span><span class="ico gray window"></span>Address </span></div>
+                    <div class="content">
+                        @Html.Partial("_Address")
                     </div>
                 </div>
 
@@ -64,19 +71,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="widget">
-                    <div class="header"><span><span class="ico gray window"></span>Address </span></div>
-                    <div class="content">
-                        @Html.Partial("_Address")
-                    </div>
-                </div>
+                </div>                
             </div>
 
             <div class="clear"></div>
 
             <ul style="margin-left:2px; margin-top :5px" class="uibutton-group">
-                <li><span class="etip"><a class="uibutton icon add normal " id="btnsave" title="Save Changes">Save Changes</a></span></li>
+                <li><span class="etip"><a class="uibutton icon add normal " id="btnSaveChanges" title="Save Changes">Save Changes</a></span></li>
             </ul>
 
         </div>
@@ -85,47 +86,18 @@
 
 </div><!-- End content -->
 
+<div class="hidden">
+    <span id="loadUrl" name="loadUrl" data-loadUrl="@Url.Action("fetch", "settings", new { area = "admin" })"></span>    
+</div>
+    
 <script type="text/javascript">
 
     $(function () {
-        $("#Id").val('@Model.Id');
-        $("#Server").val('@Model.Server');
-        $("#Email").val('@Model.Email');
-        $("#ServerEmail").val('@Model.ServerEmail');
-        $("#UserName").val('@Model.UserName');
-        $("#Password").val('@Model.Password');
-        $("#Port").val('@Model.Port');
 
-        $("#DateTimeFormat").val('@Model.DateTimeFormat');
-        $("#CurrencyId").val('@Model.CurrencyId');
-
-        $("#Company").val('@Model.Company');
-        $("#Telephone").val('@Model.Telephone');
-        $("#Mobile").val('@Model.Mobile');
-        $("#Description").val('@Model.Description');
-
-        $("#AddressId").val('@Model.AddressId');
-        $("#AddressLine1").val('@Model.AddressLine1');
-        $("#AddressLine2").val('@Model.AddressLine2');
-        $("#AddressLine3").val('@Model.AddressLine3');
-        $("#PostCode").val('@Model.PostCode');
-        $("#Country").val('@Model.Country');
-        $("#TaxRate").val('@Model.TaxRate');
-
-        $("#btnsave").click(function (e) {
-
-            e.preventDefault();
-
-            if (!suftnet_validation.isValid("form")) { //// Call validation routine
-                return false;
-            }
-            js.ajaxPost($("#form").attr("action"), $("#form").serialize()).then(
-            function (data) {
-
-            });
-
-        });
+        setTimeout(function () {
+            setting.loadAdmin();                       
+        }, 0);
 
     });
-</script> 
-    
+
+</script>

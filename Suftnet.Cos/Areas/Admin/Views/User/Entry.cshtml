@@ -1,36 +1,36 @@
 ﻿@{
-    ViewBag.Title = "SUFTNET | USER ";   
+    ViewBag.Title = "SUFTNET | USER ";
+    Layout = "~/Areas/BackOffice/Views/Shared/_backofficeLayout.cshtml";
 }
 
-<ul style="margin-left:2px; margin-top :5px" class="uibutton-group">
-    <li><span class="etip"><a href="@Url.Action("Index","Tenant")" class="uibutton icon prev normal" title="Back to Tenant">Back</a></span></li>
+<ul style="margin-left:0px; margin-top :5px" class="uibutton-group">
+    <li><span class="etip"><a href="@Url.Action("index", "tenants")" class="uibutton icon prev normal" title="Back">Back</a></span></li> 
 </ul>
 
-<div id="MainCollapsible" style="display:none">
+<ul class="tabs">
+    <li><a href="#tab1" title="Add New User">User </a></li>
+    <li><a href="#tab2" title="View existing User">User Viewer </a></li>
+</ul>
 
-    <h6><a href="#">Profile</a></h6>
-    <div>
-
+<div class="tab_container">
+    <div id="tab1" class="tab_content">
         <div class="widgets">
 
             <div class="oneTwo">
-                <div id="MainCollapsibleLeft">
 
-                    <h6><a href="#">Details</a></h6>
-                    <div>
+                <div class="widget">
+                    <div class="content">
                         @Html.Partial("_form")
                     </div>
-
                 </div>
+
                 <div class="clear"></div>
             </div>
 
             <div class="oneTwo" style="margin-left:20px">
 
-                <div id="MainCollapsibleRight">
-
-                    <h6><a href="#">Photo</a></h6>
-                    <div class="widget">
+                <div class="widget">
+                    <div class="content">
                         @Html.Partial("_photo")
                     </div>
                 </div>
@@ -38,31 +38,21 @@
             </div>
             <div class="clear"></div>
         </div>
-
     </div>
 
-    <h6><a href="#">Viewer</a></h6>
-    <div>
-        <div class="widget">
-            <div class="header"><a href="Javascript:void(0)" id="btn-001" name="btn-001"><span><span class="ico gray cross"></span></span></a></div>
-            <div class="content">
-                @Html.Partial("_loadBy")
+    <div id="tab2" class="tab_content">
+        <div class="widgets">
+            <div class="widget">
+                <div class="header"><span><span class="tooltip ico gray"></span> @ViewContext.RouteData.Values["name"].ToString()</span></div>
+                <div class="content">
+                    @Html.Partial("_loadBy")
+                </div>
             </div>
-        </div>
-    </div>
-
-</div>
-
-<div id="resetPasswordDialog" style="display:none">
-    <div class="widget">
-        <div class="header"><span><span class="ico  gray window"></span></span></div>
-        <div class="content">
-            @Html.Partial("_resetPassword")
+            <div class="clear"></div>
         </div>
     </div>
 </div>
 
-@Html.Partial("_collapsible")
 
 @Scripts.Render("~/bundle/70000")
 

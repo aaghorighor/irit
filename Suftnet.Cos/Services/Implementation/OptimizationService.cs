@@ -99,16 +99,9 @@
                         "~/Content/zice-OneChurch/components/jQuery-Validation-Engine-master/js/jquery.validationEngine.js",
                         "~/Content/zice-OneChurch/components/jQuery-Validation-Engine-master/js/languages/jquery.validationEngine-en.js"
             ));
-            BundleTable.Bundles.Add(new ScriptBundle("~/bundle/Common").Include(
-                        "~/Scripts/common/utility.js",
-                        "~/Scripts/common/grid.js",
-                        "~/Scripts/common/validation.js",
-                        "~/Scripts/common/common.js",
-                        "~/Scripts/common/startup.js",
-                        "~/Scripts/common/constant.js",
-                        "~/Scripts/common/dynamicTable.js",
-                        "~/Scripts/common/collapsible.js"
-            ));
+            BundleTable.Bundles.Add(new ScriptBundle("~/bundle/Common")
+                .IncludeDirectory("~/Scripts/common", "*.js"));
+          
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/jsSuftnet").Include(
                        "~/Scripts/jsSuftnet/suftnet.Http.js",
                        "~/Scripts/jsSuftnet/suftnet.tools.js"
@@ -131,17 +124,7 @@
 
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/zebra_tooltips_js").Include(                   
                        "~/Content/zebra-tooltips/zebra_tooltips.min.js"
-            ));
-                      
-            BundleTable.Bundles.Add(new ScriptBundle("~/bundle/viewModelRestaurant").Include(
-                        "~/Scripts/viewModelRestaurant/Suftnet.JsInit.js",
-                        "~/Scripts/viewModelRestaurant/Suftnet.ReservationViewModel.js",
-                        "~/Scripts/viewModelRestaurant/Suftnet.CartViewModel.js",
-                        "~/Scripts/viewModelRestaurant/Suftnet.CategoryViewModel.js",
-                        "~/Scripts/viewModelRestaurant/Suftnet.ProductViewModel.js",                  
-                        "~/Scripts/viewModelRestaurant/Suftnet.MenuAddonModel.js",
-                        "~/Scripts/viewModelRestaurant/Suftnet.DeliveryViewModel.js"                        
-           ));
+            ));                                
 
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/ckeditor").Include(
                        "~/Scripts/ckeditor/ckeditor.js",

@@ -1,8 +1,7 @@
 ﻿
 var permission = {
 
-    create: function ()
-    {
+    create: function () {
         $("#btnSaveChanges").on("click", function (e) {
 
             e.preventDefault();
@@ -13,32 +12,30 @@ var permission = {
             }
 
             js.ajaxPost($("#form").attr("action"), $("#form").serialize()).then(
-             function (data) {
-                 switch (data.flag) {
+                function (data) {
+                    switch (data.flag) {
 
-                     case 1: //// add                                          
-                                                 
-                         _dataTables.permission.ajax.reload();
-                         break;
-                     case 2: //// update  
+                        case 1: //// add                                          
 
-                         _dataTables.permission.ajax.reload();
-                         break;
+                            _dataTables.permission.ajax.reload();
+                            break;
+                        case 2: //// update  
 
-                     default:;
-                 }
-              
-                 $("#form").attr("action", $("#createUrl").attr("data-createUrl")); 
-                 iuHelper.resetForm("#form");
-             });
+                            _dataTables.permission.ajax.reload();
+                            break;
+
+                        default: ;
+                    }
+
+                    $("#form").attr("action", $("#createUrl").attr("data-createUrl"));
+                    iuHelper.resetForm("#form");
+                });
         });
-
-        suftnet_Settings.ClearErrorMessages("#form");
-    },  
+    },
     edit: function (obj) {
 
         var dataobject = _dataTables.permission.row($(obj).parents('tr')).data();
-               
+
         $("#Id").val(dataobject.Id);
         $("#ViewId").val(dataobject.ViewId);
         $("#Create").val(dataobject.Create);
@@ -50,7 +47,7 @@ var permission = {
         $("#form").attr("action", $("#editUrl").attr("data-editUrl"));
 
     },
-    pageInit: function () {               
+    pageInit: function () {
         permission.create();
         permission.load();
     },
@@ -110,15 +107,19 @@ var permission = {
                     "data": null,
                     "orderable": false,
                     className: "align-center",
-                    "defaultContent": '<a style=margin:10px; href="#" onclick=permission.edit(this)><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>' +
-                        '<a style=margin:10px; href="#" onclick="permission.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>'
+                    "defaultContent": '<a title="Edit this row" style="margin:10px;" href="#" onclick=permission.edit(this)><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>' +
+                        '<a title="Delete this row" style="margin:10px;" href="#" onclick="permission.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>'
                 }
             ],
             columnDefs: [
                 { "targets": [], "visible": false, "searchable": false },
-                { "orderable": false, "targets": [0, 1, 2, 3, 4, 5,6] },
-                { className: "text-left", "targets": [0, 1, 2, 3, 4, 5,6] }],
+                { "orderable": false, "targets": [0, 1, 2, 3, 4, 5, 6] },
+                { className: "text-left", "targets": [0, 1, 2, 3, 4, 5, 6] }],
             destroy: true
+        });
+
+        _dataTables.permission.on("draw", function () {
+            $('a').tipsy({ fade: true, gravity: 'e', live: true });
         });
     }
 }

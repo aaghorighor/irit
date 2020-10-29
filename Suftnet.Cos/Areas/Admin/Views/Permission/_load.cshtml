@@ -2,7 +2,7 @@
 <table id="tblPermission" class="display" style="width:100%" >
     <thead>
         <tr>
-            <th align="left">Date</th>
+            <th align="left">CreatedAt</th>
             <th align="left">Page</th>
             <th align="left">Create</th>
             <th align="left">Edit</th>
@@ -18,10 +18,10 @@
 </table> 
 
 <div class="hide">
-    <span id="loadUrl" name="loadUrl" data-loadUrl="@Url.Action("fetch", "Permission",new { Id = ViewContext.RouteData.Values["queryString"].ToString() })"></span>  >
-    <span id="editUrl" name="editUrl" data-editUrl="@Url.Action("edit", "Permission")"></span>
-    <span id="createUrl" name="createUrl" data-createUrl="@Url.Action("create", "Permission")"></span>
-    <span id="deleteUrl" name="deleteUrl" data-deleteUrl="@Url.Action("Delete", "Permission")"></span>
+    <span id="loadUrl" name="loadUrl" data-loadUrl="@Url.Action("fetch", "permission",new { Id = ViewContext.RouteData.Values["userString"].ToString() })"></span>  >
+    <span id="editUrl" name="editUrl" data-editUrl="@Url.Action("edit", "permission", new { area = "admin" })"></span>
+    <span id="createUrl" name="createUrl" data-createUrl="@Url.Action("create", "permission", new { area = "admin" })"></span>
+    <span id="deleteUrl" name="deleteUrl" data-deleteUrl="@Url.Action("delete", "permission", new { area = "admin" })"></span>
 </div>
 
 

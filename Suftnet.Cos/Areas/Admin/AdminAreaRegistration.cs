@@ -18,17 +18,51 @@ namespace Suftnet.Cos.Admin
             context.Routes.AppendTrailingSlash = false;
 
             context.MapRoute(
-               "User_",
-               "Admin/User/entry/{tenantId}",
-               new { AreaName = "admin", Controller = "User", action = "entry", tenantId = UrlParameter.Optional },
-               new { userId = @"\d+" },
+                "adminPermission_",
+                "admin/permission/entry/{userName}/{userString}",
+                new { AreaName = "admin", Controller = "permission", action = "entry", userName = UrlParameter.Optional, userString = UrlParameter.Optional },
+                new string[] { "Suftnet.Cos.Admin.Controllers" }
+            );
+
+            context.MapRoute(
+               "adminMobilePermission_",
+               "admin/mobile-permission/entry/{userName}/{userString}",
+               new { AreaName = "admin", Controller = "mobilePermission", action = "entry", userName = UrlParameter.Optional, userString = UrlParameter.Optional },
                new string[] { "Suftnet.Cos.Admin.Controllers" }
+            );
+
+            context.MapRoute(
+               "User_",
+                "admin/user/entry/{name}/{queryString}",
+               new { AreaName = "admin", Controller = "user", action = "entry", queryString = UrlParameter.Optional, name = UrlParameter.Optional },
+               new string[] { "Suftnet.Cos.Admin.Controllers" }
+           );
+
+            context.MapRoute(
+               "_tenantUsers",
+               "admin/user/fetch/{queryString}",
+               new { AreaName = "admin", Controller = "user", action = "fetch", queryString = UrlParameter.Optional },
+               new string[] { "Suftnet.Cos.Admin.Controllers" }
+            );
+
+            context.MapRoute(
+             "_tenant",
+             "admin/tenants/entry/{name}/{queryString}",
+             new { AreaName = "admin", Controller = "tenants", action = "entry", queryString = UrlParameter.Optional, name = UrlParameter.Optional },
+            new string[] { "Suftnet.Cos.Admin.Controllers" }
+           );
+
+            context.MapRoute(
+            "_tenantOvewView",
+            "admin/tenants/fetch/{queryString}",
+            new { AreaName = "admin", Controller = "tenants", action = "fetch", queryString = UrlParameter.Optional },
+            new string[] { "Suftnet.Cos.Admin.Controllers" }
            );
 
             context.MapRoute(
               "Common_",
               "admin/common/entry/{name}/{Id}",
-              new { AreaName = "admin", Controller = "Common", action = "entry", Id = UrlParameter.Optional, name = UrlParameter.Optional },
+              new { AreaName = "admin", Controller = "common", action = "entry", Id = UrlParameter.Optional, name = UrlParameter.Optional },
               new { Id = @"\d+" },
               new string[] { "Suftnet.Cos.Admin.Controllers" }
           );
@@ -47,27 +81,20 @@ namespace Suftnet.Cos.Admin
                new { AreaName = "admin", Controller = "subtopic", action = "entry", Id = UrlParameter.Optional, topic = UrlParameter.Optional, sectionId = UrlParameter.Optional , subSection = UrlParameter.Optional },
                new { Id = @"\d+" },
                new string[] { "Suftnet.Cos.Admin.Controllers" }
-           );
-
-            context.MapRoute(
-                "Permission__",
-                "admin/permission/entry/{name}/{queryString}",
-                new { AreaName = "admin", Controller = "permission", action = "entry", name = UrlParameter.Optional, queryString = UrlParameter.Optional },
-             new string[] { "Suftnet.Cos.Admin.Controllers" }
-            );
+           );            
 
             context.MapRoute(
                "Admin_",
                "admin/{controller}/entry/{tenantId}",
-               new { AreaName = "Admin", Controller = "User", action = "Entry", tenantId = UrlParameter.Optional },
+               new { AreaName = "admin", Controller = "user", action = "Entry", tenantId = UrlParameter.Optional },
                new string[] { "Suftnet.Cos.Admin.Controllers" }
            );
 
             context.MapRoute(
                 "Admin_default",
-                "Admin/{controller}/{action}/{id}",
-                new { AreaName = "Admin", Controller = "Dashboard", action = "Index", id = UrlParameter.Optional },
-                new string[] { "Suftnet.Cos.Admin.Controllers" }
+                "admin/{controller}/{action}/{id}",
+                new { AreaName = "admin", Controller = "dashboard", action = "index", id = UrlParameter.Optional },
+                new string[] { "Suftnet.Cos.admin.Controllers" }
             );
         }
     }

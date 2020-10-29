@@ -26,7 +26,7 @@
                 if (objToUpdate != null)
                 {
                     objToUpdate.CurrencyId = entity.CurrencyId;
-                    objToUpdate.DateTimeFormat = entity.DateTimeFormat != null ? entity.DateTimeFormat : objToUpdate.DateTimeFormat ;                  
+                    objToUpdate.DateTimeFormat = entity.DateTimeFormat;               
                     objToUpdate.Company = entity.Company;
                     objToUpdate.Telephone = entity.Telephone;                   
                     objToUpdate.Description = entity.Description;
@@ -44,9 +44,8 @@
                         context.SaveChanges();                      
                     }
                     catch (ChangeConflictException)
-                    {
-                   
-                        context.SaveChanges();                       
+                    {                   
+                                           
                     }                 
                 }
             }
@@ -59,10 +58,7 @@
             using (var context = DataContextFactory.CreateContext())
             {
                 var result = (from o in context.Globals
-                              join a in context.Addresses on o.AddressId equals a.Id
-                              let currencySymbol = (from c in context.Commons
-                                                    where c.ID == o.CurrencyId
-                                                    select c.code).FirstOrDefault()
+                              join a in context.Addresses on o.AddressId equals a.Id                             
                               select new GlobalDto
                               {
                                   AddressId = a.Id,
@@ -71,8 +67,7 @@
                                   AddressLine3 = a.AddressLine3,                                  
                                   Country = a.Country,
                                   PostCode = a.PostCode,
-                                  CurrencyId = o.CurrencyId,
-                                  CurrencySymbol = currencySymbol,
+                                  CurrencyId = o.CurrencyId,                              
                                   DateTimeFormat = o.DateTimeFormat,
                                   Email = o.Email,
                                   ServerEmail = o.ServerEmail,  

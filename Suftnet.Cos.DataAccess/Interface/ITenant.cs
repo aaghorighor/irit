@@ -18,7 +18,11 @@
         List<TenantShortDto> GetAll(int iskip, int itake, bool status);     
         bool UpdateCustomer(TenantDto tenant);
         int Count(bool status);
-
+        int Status(Guid statusId, Guid tenantId);
+        TenantDto Expired(Guid tenantId);
+        int Count();
+        TenantAdapter GetAll(int iskip, int itake, string terms);
+        TenantAdapter GetAll(int iskip, int itake);
 
     }
 }

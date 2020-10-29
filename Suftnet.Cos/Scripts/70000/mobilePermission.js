@@ -1,7 +1,6 @@
 ﻿var mobilePermission = {
 
-    create: function ()
-    {
+    create: function () {
         $("#btnSaveChanges").on("click", function (e) {
 
             e.preventDefault();
@@ -12,36 +11,34 @@
             }
 
             js.ajaxPost($("#form").attr("action"), $("#form").serialize()).then(
-             function (data) {
-                 switch (data.flag) {
+                function (data) {
+                    switch (data.flag) {
 
-                     case 1: //// add                                          
+                        case 1: //// add                                          
 
-                         _dataTables.mobilePermission.ajax.reload();
-                     
-                         break;
-                     case 2: //// update  
+                            _dataTables.mobilePermission.ajax.reload();
 
-                         _dataTables.mobilePermission.ajax.reload();
-                         break;
+                            break;
+                        case 2: //// update  
 
-                     default:;
-                 }
+                            _dataTables.mobilePermission.ajax.reload();
+                            break;
 
-                 $("#form").attr("action", $("#createUrl").attr("data-createUrl")); 
-                 iuHelper.resetForm("#form");
-             });
+                        default: ;
+                    }
+
+                    $("#form").attr("action", $("#createUrl").attr("data-createUrl"));
+                    iuHelper.resetForm("#form");
+                });
         });
-
-        suftnet_Settings.ClearErrorMessages("#form");
     },
-  
+
     edit: function (obj) {
 
         var dataobject = _dataTables.mobilePermission.row($(obj).parents('tr')).data();
 
         $("#Id").val(dataobject.Id);
-        $("#PermissionId").val(dataobject.PermissionId);  
+        $("#PermissionId").val(dataobject.PermissionId);
 
         $("#form").attr("action", $("#editUrl").attr("data-editUrl"));
 
@@ -54,12 +51,10 @@
 
         var dataobject = _dataTables.mobilePermission.row($(obj).parents('tr')).data();
 
-        if (dataobject != null) {
-            js.dyconfirm($("#deleteUrl").attr("data-deleteUrl"), { Id: dataobject.Id }, dataobject.Id, "#tblMobilePermission").then(
-                function (data) {
-                    _dataTables.mobilePermission.row($(obj).parents('tr')).remove().draw();
-                });
-        }
+        js.dyconfirm($("#deleteUrl").attr("data-deleteUrl"), { Id: dataobject.Id }, dataobject.Id, "#tblMobilePermission").then(
+            function (data) {
+                _dataTables.mobilePermission.row($(obj).parents('tr')).remove().draw();
+            });
 
     },
     load: function () {
@@ -67,7 +62,7 @@
             "serverSide": false,
             "searching": true,
             "lengthMenu": [[5, 10, 25, 50], [5, 10, 25, 50]],
-            "pageLength": 5,
+            "pageLength": 10,
             "pagingType": "full_numbers",
             "ajax": {
                 "url": $("#loadUrl").attr("data-loadUrl"),
@@ -82,8 +77,7 @@
                     "data": null,
                     "orderable": false,
                     className: "align-center",
-                    "defaultContent": '<a style=margin:10px; href="#" onclick=mobilePermission.edit(this)><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>' +
-                        '<a style=margin:10px; href="#" onclick="mobilePermission.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>'
+                    "defaultContent": '<a title="Delete this row" style="margin:10px;" href="#" onclick="mobilePermission.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>'
                 }
             ],
             columnDefs: [
@@ -91,6 +85,10 @@
                 { "orderable": false, "targets": [0, 1, 2] },
                 { className: "text-left", "targets": [0, 1, 2] }],
             destroy: true
+        });
+
+        _dataTables.mobilePermission.on("draw", function () {
+            $('a').tipsy({ fade: true, gravity: 'e', live: true });
         });
     }
 }

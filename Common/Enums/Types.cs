@@ -138,7 +138,13 @@ namespace Suftnet.Cos.Common
         TermsOfUsed = 38
    
     }
-
+    public enum eArea : ushort
+    {
+        SiteAdmin = 6241,
+        Admin = 2033,
+        BackOffice = 2034,
+        FrontOffice = 5219
+    }
     public enum eExecutingContext : ushort
     {
         Test = 1,
@@ -172,21 +178,6 @@ namespace Suftnet.Cos.Common
     {
         System = 259,
         Application = 258
-    }
-
-   
-    public enum eArea : ushort
-    {
-        SiteAdmin = 6241,
-        Admin = 2033,
-        BackOffice = 2034,   
-        FrontOffice = 5219,
-        MemberOffice = 6239
-    }
-  
-    public enum eProduct : ushort
-    {
-        OneChurch = 1015        
-    }    
+    }       
 
 }

@@ -56,8 +56,7 @@
             entityToCreate.CreatedBy = this.UserName;
                  
             entityToCreate.Id = Guid.NewGuid();
-            entityToCreate.TenantId = this.TenantId;
-
+        
             _common.Insert(entityToCreate);
             entityToCreate.flag = (int)flag.Add;
 

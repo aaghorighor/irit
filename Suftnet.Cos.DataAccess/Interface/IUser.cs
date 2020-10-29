@@ -21,5 +21,7 @@
         int Count();
         ApplicationUser GetByUserId(string userId);
         bool CheckEmailAddress(string email, Guid tenantId);
+        IList<UserAccountDto> Fetch(int areaId, int iskip, int itake, string isearch);
+        IList<UserAccountDto> Fetch(int areaId, int iskip, int itake);
     }
 }

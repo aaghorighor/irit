@@ -216,6 +216,36 @@
                 return objResult;
             }
         }
+        public IList<UserAccountDto> Fetch(int areaId, int iskip, int itake, string isearch)
+        {
+            if (!string.IsNullOrEmpty(isearch))
+            {
+                using (var context = DataContextFactory.CreateContext())
+                {
+                    var objResult = (from u in context.Users
+                                     where u.AreaId == areaId && (u.FirstName.Contains(isearch) || u.LastName.Contains(isearch) || u.UserName.Contains(isearch))
+                                     orderby u.Id descending
+                                     select new UserAccountDto { UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id = u.Id, UserName = u.UserName }).Skip(iskip).Take(itake).ToList();
+                    return objResult;
+                }
+            }
+            else
+            {
+                return Fetch(areaId, iskip, itake);
+            }
+        }
+
+        public IList<UserAccountDto> Fetch(int areaId, int iskip, int itake)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objResult = (from u in context.Users
+                                 where u.AreaId == areaId
+                                 orderby u.Id descending
+                                 select new UserAccountDto { UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id = u.Id, UserName = u.UserName }).Skip(iskip).Take(itake).ToList();
+                return objResult;
+            }
+        }
         public int Count(Guid TenantId)
         {
             using (var context = DataContextFactory.CreateContext())

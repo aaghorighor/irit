@@ -56,7 +56,7 @@
 
     pageEvent : function()
     {
-        $("#btnSubmit").on("click", function (e)
+        $(document).on("click", "#btnSubmit", function (e)
         {
             e.preventDefault();
             e.stopImmediatePropagation();
@@ -114,7 +114,14 @@
                        }
                        else {        
 
-                           if (data.isValid != undefined) {
+                           $form.append($('<input type="hidden" name="StripeToken" />').val(""));
+
+                           $("#bottom-wizard").find("button").removeAttr("disabled");
+                           $("#bottom-wizard").find("button:eq(2)").attr("disabled", false);
+                           $("#bottom-wizard").find("button:eq(1)").attr("disabled", "");
+                           $("#bottom-wizard").find("button:eq(0)").attr("disabled", false);
+
+                           if (data.isValid) {
 
                                $("#validationError .modal-dialog .modal-content .modal-body #errorList").html("");
 
@@ -125,80 +132,44 @@
                                    $("<span for='" + value.PropertyName + "' class='error'></span>")
                                        .html(value.Error).appendTo($("input#" + value.PropertyName).parent());
                                });
+
+                               $('#validationError').modal('show');
+                               return;
                            }
 
-                           $("#bottom-wizard").find("button").removeAttr("disabled");
-                           $("#bottom-wizard").find("button:eq(2)").attr("disabled", false);
-                           $("#bottom-wizard").find("button:eq(1)").attr("disabled", "");
-                           $("#bottom-wizard").find("button:eq(0)").attr("disabled", false);
-
-                           $('#validationError').modal('show');                                              
+                           if (data.isApplication) {
+                               $('#applicationError').modal('show');
+                           }                                               
                        }                
                });
             }           
         };
 
         $(document).on("blur", "#Email", function (e) {
-            e.preventDefault();
 
-            var email = $(this).val();
-            var errorString = email.substring(0, email.length - 4);
+            e.preventDefault();
+            e.stopImmediatePropagation();
 
             js.ajaxGet($("#checkEmailUrl").attr("data-checkEmailUrl"),
-                { email: $(this).val() }).then(
+                {
+                    email: $(this).val()
+                }).then(
                     function (data) {
-                        if (data.ok == true) {
-                            $("<span for=Email' class='error'></span>")
-                                .html(errorString).appendTo($("input#Email").parent());
+                        if (data.ok == false) {
+
+                            $("span[for*='Email']").removeClass('error').text("");
+                            $("input#Email").removeClass('error').text("");
+                            $("input#Email").addClass('valid');
                         }
                         else {
-                            $("<span for=Email' class=''></span>")
-                                .html().appendTo($("input#Email").parent());
+
+                            $("input#Email").removeClass('valid');
+                            $("input#Email").addClass('error');
+                            $("<span for=Email class='error'></span>")
+                                .html("Email already in used").appendTo($("input#Email").parent());
                         }
-
-                    });
-        });
-
-        $(document).on("blur", "#ConfirmPassword", function (e) {
-            e.preventDefault();
-
-            if ($("#Password").val() != $("#ConfirmPassword").val()) {
-
-                $("<span for= ConfirmPassword class='error'></span>")
-                    .html("Passsword not match Confirm Password").appendTo($("input#ConfirmPassword").parent());
-                $(".forward").attr("disabled", true);
-
-            } else {
-
-                $("<span for=ConfirmPassword class=''></span>")
-                    .html("").appendTo($("input#ConfirmPassword").parent());
-                $(".forward").attr("disabled", false);
-            }
-        });
-
-        $(document).on("mouseenter", ".forward", function () {
-
-            if ($("#Password").val() != $("#ConfirmPassword").val()) {
-
-                $("<span for= ConfirmPassword class='error'></span>")
-                    .html("Passsword not match Confirm Password").appendTo($("input#ConfirmPassword").parent());
-
-                $(".forward").attr("disabled", true);
-            } else {
-
-                $("<span for=ConfirmPassword class=''></span>")
-                    .html("").appendTo($("input#ConfirmPassword").parent());
-                $(".forward").attr("disabled", false);
-            }
-        });
-
-        $(document).on("mouseenter", "#ConfirmPassword", function () {
-
-            $("<span for=ConfirmPassword class=''></span>")
-                .html("").appendTo($("input#ConfirmPassword").parent());
-            $(".forward").attr("disabled", false);
-
-        });                
+                });
+           });                   
     }
 
 }

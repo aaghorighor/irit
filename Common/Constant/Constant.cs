@@ -53,6 +53,12 @@ namespace Suftnet.Cos.Common
         public const string SuccessCode = "1000";
         public const string DangerCode = "2000";
         public const string CompletedOrder = "This order is closed and cannot be modify any more";
+        public const string DEMO_TENANTID = "207910E5-F78C-4A9C-ACDB-FA69B26B6AC1";
+        public const string DEMO_LASTNAME = "Demo";
+        public const string DEMO_FIRSTNAME = "Manager";
+        public const string SUBSCRIPTION_EXPIRED = "Your Subscription has expired, please go to Jerur Online and Subscribe to one of our Plan.Thanks";
+        public const string TRIAL_EXPIRED = "Your Trial has expired, please go to Jerur Online and Subscribe to one of our Plan.Thanks";
+
     }
 
     public static class Identity
@@ -112,22 +118,7 @@ namespace Suftnet.Cos.Common
         public const int PremiumPlus = 200;
     }
 
-    public static class SmsCredit
-    {
-        public const int Trial = 10;
-        public const int Basic = 200;
-        public const int Premium = 400;
-        public const int PremiumPlus = 800;
-    }
-
-    public static class EmailCredit
-    {
-        public const int Trial = 10;
-        public const int Basic = 200;
-        public const int Premium = 400;
-        public const int PremiumPlus = 800;
-    }
-
+   
     public static class CutOff
     {
         public const int Trial = 10;
@@ -150,21 +141,9 @@ namespace Suftnet.Cos.Common
         public const int Remove = 5145;
         public const int Edit = 5144;
         public const int Create = 5143;
-    }
-       
-    public static class RecipientsGroup
-    {
-        public const int Member = 5185;
-        public const int Ministry = 5184;       
-    }
-
-    public static class MessageType
-    {
-        public const int Email = 5181;
-        public const int Sms = 5180;
-        public const int PushNotification = 5181;
-    }
-       
+    }     
+  
+        
     public static class Slider
     {
         public const int Type1 = 5189;
@@ -312,7 +291,7 @@ namespace Suftnet.Cos.Common
         public const string CARD = "FD55F6B4-30C2-48C7-B331-79A505D8F8C2";
         public const string CASH = "E0DF7037-BE71-4D90-871D-04AD8E4AD960";       
     }
-
+       
     public static class PaymentStatus
     {
         public const string Paid = "284";
@@ -322,10 +301,10 @@ namespace Suftnet.Cos.Common
     public static class SubscriptionStatus
     {
         public const string Active = "207910E5-F78C-4A9C-ACDB-FA69B26B6AC1";
-        public const string Expired = "207910E5-F78C-4A9C-ACDB-FA69B26B6AC1";
-        public const string Suspended = "207910E5-F78C-4A9C-ACDB-FA69B26B6AC1";
-        public const string Cancelled = "207910E5-F78C-4A9C-ACDB-FA69B26B6AC1";
-        public const string Trial = "207910E5-F78C-4A9C-ACDB-FA69B26B6AC1";
+        public const string Expired = "5AF7A965-FB5D-4E66-A137-549E5FC9C825";
+        public const string Suspended = "5337780F-041E-4E1F-86B2-9D0B0A81C430";
+        public const string Cancelled = "86F72BE4-29B4-41A9-AC22-588E8F3D5E67";
+        public const string Trial = "C402ED8E-3162-46D5-99A0-0E3655B44879";
     }
 
     public static class ReportType 

@@ -33,23 +33,19 @@
 
             return subscription;
             }
-        public DateTime CancelSubscription(string stripeCustomerId, bool cancelAtPeriodEnd = false)
+        public DateTime CancelSubscription(string stripeCustomerId, bool cancelAtPeriodEnd)
         {
             var subscriptionId = this.SubscriptionId(stripeCustomerId);
 
             SubscriptionCancelOptions subscriptionCancelOptions = new SubscriptionCancelOptions
             {
-                 Prorate = cancelAtPeriodEnd,
-                  InvoiceNow = true 
+                  Prorate = cancelAtPeriodEnd,
+                  InvoiceNow = true                   
             };
 
-            if (!string.IsNullOrEmpty(subscriptionId))
-            {
-                var subscription = this._subscriptionService.Cancel(subscriptionId, subscriptionCancelOptions);
-                return cancelAtPeriodEnd ? subscription.CurrentPeriodEnd.Value : DateTime.UtcNow;
-            }
+            var subscription = this._subscriptionService.Cancel(subscriptionId, subscriptionCancelOptions);
+            return cancelAtPeriodEnd == true ? subscription.CurrentPeriodEnd.Value : DateTime.UtcNow;
 
-            throw new NullReferenceException("customer subscription not found");
         }       
         public Subscription UpdateSubscription(string stripeCustomerId, string newPlanId, bool proRate)
         {
@@ -70,12 +66,9 @@
                 TaxPercent = taxPercent
             };
 
-            var customerId = this.SubscriptionId(stripeCustomerId);
+            var subscriptionId = this.SubscriptionId(stripeCustomerId);
 
-            if(!string.IsNullOrEmpty(customerId))
-            {
-                _subscriptionService.Update(this.SubscriptionId(stripeCustomerId), subscription);
-            }          
+            _subscriptionService.Update(subscriptionId, subscription);
         }        
         public Subscription SubscribeUserNaturalMonth(string stripeCustomerId, string planId, DateTime? billingAnchorCycle, decimal? taxPercent)
         {

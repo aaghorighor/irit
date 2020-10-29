@@ -2,7 +2,7 @@
 {  
     public interface IPlan : IRepository<PlanDto>
     {
-        PlanFeatureAdapter GetPlanFeatures(int productId);
+        PlanFeatureAdapter GetPlanFeatures();
         bool IsProductInPlan(int productId);
     }
 }

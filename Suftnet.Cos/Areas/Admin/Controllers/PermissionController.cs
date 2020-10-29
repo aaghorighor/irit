@@ -1,12 +1,12 @@
 ﻿namespace Suftnet.Cos.Admin.Controllers
-{
-    using Service;
-    using Suftnet.Cos.Common;
+{   
     using Suftnet.Cos.DataAccess;
-    using Suftnet.Cos.Extension;
-    using System;
+    using Suftnet.Cos.Service;
     using System.Threading.Tasks;
     using System.Web.Mvc;
+    using Suftnet.Cos.Extension;
+    using System;
+    using Suftnet.Cos.Common;
 
     public class PermissionController : AdminBaseController
     {
@@ -22,7 +22,7 @@
         #endregion
 
         [OutputCache(Duration = 10, VaryByParam = "*")]
-        public ActionResult Entry(string name, string queryString)
+        public virtual ActionResult Entry(string name, string queryString)
         {
             return View();
         }
@@ -55,10 +55,9 @@
             entityToCreate.CreatedBy = this.UserName;
             entityToCreate.CreatedDT = DateTime.UtcNow;
 
-            entityToCreate.UserId = entityToCreate.ExternalId;
             entityToCreate.Id = Guid.NewGuid();
 
-           _permission.Insert(entityToCreate);
+            _permission.Insert(entityToCreate);
             entityToCreate.flag = (int)flag.Add;
 
             return Json(new { ok = true, flag = entityToCreate.flag }, JsonRequestBehavior.AllowGet);
@@ -80,7 +79,7 @@
                     errors = ModelState.AjaxErrors()
                 });
             }
-                    
+          
             _permission.Update(entityToCreate);
             entityToCreate.flag = (int)flag.Update;
 
@@ -94,6 +93,5 @@
             return Json(new { ok = _permission.Delete(new Guid(Id)) }, JsonRequestBehavior.AllowGet);
         }
     }
+
 }
-
-

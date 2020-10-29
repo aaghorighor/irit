@@ -20,6 +20,29 @@
                 return objResult;                
             }          
         }
+
+        public int Status(Guid statusId, Guid tenantId)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objResult = (from o in context.Tenants
+                                 where o.StateId == statusId && o.Id != tenantId
+                                 select o).Count();
+
+                return objResult;
+            }
+        }
+        public TenantDto Expired(Guid tenantId)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var obj = (from o in context.Tenants
+                           where o.Id == tenantId
+                           select new TenantDto { IsExpired = (bool)o.IsExpired, PlanTypeId = o.PlanTypeId }).FirstOrDefault();
+                return obj;
+            }
+        }
+
         public TenantDto IsValid(string customerStripId)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -266,8 +289,43 @@
             }
 
             return response;
-        }     
-        
+        }
+
+        public TenantAdapter GetAll(int iskip, int itake, string terms)
+        {
+
+            if (!string.IsNullOrEmpty(terms))
+            {
+                using (var context = DataContextFactory.CreateContext())
+                {
+                    var obj = (from o in context.Tenants
+                               join s in context.TenantStates on o.StateId equals s.Id
+                               where o.Name.Contains(terms) || s.Name.Contains(terms)
+                               orderby o.Name
+                               select new TenantDto { ExpirationDate = o.ExpirationDate, CustomerStripeId = o.CustomerStripeId, Status = s.Name, Telephone = o.Telephone, Name = o.Name, Email = o.Email, Mobile = o.Mobile, CreatedDT = o.CreatedDt, Id = o.Id }).Skip(iskip).Take(itake).ToList();
+
+                    return new TenantAdapter { Count = Count(), TenantDto = obj };
+                }
+            }
+            else
+            {
+                return GetAll(iskip, itake);
+            }
+
+        }
+
+        public TenantAdapter GetAll(int iskip, int itake)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var obj = (from o in context.Tenants
+                           join s in context.TenantStates on o.StateId equals s.Id
+                           orderby o.Name
+                           select new TenantDto { ExpirationDate = o.ExpirationDate, CustomerStripeId = o.CustomerStripeId, Status = s.Name, Telephone = o.Telephone, Name = o.Name, Email = o.Email, Mobile = o.Mobile, CreatedDT = o.CreatedDt, Id = o.Id }).Skip(iskip).Take(itake).ToList();
+                return new TenantAdapter { Count = Count(), TenantDto = obj };
+            }
+        }
+
         public List<TenantShortDto> GetAll(int iskip, int itake, bool status)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -291,6 +349,15 @@
                 return objResult;
             }
         }
-        
+
+        public int Count()
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objResult = (from o in context.Tenants                               
+                                 select o).Count();
+                return objResult;
+            }
+        }
     }
 }

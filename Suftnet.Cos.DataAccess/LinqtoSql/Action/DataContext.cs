@@ -34,7 +34,7 @@ namespace Suftnet.Cos.DataAccess.Action
         public virtual DbSet<Editor> Editors { get; set; }
         public virtual DbSet<Faq> Faqs { get; set; }
         public virtual DbSet<Global> Globals { get; set; }
-        public virtual DbSet<LogViewer> LogViewers { get; set; }
+        public virtual DbSet<Logger> Loggers { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
         public virtual DbSet<MobilePermission> MobilePermissions { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
@@ -58,11 +58,11 @@ namespace Suftnet.Cos.DataAccess.Action
         public virtual DbSet<OrderType> OrderTypes { get; set; }
         public virtual DbSet<PaymentStatus> PaymentStatuses { get; set; }
         public virtual DbSet<TenantState> TenantStates { get; set; }
-        public virtual DbSet<Device> Devices { get; set; }
-        public virtual DbSet<SubscriptionStatus> SubscriptionStatus { get; set; }
+        public virtual DbSet<Device> Devices { get; set; }    
         public virtual DbSet<Unit> Units { get; set; }
         public virtual DbSet<TenantAddress> TenantAddress { get; set; }
         public virtual DbSet<DeliveryAddress> DeliveryAddresses { get; set; }
+        public virtual DbSet<MobileLogger> MobileLoggers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {                 

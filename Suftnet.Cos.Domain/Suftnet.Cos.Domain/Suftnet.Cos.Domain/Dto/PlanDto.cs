@@ -2,8 +2,7 @@
 {  
     public class PlanDto : BaseDto
     {  
-        public string Product { get; set; }
-        public int ProductId { get; set; }
+        public string Product { get; set; }      
         public decimal? BasicPrice { get; set; }
         public decimal? AdvancePrice { get; set; }
         public decimal? ProfessionalPrice { get; set; }        

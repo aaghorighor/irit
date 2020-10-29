@@ -172,8 +172,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group terms">
-                                    <input name="terms" id="terms" type="checkbox" class="icheck required" title="Terms of User is required" value="yes">
-                                    <label>Please accept <a href="#" data-toggle="modal" data-target="#termsconditions">Terms of User</a> and <a href="#" data-toggle="modal" data-target="#privacypolicy">privacy policy</a></label>
+                                    <input name="terms" id="terms" type="checkbox" class="icheck required" title="required" value="yes">
+                                    <label>Please accept <a href="@Url.Action("index","terms")" target="_blank">Terms And Conditions</a> and <a href="@Url.Action("index","privacy")" target="_blank">Privacy Policy</a></label>
                                 </div>
 
                             </div>
@@ -190,6 +190,7 @@
                         <!-- /bottom-wizard -->
 
                         <div class="hide">
+                            <input type="hidden" name="isEmail" id="isEmail" value="0">
                             <input type="hidden" name="Latitude" id="Latitude">
                             <input type="hidden" name="Longitude" id="Longitude">
                             <input type="hidden" name="AddressLine1" id="AddressLine1">
@@ -220,10 +221,12 @@
 @Scripts.Render("~/bundle/checkout")
 @Scripts.Render("~/bundle/ajax")
 
+@*@Html.Partial("_recaptcha", "checkout")*@
+
 <script type="text/javascript">
 
     $(function () {
-        checkout.init();       
+        checkout.init();
     });
 
 </script>

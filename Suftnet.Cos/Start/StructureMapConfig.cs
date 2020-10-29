@@ -45,6 +45,7 @@
                 x.For<IApiUserManger>().Use<ApiUserManager>();
                 x.For<IClaimManager>().Use<ClaimManager>();
                 x.For<IOrderCommand>().Use<OrderCommand>();
+                x.For<IAdminDashboardCommand>().Use<AdminDashboardCommand>();
             });           
         }
     }

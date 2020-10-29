@@ -29,7 +29,7 @@
             Guid id;
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.TenantState() { Id = entity.Id,  Active = entity.Active, IndexNo = entity.IndexNo,  Name = entity.Name, CreatedBy = entity.CreatedBy, CreatedDt = entity.CreatedDT };
+                var obj = new Action.TenantState() { Description = string.Empty, Id = entity.Id,  Active = entity.Active, IndexNo = entity.IndexNo,  Name = entity.Name, CreatedBy = entity.CreatedBy, CreatedDt = entity.CreatedDT };
                 context.TenantStates.Add(obj);
                 context.SaveChanges();
                 id = obj.Id;

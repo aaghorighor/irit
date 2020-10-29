@@ -15,9 +15,7 @@ namespace Suftnet.Cos.DataAccess.Action
             PlanFeatures = new HashSet<PlanFeature>();
         }
 
-        public int Id { get; set; }
-
-        public int ProductId { get; set; }
+        public int Id { get; set; }      
 
         public decimal? BasicPrice { get; set; }
 

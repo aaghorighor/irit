@@ -1,49 +1,80 @@
-﻿@using Suftnet.Cos.Extension;
-
+﻿
 @{
     ViewBag.Title = "SUFTNET  | ADMIN DASHBOARD";
-    Layout = "~/Areas/Admin/Views/Shared/_DashboardLayout.cshtml";
 }
 
-@Styles.Render("~/Content/slim/lib/font-awesome/css")
-@Styles.Render("~/bundle/slim-lib-css")
-@Styles.Render("~/bundle/slim-dashboard-css")
+<link href="@Url.Content("~/Content/css/dashboard.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/slim/lib/font-awesome/css/font-awesome.css")" rel="stylesheet" />
 
-<div class="row row-xs">
-    <div class="col-sm-4 col-lg-4 mg-t-10 mg-sm-t-0">
-        <div class="card card-status">
-            <div class="media">
-                <i class="icon ion-ios-bookmarks-outline tx-teal"></i>
-                <div class="media-body">
-                    <h1>0</h1>
-                    <p>Active</p>
-                </div><!-- media-body -->
-            </div><!-- media -->
-        </div><!-- card -->
-    </div><!-- col-3 -->
-    <div class="col-sm-4 col-lg-4 mg-t-10 mg-sm-t-0">
-        <div class="card card-status">
-            <div class="media">
-                <i class="icon ion-ios-analytics-outline tx-pink"></i>
-                <div class="media-body">
-                    <h1>0</h1>
-                    <p>Expired</p>
-                </div><!-- media-body -->
-            </div><!-- media -->
-        </div><!-- card -->
-    </div><!-- col-3 -->
-    <div class="col-sm-4 col-lg-4 mg-t-10 mg-sm-t-0">
-        <div class="card card-status">
-            <div class="media">
-                <i class="icon ion-ios-analytics-outline tx-pink"></i>
-                <div class="media-body">
-                    <h1>0</h1>
-                    <p>Trials</p>
-                </div><!-- media-body -->
-            </div><!-- media -->
-        </div><!-- card -->
-    </div><!-- col-3 -->
+<div class="widgets">
+    <div class="oneFour">
+        <a title="View Customers" href="@Url.Action("index","tenants")">
+            <div class="rad-info-box rad-txt-success">
+                <i class="fa fa-users"></i>
+                <span id="" class="heading"><strong>Customers</strong></span>
+                <span class="value">
+                    <span id="customer">
+                        0
+                    </span>
+                </span>
+            </div>
+        </a>
+
+    </div>
+    <div class="oneFour">
+        <div class="rad-info-box rad-txt-primary">
+            <i class="fa fa-money"></i>
+            <span id="" class="heading"><strong>Paid</strong></span>
+            <span class="value"><span id="paid">0</span></span>
+        </div>
+    </div>
+    <div class="oneFour">
+        <div class="rad-info-box">
+            <i class="fa fa-try"></i>
+            <span id="" class="heading"><strong>Trials</strong></span>
+            <span class="value"><span id="trials">0</span></span>
+        </div>
+    </div>
+    <div class="oneFour">
+        <div class="rad-info-box">
+            <i class="fa fa-fire-extinguisher"></i>
+            <span id="" class="heading"><strong>Expired</strong></span>
+            <span class="value"><span id="expired">0</span></span>
+        </div>
+    </div>
 </div>
+<div class="widgets">
+    <div class="oneThree">
+        <div class="rad-info-box rad-txt-success">
+            <i class="fa fa-bell-slash-o"></i>
+            <span id="" class="heading"><strong>Cancelled</strong></span>
+            <span class="value"><span id="cancelled">0</span></span>
+        </div>
+    </div>
+    <div class="oneThree">
+        <a title="View Mobile Logger" href="@Url.Action("entry","mobileLogger")">
+            <div class="rad-info-box rad-txt-primary">
+                <i class="fa fa-mobile"></i>
+                <span id="" class="heading"><strong>Mobile</strong></span>
+                <span class="value"><span id="mobile">0</span></span>
+            </div>
+        </a>
+    </div>
+    <div class="oneThree">
+        <a title="View Web Logger" href="@Url.Action("entry","logger")">
+            <div class="rad-info-box">
+                <i class="fa fa-weibo"></i>
+                <span id="" class="heading"><strong>Web</strong></span>
+                <span class="value"><span id="web">0</span></span>
+            </div>
+        </a>
+    </div>
+
+</div>
+
+@Html.Partial("_dashBoardScript")
+
+
 
 
 

@@ -13,7 +13,7 @@
             {
                 var objResult = (from o in context.Plans                                                                                
                                  where o.Id == Id
-                                 select new PlanDto { ProductId = o.ProductId, AdvancePrice = o.AdvancePrice, BasicPrice = o.BasicPrice, ProfessionalPrice = o.ProfessionalPrice, CreatedDT= o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).FirstOrDefault();
+                                 select new PlanDto { AdvancePrice = o.AdvancePrice, BasicPrice = o.BasicPrice, ProfessionalPrice = o.ProfessionalPrice, CreatedDT= o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).FirstOrDefault();
                 return objResult;
             }
         }
@@ -22,8 +22,7 @@
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var objResult = (from o in context.Plans
-                                 where o.ProductId == productId
+                var objResult = (from o in context.Plans                               
                                  select o).FirstOrDefault();
 
                 if (objResult != null)
@@ -56,7 +55,7 @@
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.Plan() { AdvancePrice = entity.AdvancePrice, ProfessionalPrice = entity.ProfessionalPrice, BasicPrice = entity.BasicPrice, ProductId = entity.ProductId, CreatedBy = entity.CreatedBy, CreatedDt = entity.CreatedDT };
+                var obj = new Action.Plan() { AdvancePrice = entity.AdvancePrice, ProfessionalPrice = entity.ProfessionalPrice, BasicPrice = entity.BasicPrice, CreatedBy = entity.CreatedBy, CreatedDt = entity.CreatedDT };
                 context.Plans.Add(obj);
                 context.SaveChanges();
                 return obj.Id;
@@ -83,9 +82,8 @@
                         response = true;
                     }
                     catch (ChangeConflictException)
-                    {
-                   
-                        context.SaveChanges();
+                    {    
+                    
                         response = true;
                     }
                 }
@@ -98,9 +96,8 @@
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var objResult = (from o in context.Plans                               
-                                 where o.ProductId == Id
-                                 select new PlanDto { ProductId = o.ProductId, AdvancePrice = o.AdvancePrice, BasicPrice = o.BasicPrice, ProfessionalPrice = o.ProfessionalPrice, CreatedDT= o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
+                var objResult = (from o in context.Plans                                 
+                                 select new PlanDto { AdvancePrice = o.AdvancePrice, BasicPrice = o.BasicPrice, ProfessionalPrice = o.ProfessionalPrice, CreatedDT= o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
                 return objResult;           
             }
         }
@@ -111,27 +108,26 @@
             {
                 var objResult = (from o in context.Plans                             
                                  orderby o.CreatedDt descending
-                                 select new PlanDto { ProductId = o.ProductId, AdvancePrice = o.AdvancePrice, BasicPrice = o.BasicPrice, ProfessionalPrice = o.ProfessionalPrice, CreatedDT= o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
+                                 select new PlanDto { AdvancePrice = o.AdvancePrice, BasicPrice = o.BasicPrice, ProfessionalPrice = o.ProfessionalPrice, CreatedDT= o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
                 return objResult;
             }     
         }
 
-        public PlanFeatureAdapter GetPlanFeatures(int productId)
+        public PlanFeatureAdapter GetPlanFeatures()
         {
             using (var context = DataContextFactory.CreateContext())
             {
                 var objResult = (from o in context.Plans                                
                                  let planFeature = (from a in context.PlanFeatures
-                                                    join f in context.Commons on a.ProductFeatureId equals f.ID
+                                                    join f in context.Commons on a.FeatureId equals f.ID
                                                     join d in context.Commons on a.AdvanceId equals d.ID
                                                     join b in context.Commons on a.BasicId equals b.ID
                                                     join p in context.Commons on a.ProfessionId equals p.ID
                                                     where a.PlanId == o.Id
                                                     orderby a.IndexNo
-                                                    select new PlanFeatureDto {  BasicValue = a.BasicValue, PremiumValue = a.PremiumValue, PremiumPlusValue = a.PremiumPlusValue, Feature = f.Title, AdvanceId = a.AdvanceId, Advance = d.Title, BasicId = a.BasicId, Basic = b.Title, ProfessionalId = a.ProfessionId, Professional = p.Title, CreatedDT = o.CreatedDt, CreatedBy = a.CreatedBy, Id = a.Id }).ToList()
-                                 where o.ProductId == productId
+                                                    select new PlanFeatureDto {  BasicValue = a.BasicValue, PremiumValue = a.PremiumValue, PremiumPlusValue = a.PremiumPlusValue, Feature = f.Title, AdvanceId = a.AdvanceId, Advance = d.Title, BasicId = a.BasicId, Basic = b.Title, ProfessionalId = a.ProfessionId, Professional = p.Title, CreatedDT = o.CreatedDt, CreatedBy = a.CreatedBy, Id = a.Id }).ToList()                               
                                  orderby o.CreatedDt descending
-                                 select new PlanFeatureAdapter { PlanFeature = planFeature, Plan = new PlanDto { ProductId = o.ProductId, AdvancePrice = o.AdvancePrice, BasicPrice = o.BasicPrice, ProfessionalPrice = o.ProfessionalPrice, Id = o.Id } }).FirstOrDefault();
+                                 select new PlanFeatureAdapter { PlanFeature = planFeature, Plan = new PlanDto { AdvancePrice = o.AdvancePrice, BasicPrice = o.BasicPrice, ProfessionalPrice = o.ProfessionalPrice, Id = o.Id } }).FirstOrDefault();
                 return objResult != null ? objResult : new PlanFeatureAdapter();
             }
         }    
