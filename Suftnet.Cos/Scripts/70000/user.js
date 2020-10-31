@@ -18,27 +18,42 @@ var user = {
                 $("#Active").val(false);
             }
 
+            if ($('#ChangePassword').is(':checked')) {
+                $("#ChangePassword").val(true);
+            } else {
+                $("#ChangePassword").val(false);
+            }
+
             js.ajaxPost($("#form").attr("action"), $("#form").serialize()).then(
                   function (data) {
                       switch (data.flag) {
                           case 1: //// add
-                  
+
+                              _dataTables.user.draw();
                               break;
                           case 2: //// update
-
-                              $("#editUserDialog").dialog("close");
+                            
                               _dataTables.user.draw();
+                              suftnet.tab(1);
 
                               break;
                           default:;
                       }
 
-                    $("#UserId").val("");                 
+                    $("#Id").val("");                 
                     $("#Active").attr("checked", false);
+                    $("#ChangePassword").attr("checked", false);
+                    $("#__changePassword").addClass("hide");
+                    $("#Password").removeClass("validate[required],maxSize[20],minSize[6]]");               
+                    $("#form").attr("action", $("#createUrl").attr("data-createUrl"));
 
                     iuHelper.resetForm("#form");
                   });
         });
+
+        $("#__changePassword").addClass("hide");
+        $("#form").attr("action", $("#createUrl").attr("data-createUrl"));
+
         suftnet_Settings.ClearErrorMessages("#form");
     },
    
@@ -51,15 +66,22 @@ var user = {
         $("#Email").val(dataobject.Email);
         $("#AreaId").val(dataobject.AreaId);
 
-        if (dataobject.ImageUrl != null) {
-            $("#ImageUrl").val(dataobject.ImageUrl);
-            $("#TempUrl").attr('src', $("#imageUrl").attr("data-imageUrl") + dataobject.ImageUrl);
-        }
+        $("#profileImage")
+            .on('load', function () {
+                $("#ImageUrl").val(dataobject.ImageUrl);
+            })
+            .on('error', function () {
+                $("#ImageUrl").val("");
+                $("#profileImage").attr('src', $("#defaultImageUrl").attr("data-defaultImageUrl"));
+
+            }).attr("src", $("#imageUrl").attr("data-imageUrl") + dataobject.ImageUrl);
 
         $("#Active").attr("checked", dataobject.Active);
-        $("#UserId").val(dataobject.UserId);
-              
-        $("#editUserDialog").dialog("open");
+        $("#Id").val(dataobject.UserId);
+        $("#__changePassword").removeClass("hide");
+        $("#form").attr("action", $("#editUrl").attr("data-editUrl"));
+
+        suftnet.tab(0);
     },
     delete: function (obj) {
 
@@ -77,68 +99,30 @@ var user = {
 
         var dataobject = _dataTables.user.row($(obj).parents('tr')).data();
         window.location.href = $("#permissionUrl").attr("data-permissionUrl") + "/" + Suftnet_Utility.seoUrl(dataobject.FullName) + "/" + dataobject.UserId;
-    },
-    resetPassword: function (obj) {
-
-        var dataobject = _dataTables.user.row($(obj).parents('tr')).data();
-
-        iuHelper.resetForm("#formResetPassword");
-
-        $("#Id").val(dataobject.UserId);
-        $("#resetPasswordDialog").dialog("open");
-    },
+    },    
     pageInit: function () {
 
-        $("#btnSaveResetPassword").bind("click", function (event) {
+        suftnet_upload.init($("#uploadUrl").attr("data-uploadUrl"));
 
-            event.preventDefault();
-            event.stopImmediatePropagation();
+        $(document).on("change", "#ChangePassword", function (e) {
 
-            if (!suftnet_validation.isValid("formResetPassword")) {
-                return false;
+            if ($(this).is(":checked")) {
+                $("#Password").addClass("validate[required],maxSize[20],minSize[6]]");
+            } else {
+                $("#Password").removeClass("validate[required],maxSize[20],minSize[6]]");
             }
-
-            js.ajaxPost($("#formResetPassword").attr("action"), $("#formResetPassword").serialize()).then(
-                function (data) {
-
-                    if (data != null) {
-
-                        setTimeout("showSuccess('Success',5000);", 1000);
-
-                        iuHelper.resetForm("#formResetPassword");
-
-                        $("#resetPasswordDialog").dialog("close");
-                    }
-
-                });
         });
 
-        $("#btnCloseEdit").bind("click", function (event) {
-
+        $(document).on("click", "#btnClose", function (event) {
             iuHelper.resetForm("#form");
-            $("#editUserDialog").dialog("close");
+            $("#__changePassword").addClass("hide");
+            $("#ChangePassword").attr("checked", false);
+            $("#form").attr("action", $("#createUrl").attr("data-createUrl"));
+            suftnet.tab(1);
         });
-
-        $("#btnCloseResetPassword").bind("click", function (event) {
-
-            iuHelper.resetForm("#form");
-            $("#resetPasswordDialog").dialog("close");
-        });
-
-        $("#btnCloseResetPassword").bind("click", function (event) {
-            iuHelper.resetForm("#form");  
-            $("#resetPasswordDialog").dialog("close");
-        });
-
-        $("#resetPasswordDialog").dialog({
-            autoOpen: false, width: 350, height: 300, modal: false, title: 'Reset Password'});
-
-        $("#editUserDialog").dialog({
-            autoOpen: false, width: 350, height: 320, modal: false, title: 'Edit User'});
-
+      
         user.create();
         user.load();
-
     },
     load: function () {
            _dataTables.user = $('#tblUser').DataTable({
@@ -163,8 +147,7 @@ var user = {
                     className: "align-center",
                     "defaultContent": '<a style=margin:10px; href="#" onclick=user.edit(this)><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>'+
                         '<a style=margin:10px; href="#" onclick="user.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>' +
-                        '<a style=margin:10px; href="#" onclick="user.view(this)"><img src=' + suftnet_grid.iconUrl + 'folder.png\ alt=\"Give userPermission\" /></a>' +
-                        '<a style=margin:10px; href="#" onclick="user.resetPassword(this)"><img src=' + suftnet_grid.iconUrl + 'user.png\ alt=\"Reset User Password\" /></a>'
+                        '<a style=margin:10px; href="#" onclick="user.view(this)"><img src=' + suftnet_grid.iconUrl + 'folder.png\ alt=\"Give userPermission\" /></a>'                     
                 }
             ],
             columnDefs: [

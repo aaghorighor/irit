@@ -47,9 +47,7 @@
             {
                 AddressId = _address.Insert(address); }
             catch(Exception ex)
-            { GeneralConfiguration.Configuration.Logger.LogError(ex); }
-
-           
+            { GeneralConfiguration.Configuration.Logger.LogError(ex); }           
         }
 
         #endregion

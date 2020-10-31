@@ -3,8 +3,8 @@
     using System.ComponentModel.DataAnnotations;
     public class CheckoutModel
     {
-        [Required(ErrorMessage = "Church Name is required")]
-        [StringLength(200, ErrorMessage = "Church Name must be between 5 and 200 characters", MinimumLength = 5)]
+        [Required(ErrorMessage = "Restauarnt Name is required")]
+        [StringLength(200, ErrorMessage = "Restauarnt Name must be between 5 and 200 characters", MinimumLength = 5)]
         public string Name { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -48,12 +48,11 @@
         [StringLength(50)]
         public string PlanTypeId { get; set; }
         public string StripeToken { get; set; }
-        public string StripeExternalId { get; set; }
-        [Required(ErrorMessage = "Denomination Id is required")]   
-        public int DenominationId { get; set; }
+        public string StripeExternalId { get; set; }        
         public string Website { get; set; }
         public string Terms { get; set; }
-        public string TenantId { get; set; }      
+        public string TenantId { get; set; }
+        public string AppCode { get; set; }
 
     }
 }

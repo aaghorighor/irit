@@ -8,6 +8,44 @@
 
     public class User : IUser
     {
+        public bool Delete(string userId)
+        {
+            bool response = false;
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var userAccounts = context.UserAccounts.Where(o => o.UserId == userId);
+                if (userAccounts.Any())
+                {
+                    context.UserAccounts.RemoveRange(userAccounts);
+                    context.SaveChanges();
+                }
+
+                var permissions = context.Permissions.Where(o => o.UserId == userId);
+                if (permissions.Any())
+                {
+                    context.Permissions.RemoveRange(permissions);
+                    context.SaveChanges();
+                }
+
+                var mobilePermissions = context.MobilePermissions.Where(o => o.UserId == userId);
+                if (mobilePermissions.Any())
+                {
+                    context.MobilePermissions.RemoveRange(mobilePermissions);
+                    context.SaveChanges();
+                }
+
+                var users = context.Users.SingleOrDefault(o => o.Id == userId);
+                if (users != null)
+                {
+                    context.Users.Remove(users);
+                    context.SaveChanges();
+                }
+
+                response = true;
+            }
+
+            return response;
+        }
         public bool CheckEmailAddress(string email, Guid tenantId)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -20,7 +58,6 @@
                 return obj != null ? true : false;
             }
         }
-
         public bool CheckEmailAddress(string userName)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -95,56 +132,7 @@
 
                 return obj;
             }
-        }
-
-        public bool UpdateAccessCode(string phoneNumber, Guid tenantId, string otp)
-        {
-            using (var context = DataContextFactory.CreateContext())
-            {
-                var obj = (from o in context.UserAccounts
-                           join u in context.Users on o.UserId equals u.Id
-                           where u.PhoneNumber == phoneNumber && o.TenantId == tenantId
-                           select u).FirstOrDefault();
-
-                if(obj != null)
-                {
-                    var objToUpdate = context.Users.SingleOrDefault(o => o.Id == obj.Id);
-                    if (objToUpdate != null)
-                    {
-                        objToUpdate.OTP = otp;
-                        context.SaveChanges();
-
-                        return true;
-                    }
-                }                
-            }
-
-            return false;
-        }
-        public ApplicationUser VerifyAccessCode(string otp, string phoneNumber, Guid tenantId)
-        {
-            using (var context = DataContextFactory.CreateContext())
-            {
-                var obj = (from o in context.UserAccounts
-                           join u in context.Users on o.UserId equals u.Id
-                           where u.PhoneNumber == phoneNumber && o.TenantId == tenantId && u.OTP == otp
-                           select new { UserName = u.UserName, PhoneNumber = u.PhoneNumber, Active = u.Active, AreaId = u.AreaId, TenantId = o.TenantId, Id = u.Id }).FirstOrDefault();
-
-                if (obj != null)
-                {
-                    var objToUpdate = context.Users.SingleOrDefault(o => o.Id == obj.Id);
-                    if (objToUpdate != null)
-                    {
-                        objToUpdate.OTP = "";
-                        context.SaveChanges();
-
-                        return new ApplicationUser { UserName = obj.UserName, PhoneNumber = obj.PhoneNumber, Active = obj.Active, AreaId = obj.AreaId, Id = obj.Id, TenantId = obj.TenantId };
-                    }
-                }               
-            }
-
-            return null;
-        }
+        }      
         public IList<UserAccountDto> GetById(Guid tenantId)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -234,7 +222,6 @@
                 return Fetch(areaId, iskip, itake);
             }
         }
-
         public IList<UserAccountDto> Fetch(int areaId, int iskip, int itake)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -245,6 +232,54 @@
                                  select new UserAccountDto { UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id = u.Id, UserName = u.UserName }).Skip(iskip).Take(itake).ToList();
                 return objResult;
             }
+        }
+        public bool UpdateAccessCode(string phoneNumber, Guid tenantId, string otp)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var obj = (from o in context.UserAccounts
+                           join u in context.Users on o.UserId equals u.Id
+                           where u.PhoneNumber == phoneNumber && o.TenantId == tenantId
+                           select u).FirstOrDefault();
+
+                if (obj != null)
+                {
+                    var objToUpdate = context.Users.SingleOrDefault(o => o.Id == obj.Id);
+                    if (objToUpdate != null)
+                    {
+                        objToUpdate.OTP = otp;
+                        context.SaveChanges();
+
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+        public ApplicationUser VerifyAccessCode(string otp, string phoneNumber, Guid tenantId)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var obj = (from o in context.UserAccounts
+                           join u in context.Users on o.UserId equals u.Id
+                           where u.PhoneNumber == phoneNumber && o.TenantId == tenantId && u.OTP == otp
+                           select new { UserName = u.UserName, PhoneNumber = u.PhoneNumber, Active = u.Active, AreaId = u.AreaId, TenantId = o.TenantId, Id = u.Id }).FirstOrDefault();
+
+                if (obj != null)
+                {
+                    var objToUpdate = context.Users.SingleOrDefault(o => o.Id == obj.Id);
+                    if (objToUpdate != null)
+                    {
+                        objToUpdate.OTP = "";
+                        context.SaveChanges();
+
+                        return new ApplicationUser { UserName = obj.UserName, PhoneNumber = obj.PhoneNumber, Active = obj.Active, AreaId = obj.AreaId, Id = obj.Id, TenantId = obj.TenantId };
+                    }
+                }
+            }
+
+            return null;
         }
         public int Count(Guid TenantId)
         {

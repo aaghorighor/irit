@@ -197,17 +197,19 @@
             return result;
         }       
         [AcceptVerbs(HttpVerbs.Post | HttpVerbs.Get)]
-        public JsonResult Logger(Exception exception)
+        public JsonResult Logger(Exception ex)
         {                  
-            GeneralConfiguration.Configuration.DependencyResolver.GetService<ILogger>().LogError(exception);                        
+            GeneralConfiguration.Configuration.DependencyResolver.GetService<ILogger>().LogError(ex);                        
             return Json(new { ok = false, msg = Constant.ErrorMessage }, JsonRequestBehavior.AllowGet);
-        }       
+        }
 
-        #region private function
         public void LogError(Exception ex)
         {
-            GeneralConfiguration.Configuration.DependencyResolver.GetService<ILogger>().LogError(ex);         
-        }       
+            GeneralConfiguration.Configuration.DependencyResolver.GetService<ILogger>().LogError(ex);
+        }
+
+        #region private function
+
 
         #endregion
     }

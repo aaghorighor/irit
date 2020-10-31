@@ -22,6 +22,7 @@
     using System.Threading.Tasks;
     using Suftnet.Cos.Web;
     using System.Linq;
+    using System;
 
     public class UserController : BackOfficeBaseController
     {
@@ -29,11 +30,11 @@
 
        private ApplicationSignInManager _signInManager;
        private ApplicationUserManager _userManager;
-       private readonly IUserAccount _memberAccount;
+       private readonly IUserAccount _userAccount;
        private readonly Suftnet.Cos.DataAccess.IUser _user;
-        public UserController(IUserAccount memberAccount, DataAccess.IUser user)
+        public UserController(IUserAccount userAccount, DataAccess.IUser user)
        {
-            _memberAccount = memberAccount;
+            _userAccount = userAccount;
             _user = user;
        }
 
@@ -88,7 +89,39 @@
 
         [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
         [ValidateAntiForgeryToken]
-        [PermissionFilter(BackOfficeViews.User, PermissionType.Edit)]
+        //[PermissionFilter(BackOfficeViews.User, PermissionType.Create)]
+        public JsonResult Create(UserAccountDto entityToCreate)
+        {
+            Ensure.Argument.NotNull(entityToCreate);
+
+            if (!ModelState.IsValid)
+            {
+                return Json(new
+                {
+                    ok = false,
+                    isValid = true,
+                    errors = ModelState.AjaxErrors()
+                });
+            }
+
+            entityToCreate.Id = Guid.NewGuid().ToString();
+
+            var result = UserManager.Create(Map(entityToCreate), entityToCreate.Password);
+
+            if (!result.Succeeded)
+            {
+                return Json(new { ok = false, msg = ErrorBuilder(result.Errors) }, JsonRequestBehavior.AllowGet);
+            }
+                      
+            Map(entityToCreate.Email);
+            Task.Run(() => this.CreatePermissions(entityToCreate));
+
+            return Json(new { ok = true, flag = (int)flag.Add }, JsonRequestBehavior.AllowGet);
+        }
+
+        [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
+        [ValidateAntiForgeryToken]
+        //[PermissionFilter(BackOfficeViews.User, PermissionType.Edit)]
         public JsonResult Edit(UserAccountDto entityToChange)
         {
             Ensure.Argument.NotNull(entityToChange);
@@ -103,72 +136,54 @@
                 });
             }
 
-            var model = UserManager.FindById(entityToChange.UserId);
-            if (model == null)
-            {
-                return Json(new { ok = false, msg = Constant.ErrorMessage }, JsonRequestBehavior.AllowGet);
-            }
-
-            var applicationUser = Map(entityToChange, model);
-            var result = UserManager.Update(applicationUser);
-
-            if (!result.Succeeded)
-            {
-                return Json(new { ok = false, msg = Constant.ErrorMessage }, JsonRequestBehavior.AllowGet);
-            }
-
-            Task.Run(() => this.CreatePermissions(entityToChange));
-
-            return Json(new { ok = true, flag = (int)flag.Update }, JsonRequestBehavior.AllowGet);
-        }
-     
-       [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
-       public JsonResult ResetPassword(UserAccountDto entityToChange)
-        {
-            Ensure.Argument.NotNull(entityToChange.Id);
-
             var model = UserManager.FindById(entityToChange.Id);
             if (model == null)
             {
                 return Json(new { ok = false, msg = Constant.ErrorMessage }, JsonRequestBehavior.AllowGet);
             }
 
-            var token = UserManager.GeneratePasswordResetToken(entityToChange.Id);
+            var user = Map(entityToChange, model);
+            var result = UserManager.Update(user);
 
-            if (string.IsNullOrEmpty(token))
+            if (!result.Succeeded)
             {
                 return Json(new { ok = false, msg = Constant.ErrorMessage }, JsonRequestBehavior.AllowGet);
             }
 
-            var result = UserManager.ResetPassword(entityToChange.Id, token, entityToChange.Password);
-
-            if (result.Succeeded)
+            if (entityToChange.ChangePassword)
             {
-                return Json(new { ok = true }, JsonRequestBehavior.AllowGet);
+                ChangePassword(entityToChange);
             }
 
-            return Json(new { ok = false, msg = ErrorBuilder(result.Errors) }, JsonRequestBehavior.AllowGet);
+            Task.Run(() => this.CreatePermissions(entityToChange));
+
+            return Json(new { ok = true, flag = (int)flag.Update }, JsonRequestBehavior.AllowGet);
         }
+
+        private void ChangePassword(UserAccountDto entityToChange)
+        {
+            var token = UserManager.GeneratePasswordResetToken(entityToChange.UserId);
+
+            if (!string.IsNullOrEmpty(token))
+            {
+                UserManager.ResetPassword(entityToChange.UserId, token, entityToChange.Password);
+            }
+        }
+       
        [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
        [PermissionFilter(BackOfficeViews.User, PermissionType.Remove)]
        public JsonResult Delete(string Id)
         {
             Ensure.Argument.NotNull(Id);
+           
+            var result = _user.Delete(Id);
 
-            var model = UserManager.FindById(Id);
-            if (model == null)
-            {
-                return Json(new { ok = false, msg = Constant.ErrorMessage }, JsonRequestBehavior.AllowGet);
-            }
-
-            var result = UserManager.Delete(model);
-
-            if (result.Succeeded)
+            if (result)
             {
                 return Json(new { ok = true }, JsonRequestBehavior.AllowGet);
             }
 
-            return Json(new { ok = false, msg = ErrorBuilder(result.Errors) }, JsonRequestBehavior.AllowGet);
+            return Json(new { ok = false, msg= Constant.DeleteUserError }, JsonRequestBehavior.AllowGet);
         }
 
         #region private functions
@@ -180,7 +195,7 @@
                 case (int)eArea.BackOffice:
 
                     var backOffice = GeneralConfiguration.Configuration.DependencyResolver.GetService<PermissionCommand>();
-                    backOffice.UserId = entityToCreate.UserId;
+                    backOffice.UserId = entityToCreate.Id;
                     backOffice.PermissionTypeId = (int)eSettings.Backofficepages;
                     backOffice.CreatedBy = this.UserName;
                     backOffice.Execute();
@@ -190,82 +205,78 @@
                 case (int)eArea.FrontOffice:
 
                     var frontOffice = GeneralConfiguration.Configuration.DependencyResolver.GetService<PermissionCommand>();
-                    frontOffice.UserId = entityToCreate.UserId;
+                    frontOffice.UserId = entityToCreate.Id;
                     frontOffice.PermissionTypeId = (int)eSettings.FrontOfficepages;
                     frontOffice.CreatedBy = this.UserName;
                     frontOffice.Execute();
 
                     break;              
             }
-        }
-       private List<UserAccountDto> Map(IList<ApplicationUser> applicationUsers)
-        {
-            var _userAccountDto = new List<UserAccountDto>();
-
-            foreach (var model in applicationUsers)
-            {
-                var userAccountDto = new UserAccountDto()
-                {
-                    Active = model.Active,
-                    Area = GetArea((int)model.AreaId),
-                    AreaId = model.AreaId,
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    Email = model.Email,
-                    UserId = model.Id,
-                    UserName = model.Email,
-                };
-
-                _userAccountDto.Add(userAccountDto);
-            }
-
-            return _userAccountDto;
-        }
+        }     
        private ApplicationUser Map(UserAccountDto model, ApplicationUser user)
         {
             user.Active = model.Active;
-            user.Area = GetArea((int)model.AreaId);
+            user.Area = Map((int)model.AreaId);
             user.AreaId = model.AreaId;         
 
             return user;
-        }
-       private UserAccountDto Map(ApplicationUser model)
-        {
-            var userAccountDto = new UserAccountDto()
-            {
-                Active = model.Active,
-                Area = model.Area,
-                AreaId = model.AreaId,
-                FirstName = model.FirstName,
-                LastName = model.LastName,
-                Email = model.Email,
-                UserId = model.Id             
-            };
-
-            return userAccountDto;
-        }
+        }      
        private ApplicationUser Map(UserAccountDto model)
         {
-            var applicationUser = new ApplicationUser()
+            var user = new ApplicationUser()
             {
+                Id = model.Id,
                 Active = model.Active,
-                Area = GetArea((int)model.AreaId),
+                Area = Map((int)model.AreaId),
                 AreaId = model.AreaId,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 UserName = model.Email,
-                Email = model.Email,
-                TenantId = this.TenantId
+                Email = model.Email              
             };
 
-            return applicationUser;
+            return user;
 
         }
-       private string GetArea(int? areaId)
+       private void Map(string userName)
         {
-            var service = GeneralConfiguration.Configuration.DependencyResolver.GetService<ICommon>();
-            var model = service.Get((int)areaId);
-            return model.Title;
+            try {
+
+                var model = UserManager.FindByEmail(userName);
+
+                _userAccount.Insert(new DataAccess.Action.UserAccount()
+                {
+                    UserId = model.Id,
+                    TenantId = this.TenantId,
+                    CreatedBy = this.UserName,
+                    CreatedDt = DateTime.UtcNow
+                });
+
+            }
+            catch(Exception ex)
+            {
+                LogError(ex);
+            }            
+        }
+       private string Map(int? areaId)
+        {
+            var title = string.Empty;
+
+            switch (areaId)
+            {
+                case (int)eArea.BackOffice:
+                    title = "Back Office";
+                    break;               
+
+                case (int)eArea.FrontOffice:
+                    title = "Front Office";
+                    break;
+                default:
+                    title = "Front Office";
+                    break;
+            }
+
+            return title;
         }
        private string ErrorBuilder(IEnumerable<string> errors)
         {

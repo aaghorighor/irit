@@ -10,6 +10,7 @@
     using Suftnet.Cos.DataAccess.Identity;
     using Suftnet.Cos.Model;
     using Suftnet.Cos.Services;
+    using Suftnet.Cos.Web.Command;
     using Suftnet.Cos.Web.ViewModel;
 
     using System;
@@ -23,18 +24,20 @@
         private readonly IUserAccount _userAccount;
         private UserManager<ApplicationUser> _userManager;
         private readonly ISmtp _messenger;
-        private readonly IEditor _editor;
+        private readonly IFactoryCommand _factoryCommand;
         private readonly Suftnet.Cos.DataAccess.IUser _user;
+        public string VIEW_PATH { get; set; }
 
-        public ApiUserManager(IUserAccount userAccount, ISmtp messenger, IEditor editor, Suftnet.Cos.DataAccess.IUser user)
+        public ApiUserManager(IUserAccount userAccount, ISmtp messenger,
+            IFactoryCommand factoryCommand, Suftnet.Cos.DataAccess.IUser user)
         {
             _user = user;
-            _editor = editor;
+            _factoryCommand = factoryCommand;
             _messenger = messenger;
             _userAccount = userAccount;
             _userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new DataContext()));
         }
-        public ApplicationUser CreateAsync(UserManager<ApplicationUser> userManager, ApplicationUser model, Guid tenantId, string password, bool isSend, bool isBackoffice)
+        public ApplicationUser CreateAsync(UserManager<ApplicationUser> userManager, string viewPATH, ApplicationUser model, Guid tenantId, string password, bool isSend, bool isBackoffice)
         {
             var identityResult = new IdentityResult();
             var user = _user.CheckEmailAddress(model.Email, tenantId);
@@ -67,7 +70,7 @@
 
                     if(isSend)
                     {
-                        Task.Run(() => SendEmailFactory(model, tenantId, password));
+                        Task.Run(() => SendEmailFactory(model, tenantId, password, viewPATH));
                     }             
                     _user.TenantId = tenantId;
 
@@ -78,14 +81,14 @@
             return null;
         }
       
-        private void SendGridEmailConfirmation(ApplicationUser entityToCreate, string password, Guid tenantId)
+        private void SendGridEmailConfirmation(ApplicationUser entityToCreate, string password, Guid tenantId, string viewPATH)
         {
             try
             {
                 var iTenant = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenant>();
                 var tenant = iTenant.Get(tenantId);
-                var editor = _editor.Get((int)eEditor.MemberRegistration);
-                var body = this.CreateConfirmationMessage(entityToCreate, editor, tenant, password);
+
+                var body = this.CreateConfirmationMessage(entityToCreate, tenant, password, viewPATH);
                 var recipients = new List<RecipientModel>();
                 var sendGrid = GeneralConfiguration.Configuration.DependencyResolver.GetService<ISendGridMessager>();
 
@@ -103,18 +106,18 @@
                 GeneralConfiguration.Configuration.Logger.LogError(exception);
             }
         }
-        private void SendEmailFactory(ApplicationUser model, Guid tenantId, string password)
+        private void SendEmailFactory(ApplicationUser model, Guid tenantId, string password, string viewPATH)
         {
             if (GeneralConfiguration.Configuration.ExecutingContext.Equals(ExecutingContext.TEST))
             {
-                SendEmailConfirmation(model, tenantId, password);
+                SendEmailConfirmation(model, tenantId, password, viewPATH);
             }
             else if (GeneralConfiguration.Configuration.ExecutingContext.Equals(ExecutingContext.LIVE))
             {
-                SendGridEmailConfirmation(model, password, tenantId);
+                SendGridEmailConfirmation(model, password, tenantId, viewPATH);
             }
         }
-        private void SendEmailConfirmation(ApplicationUser entityToCreate, Guid tenantId, string password)
+        private void SendEmailConfirmation(ApplicationUser entityToCreate, Guid tenantId, string password, string viewPATH)
         {
             try
             {
@@ -123,13 +126,12 @@
 
                 var iTenant = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenant>();
                 var tenant = iTenant.Get(tenantId);
-
-                var contentTemplate = new EditorDTO();
-                var emailContent = this.CreateConfirmationMessage(entityToCreate, _editor.Get((int)eEditor.MemberRegistration), tenant, password);
+                             
+                var body = this.CreateConfirmationMessage(entityToCreate,tenant, password, viewPATH);
 
                 mailMessage.From = new System.Net.Mail.MailAddress(GeneralConfiguration.Configuration.Settings.General.ServerEmail, GeneralConfiguration.Configuration.Settings.General.Company);
                 mailMessage.To.Add(entityToCreate.Email);
-                mailMessage.Body = emailContent;
+                mailMessage.Body = body;
                 mailMessage.Subject = $"Thanks for your registration with {tenant.Name}";
                 messageModel.MailMessage = new MailMessage(mailMessage);
 
@@ -145,18 +147,21 @@
         {
             return _userManager.FindByEmail(email);
         }
-        private string CreateConfirmationMessage(ApplicationUser entityToCreate, EditorDTO editor, TenantDto tenant, string password)
-        {
-            var sb = new StringBuilder(editor.Contents);
+        private string CreateConfirmationMessage(ApplicationUser entityToCreate, TenantDto tenant, string password, string viewPATH)
+        {        
+            var command = _factoryCommand.Create<EmailTemplateCommand>();
+            command.VIEW_PATH = viewPATH;
+            command.Execute();
+                       
+            var sb = new StringBuilder(command.View);
 
-            sb.Replace("[customer]", entityToCreate.FirstName + " " + entityToCreate.LastName);
-            sb.Replace("[email]", entityToCreate.Email);
+            sb.Replace("[user]", entityToCreate.FirstName + " " + entityToCreate.LastName);
+            sb.Replace("[username]", entityToCreate.Email);
             sb.Replace("[password]", password);
 
-            sb.Replace("[restaurantname]", tenant.Name);
-            sb.Replace("[restaurantphone]", tenant.Telephone);
-            sb.Replace("[restaurantemail]", tenant.Email);
-
+            sb.Replace("[name]", tenant.Name);
+            sb.Replace("[app_code]", tenant.AppCode);
+      
             return sb.ToString();
         }
        

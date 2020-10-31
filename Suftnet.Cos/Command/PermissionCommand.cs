@@ -45,13 +45,14 @@
                 {
                     var permissionDto = new PermissionDto
                     {
-                        IdentityId = this.UserId,
+                        UserId = this.UserId,
                         ViewId = permission.Id,
                         Create = Cos.Common.Permission.Enable,
                         Edit = Cos.Common.Permission.Enable,
                         Remove = Cos.Common.Permission.Enable,
                         Get = Cos.Common.Permission.Enable,
                         GetAll = Cos.Common.Permission.Enable,
+                        Id = Guid.NewGuid(),
 
                         CreatedBy = CreatedBy,
                         CreatedDT = DateTime.UtcNow
@@ -69,13 +70,14 @@
                 {
                     var permissionDto = new PermissionDto
                     {
-                        IdentityId = this.UserId,
+                        UserId = this.UserId,
                         ViewId = permission.Id,
                         Create = Cos.Common.Permission.Enable,
                         Edit = Cos.Common.Permission.Enable,
                         Remove = Cos.Common.Permission.Enable,
                         Get = Cos.Common.Permission.Enable,
                         GetAll = Cos.Common.Permission.Enable,
+                        Id = Guid.NewGuid(),
 
                         CreatedBy = CreatedBy,
                         CreatedDT = DateTime.UtcNow
@@ -96,13 +98,14 @@
                 {
                     var permissionDto = new PermissionDto
                     {
-                        IdentityId = this.UserId,
+                        UserId = this.UserId,
                         ViewId = permission.Id,
                         Create = Cos.Common.Permission.Enable,
                         Edit = Cos.Common.Permission.Enable,
                         Remove = Cos.Common.Permission.Enable,
                         Get = Cos.Common.Permission.Enable,
                         GetAll = Cos.Common.Permission.Enable,
+                        Id = Guid.NewGuid(),
 
                         CreatedBy = CreatedBy,
                         CreatedDT = DateTime.UtcNow

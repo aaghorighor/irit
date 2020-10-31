@@ -90,6 +90,7 @@ namespace Suftnet.Cos.DataAccess.Action
         public string DeliveryLimitNote { get; set; }
         public bool? IsFlatRate { get; set; }
         public decimal? FlatRate { get; set; }
+        public string AppCode { get; set; }
 
     }
 }

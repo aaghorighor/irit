@@ -6,6 +6,6 @@
   
     public interface IApiUserManger
     {
-        ApplicationUser CreateAsync(UserManager<ApplicationUser> userManager, ApplicationUser model, Guid tenantId, string password, bool isSend, bool isBackoffice);
+        ApplicationUser CreateAsync(UserManager<ApplicationUser> userManager,string viewPATH, ApplicationUser model, Guid tenantId, string password, bool isSend, bool isBackoffice);
     }
 }

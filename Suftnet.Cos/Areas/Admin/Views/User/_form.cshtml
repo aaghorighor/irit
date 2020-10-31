@@ -24,7 +24,14 @@
 
         <div class="grid-6-12">
             <label class="forms-lbl">Area: </label>
-            @Html.AdminAreaDropdown("AreaId", "validate[required]")
+            <select class="validate[required]" id="AreaId" name="AreaId" style="padding: 6px;">
+                <option value="">-- SELECT --</option>
+                <option value="2033">Admin</option>
+                <option code="1" value="2034">Back Office</option>
+                <option code="1" value="5219">Front Office</option>
+                <option code="1" value="6239">Member Office</option>
+                <option value="6241">Site Admin</option>
+            </select>
         </div>
 
         <div class="grid-6-12">

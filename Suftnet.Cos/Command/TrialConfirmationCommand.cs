@@ -4,8 +4,7 @@
     using Core;
     using Cos.Services;
     using Model;
-    using Suftnet.Cos.DataAccess;
-
+   
     using System;
     using System.Collections.Generic;
     using System.Text;
@@ -13,20 +12,21 @@
 
     using ViewModel;
 
-    public class SendSubscriptionConfirmationCommand : ICommand
+    public class SendTrialConfirmationCommand : ICommand
     {
-        private readonly ISmtp _messenger;
-        private readonly IEditor _editor;
-        public SendSubscriptionConfirmationCommand(ISmtp messenger, IEditor editor)
+        private readonly ISmtp _messenger;    
+        private readonly IFactoryCommand _factoryCommand;
+        public SendTrialConfirmationCommand(ISmtp messenger, IFactoryCommand factoryCommand)
         {
-            _messenger = messenger;
-            _editor = editor;
+            _messenger = messenger;         
+            _factoryCommand = factoryCommand;
         }
 
-        public CheckoutModel SubscriptionModel { get; set; }
+        public CheckoutModel TrialModel { get; set; }
         public int BillingCycle { get; set; }
         public decimal Amount { get; set; }       
         public string Plan { get; set; }
+        public string VIEW_PATH { get; set; }
 
         public void Execute()
         {
@@ -53,15 +53,12 @@
             {
                 var messageModel = new MessageModel();
                 var mailMessage = new System.Net.Mail.MailMessage();
-
-                var contentTemplate = new EditorDTO();
-                var emailContent = string.Empty;
-
-                emailContent = this.CreateConfirmationEmail(_editor.Get((int)eEditor.SubscriptionTrialConfirmation));
+                
+                var body = this.CreateConfirmationEmail();
 
                 mailMessage.From = new System.Net.Mail.MailAddress(GeneralConfiguration.Configuration.Settings.General.ServerEmail, GeneralConfiguration.Configuration.Settings.General.Company);
-                mailMessage.To.Add(SubscriptionModel.Email);
-                mailMessage.Body = emailContent;
+                mailMessage.To.Add(TrialModel.Email);
+                mailMessage.Body = body;
                 mailMessage.Subject = "Welcome to Irit";
                 messageModel.MailMessage = new MailMessage(mailMessage);
 
@@ -76,15 +73,13 @@
         private void SendGridEmailConfirmation()
         {
             try
-            {
-                var contentTemplate = new EditorDTO();
-                var emailContent = string.Empty;
+            {            
+                var body = this.CreateConfirmationEmail();
 
-                var body = this.CreateConfirmationEmail(_editor.Get((int)eEditor.SubscriptionTrialConfirmation));
                 var recipients = new List<RecipientModel>();
                 var sendGrid = GeneralConfiguration.Configuration.DependencyResolver.GetService<ISendGridMessager>();
 
-                recipients.Add(new RecipientModel { Email = SubscriptionModel.Email });
+                recipients.Add(new RecipientModel { Email = TrialModel.Email });
 
                 if (recipients.Any())
                 {
@@ -99,22 +94,26 @@
             }
         }
             
-        private string CreateConfirmationEmail(EditorDTO editor)
+        private string CreateConfirmationEmail()
         {
-            var sb = new StringBuilder(editor.Contents);
+            var command = _factoryCommand.Create<EmailTemplateCommand>();
+            command.VIEW_PATH = VIEW_PATH;
+            command.Execute();
 
-            sb.Replace("[customer]", SubscriptionModel.FirstName + " " + SubscriptionModel.LastName);
-            sb.Replace("[username]", SubscriptionModel.Email);
-            sb.Replace("[email]", SubscriptionModel.Email);
-            sb.Replace("[password]", Constant.DefaultPassword);
+            var sb = new StringBuilder(command.View);
+
+            sb.Replace("[customer]", TrialModel.FirstName + " " + TrialModel.LastName);
+            sb.Replace("[username]", TrialModel.Email);
+            sb.Replace("[email]", TrialModel.Email);
+            sb.Replace("[password]", TrialModel.Password);
             sb.Replace("[plan]", Plan);
             sb.Replace("[trialStart]", DateTime.UtcNow.ToShortDateString());
             sb.Replace("[trialend]", DateTime.UtcNow.AddDays(BillingCycle).ToShortDateString());
             sb.Replace("[trialdays]", BillingCycle.ToString());
-            sb.Replace("[product]", Constant.ProductName);
 
-            sb.Replace("[onlinelink]", GeneralConfiguration.Configuration.Settings.OnlineLink);
-            sb.Replace("[mobilelink]", GeneralConfiguration.Configuration.Settings.MobileLink);
+            sb.Replace("[app_code]", TrialModel.AppCode);
+            sb.Replace("[online_link]", GeneralConfiguration.Configuration.Settings.OnlineLink);
+            sb.Replace("[mobile_link]", GeneralConfiguration.Configuration.Settings.MobileLink);
 
             return sb.ToString();
         }

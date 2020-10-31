@@ -193,35 +193,12 @@
             return success == true ? Json(new { ok = true }, JsonRequestBehavior.AllowGet) : Json(new { ok = false, isApplication = true }, JsonRequestBehavior.AllowGet);
         }
         #region private function
-
-        private decimal? CreatePlanPrice(int planId, string planType)
-        {
-            var plan = _plan.Get(planId);
-
-            if (plan != null)
-            {
-                switch (planType)
-                {
-                    case PlanType.Basic:
-                        return plan.BasicPrice;
-                    case PlanType.Premium:
-                        return plan.AdvancePrice;
-                    case PlanType.PremiumPlus:
-                        return plan.ProfessionalPrice;
-                    default:
-                        return 0;
-                }
-            }
-
-            return 0;
-
-        }
+      
         private async Task<bool> CreateCustomerSubscription(CheckoutModel checkoutModel)
         {
             var success = false;
             try
             {
-
                 var addressCommand = _factoryCommand.Create<CreateAddressCommand>();
                 addressCommand.AddressModel = checkoutModel;
                 addressCommand.CreatedBy = checkoutModel.Email;
@@ -229,7 +206,7 @@
 
                 var customerCommand = _factoryCommand.Create<CreateTenantCommand>();
                 customerCommand.AddressId = addressCommand.AddressId;
-                customerCommand.TenantModel = checkoutModel;
+                customerCommand.CheckoutModel = checkoutModel;
                 customerCommand.CutOff = this.CreatePlanCutOff(checkoutModel.PlanTypeId);
                 customerCommand.ExpirationDate = this.CreatePlanExpirationDate(checkoutModel.PlanTypeId);
                 customerCommand.StartDate = DateTime.UtcNow;
@@ -250,15 +227,16 @@
 
                 await Task.Run(() => permissionCommand.Execute());
 
-                var sendSubscriptionCommand = _factoryCommand.Create<SendSubscriptionConfirmationCommand>();
-                sendSubscriptionCommand.SubscriptionModel = checkoutModel;
-                sendSubscriptionCommand.Amount = this.CreatePlanRateType(checkoutModel.PlanTypeId);
-                sendSubscriptionCommand.BillingCycle = this.CreateBillingCyle(checkoutModel.PlanTypeId);
-                sendSubscriptionCommand.Plan = this.CreatePlanName(checkoutModel.PlanTypeId);
+                var sendTrialCommand = _factoryCommand.Create<SendTrialConfirmationCommand>();
+                sendTrialCommand.TrialModel = checkoutModel;
+                sendTrialCommand.VIEW_PATH = this.Server.MapPath("~/App_Data/Email/subscriptionTrial.html");
+                sendTrialCommand.Amount = this.CreatePlanRateType(checkoutModel.PlanTypeId);
+                sendTrialCommand.BillingCycle = this.CreateBillingCyle(checkoutModel.PlanTypeId);
+                sendTrialCommand.Plan = this.CreatePlanName(checkoutModel.PlanTypeId);
 
                 if (checkoutModel.PlanTypeId == PlanType.Trial)
                 {
-                    await Task.Run(() => sendSubscriptionCommand.Execute());
+                    await Task.Run(() => sendTrialCommand.Execute());
                 }
 
                 await SignInAsync(_user, true);
@@ -281,6 +259,28 @@
             }
 
             return success;
+        }
+        private decimal? CreatePlanPrice(int planId, string planType)
+        {
+            var plan = _plan.Get(planId);
+
+            if (plan != null)
+            {
+                switch (planType)
+                {
+                    case PlanType.Basic:
+                        return plan.BasicPrice;
+                    case PlanType.Premium:
+                        return plan.AdvancePrice;
+                    case PlanType.PremiumPlus:
+                        return plan.ProfessionalPrice;
+                    default:
+                        return 0;
+                }
+            }
+
+            return 0;
+
         }
         private void CreateStripeSubscription(CheckoutModel checkoutModel, Guid tenantId)
         {
@@ -349,7 +349,7 @@
                     return new Guid(SubscriptionStatus.Trial);
             }
 
-            return new Guid();
+            return Guid.NewGuid();
         }
         private int CreateBillingCyle(string planTypeId)
         {
@@ -442,12 +442,12 @@
         }
         private ApplicationUser CreateUser(CheckoutModel userModel, Guid tenantId)
         {
-            var apiUserManger = GeneralConfiguration.Configuration.DependencyResolver.GetService<IApiUserManger>();                       
-            var user = apiUserManger.CreateAsync(UserManager, new ApplicationUser { Email = userModel .Email, FirstName = userModel.FirstName, LastName = userModel.LastName }, tenantId, userModel.Password, false, false);
+            var apiUserManger = GeneralConfiguration.Configuration.DependencyResolver.GetService<IApiUserManger>();
+            var path= this.Server.MapPath("~/App_Data/Email/userRegistration.html");
+            var user = apiUserManger.CreateAsync(UserManager, path, new ApplicationUser { Email = userModel .Email, FirstName = userModel.FirstName, LastName = userModel.LastName }, tenantId, userModel.Password, false, false);
 
             return user;
-        }
-       
+        }       
         private void UpdateTenant(string stripeCustomerId, Guid tenantId)
         {
             var _tenant = GeneralConfiguration.Configuration.DependencyResolver.GetService<ITenant>();

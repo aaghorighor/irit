@@ -1,7 +1,4 @@
 ﻿
-@using Suftnet.Cos.Common;
-@using Suftnet.Cos.Extension;
-
 <div class="forms">
 
     <div class="grid-6-12">
@@ -16,7 +13,16 @@
 
     <div class="grid-6-12">
         <label class="forms-lbl">Currency Symbol: </label>
-        @Html.CurrencyDropdown("CurrencyId", "", (int)eSettings.Currency)
+        <select class="" id="CurrencyId" name="CurrencyId" style="padding: 6px;">
+            <option value="">-- SELECT --</option>
+            <option code="&amp;#x20A6" value="264">₦</option>
+            <option code="&amp;#x20A4" value="265">₤</option>
+            <option code="&amp;#x24;" value="266">$</option>
+            <option code="&amp;#x20A3" value="2035">₣</option>
+            <option code="&amp;#x20B0" value="2036">₰</option>
+            <option code="&amp;#x20AC" value="2037">€</option>
+            <option code="&amp;#x20B9" value="2038">₹</option>
+        </select>
     </div>
 
 </div>    

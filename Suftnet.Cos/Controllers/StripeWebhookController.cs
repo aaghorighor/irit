@@ -15,14 +15,15 @@
     using Suftnet.Cos.Stripe;
     using Suftnet.Cos.Web.ViewModel;
     using System.Linq;
+    using Suftnet.Cos.Web.Command;
+    using System.Text;
 
     [AllowAnonymous]
     public class StripeWebhookController : CommonController.Controllers.BaseController
     {
-        private readonly ITenant _tenant;
-        private readonly IEditor _editor;
+        private readonly ITenant _tenant;      
         private readonly ISmtp _messenger;
-
+        private readonly IFactoryCommand _factoryCommand;
         private Customer customer;
         private Guid tenantId;
         private string tenantName = string.Empty;
@@ -30,11 +31,12 @@
         private dynamic obj;
         private dynamic customerId;
 
-        public StripeWebhookController(DataAccess.ITenant tenant, DataAccess.IEditor editor, ISmtp messenger)
-        {
-            _editor = editor;
+        public StripeWebhookController(DataAccess.ITenant tenant, 
+            IFactoryCommand factoryCommand, ISmtp messenger)
+        {           
             _tenant = tenant;
             _messenger = messenger;
+            _factoryCommand = factoryCommand;
         }
 
         [HttpPost]
@@ -79,12 +81,11 @@
                         {
                             return test;
                         }
-
-                        editor = _editor.Get((int)eEditor.SubscriptionCreated);
-                        emailBody = FormatSubscriptionCreatedContent(editor.Contents, Constant.ProductName, tenantName, customer.Email,
+                 
+                        emailBody = SubscriptionCreatedContent(tenantName, customer.Email,
                            CalculatePrice(obj.Plan.Amount), (int)obj.Plan.IntervalCount, obj.Plan.Nickname);
 
-                        SendEmailFactory(editor.Title, emailBody, customer.Email);
+                        SendEmailFactory("Irit Subscription Created", emailBody, customer.Email);
 
                         break;
 
@@ -96,12 +97,11 @@
                         {
                             return test;
                         }
-
-                        editor = _editor.Get((int)eEditor.SubscriptionUpdated);
-                        emailBody = FormatSubscriptionUpdateContent(editor.Contents, Constant.ProductName, tenantName,
+                       
+                        emailBody = SubscriptionUpdateContent(tenantName,
                              CalculatePrice(obj.Plan.Amount), (int)obj.Plan.IntervalCount, obj.Plan.Nickname);
 
-                        SendEmailFactory(editor.Title, emailBody, customer.Email);
+                        SendEmailFactory("Irit Subscription Updated", emailBody, customer.Email);
 
                         break;
 
@@ -113,12 +113,11 @@
                         {
                             return test;
                         }
-
-                        editor = _editor.Get((int)eEditor.SubscriptionDeleted);
-                        emailBody = FormatSubscriptionDeleteContent(editor.Contents, Constant.ProductName, tenantName,
+                     
+                        emailBody = SubscriptionDeleteContent(tenantName,
                              obj.Plan.Nickname, obj.CanceledAt);
 
-                        SendEmailFactory(editor.Title, emailBody, customer.Email);
+                        SendEmailFactory("Irit Subscription Deleted", emailBody, customer.Email);
 
                         break;
 
@@ -137,13 +136,11 @@
                         }
                         catch (Exception ex)
                         { GeneralConfiguration.Configuration.Logger.LogError(ex); }
-
-                        editor = _editor.Get((int)eEditor.ChargeSucceeded);
-                        emailBody = FormatChargeSucceededContent(editor.Contents,
-                            Constant.ProductName, tenantName, customer.Email, obj.HostedInvoiceUrl,
+                                              
+                        emailBody = ChargeSucceededContent(tenantName, customer.Email, obj.HostedInvoiceUrl,
                             obj.AmountPaid);
 
-                        SendEmailFactory(editor.Title, emailBody, customer.Email);
+                        SendEmailFactory("Irit Payment Succeeded", emailBody, customer.Email);
 
                         break;
 
@@ -162,12 +159,11 @@
                         }
                         catch (Exception ex)
                         { GeneralConfiguration.Configuration.Logger.LogError(ex); }
-
-                        editor = _editor.Get((int)eEditor.ChargeFailed);
-                        emailBody = FormatPaymentFailed(editor.Contents, tenantName,
+                                               
+                        emailBody = PaymentFailedContent(tenantName,
                                 obj.HostedInvoiceUrl);
 
-                        SendEmailFactory(editor.Title, emailBody, customer.Email);
+                        SendEmailFactory("Irit Payment Failed", emailBody, customer.Email);
 
                         break;
 
@@ -179,14 +175,12 @@
                         {
                             return test;
                         }
-
-                        editor = _editor.Get((int)eEditor.ChargeRefunded);
-
-                        emailBody = FormatPaymentRefunded(editor.Contents, tenantName,
+                                               
+                        emailBody = PaymentRefundedContent(tenantName,
                                     obj.AmountRefunded.ToString(), obj.ReceiptUrl,
                                     obj.PaymentMethodDetails.Card.Last4, obj.Created.ToShortDateString());
 
-                        SendEmailFactory(editor.Title, emailBody, customer.Email);
+                        SendEmailFactory("Irit Charge Refund Updated", emailBody, customer.Email);
 
                         break;
                 }
@@ -274,28 +268,17 @@
             stripeEvent = eventService.Get(stripeEvent.Id);
             return stripeEvent;
         }
-        private string FormatContent(string content, string product, string userName)
+       
+        private string SubscriptionDeleteContent(string userName, string plan, DateTime? cancellationdate)
         {
             Dictionary<string, string> sb = new Dictionary<string, string>();
-            string results = string.Empty;
+            var command = _factoryCommand.Create<EmailTemplateCommand>();
+            command.VIEW_PATH = this.Server.MapPath("~/App_Data/Email/subscriptionCancellation.html");
+            command.Execute();
 
-            sb.Add("[customer]", userName);
-            sb.Add("[product]", product);
+            var content = command.View;
 
-            foreach (KeyValuePair<string, string> _token in sb)
-            {
-                content = content.Replace(_token.Key, _token.Value);
-            }
-
-            return content;
-        }
-        private string FormatSubscriptionDeleteContent(string content, string product, string userName, string plan, DateTime? cancellationdate)
-        {
-            Dictionary<string, string> sb = new Dictionary<string, string>();
-            string results = string.Empty;
-
-            sb.Add("[customer]", userName);
-            sb.Add("[product]", product);
+            sb.Add("[customer]", userName);           
             sb.Add("[plan]", plan);
             sb.Add("[cancellationdate]", cancellationdate == null ? DateTime.Now.ToShortDateString() : cancellationdate.Value.ToShortDateString());
 
@@ -306,13 +289,16 @@
 
             return content;
         }
-        private string FormatChargeSucceededContent(string content, string product, string userName, string email, string hosted_invoice_url, decimal amount)
-        {
+        private string ChargeSucceededContent(string userName, string email, string hosted_invoice_url, decimal amount)
+        {          
             Dictionary<string, string> sb = new Dictionary<string, string>();
-            string results = string.Empty;
+            var command = _factoryCommand.Create<EmailTemplateCommand>();
+            command.VIEW_PATH = this.Server.MapPath("~/App_Data/Email/paymentSuccessful.html");
+            command.Execute();
 
-            sb.Add("[customer]", userName);
-            sb.Add("[product]", product);
+            var content = command.View;
+
+            sb.Add("[customer]", userName);         
             sb.Add("[email]", email);
             sb.Add("[hosted_invoice_url]", hosted_invoice_url);
 
@@ -325,15 +311,18 @@
 
             return content;
         }
-        private string FormatSubscriptionCreatedContent(string content, string product, string userName, string email, decimal amount, int billingCycle, string plan)
+        private string SubscriptionCreatedContent(string userName, string email, decimal amount, int billingCycle, string plan)
         {
             Dictionary<string, string> sb = new Dictionary<string, string>();
-            string results = string.Empty;
+            var command = _factoryCommand.Create<EmailTemplateCommand>();
+            command.VIEW_PATH = this.Server.MapPath("~/App_Data/Email/subscriptionCreated.html");
+            command.Execute();
+
+            var content = command.View;
 
             sb.Add("[customer]", userName);
             sb.Add("[email]", email);
-            sb.Add("[product]", product);
-
+      
             if (plan == "Basic")
             {
                 sb.Add("[BillingCycle]", billingCycle.ToString() + " " + "Month");
@@ -360,14 +349,17 @@
 
             return content;
         }
-        private string FormatSubscriptionUpdateContent(string content, string product, string userName, decimal amount, int billingCycle, string plan)
-        {
+        private string SubscriptionUpdateContent(string userName, decimal amount, int billingCycle, string plan)
+        {          
             Dictionary<string, string> sb = new Dictionary<string, string>();
-            string results = string.Empty;
+            var command = _factoryCommand.Create<EmailTemplateCommand>();
+            command.VIEW_PATH = this.Server.MapPath("~/App_Data/Email/subscriptionUpdate.html");
+            command.Execute();
+
+            var content = command.View;
 
             sb.Add("[customer]", userName);
-            sb.Add("[product]", product);
-
+          
             if (plan == "Basic")
             {
                 sb.Add("[BillingCycle]", billingCycle.ToString() + " " + "Month");
@@ -391,10 +383,15 @@
 
             return content;
         }
-        private string FormatPaymentFailed(string content, string userName, string hosted_invoice_url)
-        {
+        private string PaymentFailedContent(string userName, string hosted_invoice_url)
+        {           
             Dictionary<string, string> sb = new Dictionary<string, string>();
-      
+            var command = _factoryCommand.Create<EmailTemplateCommand>();
+            command.VIEW_PATH = this.Server.MapPath("~/App_Data/Email/paymentFailed.html");
+            command.Execute();
+
+            var content = command.View;
+
             sb.Add("[customer]", userName);
             sb.Add("[hosted_invoice_url]", hosted_invoice_url);
 
@@ -405,10 +402,15 @@
 
             return content;
         }
-        private string FormatPaymentRefunded(string content, string userName, decimal amount, string receiptUrl, string cardigit, string date)
+        private string PaymentRefundedContent(string userName, decimal amount, string receiptUrl, string cardigit, string date)
         {
             Dictionary<string, string> sb = new Dictionary<string, string>();
-     
+            var command = _factoryCommand.Create<EmailTemplateCommand>();
+            command.VIEW_PATH = this.Server.MapPath("~/App_Data/Email/paymentRefunded.html");
+            command.Execute();
+
+            var content = command.View;
+
             sb.Add("[customer]", userName);
             sb.Add("[date]", date);
             sb.Add("[cardigit]", cardigit);
@@ -427,11 +429,11 @@
         {
             if (GeneralConfiguration.Configuration.ExecutingContext.Equals(ExecutingContext.TEST))
             {
-                SendSmtpEmail(title, message, email);
+                System.Threading.Tasks.Task.Run(() => SendSmtpEmail(title, message, email));
             }
             else if (GeneralConfiguration.Configuration.ExecutingContext.Equals(ExecutingContext.LIVE))
             {
-                SendGridEmail(title, message, email);
+                System.Threading.Tasks.Task.Run(()=> SendGridEmail(title, message, email));
             }
         }
 

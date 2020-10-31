@@ -842,7 +842,7 @@
             }
             return result;
         }
-        public static string RandomCode(this object value)
+        public static string RandomCode(this object value, int count = 10)
         {
             var random = new Random();
             var result = string.Empty;

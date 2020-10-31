@@ -305,6 +305,7 @@
     <Compile Include="Command\CreateTenantCommand.cs" />
     <Compile Include="Command\CreateUserPermissionCommand.cs" />
     <Compile Include="Command\DeleteTenantCommand.cs" />
+    <Compile Include="Command\EmailTemplateCommand.cs" />
     <Compile Include="Command\FactoryCommand.cs" />
     <Compile Include="Command\ICommand.cs" />
     <Compile Include="Command\IDashboardCommand.cs" />
@@ -313,7 +314,7 @@
     <Compile Include="Command\PermissionCommand.cs" />
     <Compile Include="Command\PushNotificationCommand.cs" />
     <Compile Include="Command\OrderCommand.cs" />
-    <Compile Include="Command\SendSubscriptionConfirmationCommand.cs" />
+    <Compile Include="Command\TrialConfirmationCommand.cs" />
     <Compile Include="Content\reports\MenuItem.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -476,6 +477,19 @@
     <Compile Include="ViewModel\LoginModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Email\userRegistration.html" />
+    <Content Include="App_Data\Email\paymentRefunded.html" />
+    <Content Include="App_Data\Email\subscriptionExpired.html" />
+    <Content Include="App_Data\Email\cancelTrial.html" />
+    <Content Include="App_Data\Email\subscriptionTrialEndingReminder.html" />
+    <Content Include="App_Data\Email\subscriptionUpdate.html" />
+    <Content Include="App_Data\Email\subscriptionCancellation.html" />
+    <Content Include="App_Data\Email\paymentSuccessful.html" />
+    <Content Include="App_Data\Email\paymentFailed.html" />
+    <Content Include="App_Data\Email\subscriptionCreated.html" />
+    <Content Include="App_Data\Email\subscriptionTrial .html" />
+    <Content Include="App_Data\Email\passwordReset.html" />
+    <Content Include="App_Data\Email\otp.html" />
     <Content Include="Content\css\dashboard.css" />
     <Content Include="Content\mavia\js\main.js" />
     <Content Include="Content\photo\category\Blank.jpg" />
@@ -4729,7 +4743,7 @@
     <Content Include="Areas\Admin\Views\Settings\_Sms.cshtml" />
     <Content Include="Areas\Admin\Views\Settings\_Smtp.cshtml" />
     <Content Include="Areas\Admin\Views\Settings\index.cshtml" />
-    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\User\index.cshtml" />
     <Content Include="Areas\Common\Views\BaseReport\Index.cshtml" />
     <Content Include="Scripts\lib\baze.modal.js" />
     <Content Include="Scripts\checkout\jquery.payment.js" />
@@ -4771,7 +4785,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\Common\Models\" />
     <Folder Include="Areas\Common\Views\Shared\" />
     <Folder Include="Content\knowledge\assets\content\" />
@@ -4789,7 +4802,7 @@
   <ItemGroup>
     <Content Include="Areas\Common\Views\Web.config" />
     <Content Include="Areas\Common\Views\Error\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\User\Entry.cshtml" />
+    <Content Include="Areas\Admin\Views\User\entry.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\_footer.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Plan\Index.cshtml" />
@@ -4809,7 +4822,7 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_collapsible.cshtml" />
     <Content Include="Areas\Admin\Views\User\_form.cshtml" />
-    <Content Include="Areas\Admin\Views\User\_Photo.cshtml" />
+    <Content Include="Areas\Admin\Views\User\_photo.cshtml" />
     <Content Include="Areas\Admin\Views\User\_load.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_DashboardLayout.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_dashboardheader.cshtml" />
@@ -4849,7 +4862,6 @@
     <Content Include="Areas\SiteAdmin\Views\PageHeader\index.cshtml" />
     <Content Include="Areas\Subscription\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_resetPassword.cshtml" />
-    <Content Include="Areas\Admin\Views\User\_resetPassword.cshtml" />
     <Content Include="Areas\SiteAdmin\Views\Backend\_form.cshtml" />
     <Content Include="Areas\SiteAdmin\Views\Backend\_load.cshtml" />
     <Content Include="Areas\SiteAdmin\Views\Backend\entry.cshtml" />
@@ -5115,10 +5127,7 @@
     <Content Include="Areas\BackOffice\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\BackOffice\Views\Dashboard\_footer.cshtml" />
     <Content Include="Areas\BackOffice\Views\Shared\_menu.cshtml" />
-    <Content Include="Areas\BackOffice\Views\User\Index.cshtml" />
-    <Content Include="Areas\BackOffice\Views\User\_editUser.cshtml" />
     <Content Include="Areas\BackOffice\Views\User\_load.cshtml" />
-    <Content Include="Areas\BackOffice\Views\User\_resetPassword.cshtml" />
     <Content Include="Areas\BackOffice\Views\MobilePermission\entry.cshtml" />
     <Content Include="Areas\BackOffice\Views\MobilePermission\_form.cshtml" />
     <Content Include="Areas\BackOffice\Views\MobilePermission\_load.cshtml" />
@@ -5263,6 +5272,9 @@
     <Content Include="Areas\Admin\Views\Logger\_load.cshtml" />
     <Content Include="Areas\Admin\Views\Tenants\_load.cshtml" />
     <Content Include="Areas\Subscription\Web.config" />
+    <Content Include="Areas\BackOffice\Views\User\index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\User\_form.cshtml" />
+    <Content Include="Areas\BackOffice\Views\User\_photo.cshtml" />
     <None Include="Properties\PublishProfiles\OneChurch - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\OneChurch - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\OneChurch1.0.0.pubxml" />
@@ -5407,7 +5419,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>5008</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:5004/</IISUrl>
+          <IISUrl>http://localhost:5006/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

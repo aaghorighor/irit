@@ -68,6 +68,17 @@
             return result;
         }
 
+        public static string Random(this string chars, int length = 8)
+        {
+            var randomString = new StringBuilder();
+            var random = new Random();
+
+            for (int i = 0; i < length; i++)
+                randomString.Append(chars[random.Next(chars.Length)]);
+
+            return randomString.ToString();
+        }
+
         public static decimal GetPercentage(decimal percentage, decimal value)
         {
             if (percentage < 0 && value < 0)

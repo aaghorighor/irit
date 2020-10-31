@@ -92,7 +92,7 @@
                     StripeSecretKey = entity.StripeSecretKey,
                     StripePublishableKey = entity.StripePublishableKey, Publish = entity.Publish, LogoUrl = entity.LogoUrl,
                     StartDate = entity.StartDate, PlanTypeId = entity.PlanTypeId,
-                    IsExpired = entity.IsExpired,
+                    IsExpired = entity.IsExpired, AppCode = entity.AppCode,
                     WebsiteUrl = entity.WebsiteUrl, FlatRate= entity.FlatRate,                 
                     Startup = entity.Startup, CurrencyId = entity.CurrencyId,
                     ExpirationDate = entity.ExpirationDate, CustomerStripeId = entity.CustomerStripeId, Telephone = entity.Telephone,

@@ -62,9 +62,7 @@ E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS
 E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Debug\Suftnet.Cos.Model.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Debug\FluentValidation.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Debug\Newtonsoft.Json.dll
-E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Debug\Suftnet.Cos.Common.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Debug\Newtonsoft.Json.xml
-E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Debug\Suftnet.Cos.Common.pdb
 E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Debug\de\FluentValidation.resources.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Debug\es\FluentValidation.resources.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Debug\fr\FluentValidation.resources.dll
@@ -79,3 +77,5 @@ E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bi
 E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\obj\Debug\Suftnet.Cos.Model.csproj.CoreCompileInputs.cache
 E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\obj\Debug\Suftnet.Cos.Model.csproj.CopyComplete
 E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\obj\Debug\Suftnet.Cos.Model.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Debug\Suftnet.Cos.Common.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Debug\Suftnet.Cos.Common.pdb

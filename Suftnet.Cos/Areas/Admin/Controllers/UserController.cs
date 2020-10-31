@@ -271,7 +271,7 @@
                     title = "Front Office";
                     break;               
                 default:
-                    title = "Member Office";
+                    title = "Front Office";
                     break;
             }
 

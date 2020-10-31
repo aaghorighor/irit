@@ -195,10 +195,6 @@ E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS
 E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos\bin\Stimulsoft.Report.Mvc.xml
 E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos\bin\Stimulsoft.Report.Web.xml
 E:\20062020\SUT-CS-100\Suftnet.Restaurant.Package -1.0.0\Suftnet.Restaurant.SaaS.1.0.0\Suftnet.Cos\obj\Debug\Suftnet.Cos.Web.csproj.CoreCompileInputs.cache
-E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Debug\Suftnet.Cos.Web.csprojAssemblyReference.cache
-E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Debug\Suftnet.Cos.Web.csproj.CoreCompileInputs.cache
-E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Debug\Suftnet.Cos.Web.dll
-E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Debug\Suftnet.Cos.Web.pdb
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Suftnet.Cos.Web.dll.config
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Suftnet.Cos.Web.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Suftnet.Cos.Web.pdb
@@ -244,10 +240,15 @@ E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.Http.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.Http.WebHost.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.Mvc.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.Optimization.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.Razor.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.WebPages.Deployment.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.WebPages.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.WebPages.Razor.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\WebGrease.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Data.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.WebDesign.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Check.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Helper.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Suftnet.Cos.Common.pdb
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Suftnet.Cos.Core.pdb
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Suftnet.Cos.Core.dll.config
@@ -274,9 +275,13 @@ E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Newtonsoft.Json.xml
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\RestSharp.xml
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\SendGrid.pdb
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\SendGrid.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Base.pdb
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Base.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.pdb
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Mvc.pdb
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Mvc.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Web.pdb
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Web.xml
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stripe.net.pdb
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stripe.net.xml
@@ -287,20 +292,10 @@ E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.Helpers.xml
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.Http.xml
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.Http.WebHost.xml
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.Mvc.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.Razor.xml
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.WebPages.xml
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.WebPages.Deployment.xml
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.WebPages.Razor.xml
-E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Debug\Suftnet.Cos.Web.csproj.CopyComplete
-E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.Razor.dll
-E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.Razor.xml
-E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Data.dll
-E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.WebDesign.dll
-E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Check.dll
-E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Helper.dll
-E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Base.pdb
-E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.pdb
-E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Mvc.pdb
-E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Web.pdb
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Data.pdb
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Data.xml
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.WebDesign.pdb
@@ -309,3 +304,8 @@ E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Check.pdb
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Check.xml
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Helper.pdb
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Helper.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Debug\Suftnet.Cos.Web.csprojAssemblyReference.cache
+E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Debug\Suftnet.Cos.Web.csproj.CoreCompileInputs.cache
+E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Debug\Suftnet.Cos.Web.csproj.CopyComplete
+E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Debug\Suftnet.Cos.Web.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Debug\Suftnet.Cos.Web.pdb
