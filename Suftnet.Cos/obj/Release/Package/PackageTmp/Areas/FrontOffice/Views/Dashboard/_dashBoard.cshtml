@@ -1,0 +1,35 @@
+﻿<link href="@Url.Content("~/Content/css/dashboard.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/slim/lib/font-awesome/css/font-awesome.css")" rel="stylesheet" />
+
+<div class="widgets">
+    <div class="oneThree">
+        <div class="rad-info-box rad-txt-success">
+            <i class="fa fa-users"></i>
+            <span id="memberHeader" class="heading">Free Table</span>
+            <span class="value"><span id="members">2</span></span>
+        </div>
+    </div>
+    <div class="oneThree">
+        <div class="rad-info-box rad-txt-primary">
+            <i class="fa fa-calendar-o"></i>
+            <span id="eventHeader" class="heading">Occupied Table</span>
+            <span class="value"><span id="events">1</span></span>
+        </div>
+    </div>
+    <div class="oneThree">
+        <div class="rad-info-box">
+            <i class="fa fa-user-plus"></i>
+            <span id="birthDayHeader" class="heading">Pending Deliveries</span>
+            <span class="value"><span id="birthDays">1</span></span>
+        </div>
+    </div>
+    <div class="oneThree">
+        <div class="rad-info-box">
+            <i class="fa fa-user-plus"></i>
+            <span id="birthDayHeader" class="heading">Orders Awaiting</span>
+            <span class="value"><span id="birthDays">1</span></span>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_dashBoardScript")

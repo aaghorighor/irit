@@ -5,6 +5,7 @@
     using System.Web.Mvc;
     using Suftnet.Cos.Service;
     using System.Web.Http;
+    using Suftnet.Cos.Core;
 
     public class AppStartup
     {
@@ -32,6 +33,7 @@
             }           
                                              
             IContainer container = StructureMapConfig.GetConfiguredContainer(httpContextBase);
+            GeneralConfiguration.Configuration.ExecutingContext = Core.ConfigurationSettings.AppSettings["ExecutingContext"];
 
             GlobalConfiguration.Configure(WebApiConfig.Register);
             WebApiActivator.Start(container, GlobalConfiguration.Configuration);

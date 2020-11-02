@@ -90,9 +90,9 @@ namespace Suftnet.Cos.Common
     public class PlanType
     {
         public const string Trial = "1015_1461";
-        public const string Basic = "plan_CkmUsvTLmRMvUf";
-        public const string Premium = "plan_CkmU8eIXyXnm2K";
-        public const string PremiumPlus = "plan_CkmVr6XZwY5Bf9";       
+        public const string Basic = "price_1HiMX9J9QQF7JMlNTPeIAz81";
+        public const string Premium = "price_1HiMX9J9QQF7JMlNqSot0VCU";
+        public const string PremiumPlus = "price_1HiMX9J9QQF7JMlNkDdQsDtR";       
     }
 
     public static class PlanNameType
@@ -329,8 +329,14 @@ namespace Suftnet.Cos.Common
 
     public static class ExecutingContext
     {
-        public const string LIVE = "1";
+        public const string LIVE = "2";
         public const string TEST = "1";
-    }    
+    }
+
+    public static class DeliveryUnit
+    {
+        public const string Kilometer = "2663";
+        public const string Miles = "2664";
+    }
 
 }

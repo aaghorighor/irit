@@ -27,8 +27,8 @@
             BundleTable.Bundles.Add(new StyleBundle("~/Content/zice-OneChurch/components/jscrollpane/jscrollpane").Include(
                     "~/Content/zice-OneChurch/components/jscrollpane/jscrollpane.css"
             ));
-            BundleTable.Bundles.Add(new StyleBundle("~/Content/zice-OneChurch/components/tipsy/tipsy").Include(
-                    "~/Content/zice-OneChurch/components/tipsy/tipsy.css"
+            BundleTable.Bundles.Add(new StyleBundle("~/Content/zice-OneChurch/components/tipsy/css/tipsy").Include(
+               "~/Content/zice-OneChurch/components/tipsy/css/jquery.tipsy.css"
             ));
             BundleTable.Bundles.Add(new StyleBundle("~/Content/zice-OneChurch/components/sourcerer/sourcerer").Include(
                     "~/Content/zice-OneChurch/components/sourcerer/sourcerer.css"
@@ -76,8 +76,8 @@
                         "~/Content/zebra-tooltips/css/default/zebra_tooltips.min.css"
             ));
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/zice-OneChurch/components").Include(                                        
-                        "~/Content/zice-OneChurch/components/scrolltop/scrolltopcontrol.js",            
-                        "~/Content/zice-OneChurch/components/tipsy/jquery.tipsy.js",            
+                        "~/Content/zice-OneChurch/components/scrolltop/scrolltopcontrol.js",
+                        "~/Content/zice-OneChurch/components/tipsy/js/jquery.tipsy.js",
                         "~/Content/zice-OneChurch/components/fullcalendar/fullcalendar.js",            
                         "~/Content/zice-OneChurch/components/placeholder/jquery.placeholder.js",
                         "~/Content/zice-OneChurch/js/zice.custom.js"
@@ -85,7 +85,7 @@
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/zice-OneChurch/adminComponents").Include(
                         "~/Content/zice-OneChurch/components/scrolltop/scrolltopcontrol.js",
                         "~/Content/zice-OneChurch/components/fullcalendar/fullcalendar.js",
-                        "~/Content/zice-OneChurch/components/tipsy/jquery.tipsy.js",                  
+                        "~/Content/zice-OneChurch/components/tipsy/js/jquery.tipsy.js",
                         "~/Content/zice-OneChurch/components/placeholder/jquery.placeholder.js"                    
             ));
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/jqueryUi").Include(               
@@ -257,7 +257,7 @@
                     "~/Content/tinymce/jscripts/tiny_mce/tiny_mce.js"
             ));
 
-            BundleTable.EnableOptimizations = false;
+            BundleTable.EnableOptimizations = true;
         }        
     }    
 }

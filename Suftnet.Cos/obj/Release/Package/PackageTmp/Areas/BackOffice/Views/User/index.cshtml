@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "SUFTNET | USERS ";
+    Layout = "~/Areas/BackOffice/Views/Shared/_backofficeLayout.cshtml";
+}
+
+<ul class="tabs">
+    <li><a href="#tab1" title="Add New User">User </a></li>
+    <li><a href="#tab2" title="View existing User">User Viewer </a></li>
+</ul>
+
+<div class="tab_container">
+    <div id="tab1" class="tab_content">
+        <div class="widgets">
+
+            <div class="oneTwo">            
+
+                <div class="widget">                   
+                    <div class="content">
+                        @Html.Partial("_form")
+                    </div>
+                </div>
+   
+                <div class="clear"></div>
+            </div>
+
+            <div class="oneTwo" style="margin-left:20px">
+
+                <div class="widget">                   
+                    <div class="content">
+                        @Html.Partial("_photo")
+                    </div>
+                </div>        
+
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div id="tab2" class="tab_content">
+        <div class="widgets">
+            <div class="widget">
+                <div class="header"><span><span class="ico gray"></span>Users</span></div>
+                <div class="content">
+                    @Html.Partial("_load")
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+ 
+  
+@Scripts.Render("~/bundle/70000")
+
+<script type="text/javascript">
+$(function () {
+
+    user.pageInit();
+
+    setTimeout(function () {
+      $(".widgets").show();
+    }, 0);
+    
+});
+</script>
+
+
+
+
+

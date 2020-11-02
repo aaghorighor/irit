@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "SUFTNET | TICKET ";
+}
+
+<div id="MainCollapsible" style="display:none ">
+
+    <h6><a href="#">Ticket </a></h6>
+    <div>
+
+        <div class="widget">
+            <div class="header"><span><span class="ico  gray random"></span></span></div>
+            <div class="content">
+                @Html.Partial("_Ticketform")
+            </div><!-- End content -->
+        </div><!-- End full width -->
+    </div>
+
+    <h6><a href="#">Ticket Viewer</a></h6>
+    <div>
+        <div class="widgets">
+
+            <div class="widget">
+
+                <div class="header"><span><span class="ico  gray random"></span></span></div>
+                <div class="content">
+                    @Html.Partial("_LoadTicket")
+                </div><!-- End content -->
+            </div><!-- End full width -->
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <h6><a href="#">Ticket Thread</a></h6>
+    <div>
+
+        <div class="widgets">
+            <div class="twoOne">
+                <div class="widget">
+                    <div class="header"><span id="ticketId"><span class="ico  gray random"></span></span></div>
+                    <div id="ticketThread" class="content">
+                        @Html.Partial("_LoadTicketThread")
+                    </div><!-- End content -->
+                </div><!-- End full width -->
+            </div>
+
+            <div class="oneThree">
+                <div class="widget">
+                    <div class="header"><span><span class="ico gray window"></span></span></div>
+                    <div class="content">
+                        @Html.Partial("_TicketThreadform")
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div> 
+
+
+<script type="text/javascript" >
+ 
+ $(function () {        
+         
+     setTimeout(function () {
+         $("#MainCollapsible").show();
+     }, 0);
+
+        var _opt = {
+            active: false,
+            collapsible: false,
+            autoHeight: false,
+            animated: "bounceslide"
+        };       
+
+        $("#MainCollapsible").accordion(_opt);
+        $("#MainCollapsible").accordion("activate", 1);                               
+
+    });
+</script>
+
+
+

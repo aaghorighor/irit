@@ -31,3 +31,6 @@ C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Co
 C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Common\bin\Release\Suftnet.Cos.Common.dll
 C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Common\obj\Release\Suftnet.Cos.Common.csproj.CoreCompileInputs.cache
 C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Common\obj\Release\Suftnet.Cos.Common.dll
+E:\Git\Web\Irit\Irit\Common\bin\Release\Suftnet.Cos.Common.dll
+E:\Git\Web\Irit\Irit\Common\obj\Release\Suftnet.Cos.Common.csproj.CoreCompileInputs.cache
+E:\Git\Web\Irit\Irit\Common\obj\Release\Suftnet.Cos.Common.dll

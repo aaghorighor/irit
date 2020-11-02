@@ -18,3 +18,23 @@ C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Co
 C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\obj\Release\Suftnet.Cos.Model.csproj.CoreCompileInputs.cache
 C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\obj\Release\Suftnet.Cos.Model.csproj.CopyComplete
 C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\obj\Release\Suftnet.Cos.Model.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Release\Suftnet.Cos.Model.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Release\FluentValidation.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Release\Newtonsoft.Json.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Release\Suftnet.Cos.Common.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Release\Newtonsoft.Json.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Release\Suftnet.Cos.Common.pdb
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Release\de\FluentValidation.resources.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Release\es\FluentValidation.resources.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Release\fr\FluentValidation.resources.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Release\it\FluentValidation.resources.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Release\ko\FluentValidation.resources.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Release\nl\FluentValidation.resources.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Release\pl\FluentValidation.resources.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Release\pt\FluentValidation.resources.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Release\ru\FluentValidation.resources.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Release\sv\FluentValidation.resources.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Release\tr\FluentValidation.resources.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\obj\Release\Suftnet.Cos.Model.csproj.CoreCompileInputs.cache
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\obj\Release\Suftnet.Cos.Model.csproj.CopyComplete
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\obj\Release\Suftnet.Cos.Model.dll

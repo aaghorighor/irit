@@ -1,0 +1,36 @@
+﻿@using Suftnet.Cos.Common
+@model List<Suftnet.Cos.DataAccess.TourDto>
+@{ 
+    int count = 0;
+ }
+
+<!-- ==============================================
+**How it works**
+=================================================== -->
+<section class="how-it-work-items padding-lg">
+    <div class="container">
+
+        @foreach(var tour in Model)
+        {
+            count++;
+            tour.Index = count;
+
+            switch (tour.StyleTypeId)
+            {
+                case Tour.Type1:
+                    @Html.Partial("_style-1", tour)
+                    break;
+                case Tour.Type2:
+                    @Html.Partial("_style-2", tour)
+                    break;
+                case Tour.Type3:
+                    @Html.Partial("_style-3", tour)
+                    break;
+                case Tour.Type4:
+                    @Html.Partial("_style-4", tour)
+                    break;
+            }
+        }
+
+    </div>
+</section>

@@ -29,7 +29,7 @@
        public bool Shutdown { get; set; }
        public bool FailedOnInitialize { get; set; }
        public string HosterName { get; set; }
-       public int ExecutingContext { get; set; }
+       public string ExecutingContext { get; set; }
        public Bibles ASV { get; set; }
        public Bibles KJV { get; set; }
        public Settings Settings { get; set; }   

@@ -27,6 +27,7 @@
         private Customer customer;
         private Guid tenantId;
         private string tenantName = string.Empty;
+        private string appCode = string.Empty;
 
         private dynamic obj;
         private dynamic customerId;
@@ -66,8 +67,7 @@
             }
 
             try
-            {
-                var editor = new EditorDTO();
+            {               
                 var emailBody = string.Empty;
                 HttpStatusCodeResult test;
 
@@ -259,6 +259,7 @@
 
             tenantId = new Guid(customer.Metadata["tenantId"].ToString());
             tenantName = customer.Metadata["tenantName"].ToString();
+            appCode = customer.Metadata["app_code"].ToString();
 
             return new HttpStatusCodeResult(HttpStatusCode.OK, "");
         }
@@ -267,8 +268,7 @@
             var eventService = new EventService(GeneralConfiguration.Configuration.Settings.StripeSecretKey);
             stripeEvent = eventService.Get(stripeEvent.Id);
             return stripeEvent;
-        }
-       
+        }       
         private string SubscriptionDeleteContent(string userName, string plan, DateTime? cancellationdate)
         {
             Dictionary<string, string> sb = new Dictionary<string, string>();
@@ -321,7 +321,7 @@
             var content = command.View;
 
             sb.Add("[customer]", userName);
-            sb.Add("[email]", email);
+            sb.Add("[username]", email);
       
             if (plan == "Basic")
             {
@@ -338,9 +338,10 @@
 
             sb.Add("[Plan]", plan);
             sb.Add("[Amount]", Constant.CurrencySymbol + "" + Round(amount));
+            sb.Add("[app_code]", appCode);
 
-            sb.Add("[onlinelink]", GeneralConfiguration.Configuration.Settings.OnlineLink);
-            sb.Add("[mobilelink]", GeneralConfiguration.Configuration.Settings.MobileLink);
+            sb.Add("[online_link]", GeneralConfiguration.Configuration.Settings.OnlineLink);
+            sb.Add("[mobile_link]", GeneralConfiguration.Configuration.Settings.MobileLink);
 
             foreach (KeyValuePair<string, string> _token in sb)
             {
@@ -424,7 +425,6 @@
 
             return content;
         }
-
         private void SendEmailFactory(string title, string message, string email)
         {
             if (GeneralConfiguration.Configuration.ExecutingContext.Equals(ExecutingContext.TEST))
@@ -436,7 +436,6 @@
                 System.Threading.Tasks.Task.Run(()=> SendGridEmail(title, message, email));
             }
         }
-
         private void SendSmtpEmail(string title, string message, string email)
         {
             var messageModel = new MessageModel();

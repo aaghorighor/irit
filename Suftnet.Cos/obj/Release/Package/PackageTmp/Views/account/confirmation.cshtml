@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+@using Suftnet.Cos.Extension
+@model ForgottenModel
+
+@{
+    Layout = null;
+}
+
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    @Html.Partial("_frontOffice-meta")
+
+    <title>SUFTNET | FORGOTTEN PASSWORD</title>
+
+    <!-- Bootstrap core CSS -->
+    @Url.Assets("bootstrap/css/bootstrap.min.css")
+    @Url.Assets("font-awesome/css/font-awesome.min.css")
+    @Url.Css("custom.css")
+
+</head>
+<body>
+
+    <!-- ==============================================
+    **Preloader**
+    =================================================== -->
+    <div id="loader">
+        <div id="element">
+            <div class="circ-one"></div>
+            <div class="circ-two"></div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+    **Login**
+    =================================================== -->
+    <section class="login-outer">
+        <div class="content-area">
+            <div class="login-form-holder">
+                <div class="inner">
+                    <div class="login-form">
+                        <h3>Password Reset Successful.</h3>
+                        <p>You have successfully reset your password, please check your email box for futher instruction.</p><br />
+                    </div>
+                </div>
+            </div>
+            <div class="box-hav-accnt">
+                <p>To return back to home page<a href="@Url.Action("index","home")"> click here </a></p>
+            </div>
+        </div>
+    </section>
+
+    @Url.Js("jquery.min.js")
+    @Url.Js("popper.min.js")
+    @Url.JsAssets("bootstrap/js/bootstrap.min.js")
+    @Url.Js("custom.js")
+
+</body>
+</html>

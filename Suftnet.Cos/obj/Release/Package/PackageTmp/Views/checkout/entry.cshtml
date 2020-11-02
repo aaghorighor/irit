@@ -1,0 +1,233 @@
+﻿@using Suftnet.Cos.Extension
+@model Suftnet.Cos.Web.ViewModel.StripePlanModel
+
+@{
+    Layout = "~/Views/Shared/maviaLayout.cshtml";
+    ViewBag.Title = "SUFTNET | CHECKOUT ";
+}
+
+<main>
+    <div id="form_container">
+        <div class="row">
+            <div class="col-md-5">
+                <div id="left_form">
+
+                    <figure class="text-center">
+                        <img src="@Url.MaviaImage("icons8-shopping-cart-80.png")" alt="">
+                        <h2>Check Out</h2>
+                    </figure>
+
+                    <div class="opening-hours text-left">
+                        <ul class="list-unstyled">
+                            <li class="clearfix line-height-1">
+                                <span> Plan </span>
+                                <div class="value"> @Model.Plan </div>
+                            </li>
+                            <li class="clearfix line-height-1">
+                                <span> Billing Cycle </span>
+                                <div class="value"> @Model.BillingCycle </div>
+                            </li>
+                            <li class="clearfix line-height-1">
+                                <span> Price </span>
+                                <div class="value"> @Html.CurrencySymbol() @Model.Amount </div>
+                            </li>
+                            <li class="clearfix line-height-1">
+                                <span> Vat </span>
+                                <div class="value"> @Html.CurrencySymbol() @Model.Vat  </div>
+                            </li>
+                            <li class="clearfix line-height-1">
+                                <span> Total </span>
+                                <div class="value"> @Html.CurrencySymbol() @Model.Total  </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <a href="#0" id="mmore-info-pay" data-toggle="modal" data-target="#more-info-pay"><i class="pe-7s-info"></i></a>
+                </div>
+
+            </div>
+            <div class="col-md-7">
+                <div id="wizard_container">
+                    <div id="top-wizard">
+                        <div id="progressbar"></div>
+                    </div>
+                    <!-- /top-wizard -->
+                    <form name="form" id="form" method="post" action="@Url.CreateSubscriptionHref()" autocomplete="off">
+
+                        @Html.AntiForgeryToken()
+                        <!-- Leave for security protection, read docs for details -->
+                        <div id="middle-wizard">
+
+                            <div class="step">
+                                <h3 class="main_question"><strong>1/3</strong>Account</h3>
+                                <div class="row">
+                                    <div class="col-sm-12">
+
+                                        <div class="form-group">
+                                            <input class="form-control required" type="text" title="Restaurant name is required" name="Name" id="Name" placeholder="Restaurant Name" maxlength="50">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input class="form-control required" type="text" name="firstName" id="firstName" title="FirstName is required" placeholder="FirstName" maxlength="50">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input class="form-control required" type="text" name="lastName" id="lastName" title="LastName is required" placeholder="LastName" maxlength="50">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input class="form-control required" type="email" name="Email" id="Email" title="Email is required" placeholder="Email" maxlength="50">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input class="form-control required" type="text" name="Mobile" id="Mobile" title="Mobile number is required" placeholder="Mobile" maxlength="20">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input class="form-control required" type="password"
+                                                   title="Password is required and must be at least 6 characters" autocomplete="off" name="Password" id="Password" placeholder="Password" maxlength="20">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input class="form-control required" type="password" title="Confirm Password is rquired" autocomplete="off" name="ConfirmPassword" id="ConfirmPassword" placeholder="Confirm Password" maxlength="20">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="step">
+                                <h3 class="main_question"><strong>2/3</strong>Address</h3>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input type="text" name="CompleteAddress" id="CompleteAddress" class="form-control required" title="Street address is required" maxlength="150" placeholder="Street Address" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" name="Town" id="Town" class="form-control required" maxlength="50" title="Town is required" placeholder="Town" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" name="County" id="County" class="form-control required" maxlength="50" title="County is required" placeholder="County" required="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /row -->
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" name="PostCode" id="PostCode" class="form-control required" title="Post code is required" maxlength="10" placeholder="Post code">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" name="Country" id="Country" class="form-control required" title="Country is required" maxlength="20" placeholder="Country" required="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /step-->
+                            <div class="submit step">
+                                <h3 class="main_question"><strong>3/3</strong>Payment</h3>
+                                <span class="alert">
+
+                                </span>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="cc-number" class="control-label">Card Number</label>
+                                            <input id="cc-number" type="tel" class="form-control cc-number required" title="Valid card number is required" autocomplete="cc-number" placeholder="•••• •••• •••• ••••" required maxlength="20">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="cc-exp" class="control-label">Expired Date </label>
+                                            <input id="cc-exp" type="tel" class="form-control cc-exp required" autocomplete="cc-exp" title="Expiry date is required" placeholder="MM / YY" required maxlength="7">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="cc-cvc" class="control-label">CVC </label>
+                                            <input id="cc-cvc" type="tel" class="form-control cc-cvc required" autocomplete="off" title="CVC is required" placeholder="•••" required maxlength="3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group terms">
+                                    <input name="terms" id="terms" type="checkbox" class="icheck required" title="required" value="yes">
+                                    <label>Please accept <a href="@Url.Action("index","terms")" target="_blank">Terms And Conditions</a> and <a href="@Url.Action("index","privacy")" target="_blank">Privacy Policy</a></label>
+                                </div>
+
+                            </div>
+                            <!-- /step-->
+                        </div>
+                        <!-- /middle-wizard -->
+
+                        <div id="bottom-wizard">
+                            <button type="button" name="backward" class="backward">Backward </button>
+                            <button type="button" name="forward" class="forward">Forward</button>
+                            <button name="btnSubmit" id="btnSubmit" class="submit">Submit</button>
+                        </div>
+
+                        <!-- /bottom-wizard -->
+
+                        <div class="hide">
+                            <input type="hidden" name="isEmail" id="isEmail" value="0">
+                            <input type="hidden" name="Latitude" id="Latitude">
+                            <input type="hidden" name="Longitude" id="Longitude">
+                            <input type="hidden" name="AddressLine1" id="AddressLine1">
+                            <input type="hidden" name="AddressLine2" id="AddressLine2">
+                            <input type="hidden" name="AddressLine3" id="AddressLine3">
+                            <input type="hidden" name="PlanId" id="PlanId" value="@Model.PlanId">
+                            <input type="hidden" name="PlanTypeId" id="PlanTypeId" value="@Model.PlanTypeId">
+                            <span id="checkEmailUrl" name="checkEmailUrl" data-checkEmailUrl="@Url.CheckEmailHref()"></span>
+                            <span id="confirmationUrl" name="confirmationUrl" data-confirmationUrl="@Url.CheckoutConfirmationHref()"></span>
+                            <span id="spriteUrl" name="spriteUrl" data-spriteUrl="@Url.SpriteUrl("sprites2.png")"></span>
+                        </div>
+                    </form>
+                </div>
+                <!-- /Wizard container -->
+            </div>
+        </div><!-- /Row -->
+    </div><!-- /Form_container -->
+    <div class="hide" id="map-item"></div>
+</main>
+
+@Html.Partial("_passwordScript")
+@Html.Partial("_modelDialog", Model)
+@Html.Partial("_addressScript")
+@Html.Partial("_stripe")
+
+@Scripts.Render("~/bundle/LoadingSpinnerSprite")
+@Scripts.Render("~/bundle/lib")
+@Scripts.Render("~/bundle/checkout")
+@Scripts.Render("~/bundle/ajax")
+
+@*@Html.Partial("_recaptcha", "checkout")*@
+
+<script type="text/javascript">
+
+    $(function () {
+        checkout.init();
+    });
+
+</script>
+

@@ -83,12 +83,6 @@
                 return View(loginModel);
             }
 
-            //var _user = new ApplicationUser { AreaId = 2034, Area = "BackOfice Office", Active = true, Email = "backoffice@tester.com", UserName = "backoffice@tester.com", FirstName = "Tester", LastName = "Tester", PhoneNumber = "07407022723" };
-           // var result = UserManager.Create(_user, Constant.DefaultPassword);
-           // var user = await UserManager.FindByEmailAsync("backoffice@tester.com");
-
-           // _memberAccount.Insert(new DataAccess.Action.MemberAccount { TenantId = 13089, UserId = user.Id, CreatedBy = "backoffice@tester.com", CreatedDt = DateTime.UtcNow });
-
             var test = await PasswordSignInAsync(loginModel.Username.Trim(), loginModel.Password.Trim(), false);
 
             if (test != SignInStatus.Success)

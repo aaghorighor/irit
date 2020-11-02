@@ -60,9 +60,7 @@
                 claims.Add(new Claim("IsExpired", account.IsExpired.ToString()));
                 claims.Add(new Claim("ExpirationDate", account.ExpirationDate.ToString()));
                 claims.Add(new Claim("TenantName", account.TenantName));              
-                claims.Add(new Claim("CompleteAddress", account.CompleteAddress));
-                claims.Add(new Claim("DeliveryRate", account.DeliveryRate.ToString()));             
-                claims.Add(new Claim("FlatRate", account.FlatRate.ToString()));
+                claims.Add(new Claim("CompleteAddress", account.CompleteAddress));           
                 claims.Add(new Claim("TenantEmail", account.TenantEmail));
                 claims.Add(new Claim("TenantMobile", account.TenantMobile));
             
@@ -89,8 +87,10 @@
                 }else
                 {
                     claims.Add(new Claim("DeliveryLimitNote", account.DeliveryLimitNote));
-                }              
+                }
 
+                claims.Add(new Claim("DeliveryRate", account.DeliveryRate.ToString()));
+             
                 if (!string.IsNullOrEmpty(account.CurrencyCode))
                 {
                     claims.Add(new Claim("CurrencyCode", account.CurrencyCode));
@@ -98,7 +98,16 @@
                 {
                     claims.Add(new Claim("CurrencyCode", Constant.DefaultHexCurrencySymbol));
                 }
-               
+                
+                if (account.FlatRate != null)
+                {
+                    claims.Add(new Claim("FlatRate", account.FlatRate.ToString()));
+                }
+                else
+                {
+                    claims.Add(new Claim("FlatRate", "0.0"));
+                }
+
             }           
         }
     }

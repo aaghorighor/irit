@@ -25,7 +25,7 @@
         }
 
         #endregion       
-        [OutputCache(Duration = 0, VaryByParam = "*")]
+        [OutputCache(Duration = 10, VaryByParam = "*")]
         public virtual ActionResult Index()
         {
             return View();

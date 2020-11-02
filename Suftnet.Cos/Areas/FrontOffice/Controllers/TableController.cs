@@ -15,7 +15,7 @@
             _table = table;             
         }
         #endregion
-        [OutputCache(Duration = 0, VaryByParam = "*")]
+        [OutputCache(Duration = 10, VaryByParam = "*")]
         public ActionResult Index()
         {           
             return View();         

@@ -1,0 +1,20 @@
+﻿<table id="tblAddon" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th align="left">CreatedAt</th>
+            <th align="left">Name</th>
+            <th align="left">Price</th>
+            <th align="left">AddonType</th>
+            <th align="left">Active</th>
+            <th style="text-align:center">Actions</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<div class="hide">
+    <span id="loadUrl" name="loadUrl" data-loadUrl="@Url.Action("fetch", "addon", new { menuId = this.ViewContext.RouteData.Values["menuId"].ToString() })"></span>
+    <span id="deleteUrl" name="deleteUrl" data-deleteUrl="@Url.Action("delete", "addon")"></span>
+    <span id="editUrl" name="editUrl" data-editUrl="@Url.Action("edit", "addon")"></span>
+    <span id="createUrl" name="createUrl" data-createUrl="@Url.Action("create", "addon")"></span>
+</div>

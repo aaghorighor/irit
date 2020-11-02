@@ -36,20 +36,25 @@
         private void CreateTenant()
         {
             var model = new TenantDto
-            {                         
+            {
                 PlanTypeId = CheckoutModel.PlanTypeId,
                 ExpirationDate = ExpirationDate,
                 StartDate = this.StartDate,
-                CustomerStripeId =  string.Empty,
+                CustomerStripeId = string.Empty,
                 AddressId = AddressId,
                 Email = CheckoutModel.Email,
-                Description = string.Empty,               
+                Description = string.Empty,
                 LogoUrl = string.Empty,
                 Telephone = string.Empty,
                 Mobile = CheckoutModel.Mobile,
-                Name = CheckoutModel.Name,             
+                Name = CheckoutModel.Name,
                 StatusId = StatusId,
                 Startup = false,
+                IsFlatRate = false,
+                DeliveryLimitNote = string.Empty,
+                DeliveryRate = 0m,
+                DeliveryUnitId = DeliveryUnit.Miles,
+                FlatRate = 0m,
                 //IsExpired = TenantModel.PlanTypeId == PlanType.Trial ? false : true,
                 IsExpired = false,
                 Publish = false,

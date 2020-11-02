@@ -289,7 +289,8 @@
             var metaData = new Dictionary<string, string>()
             {
                 {"tenantId", tenantId.ToString()},
-                {"tenantName",checkoutModel.Name}
+                {"tenantName",checkoutModel.Name},
+                {"app_code", checkoutModel.AppCode}
             };
 
             var stripeCustomerId = _customerProvider.Create(checkoutModel.Email, checkoutModel.StripeToken,
@@ -444,7 +445,7 @@
         {
             var apiUserManger = GeneralConfiguration.Configuration.DependencyResolver.GetService<IApiUserManger>();
             var path= this.Server.MapPath("~/App_Data/Email/userRegistration.html");
-            var user = apiUserManger.CreateAsync(UserManager, path, new ApplicationUser { Email = userModel .Email, FirstName = userModel.FirstName, LastName = userModel.LastName }, tenantId, userModel.Password, false, false);
+            var user = apiUserManger.CreateAsync(UserManager, path, new ApplicationUser { PhoneNumber = userModel.Mobile, UserName = userModel.Email, Email = userModel .Email, FirstName = userModel.FirstName, LastName = userModel.LastName }, tenantId, userModel.Password, false, true);
 
             return user;
         }       

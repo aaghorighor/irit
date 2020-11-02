@@ -1,0 +1,53 @@
+﻿@using Suftnet.Cos.Extension 
+
+@model List<Suftnet.Cos.DataAccess.CommonDto>
+ 
+<table id="tdcommon" class="display">
+    <thead>
+        <tr>
+            <th align="left">Id#</th>
+            <th align="left">Sort Order</th>
+            <th align="left">Title</th>
+            <th align="left">Active</th>
+            <th style="text-align:center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var _item in Model)
+        {
+            <tr id="@_item.ID">
+                <td align="left">@_item.ID</td>
+                <td align="left">@_item.Indexno</td>
+                <td align="left">@_item.Title</td>
+                <td>@_item.Active</td>
+                <td style="text-align:center">
+                    <a>
+                        <span id="EditLink" editid="@_item.ID" title="Edit this row">
+                            <img src="@Url.Asset("edit.png")" alt="" />
+                        </span>
+                    </a>
+                    <a>
+                        <span id="Delete" style="margin:10px;" deleteid="@_item.ID" title="Delete this row">
+                            <img src="@Url.Asset("delete.png")" alt="" />
+                        </span>
+                    </a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table> 
+
+<div class="hide">
+    <span id="getUrl" name="getUrl" data-getUrl="@Url.Action("Get", "Feature")"></span>
+    <span id="deleteUrl" name="deleteUrl" data-deleteUrl="@Url.Action("Delete", "Feature")"></span>  
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        common.load();
+    });
+
+</script>

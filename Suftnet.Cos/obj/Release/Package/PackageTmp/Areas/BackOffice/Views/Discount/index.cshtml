@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "SUFTNET | DISCOUNT ";
+}
+
+<ul style="margin-left:0px; margin-top :5px" class="uibutton-group">
+    <li><span class="etip"><a href="@Url.Action("index", "menu")" class="uibutton icon prev normal tooltip" title="Back">Back</a></span></li>
+</ul>
+
+<div class="widgets" style="display:none">
+
+    <div class="twoOne">
+        <div class="widget">
+            <div class="header"><span><span class="ico  gray help2 tooltip" title="List of Tax. To add a new tax, use the form at the right.<br>
+                                            To edit select the row by clicking the pencil icon, the selected row will show in edit mode, modify and click the save changes button."></span>Discount</span></div>
+            <div class="content">
+                <div class="tableName">
+                    @Html.Partial("_load")
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="oneThree">
+        <div class="widget">
+            <div class="header"><span><span class="ico  gray help2 tooltip" title="To add new event type, fill in the fields and click the savechanges button.<br>
+                                            To edit event type, select the row from the event type list, the row will show in edit mode, modify the fields and click the savechanges button."></span></span></div>
+                <div class="content">
+                    @Html.Partial("_form")
+                </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+
+         discount.pageInit();
+
+        setTimeout(function () {
+            $(".widgets").show();
+        }, 0);
+
+    });
+</script>
+
+
+
+
+

@@ -1,0 +1,78 @@
+﻿@using Suftnet.Cos.Extension;
+@model List<Suftnet.Cos.DataAccess.FaqDto>
+
+<table id="tdFaq" class="display">
+    <thead>
+        <tr>
+            <th align="left">Id#</th>  
+            <th align="left">Sort Order</th>       
+            <th align="left">Title</th>          
+            <th align="left">Publish</th>
+            <th style="text-align:center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var _item in Model)
+        {
+            <tr id="@_item.Id">
+                <td align="left">@_item.Id</td> 
+                <td align="left">@_item.SortOrderId</td>            
+                <td align="left">@_item.Title</td>
+          
+                <td align="left">@_item.Publish</td>
+                <td style="text-align:center">
+                    <a href="javascript:void(0)">
+                        <span id="EditLink" style="margin:10px;" editid="@_item.Id" title="Edit this row">
+                            <img src="@Url.Asset("edit.png")" alt="" />
+                        </span>
+                    </a>
+                    <a href="javascript:void(0)">
+                        <span id="Delete" style="margin:10px;" deleteid="@_item.Id" title="Delete this row">
+                            <img src="@Url.Asset("delete.png")" alt="" />
+                        </span>
+                    </a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $(document).on("click","#Delete", function (e) {
+            e.preventDefault();
+
+            js.confirm('@Url.Action("Delete", "Faq")', { Id: $(this).attr("DeleteId") }, $(this).attr("DeleteId"), "#tdFaq").then(
+            function (data) {
+
+            });
+        });
+
+        $(document).on("click", "#EditLink", function (e) {
+            e.preventDefault();
+
+            js.ajaxGet('@Url.Action("Get", "Faq")', { Id: $(this).attr("EditId") }).then(
+              function (data) {
+
+                  var dataobject = data.dataobject;
+                             
+                  $("#Title").val(dataobject.Title);
+                  $("#SortOrderId").val(dataobject.SortOrderId);
+                  $("#ShortDescription").val(dataobject.ShortDescription);
+                  $("#Publish").attr("checked", dataobject.Publish);
+                  $('#Id').val(dataobject.Id);
+
+              });
+        });
+
+        suftnet_Settings.TableInit('#tdFaq', [0, 2, 3,4]);
+    });
+
+</script>
+
+
+

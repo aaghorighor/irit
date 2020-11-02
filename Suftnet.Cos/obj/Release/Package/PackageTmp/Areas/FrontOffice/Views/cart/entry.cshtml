@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "SUFTNET |ORDER CART";
+}
+
+<div id="MainCollapsible" style="display:none ">
+
+    <div style="margin:20px">
+
+        <div class="widgets">
+
+            <div class="twoOne">
+
+                <div id="categoryContainer" style="margin-top:0px; margin-bottom:10px;">
+                    <div class="widget">
+                        <div class="content">
+                            @Html.Partial("_category")
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div id="menuContainer">
+                    @Html.Partial("_menu")
+                </div>
+
+            </div>
+
+            <div class="oneThree">
+
+                <div class="widget">
+
+                    <div class="content">
+
+                        <table class="table" style="width:100%; margin-top:1px; margin-bottom:5px" border="1">
+                            <thead>
+                                <tr>
+                                    <th style="width:45%;text-align:left"><strong>Order No</strong></th>
+                                    <th style="text-align:left"><strong>Order Type</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="text-align:left"><span id="orderNo">@this.ViewContext.RouteData.Values["orderId"].ToString()</span></td>
+                                    <td style="text-align:center; font-weight:bold; background-color:darkviolet; color:ghostwhite"><span>@this.ViewContext.RouteData.Values["orderType"].ToString().ToUpper()</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        @Html.Partial("_cart")
+                        @Html.Partial("_cartSummary")
+
+                        <ul style="margin-left:0px; margin-top :50px" class="uibutton-group">
+                            <li><span class="etip"><a class="uibutton special" id="btnOpenTender" title="Payment">Tender</a></span></li>     
+                            <li><span class="etip"><a class="uibutton icon prev normal " id="btnClose" title="Go to Dine in ">Close</a></span></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div id="paymentDialog" style="display :none">
+    <div id="paymenyContainer">
+        <div class="widget">
+            <div class="header"><span><span class="ico gray window"></span></span></div>
+            <div class="content" style="min-height:390px">
+                @Html.Partial("_payment")
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="addonDialog" style="display :none">
+   @Html.Partial("_menuAddon")
+</div>
+
+<div class="hide">
+    <span id="loadUrl" name="loadUrl" data-loadUrl="@Url.Action("fetchCart", "cart", new { orderId=this.ViewContext.RouteData.Values["orderId"].ToString() })"></span>
+    <span id="menuByCategoryUrl" name="menuByCategoryUrl" data-menuByCategoryUrl="@Url.Action("FetchMenuByCategory", "cart")"></span>
+    <span id="createUrl" name="createUrl" data-createUrl="@Url.Action("create", "cart")"></span>
+    <span id="categoryUrl" name="categoryUrl" data-categoryUrl="@Url.Action("fetchCategories", "cart")"></span>
+    <span id="defaultMenuUrl" name="defaultMenuUrl" data-defaultMenuUrl="@Url.Action("fetchDefaultMenues", "cart")"></span>
+    <span id="menuUrl" name="menuUrl" data-menuUrl="@Url.Action("fetchMenues", "cart")"></span>
+    <span id="orderTypeId" name="orderTypeId" data-orderTypeId="@this.ViewContext.RouteData.Values["orderTypeId"].ToString().ToUpper()"></span>
+    <span id="orderStatusId" name="orderStatusId" data-orderStatusId="@this.ViewContext.RouteData.Values["orderStatusId"].ToString().ToUpper()"></span>
+    <span id="orderId" name="orderId" data-orderId="@this.ViewContext.RouteData.Values["orderId"].ToString()"></span>
+    <span id="deliveryCost" name="deliveryCost" data-deliveryCost="@this.ViewContext.RouteData.Values["deliveryCost"].ToString()"></span>
+    <span id="imageUrl" name="imageUrl" data-imageUrl="@Url.Content("~/content/photo/category/180x120/")"></span>
+    <span id="dineInUrl" name="dineInUrl" data-dineInUrl="@Url.Action("index", "table", new { area = "frontoffice" })"></span>
+</div>
+
+@Scripts.Render("~/bundle/multislider-js")
+<script type="text/javascript">
+    $(function () {
+        cart.init();
+    });
+</script>
+
+
+
+
