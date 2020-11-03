@@ -4063,7 +4063,6 @@
     <Content Include="Areas\BackOffice\Views\Shared\_footer.cshtml" />
     <Content Include="Areas\BackOffice\Views\Shared\_header.cshtml" />
     <Content Include="Areas\BackOffice\Views\Shared\_reportLayout.cshtml" />
-    <Content Include="Areas\BackOffice\Views\Shared\__ReportLayout.cshtml" />
     <Content Include="Areas\BackOffice\Views\Web.config" />
     <Content Include="Areas\BackOffice\Views\_ViewStart.cshtml" />
     <Content Include="Areas\BackOffice\Views\Dashboard\Index.cshtml" />

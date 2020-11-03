@@ -28,6 +28,8 @@
             <input type="text" name="Mobile" id="Mobile" class="forms-txt validate[required]" maxlength="50" />
         </div>
 
+        <div class="clear"></div>
+
         <div class="grid-6-12">
             <label class="forms-lbl">Table For:</label>
             <input type="text" name="ExpectedGuest" id="ExpectedGuest" onkeyup="numonly(this);" class="forms-txt validate[required]" maxlength="9" />
@@ -37,6 +39,8 @@
             <label class="forms-lbl">Table: </label>
             @Html.TableDropdown("TableId", "validate[required]")
         </div>
+
+        <div class="clear"></div>
 
         <div class="grid-6-12">
             <label class="forms-lbl">Arrival Time: </label>
@@ -48,17 +52,21 @@
             <input type="text" name="StartDt" id="StartDt" readonly="readonly" class="forms-txt-date validate[required]" maxlength="9" />
         </div>
 
+        <div class="clear"></div>
+
         <div class="grid-12-12">
             <label class="form-lbl">Note :</label>
             <div style="margin:5px;"></div>
             <textarea id="Note" name="Note" style="max-height:100px;" rows="" cols="" maxlength="500" class="form-txt"></textarea>
         </div>
 
+        <div class="clear"></div>
+
         <div class="grid-6-12">
             <label class="forms-lbl">Status: </label>
             <select class="validate[required]" id="StatusId" name="StatusId" style="padding: 6px;">
-                <option value="">-- SELECT --</option>               
-                <option value="54f834f8-8f7b-42c0-8331-e1fe5ae50c83">Reserved</option>                   
+                <option value="">-- SELECT --</option>
+                <option value="54f834f8-8f7b-42c0-8331-e1fe5ae50c83">Reserved</option>
             </select>
         </div>
         <div class="clear"></div>

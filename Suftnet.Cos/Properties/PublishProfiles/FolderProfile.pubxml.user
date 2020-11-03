@@ -548,13 +548,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/27/2020 12:42:35</publishTime>
     </File>
     <File Include="Areas/FrontOffice/Views/Delivery/_locationPicker.cshtml">
-      <publishTime>10/27/2020 09:05:40</publishTime>
+      <publishTime>11/03/2020 17:07:54</publishTime>
     </File>
     <File Include="Areas/FrontOffice/Views/Reservation/Index.cshtml">
       <publishTime>10/22/2020 12:00:03</publishTime>
     </File>
     <File Include="Areas/FrontOffice/Views/Reservation/_form.cshtml">
-      <publishTime>10/25/2020 12:29:58</publishTime>
+      <publishTime>11/03/2020 16:56:29</publishTime>
     </File>
     <File Include="Areas/FrontOffice/Views/Reservation/_load.cshtml">
       <publishTime>10/28/2020 11:24:23</publishTime>
@@ -974,25 +974,25 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>11/02/2020 15:55:21</publishTime>
     </File>
     <File Include="bin/Suftnet.Cos.Core.dll">
-      <publishTime>11/02/2020 15:55:23</publishTime>
+      <publishTime>11/03/2020 17:09:36</publishTime>
     </File>
     <File Include="bin/Suftnet.Cos.Core.dll.config">
       <publishTime>07/07/2020 14:49:28</publishTime>
     </File>
     <File Include="bin/Suftnet.Cos.DataAccess.dll">
-      <publishTime>11/02/2020 15:55:22</publishTime>
+      <publishTime>11/03/2020 17:09:35</publishTime>
     </File>
     <File Include="bin/Suftnet.Cos.DataAccess.dll.config">
       <publishTime>07/07/2020 14:49:27</publishTime>
     </File>
     <File Include="bin/Suftnet.Cos.Model.dll">
-      <publishTime>11/02/2020 15:55:21</publishTime>
+      <publishTime>11/03/2020 17:09:34</publishTime>
     </File>
     <File Include="bin/Suftnet.Cos.Stripe.dll">
       <publishTime>11/02/2020 15:55:22</publishTime>
     </File>
     <File Include="bin/Suftnet.Cos.Web.dll">
-      <publishTime>11/02/2020 15:55:26</publishTime>
+      <publishTime>11/03/2020 17:09:38</publishTime>
     </File>
     <File Include="bin/System.Collections.Immutable.dll">
       <publishTime>05/15/2018 13:29:34</publishTime>
@@ -13463,10 +13463,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/31/2020 19:03:57</publishTime>
     </File>
     <File Include="logs/error.txt">
-      <publishTime>10/31/2020 18:51:01</publishTime>
+      <publishTime>11/03/2020 16:56:42</publishTime>
     </File>
     <File Include="logs/log.txt">
-      <publishTime>11/02/2020 15:20:53</publishTime>
+      <publishTime>11/03/2020 17:06:11</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>05/17/2020 21:51:35</publishTime>
@@ -14573,13 +14573,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/23/2020 14:28:03</publishTime>
     </File>
     <File Include="Views/checkout/confirmation.cshtml">
-      <publishTime>10/31/2020 18:06:53</publishTime>
+      <publishTime>11/03/2020 17:01:23</publishTime>
     </File>
     <File Include="Views/checkout/entry.cshtml">
-      <publishTime>10/29/2020 19:39:32</publishTime>
+      <publishTime>11/03/2020 17:03:48</publishTime>
     </File>
     <File Include="Views/checkout/trial.cshtml">
-      <publishTime>10/29/2020 08:14:21</publishTime>
+      <publishTime>11/03/2020 17:01:48</publishTime>
     </File>
     <File Include="Views/checkout/_modelDialog.cshtml">
       <publishTime>10/29/2020 08:01:25</publishTime>

@@ -199,7 +199,7 @@
                             <input type="hidden" name="PlanId" id="PlanId" value="@Model.PlanId">
                             <input type="hidden" name="PlanTypeId" id="PlanTypeId" value="@Model.PlanTypeId">
                             <span id="checkEmailUrl" name="checkEmailUrl" data-checkEmailUrl="@Url.CheckEmailHref()"></span>
-                            <span id="confirmationUrl" name="confirmationUrl" data-confirmationUrl="@Url.CheckoutConfirmationHref()"></span>
+                            <span id="confirmationUrl" name="confirmationUrl" data-confirmationUrl="@Url.Action("index", "settings", new { area="backOffice" } )"></span>
                             <span id="spriteUrl" name="spriteUrl" data-spriteUrl="@Url.SpriteUrl("sprites2.png")"></span>
                         </div>
                     </form>
@@ -221,7 +221,7 @@
 @Scripts.Render("~/bundle/checkout")
 @Scripts.Render("~/bundle/ajax")
 
-@*@Html.Partial("_recaptcha", "checkout")*@
+@Html.Partial("_recaptcha", "checkout")
 
 <script type="text/javascript">
 

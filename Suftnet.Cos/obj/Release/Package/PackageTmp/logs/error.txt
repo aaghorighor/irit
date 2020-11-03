@@ -1,6 +1,0 @@
-20201031 18:44:37 [12] ERROR Web [(null)] - Could not find file 'E:\Git\Web\Irit\Irit\Suftnet.Cos\App_Data\Email\subscriptionTrial.html'.
---------------------------------------------------------------------------------------------
-20201031 18:50:13 [10] ERROR Web [(null)] - Could not find file 'E:\Git\Web\Irit\Irit\Suftnet.Cos\App_Data\Email\subscriptionTrial.html'.
---------------------------------------------------------------------------------------------
-20201031 18:51:01 [10] ERROR Web [(null)] - Could not find file 'E:\Git\Web\Irit\Irit\Suftnet.Cos\App_Data\Email\subscriptionTrial.html'.
---------------------------------------------------------------------------------------------
