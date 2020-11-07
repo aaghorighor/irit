@@ -6,8 +6,8 @@
 
     public interface IUser
     {
-        ApplicationUser VerifyAccessCode(string otp, string phone, Guid tenantId);
-        bool UpdateAccessCode(string phoneNumber, Guid tenantId, string otp);
+        bool UpdateAccessCode(string emailAddress, int code, string otp);
+        ApplicationUser VerifyAccessCode(string otp, string emailAddress, int appCode);
         ApplicationUser GetUserByPhone(string phone, Guid tenantId);
         bool CheckEmailAddress(string userName);
         IList<UserAccountDto> GetById(Guid tenantId);
@@ -24,5 +24,6 @@
         IList<UserAccountDto> Fetch(int areaId, int iskip, int itake, string isearch);
         IList<UserAccountDto> Fetch(int areaId, int iskip, int itake);
         bool Delete(string userId);
+        ApplicationUser GetUserByUserName(string userName, int code);
     }
 }

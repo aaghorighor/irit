@@ -15,7 +15,7 @@ namespace Suftnet.Cos.DataAccess.Action
         public string Name { get; set; }
         public Guid MenuId { get; set; }
         [Column(TypeName = "money")]
-        public decimal? Price { get; set; }
+        public decimal Price { get; set; }
         [Required]
         [StringLength(50)]
         public string CreatedBy { get; set; }
@@ -23,6 +23,8 @@ namespace Suftnet.Cos.DataAccess.Action
         public DateTime CreatedDt { get; set; }
         public bool Active { get; set; }
         public Guid AddonTypeId { get; set; }
-       
+        [ForeignKey("AddonTypeId")]
+        public virtual AddonType AddonTypes { get; set; }
+        public Guid TenantId { get; set; }
     }
 }

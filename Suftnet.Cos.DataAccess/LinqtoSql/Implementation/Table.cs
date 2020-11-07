@@ -138,13 +138,13 @@
                 return response;
             }
         }
-        public List<TableDto> GetByStatus(bool status, Guid tenantId)
+        public List<TableDto> GetBy(bool status, Guid tenantId)
         {
             using (var context = DataContextFactory.CreateContext())
             {
                 var objResult = (from o in context.Tables
                                  where o.TenantId == tenantId && o.Active == status
-                                 orderby o.Id descending
+                                 orderby o.CreatedDt descending
                                  select new TableDto { Active = o.Active, Number = o.Number, Size = o.Size, OrderId = o.OrderId, TimeIn = o.TimeIn, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
                 return objResult;
             }
@@ -155,8 +155,19 @@
             {
                 var objResult = (from o in context.Tables
                                  where o.TenantId == tenantId
-                                 orderby o.Id descending
+                                 orderby o.CreatedDt descending
                                  select new TableDto { CreatedDT = o.CreatedDt, Active = o.Active, Number = o.Number, Size = o.Size, OrderId = o.OrderId, TimeIn = o.TimeIn, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
+                return objResult;
+            }
+        }
+        public List<MobileTableDto> GetBy(Guid tenantId)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objResult = (from o in context.Tables
+                                 where o.TenantId == tenantId && o.Active == true
+                                 orderby o.CreatedDt descending
+                                 select new MobileTableDto { Number = o.Number, Size = o.Size, OrderId = o.OrderId, TimeIn = o.TimeIn, Id = o.Id }).ToList();
                 return objResult;
             }
         }
@@ -165,7 +176,7 @@
             using (var context = DataContextFactory.CreateContext())
             {
                 var objResult = (from o in context.Tables
-                                 where o.OrderId == null && o.Active == true   && o.TenantId == tenantId
+                                 where o.OrderId == null && o.Active == true && o.TenantId == tenantId
                                  select o).Count();
                 return objResult;
             }

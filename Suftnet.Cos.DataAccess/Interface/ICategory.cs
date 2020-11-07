@@ -10,7 +10,8 @@
         bool Delete(Guid Id);
         Guid Insert(CategoryDto entity);
         bool Update(CategoryDto entity);
-        List<CategoryDto> GetByStatus(bool status, Guid tenantId);
+        List<CategoryDto> GetBy(bool status, Guid tenantId);
+        List<MobileCategoryDto> GetBy(Guid tenantId);
     }
 }
 

@@ -20,7 +20,7 @@ namespace Suftnet.Cos.DataAccess.Action
 
         public Guid UnitId { get; set; }      
 
-        public decimal? Price { get; set; }
+        public decimal Price { get; set; }
 
         [StringLength(3000)]
         public string Description { get; set; }
@@ -49,8 +49,11 @@ namespace Suftnet.Cos.DataAccess.Action
         [MaxLength(8)]
         [Timestamp]
         public byte[] TimeStamp { get; set; }
-
         public Guid TenantId { get; set; }
-       
+        [ForeignKey("CategoryId")]
+        public virtual Category Categories { get; set; }        
+        [ForeignKey("UnitId")]
+        public virtual Unit Units { get; set; }
+
     }
 }

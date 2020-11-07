@@ -1,11 +1,10 @@
 ﻿@using Suftnet.Cos.Extension
-@using Suftnet.Cos.Common
   
 <!-- Making stripe menu -->
 <nav class="st-nav navbar main-nav navigation fixed-top" id="main-nav">
     <div class="container">
         <ul class="st-nav-menu nav navbar-nav">
-            <li class="st-nav-section nav-item"><a href="#main" class="navbar-brand"><img src="~/Content/frontoffice-2/img/logo.png" class="logo logo-sticky d-block d-md" /></a></li>
+            <li class="st-nav-section nav-item"><a href="#main" class="navbar-brand"><img src="@Url.Content("~/Content/frontoffice-2/img/logo.png")" class="logo logo-sticky d-block d-md" /></a></li>
             <li class="st-nav-section st-nav-primary nav-item">
                 <a class="st-root-link nav-link" href="@Url.Action("index","test")">Home </a>
                 <a class="st-root-link nav-link" href="@Url.Action("index","features")">Features</a>
@@ -14,8 +13,8 @@
                 <a class="st-root-link nav-link" href="@Url.Action("index","support")">Support</a>
                 <a class="st-root-link nav-link" href="@Url.Action("create","contact")">Contact us</a>
             </li>          
-            <li class="st-nav-section st-nav-secondary nav-item"><a class="btn btn-rounded btn-outline mr-3 px-3" href="@Url.Action("index","account")"><i class="fas fa-sign-in-alt d-none d-md-inline mr-md-0 mr-lg-2"></i> <span class="d-md-none d-lg-inline">Login</span> </a>
-            <a class="btn btn-rounded btn-solid px-3" href="@Url.SubscriptionTrialHref(1, "")"><i class="fas fa-user-plus d-none d-md-inline mr-md-0 mr-lg-2"></i> <span class="d-md-none d-lg-inline">Try It Free</span></a></li>
+            <li class="st-nav-section st-nav-secondary nav-item"><a class="btn btn-rounded btn-outline mr-3 px-3" href="@Url.LoginHref()"><i class="fas fa-sign-in-alt d-none d-md-inline mr-md-0 mr-lg-2"></i> <span class="d-md-none d-lg-inline">Login</span> </a>
+            <a class="btn btn-rounded btn-solid px-3" href="@Url.TrialHref()"><i class="fas fa-user-plus d-none d-md-inline mr-md-0 mr-lg-2"></i> <span class="d-md-none d-lg-inline">Try It Free</span></a></li>
             </ul>
      </div>           
 </nav>

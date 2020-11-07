@@ -80,18 +80,31 @@
             }
         }        
 
-        public List<AddonDto> GetAll(Guid Id)
+        public List<AddonDto> GetAll(Guid menuId)
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var objResult = (from o in context.Addons
-                                 join c in context.AddonTypes on o.AddonTypeId equals c.Id
-                                 where o.MenuId == Id 
+                var objResult = (from o in context.Addons.Include("AddonTypes")
+                                 let c = o.AddonTypes
+                                 where o.MenuId == menuId
                                  orderby o.Id descending
                                  select new AddonDto { AddonType = c.Name, AddonTypeId = o.AddonTypeId, Active = o.Active, Price = o.Price, MenuId = o.MenuId, Name = o.Name, CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
                 return objResult;
             }
-        }    
+        }
+
+        public List<MobileAddonDto> GetBy(Guid tenantId)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objResult = (from o in context.Addons.Include("AddonTypes")
+                                 let c = o.AddonTypes
+                                 where o.TenantId == tenantId
+                                 orderby o.Id descending
+                                 select new MobileAddonDto { AddonType = c.Name, Price = o.Price, MenuId = o.MenuId, Name = o.Name, Id = o.Id }).ToList();
+                return objResult;
+            }
+        }
     }
 }
 

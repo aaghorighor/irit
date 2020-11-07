@@ -6,6 +6,7 @@
     using Suftnet.Cos.Web.ViewModel;
     using System;
     using System.Linq;
+    using System.Security.Cryptography;
 
     public class CreateTenantCommand : ICommand
     {
@@ -69,9 +70,9 @@
             };
             try
             {
-                var appCode = model.Id.ToString().ToUpper().Random(8);
-                model.AppCode = appCode;
-                CheckoutModel.AppCode = appCode;
+                var appCode = GetHashCode(model.Id);
+                model.AppCode = appCode.ToString();
+                CheckoutModel.AppCode = appCode.ToString();
                 this.TenantId = model.Id;
 
                _tenant.Insert(model);
@@ -81,7 +82,24 @@
            
         }
 
+        private int GetHashCode(Guid guid)
+        {
+           return guid.GetHashCode();
+        }
+
+        private int CryptoServiceProvider(Guid guid)
+        {
+            using (var randomNumberGenerator = new RNGCryptoServiceProvider())
+            {
+                var randomNumber = new byte[8];
+                randomNumberGenerator.GetBytes(randomNumber);
+
+               return BitConverter.ToInt32(randomNumber, 0);               
+            }
+        }
         #endregion
+
+
 
     }
 }

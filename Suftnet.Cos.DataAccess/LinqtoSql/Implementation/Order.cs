@@ -457,6 +457,18 @@
                 return objResult;
             }
         }
+
+        public int Count(Guid tenantId, Guid orderTypeId, params Guid[] statuses)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objResult = (from o in context.Orders
+                                 where o.TenantId == tenantId && statuses.Contains(o.StatusId) && o.OrderTypeId == orderTypeId
+                                 select o
+                                 ).Count();
+                return objResult;
+            }
+        }
         public int CountByOrderType(Guid tenantId, Guid orderTypeId)
         {
             using (var context = DataContextFactory.CreateContext())

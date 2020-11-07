@@ -43,13 +43,13 @@
         [HttpGet]
         public async Task<JsonResult> FetchCategories()
         {
-            return Json(new { ok = true, dataobject = await Task.Run(() => _category.GetByStatus(true, this.TenantId)) }, JsonRequestBehavior.AllowGet);
+            return Json(new { ok = true, dataobject = await Task.Run(() => _category.GetBy(true, this.TenantId)) }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
         public async Task<JsonResult> FetchDefaultMenues()
         {
-            return Json(new { ok = true, dataobject = await Task.Run(() => _menu.GetByDefault(this.TenantId, 10)) }, JsonRequestBehavior.AllowGet);
+            return Json(new { ok = true, dataobject = await Task.Run(() => _menu.GetBy(this.TenantId, 10)) }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]

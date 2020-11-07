@@ -30,6 +30,6 @@
         [StringLength(50)]
         public string OTP { get; set; }
         [NotMapped]
-        public Guid? TenantId { get; set; }         
+        public Guid TenantId { get; set; }         
     }
 }

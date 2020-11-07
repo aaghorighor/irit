@@ -5,7 +5,7 @@
     using System.Web.Mvc;
 
     public static class SiteExtensions
-    {
+    {       
         public static string HomeLink(this UrlHelper helper)
         {          
             return helper.RouteOneChurchUrl(OneChurchRoutes.HOME);
@@ -44,9 +44,14 @@
             return helper.RouteOneChurchUrl(OneChurchRoutes.DIRECTORY, new { name = name.FriendlyUrl(), id = id });
         }
 
-        public static string SubscriptionTrialHref(this UrlHelper helper, int planId, string planTypeId)
+        public static string SubscriptionHref(this UrlHelper helper, int planId, string planTypeId)
         {
-            return helper.RouteOneChurchUrl(OneChurchRoutes.SUBSCRIPTIONTRIAL, new { planId = planId, planTypeId = planTypeId });
+            return helper.RouteOneChurchUrl(OneChurchRoutes.SUBSCRIPTION, new { planId = planId, planTypeId = planTypeId });
+        }
+
+        public static string TrialHref(this UrlHelper helper)
+        {
+            return helper.RouteOneChurchUrl(OneChurchRoutes.SUBSCRIPTION_TRIAL);
         }
 
         public static string PaymentCardHref(this UrlHelper helper, string planTypeId)

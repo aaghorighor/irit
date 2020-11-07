@@ -1,12 +1,14 @@
-﻿namespace Suftnet.Cos.Web.ViewModel
+﻿using Suftnet.Cos.DataAccess;
+using System.Collections.Generic;
+
+namespace Suftnet.Cos.Web.ViewModel
 {
     public class DashboardModel
     {
-        public int Members { get; set; }
-        public int Events { get; set; }
-        public int BirthDays { get; set; }
-        public bool Expired { get; set; }
-        public string PlanTypeId { get; set; }
+        public int FreeTables { get; set; }
+        public int DineIn { get; set; }
+        public int PendingDeliveries { get; set; }
+        public int Reservations { get; set; }
     }
 
     public class AdminDashboardModel
@@ -19,6 +21,13 @@
         public int Web { get; set; } // logger
         public int Trials { get; set; }
         public int Suspended { get; set; }
+    }
+
+    public class BoostrapModel
+    {
+        public List<MobileCategoryDto> Categories { get; set; }
+        public List<MobileMenuDto> Menus { get; set; }
+        public List<MobileAddonDto> Addons { get; set; }
     }
 
 }

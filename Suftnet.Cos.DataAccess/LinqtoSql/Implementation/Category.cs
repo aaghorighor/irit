@@ -91,14 +91,26 @@
             }
         }
 
-        public List<CategoryDto> GetByStatus(bool status, Guid tenantId)
+        public List<CategoryDto> GetBy(bool status, Guid tenantId)
         {
             using (var context = DataContextFactory.CreateContext())
             {
                 var obj = (from o in context.Categories                              
                                  where o.TenantId == tenantId && o.Status == status
                                  orderby o.IndexNo ascending
-                                 select new CategoryDto { IndexNo = o.IndexNo, Description = o.Description, ImageUrl = o.ImageUrl, Name = o.Name, Status = o.Status, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
+                                 select new CategoryDto { IndexNo = o.IndexNo, Description = o.Description, ImageUrl = o.ImageUrl, Name = o.Name, Id = o.Id }).ToList();
+                return obj;
+            }
+        }
+
+        public List<MobileCategoryDto> GetBy(Guid tenantId)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var obj = (from o in context.Categories
+                           where o.TenantId == tenantId && o.Status == true
+                           orderby o.IndexNo ascending
+                           select new MobileCategoryDto { IndexNo = o.IndexNo, Description = o.Description, ImageUrl = o.ImageUrl, Name = o.Name, Id = o.Id }).ToList();
                 return obj;
             }
         }

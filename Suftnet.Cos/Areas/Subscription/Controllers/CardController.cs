@@ -103,13 +103,13 @@
             switch (planTypeId)
             {
                 case PlanType.Basic:
-                    return PlanRateType.Basic;
+                    return PlanPrice.Basic;
                 case PlanType.Premium:
-                    return PlanRateType.Premium;
+                    return PlanPrice.Premium;
                 case PlanType.PremiumPlus:
-                    return PlanRateType.PremiumPlus;
+                    return PlanPrice.PremiumPlus;
                 case PlanType.Trial:
-                    return PlanRateType.Trial;
+                    return PlanPrice.Trial;
             }
 
             return 0;

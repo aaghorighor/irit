@@ -14,17 +14,18 @@ namespace Suftnet.Cos.DataAccess.Action
         [Required]
         [StringLength(128)]
         public string UserId { get; set; }
-
         [Column(TypeName = "smalldatetime")]
         public DateTime CreatedDt { get; set; }
-
         [Required]
         [StringLength(50)]
         public string CreatedBy { get; set; }
-
         public Guid TenantId { get; set; }
         [ForeignKey("TenantId")]
-        public virtual Tenant Tenants { get; set; }        
-        
+        public virtual Tenant Tenants { get; set; }
+        public int Code { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string EmailAddress { get; set; }
+
     }
 }

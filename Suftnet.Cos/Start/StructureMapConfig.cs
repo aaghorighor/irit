@@ -46,6 +46,8 @@
                 x.For<IClaimManager>().Use<ClaimManager>();
                 x.For<IOrderCommand>().Use<OrderCommand>();
                 x.For<IAdminDashboardCommand>().Use<AdminDashboardCommand>();
+                x.For<IDashboardCommand>().Use<DashboardCommand>();
+                x.For<IBoostrapCommand>().Use<BoostrapCommand>();
             });           
         }
     }

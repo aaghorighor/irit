@@ -27,10 +27,7 @@ var order = {
             } else {
                 params.ChangeTable = false;
             }
-
-            console.log(params);
-            console.log($("#editform").attr("action"));
-
+                       
             js.ajaxPost($("#editform").attr("action"), params).then(
                 function (data) {
                     switch (data.flag) {

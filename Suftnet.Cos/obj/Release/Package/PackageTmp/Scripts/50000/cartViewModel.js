@@ -31,7 +31,7 @@ var CartViewModel = function () {
     self.selectedOptionValue = ko.observable();
     self.selectedPaymentMethod = ko.observable();
 
-    self.optionValues = ko.observableArray([new Status("Completed", constants.orderStatus.completed), new Status("Dine In", constants.orderStatus.occupied), new Status("Pending", constants.orderStatus.pending)]);
+    self.optionValues = ko.observableArray([new Status("Completed", constants.orderStatus.completed), new Status("Occupied", constants.orderStatus.occupied)]);
     self.paymentMethods = ko.observableArray([new PaymentMethod("Card", constants.paymentMethod.card), new PaymentMethod("Cash", constants.paymentMethod.cash)]);
              
     self.reset = function ()
@@ -303,7 +303,7 @@ var CartViewModel = function () {
 
             case constants.orderType.dineIn: 
 
-                self.optionValues.push(new Status("Pending", constants.orderStatus.pending));  
+                self.optionValues.push(new Status("Occupied", constants.orderStatus.occupied));  
                 self.optionValues.push(new Status("Completed", constants.orderStatus.completed));  
 
                 break;

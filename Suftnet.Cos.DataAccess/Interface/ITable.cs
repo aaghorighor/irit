@@ -11,9 +11,10 @@
         bool Delete(Guid Id);
         Guid Insert(TableDto entity);
         List<TableDto> GetAll(Guid tenantId);
-        List<TableDto> GetByStatus(bool status, Guid tenantId);     
+        List<TableDto> GetBy(bool status, Guid tenantId);     
         bool UpdateStatus(Guid statusId, Guid tableId, Guid orderId, DateTime updatedDt, string updateBy);
         bool Reset(TableDto entity);
+        List<MobileTableDto> GetBy(Guid tenantId);
     }
 }
 

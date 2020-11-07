@@ -35,7 +35,7 @@
             _messenger = messenger;
             _userAccount = userAccount;         
         }
-        public ApplicationUser CreateAsync(UserManager<ApplicationUser> userManager, string viewPATH, ApplicationUser model, Guid tenantId, string password, bool isSend, bool isBackoffice)
+        public ApplicationUser CreateAsync(UserManager<ApplicationUser> userManager, string viewPATH, int app_code, ApplicationUser model, Guid tenantId, string password, bool isSend, bool isBackoffice)
         {
             var result = new IdentityResult();
             var user = _user.CheckEmailAddress(model.Email, tenantId);
@@ -60,6 +60,7 @@
                     {
                         UserId = model.Id,
                         TenantId = tenantId,
+                        Code = app_code,
 
                         CreatedBy = model.Email,
                         CreatedDt = DateTime.UtcNow

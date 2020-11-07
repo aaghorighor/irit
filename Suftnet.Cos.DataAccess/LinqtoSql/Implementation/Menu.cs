@@ -120,34 +120,7 @@
                 return GetAll(tenantId, iskip, itake);
             }
            
-        }
-        public List<MenuDto> GetAll(Guid tenantId, Guid categoryId, int iskip, int itake)
-        {
-            using (var context = DataContextFactory.CreateContext())
-            {
-                var objResult = (from o in context.Menus
-                                 join c in context.Categories on o.CategoryId equals c.Id
-                                 join u in context.Units on o.UnitId equals u.Id
-                                 where o.TenantId == tenantId && o.CategoryId == categoryId
-                                 orderby o.Id descending
-                                 select new MenuDto { ImageUrl = o.ImageUrl, IsKitchen = o.IsKitchen, CutOff = o.CutOff, SubStractId = o.SubstractId, Name = o.Name, Quantity = o.Quantity, Active = o.Active, Unit = u.Name, Category = c.Name, CategoryId = o.CategoryId, Description = o.Description, UnitId = o.UnitId, Price = o.Price, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
-                return objResult;
-            }
-        }
-
-        public List<MenuDto> GetAll(Guid tenantId, Guid categoryId, int iskip, int itake, string isearch)
-        {
-            using (var context = DataContextFactory.CreateContext())
-            {
-                var objResult = (from o in context.Menus
-                                 join c in context.Categories on o.CategoryId equals c.Id
-                                 join u in context.Units on o.UnitId equals u.Id
-                                 where o.TenantId == tenantId && (o.CategoryId == categoryId && o.Name.Contains(isearch))
-                                 orderby o.Id descending
-                                 select new MenuDto { ImageUrl = o.ImageUrl, IsKitchen = o.IsKitchen, CutOff = o.CutOff, SubStractId = o.SubstractId, Name = o.Name, Quantity = o.Quantity, Active = o.Active, Unit = u.Name, Category = c.Name, CategoryId = o.CategoryId, Description = o.Description, UnitId = o.UnitId, Price = o.Price, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
-                return objResult;
-            }
-        }
+        }      
 
         public List<MenuDto> GetAll(Guid categoryId, Guid tenantId)
         {
@@ -175,7 +148,21 @@
                 return objResult;
             }
         }
-        public List<MenuDto> GetByDefault(Guid tenantId, int take)
+
+        public List<MobileMenuDto> GetBy(Guid tenantId)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objResult = (from o in context.Menus.Include("Categories").Include("Units")
+                                 let c = o.Categories
+                                 let u = o.Units
+                                 where o.TenantId == tenantId && o.Active == true
+                                 orderby o.Id descending
+                                 select new MobileMenuDto { ImageUrl = o.ImageUrl, Name = o.Name, Quantity = o.Quantity, Unit = u.Name, Category = c.Name, Description = o.Description, Price = o.Price, Id = o.Id }).ToList();
+                return objResult;
+            }
+        }
+        public List<MenuDto> GetBy(Guid tenantId, int take)
         {
             using (var context = DataContextFactory.CreateContext())
             {
@@ -212,7 +199,6 @@
                 return objResult;
             }
         }      
-
         public List<MenuDto> GetCutOffMenu(Guid tenantId)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -226,7 +212,6 @@
                 return objResult;
             }
         }
-
         public void UpdateMenuQuantity(int quantity, Guid menuId)
         {
             using (var context = DataContextFactory.CreateContext())

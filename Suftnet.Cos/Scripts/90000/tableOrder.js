@@ -70,10 +70,11 @@ var tableOder = {
                         case 1: //// add                  
 
                             if (_tableViewModel == null || undefined) {
-                                console.log(data.orderId);
+                           
                             }
                                                    
-                            _tableViewModel.update(data.order);               
+                            _tableViewModel.update(data.order);   
+                            _dataTables.order.draw();
                                                  
                             break;
                         case 2: //// update  

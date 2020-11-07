@@ -9,7 +9,8 @@
         bool Delete(Guid Id);
         Guid Insert(AddonDto entity);
         bool Update(AddonDto entity);
-        List<AddonDto> GetAll(Guid Id);
+        List<AddonDto> GetAll(Guid menuId);
+        List<MobileAddonDto> GetBy(Guid menuId);
     }
 }
 

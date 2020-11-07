@@ -111,12 +111,12 @@ namespace Suftnet.Cos.Common
         public const int PremiumPlus = 366;
     }
 
-    public static class PlanRateType
+    public static class PlanPrice
     {
-        public const int Trial = 0;
-        public const int Basic = 20;
-        public const int Premium = 100;
-        public const int PremiumPlus = 200;
+        public const decimal Trial = 0;
+        public const decimal Basic = 20;
+        public const decimal Premium = 100;
+        public const decimal PremiumPlus = 200;
     }
 
    

@@ -1,5 +1,6 @@
 ﻿namespace Suftnet.Cos.DataAccess
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
 
@@ -13,7 +14,7 @@
         public string Category { get; set; }
         public Guid UnitId { get; set; }
         public string Unit { get; set; }         
-        public decimal? Price { get; set; }        
+        public decimal Price { get; set; }        
         public int Quantity { get; set; }    
         public Guid TaxId { get; set; }
         public int SubStractId { get; set; }
@@ -25,5 +26,22 @@
         public bool Active { get; set; }
         public List<AddonDto> AddonDto { get; set; }
         public bool? IsKitchen { get; set; }           
+    }
+
+    public class MobileMenuDto 
+    {
+        [JsonIgnore]
+        public Guid Id { get; set; }        
+        public string ExternalId { get {
+                return Id.ToString();
+            }
+        }
+        public string Name { get; set; }
+        public string Description { get; set; }          
+        public string Category { get; set; }    
+        public string Unit { get; set; }
+        public decimal Price { get; set; }
+        public int Quantity { get; set; }            
+        public string ImageUrl { get; set; }              
     }
 }

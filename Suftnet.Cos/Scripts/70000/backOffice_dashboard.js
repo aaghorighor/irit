@@ -4,16 +4,23 @@ var backOffice_dashboard = {
     init: function () {
         
         if ($("#userName").attr("data-userName") === "demo@synevde.com") {
-            backoffice_tour.init();
+            //backoffice_tour.init();
         } else {
-            learn_backoffice.init();
+            //learn_backoffice.init();
         }
 
         js.ajaxGet($("#backOfficeDashboardUrl").attr("data-backOfficeDashboardUrl")).then(
             function (data) {
 
-                var model = data.summary;
-                             
+                var objectdata = data.summary;
+
+                if (objectdata != null) {
+
+                    $("#freeTable").text(objectdata.FreeTables);
+                    $("#dineIn").text(objectdata.DineIn);
+                    $("#delivery").text(objectdata.PendingDeliveries);
+                    $("#reservation").text(objectdata.Reservations);                 
+                };
             });          
     }
 }

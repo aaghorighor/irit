@@ -27,7 +27,8 @@
         public const string CONFIRMATION = "Confirmation";
         public const string CREATESUBSCRIPTION = "CreateSubscription";
         public const string CREATESUBSCRIPTIONTRIAL = "CreateSubscriptionTrial";
-        public const string SUBSCRIPTIONTRIAL = "SubscriptionTrial";
+        public const string SUBSCRIPTION = "Subscription";
+        public const string SUBSCRIPTION_TRIAL = "SubscriptionTrial";
         public const string CHECKEMAIL = "CheckEmail";
         public const string CHECKOUTCONFIRMATION = "CheckoutConfirmation";
         public const string PAYMENTCARD = "PaymentCard";
@@ -89,32 +90,20 @@
              );                      
 
             m_Routes.MapOneChurchRoute(
-                  "Checkout_"
+               SUBSCRIPTION
                   , "checkout/entry/{planId}/{planTypeId}"
                   , new { controller = "Checkout", action = "entry", planId = UrlParameter.Optional, planTypeId = UrlParameter.Optional }
                   , m_namespaces
               );           
 
+         
             m_Routes.MapOneChurchRoute(
-                  CREATESUBSCRIPTION
-                   , "Create Subscription".FriendlyUrl()
-                   , new { controller = "Checkout", action = "Create" }
+                  SUBSCRIPTION_TRIAL
+                   , "free 15 days trial".FriendlyUrl()
+                   , new { controller = "checkout", action = "trial" }
                    , m_namespaces
                );
-
-            m_Routes.MapOneChurchRoute(
-                  CREATESUBSCRIPTIONTRIAL
-                   , "Create Subscription Trial".FriendlyUrl()
-                   , new { controller = "Checkout", action = "CreateTrial" }
-                   , m_namespaces
-               );
-                       
-            m_Routes.MapOneChurchRoute(
-                  SUBSCRIPTIONTRIAL
-                   , "checkout/trial/{planId}/{planTypeId}"
-                   , new { controller = "Checkout", action = "trial", planId = UrlParameter.Optional, planTypeId = UrlParameter.Optional }
-                   , m_namespaces
-               );            
+                      
 
             m_Routes.MapOneChurchRoute(
                     "Pricing_"
@@ -147,7 +136,7 @@
             m_Routes.MapOneChurchRoute(
                LOGIN
                 , "login"
-                , new { controller = "Account", action = "login" }
+                , new { controller = "account", action = "login" }
                 , m_namespaces
             );           
 

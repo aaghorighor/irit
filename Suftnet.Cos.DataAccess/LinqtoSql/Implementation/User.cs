@@ -88,6 +88,23 @@
                 return null;
             }
         }
+        public ApplicationUser GetUserByUserName(string userName, int code)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var obj = (from o in context.UserAccounts
+                           join u in context.Users on o.UserId equals u.Id
+                           where u.Email == userName && o.Code == code
+                           select new { UserName = u.UserName, PhoneNumber = u.PhoneNumber, Active = u.Active, AreaId = u.AreaId, TenantId = o.TenantId, Id = u.Id }).FirstOrDefault();
+
+                if (obj != null)
+                {
+                    return new ApplicationUser { UserName = obj.UserName, PhoneNumber = obj.PhoneNumber, Active = obj.Active, AreaId = obj.AreaId, Id = obj.Id, TenantId = obj.TenantId };
+                }
+
+                return null;
+            }
+        }
         public ApplicationUser GetUserByUserName(string userName)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -233,18 +250,17 @@
                 return objResult;
             }
         }
-        public bool UpdateAccessCode(string phoneNumber, Guid tenantId, string otp)
+        public bool UpdateAccessCode(string emailAddress, int code, string otp)
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = (from o in context.UserAccounts
-                           join u in context.Users on o.UserId equals u.Id
-                           where u.PhoneNumber == phoneNumber && o.TenantId == tenantId
-                           select u).FirstOrDefault();
+                var obj = (from o in context.UserAccounts                           
+                           where o.EmailAddress == emailAddress && o.Code == code
+                           select o).FirstOrDefault();
 
                 if (obj != null)
                 {
-                    var objToUpdate = context.Users.SingleOrDefault(o => o.Id == obj.Id);
+                    var objToUpdate = context.Users.SingleOrDefault(o => o.Id == obj.UserId);
                     if (objToUpdate != null)
                     {
                         objToUpdate.OTP = otp;
@@ -257,13 +273,13 @@
 
             return false;
         }
-        public ApplicationUser VerifyAccessCode(string otp, string phoneNumber, Guid tenantId)
+        public ApplicationUser VerifyAccessCode(string otp, string emailAddress, int appCode)
         {
             using (var context = DataContextFactory.CreateContext())
             {
                 var obj = (from o in context.UserAccounts
                            join u in context.Users on o.UserId equals u.Id
-                           where u.PhoneNumber == phoneNumber && o.TenantId == tenantId && u.OTP == otp
+                           where o.EmailAddress == emailAddress && o.Code == appCode && u.OTP == otp
                            select new { UserName = u.UserName, PhoneNumber = u.PhoneNumber, Active = u.Active, AreaId = u.AreaId, TenantId = o.TenantId, Id = u.Id }).FirstOrDefault();
 
                 if (obj != null)

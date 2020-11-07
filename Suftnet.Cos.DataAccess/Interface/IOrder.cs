@@ -28,5 +28,6 @@
         CartOrderDto FetchOrder(Guid orderId);
         OrderDto FetchDeliveryOrder(Guid orderId);
         List<OrderDto> FetchDeliveryByStatus(Guid tenantId, Guid statusId);
+        int Count(Guid tenantId, Guid orderTypeId, params Guid[] statuses);
     }
 }

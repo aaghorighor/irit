@@ -10,8 +10,7 @@
 
     <div class="twoOne">
         <div class="widget">
-            <div class="header"><span><span class="ico  gray help2 tooltip" title="List of Tax. To add a new tax, use the form at the right.<br>
-                                            To edit select the row by clicking the pencil icon, the selected row will show in edit mode, modify and click the save changes button."></span>Addon Type </span></div>
+            <div class="header"><span><span class=""></span>Addon Type </span></div>
             <div class="content">
                 <div class="tableName">
                     @Html.Partial("_load")
@@ -22,8 +21,7 @@
 
     <div class="oneThree">
         <div class="widget">
-            <div class="header"><span><span class="ico  gray help2 tooltip" title="To add new event type, fill in the fields and click the savechanges button.<br>
-                                            To edit event type, select the row from the event type list, the row will show in edit mode, modify the fields and click the savechanges button."></span></span></div>
+            <div class="header"><span><span class="ico  gray" title=""></span></span></div>
                 <div class="content">
                     @Html.Partial("_form")
                 </div>
@@ -36,7 +34,7 @@
 
     $(function () {
 
-         addonType.pageInit();
+        commonType.pageInit();
 
         setTimeout(function () {
             $(".widgets").show();

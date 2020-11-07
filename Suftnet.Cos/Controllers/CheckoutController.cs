@@ -65,7 +65,7 @@
             }
         }
 
-        [OutputCache(Duration = 0, VaryByParam = "*")]
+        [OutputCache(Duration = 10, VaryByParam = "*")]
         public ActionResult Entry(int planId, string planTypeId)
         {
             switch (planTypeId)
@@ -87,7 +87,7 @@
             return View(this.CreatePlanForCheckout(planId, planTypeId));
         }
 
-        [OutputCache(Duration = 0, VaryByParam = "*")]
+        [OutputCache(Duration = 10, VaryByParam = "*")]
         public ActionResult Trial()
         {
             var model = new StripePlanModel
@@ -230,7 +230,7 @@
                 var sendTrialCommand = _factoryCommand.Create<SendTrialConfirmationCommand>();
                 sendTrialCommand.TrialModel = checkoutModel;
                 sendTrialCommand.VIEW_PATH = this.Server.MapPath("~/App_Data/Email/subscriptionTrial.html");
-                sendTrialCommand.Amount = this.CreatePlanRateType(checkoutModel.PlanTypeId);
+                sendTrialCommand.Amount = this.CreatePlanPrice(checkoutModel.PlanTypeId);
                 sendTrialCommand.BillingCycle = this.CreateBillingCyle(checkoutModel.PlanTypeId);
                 sendTrialCommand.Plan = this.CreatePlanName(checkoutModel.PlanTypeId);
 
@@ -260,27 +260,21 @@
 
             return success;
         }
-        private decimal? CreatePlanPrice(int planId, string planType)
+        private decimal CreatePlanPrice(string planTypeId)
         {
-            var plan = _plan.Get(planId);
-
-            if (plan != null)
+            switch (planTypeId)
             {
-                switch (planType)
-                {
-                    case PlanType.Basic:
-                        return plan.BasicPrice;
-                    case PlanType.Premium:
-                        return plan.AdvancePrice;
-                    case PlanType.PremiumPlus:
-                        return plan.ProfessionalPrice;
-                    default:
-                        return 0;
-                }
+                case PlanType.Basic:
+                    return PlanPrice.Basic;
+                case PlanType.Premium:
+                    return PlanPrice.Premium;
+                case PlanType.PremiumPlus:
+                    return PlanPrice.PremiumPlus;
+                case PlanType.Trial:
+                    return PlanPrice.Trial;
             }
 
             return 0;
-
         }
         private void CreateStripeSubscription(CheckoutModel checkoutModel, Guid tenantId)
         {
@@ -300,27 +294,22 @@
         private StripePlanModel CreatePlanForCheckout(int planId, string planTypeId)
         {
             var taxRate = GeneralConfiguration.Configuration.Settings.General?.TaxRate;
-            var planPrice = this.CreatePlanPrice(planId, planTypeId);
+            var price = this.CreatePlanPrice(planTypeId);
 
-            if (planPrice != 0)
+            var vat = taxRate != null ? price * (taxRate / 100) : 1;
+
+            var stripePlanModel = new StripePlanModel
             {
-                var vat = taxRate != null ? planPrice * (taxRate / 100) : 1;
+                PlanId = planId,
+                PlanTypeId = planTypeId,
+                Amount = Math.Round((decimal)price, 2),
+                Total = Math.Round((decimal)(vat + price), 2),
+                Vat = Math.Round((decimal)vat, 2),
+                Plan = this.CreatePlanName(planTypeId),
+                BillingCycle = this.CreateBillingCycleDescription(planTypeId)
+            };
 
-                var stripePlanModel = new StripePlanModel
-                {
-                    PlanId = planId,
-                    PlanTypeId = planTypeId,
-                    Amount = Math.Round((decimal)planPrice, 2),
-                    Total = Math.Round((decimal)(vat + planPrice), 2),
-                    Vat = Math.Round((decimal)vat, 2),
-                    Plan = this.CreatePlanName(planTypeId),
-                    BillingCycle = this.CreateBillingCycleDescription(planTypeId)
-                };
-
-                return stripePlanModel;
-            }
-
-            return new StripePlanModel();
+            return stripePlanModel;
         }
         private int CreatePlanCutOff(string planTypeId)
         {
@@ -397,23 +386,7 @@
                 default:
                     return PlanNameType.Trial;
             }
-        }
-        private decimal CreatePlanRateType(string planTypeId)
-        {
-            switch (planTypeId)
-            {
-                case PlanType.Basic:
-                    return PlanRateType.Basic;
-                case PlanType.Premium:
-                    return PlanRateType.Premium;
-                case PlanType.PremiumPlus:
-                    return PlanRateType.PremiumPlus;
-                case PlanType.Trial:
-                    return PlanRateType.Trial;
-            }
-
-            return 0;
-        }
+        }        
         private DateTime CreatePlanExpirationDate(string planTypeId)
         {
             switch (planTypeId)
@@ -445,7 +418,7 @@
         {
             var apiUserManger = GeneralConfiguration.Configuration.DependencyResolver.GetService<IApiUserManger>();
             var path= this.Server.MapPath("~/App_Data/Email/userRegistration.html");
-            var user = apiUserManger.CreateAsync(UserManager, path, new ApplicationUser { PhoneNumber = userModel.Mobile, UserName = userModel.Email, Email = userModel .Email, FirstName = userModel.FirstName, LastName = userModel.LastName }, tenantId, userModel.Password, false, true);
+            var user = apiUserManger.CreateAsync(UserManager, path, userModel.AppCode.ToInt(), new ApplicationUser { PhoneNumber = userModel.Mobile, UserName = userModel.Email, Email = userModel .Email, FirstName = userModel.FirstName, LastName = userModel.LastName }, tenantId, userModel.Password, false, true);
 
             return user;
         }       

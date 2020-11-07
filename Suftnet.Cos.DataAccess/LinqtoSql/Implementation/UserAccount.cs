@@ -67,7 +67,7 @@
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.UserAccount() { TenantId = entity.TenantId, UserId= entity.UserId, CreatedBy = entity.CreatedBy, CreatedDt = entity.CreatedDt };
+                var obj = new Action.UserAccount() { EmailAddress = entity.EmailAddress, Code = entity.Code, TenantId = entity.TenantId, UserId= entity.UserId, CreatedBy = entity.CreatedBy, CreatedDt = entity.CreatedDt };
                 context.UserAccounts.Add(obj);
                 context.SaveChanges();
                 return obj.Id;
