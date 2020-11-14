@@ -444,7 +444,7 @@
             mailMessage.From = new System.Net.Mail.MailAddress(GeneralConfiguration.Configuration.Settings.General.Email, GeneralConfiguration.Configuration.Settings.General.Company);
             mailMessage.To.Add(email);
             mailMessage.Body = message;
-            mailMessage.Subject = title.Replace("[title]", Constant.ProductName);
+            mailMessage.Subject = title;
             messageModel.MailMessage = new MailMessage(mailMessage);
 
             try
@@ -467,7 +467,7 @@
                 if (recipients.Any())
                 {
                     sendGrid.Recipients = recipients;
-                    sendGrid.SendMail(body, true, title.Replace("[title]", Constant.ProductName));
+                    sendGrid.SendMail(body, true, title);
                 }
             }
             catch (Exception ex)

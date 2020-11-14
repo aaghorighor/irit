@@ -12,13 +12,13 @@
         public string ExternalId { get; set; }
     }
 
-    public class VerifyEmailAddressDto
+    public class VerifyAppCode
     {
         [Required()]
         [StringLength(50)]
         public string EmailAddress { get; set; }
         [Required()]
         [StringLength(50)]
-        public int AppCode { get; set; }
+        public string AppCode { get; set; }
     }
 }

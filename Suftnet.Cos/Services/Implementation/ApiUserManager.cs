@@ -60,7 +60,8 @@
                     {
                         UserId = model.Id,
                         TenantId = tenantId,
-                        Code = app_code,
+                        AppCode = app_code,
+                        EmailAddress = model.Email,
 
                         CreatedBy = model.Email,
                         CreatedDt = DateTime.UtcNow

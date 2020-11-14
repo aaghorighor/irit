@@ -42,10 +42,11 @@
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var objResult = (from o in context.UserAccounts
+                var objResult = (from o in context.UserAccounts.Include("Tenants").Include("TenantAddresses")
                                  join u in context.Users on o.UserId equals u.Id
-                                 where u.UserName == userName                               
-                                 select new UserAccountDto { UserId = u.Id, Id = u.Id, AreaId = u.AreaId, Area = u.Area, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, UserName = u.UserName, Active = u.Active, TenantId = o.TenantId }).FirstOrDefault();
+                                 let t = o.Tenants
+                                 where o.EmailAddress == userName
+                                 select new UserAccountDto { TenantEmail = u.Email, TenantMobile = u.PhoneNumber, DeliveryLimitNote = t.DeliveryLimitNote, FlatRate = t.FlatRate, IsFlatRate = t.IsFlatRate, CurrencyCode = t.CurrencyCode, DeliveryRate = t.DeliveryRate, DeliveryUnit = t.DeliveryUnitId, CompleteAddress = t.TenantAddresses.CompleteAddress, ExpirationDate = t.ExpirationDate, IsExpired = t.IsExpired, TenantName = t.Name, UserId = u.Id, Id = u.Id, AreaId = u.AreaId, Area = u.Area, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, UserName = u.UserName, Active = u.Active, TenantId = o.TenantId }).FirstOrDefault();
                 return objResult;
             }
         }
@@ -67,7 +68,7 @@
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.UserAccount() { EmailAddress = entity.EmailAddress, Code = entity.Code, TenantId = entity.TenantId, UserId= entity.UserId, CreatedBy = entity.CreatedBy, CreatedDt = entity.CreatedDt };
+                var obj = new Action.UserAccount() { EmailAddress = entity.EmailAddress, AppCode = entity.AppCode, TenantId = entity.TenantId, UserId= entity.UserId, CreatedBy = entity.CreatedBy, CreatedDt = entity.CreatedDt };
                 context.UserAccounts.Add(obj);
                 context.SaveChanges();
                 return obj.Id;

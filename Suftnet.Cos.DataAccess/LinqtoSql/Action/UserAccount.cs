@@ -22,10 +22,11 @@ namespace Suftnet.Cos.DataAccess.Action
         public Guid TenantId { get; set; }
         [ForeignKey("TenantId")]
         public virtual Tenant Tenants { get; set; }
-        public int Code { get; set; }
+        [Required]
+        public int AppCode { get; set; }
         [Required]
         [StringLength(50)]
-        public string EmailAddress { get; set; }
+        public string EmailAddress { get; set; }        
 
     }
 }

@@ -6,8 +6,8 @@
 
     public interface IUser
     {
-        bool UpdateAccessCode(string emailAddress, int code, string otp);
-        ApplicationUser VerifyAccessCode(string otp, string emailAddress, int appCode);
+        bool UpdateAccessCode(string userId, string otp);
+        MobileTenantDto VerifyAccessCode(string otp, string emailAddress, int appCode);
         ApplicationUser GetUserByPhone(string phone, Guid tenantId);
         bool CheckEmailAddress(string userName);
         IList<UserAccountDto> GetById(Guid tenantId);

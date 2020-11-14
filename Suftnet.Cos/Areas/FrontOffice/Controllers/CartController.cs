@@ -49,7 +49,7 @@
         [HttpGet]
         public async Task<JsonResult> FetchDefaultMenues()
         {
-            return Json(new { ok = true, dataobject = await Task.Run(() => _menu.GetBy(this.TenantId, 10)) }, JsonRequestBehavior.AllowGet);
+            return Json(new { ok = true, dataobject = await Task.Run(() => _menu.GetBy(this.TenantId, 20)) }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]

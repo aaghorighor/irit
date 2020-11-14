@@ -322,6 +322,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controllers\Api\v1\AccountController.cs" />
+    <Compile Include="Controllers\Api\v1\MobileLoggerController.cs" />
     <Compile Include="Controllers\Api\v1\TableController.cs" />
     <Compile Include="Controllers\Api\v1\BoostrapController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
@@ -962,9 +963,7 @@
     <Content Include="Content\frontoffice-2\img\logos\2.svg" />
     <Content Include="Content\frontoffice-2\img\logos\3.png" />
     <Content Include="Content\frontoffice-2\img\logos\3.svg" />
-    <Content Include="Content\frontoffice-2\img\logos\4.png" />
     <Content Include="Content\frontoffice-2\img\logos\4.svg" />
-    <Content Include="Content\frontoffice-2\img\logos\5.png" />
     <Content Include="Content\frontoffice-2\img\logos\5.svg" />
     <Content Include="Content\frontoffice-2\img\logos\6.png" />
     <Content Include="Content\frontoffice-2\img\logos\companies\1.svg" />

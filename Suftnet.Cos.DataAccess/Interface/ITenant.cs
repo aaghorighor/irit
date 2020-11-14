@@ -23,6 +23,7 @@
         int Count();
         TenantAdapter GetAll(int iskip, int itake, string terms);
         TenantAdapter GetAll(int iskip, int itake);
+        TenantDto Get(Suftnet.Cos.DataAccess.Action.Tenant o);
 
     }
 }

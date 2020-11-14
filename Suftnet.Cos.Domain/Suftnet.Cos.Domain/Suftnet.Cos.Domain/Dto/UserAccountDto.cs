@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Diagnostics.Contracts;
 
     public class UserAccountDto
     {
@@ -38,5 +39,6 @@
         public decimal? FlatRate { get; set; }
         public string TenantEmail { get; set; }
         public string TenantMobile { get; set; }
+        public TenantDto TenantDto { get; set; }
     }
 }

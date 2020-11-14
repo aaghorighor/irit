@@ -34,7 +34,7 @@
         {
             if (!ModelState.IsValid)
             {
-                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, ModelState.Error()));
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
             }
 
              _boostrapCommand.TenantId = new Guid(param.ExternalId);

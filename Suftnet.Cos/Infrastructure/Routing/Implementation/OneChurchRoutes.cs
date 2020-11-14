@@ -78,25 +78,39 @@
             m_Routes.MapOneChurchRoute(
                CHECKOUTCONFIRMATION
                 , "subscription confirmation".ToFriendlyUrl()
-                , new { controller = "Checkout", action = "Confirmation" }
+                , new { controller = "checkout", action = "Confirmation" }
                 , m_namespaces
             );           
 
             m_Routes.MapOneChurchRoute(
                 CHECKEMAIL
                  , "checkout/{email}"
-                 , new { controller = "Checkout", action = "CheckForCustomerEmail", email = UrlParameter.Optional }
+                 , new { controller = "checkout", action = "CheckForCustomerEmail", email = UrlParameter.Optional }
                  , m_namespaces
              );                      
 
             m_Routes.MapOneChurchRoute(
                SUBSCRIPTION
                   , "checkout/entry/{planId}/{planTypeId}"
-                  , new { controller = "Checkout", action = "entry", planId = UrlParameter.Optional, planTypeId = UrlParameter.Optional }
+                  , new { controller = "checkout", action = "entry", planId = UrlParameter.Optional, planTypeId = UrlParameter.Optional }
                   , m_namespaces
-              );           
+              );
 
-         
+            m_Routes.MapOneChurchRoute(
+                CREATESUBSCRIPTION
+                 , "create subscription".FriendlyUrl()
+                 , new { controller = "checkout", action = "Create" }
+                 , m_namespaces
+             );
+
+            m_Routes.MapOneChurchRoute(
+                  CREATESUBSCRIPTIONTRIAL
+                   , "create subscription trial".FriendlyUrl()
+                   , new { controller = "checkout", action = "CreateTrial" }
+                   , m_namespaces
+               );
+
+
             m_Routes.MapOneChurchRoute(
                   SUBSCRIPTION_TRIAL
                    , "free 15 days trial".FriendlyUrl()
