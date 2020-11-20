@@ -221,7 +221,7 @@
                     "~/Scripts/60000/menu.js"
             ));
 
-            BundleTable.Bundles.Add(new ScriptBundle("~/bundle/multislider-js").Include(
+            BundleTable.Bundles.Add(new ScriptBundle("~/bundle/multisliderjs").Include(
                     "~/Scripts/lib/multislider.js"
             ));
 

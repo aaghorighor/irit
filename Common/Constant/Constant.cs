@@ -84,7 +84,8 @@ namespace Suftnet.Cos.Common
         public const string FlatRate = "FlatRate";
         public const string CompleteAddress = "CompleteAddress";
         public const string TenantEmail = "TenantEmail";
-        public const string TenantMobile = "TenantMobile";      
+        public const string TenantMobile = "TenantMobile";
+        public const string AppCode = "AppCode";
     }
 
     public class PlanType

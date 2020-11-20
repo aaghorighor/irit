@@ -48,6 +48,7 @@
                 x.For<IAdminDashboardCommand>().Use<AdminDashboardCommand>();
                 x.For<IDashboardCommand>().Use<DashboardCommand>();
                 x.For<IBoostrapCommand>().Use<BoostrapCommand>();
+                x.For<IItemCommand>().Use<ItemCommand>();
             });           
         }
     }

@@ -28,6 +28,7 @@ namespace Suftnet.Cos.Web.ViewModel
         public List<MobileCategoryDto> Categories { get; set; }
         public List<MobileMenuDto> Menus { get; set; }
         public List<MobileAddonDto> Addons { get; set; }
+        public dynamic Outlet { get; set; }
     }
 
 }

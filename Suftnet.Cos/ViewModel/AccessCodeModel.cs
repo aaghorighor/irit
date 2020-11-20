@@ -12,7 +12,7 @@
         [StringLength(6)]
         public string Otp { get; set; }
         [Required()]       
-        public int AppCode { get; set; }       
+        public string AppCode { get; set; }       
 
     }
 }

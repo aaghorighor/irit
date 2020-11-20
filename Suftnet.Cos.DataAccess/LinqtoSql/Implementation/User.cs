@@ -94,7 +94,7 @@
                 return null;
             }
         }
-        public ApplicationUser GetUserByUserName(string userName, int appCode)
+        public ApplicationUser GetUserByUserName(string userName, string appCode)
         {
             using (var context = DataContextFactory.CreateContext())
             {
@@ -272,7 +272,7 @@
 
             return false;
         }
-        public MobileTenantDto VerifyAccessCode(string otp, string emailAddress, int appCode)
+        public MobileTenantDto VerifyAccessCode(string otp, string emailAddress, string appCode)
         {
             using (var context = DataContextFactory.CreateContext())
             {
@@ -282,7 +282,7 @@
                            let a = o.Tenants.TenantAddresses
                            where o.EmailAddress == emailAddress && o.AppCode == appCode && u.OTP == otp
                            select new MobileTenantDto { CompleteAddress = a.CompleteAddress, Country = a.Country, Town = a.Town, PostCode = a.PostCode, Description = t.Description, Email =t.Email, ImageUrl = u.ImageUrl, FirstName = u.FirstName, LastName =u.LastName, Name = t.Name,
-                              AreaId =u.AreaId, LogoUrl = t.LogoUrl, WebsiteUrl = t.WebsiteUrl, Telephone = t.Telephone, Latitude = a.Latitude, Longitude = a.Logitude, Mobile = t.Mobile, Area =u.Area,  UserName = u.UserName, PhoneNumber = u.PhoneNumber, TenantId = o.TenantId, Id = u.Id }).FirstOrDefault();
+                              AreaId =u.AreaId, LogoUrl = t.LogoUrl, WebsiteUrl = t.WebsiteUrl, Telephone = t.Telephone, Latitude = a.Latitude, Longitude = a.Logitude, Mobile = t.Mobile, Area =u.Area,  UserName = u.UserName, PhoneNumber = u.PhoneNumber, TenantId =t.Id, Id = u.Id }).FirstOrDefault();
 
                 if (obj != null)
                 {

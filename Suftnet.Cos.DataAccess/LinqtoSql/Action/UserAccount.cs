@@ -23,7 +23,7 @@ namespace Suftnet.Cos.DataAccess.Action
         [ForeignKey("TenantId")]
         public virtual Tenant Tenants { get; set; }
         [Required]
-        public int AppCode { get; set; }
+        public string AppCode { get; set; }
         [Required]
         [StringLength(50)]
         public string EmailAddress { get; set; }        

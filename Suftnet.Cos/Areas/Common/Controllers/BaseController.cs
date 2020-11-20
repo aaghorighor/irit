@@ -176,6 +176,21 @@
             }
         }
 
+        public string AppCode
+        {
+            get
+            {
+                var test = ((ClaimsIdentity)this.HttpContext.User.Identity);
+
+                if (test != null)
+                {
+                    var name = test.Claims.Where(x => x.Type == Identity.AppCode).Select(x => x.Value).SingleOrDefault();
+                    return name;
+                }
+
+                return "";
+            }
+        }
         protected override RedirectResult Redirect(string url)
         {
             if (url.IsNullOrEmpty())

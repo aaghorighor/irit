@@ -63,7 +63,8 @@
                 claims.Add(new Claim("CompleteAddress", account.CompleteAddress));           
                 claims.Add(new Claim("TenantEmail", account.TenantEmail));
                 claims.Add(new Claim("TenantMobile", account.TenantMobile));
-            
+                claims.Add(new Claim("AppCode", account.AppCode));
+
                 if ((bool)account.IsFlatRate == true)
                 {
                     claims.Add(new Claim("IsFlatRate", "true"));

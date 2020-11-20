@@ -113,7 +113,7 @@
                 return Json(new { ok = false, msg = ErrorBuilder(result.Errors) }, JsonRequestBehavior.AllowGet);
             }
                       
-            Map(entityToCreate.Email);
+            Map(entityToCreate.Id, entityToCreate);
             Task.Run(() => this.CreatePermissions(entityToCreate));
 
             return Json(new { ok = true, flag = (int)flag.Add }, JsonRequestBehavior.AllowGet);
@@ -238,16 +238,16 @@
             return user;
 
         }
-       private void Map(string userName)
+       private void Map(string userId, UserAccountDto model)
         {
             try {
-
-                var model = UserManager.FindByEmail(userName);
-
+               
                 _userAccount.Insert(new DataAccess.Action.UserAccount()
                 {
-                    UserId = model.Id,
+                    UserId = userId,
                     TenantId = this.TenantId,
+                    EmailAddress = model.Email,
+                    AppCode = this.AppCode,
                     CreatedBy = this.UserName,
                     CreatedDt = DateTime.UtcNow
                 });

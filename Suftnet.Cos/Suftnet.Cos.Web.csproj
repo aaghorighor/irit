@@ -298,6 +298,7 @@
     <Compile Include="Areas\Subscription\Controllers\PlanController.cs" />
     <Compile Include="Areas\Subscription\Controllers\TrialController.cs" />
     <Compile Include="Areas\Subscription\Models\DeleteCard.cs" />
+    <Compile Include="Command\ItemCommand.cs" />
     <Compile Include="Command\BoostrapCommand.cs" />
     <Compile Include="Command\DashboardCommand.cs" />
     <Compile Include="Command\AdminDashboardCommand.cs" />
@@ -324,7 +325,7 @@
     <Compile Include="Controllers\Api\v1\AccountController.cs" />
     <Compile Include="Controllers\Api\v1\MobileLoggerController.cs" />
     <Compile Include="Controllers\Api\v1\TableController.cs" />
-    <Compile Include="Controllers\Api\v1\BoostrapController.cs" />
+    <Compile Include="Controllers\Api\v1\ItemController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\KnowledgeBaseController.cs" />

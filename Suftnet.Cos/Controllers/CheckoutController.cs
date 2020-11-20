@@ -418,7 +418,7 @@
         {
             var apiUserManger = GeneralConfiguration.Configuration.DependencyResolver.GetService<IApiUserManger>();
             var path= this.Server.MapPath("~/App_Data/Email/userRegistration.html");
-            var user = apiUserManger.CreateAsync(UserManager, path, userModel.AppCode.ToInt(), new ApplicationUser { PhoneNumber = userModel.Mobile, UserName = userModel.Email, Email = userModel .Email, FirstName = userModel.FirstName, LastName = userModel.LastName }, tenantId, userModel.Password, false, true);
+            var user = apiUserManger.CreateAsync(UserManager, path, userModel.AppCode, new ApplicationUser { PhoneNumber = userModel.Mobile, UserName = userModel.Email, Email = userModel .Email, FirstName = userModel.FirstName, LastName = userModel.LastName }, tenantId, userModel.Password, false, true);
 
             return user;
         }       

@@ -50,7 +50,7 @@
                         @Html.Partial("_cartSummary")
 
                         <ul style="margin-left:0px; margin-top :50px" class="uibutton-group">
-                            <li><span class="etip"><a class="uibutton special" id="btnOpenTender" title="Payment">Tender</a></span></li>     
+                            <li><span class="etip"><a class="uibutton special" id="btnOpenTender" title="Payment">Tender</a></span></li>
                             <li><span class="etip"><a class="uibutton icon prev normal " id="btnClose" title="Go to Dine in ">Close</a></span></li>
                         </ul>
 
@@ -75,7 +75,7 @@
 </div>
 
 <div id="addonDialog" style="display :none">
-   @Html.Partial("_menuAddon")
+    @Html.Partial("_menuAddon")
 </div>
 
 <div class="hide">
@@ -93,7 +93,6 @@
     <span id="dineInUrl" name="dineInUrl" data-dineInUrl="@Url.Action("index", "table", new { area = "frontoffice" })"></span>
 </div>
 
-@Scripts.Render("~/bundle/multislider-js")
 <script type="text/javascript">
     $(function () {
         cart.init();

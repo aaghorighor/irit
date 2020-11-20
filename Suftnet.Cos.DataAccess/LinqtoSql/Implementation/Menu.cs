@@ -158,7 +158,7 @@
                                  let u = o.Units
                                  where o.TenantId == tenantId && o.Active == true
                                  orderby o.Id descending
-                                 select new MobileMenuDto { ImageUrl = o.ImageUrl, Name = o.Name, Quantity = o.Quantity, Unit = u.Name, Category = c.Name, Description = o.Description, Price = o.Price, Id = o.Id }).ToList();
+                                 select new MobileMenuDto { CategoryId = o.CategoryId, ImageUrl = o.ImageUrl, Name = o.Name, Quantity = o.Quantity, Unit = u.Name, Category = c.Name, Description = o.Description, Price = o.Price, Id = o.Id }).ToList();
                 return objResult;
             }
         }
