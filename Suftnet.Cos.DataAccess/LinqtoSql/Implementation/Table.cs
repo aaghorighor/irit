@@ -167,7 +167,7 @@
                 var objResult = (from o in context.Tables
                                  where o.TenantId == tenantId && o.Active == true
                                  orderby o.CreatedDt descending
-                                 select new MobileTableDto { Number = o.Number, Size = o.Size, OrderId = o.OrderId, TimeIn = o.TimeIn, Id = o.Id }).ToList();
+                                 select new MobileTableDto { ExternalId = tenantId, Number = o.Number, Size = o.Size, OrderId = o.OrderId, TimeIn = o.TimeIn, TableId = o.Id }).ToList();
                 return objResult;
             }
         }

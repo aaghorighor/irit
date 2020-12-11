@@ -13,16 +13,20 @@
         private readonly IAddon _addon;
         private readonly IJwToken _jwToken;
         private readonly IMobilePermission _mobilePermission;
+        private readonly ITax _tax;
+        private readonly IDiscount _discount;
 
         public BoostrapCommand(
             ICategory category, IAddon addon, IMobilePermission mobilePermission,
-             IJwToken jwToken,
+             IJwToken jwToken, IDiscount discount, ITax tax,
             IMenu menu)
         {
             _category = category;
             _menu = menu;
             _addon = addon;
             _jwToken = jwToken;
+            _tax = tax;
+            _discount = discount;
             _mobilePermission = mobilePermission;
         }               
               
@@ -38,6 +42,8 @@
                     Menus = _menu.GetBy(TenantId),
                     Categories = _category.GetBy(TenantId),
                     Addons = _addon.GetBy(TenantId),
+                    Taxes = _tax.Fetch(TenantId),
+                    Discounts = _discount.Fetch(TenantId),
                     Outlet = new
                     {
                         user = new

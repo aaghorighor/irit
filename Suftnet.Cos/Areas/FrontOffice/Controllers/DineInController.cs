@@ -134,7 +134,12 @@
         {
             if (entityToCreate.StatusId == new Guid(eOrderStatus.Occupied))
             {
-                Task.Run(() => _table.UpdateStatus(entityToCreate.StatusId, entityToCreate.TableId, entityToCreate.Id, DateTime.UtcNow, this.UserName));
+                Task.Run(() => _table.UpdateStatus(entityToCreate.StatusId,
+                        entityToCreate.TableId,
+                        entityToCreate.Id,
+                        DateTime.UtcNow,
+                        this.UserName
+                    ));
             }
         }
         #endregion

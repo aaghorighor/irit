@@ -16,16 +16,9 @@ namespace Suftnet.Cos.DataAccess
     }
 
     public class MobileTableDto
-    {
-        [JsonIgnore]
-        public Guid Id { get; set; }
-        public string ExternalId
-        {
-            get
-            {
-                return Id.ToString();
-            }
-        }
+    {      
+        public Guid TableId { get; set; }     
+        public Guid ExternalId { get; set; }         
         public int Size { get; set; }
         public string Number { get; set; }
         public string TimeIn { get; set; }

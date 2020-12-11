@@ -24,6 +24,7 @@
             if (identity == null)
             {
                 Chanllenge(filterContext);
+                return;
             }
 
             var claim = identity.Claims.Where(x => x.Type == Identity.AreaId).Select(x => x.Value).SingleOrDefault();
@@ -31,6 +32,7 @@
             if (string.IsNullOrEmpty(claim))
             {
                 Chanllenge(filterContext);
+                return;
             }
 
             string line = _claims.FirstOrDefault();
@@ -39,6 +41,7 @@
             if (!test)
             {
                 Chanllenge(filterContext);
+                return;
             }
 
             var userId = identity.Claims.Where(x => x.Type == Identity.UserId).Select(x => x.Value).SingleOrDefault();
@@ -46,6 +49,7 @@
             if (string.IsNullOrEmpty(userId))
             {
                 Chanllenge(filterContext);
+                return;
             }
 
             var isExpired = identity.Claims.Where(x => x.Type == Identity.IsExpired).Select(x => x.Value).SingleOrDefault();
@@ -61,12 +65,14 @@
             if (string.IsNullOrEmpty(expirationDate))
             {
                 Chanllenge(filterContext);
+                return;
             }
 
             var date = expirationDate.ToDate();          
             if (date == null)
             {
                 Chanllenge(filterContext);
+                return;
             }
 
             if(date.Date < DateTime.UtcNow.Date)
@@ -102,14 +108,14 @@
             {
                 if (filterContext.RequestContext.HttpContext.Request.UrlReferrer != null)
                 {
-                    filterContext.HttpContext.Response.Redirect(filterContext.RequestContext.HttpContext.Request.UrlReferrer.AbsoluteUri);
+                    filterContext.Result = new RedirectResult(filterContext.RequestContext.HttpContext.Request.UrlReferrer.AbsoluteUri);
                 }
                 else
                 {
-                    filterContext.HttpContext.Response.Redirect(filterContext.LoginUrl());
+                    filterContext.Result = new RedirectResult(filterContext.LoginUrl());
                 }
             }
-            return;
+         
         }
         #endregion
     }

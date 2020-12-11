@@ -84,3 +84,61 @@
 --------------------------------------------------------------------------------------------
 20201120 14:03:45 [11] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
 --------------------------------------------------------------------------------------------
+20201127 16:16:48 [10] ERROR Web [(null)] - A task was canceled.
+--------------------------------------------------------------------------------------------
+20201127 18:13:32 [10] ERROR Web [(null)] - Object reference not set to an instance of an object.
+--------------------------------------------------------------------------------------------
+20201127 18:16:08 [11] ERROR Web [(null)] - Object reference not set to an instance of an object.
+--------------------------------------------------------------------------------------------
+20201127 18:20:48 [26] ERROR Web [(null)] - Object reference not set to an instance of an object.
+--------------------------------------------------------------------------------------------
+20201127 18:23:10 [28] ERROR Web [(null)] - A task was canceled.
+--------------------------------------------------------------------------------------------
+20201127 18:35:26 [20] ERROR Web [(null)] - The operation was canceled.
+--------------------------------------------------------------------------------------------
+20201127 19:22:04 [22] ERROR Web [(null)] - A task was canceled.
+--------------------------------------------------------------------------------------------
+20201127 19:45:11 [16] ERROR Web [(null)] - A task was canceled.
+--------------------------------------------------------------------------------------------
+20201127 19:50:49 [16] ERROR Web [(null)] - The operation was canceled.
+--------------------------------------------------------------------------------------------
+20201211 10:39:43 [9] ERROR Web [(null)] - The view 'Index' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/entry/Index.aspx
+~/Views/entry/Index.ascx
+~/Views/Shared/Index.aspx
+~/Views/Shared/Index.ascx
+~/Views/entry/Index.cshtml
+~/Views/entry/Index.vbhtml
+~/Views/Shared/Index.cshtml
+~/Views/Shared/Index.vbhtml
+--------------------------------------------------------------------------------------------
+20201211 10:39:43 [9] ERROR Web [(null)] - The view 'Index' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/entry/Index.aspx
+~/Views/entry/Index.ascx
+~/Views/Shared/Index.aspx
+~/Views/Shared/Index.ascx
+~/Views/entry/Index.cshtml
+~/Views/entry/Index.vbhtml
+~/Views/Shared/Index.cshtml
+~/Views/Shared/Index.vbhtml
+--------------------------------------------------------------------------------------------
+20201211 10:39:43 [9] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
+--------------------------------------------------------------------------------------------
+20201211 10:39:44 [9] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
+--------------------------------------------------------------------------------------------
+20201211 10:39:44 [9] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
+--------------------------------------------------------------------------------------------
+20201211 10:39:44 [9] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
+--------------------------------------------------------------------------------------------
+20201211 10:39:44 [9] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
+--------------------------------------------------------------------------------------------
+20201211 10:39:45 [9] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
+--------------------------------------------------------------------------------------------
+20201211 10:39:45 [9] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
+--------------------------------------------------------------------------------------------
+20201211 10:39:45 [9] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
+--------------------------------------------------------------------------------------------
+20201211 10:39:45 [9] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
+--------------------------------------------------------------------------------------------
+20201211 10:39:46 [9] ERROR Web [(null)] - Server cannot append header after HTTP headers have been sent.
+--------------------------------------------------------------------------------------------

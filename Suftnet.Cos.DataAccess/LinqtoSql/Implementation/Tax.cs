@@ -115,7 +115,7 @@
                 var result = (from o in context.Taxes
                               where o.TenantId == tenantId && o.Active == true
                               orderby o.IndexNo ascending
-                              select new MobileTaxDto { Id = o.Id, Name = o.Name }).ToList();
+                              select new MobileTaxDto { Id = o.Id, Rate = o.Rate, Name = o.Name }).ToList();
                 return result;
             }
         }

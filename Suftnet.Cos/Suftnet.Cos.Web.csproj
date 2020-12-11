@@ -16,7 +16,7 @@
     <AssemblyName>Suftnet.Cos.Web</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
@@ -298,6 +298,8 @@
     <Compile Include="Areas\Subscription\Controllers\PlanController.cs" />
     <Compile Include="Areas\Subscription\Controllers\TrialController.cs" />
     <Compile Include="Areas\Subscription\Models\DeleteCard.cs" />
+    <Compile Include="Command\CreateOrderCommand.cs" />
+    <Compile Include="Command\ICreateOrderCommand.cs" />
     <Compile Include="Command\ItemCommand.cs" />
     <Compile Include="Command\BoostrapCommand.cs" />
     <Compile Include="Command\DashboardCommand.cs" />
@@ -324,6 +326,7 @@
     </Compile>
     <Compile Include="Controllers\Api\v1\AccountController.cs" />
     <Compile Include="Controllers\Api\v1\MobileLoggerController.cs" />
+    <Compile Include="Controllers\Api\v1\OrdeController.cs" />
     <Compile Include="Controllers\Api\v1\TableController.cs" />
     <Compile Include="Controllers\Api\v1\ItemController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
@@ -440,8 +443,9 @@
     <Compile Include="ViewModel\ParamModel.cs" />
     <Compile Include="ViewModel\SectionModel.cs" />
     <Compile Include="ViewModel\TopicModel.cs" />
-    <Compile Include="ViewModel\VerifyModel.cs" />
     <Compile Include="ViewModel\UserModel.cs" />
+    <Compile Include="ViewModel\VerifyModel.cs" />
+    <Compile Include="ViewModel\CreateOrder.cs" />
     <Compile Include="ViewModel\MediaModel.cs" />
     <Compile Include="ViewModel\CardAdapter.cs" />
     <Compile Include="ViewModel\CardOptions.cs" />
@@ -4362,11 +4366,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>FALSE</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>5008</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:5006/</IISUrl>
+          <IISUrl>http://localhost/irit</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
