@@ -240,17 +240,18 @@
         }
        private void Map(string userId, UserAccountDto model)
         {
-            try {
-               
-                _userAccount.Insert(new DataAccess.Action.UserAccount()
-                {
-                    UserId = userId,
-                    TenantId = this.TenantId,
-                    EmailAddress = model.Email,
-                    AppCode = this.AppCode,
-                    CreatedBy = this.UserName,
-                    CreatedDt = DateTime.UtcNow
-                });
+            try {               
+                    _userAccount.Insert(new DataAccess.Action.UserAccount()
+                    {
+                        UserId = userId,
+                        TenantId = this.TenantId,
+                        EmailAddress = model.Email,
+                        AppCode = this.AppCode,
+                        UserCode = GetHashCode(new Guid(userId)),
+
+                        CreatedBy = this.UserName,
+                        CreatedDt = DateTime.UtcNow
+                    });
 
             }
             catch(Exception ex)
@@ -290,6 +291,13 @@
             return srt.ToString();
 
         }
+       private string GetHashCode(Guid guid)
+       {
+            var id = guid.GetHashCode();
+            var appCode = Math.Abs(id).ToString();
+
+            return appCode.Substring(0, 8);
+       }
 
         #endregion      
     }

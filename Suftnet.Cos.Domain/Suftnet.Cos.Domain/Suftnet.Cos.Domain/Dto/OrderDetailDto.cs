@@ -27,5 +27,8 @@
                 return total;
              }
         }
+
+        public string AddonIds { get; set; }  
+        public string AddonNames { get; set; }
     }
 }

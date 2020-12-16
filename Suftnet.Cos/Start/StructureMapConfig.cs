@@ -50,6 +50,8 @@
                 x.For<IBoostrapCommand>().Use<BoostrapCommand>();
                 x.For<IItemCommand>().Use<ItemCommand>();
                 x.For<ICreateOrderCommand>().Use<CreateOrderCommand>();
+                x.For<IUserBoostrapCommand>().Use<UserBoostrapCommand>();
+                x.For<IUpdateOrderCommand>().Use<UpdateOrderCommand>();
             });           
         }
     }

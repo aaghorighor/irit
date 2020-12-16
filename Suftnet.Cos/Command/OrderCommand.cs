@@ -82,6 +82,8 @@
                             OrderId = OrderId,
                             Discount = 0,
                             Total = lineTotal,
+                            AddonIds = item.AddonIds,                          
+                            AddonNames = item.AddonNames,
                             Id = Guid.NewGuid(),
 
                             CreatedBy = CreatedBy,

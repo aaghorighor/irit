@@ -14,11 +14,14 @@
     [RoutePrefix("api/v1/order")]
     public class OrderController : BaseController
     {
-        private readonly ICreateOrderCommand _command;
-     
-        public OrderController(ICreateOrderCommand command)
+        private readonly ICreateOrderCommand _createOrderCommand;
+        private readonly IUpdateOrderCommand _updateOrderCommand;
+
+        public OrderController(IUpdateOrderCommand updateOrderCommand,
+            ICreateOrderCommand createOrderCommand)
         {
-            _command = command;           
+            _createOrderCommand = createOrderCommand;
+            _updateOrderCommand = updateOrderCommand;
         }
 
         [HttpGet]
@@ -31,25 +34,41 @@
         [HttpPost]
        // [JwtAuthenticationAttribute]
         [Route("create")]
-        public async Task<IHttpActionResult> Create([FromBody]CreateOrder entityToCreate)
+        public async Task<IHttpActionResult> Create([FromBody]CreateOrder param)
         {
             if (!ModelState.IsValid)
             {
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
             }
 
-            _command.entityToCreate = entityToCreate;
-            await Task.Run(()=>_command.Execute());
+            _createOrderCommand.entityToCreate = param;
+            await Task.Run(()=> _createOrderCommand.Execute());
 
             var order = new
             {
-                externalId = entityToCreate.ExternalId,
-                orderId = entityToCreate.OrderId,
-                tableId = entityToCreate.TableId
+                externalId = param.ExternalId,
+                orderId = param.OrderId,
+                tableId = param.TableId
             };
 
             return Ok(order);           
-        }       
+        }
+
+        [HttpPost]
+        // [JwtAuthenticationAttribute]
+        [Route("update")]
+        public async Task<IHttpActionResult> Update([FromBody]OrderAdapter param)
+        {
+            if (!ModelState.IsValid)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
+            }
+
+            _updateOrderCommand.OrderAdapter = param;      
+             await Task.Run(() => _updateOrderCommand.Execute());
+
+            return Ok(true);
+        }
 
     }
 }

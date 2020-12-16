@@ -16,7 +16,7 @@
                 var objResult = (from o in context.OrderDetails 
                                  join p in context.Menus on o.MenuId equals p.Id                                 
                                  where o.Id == Id
-                                 select new OrderDetailDto { IsKitchen = o.IsKitchen, Discount = o.Discount, ItemName = o.ItemName, Title = p.Name, TaxRate = o.Tax, CategoryId = p.CategoryId, MenuId = o.MenuId, OrderId = o.OrderId, Total = o.LineTotal, Quantity = o.Quantity, Price = o.Price, CreatedBy = o.CreatedBy, Id = o.Id }).FirstOrDefault();
+                                 select new OrderDetailDto { AddonIds = o.AddonIds, AddonNames = o.AddonNames, IsKitchen = o.IsKitchen, Discount = o.Discount, ItemName = o.ItemName, Title = p.Name, TaxRate = o.Tax, CategoryId = p.CategoryId, MenuId = o.MenuId, OrderId = o.OrderId, Total = o.LineTotal, Quantity = o.Quantity, Price = o.Price, CreatedBy = o.CreatedBy, Id = o.Id }).FirstOrDefault();
                 return objResult;
             }
         } 
@@ -56,7 +56,7 @@
         {          
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.OrderDetail() { DiscountRate = 0, TaxRate =0, Id = entity.Id, IsKitchen = entity.IsKitchen, ItemName = entity.ItemName, IsProcessed = entity.IsProcessed, Discount = entity.Discount, Tax = entity.TaxRate, MenuId = entity.MenuId, OrderId = entity.OrderId, LineTotal = entity.LineTotal, Quantity = entity.Quantity, Price = entity.Price, CreatedDt = entity.CreatedDT, CreatedBy = entity.CreatedBy };
+                var obj = new Action.OrderDetail() { AddonIds = entity.AddonIds, AddonNames = entity.AddonNames, DiscountRate = 0, TaxRate =0, Id = entity.Id, IsKitchen = entity.IsKitchen, ItemName = entity.ItemName, IsProcessed = entity.IsProcessed, Discount = entity.Discount, Tax = entity.TaxRate, MenuId = entity.MenuId, OrderId = entity.OrderId, LineTotal = entity.LineTotal, Quantity = entity.Quantity, Price = entity.Price, CreatedDt = entity.CreatedDT, CreatedBy = entity.CreatedBy };
                 context.OrderDetails.Add(obj);
                 context.SaveChanges();
                 return obj.Id;
@@ -140,7 +140,7 @@
                                  join u in context.Units on p.UnitId equals u.Id                                
                                  where o.OrderId == orderId
                                  orderby o.Id descending 
-                                 select new OrderDetailDto { IsKitchen = o.IsKitchen, Discount = o.Discount, IsProcessed= o.IsProcessed, ItemName = o.ItemName, TaxRate = o.Tax, MenuId = o.MenuId, OrderId = o.OrderId, Title = p.Name, Unit = u.Name, Total = o.LineTotal, Quantity = o.Quantity, Price = o.Price, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
+                                 select new OrderDetailDto { AddonIds = o.AddonIds, AddonNames = o.AddonNames, IsKitchen = o.IsKitchen, Discount = o.Discount, IsProcessed= o.IsProcessed, ItemName = o.ItemName, TaxRate = o.Tax, MenuId = o.MenuId, OrderId = o.OrderId, Title = p.Name, Unit = u.Name, Total = o.LineTotal, Quantity = o.Quantity, Price = o.Price, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
                 return objResult;
             }
         }
@@ -156,7 +156,7 @@
                                                      join p in context.Menus on o.MenuId equals p.Id
                                                      join u in context.Units on p.UnitId equals u.Id
                                                      where o.OrderId == s.Id && p.IsKitchen == true && o.IsProcessed == false
-                                                     select new OrderDetailDto { Discount = o.Discount, IsProcessed = o.IsProcessed, ItemName = o.ItemName, TaxRate = o.Tax, MenuId = o.MenuId, OrderId = o.OrderId, Title = p.Name, Unit = u.Name, Total = o.LineTotal, Quantity = o.Quantity, Price = o.Price, CreatedBy = o.CreatedBy, Id = o.Id }).ToList()
+                                                     select new OrderDetailDto { AddonIds = o.AddonIds, AddonNames = o.AddonNames, Discount = o.Discount, IsProcessed = o.IsProcessed, ItemName = o.ItemName, TaxRate = o.Tax, MenuId = o.MenuId, OrderId = o.OrderId, Title = p.Name, Unit = u.Name, Total = o.LineTotal, Quantity = o.Quantity, Price = o.Price, CreatedBy = o.CreatedBy, Id = o.Id }).ToList()
                                  where (s.StatusId == statusId || s.StatusId == secondarystatusId ) && orderDetail.Count > 0 && s.TenantId == tenantId
                                  orderby s.CreatedDt ascending 
                                  select new OrderDetailWrapperDto { OrderTypeId = s.OrderTypeId, OrderType = r.Name, Table = t.Number, OrderId = s.Id, OrderDetail = orderDetail }).ToList();

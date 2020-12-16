@@ -59,6 +59,7 @@ namespace Suftnet.Cos.Common
         public const string SUBSCRIPTION_EXPIRED = "Your Subscription has expired, please go to Jerur Online and Subscribe to one of our Plan.Thanks";
         public const string TRIAL_EXPIRED = "Your Trial has expired, please go to Jerur Online and Subscribe to one of our Plan.Thanks";
         public static string DeleteUserError = "This user can not be deleted at this time";
+        public const string USER_NOT_FOUND = "User Not Found";
 
     }
 

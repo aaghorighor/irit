@@ -25,5 +25,6 @@
         IList<UserAccountDto> Fetch(int areaId, int iskip, int itake);
         bool Delete(string userId);
         ApplicationUser GetUserByUserName(string userName, string code);
+        MobileTenantDto VerifyUser(Guid externalId, string userCode);
     }
 }

@@ -10,6 +10,7 @@
     using Extension; 
     using System.Web;
     using System.Threading.Tasks;
+    using Suftnet.Cos.Common;
 
     [RoutePrefix("api/v1/account")]
     public class AccountController : BaseController
@@ -44,7 +45,7 @@
             var user = _user.GetUserByUserName(param.EmailAddress, param.AppCode);
             if (user == null)
             {
-                return ResponseMessage(Request.CreateResponse(HttpStatusCode.NotFound, new { Message = "NotFound" }));
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.NotFound, new { Message = Constant.USER_NOT_FOUND }));
             }
 
             var command = _factoryCommand.Create<VerifyEmailCommand>();
@@ -68,7 +69,7 @@
             var user = _user.VerifyAccessCode(param.Otp, param.EmailAddress, param.AppCode);
             if (user == null)
             {
-                return ResponseMessage(Request.CreateResponse(HttpStatusCode.NotFound, new { Message = "NotFound" }));
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.NotFound, new { Message = Constant.USER_NOT_FOUND }));
             }
 
             return await OkResult(user);

@@ -299,6 +299,29 @@
 
             return null;
         }
+        public MobileTenantDto VerifyUser(Guid tenantId, string userCode)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var obj = (from o in context.UserAccounts
+                           join u in context.Users on o.UserId equals u.Id                          
+                           where o.TenantId == tenantId && o.UserCode == userCode 
+                           select new MobileTenantDto
+                           {                                
+                               Email = u.Email,
+                               ImageUrl = u.ImageUrl,
+                               FirstName = u.FirstName,
+                               LastName = u.LastName,                              
+                               AreaId = u.AreaId,                           
+                               Area = u.Area,
+                               UserName = u.UserName,
+                               PhoneNumber = u.PhoneNumber, 
+                               Id =u.Id
+                           }).FirstOrDefault();
+
+                return obj;
+            }
+        }
         public int Count(Guid TenantId)
         {
             using (var context = DataContextFactory.CreateContext())

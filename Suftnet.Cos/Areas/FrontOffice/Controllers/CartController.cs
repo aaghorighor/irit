@@ -1,14 +1,12 @@
 ﻿namespace Suftnet.Cos.FrontOffice
 {
-    using System;
-    using System.Threading.Tasks;
-    using System.Web.Mvc;
-    using Suftnet.Cos.Common;
-    using Suftnet.Cos.Core;
     using Suftnet.Cos.DataAccess;
     using Suftnet.Cos.Service;
     using Suftnet.Cos.Web.Command;
     using Suftnet.Cos.Web.Infrastructure.ActionFilter;
+    using System;
+    using System.Threading.Tasks;
+    using System.Web.Mvc;
 
     public class CartController : FrontOfficeBaseController
     {

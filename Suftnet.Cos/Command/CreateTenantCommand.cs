@@ -71,7 +71,7 @@
             try
             {
                 var appCode = GetHashCode(model.Id);
-                model.AppCode = appCode.ToString();
+                model.AppCode = appCode;
                 CheckoutModel.AppCode = appCode.ToString();
                 this.TenantId = model.Id;
 
@@ -82,9 +82,12 @@
            
         }
 
-        private int GetHashCode(Guid guid)
+        private string GetHashCode(Guid guid)
         {
-           return guid.GetHashCode();
+            var id = guid.GetHashCode();
+            var appCode = Math.Abs(id).ToString();
+
+            return appCode.Substring(0,8);
         }
 
         private int CryptoServiceProvider(Guid guid)

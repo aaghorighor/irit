@@ -33,4 +33,11 @@ namespace Suftnet.Cos.Web.ViewModel
         public dynamic Outlet { get; set; }
     }
 
+    public class UserBoostrap
+    {       
+        public dynamic user { get; set; }
+        public dynamic permissions { get; set; }
+        public dynamic token { get; set; }
+    }
+
 }

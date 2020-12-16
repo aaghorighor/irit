@@ -61,7 +61,8 @@
                         UserId = model.Id,
                         TenantId = tenantId,
                         AppCode = app_code,
-                        EmailAddress = model.Email,
+                        UserCode = GetHashCode(new Guid(model.Id)),
+                        EmailAddress = model.Email,                       
 
                         CreatedBy = model.Email,
                         CreatedDt = DateTime.UtcNow
@@ -159,6 +160,13 @@
             sb.Replace("[app_code]", tenant.AppCode);
       
             return sb.ToString();
-        }    
+        }
+        private string GetHashCode(Guid guid)
+        {
+            var id = guid.GetHashCode();
+            var appCode = Math.Abs(id).ToString();
+
+            return appCode.Substring(0, 8);
+        }
     }
 }

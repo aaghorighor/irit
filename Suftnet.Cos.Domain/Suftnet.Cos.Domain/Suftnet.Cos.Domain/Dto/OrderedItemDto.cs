@@ -7,7 +7,9 @@
         public Guid MenuId { get; set; }
         public bool IsProcessed { get; set; }
         public string Name { get; set; }
-        public decimal Price { get; set; }     
-       
+        public decimal Price { get; set; }
+        public string AddonIds { get; set; }
+        public string AddonNames { get; set; }
+
     }
 }

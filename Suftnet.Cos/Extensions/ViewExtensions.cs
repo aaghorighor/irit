@@ -760,41 +760,8 @@
         public static string StripePublicKey(this UrlHelper helper)
         {
             return GeneralConfiguration.Configuration.Settings.StripePublishableKey;
-        }
-        public static MvcHtmlString Content(this HtmlHelper helper, int contentId)
-        {
-            var template = GeneralConfiguration.Configuration.DependencyResolver.GetService<IEditor>();
-            var contents = template.Get(contentId);
-
-            TagBuilder div = new TagBuilder("div");
-
-            if (contents != null)
-            {
-                TagBuilder header = new TagBuilder("h3");
-                header.InnerHtml = contents.Title;
-
-                TagBuilder content = new TagBuilder("p");
-                content.InnerHtml = contents.Contents;
-
-                div.InnerHtml = header.ToString(TagRenderMode.Normal) + "" + content.ToString(TagRenderMode.Normal);
-
-                return new MvcHtmlString(div.ToString(TagRenderMode.Normal));
-            }
-
-            return new MvcHtmlString(div.ToString(TagRenderMode.Normal));
-        }                   
-        public static EditorDTO Cms(this object value, int contentId)
-        {
-            var iEditor = GeneralConfiguration.Configuration.DependencyResolver.GetService<IEditor>();
-            return iEditor.Get(contentId);
-        }
-        public static string GetDateTimeformat(this object value)
-        {
-            var iGlobal = GeneralConfiguration.Configuration.DependencyResolver.GetService<IGlobal>();
-            var iCommon = GeneralConfiguration.Configuration.DependencyResolver.GetService<ICommon>();
-
-            return iCommon.Get(Convert.ToInt32(iGlobal.Get().DateTimeFormat)).Title;
-        }
+        }              
+       
         public static bool isValidEmail(this string inputEmail)
         {
             string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
@@ -932,6 +899,16 @@
             }
            
             return new Guid(value);
+        }
+
+        public static decimal ToDecimal(this double value)
+        {
+            if (value == 0)
+            {
+                return 0;
+            }
+
+            return (decimal)value;
         }
 
         public static string ReCAPTCHA(this HtmlHelper helper)

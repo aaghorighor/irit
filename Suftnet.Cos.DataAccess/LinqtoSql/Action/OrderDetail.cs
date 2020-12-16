@@ -53,5 +53,9 @@ namespace Suftnet.Cos.DataAccess.Action
         public DateTime? UpdateDt { get; set; }
         [StringLength(50)]
         public string UpdateBy { get; set; }
+        [StringLength(50)]
+        public string AddonIds { get; set; }
+        [StringLength(50)]
+        public string AddonNames { get; set; }
     }
 }

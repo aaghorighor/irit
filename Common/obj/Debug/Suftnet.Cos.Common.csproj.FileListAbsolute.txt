@@ -54,4 +54,3 @@ E:\Git\Web\Irit\Irit\Common\bin\Debug\Suftnet.Cos.Common.pdb
 E:\Git\Web\Irit\Irit\Common\obj\Debug\Suftnet.Cos.Common.csproj.CoreCompileInputs.cache
 E:\Git\Web\Irit\Irit\Common\obj\Debug\Suftnet.Cos.Common.dll
 E:\Git\Web\Irit\Irit\Common\obj\Debug\Suftnet.Cos.Common.pdb
-E:\Git\Web\Irit\Irit\Common\obj\Debug\Suftnet.Cos.Common.csprojAssemblyReference.cache

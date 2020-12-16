@@ -26,7 +26,10 @@ namespace Suftnet.Cos.DataAccess.Action
         public string AppCode { get; set; }
         [Required]
         [StringLength(50)]
-        public string EmailAddress { get; set; }        
+        public string EmailAddress { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string UserCode { get; set; }        
 
     }
 }
