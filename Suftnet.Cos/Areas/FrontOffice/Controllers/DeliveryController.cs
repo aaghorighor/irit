@@ -71,6 +71,7 @@
 
             entityToCreate.OrderTypeId = new Guid(eOrderType.Delivery);
             entityToCreate.StatusId = new Guid(eOrderStatus.Pending);
+            entityToCreate.PaymentStatusId = new Guid(ePaymentStatus.Pending);
 
             entityToCreate.TenantId = this.TenantId;
             entityToCreate.Id = Guid.NewGuid();

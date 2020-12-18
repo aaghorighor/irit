@@ -110,7 +110,7 @@
             }
         }
 
-        public bool UpdateStatus(Guid statusId, Guid tableId, Guid orderId, DateTime updatedDt,string updateBy)
+        public bool UpdateStatus(Guid tableId, Guid orderId, DateTime updatedDt,string updateBy)
         {
             bool response = false;
 

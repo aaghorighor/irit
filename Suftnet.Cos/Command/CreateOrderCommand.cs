@@ -33,7 +33,7 @@
 
                 OrderTypeId = new Guid(eOrderType.DineIn),
                 StatusId = new Guid(eOrderStatus.Occupied),
-
+                PaymentStatusId = new Guid(ePaymentStatus.Pending),
                 TableId = new Guid(entityToCreate.TableId),
                 TenantId = new Guid(entityToCreate.ExternalId),
                 Id = Guid.NewGuid(),
@@ -54,12 +54,12 @@
         {
             if (entityToCreate.StatusId == new Guid(eOrderStatus.Occupied.ToLower()))
             {              
-                Task.Run(() => _table.UpdateStatus(entityToCreate.StatusId,
+                Task.Run(() => _table.UpdateStatus(
                         entityToCreate.TableId,
                         entityToCreate.Id, 
                         DateTime.UtcNow, 
                         entityToCreate.CreatedBy
-                    ));
+                  ));
             }
         }
         #endregion

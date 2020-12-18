@@ -295,11 +295,11 @@ namespace Suftnet.Cos.Common
         public const string CASH = "E0DF7037-BE71-4D90-871D-04AD8E4AD960";       
     }
        
-    public static class PaymentStatus
+    public static class ePaymentStatus
     {
-        public const string Paid = "284";
-        public const string Pending = "3337";
-        public const string Cancelled = "279";        
+        public const string Paid = "FD55F6B4-30C2-48C7-B331-79A505D8F8C2";
+        public const string Pending = "E0DF7037-BE71-4D90-871D-04AD8E4AD960";
+        public const string Cancelled = "58EE00D9-D449-4EBF-B4E8-769F51FE7EFE";        
     }
     public static class SubscriptionStatus
     {

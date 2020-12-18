@@ -72,7 +72,7 @@
 
             entityToCreate.OrderTypeId = new Guid(eOrderType.DineIn);
             entityToCreate.StatusId = new Guid(eOrderStatus.Occupied);
-
+            entityToCreate.PaymentStatusId = new Guid(ePaymentStatus.Pending);
             entityToCreate.TenantId = this.TenantId;
             entityToCreate.Id = Guid.NewGuid();
 
@@ -134,7 +134,7 @@
         {
             if (entityToCreate.StatusId == new Guid(eOrderStatus.Occupied))
             {
-                Task.Run(() => _table.UpdateStatus(entityToCreate.StatusId,
+                Task.Run(() => _table.UpdateStatus(
                         entityToCreate.TableId,
                         entityToCreate.Id,
                         DateTime.UtcNow,

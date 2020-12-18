@@ -21,7 +21,6 @@
                 return objResult;
             }
         }
-
         public OrderDto FetchDeliveryOrder(Guid orderId)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -34,7 +33,6 @@
                 return objResult;
             }
         }
-
         public List<OrderDto> FetchDeliveryByStatus(Guid tenantId, Guid statusId)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -48,7 +46,6 @@
                 return objResult;
             }
         }
-
         public CartOrderDto FetchOrder(Guid orderId)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -63,7 +60,6 @@
                 return objResult;
             }
         }
-
         public bool Delete(Guid orderId)
         {
             bool response = false;
@@ -92,7 +88,7 @@
         {          
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.Order() { DeliveryCost = entity.DeliveryCost, DiscountRate = 0,  TaxRate = 0, Note = entity.Note, UpdateBy = entity.UpdateBy, UpdateDt = entity.UpdateDate, Email = entity.Email, GrandTotal = 0, Total = 0, TotalDiscount = 0, TotalTax = 0, StartDt = entity.StartDt, TenantId = entity.TenantId, Mobile = entity.Mobile, FirstName = entity.FirstName, LastName = entity.LastName, Balance = entity.Balance, ExpectedGuest = entity.ExpectedGuest, Time = entity.Time, Payment = 0, TableId = entity.TableId, StatusId = entity.StatusId, CreatedDt = entity.CreatedDT, OrderTypeId = entity.OrderTypeId, CreatedBy = entity.CreatedBy, Id = entity.Id };
+                var obj = new Action.Order() { PaymentStatusId= entity.PaymentStatusId, DeliveryCost = entity.DeliveryCost, DiscountRate = 0,  TaxRate = 0, Note = entity.Note, UpdateBy = entity.UpdateBy, UpdateDt = entity.UpdateDate, Email = entity.Email, GrandTotal = 0, Total = 0, TotalDiscount = 0, TotalTax = 0, StartDt = entity.StartDt, TenantId = entity.TenantId, Mobile = entity.Mobile, FirstName = entity.FirstName, LastName = entity.LastName, Balance = entity.Balance, ExpectedGuest = entity.ExpectedGuest, Time = entity.Time, Payment = 0, TableId = entity.TableId, StatusId = entity.StatusId, CreatedDt = entity.CreatedDT, OrderTypeId = entity.OrderTypeId, CreatedBy = entity.CreatedBy, Id = entity.Id };
                 context.Orders.Add(obj);
                 context.SaveChanges();
                 return obj.Id;
@@ -169,6 +165,37 @@
                 return response;
             }            
         }
+        public bool UpdatePayment(OrderDto entity)
+        {
+            bool response = false;
+
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objToUpdate = context.Orders.SingleOrDefault(o => o.Id == entity.Id);
+
+                if (objToUpdate != null)
+                {
+                    objToUpdate.Payment = entity.Payment;
+                    objToUpdate.Balance = entity.Balance;                   
+                    objToUpdate.PaymentStatusId = entity.PaymentStatusId;
+
+                    objToUpdate.UpdateBy = entity.UpdateBy;
+                    objToUpdate.UpdateDt = entity.UpdateDate;
+
+                    try
+                    {
+                        context.SaveChanges();
+                        response = true;
+                    }
+                    catch (ChangeConflictException)
+                    {
+                        response = false;
+                    }
+                }
+
+                return response;
+            }
+        }
         public bool UpdateDelivery(OrderDto entity)
         {
             bool response = false;
@@ -241,7 +268,6 @@
                 return response;
             }
         }
-
         public List<OrderDto> GetAll(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch)
         {
             if(!string.IsNullOrEmpty(isearch))
@@ -263,7 +289,6 @@
             }
             
         }
-
         public List<OrderDto> GetAll(Guid orderTypeId, Guid tenantId, int iskip, int itake)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -277,8 +302,7 @@
                                  select new OrderDto { UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, Table = t.Number, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
                 return objResult;
             }
-        }     
-      
+        }           
         public List<DeliveryAddressDto> GetDeliveryOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch)
         {
             if (!string.IsNullOrEmpty(isearch))
@@ -299,7 +323,6 @@
                 return GetDeliveryOrders(orderTypeId, tenantId, iskip, itake);
             }
         }
-
         public List<DeliveryAddressDto> GetDeliveryOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -314,7 +337,6 @@
                 return objResult;
             }
         }
-
         public List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch)
         {
             if (!string.IsNullOrEmpty(isearch))
@@ -336,7 +358,6 @@
                 return GetReserveOrders(orderTypeId, tenantId, iskip, itake);
             }
         }
-
         public List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -350,8 +371,7 @@
                                  select new OrderDto { Email = o.Email, Note = o.Note, StartDt = o.StartDt, UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, Table = t.Number, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
                 return objResult;
             }
-        }    
-       
+        }           
         public IEnumerable<OrderDto> GetAllOrderByStatus(TermDto term)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -363,8 +383,7 @@
                                  select new OrderDto { Balance = o.Balance, Payment = o.Payment, StatusId = o.StatusId, Status = s.Name, GrandTotal = o.GrandTotal, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
                 return objResult;
             }
-        }
-       
+        }       
         public bool UpdateOrderStatus(Guid tenantId, Guid orderId, Guid statusId, Guid orderTypeId, DateTime createDt, string createdBy)
         {
             bool response = false;
@@ -457,7 +476,6 @@
                 return objResult;
             }
         }
-
         public int Count(Guid tenantId, Guid orderTypeId, params Guid[] statuses)
         {
             using (var context = DataContextFactory.CreateContext())

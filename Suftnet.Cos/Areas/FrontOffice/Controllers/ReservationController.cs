@@ -69,6 +69,7 @@
 
             entityToCreate.OrderTypeId = new Guid(eOrderType.Reservation);
             entityToCreate.StatusId = new Guid(eOrderStatus.Reserved);
+            entityToCreate.PaymentStatusId = new Guid(ePaymentStatus.Pending);
 
             entityToCreate.TenantId = this.TenantId;
             entityToCreate.Id = Guid.NewGuid();
@@ -126,7 +127,7 @@
         {
             if (entityToCreate.StatusId == new Guid(eOrderStatus.Occupied))
             {
-                Task.Run(() => _table.UpdateStatus(entityToCreate.StatusId, entityToCreate.TableId, entityToCreate.Id, DateTime.UtcNow, this.UserName));
+                Task.Run(() => _table.UpdateStatus(entityToCreate.TableId, entityToCreate.Id, DateTime.UtcNow, this.UserName));
             }
         }
         #endregion

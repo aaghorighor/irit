@@ -45,7 +45,9 @@
             }
         }
 
-        public string Email { get; set; }      
+        public string Email { get; set; }
+        public Guid PaymentStatusId { get; set; }
+        public string PaymentStatus { get; set; }
     }
     public class CartOrderDto 
     {

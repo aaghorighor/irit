@@ -168,9 +168,8 @@
       <HintPath>..\packages\Stripe.net.25.15.0\lib\net45\Stripe.net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="StructureMap, Version=2.6.3.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos\bin\StructureMap.dll</HintPath>
+    <Reference Include="StructureMap">
+      <HintPath>C:\inetpub\wwwroot\irit\bin\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
@@ -245,7 +244,7 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Twilio.Api">
-      <HintPath>..\..\..\..\..\SUT-CS-100\Suftnet.BridgeWayEde.Package\Suftnet.BridgeWayEde.Package\Suftnet.Cos\bin\Twilio.Api.dll</HintPath>
+      <HintPath>C:\inetpub\wwwroot\irit\bin\Twilio.Api.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -298,6 +297,8 @@
     <Compile Include="Areas\Subscription\Controllers\PlanController.cs" />
     <Compile Include="Areas\Subscription\Controllers\TrialController.cs" />
     <Compile Include="Areas\Subscription\Models\DeleteCard.cs" />
+    <Compile Include="Command\PaymentCommand.cs" />
+    <Compile Include="Command\IPaymentCommand.cs" />
     <Compile Include="Command\UpdateOrderCommand.cs" />
     <Compile Include="Command\UserBoostrapCommand.cs" />
     <Compile Include="Command\CreateOrderCommand.cs" />
@@ -326,6 +327,7 @@
     <Compile Include="Content\reports\MenuItem.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controllers\Api\v1\PaymentController.cs" />
     <Compile Include="Controllers\Api\v1\UserController.cs" />
     <Compile Include="Controllers\Api\v1\AccountController.cs" />
     <Compile Include="Controllers\Api\v1\MobileLoggerController.cs" />
@@ -448,6 +450,7 @@
     <Compile Include="ViewModel\SectionModel.cs" />
     <Compile Include="ViewModel\TopicModel.cs" />
     <Compile Include="ViewModel\UserModel.cs" />
+    <Compile Include="ViewModel\PaymentModel.cs" />
     <Compile Include="ViewModel\VerifyModel.cs" />
     <Compile Include="ViewModel\CreateOrder.cs" />
     <Compile Include="ViewModel\MediaModel.cs" />
@@ -4370,11 +4373,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>5008</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/irit</IISUrl>
+          <IISUrl>http://localhost/dev2</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
