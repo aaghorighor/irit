@@ -16,12 +16,14 @@
     {
         private readonly ICreateOrderCommand _createOrderCommand;
         private readonly IUpdateOrderCommand _updateOrderCommand;
+        private readonly IOrder _order;
 
-        public OrderController(IUpdateOrderCommand updateOrderCommand,
+        public OrderController(IUpdateOrderCommand updateOrderCommand, IOrder order,
             ICreateOrderCommand createOrderCommand)
         {
             _createOrderCommand = createOrderCommand;
             _updateOrderCommand = updateOrderCommand;
+            _order = order;
         }
 
         [HttpGet]
@@ -29,6 +31,21 @@
         public IHttpActionResult Ping()
         {
             return Ok(DateTime.Now);
+        }
+
+        [HttpGet]
+        // [JwtAuthenticationAttribute]
+        [Route("fetch")]
+        public async Task<IHttpActionResult> Fetch([FromUri]QueryParam param)
+        {
+            if (!ModelState.IsValid)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
+            }
+
+            var model = await Task.Run(() => _order.FetchOrder(new Guid(param.OrderId)));
+
+            return Ok(model);
         }
 
         [HttpPost]

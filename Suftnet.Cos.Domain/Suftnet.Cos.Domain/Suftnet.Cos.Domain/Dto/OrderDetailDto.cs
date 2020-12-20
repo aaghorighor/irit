@@ -31,4 +31,14 @@
         public string AddonIds { get; set; }  
         public string AddonNames { get; set; }
     }
+    public class BasketDto 
+    {
+        public Guid MenuId { get; set; }
+        public Guid OrderId { get; set; }            
+        public decimal Price { get; set; }
+        public string Menu { get; set; }      
+        public bool? IsProcessed { get; set; }        
+        public string Addons { get; set; }
+        public string AddonIds { get; set; }
+    }
 }

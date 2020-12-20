@@ -51,12 +51,12 @@
             using (var context = DataContextFactory.CreateContext())
             {
                 var objResult = (from o in context.Orders
-                                 let carts = (from x in context.OrderDetails                                                                                                 
+                                 let baskets = (from x in context.OrderDetails                                                                                                 
                                                     where x.OrderId == o.Id 
-                                                    select new OrderDetailDto { IsProcessed = x.IsProcessed, ItemName = x.ItemName, MenuId = x.MenuId, Quantity = x.Quantity, Price = x.Price, Id = x.Id }).ToList()
-                                 let order = new OrderDto { DeliveryCost = o.DeliveryCost, DiscountRate =o.DiscountRate, TaxRate = o.TaxRate, Balance = o.Balance, Payment = o.Payment, StatusId = o.StatusId, TotalTax = o.TotalTax, TotalDiscount = o.TotalDiscount, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, Id = o.Id }                               
+                                                    select new BasketDto { OrderId = o.Id, AddonIds = x.AddonIds, Addons = x.AddonNames, IsProcessed = x.IsProcessed, Menu = x.ItemName, MenuId = x.MenuId, Price = x.Price}).ToList()
+                                 let itemOrder = new ItemOrderDto { Tax = o.TaxRate, Discount = o.DiscountRate, TableFor = o.ExpectedGuest, TableId = o.TableId, Balance = o.Balance, Paid = o.Payment, TotalTax = o.TotalTax, TotalDiscount = o.TotalDiscount, GrandTotal = o.GrandTotal,Total = o.Total, ExternalId = o.Id }                               
                                  where o.Id == orderId
-                                 select new CartOrderDto { Carts = carts, Order = order }).FirstOrDefault();
+                                 select new CartOrderDto { ExternalId = orderId, UserName = "Not Set", Baskets = baskets, Order = itemOrder }).FirstOrDefault();
                 return objResult;
             }
         }

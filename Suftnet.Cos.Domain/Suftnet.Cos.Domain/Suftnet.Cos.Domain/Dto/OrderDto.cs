@@ -49,9 +49,26 @@
         public Guid PaymentStatusId { get; set; }
         public string PaymentStatus { get; set; }
     }
+    public class ItemOrderDto 
+    {
+        public Guid TableId { get; set; }
+        public int? TableFor { get; set; }       
+        public decimal? Tax { get; set; }
+        public decimal? Discount { get; set; }       
+        public decimal? TotalDiscount { get; set; }
+        public decimal? TotalTax { get; set; }
+        public decimal? Paid { get; set; }       
+        public decimal? Total { get; set; }
+        public decimal? Balance { get; set; }
+        public decimal? GrandTotal { get; set; }
+        public Guid ExternalId { get; set; }
+
+    }
     public class CartOrderDto 
     {
-        public OrderDto Order { get; set; }
-        public List<OrderDetailDto> Carts { get; set; }
+        public string UserName { get; set; }
+        public Guid ExternalId { get; set; }
+        public ItemOrderDto Order { get; set; }
+        public List<BasketDto> Baskets { get; set; }
     }
 }
