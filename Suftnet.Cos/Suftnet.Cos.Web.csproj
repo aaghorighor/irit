@@ -327,6 +327,7 @@
     <Compile Include="Content\reports\MenuItem.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controllers\Api\v1\OrderCartController.cs" />
     <Compile Include="Controllers\Api\v1\PaymentController.cs" />
     <Compile Include="Controllers\Api\v1\UserController.cs" />
     <Compile Include="Controllers\Api\v1\AccountController.cs" />

@@ -53,7 +53,7 @@
                 var objResult = (from o in context.Orders
                                  let baskets = (from x in context.OrderDetails                                                                                                 
                                                     where x.OrderId == o.Id 
-                                                    select new BasketDto { OrderId = o.Id, AddonIds = x.AddonIds, Addons = x.AddonNames, IsProcessed = x.IsProcessed, Menu = x.ItemName, MenuId = x.MenuId, Price = x.Price}).ToList()
+                                                    select new BasketDto { OrderId = o.Id, AddonIds = x.AddonIds, Addons = x.AddonItems, IsProcessed = x.IsProcessed, Menu = x.ItemName, MenuId = x.MenuId, Price = x.Price}).ToList()
                                  let itemOrder = new ItemOrderDto { Tax = o.TaxRate, Discount = o.DiscountRate, TableFor = o.ExpectedGuest, TableId = o.TableId, Balance = o.Balance, Paid = o.Payment, TotalTax = o.TotalTax, TotalDiscount = o.TotalDiscount, GrandTotal = o.GrandTotal,Total = o.Total, ExternalId = o.Id }                               
                                  where o.Id == orderId
                                  select new CartOrderDto { ExternalId = orderId, UserName = "Not Set", Baskets = baskets, Order = itemOrder }).FirstOrDefault();

@@ -65,7 +65,7 @@
                  OrderedItemDto
                  { 
                         AddonIds = item.addonIds,
-                        AddonNames= item.addons, 
+                        AddonItems = item.addons, 
                         IsProcessed = false, 
                         MenuId = new Guid(item.menuId),
                         Name = item.menu, 

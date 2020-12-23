@@ -21,10 +21,17 @@
         [Required] 
         public int TableFor { get; set; }
     }
-    public class QueryParam
+    public class OrderParam
     {
         [Required]
         [StringLength(50)]
         public string OrderId { get; set; }        
+    }
+
+    public class ExternalParam
+    {
+        [Required]
+        [StringLength(50)]
+        public string ExternalId { get; set; }
     }
 }

@@ -6,15 +6,11 @@
     {     
         public Guid MenuId { get; set; }    
         public Guid CategoryId { get; set; }           
-        public string Unit { get; set; }
-        public double TaxRate { get; set; }
-        public double? Discount { get; set; }
+        public string Unit { get; set; }        
         public int Quantity { get; set; }    
         public string Title { get; set; }
         public decimal Price { get; set; }
-        public string ItemName { get; set; }
-        public decimal TotalDiscount { get; set; }
-        public decimal TotalTax { get; set; }
+        public string ItemName { get; set; }        
         public decimal Total { get; set; }    
         public Guid OrderId { get; set; }
         public bool? IsProcessed { get; set; }
@@ -29,7 +25,7 @@
         }
 
         public string AddonIds { get; set; }  
-        public string AddonNames { get; set; }
+        public string AddonItems { get; set; }
     }
     public class BasketDto 
     {
@@ -40,5 +36,14 @@
         public bool? IsProcessed { get; set; }        
         public string Addons { get; set; }
         public string AddonIds { get; set; }
+    }
+
+    public class KitchenBasketDto
+    {
+        public Guid Id { get; set; }     
+        public string ItemName { get; set; }
+        public string AddonItems { get; set; }
+        public bool? IsProcessed { get; set; }
+        public string Addons { get; set; }       
     }
 }

@@ -24,6 +24,28 @@
         public List<CommonDto> OrderStatus { get; set; }
         public List<CommonDto> PaymentMethod { get; set; }
     }
+
+    public class KitchenAdapter
+    {
+        public KitchenAdapter()
+        {
+            KitchenBasket = new List<KitchenBasketDto>();
+        }
+
+        public List<KitchenBasketDto> KitchenBasket { get; set; }
+        public Guid OrderId { get; set; }
+        public string OrderType { get; set; }
+        public string Note { get; set; }
+        public string Table { get; set; }
+        public DateTime CreatedDT { get; set; }
+        public string InTime
+        {
+            get
+            {
+                return this.CreatedDT.ToShortTimeString();
+            }
+        }
+    }
 }
 
 

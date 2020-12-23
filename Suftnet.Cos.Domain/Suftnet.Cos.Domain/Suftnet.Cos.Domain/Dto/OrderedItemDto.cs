@@ -9,7 +9,7 @@
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string AddonIds { get; set; }
-        public string AddonNames { get; set; }
+        public string AddonItems { get; set; }
 
     }
 }

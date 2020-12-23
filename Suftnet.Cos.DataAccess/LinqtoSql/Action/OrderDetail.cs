@@ -28,15 +28,7 @@ namespace Suftnet.Cos.DataAccess.Action
         [StringLength(50)]
         public string CreatedBy { get; set; }
 
-        public Guid OrderId { get; set; }
-
-        public double? Discount { get; set; }
-
-        public double? DiscountRate { get; set; }
-
-        public double Tax { get; set; }
-
-        public double? TaxRate { get; set; }
+        public Guid OrderId { get; set; }       
 
         public bool? IsProcessed { get; set; }
 
@@ -55,7 +47,7 @@ namespace Suftnet.Cos.DataAccess.Action
         public string UpdateBy { get; set; }
         [StringLength(50)]
         public string AddonIds { get; set; }
-        [StringLength(50)]
-        public string AddonNames { get; set; }
+        [StringLength(250)]
+        public string AddonItems { get; set; }
     }
 }

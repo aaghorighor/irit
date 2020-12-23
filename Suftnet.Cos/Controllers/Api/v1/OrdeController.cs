@@ -36,7 +36,7 @@
         [HttpGet]
         // [JwtAuthenticationAttribute]
         [Route("fetch")]
-        public async Task<IHttpActionResult> Fetch([FromUri]QueryParam param)
+        public async Task<IHttpActionResult> Fetch([FromUri] OrderParam param)
         {
             if (!ModelState.IsValid)
             {

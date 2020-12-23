@@ -68,22 +68,21 @@
                         if(menu.IsKitchen != null)
                         {
                             isKitchen = (bool)menu.IsKitchen;
+                            isProcessing = true;
                         }
 
                         var orderItem = new OrderDetailDto()
                         {
-                            IsKitchen = isKitchen,
-                            TaxRate = 0,
+                            IsKitchen = isKitchen,                           
                             Quantity = 1,
                             Price = item.Price,
                             IsProcessed = isProcessing,
                             ItemName = item.Name,
                             MenuId = item.MenuId,
-                            OrderId = OrderId,
-                            Discount = 0,
+                            OrderId = OrderId,                           
                             Total = lineTotal,
                             AddonIds = item.AddonIds,                          
-                            AddonNames = item.AddonNames,
+                            AddonItems = item.AddonItems,
                             Id = Guid.NewGuid(),
 
                             CreatedBy = CreatedBy,

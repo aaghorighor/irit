@@ -6,11 +6,12 @@
     public interface IOrderDetail 
     {
         bool UpdateCompletedOrders(Guid Id);
-        List<OrderDetailWrapperDto> GetByTableOrders(Guid statusId, Guid secondarystatusId, Guid tenantId);
+        List<OrderDetailWrapperDto> FetchPendingOrders(Guid statusId, Guid tenantId);
         OrderDetailDto Get(Guid Id);
         bool Delete(Guid Id);
         void ClearOrderDetailByOrderId(Guid orderId);
         Guid Insert(OrderDetailDto entity);
         List<OrderDetailDto> GetAll(Guid orderId);
+        List<KitchenAdapter> FetchKitchenOrders(Guid statusId, Guid tenantId);
     }
 }
