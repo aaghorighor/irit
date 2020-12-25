@@ -30,8 +30,8 @@
 
         public void Execute()
         {
-            decimal total = 0m;                          
-            bool isProcessing = true;
+            decimal total = 0m;                         
+         
             var order = new OrderDto();
 
             if(this.OrderTypeId == new Guid(eOrderType.Delivery.ToLower()))
@@ -62,13 +62,12 @@
 
                         if (order.OrderTypeId == new Guid(eOrderType.Reservation.ToLower()))
                         {
-                            isProcessing = false;                       
+                            item.IsProcessed = false;                       
                         } 
                         
                         if(menu.IsKitchen != null)
                         {
-                            isKitchen = (bool)menu.IsKitchen;
-                            isProcessing = true;
+                            isKitchen = (bool)menu.IsKitchen;                           
                         }
 
                         var orderItem = new OrderDetailDto()
@@ -76,7 +75,7 @@
                             IsKitchen = isKitchen,                           
                             Quantity = 1,
                             Price = item.Price,
-                            IsProcessed = isProcessing,
+                            IsProcessed = item.IsProcessed,
                             ItemName = item.Name,
                             MenuId = item.MenuId,
                             OrderId = OrderId,                           

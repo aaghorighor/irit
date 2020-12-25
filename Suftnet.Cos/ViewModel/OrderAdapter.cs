@@ -3,6 +3,8 @@
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
     public class Basket
     {
         public string addonIds { get; set; }
@@ -11,6 +13,7 @@
         public string menu { get; set; }
         public string menuId { get; set; }
         public string orderId { get; set; }
+        public bool isProcessed { get; set; }
         public double price { get; set; }
     }
 
@@ -33,8 +36,24 @@
     public class OrderAdapter
     {
         public IList<Basket> baskets { get; set; }
+        [Required]
+        [StringLength(50)]
         public string externalId { get; set; }
         public Order order { get; set; }
         public string userName { get; set; }
+    }
+
+    public class OrderDone
+    {
+        [Required]
+        [StringLength(50)]
+        public string externalId { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string userName { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string orderId { get; set; }
+        public DateTime updateDate { get; set; }
     }
 }

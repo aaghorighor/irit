@@ -5,7 +5,7 @@
 
     public interface IOrderDetail 
     {
-        bool UpdateCompletedOrders(Guid Id);
+        bool UpdateCompletedOrders(Guid orderId, string userName);
         List<OrderDetailWrapperDto> FetchPendingOrders(Guid statusId, Guid tenantId);
         OrderDetailDto Get(Guid Id);
         bool Delete(Guid Id);
@@ -13,5 +13,6 @@
         Guid Insert(OrderDetailDto entity);
         List<OrderDetailDto> GetAll(Guid orderId);
         List<KitchenAdapter> FetchKitchenOrders(Guid statusId, Guid tenantId);
+        IList<BasketDto> FetchOrder(Guid orderId);
     }
 }

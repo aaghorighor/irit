@@ -32,7 +32,7 @@
                 StartDt = DateTime.UtcNow,
 
                 OrderTypeId = new Guid(eOrderType.DineIn),
-                StatusId = new Guid(eOrderStatus.Occupied),
+                StatusId = new Guid(eOrderStatus.Occupied.ToUpper()),
                 PaymentStatusId = new Guid(ePaymentStatus.Pending),
                 TableId = new Guid(entityToCreate.TableId),
                 TenantId = new Guid(entityToCreate.ExternalId),

@@ -5,7 +5,6 @@
     using System.Linq;
     using Suftnet.DataFactory.LinqToSql;
     using System.Data.Linq;
-    using System.Globalization;
 
     public class OrderDetail : IOrderDetail
     {
@@ -95,8 +94,7 @@
                 return response;
             }            
         }
-
-        public bool UpdateCompletedOrders(Guid orderId)
+        public bool UpdateCompletedOrders(Guid orderId, string userName)
         {
             bool response = false;
 
@@ -113,7 +111,7 @@
                         objToUpdate.IsKitchen = false;
                         objToUpdate.IsProcessed = true;
 
-                        objToUpdate.UpdateBy = Environment.UserName;
+                        objToUpdate.UpdateBy = userName;
                         objToUpdate.UpdateDt = DateTime.UtcNow;
 
                         try
@@ -140,12 +138,22 @@
                                  join p in context.Menus on o.MenuId equals p.Id 
                                  join u in context.Units on p.UnitId equals u.Id                                
                                  where o.OrderId == orderId
-                                 orderby o.Id descending 
+                                 orderby o.CreatedDt descending
                                  select new OrderDetailDto { AddonIds = o.AddonIds, AddonItems = o.AddonItems, IsKitchen = o.IsKitchen,IsProcessed= o.IsProcessed, ItemName = o.ItemName, MenuId = o.MenuId, OrderId = o.OrderId, Title = p.Name, Unit = u.Name, Total = o.LineTotal, Quantity = o.Quantity, Price = o.Price, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
                 return objResult;
             }
         }
-
+        public IList<BasketDto> FetchOrder(Guid orderId)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objResult = (from x in context.OrderDetails
+                                 where x.OrderId == orderId
+                                 orderby x.CreatedDt descending
+                                 select new BasketDto { OrderId = orderId, AddonIds = x.AddonIds, Addons = x.AddonItems, IsProcessed = x.IsProcessed, Menu = x.ItemName, MenuId = x.MenuId, Price = x.Price }).ToList();
+               return objResult;
+            }
+        }
         public List<OrderDetailWrapperDto> FetchPendingOrders(Guid statusId, Guid tenantId)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -164,7 +172,6 @@
                 return objResult;
             }
         }
-
         public List<KitchenAdapter> FetchKitchenOrders(Guid statusId, Guid tenantId)
         {
             using (var context = DataContextFactory.CreateContext())

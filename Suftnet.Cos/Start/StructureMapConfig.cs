@@ -53,6 +53,7 @@
                 x.For<IUserBoostrapCommand>().Use<UserBoostrapCommand>();
                 x.For<IUpdateOrderCommand>().Use<UpdateOrderCommand>();
                 x.For<IPaymentCommand>().Use<PaymentCommand>();
+                x.For<ICloseOrderCommand>().Use<CloseOrderCommand>();
             });           
         }
     }

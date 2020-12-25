@@ -16,14 +16,18 @@
     {
         private readonly ICreateOrderCommand _createOrderCommand;
         private readonly IUpdateOrderCommand _updateOrderCommand;
+        private readonly ICloseOrderCommand _closeOrderCommand;
         private readonly IOrder _order;
 
-        public OrderController(IUpdateOrderCommand updateOrderCommand, IOrder order,
+        public OrderController(IUpdateOrderCommand updateOrderCommand,
+            IOrder order,
+            ICloseOrderCommand closeOrderCommand,
             ICreateOrderCommand createOrderCommand)
         {
             _createOrderCommand = createOrderCommand;
             _updateOrderCommand = updateOrderCommand;
             _order = order;
+            _closeOrderCommand = closeOrderCommand;
         }
 
         [HttpGet]
@@ -85,6 +89,27 @@
              await Task.Run(() => _updateOrderCommand.Execute());
 
             return Ok(true);
+        }
+
+        [HttpPost]
+        // [JwtAuthenticationAttribute]
+        [Route("done")]
+        public async Task<IHttpActionResult> Done([FromBody]OrderDone param)
+        {
+            if (!ModelState.IsValid)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
+            }
+                      
+            _closeOrderCommand.OrderId = new Guid(param.orderId);       
+            _closeOrderCommand.CreatedBy = param.userName;
+            _closeOrderCommand.TenantId = new Guid(param.externalId);
+            _closeOrderCommand.CreatedDt = param.updateDate;
+            _closeOrderCommand.StatusId = new Guid(eOrderStatus.Completed.ToUpper());
+
+            await Task.Run(() => _closeOrderCommand.Execute());     
+           
+            return Ok(_closeOrderCommand.Baskets);
         }
 
     }
