@@ -56,4 +56,21 @@
         public string orderId { get; set; }
         public DateTime updateDate { get; set; }
     }
+
+    public class CancelOrder
+    {
+        [Required]
+        [StringLength(50)]
+        public string externalId { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string userName { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string orderId { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string tableId { get; set; }
+        public DateTime updateDate { get; set; }
+    }
 }

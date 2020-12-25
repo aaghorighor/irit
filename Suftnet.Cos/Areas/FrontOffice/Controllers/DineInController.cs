@@ -107,6 +107,7 @@
             entityToCreate.FirstName = string.Empty;
             entityToCreate.LastName = string.Empty;
 
+            entityToCreate.TenantId = this.TenantId;
             entityToCreate.UpdateDate = DateTime.UtcNow;
             entityToCreate.UpdateBy = this.UserName;
                       
@@ -137,6 +138,7 @@
                 Task.Run(() => _table.UpdateStatus(
                         entityToCreate.TableId,
                         entityToCreate.Id,
+                        entityToCreate.TenantId,
                         DateTime.UtcNow,
                         this.UserName
                     ));

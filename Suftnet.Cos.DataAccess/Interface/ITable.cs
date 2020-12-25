@@ -11,8 +11,8 @@
         bool Delete(Guid Id);
         Guid Insert(TableDto entity);
         List<TableDto> GetAll(Guid tenantId);
-        List<TableDto> GetBy(bool status, Guid tenantId);     
-        bool UpdateStatus(Guid tableId, Guid orderId, DateTime updatedDt, string updateBy);
+        List<TableDto> GetBy(bool status, Guid tenantId);
+        bool UpdateStatus(Guid tableId, Guid orderId, Guid tenantId, DateTime updatedDt, string updateBy);
         bool Reset(TableDto entity);
         List<MobileTableDto> GetBy(Guid tenantId);
     }

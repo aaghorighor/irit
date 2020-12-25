@@ -56,7 +56,8 @@
             {              
                 Task.Run(() => _table.UpdateStatus(
                         entityToCreate.TableId,
-                        entityToCreate.Id, 
+                        entityToCreate.Id,
+                        entityToCreate.TenantId,
                         DateTime.UtcNow, 
                         entityToCreate.CreatedBy
                   ));

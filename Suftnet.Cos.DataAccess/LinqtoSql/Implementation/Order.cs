@@ -443,6 +443,36 @@
                 return response;
             }
         }
+        public bool CancelOrder(Guid orderId, Guid orderStatusId, Guid paymentStatusId, DateTime createDt, string createdBy, Guid tenantId)
+        {
+            bool response = false;
+
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objToUpdate = context.Orders.SingleOrDefault(o => o.Id == orderId && o.TenantId == tenantId);
+
+                if (objToUpdate != null)
+                {
+                    objToUpdate.StatusId = orderStatusId;
+                    objToUpdate.PaymentStatusId = paymentStatusId;
+
+                    objToUpdate.UpdateBy = createdBy;
+                    objToUpdate.UpdateDt = createDt;
+
+                    try
+                    {
+                        context.SaveChanges();
+                        response = true;
+                    }
+                    catch (ChangeConflictException)
+                    {
+                        response = false;
+                    }
+                }
+
+                return response;
+            }
+        }
         public int Count(Guid tenantId)
         {
             using (var context = DataContextFactory.CreateContext())

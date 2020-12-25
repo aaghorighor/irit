@@ -27,4 +27,15 @@
         void Execute();
         IList<BasketDto> Baskets { get; set; }
     }
+
+    public interface ICancelOrderCommand
+    {
+        Guid OrderId { get; set; }
+        Guid TableId { get; set; }
+        Guid TenantId { get; set; }
+        string UserName { get; set; }
+        DateTime UpdateDate { get; set; }
+        void Execute();
+
+    }
 }

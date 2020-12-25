@@ -96,7 +96,9 @@
                     errors = ModelState.AjaxErrors()
                 });
             }
-          
+
+            entityToCreate.TenantId = this.TenantId;
+
             entityToCreate.UpdateDate = DateTime.UtcNow;
             entityToCreate.UpdateBy = this.UserName;
 
@@ -127,7 +129,7 @@
         {
             if (entityToCreate.StatusId == new Guid(eOrderStatus.Occupied))
             {
-                Task.Run(() => _table.UpdateStatus(entityToCreate.TableId, entityToCreate.Id, DateTime.UtcNow, this.UserName));
+                Task.Run(() => _table.UpdateStatus(entityToCreate.TableId, entityToCreate.Id, entityToCreate.TenantId, DateTime.UtcNow, this.UserName));
             }
         }
         #endregion

@@ -287,6 +287,7 @@ namespace Suftnet.Cos.Common
         public const string Reserved = "54F834F8-8F7B-42C0-8331-E1FE5AE50C83";
         public const string Occupied = "C84F0A40-4C93-4200-9531-E6AB0D8FF5D7";
         public const string Completed = "58EE00D9-D449-4EBF-B4E8-769F51FE7EFE";
+        public const string Cancelled = "12bc2434-5cd8-42a2-8345-c1a3ecbc8e3b";
     }
 
     public static class ePaymentMethod

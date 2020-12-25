@@ -36,32 +36,33 @@
         #region private function
         private void ResetTable()
         {
-            Task.Run(() => _table.Reset(new TableDto
-            { Id = new Guid(Model.TableId),
-                UpdateBy = Model.UserName, 
-                UpdateDate= Model.CreatedDt.ToDate()
-            }));
+            _table.Reset(new TableDto
+            {
+                Id = new Guid(Model.TableId),
+                UpdateBy = Model.UserName,
+                UpdateDate = Model.CreatedDt.ToDate()
+            });
         }
 
         private void UpdateOrder()
         {
-            Task.Run(() => _order.UpdatePayment(new OrderDto
+            _order.UpdatePayment(new OrderDto
             {
                 Id = new Guid(Model.OrderId),
                 Payment = _amountPaid,
                 PaymentStatusId = new Guid(ePaymentStatus.Paid),
-                Balance =  Util.Balance(Model.GrandTotal, _amountPaid),
+                Balance = Util.Balance(Model.GrandTotal, _amountPaid),
                 UpdateBy = Model.UserName,
                 UpdateDate = Model.CreatedDt.ToDate()
-            }));
+            });
         }
 
         private void CreatePayment()
         {
-            var totalPayment = _orderPayment.GetTotalPaymentByOrderId(new Guid(Model.OrderId));
+             var totalPayment = _orderPayment.GetTotalPaymentByOrderId(new Guid(Model.OrderId));
             _amountPaid = totalPayment + Model.AmountPaid;
 
-            var paymentId = _payment.Insert(new PaymentDto
+                var paymentId = _payment.Insert(new PaymentDto
                 {
                     Amount = _amountPaid,
                     Reference = Model.OrderId,

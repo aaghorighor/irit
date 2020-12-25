@@ -18,9 +18,10 @@
         private readonly IUpdateOrderCommand _updateOrderCommand;
         private readonly ICloseOrderCommand _closeOrderCommand;
         private readonly IOrder _order;
+        private readonly ICancelOrderCommand _cancelOrderCommand;
 
         public OrderController(IUpdateOrderCommand updateOrderCommand,
-            IOrder order,
+            IOrder order, ICancelOrderCommand cancelOrderCommand,
             ICloseOrderCommand closeOrderCommand,
             ICreateOrderCommand createOrderCommand)
         {
@@ -28,6 +29,7 @@
             _updateOrderCommand = updateOrderCommand;
             _order = order;
             _closeOrderCommand = closeOrderCommand;
+            _cancelOrderCommand = cancelOrderCommand;
         }
 
         [HttpGet]
@@ -110,6 +112,27 @@
             await Task.Run(() => _closeOrderCommand.Execute());     
            
             return Ok(_closeOrderCommand.Baskets);
+        }
+
+        [HttpPost]
+        // [JwtAuthenticationAttribute]
+        [Route("Cancel")]
+        public async Task<IHttpActionResult> Cancel([FromBody]CancelOrder param)
+        {
+            if (!ModelState.IsValid)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
+            }
+
+            _cancelOrderCommand.OrderId = new Guid(param.orderId);
+            _cancelOrderCommand.UserName = param.userName;
+            _cancelOrderCommand.TenantId = new Guid(param.externalId);
+            _cancelOrderCommand.UpdateDate = param.updateDate;
+            _cancelOrderCommand.TableId = new Guid(param.tableId);
+
+            await Task.Run(() => _cancelOrderCommand.Execute());
+
+            return Ok(true);
         }
 
     }

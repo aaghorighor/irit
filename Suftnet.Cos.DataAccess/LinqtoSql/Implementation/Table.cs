@@ -18,7 +18,6 @@
                 return objResult;
             }
         }
-
         public bool Delete(Guid Id)
         {
             bool response = false;
@@ -35,7 +34,6 @@
 
             return response;
         }
-
         public Guid Insert(TableDto entity)
         {
             using (var context = DataContextFactory.CreateContext())
@@ -46,7 +44,6 @@
                 return obj.Id;
             }
         }
-
         public bool Update(TableDto entity)
         {
             bool response = false;
@@ -80,14 +77,13 @@
                 return response;
             }
         }
-
         public bool Reset(TableDto entity)
         {
             bool response = false;
 
             using (var context = DataContextFactory.CreateContext())
             {
-                var objToUpdate = context.Tables.SingleOrDefault(o => o.Id == entity.Id);
+                var objToUpdate = context.Tables.SingleOrDefault(o => o.Id == entity.Id && o.TenantId == entity.TenantId);
 
                 if (objToUpdate != null)
                 {             
@@ -109,14 +105,13 @@
                 return response;
             }
         }
-
-        public bool UpdateStatus(Guid tableId, Guid orderId, DateTime updatedDt,string updateBy)
+        public bool UpdateStatus(Guid tableId, Guid orderId, Guid tenantId, DateTime updatedDt,string updateBy)
         {
             bool response = false;
 
             using (var context = DataContextFactory.CreateContext())
             {
-                var objToUpdate = context.Tables.SingleOrDefault(o => o.Id == tableId);
+                var objToUpdate = context.Tables.SingleOrDefault(o => o.Id == tableId && o.TenantId == tenantId);
 
                 if (objToUpdate != null)
                 {                     
