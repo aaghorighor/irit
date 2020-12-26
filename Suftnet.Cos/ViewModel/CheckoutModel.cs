@@ -4,7 +4,7 @@
     public class CheckoutModel
     {
         [Required(ErrorMessage = "Restauarnt Name is required")]
-        [StringLength(200, ErrorMessage = "Restauarnt Name must be between 5 and 200 characters", MinimumLength = 5)]
+        [StringLength(200, ErrorMessage = "Restauarnt Name must be between 5 and 200 characters", MinimumLength = 2)]
         public string Name { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

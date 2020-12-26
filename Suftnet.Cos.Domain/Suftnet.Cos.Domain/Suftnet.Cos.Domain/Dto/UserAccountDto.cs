@@ -40,6 +40,7 @@
         public string TenantEmail { get; set; }
         public string TenantMobile { get; set; }
         public TenantDto TenantDto { get; set; }
-        public string AppCode { get; set; }
+        public string AppCode { get; set; }       
+        public string UserCode { get; set; }
     }
 }

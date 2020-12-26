@@ -137,7 +137,7 @@ var setting = {
                 $("#Country").val(model.Country);
                 $("#AddressId").val(model.AddressId);         
                 $("#StatusId").val(model.StatusId.toUpperCase());
-                          
+                $("#AppCode").val(model.AppCode);
                 $("#Name").val(model.Name);               
                 $("#Telephone").val(model.Telephone);
                 $("#Mobile").val(model.Mobile);
@@ -189,7 +189,7 @@ var setting = {
             function (data) {
 
                 var model = data.dataobject;
-
+            
                 $("#Id").val(model.Id);
                 $("#Server").val(model.Server);
                 $("#Email").val(model.Email);
@@ -205,7 +205,7 @@ var setting = {
                 $("#Telephone").val(model.Telephone);
                 $("#Mobile").val(model.Mobile);
                 $("#Description").val(model.Description);
-
+                $("#AppCode").val(model.AppCode);
                 $("#AddressId").val(model.AddressId);
                 $("#AddressLine1").val(model.AddressLine1);
                 $("#AddressLine2").val(model.AddressLine2);

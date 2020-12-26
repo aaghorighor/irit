@@ -105,7 +105,7 @@
             }
 
             entityToCreate.Id = Guid.NewGuid().ToString();
-
+            entityToCreate.UserCode = GetHashCode(new Guid(entityToCreate.Id));
             var result = UserManager.Create(Map(entityToCreate), entityToCreate.Password);
 
             if (!result.Succeeded)
@@ -232,7 +232,8 @@
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 UserName = model.Email,
-                Email = model.Email              
+                Email = model.Email,
+                UserCode = model.UserCode
             };
 
             return user;
@@ -241,18 +242,17 @@
        private void Map(string userId, UserAccountDto model)
         {
             try {               
-                    _userAccount.Insert(new DataAccess.Action.UserAccount()
-                    {
-                        UserId = userId,
-                        TenantId = this.TenantId,
-                        EmailAddress = model.Email,
-                        AppCode = this.AppCode,
-                        UserCode = GetHashCode(new Guid(userId)),
+                _userAccount.Insert(new DataAccess.Action.UserAccount()
+                 {
+                    UserId = userId,
+                    TenantId = this.TenantId,
+                    EmailAddress = model.Email,
+                    AppCode = this.AppCode,
+                    UserCode = model.UserCode,
 
-                        CreatedBy = this.UserName,
-                        CreatedDt = DateTime.UtcNow
-                    });
-
+                    CreatedBy = this.UserName,
+                    CreatedDt = DateTime.UtcNow
+                });
             }
             catch(Exception ex)
             {

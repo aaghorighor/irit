@@ -39,6 +39,7 @@
             _table.Reset(new TableDto
             {
                 Id = new Guid(Model.TableId),
+                TenantId = new Guid(Model.ExternalId),
                 UpdateBy = Model.UserName,
                 UpdateDate = Model.CreatedDt.ToDate()
             });

@@ -53,6 +53,9 @@ namespace Suftnet.Cos.DataAccess.Action
 
         [StringLength(50)]
         public string OTP { get; set; }
-       
+        [Required]
+        [StringLength(50)]
+        public string UserCode { get; set; }
+
     }
 }

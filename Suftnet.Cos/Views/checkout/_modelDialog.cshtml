@@ -1,11 +1,6 @@
 ﻿
-@using Suftnet.Cos.Extension
 @using Suftnet.Cos.Common
 
-@{
-    var termsConditions = Url.Cms(CmsType.TermsofService);
-    var privacyPolicy = Url.Cms(CmsType.PrivacyPolicy);
-}
 
 <!-- Modal terms -->
 <div class="modal fade" id="termsconditions" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
@@ -16,7 +11,7 @@
                 <h4 class="modal-title" id="termsLabel">Terms and conditions</h4>
             </div>
             <div class="modal-body">
-                @Html.Raw(termsConditions.Contents)
+       
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn_1" data-dismiss="modal">Close</button>
@@ -36,7 +31,7 @@
                 <h4 class="modal-title" id="more-infoLabel">Privacy Policy</h4>
             </div>
             <div class="modal-body">
-                @Html.Raw(privacyPolicy.Contents)
+          
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn_1" data-dismiss="modal">Close</button>

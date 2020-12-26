@@ -1,8 +1,7 @@
 ﻿namespace Suftnet.Cos.Web.Services
 {
     using Microsoft.AspNet.Identity;
-    using Microsoft.AspNet.Identity.EntityFramework;
-
+   
     using Suftnet.Cos.Common;
     using Suftnet.Cos.Core;
     using Suftnet.Cos.DataAccess;
@@ -52,6 +51,7 @@
                 }
 
                 model.Id = Guid.NewGuid().ToString();
+                model.UserCode = GetHashCode(new Guid(model.Id));
                 result = userManager.Create(model, password);
 
                 if (result.Succeeded)
@@ -61,7 +61,7 @@
                         UserId = model.Id,
                         TenantId = tenantId,
                         AppCode = app_code,
-                        UserCode = GetHashCode(new Guid(model.Id)),
+                        UserCode = model.UserCode,
                         EmailAddress = model.Email,                       
 
                         CreatedBy = model.Email,
@@ -166,7 +166,7 @@
             var id = guid.GetHashCode();
             var appCode = Math.Abs(id).ToString();
 
-            return appCode.Substring(0, 8);
+            return appCode.Substring(0, 10);
         }
     }
 }

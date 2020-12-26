@@ -164,7 +164,7 @@
                                  join u in context.Users on o.UserId equals u.Id
                                  where o.TenantId == tenantId
                                  orderby o.Id ascending
-                                 select new UserAccountDto { UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, TenantId = o.TenantId, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id =u.Id, UserName = u.UserName }).ToList();
+                                 select new UserAccountDto { UserCode = o.UserCode, UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, TenantId = o.TenantId, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id =u.Id, UserName = u.UserName }).ToList();
                 return objResult;
             }
         }
@@ -178,7 +178,7 @@
                                      join u in context.Users on o.UserId equals u.Id
                                      where o.TenantId == tenantId && (u.FirstName.Contains(isearch) || u.LastName.Contains(isearch) || u.UserName.Contains(isearch))
                                      orderby o.Id ascending
-                                     select new UserAccountDto { UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id = u.Id, UserName = u.UserName }).Skip(iskip).Take(itake).ToList();
+                                     select new UserAccountDto { UserCode = o.UserCode, UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id = u.Id, UserName = u.UserName }).Skip(iskip).Take(itake).ToList();
                     return objResult;
                 }
             }
@@ -195,7 +195,7 @@
                                  join u in context.Users on o.UserId equals u.Id
                                  where o.TenantId == tenantId
                                  orderby o.Id ascending
-                                 select new UserAccountDto { UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id = u.Id, UserName = u.UserName }).Skip(iskip).Take(itake).ToList();
+                                 select new UserAccountDto { UserCode = o.UserCode, UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id = u.Id, UserName = u.UserName }).Skip(iskip).Take(itake).ToList();
                 return objResult;
             }
         }
@@ -208,7 +208,7 @@
                     var objResult = (from u in context.Users                                   
                                      where (u.FirstName.Contains(isearch) || u.LastName.Contains(isearch) || u.UserName.Contains(isearch))
                                      orderby u.Id ascending
-                                     select new UserAccountDto { UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id = u.Id, UserName = u.UserName }).Skip(iskip).Take(itake).ToList();
+                                     select new UserAccountDto { UserCode = u.UserCode, UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id = u.Id, UserName = u.UserName }).Skip(iskip).Take(itake).ToList();
                     return objResult;
                 }
             }
@@ -223,7 +223,7 @@
             {
                 var objResult = (from u in context.Users                                                          
                                  orderby u.Id ascending
-                                 select new UserAccountDto { UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id = u.Id, UserName = u.UserName }).Skip(iskip).Take(itake).ToList();
+                                 select new UserAccountDto { UserCode = u.UserCode, UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id = u.Id, UserName = u.UserName }).Skip(iskip).Take(itake).ToList();
                 return objResult;
             }
         }
@@ -236,7 +236,7 @@
                     var objResult = (from u in context.Users
                                      where u.AreaId == areaId && (u.FirstName.Contains(isearch) || u.LastName.Contains(isearch) || u.UserName.Contains(isearch))
                                      orderby u.Id descending
-                                     select new UserAccountDto { UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id = u.Id, UserName = u.UserName }).Skip(iskip).Take(itake).ToList();
+                                     select new UserAccountDto { UserCode = u.UserCode, UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id = u.Id, UserName = u.UserName }).Skip(iskip).Take(itake).ToList();
                     return objResult;
                 }
             }
@@ -252,7 +252,7 @@
                 var objResult = (from u in context.Users
                                  where u.AreaId == areaId
                                  orderby u.Id descending
-                                 select new UserAccountDto { UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id = u.Id, UserName = u.UserName }).Skip(iskip).Take(itake).ToList();
+                                 select new UserAccountDto { UserCode = u.UserCode, UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id = u.Id, UserName = u.UserName }).Skip(iskip).Take(itake).ToList();
                 return objResult;
             }
         }

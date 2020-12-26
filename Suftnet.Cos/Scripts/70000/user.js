@@ -64,6 +64,7 @@ var user = {
         $("#FirstName").val(dataobject.FirstName);
         $("#LastName").val(dataobject.LastName);
         $("#Email").val(dataobject.Email);
+        $("#UserCode").val(dataobject.UserCode);
         $("#AreaId").val(dataobject.AreaId);
 
         $("#profileImage")

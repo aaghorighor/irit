@@ -28,7 +28,7 @@
 
         [HttpGet]
        // [JwtAuthenticationAttribute]
-        [Route("getBy")]
+        [Route("fetch")]
         public async Task<IHttpActionResult> Fetch([FromUri]Param param)
         {
             if (!ModelState.IsValid)
