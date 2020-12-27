@@ -52,6 +52,7 @@
                 Id = new Guid(Model.OrderId),
                 Payment = _amountPaid,
                 PaymentStatusId = new Guid(ePaymentStatus.Paid),
+                StatusId = new Guid(eOrderStatus.Completed),
                 Balance = Util.Balance(Model.GrandTotal, _amountPaid),
                 UpdateBy = Model.UserName,
                 UpdateDate = Model.CreatedDt.ToDate()
@@ -76,8 +77,7 @@
                     UpdateDate = Model.CreatedDt.ToDate(),
                     UpdateBy = Model.UserName
                 });
-
-                 _orderPayment.Insert(new OrderPaymentDto
+               _orderPayment.Insert(new OrderPaymentDto
                 {
                     OrderId = new Guid(Model.OrderId),
                     PaymentId = paymentId,

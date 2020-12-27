@@ -178,6 +178,7 @@
                     objToUpdate.Payment = entity.Payment;
                     objToUpdate.Balance = entity.Balance;                   
                     objToUpdate.PaymentStatusId = entity.PaymentStatusId;
+                    objToUpdate.StatusId = entity.StatusId;
 
                     objToUpdate.UpdateBy = entity.UpdateBy;
                     objToUpdate.UpdateDt = entity.UpdateDate;
@@ -276,11 +277,12 @@
                 {
                     var objResult = (from o in context.Orders
                                      join s in context.OrderStatuses on o.StatusId equals s.Id
+                                     join p in context.PaymentStatuses on o.PaymentStatusId equals p.Id
                                      join t in context.Tables on o.TableId equals t.Id
                                      join r in context.OrderTypes on o.OrderTypeId equals r.Id
                                      where (o.TenantId == tenantId && o.OrderTypeId == orderTypeId) && (t.Number.Contains(isearch) || o.FirstName.Contains(isearch) || s.Name.Contains(isearch) || o.CreatedDt.ToString().Contains(isearch) || r.Name.Contains(isearch))
                                      orderby o.Id descending
-                                     select new OrderDto { UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, Table = t.Number, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
+                                     select new OrderDto { PaymentStatus = p.Name, UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, Table = t.Number, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
                     return objResult;
                 }
             }else
@@ -295,11 +297,12 @@
             {
                 var objResult = (from o in context.Orders
                                  join s in context.OrderStatuses on o.StatusId equals s.Id
+                                 join p in context.PaymentStatuses on o.PaymentStatusId equals p.Id
                                  join t in context.Tables on o.TableId equals t.Id
                                  join r in context.OrderTypes on o.OrderTypeId equals r.Id
                                  where (o.TenantId == tenantId && o.OrderTypeId == orderTypeId)
                                  orderby o.CreatedDt descending
-                                 select new OrderDto { UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, Table = t.Number, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
+                                 select new OrderDto { PaymentStatus = p.Name, UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, Table = t.Number, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
                 return objResult;
             }
         }           

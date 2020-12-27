@@ -1,0 +1,61 @@
+﻿@model Suftnet.Cos.Web.StripeAdapterModel
+@using Suftnet.Cos.Common
+
+@{
+    ViewBag.Title = "SUFTNET  | DASHBOARD";
+    Layout = "~/Areas/Subscription/Views/Shared/_slim-layout.cshtml";
+}
+
+<div class="slim-mainpanel">
+
+    <div class="container">
+
+        <div class="slim-pageheader">
+            <ol class="breadcrumb slim-breadcrumb">
+            </ol>
+            <h6 class="slim-pagetitle">Dashboard</h6>
+        </div><!-- slim-pageheader -->
+
+        @if (Model.Tenant.PlanTypeId != PlanType.Trial)
+        {
+            if (Model.Tenant.IsExpired)
+            {
+                @Html.Partial("_expiredSubscription")
+            }
+
+            <div class="card card-dash-one mg-t-20">
+
+                @if (Model.Subscription != null)
+                {
+                    @Html.Partial("_subscription", Model)
+                }
+
+            </div><!-- card -->
+
+            <div class="row row-sm mg-t-20">
+                @Html.Partial("_paymentCard", Model)
+                @Html.Partial("_invoice", Model)
+            </div>
+
+            <div class="row row-sm mg-t-20">
+                @Html.Partial("_subscriptionOptions")
+            </div>
+        }
+        else if (Model.Tenant.PlanTypeId == PlanType.Trial)
+        {
+            if (Model.Tenant.IsExpired)
+            {
+                @Html.Partial("_expiredTrail")
+            }
+
+            <div class="card card-dash-one mg-t-20">
+                @Html.Partial("_trial", Model)
+            </div><!-- card -->
+
+            <div class="row row-sm mg-t-20">
+                @Html.Partial("_trialOptions", Model)
+            </div>
+        }
+
+    </div><!-- container -->
+</div><!-- slim-mainpanel -->

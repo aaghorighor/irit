@@ -33,7 +33,7 @@
         #region private function
         private void CompleteOrder()
         {
-            _order.UpdateOrderStatus(OrderId, StatusId, CreatedDt, CreatedBy, OrderId);
+            _order.UpdateOrderStatus(OrderId, StatusId, CreatedDt, CreatedBy, TenantId);
             _orderDetail.UpdateCompletedOrders(OrderId, CreatedBy);
              Baskets = _orderDetail.FetchOrder(OrderId);
         }

@@ -1,0 +1,27 @@
+﻿ .containerBox {
+    position: relative;
+    display: inline-block;
+}
+   .containerBox .text-box {
+    position: absolute;    
+    right: 20px;
+    top: 90px;
+    text-align: right;    
+    width: 100%;  
+}
+   .containerBox .text-box:before {
+    content: '';  
+}
+  .containerBox h4 {
+   display:inline;
+   font-size: 10px; 
+   padding: 5px;
+   color: #FFF;   
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+}
+   .containerBox img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

@@ -161,13 +161,13 @@
                 var objResult = (from s in context.Orders
                                  join t in context.Tables on s.TableId equals t.Id
                                  join r in context.OrderTypes on s.OrderTypeId equals r.Id
-                                 let orderDetail = (from o in context.OrderDetails
+                                 let kitchenBasket = (from o in context.OrderDetails
                                                      join p in context.Menus on o.MenuId equals p.Id                                                  
                                                      where o.OrderId == s.Id && p.IsKitchen == true && o.IsProcessed == false
                                                      select new OrderDetailDto { CreatedDT = o.CreatedDt, AddonIds = o.AddonIds, AddonItems = o.AddonItems, IsProcessed = o.IsProcessed, ItemName = o.ItemName,  MenuId = o.MenuId, OrderId = o.OrderId, Title = p.Name, Total = o.LineTotal, Quantity = o.Quantity, Price = o.Price, CreatedBy = o.CreatedBy, Id = o.Id }).ToList()
-                                 where (s.StatusId == statusId) && orderDetail.Count > 0 && s.TenantId == tenantId
+                                 where kitchenBasket.Count > 0 && s.TenantId == tenantId 
                                  orderby s.CreatedDt ascending 
-                                 select new OrderDetailWrapperDto { OrderTypeId = s.OrderTypeId, OrderType = r.Name, Table = t.Number, OrderId = s.Id, OrderDetail = orderDetail }).ToList();
+                                 select new OrderDetailWrapperDto { OrderTypeId = s.OrderTypeId, OrderType = r.Name, Table = t.Number, OrderId = s.Id, OrderDetail = kitchenBasket }).ToList();
 
                 return objResult;
             }
@@ -182,7 +182,7 @@
                                  let kitchenBasket = (from o in context.OrderDetails
                                                     where o.OrderId == s.Id && o.IsKitchen == true && o.IsProcessed == false
                                                     select new KitchenBasketDto { AddonItems = o.AddonItems, IsProcessed = o.IsProcessed, ItemName = o.ItemName, Id = o.Id }).ToList()
-                                 where (s.StatusId == statusId) && kitchenBasket.Count > 0 && s.TenantId == tenantId
+                                 where kitchenBasket.Count > 0 && s.TenantId == tenantId 
                                  orderby s.CreatedDt ascending
                                  select new KitchenAdapter { Note = s.Note, CreatedDT =s.CreatedDt, OrderType = r.Name, Table = t.Number, OrderId = s.Id, KitchenBasket = kitchenBasket }).ToList();
 

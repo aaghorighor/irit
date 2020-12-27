@@ -1,0 +1,72 @@
+﻿<form action="@Url.Action("Create", "Plan")" method="post" id="form">
+
+    <div class="forms">
+
+        <input id="Id" name="Id" type="hidden" />
+        <input id="ProductId" name="ProductId" value="1015" type="hidden" />
+
+        <div class="grid-12-12">
+            <label class="forms-lbl">Basic Price: </label>
+            <input type="text" name="BasicPrice" id="BasicPrice" class="forms-txt" maxlength="9" />           
+        </div>
+        <div class="grid-12-12">
+            <label class="forms-lbl">Premium Price: </label>
+            <input type="text" name="AdvancePrice" id="AdvancePrice" class="forms-txt" maxlength="9" />                  
+        </div>
+        <div class="grid-12-12">
+            <label class="forms-lbl">Premium Plus Price: </label>
+            <input type="text" name="ProfessionalPrice" id="ProfessionalPrice" class="forms-txt" maxlength="9" />                 
+        </div>
+
+        <div class="grid-12-12">
+            <ul style="margin-left:0px; margin-top :5px" class="uibutton-group">
+                <li><span class="nwtip"><a class="uibutton icon add normal" id="btnSaveChanges" title="Save">Save Changes</a></span></li>
+            </ul>
+
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {       
+        
+        $("#btnSaveChanges").bind("click", function (e) {
+
+            e.preventDefault();
+
+            if (!suftnet_validation.isValid("form")) {
+                return false;
+            }
+
+            js.ajaxPost($("#form").attr("action"), $("#form").serialize()).then(
+             function (data) {
+
+                 switch (data.flag) {
+                     case 1: //// add     
+
+                         suftnet_grid.addPlan(data.objrow);
+                         break;
+                     case 2: //// update  
+
+                         suftnet_grid.updatePlan(data.objrow);
+
+                         break;
+                     default:;
+                 }
+
+             setTimeout("showSuccess('Success',5000);", 1000);
+
+             $("#Id").val(0);
+           
+             iuHelper.resetForm("#form");
+
+             });
+           
+        });        
+
+    });
+
+   
+
+</script>

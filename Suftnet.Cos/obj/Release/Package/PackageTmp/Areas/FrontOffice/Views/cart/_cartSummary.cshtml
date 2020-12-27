@@ -1,0 +1,52 @@
+﻿
+<div id="cartSummaryContainer" style="height:180px; z-index:10; margin-top:5px; margin-bottom:15px; background-color:#F9FAFA;">
+
+    <table class="table" style="width:100%; padding-top :10px; margin-left:0px; margin-top:1px;" border="1">
+        <tbody>
+            <tr>
+                <td style="width:45%; text-align:left; background-color:lightgray"></td>
+                <td style="width:55%; text-align:left; background-color:lightgray"></td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><strong>Total Item</strong></td>
+                <td style="text-align:right" class="saleSummary"><span data-bind='text: totalItems'> </span></td>
+            </tr>
+            <tr>
+                <td style="text-align:right">
+                    <strong>Subtotal</strong>
+                </td>
+                <td style="text-align:right" class="saleSummary"><span data-bind='text: computeTotal'> </span></td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><strong>Delivery Cost</strong></td>
+                <td style="text-align:right" class="saleSummary"><span data-bind='text: displayDeliveryCost'> </span></td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><strong>Tax</strong></td>
+                <td style="text-align:right" class="saleSummary"><span data-bind='text: displayTax'> </span></td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><strong>Discount</strong></td>
+                <td style="text-align:right" class="saleSummary"><span data-bind='text: displayDiscount'> </span></td>
+            </tr>
+
+            <tr>
+                <td style="text-align:right"><strong>Total</strong></td>
+                <td style="text-align:right" class="saleSummary"><span data-bind='text: computeGrandTotal'> </span></td>
+            </tr>
+
+            <tr>
+                <td style="text-align:right">
+                    <strong>Amount Paid</strong>
+                </td>
+                <td style="text-align:right" class="saleSummary"><span data-bind='text: displayAmountPaid'> </span></td>
+            </tr>
+            <tr>
+                <td style="text-align:right">
+                    <strong>Balance</strong>
+                </td>
+                <td style="text-align:right; font-weight:bold; font-size :18px; color :Red; background-color:black" class="saleSummary"><span data-bind='text: computeBalance'> </span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

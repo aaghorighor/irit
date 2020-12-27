@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "SUFTNET | TEMPLATE";   
+}
+
+<div id="MainCollapsible" style="display:none ">
+
+    <h6><a href="#" id="">Template</a></h6>
+    <div>
+        @Html.Partial("_Templateform")
+    </div>
+
+    <h6><a href="#">Template Viewer</a></h6>
+    <div>
+        <div class="widgets">
+            <div class="widget">
+                <div class="header"><span><span class="ico  gray random"></span> </span></div>
+                <div class="content">
+                    <div class="tableName">
+                        @Html.Partial("_LoadTemplate")
+                    </div>
+                </div><!-- End content -->
+            </div><!-- End full width -->
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" >
+
+ $(function () {
+
+         setTimeout(function () {
+            $("#MainCollapsible").show();
+        }, 0);
+
+        tinymce.init({
+            selector: "textarea",
+            theme: "modern",
+            cleanup: false,
+            forced_root_block: false,
+            force_p_newlines: 'false',
+            remove_linebreaks: false,
+            force_br_newlines: true,
+            remove_trailing_nbsp: false,
+            verify_html: false
+        });
+
+        var _opt = {
+            active: false,
+            collapsible: true,
+            autoHeight: false,
+            animated: "bounceslide"
+        };
+
+        $("#MainCollapsible").accordion(_opt);
+        $("#MainCollapsible").accordion("activate", 1);
+});
+</script>
+
+<script src="@Url.Content("~/Content/tinymce/tinymce/tinymce.min.js")" type="text/javascript"></script>
+
+
+

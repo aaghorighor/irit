@@ -1,0 +1,17 @@
+﻿@using Suftnet.Cos.Extension
+@model Suftnet.Cos.DataAccess.TourDto
+
+<div class="row">
+    <div class="col-md-6 order-2 order-md-12">
+        <figure class="right"><img src="@Url.Tour(Model.ImageUrl, Model.StyleTypeId)" height="298" width="356" class="img-fluid" alt=""></figure>
+    </div>
+    <div class="col-md-6 order-1 order-md-12">
+        <div class="content-area">
+            <div class="icon"><span>@Model.Index</span></div>
+            <div class="text-area">
+                <h2>@Model.Title</h2>
+                <p>@Model.Description</p>
+            </div>
+        </div>        
+    </div>
+</div>

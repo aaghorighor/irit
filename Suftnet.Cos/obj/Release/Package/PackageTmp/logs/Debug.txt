@@ -1,0 +1,3141 @@
+20201031 16:36:45 [10] DEBUG Web [(null)] - Incoming stripe object{
+  "created": 1326853478,
+  "livemode": false,
+  "id": "evt_00000000000000",
+  "type": "customer.subscription.created",
+  "object": "event",
+  "request": null,
+  "pending_webhooks": 1,
+  "api_version": "2018-02-28",
+  "data": {
+    "object": {
+      "id": "sub_00000000000000",
+      "object": "subscription",
+      "application_fee_percent": null,
+      "billing_cycle_anchor": 1596806724,
+      "billing_thresholds": null,
+      "cancel_at": null,
+      "cancel_at_period_end": false,
+      "canceled_at": 1604157497,
+      "collection_method": "charge_automatically",
+      "created": 1596806724,
+      "current_period_end": 1612704324,
+      "current_period_start": 1596806724,
+      "customer": "cus_00000000000000",
+      "days_until_due": null,
+      "default_payment_method": null,
+      "default_source": null,
+      "default_tax_rates": [
+        {
+          "id": "txr_00000000000000",
+          "object": "tax_rate",
+          "active": false,
+          "created": 1596806724,
+          "description": null,
+          "display_name": "Tax",
+          "inclusive": false,
+          "jurisdiction": null,
+          "livemode": false,
+          "metadata": {
+          },
+          "percentage": 20.0
+        }
+      ],
+      "discount": null,
+      "ended_at": 1604157497,
+      "items": {
+        "object": "list",
+        "data": [
+          {
+            "id": "si_00000000000000",
+            "object": "subscription_item",
+            "billing_thresholds": null,
+            "created": 1596806725,
+            "metadata": {
+            },
+            "price": {
+              "id": "price_00000000000000",
+              "object": "price",
+              "active": true,
+              "billing_scheme": "per_unit",
+              "created": 1596806237,
+              "currency": "gbp",
+              "livemode": false,
+              "lookup_key": null,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_00000000000000",
+              "recurring": {
+                "aggregate_usage": null,
+                "interval": "month",
+                "interval_count": 6,
+                "usage_type": "licensed"
+              },
+              "tiers_mode": null,
+              "transform_quantity": null,
+              "type": "recurring",
+              "unit_amount": 10000,
+              "unit_amount_decimal": "10000"
+            },
+            "quantity": 1,
+            "subscription": "sub_00000000000000",
+            "tax_rates": [
+
+            ]
+          }
+        ],
+        "has_more": false,
+        "url": "/v1/subscription_items?subscription=sub_Hn5lT4E7lPv2gk"
+      },
+      "latest_invoice": "in_1HDVZZJ9QQF7JMlNiPT3bMfY",
+      "livemode": false,
+      "metadata": {
+      },
+      "next_pending_invoice_item_invoice": null,
+      "pause_collection": null,
+      "pending_invoice_item_interval": null,
+      "pending_setup_intent": null,
+      "pending_update": null,
+      "schedule": null,
+      "start_date": 1596806724,
+      "status": "canceled",
+      "transfer_data": null,
+      "trial_end": null,
+      "trial_start": null
+    }
+  }
+}
+--------------------------------------------------------------------------------------------
+20201031 16:50:32 [37] DEBUG Web [(null)] - Incoming stripe object{
+  "id": "evt_1HiNHYJ9QQF7JMlNXdCpMZsv",
+  "object": "event",
+  "api_version": "2018-02-28",
+  "created": 1604163024,
+  "data": {
+    "object": {
+      "id": "sub_IIzGDEPMnR9wwB",
+      "object": "subscription",
+      "application_fee_percent": null,
+      "billing": "charge_automatically",
+      "billing_cycle_anchor": 1604163022,
+      "billing_thresholds": null,
+      "cancel_at": null,
+      "cancel_at_period_end": false,
+      "canceled_at": null,
+      "collection_method": "charge_automatically",
+      "created": 1604163022,
+      "current_period_end": 1619801422,
+      "current_period_start": 1604163022,
+      "customer": "cus_IIzGDbxKUh8rt6",
+      "days_until_due": null,
+      "default_payment_method": null,
+      "default_source": null,
+      "default_tax_rates": [
+        {
+          "id": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr",
+          "object": "tax_rate",
+          "active": true,
+          "created": 1604163022,
+          "description": null,
+          "display_name": "Tax",
+          "inclusive": false,
+          "jurisdiction": null,
+          "livemode": false,
+          "metadata": {
+          },
+          "percentage": 20.0
+        }
+      ],
+      "discount": null,
+      "ended_at": null,
+      "invoice_customer_balance_settings": {
+        "consume_applied_balance_on_void": true
+      },
+      "items": {
+        "object": "list",
+        "data": [
+          {
+            "id": "si_IIzG9kwhx5NEoq",
+            "object": "subscription_item",
+            "billing_thresholds": null,
+            "created": 1604163023,
+            "metadata": {
+            },
+            "plan": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "plan",
+              "active": true,
+              "aggregate_usage": null,
+              "amount": 10000,
+              "amount_decimal": "10000",
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "interval": "month",
+              "interval_count": 6,
+              "livemode": false,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "tiers": null,
+              "tiers_mode": null,
+              "transform_usage": null,
+              "trial_period_days": null,
+              "usage_type": "licensed"
+            },
+            "price": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "price",
+              "active": true,
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "livemode": false,
+              "lookup_key": null,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "recurring": {
+                "aggregate_usage": null,
+                "interval": "month",
+                "interval_count": 6,
+                "trial_period_days": null,
+                "usage_type": "licensed"
+              },
+              "tiers_mode": null,
+              "transform_quantity": null,
+              "type": "recurring",
+              "unit_amount": 10000,
+              "unit_amount_decimal": "10000"
+            },
+            "quantity": 1,
+            "subscription": "sub_IIzGDEPMnR9wwB",
+            "tax_rates": [
+
+            ]
+          }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": "/v1/subscription_items?subscription=sub_IIzGDEPMnR9wwB"
+      },
+      "latest_invoice": "in_1HiNHWJ9QQF7JMlNtvgK8cxW",
+      "livemode": false,
+      "metadata": {
+      },
+      "next_pending_invoice_item_invoice": null,
+      "pause_collection": null,
+      "pending_invoice_item_interval": null,
+      "pending_setup_intent": null,
+      "pending_update": null,
+      "plan": {
+        "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+        "object": "plan",
+        "active": true,
+        "aggregate_usage": null,
+        "amount": 10000,
+        "amount_decimal": "10000",
+        "billing_scheme": "per_unit",
+        "created": 1604160147,
+        "currency": "gbp",
+        "interval": "month",
+        "interval_count": 6,
+        "livemode": false,
+        "metadata": {
+        },
+        "nickname": "Premium",
+        "product": "prod_IIyUu1KZ63a9y9",
+        "tiers": null,
+        "tiers_mode": null,
+        "transform_usage": null,
+        "trial_period_days": null,
+        "usage_type": "licensed"
+      },
+      "quantity": 1,
+      "schedule": null,
+      "start": 1604163022,
+      "start_date": 1604163022,
+      "status": "active",
+      "tax_percent": 20.0,
+      "transfer_data": null,
+      "trial_end": null,
+      "trial_start": null
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 2,
+  "request": {
+    "id": "req_e2vDDvboXWtcbq",
+    "idempotency_key": null
+  },
+  "type": "customer.subscription.created"
+}
+--------------------------------------------------------------------------------------------
+20201031 16:51:09 [43] DEBUG Web [(null)] - Incoming stripe object{
+  "id": "evt_1HiNHYJ9QQF7JMlNvjpaZQyn",
+  "object": "event",
+  "api_version": "2018-02-28",
+  "created": 1604163024,
+  "data": {
+    "object": {
+      "id": "in_1HiNHWJ9QQF7JMlNtvgK8cxW",
+      "object": "invoice",
+      "account_country": "GB",
+      "account_name": "Suftnet Int",
+      "account_tax_ids": null,
+      "amount_due": 12000,
+      "amount_paid": 12000,
+      "amount_remaining": 0,
+      "application_fee": null,
+      "attempt_count": 1,
+      "attempted": true,
+      "auto_advance": false,
+      "billing": "charge_automatically",
+      "billing_reason": "subscription_update",
+      "charge": "ch_1HiNHXJ9QQF7JMlNYPpCEwV8",
+      "closed": true,
+      "collection_method": "charge_automatically",
+      "created": 1604163022,
+      "currency": "gbp",
+      "custom_fields": null,
+      "customer": "cus_IIzGDbxKUh8rt6",
+      "customer_address": null,
+      "customer_email": "m1@adeata.com",
+      "customer_name": null,
+      "customer_phone": null,
+      "customer_shipping": null,
+      "customer_tax_exempt": "none",
+      "customer_tax_ids": [
+
+      ],
+      "date": 1604163022,
+      "default_payment_method": null,
+      "default_source": null,
+      "default_tax_rates": [
+        {
+          "id": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr",
+          "object": "tax_rate",
+          "active": true,
+          "created": 1604163022,
+          "description": null,
+          "display_name": "Tax",
+          "inclusive": false,
+          "jurisdiction": null,
+          "livemode": false,
+          "metadata": {
+          },
+          "percentage": 20.0
+        }
+      ],
+      "description": null,
+      "discount": null,
+      "discounts": [
+
+      ],
+      "due_date": null,
+      "ending_balance": 0,
+      "finalized_at": 1604163022,
+      "footer": null,
+      "forgiven": false,
+      "hosted_invoice_url": "https://pay.stripe.com/invoice/acct_16z65VJ9QQF7JMlN/invst_IIzG3ZgyOD3q7gJlTIINVqVTTRCYpO8",
+      "invoice_pdf": "https://pay.stripe.com/invoice/acct_16z65VJ9QQF7JMlN/invst_IIzG3ZgyOD3q7gJlTIINVqVTTRCYpO8/pdf",
+      "lines": {
+        "object": "list",
+        "data": [
+          {
+            "id": "sub_IIzGDEPMnR9wwB",
+            "object": "line_item",
+            "amount": 10000,
+            "currency": "gbp",
+            "description": "1 × Irit (at £100.00 / every 6 months)",
+            "discount_amounts": [
+
+            ],
+            "discountable": true,
+            "discounts": [
+
+            ],
+            "livemode": false,
+            "metadata": {
+            },
+            "period": {
+              "end": 1619801422,
+              "start": 1604163022
+            },
+            "plan": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "plan",
+              "active": true,
+              "aggregate_usage": null,
+              "amount": 10000,
+              "amount_decimal": "10000",
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "interval": "month",
+              "interval_count": 6,
+              "livemode": false,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "tiers": null,
+              "tiers_mode": null,
+              "transform_usage": null,
+              "trial_period_days": null,
+              "usage_type": "licensed"
+            },
+            "price": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "price",
+              "active": true,
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "livemode": false,
+              "lookup_key": null,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "recurring": {
+                "aggregate_usage": null,
+                "interval": "month",
+                "interval_count": 6,
+                "trial_period_days": null,
+                "usage_type": "licensed"
+              },
+              "tiers_mode": null,
+              "transform_quantity": null,
+              "type": "recurring",
+              "unit_amount": 10000,
+              "unit_amount_decimal": "10000"
+            },
+            "proration": false,
+            "quantity": 1,
+            "subscription": null,
+            "subscription_item": "si_IIzG9kwhx5NEoq",
+            "tax_amounts": [
+              {
+                "amount": 2000,
+                "inclusive": false,
+                "tax_rate": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr"
+              }
+            ],
+            "tax_rates": [
+
+            ],
+            "type": "subscription",
+            "unique_id": "il_1HiNHWJ9QQF7JMlNDg5EC0J9",
+            "unique_line_item_id": "sli_11bbc6ba628418"
+          }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": "/v1/invoices/in_1HiNHWJ9QQF7JMlNtvgK8cxW/lines"
+      },
+      "livemode": false,
+      "metadata": {
+      },
+      "next_payment_attempt": null,
+      "number": "47BDEAE0-0001",
+      "paid": true,
+      "payment_intent": "pi_1HiNHXJ9QQF7JMlNGUaqhmyC",
+      "period_end": 1604163022,
+      "period_start": 1604163022,
+      "post_payment_credit_notes_amount": 0,
+      "pre_payment_credit_notes_amount": 0,
+      "receipt_number": null,
+      "starting_balance": 0,
+      "statement_descriptor": null,
+      "status": "paid",
+      "status_transitions": {
+        "finalized_at": 1604163022,
+        "marked_uncollectible_at": null,
+        "paid_at": 1604163022,
+        "voided_at": null
+      },
+      "subscription": "sub_IIzGDEPMnR9wwB",
+      "subtotal": 10000,
+      "tax": 2000,
+      "tax_percent": 20.0,
+      "total": 12000,
+      "total_discount_amounts": [
+
+      ],
+      "total_tax_amounts": [
+        {
+          "amount": 2000,
+          "inclusive": false,
+          "tax_rate": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr"
+        }
+      ],
+      "transfer_data": null,
+      "webhooks_delivered_at": 1604163022
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": {
+    "id": "req_e2vDDvboXWtcbq",
+    "idempotency_key": null
+  },
+  "type": "invoice.payment_succeeded"
+}
+--------------------------------------------------------------------------------------------
+20201031 16:51:29 [48] DEBUG Web [(null)] - Incoming stripe object{
+  "id": "evt_1HiNHYJ9QQF7JMlNXdCpMZsv",
+  "object": "event",
+  "api_version": "2018-02-28",
+  "created": 1604163024,
+  "data": {
+    "object": {
+      "id": "sub_IIzGDEPMnR9wwB",
+      "object": "subscription",
+      "application_fee_percent": null,
+      "billing": "charge_automatically",
+      "billing_cycle_anchor": 1604163022,
+      "billing_thresholds": null,
+      "cancel_at": null,
+      "cancel_at_period_end": false,
+      "canceled_at": null,
+      "collection_method": "charge_automatically",
+      "created": 1604163022,
+      "current_period_end": 1619801422,
+      "current_period_start": 1604163022,
+      "customer": "cus_IIzGDbxKUh8rt6",
+      "days_until_due": null,
+      "default_payment_method": null,
+      "default_source": null,
+      "default_tax_rates": [
+        {
+          "id": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr",
+          "object": "tax_rate",
+          "active": true,
+          "created": 1604163022,
+          "description": null,
+          "display_name": "Tax",
+          "inclusive": false,
+          "jurisdiction": null,
+          "livemode": false,
+          "metadata": {
+          },
+          "percentage": 20.0
+        }
+      ],
+      "discount": null,
+      "ended_at": null,
+      "invoice_customer_balance_settings": {
+        "consume_applied_balance_on_void": true
+      },
+      "items": {
+        "object": "list",
+        "data": [
+          {
+            "id": "si_IIzG9kwhx5NEoq",
+            "object": "subscription_item",
+            "billing_thresholds": null,
+            "created": 1604163023,
+            "metadata": {
+            },
+            "plan": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "plan",
+              "active": true,
+              "aggregate_usage": null,
+              "amount": 10000,
+              "amount_decimal": "10000",
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "interval": "month",
+              "interval_count": 6,
+              "livemode": false,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "tiers": null,
+              "tiers_mode": null,
+              "transform_usage": null,
+              "trial_period_days": null,
+              "usage_type": "licensed"
+            },
+            "price": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "price",
+              "active": true,
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "livemode": false,
+              "lookup_key": null,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "recurring": {
+                "aggregate_usage": null,
+                "interval": "month",
+                "interval_count": 6,
+                "trial_period_days": null,
+                "usage_type": "licensed"
+              },
+              "tiers_mode": null,
+              "transform_quantity": null,
+              "type": "recurring",
+              "unit_amount": 10000,
+              "unit_amount_decimal": "10000"
+            },
+            "quantity": 1,
+            "subscription": "sub_IIzGDEPMnR9wwB",
+            "tax_rates": [
+
+            ]
+          }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": "/v1/subscription_items?subscription=sub_IIzGDEPMnR9wwB"
+      },
+      "latest_invoice": "in_1HiNHWJ9QQF7JMlNtvgK8cxW",
+      "livemode": false,
+      "metadata": {
+      },
+      "next_pending_invoice_item_invoice": null,
+      "pause_collection": null,
+      "pending_invoice_item_interval": null,
+      "pending_setup_intent": null,
+      "pending_update": null,
+      "plan": {
+        "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+        "object": "plan",
+        "active": true,
+        "aggregate_usage": null,
+        "amount": 10000,
+        "amount_decimal": "10000",
+        "billing_scheme": "per_unit",
+        "created": 1604160147,
+        "currency": "gbp",
+        "interval": "month",
+        "interval_count": 6,
+        "livemode": false,
+        "metadata": {
+        },
+        "nickname": "Premium",
+        "product": "prod_IIyUu1KZ63a9y9",
+        "tiers": null,
+        "tiers_mode": null,
+        "transform_usage": null,
+        "trial_period_days": null,
+        "usage_type": "licensed"
+      },
+      "quantity": 1,
+      "schedule": null,
+      "start": 1604163022,
+      "start_date": 1604163022,
+      "status": "active",
+      "tax_percent": 20.0,
+      "transfer_data": null,
+      "trial_end": null,
+      "trial_start": null
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": {
+    "id": "req_e2vDDvboXWtcbq",
+    "idempotency_key": null
+  },
+  "type": "customer.subscription.created"
+}
+--------------------------------------------------------------------------------------------
+20201031 17:07:11 [18] DEBUG Web [(null)] - Incoming stripe object{
+  "id": "evt_1HiNXRJ9QQF7JMlNKZm0r42U",
+  "object": "event",
+  "api_version": "2018-02-28",
+  "created": 1604164008,
+  "data": {
+    "object": {
+      "id": "sub_IIzWa5VUp3bEXl",
+      "object": "subscription",
+      "application_fee_percent": null,
+      "billing": "charge_automatically",
+      "billing_cycle_anchor": 1604164007,
+      "billing_thresholds": null,
+      "cancel_at": null,
+      "cancel_at_period_end": false,
+      "canceled_at": null,
+      "collection_method": "charge_automatically",
+      "created": 1604164007,
+      "current_period_end": 1619802407,
+      "current_period_start": 1604164007,
+      "customer": "cus_IIzWYcpM5Yewwy",
+      "days_until_due": null,
+      "default_payment_method": null,
+      "default_source": null,
+      "default_tax_rates": [
+        {
+          "id": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr",
+          "object": "tax_rate",
+          "active": true,
+          "created": 1604163022,
+          "description": null,
+          "display_name": "Tax",
+          "inclusive": false,
+          "jurisdiction": null,
+          "livemode": false,
+          "metadata": {
+          },
+          "percentage": 20.0
+        }
+      ],
+      "discount": null,
+      "ended_at": null,
+      "invoice_customer_balance_settings": {
+        "consume_applied_balance_on_void": true
+      },
+      "items": {
+        "object": "list",
+        "data": [
+          {
+            "id": "si_IIzWdP1DUdX8PM",
+            "object": "subscription_item",
+            "billing_thresholds": null,
+            "created": 1604164007,
+            "metadata": {
+            },
+            "plan": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "plan",
+              "active": true,
+              "aggregate_usage": null,
+              "amount": 10000,
+              "amount_decimal": "10000",
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "interval": "month",
+              "interval_count": 6,
+              "livemode": false,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "tiers": null,
+              "tiers_mode": null,
+              "transform_usage": null,
+              "trial_period_days": null,
+              "usage_type": "licensed"
+            },
+            "price": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "price",
+              "active": true,
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "livemode": false,
+              "lookup_key": null,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "recurring": {
+                "aggregate_usage": null,
+                "interval": "month",
+                "interval_count": 6,
+                "trial_period_days": null,
+                "usage_type": "licensed"
+              },
+              "tiers_mode": null,
+              "transform_quantity": null,
+              "type": "recurring",
+              "unit_amount": 10000,
+              "unit_amount_decimal": "10000"
+            },
+            "quantity": 1,
+            "subscription": "sub_IIzWa5VUp3bEXl",
+            "tax_rates": [
+
+            ]
+          }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": "/v1/subscription_items?subscription=sub_IIzWa5VUp3bEXl"
+      },
+      "latest_invoice": "in_1HiNXPJ9QQF7JMlNsNz5UYnw",
+      "livemode": false,
+      "metadata": {
+      },
+      "next_pending_invoice_item_invoice": null,
+      "pause_collection": null,
+      "pending_invoice_item_interval": null,
+      "pending_setup_intent": null,
+      "pending_update": null,
+      "plan": {
+        "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+        "object": "plan",
+        "active": true,
+        "aggregate_usage": null,
+        "amount": 10000,
+        "amount_decimal": "10000",
+        "billing_scheme": "per_unit",
+        "created": 1604160147,
+        "currency": "gbp",
+        "interval": "month",
+        "interval_count": 6,
+        "livemode": false,
+        "metadata": {
+        },
+        "nickname": "Premium",
+        "product": "prod_IIyUu1KZ63a9y9",
+        "tiers": null,
+        "tiers_mode": null,
+        "transform_usage": null,
+        "trial_period_days": null,
+        "usage_type": "licensed"
+      },
+      "quantity": 1,
+      "schedule": null,
+      "start": 1604164007,
+      "start_date": 1604164007,
+      "status": "active",
+      "tax_percent": 20.0,
+      "transfer_data": null,
+      "trial_end": null,
+      "trial_start": null
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 2,
+  "request": {
+    "id": "req_c9k3ZwSO4VsoaI",
+    "idempotency_key": null
+  },
+  "type": "customer.subscription.created"
+}
+--------------------------------------------------------------------------------------------
+20201031 17:18:19 [14] DEBUG Web [(null)] - Incoming stripe object{
+  "id": "evt_1HiNiOJ9QQF7JMlNOgp56oVI",
+  "object": "event",
+  "api_version": "2018-02-28",
+  "created": 1604164688,
+  "data": {
+    "object": {
+      "id": "in_1HiNiMJ9QQF7JMlNWbaS0Q79",
+      "object": "invoice",
+      "account_country": "GB",
+      "account_name": "Suftnet Int",
+      "account_tax_ids": null,
+      "amount_due": 12000,
+      "amount_paid": 12000,
+      "amount_remaining": 0,
+      "application_fee": null,
+      "attempt_count": 1,
+      "attempted": true,
+      "auto_advance": false,
+      "billing": "charge_automatically",
+      "billing_reason": "subscription_update",
+      "charge": "ch_1HiNiNJ9QQF7JMlNXdXpsgLn",
+      "closed": true,
+      "collection_method": "charge_automatically",
+      "created": 1604164686,
+      "currency": "gbp",
+      "custom_fields": null,
+      "customer": "cus_IIzhmVkyX7y5ap",
+      "customer_address": null,
+      "customer_email": "m3@adeata.com",
+      "customer_name": null,
+      "customer_phone": null,
+      "customer_shipping": null,
+      "customer_tax_exempt": "none",
+      "customer_tax_ids": [
+
+      ],
+      "date": 1604164686,
+      "default_payment_method": null,
+      "default_source": null,
+      "default_tax_rates": [
+        {
+          "id": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr",
+          "object": "tax_rate",
+          "active": true,
+          "created": 1604163022,
+          "description": null,
+          "display_name": "Tax",
+          "inclusive": false,
+          "jurisdiction": null,
+          "livemode": false,
+          "metadata": {
+          },
+          "percentage": 20.0
+        }
+      ],
+      "description": null,
+      "discount": null,
+      "discounts": [
+
+      ],
+      "due_date": null,
+      "ending_balance": 0,
+      "finalized_at": 1604164686,
+      "footer": null,
+      "forgiven": false,
+      "hosted_invoice_url": "https://pay.stripe.com/invoice/acct_16z65VJ9QQF7JMlN/invst_IIzhoJWD05M6adbnFK9Vpwu8YR1CEsZ",
+      "invoice_pdf": "https://pay.stripe.com/invoice/acct_16z65VJ9QQF7JMlN/invst_IIzhoJWD05M6adbnFK9Vpwu8YR1CEsZ/pdf",
+      "lines": {
+        "object": "list",
+        "data": [
+          {
+            "id": "sub_IIzhuCgcDr27lI",
+            "object": "line_item",
+            "amount": 10000,
+            "currency": "gbp",
+            "description": "1 × Irit (at £100.00 / every 6 months)",
+            "discount_amounts": [
+
+            ],
+            "discountable": true,
+            "discounts": [
+
+            ],
+            "livemode": false,
+            "metadata": {
+            },
+            "period": {
+              "end": 1619803086,
+              "start": 1604164686
+            },
+            "plan": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "plan",
+              "active": true,
+              "aggregate_usage": null,
+              "amount": 10000,
+              "amount_decimal": "10000",
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "interval": "month",
+              "interval_count": 6,
+              "livemode": false,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "tiers": null,
+              "tiers_mode": null,
+              "transform_usage": null,
+              "trial_period_days": null,
+              "usage_type": "licensed"
+            },
+            "price": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "price",
+              "active": true,
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "livemode": false,
+              "lookup_key": null,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "recurring": {
+                "aggregate_usage": null,
+                "interval": "month",
+                "interval_count": 6,
+                "trial_period_days": null,
+                "usage_type": "licensed"
+              },
+              "tiers_mode": null,
+              "transform_quantity": null,
+              "type": "recurring",
+              "unit_amount": 10000,
+              "unit_amount_decimal": "10000"
+            },
+            "proration": false,
+            "quantity": 1,
+            "subscription": null,
+            "subscription_item": "si_IIzh6lAiw2Fzsk",
+            "tax_amounts": [
+              {
+                "amount": 2000,
+                "inclusive": false,
+                "tax_rate": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr"
+              }
+            ],
+            "tax_rates": [
+
+            ],
+            "type": "subscription",
+            "unique_id": "il_1HiNiMJ9QQF7JMlNKN9XZReb",
+            "unique_line_item_id": "sli_f778991328a6eb"
+          }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": "/v1/invoices/in_1HiNiMJ9QQF7JMlNWbaS0Q79/lines"
+      },
+      "livemode": false,
+      "metadata": {
+      },
+      "next_payment_attempt": null,
+      "number": "1A22DA15-0001",
+      "paid": true,
+      "payment_intent": "pi_1HiNiMJ9QQF7JMlN6OQZX9Zx",
+      "period_end": 1604164686,
+      "period_start": 1604164686,
+      "post_payment_credit_notes_amount": 0,
+      "pre_payment_credit_notes_amount": 0,
+      "receipt_number": null,
+      "starting_balance": 0,
+      "statement_descriptor": null,
+      "status": "paid",
+      "status_transitions": {
+        "finalized_at": 1604164686,
+        "marked_uncollectible_at": null,
+        "paid_at": 1604164686,
+        "voided_at": null
+      },
+      "subscription": "sub_IIzhuCgcDr27lI",
+      "subtotal": 10000,
+      "tax": 2000,
+      "tax_percent": 20.0,
+      "total": 12000,
+      "total_discount_amounts": [
+
+      ],
+      "total_tax_amounts": [
+        {
+          "amount": 2000,
+          "inclusive": false,
+          "tax_rate": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr"
+        }
+      ],
+      "transfer_data": null,
+      "webhooks_delivered_at": 1604164686
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 2,
+  "request": {
+    "id": "req_OoqpAr36Fwy7KW",
+    "idempotency_key": null
+  },
+  "type": "invoice.payment_succeeded"
+}
+--------------------------------------------------------------------------------------------
+20201031 17:28:12 [16] DEBUG Web [(null)] - Incoming stripe object{
+  "id": "evt_1HiNrPJ9QQF7JMlNnFjrzZUR",
+  "object": "event",
+  "api_version": "2018-02-28",
+  "created": 1604165247,
+  "data": {
+    "object": {
+      "id": "in_1HiNrOJ9QQF7JMlNxJh96tOX",
+      "object": "invoice",
+      "account_country": "GB",
+      "account_name": "Suftnet Int",
+      "account_tax_ids": null,
+      "amount_due": 12000,
+      "amount_paid": 12000,
+      "amount_remaining": 0,
+      "application_fee": null,
+      "attempt_count": 1,
+      "attempted": true,
+      "auto_advance": false,
+      "billing": "charge_automatically",
+      "billing_reason": "subscription_update",
+      "charge": "ch_1HiNrOJ9QQF7JMlNStE8asSk",
+      "closed": true,
+      "collection_method": "charge_automatically",
+      "created": 1604165246,
+      "currency": "gbp",
+      "custom_fields": null,
+      "customer": "cus_IIzrQx2xQspbrD",
+      "customer_address": null,
+      "customer_email": "m4@adeata.com",
+      "customer_name": null,
+      "customer_phone": null,
+      "customer_shipping": null,
+      "customer_tax_exempt": "none",
+      "customer_tax_ids": [
+
+      ],
+      "date": 1604165246,
+      "default_payment_method": null,
+      "default_source": null,
+      "default_tax_rates": [
+        {
+          "id": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr",
+          "object": "tax_rate",
+          "active": true,
+          "created": 1604163022,
+          "description": null,
+          "display_name": "Tax",
+          "inclusive": false,
+          "jurisdiction": null,
+          "livemode": false,
+          "metadata": {
+          },
+          "percentage": 20.0
+        }
+      ],
+      "description": null,
+      "discount": null,
+      "discounts": [
+
+      ],
+      "due_date": null,
+      "ending_balance": 0,
+      "finalized_at": 1604165246,
+      "footer": null,
+      "forgiven": false,
+      "hosted_invoice_url": "https://pay.stripe.com/invoice/acct_16z65VJ9QQF7JMlN/invst_IIzrD6iCAhh6pmDiEutqPBmdgxvdBcn",
+      "invoice_pdf": "https://pay.stripe.com/invoice/acct_16z65VJ9QQF7JMlN/invst_IIzrD6iCAhh6pmDiEutqPBmdgxvdBcn/pdf",
+      "lines": {
+        "object": "list",
+        "data": [
+          {
+            "id": "sub_IIzrUNVNimkChg",
+            "object": "line_item",
+            "amount": 10000,
+            "currency": "gbp",
+            "description": "1 × Irit (at £100.00 / every 6 months)",
+            "discount_amounts": [
+
+            ],
+            "discountable": true,
+            "discounts": [
+
+            ],
+            "livemode": false,
+            "metadata": {
+            },
+            "period": {
+              "end": 1619803646,
+              "start": 1604165246
+            },
+            "plan": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "plan",
+              "active": true,
+              "aggregate_usage": null,
+              "amount": 10000,
+              "amount_decimal": "10000",
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "interval": "month",
+              "interval_count": 6,
+              "livemode": false,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "tiers": null,
+              "tiers_mode": null,
+              "transform_usage": null,
+              "trial_period_days": null,
+              "usage_type": "licensed"
+            },
+            "price": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "price",
+              "active": true,
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "livemode": false,
+              "lookup_key": null,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "recurring": {
+                "aggregate_usage": null,
+                "interval": "month",
+                "interval_count": 6,
+                "trial_period_days": null,
+                "usage_type": "licensed"
+              },
+              "tiers_mode": null,
+              "transform_quantity": null,
+              "type": "recurring",
+              "unit_amount": 10000,
+              "unit_amount_decimal": "10000"
+            },
+            "proration": false,
+            "quantity": 1,
+            "subscription": null,
+            "subscription_item": "si_IIzra8t8QN30Sr",
+            "tax_amounts": [
+              {
+                "amount": 2000,
+                "inclusive": false,
+                "tax_rate": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr"
+              }
+            ],
+            "tax_rates": [
+
+            ],
+            "type": "subscription",
+            "unique_id": "il_1HiNrOJ9QQF7JMlNs041joTA",
+            "unique_line_item_id": "sli_4df077dc0b80b2"
+          }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": "/v1/invoices/in_1HiNrOJ9QQF7JMlNxJh96tOX/lines"
+      },
+      "livemode": false,
+      "metadata": {
+      },
+      "next_payment_attempt": null,
+      "number": "729B4281-0001",
+      "paid": true,
+      "payment_intent": "pi_1HiNrOJ9QQF7JMlNnmnAkfS0",
+      "period_end": 1604165246,
+      "period_start": 1604165246,
+      "post_payment_credit_notes_amount": 0,
+      "pre_payment_credit_notes_amount": 0,
+      "receipt_number": null,
+      "starting_balance": 0,
+      "statement_descriptor": null,
+      "status": "paid",
+      "status_transitions": {
+        "finalized_at": 1604165246,
+        "marked_uncollectible_at": null,
+        "paid_at": 1604165246,
+        "voided_at": null
+      },
+      "subscription": "sub_IIzrUNVNimkChg",
+      "subtotal": 10000,
+      "tax": 2000,
+      "tax_percent": 20.0,
+      "total": 12000,
+      "total_discount_amounts": [
+
+      ],
+      "total_tax_amounts": [
+        {
+          "amount": 2000,
+          "inclusive": false,
+          "tax_rate": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr"
+        }
+      ],
+      "transfer_data": null,
+      "webhooks_delivered_at": 1604165246
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 2,
+  "request": {
+    "id": "req_8Dl1wtU2XxKoZZ",
+    "idempotency_key": null
+  },
+  "type": "invoice.payment_succeeded"
+}
+--------------------------------------------------------------------------------------------
+20201031 17:40:11 [8] DEBUG Web [(null)] - Incoming stripe object{
+  "id": "evt_1HiO3PJ9QQF7JMlNijB3AZsL",
+  "object": "event",
+  "api_version": "2018-02-28",
+  "created": 1604165990,
+  "data": {
+    "object": {
+      "id": "sub_IJ039lyFuUg3jq",
+      "object": "subscription",
+      "application_fee_percent": null,
+      "billing": "charge_automatically",
+      "billing_cycle_anchor": 1604165989,
+      "billing_thresholds": null,
+      "cancel_at": null,
+      "cancel_at_period_end": false,
+      "canceled_at": null,
+      "collection_method": "charge_automatically",
+      "created": 1604165989,
+      "current_period_end": 1619804389,
+      "current_period_start": 1604165989,
+      "customer": "cus_IJ03W041FuXiY7",
+      "days_until_due": null,
+      "default_payment_method": null,
+      "default_source": null,
+      "default_tax_rates": [
+        {
+          "id": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr",
+          "object": "tax_rate",
+          "active": true,
+          "created": 1604163022,
+          "description": null,
+          "display_name": "Tax",
+          "inclusive": false,
+          "jurisdiction": null,
+          "livemode": false,
+          "metadata": {
+          },
+          "percentage": 20.0
+        }
+      ],
+      "discount": null,
+      "ended_at": null,
+      "invoice_customer_balance_settings": {
+        "consume_applied_balance_on_void": true
+      },
+      "items": {
+        "object": "list",
+        "data": [
+          {
+            "id": "si_IJ03FK3vwaHbUH",
+            "object": "subscription_item",
+            "billing_thresholds": null,
+            "created": 1604165989,
+            "metadata": {
+            },
+            "plan": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "plan",
+              "active": true,
+              "aggregate_usage": null,
+              "amount": 10000,
+              "amount_decimal": "10000",
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "interval": "month",
+              "interval_count": 6,
+              "livemode": false,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "tiers": null,
+              "tiers_mode": null,
+              "transform_usage": null,
+              "trial_period_days": null,
+              "usage_type": "licensed"
+            },
+            "price": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "price",
+              "active": true,
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "livemode": false,
+              "lookup_key": null,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "recurring": {
+                "aggregate_usage": null,
+                "interval": "month",
+                "interval_count": 6,
+                "trial_period_days": null,
+                "usage_type": "licensed"
+              },
+              "tiers_mode": null,
+              "transform_quantity": null,
+              "type": "recurring",
+              "unit_amount": 10000,
+              "unit_amount_decimal": "10000"
+            },
+            "quantity": 1,
+            "subscription": "sub_IJ039lyFuUg3jq",
+            "tax_rates": [
+
+            ]
+          }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": "/v1/subscription_items?subscription=sub_IJ039lyFuUg3jq"
+      },
+      "latest_invoice": "in_1HiO3NJ9QQF7JMlNNRq6UO9h",
+      "livemode": false,
+      "metadata": {
+      },
+      "next_pending_invoice_item_invoice": null,
+      "pause_collection": null,
+      "pending_invoice_item_interval": null,
+      "pending_setup_intent": null,
+      "pending_update": null,
+      "plan": {
+        "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+        "object": "plan",
+        "active": true,
+        "aggregate_usage": null,
+        "amount": 10000,
+        "amount_decimal": "10000",
+        "billing_scheme": "per_unit",
+        "created": 1604160147,
+        "currency": "gbp",
+        "interval": "month",
+        "interval_count": 6,
+        "livemode": false,
+        "metadata": {
+        },
+        "nickname": "Premium",
+        "product": "prod_IIyUu1KZ63a9y9",
+        "tiers": null,
+        "tiers_mode": null,
+        "transform_usage": null,
+        "trial_period_days": null,
+        "usage_type": "licensed"
+      },
+      "quantity": 1,
+      "schedule": null,
+      "start": 1604165989,
+      "start_date": 1604165989,
+      "status": "active",
+      "tax_percent": 20.0,
+      "transfer_data": null,
+      "trial_end": null,
+      "trial_start": null
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 2,
+  "request": {
+    "id": "req_KBqbYG4dE1xeM7",
+    "idempotency_key": null
+  },
+  "type": "customer.subscription.created"
+}
+--------------------------------------------------------------------------------------------
+20201031 17:54:22 [14] DEBUG Web [(null)] - Incoming stripe object{
+  "id": "evt_1HiOHRJ9QQF7JMlNAa9vOmU5",
+  "object": "event",
+  "api_version": "2018-02-28",
+  "created": 1604166861,
+  "data": {
+    "object": {
+      "id": "in_1HiOHPJ9QQF7JMlNKq882VYL",
+      "object": "invoice",
+      "account_country": "GB",
+      "account_name": "Suftnet Int",
+      "account_tax_ids": null,
+      "amount_due": 12000,
+      "amount_paid": 12000,
+      "amount_remaining": 0,
+      "application_fee": null,
+      "attempt_count": 1,
+      "attempted": true,
+      "auto_advance": false,
+      "billing": "charge_automatically",
+      "billing_reason": "subscription_update",
+      "charge": "ch_1HiOHQJ9QQF7JMlNAWTDR9CL",
+      "closed": true,
+      "collection_method": "charge_automatically",
+      "created": 1604166859,
+      "currency": "gbp",
+      "custom_fields": null,
+      "customer": "cus_IJ0Hm0qrpR6gMJ",
+      "customer_address": null,
+      "customer_email": "m6@adeata.com",
+      "customer_name": null,
+      "customer_phone": null,
+      "customer_shipping": null,
+      "customer_tax_exempt": "none",
+      "customer_tax_ids": [
+
+      ],
+      "date": 1604166859,
+      "default_payment_method": null,
+      "default_source": null,
+      "default_tax_rates": [
+        {
+          "id": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr",
+          "object": "tax_rate",
+          "active": true,
+          "created": 1604163022,
+          "description": null,
+          "display_name": "Tax",
+          "inclusive": false,
+          "jurisdiction": null,
+          "livemode": false,
+          "metadata": {
+          },
+          "percentage": 20.0
+        }
+      ],
+      "description": null,
+      "discount": null,
+      "discounts": [
+
+      ],
+      "due_date": null,
+      "ending_balance": 0,
+      "finalized_at": 1604166859,
+      "footer": null,
+      "forgiven": false,
+      "hosted_invoice_url": "https://pay.stripe.com/invoice/acct_16z65VJ9QQF7JMlN/invst_IJ0HME1vshu0D3q0Or3O1faFwOgDWco",
+      "invoice_pdf": "https://pay.stripe.com/invoice/acct_16z65VJ9QQF7JMlN/invst_IJ0HME1vshu0D3q0Or3O1faFwOgDWco/pdf",
+      "lines": {
+        "object": "list",
+        "data": [
+          {
+            "id": "sub_IJ0HLVWDaBiPTE",
+            "object": "line_item",
+            "amount": 10000,
+            "currency": "gbp",
+            "description": "1 × Irit (at £100.00 / every 6 months)",
+            "discount_amounts": [
+
+            ],
+            "discountable": true,
+            "discounts": [
+
+            ],
+            "livemode": false,
+            "metadata": {
+            },
+            "period": {
+              "end": 1619805259,
+              "start": 1604166859
+            },
+            "plan": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "plan",
+              "active": true,
+              "aggregate_usage": null,
+              "amount": 10000,
+              "amount_decimal": "10000",
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "interval": "month",
+              "interval_count": 6,
+              "livemode": false,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "tiers": null,
+              "tiers_mode": null,
+              "transform_usage": null,
+              "trial_period_days": null,
+              "usage_type": "licensed"
+            },
+            "price": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "price",
+              "active": true,
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "livemode": false,
+              "lookup_key": null,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "recurring": {
+                "aggregate_usage": null,
+                "interval": "month",
+                "interval_count": 6,
+                "trial_period_days": null,
+                "usage_type": "licensed"
+              },
+              "tiers_mode": null,
+              "transform_quantity": null,
+              "type": "recurring",
+              "unit_amount": 10000,
+              "unit_amount_decimal": "10000"
+            },
+            "proration": false,
+            "quantity": 1,
+            "subscription": null,
+            "subscription_item": "si_IJ0H0iT6qBbpMX",
+            "tax_amounts": [
+              {
+                "amount": 2000,
+                "inclusive": false,
+                "tax_rate": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr"
+              }
+            ],
+            "tax_rates": [
+
+            ],
+            "type": "subscription",
+            "unique_id": "il_1HiOHPJ9QQF7JMlNEq9EjnOC",
+            "unique_line_item_id": "sli_16ee85fc42ae4e"
+          }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": "/v1/invoices/in_1HiOHPJ9QQF7JMlNKq882VYL/lines"
+      },
+      "livemode": false,
+      "metadata": {
+      },
+      "next_payment_attempt": null,
+      "number": "0FDD8B8F-0001",
+      "paid": true,
+      "payment_intent": "pi_1HiOHPJ9QQF7JMlNzKmNs9VU",
+      "period_end": 1604166859,
+      "period_start": 1604166859,
+      "post_payment_credit_notes_amount": 0,
+      "pre_payment_credit_notes_amount": 0,
+      "receipt_number": null,
+      "starting_balance": 0,
+      "statement_descriptor": null,
+      "status": "paid",
+      "status_transitions": {
+        "finalized_at": 1604166859,
+        "marked_uncollectible_at": null,
+        "paid_at": 1604166859,
+        "voided_at": null
+      },
+      "subscription": "sub_IJ0HLVWDaBiPTE",
+      "subtotal": 10000,
+      "tax": 2000,
+      "tax_percent": 20.0,
+      "total": 12000,
+      "total_discount_amounts": [
+
+      ],
+      "total_tax_amounts": [
+        {
+          "amount": 2000,
+          "inclusive": false,
+          "tax_rate": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr"
+        }
+      ],
+      "transfer_data": null,
+      "webhooks_delivered_at": 1604166859
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 2,
+  "request": {
+    "id": "req_5udRu2oHolXbPX",
+    "idempotency_key": null
+  },
+  "type": "invoice.payment_succeeded"
+}
+--------------------------------------------------------------------------------------------
+20201031 17:54:32 [8] DEBUG Web [(null)] - Incoming stripe object{
+  "id": "evt_1HiOHSJ9QQF7JMlNCSgAEVEi",
+  "object": "event",
+  "api_version": "2018-02-28",
+  "created": 1604166861,
+  "data": {
+    "object": {
+      "id": "sub_IJ0HLVWDaBiPTE",
+      "object": "subscription",
+      "application_fee_percent": null,
+      "billing": "charge_automatically",
+      "billing_cycle_anchor": 1604166859,
+      "billing_thresholds": null,
+      "cancel_at": null,
+      "cancel_at_period_end": false,
+      "canceled_at": null,
+      "collection_method": "charge_automatically",
+      "created": 1604166859,
+      "current_period_end": 1619805259,
+      "current_period_start": 1604166859,
+      "customer": "cus_IJ0Hm0qrpR6gMJ",
+      "days_until_due": null,
+      "default_payment_method": null,
+      "default_source": null,
+      "default_tax_rates": [
+        {
+          "id": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr",
+          "object": "tax_rate",
+          "active": true,
+          "created": 1604163022,
+          "description": null,
+          "display_name": "Tax",
+          "inclusive": false,
+          "jurisdiction": null,
+          "livemode": false,
+          "metadata": {
+          },
+          "percentage": 20.0
+        }
+      ],
+      "discount": null,
+      "ended_at": null,
+      "invoice_customer_balance_settings": {
+        "consume_applied_balance_on_void": true
+      },
+      "items": {
+        "object": "list",
+        "data": [
+          {
+            "id": "si_IJ0H0iT6qBbpMX",
+            "object": "subscription_item",
+            "billing_thresholds": null,
+            "created": 1604166860,
+            "metadata": {
+            },
+            "plan": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "plan",
+              "active": true,
+              "aggregate_usage": null,
+              "amount": 10000,
+              "amount_decimal": "10000",
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "interval": "month",
+              "interval_count": 6,
+              "livemode": false,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "tiers": null,
+              "tiers_mode": null,
+              "transform_usage": null,
+              "trial_period_days": null,
+              "usage_type": "licensed"
+            },
+            "price": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "price",
+              "active": true,
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "livemode": false,
+              "lookup_key": null,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "recurring": {
+                "aggregate_usage": null,
+                "interval": "month",
+                "interval_count": 6,
+                "trial_period_days": null,
+                "usage_type": "licensed"
+              },
+              "tiers_mode": null,
+              "transform_quantity": null,
+              "type": "recurring",
+              "unit_amount": 10000,
+              "unit_amount_decimal": "10000"
+            },
+            "quantity": 1,
+            "subscription": "sub_IJ0HLVWDaBiPTE",
+            "tax_rates": [
+
+            ]
+          }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": "/v1/subscription_items?subscription=sub_IJ0HLVWDaBiPTE"
+      },
+      "latest_invoice": "in_1HiOHPJ9QQF7JMlNKq882VYL",
+      "livemode": false,
+      "metadata": {
+      },
+      "next_pending_invoice_item_invoice": null,
+      "pause_collection": null,
+      "pending_invoice_item_interval": null,
+      "pending_setup_intent": null,
+      "pending_update": null,
+      "plan": {
+        "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+        "object": "plan",
+        "active": true,
+        "aggregate_usage": null,
+        "amount": 10000,
+        "amount_decimal": "10000",
+        "billing_scheme": "per_unit",
+        "created": 1604160147,
+        "currency": "gbp",
+        "interval": "month",
+        "interval_count": 6,
+        "livemode": false,
+        "metadata": {
+        },
+        "nickname": "Premium",
+        "product": "prod_IIyUu1KZ63a9y9",
+        "tiers": null,
+        "tiers_mode": null,
+        "transform_usage": null,
+        "trial_period_days": null,
+        "usage_type": "licensed"
+      },
+      "quantity": 1,
+      "schedule": null,
+      "start": 1604166859,
+      "start_date": 1604166859,
+      "status": "active",
+      "tax_percent": 20.0,
+      "transfer_data": null,
+      "trial_end": null,
+      "trial_start": null
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 2,
+  "request": {
+    "id": "req_5udRu2oHolXbPX",
+    "idempotency_key": null
+  },
+  "type": "customer.subscription.created"
+}
+--------------------------------------------------------------------------------------------
+20201031 18:04:49 [22] DEBUG Web [(null)] - Incoming stripe object{
+  "id": "evt_1HiORKJ9QQF7JMlNC8bdplr7",
+  "object": "event",
+  "api_version": "2018-02-28",
+  "created": 1604167473,
+  "data": {
+    "object": {
+      "id": "in_1HiORIJ9QQF7JMlN0hyKbEHk",
+      "object": "invoice",
+      "account_country": "GB",
+      "account_name": "Suftnet Int",
+      "account_tax_ids": null,
+      "amount_due": 12000,
+      "amount_paid": 12000,
+      "amount_remaining": 0,
+      "application_fee": null,
+      "attempt_count": 1,
+      "attempted": true,
+      "auto_advance": false,
+      "billing": "charge_automatically",
+      "billing_reason": "subscription_update",
+      "charge": "ch_1HiORIJ9QQF7JMlNUrMvL0zo",
+      "closed": true,
+      "collection_method": "charge_automatically",
+      "created": 1604167472,
+      "currency": "gbp",
+      "custom_fields": null,
+      "customer": "cus_IJ0SqGqVBdvXCF",
+      "customer_address": null,
+      "customer_email": "m7@adeata.com",
+      "customer_name": null,
+      "customer_phone": null,
+      "customer_shipping": null,
+      "customer_tax_exempt": "none",
+      "customer_tax_ids": [
+
+      ],
+      "date": 1604167472,
+      "default_payment_method": null,
+      "default_source": null,
+      "default_tax_rates": [
+        {
+          "id": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr",
+          "object": "tax_rate",
+          "active": true,
+          "created": 1604163022,
+          "description": null,
+          "display_name": "Tax",
+          "inclusive": false,
+          "jurisdiction": null,
+          "livemode": false,
+          "metadata": {
+          },
+          "percentage": 20.0
+        }
+      ],
+      "description": null,
+      "discount": null,
+      "discounts": [
+
+      ],
+      "due_date": null,
+      "ending_balance": 0,
+      "finalized_at": 1604167472,
+      "footer": null,
+      "forgiven": false,
+      "hosted_invoice_url": "https://pay.stripe.com/invoice/acct_16z65VJ9QQF7JMlN/invst_IJ0SYeCLtlbpYwLf4bknucptVUo5LNC",
+      "invoice_pdf": "https://pay.stripe.com/invoice/acct_16z65VJ9QQF7JMlN/invst_IJ0SYeCLtlbpYwLf4bknucptVUo5LNC/pdf",
+      "lines": {
+        "object": "list",
+        "data": [
+          {
+            "id": "sub_IJ0S7HSHxhOybC",
+            "object": "line_item",
+            "amount": 10000,
+            "currency": "gbp",
+            "description": "1 × Irit (at £100.00 / every 6 months)",
+            "discount_amounts": [
+
+            ],
+            "discountable": true,
+            "discounts": [
+
+            ],
+            "livemode": false,
+            "metadata": {
+            },
+            "period": {
+              "end": 1619805872,
+              "start": 1604167472
+            },
+            "plan": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "plan",
+              "active": true,
+              "aggregate_usage": null,
+              "amount": 10000,
+              "amount_decimal": "10000",
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "interval": "month",
+              "interval_count": 6,
+              "livemode": false,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "tiers": null,
+              "tiers_mode": null,
+              "transform_usage": null,
+              "trial_period_days": null,
+              "usage_type": "licensed"
+            },
+            "price": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "price",
+              "active": true,
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "livemode": false,
+              "lookup_key": null,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "recurring": {
+                "aggregate_usage": null,
+                "interval": "month",
+                "interval_count": 6,
+                "trial_period_days": null,
+                "usage_type": "licensed"
+              },
+              "tiers_mode": null,
+              "transform_quantity": null,
+              "type": "recurring",
+              "unit_amount": 10000,
+              "unit_amount_decimal": "10000"
+            },
+            "proration": false,
+            "quantity": 1,
+            "subscription": null,
+            "subscription_item": "si_IJ0SkexAlPw4DO",
+            "tax_amounts": [
+              {
+                "amount": 2000,
+                "inclusive": false,
+                "tax_rate": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr"
+              }
+            ],
+            "tax_rates": [
+
+            ],
+            "type": "subscription",
+            "unique_id": "il_1HiORIJ9QQF7JMlNxcvPZlMz",
+            "unique_line_item_id": "sli_9016adbb0cffe1"
+          }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": "/v1/invoices/in_1HiORIJ9QQF7JMlN0hyKbEHk/lines"
+      },
+      "livemode": false,
+      "metadata": {
+      },
+      "next_payment_attempt": null,
+      "number": "FB07BB43-0001",
+      "paid": true,
+      "payment_intent": "pi_1HiORIJ9QQF7JMlNpSfeCOBB",
+      "period_end": 1604167472,
+      "period_start": 1604167472,
+      "post_payment_credit_notes_amount": 0,
+      "pre_payment_credit_notes_amount": 0,
+      "receipt_number": null,
+      "starting_balance": 0,
+      "statement_descriptor": null,
+      "status": "paid",
+      "status_transitions": {
+        "finalized_at": 1604167472,
+        "marked_uncollectible_at": null,
+        "paid_at": 1604167472,
+        "voided_at": null
+      },
+      "subscription": "sub_IJ0S7HSHxhOybC",
+      "subtotal": 10000,
+      "tax": 2000,
+      "tax_percent": 20.0,
+      "total": 12000,
+      "total_discount_amounts": [
+
+      ],
+      "total_tax_amounts": [
+        {
+          "amount": 2000,
+          "inclusive": false,
+          "tax_rate": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr"
+        }
+      ],
+      "transfer_data": null,
+      "webhooks_delivered_at": 1604167472
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 2,
+  "request": {
+    "id": "req_qeokJQ4Ip6p9L0",
+    "idempotency_key": null
+  },
+  "type": "invoice.payment_succeeded"
+}
+--------------------------------------------------------------------------------------------
+20201031 18:23:33 [12] DEBUG Web [(null)] - Incoming stripe object{
+  "id": "evt_1HiOjgJ9QQF7JMlNbOd7qtgK",
+  "object": "event",
+  "api_version": "2018-02-28",
+  "created": 1604168611,
+  "data": {
+    "object": {
+      "id": "in_1HiOjeJ9QQF7JMlNWRzTq03l",
+      "object": "invoice",
+      "account_country": "GB",
+      "account_name": "Suftnet Int",
+      "account_tax_ids": null,
+      "amount_due": 12000,
+      "amount_paid": 12000,
+      "amount_remaining": 0,
+      "application_fee": null,
+      "attempt_count": 1,
+      "attempted": true,
+      "auto_advance": false,
+      "billing": "charge_automatically",
+      "billing_reason": "subscription_update",
+      "charge": "ch_1HiOjfJ9QQF7JMlNmboQp64I",
+      "closed": true,
+      "collection_method": "charge_automatically",
+      "created": 1604168610,
+      "currency": "gbp",
+      "custom_fields": null,
+      "customer": "cus_IJ0lWBgOPmnnxu",
+      "customer_address": null,
+      "customer_email": "m8@adeata.com",
+      "customer_name": null,
+      "customer_phone": null,
+      "customer_shipping": null,
+      "customer_tax_exempt": "none",
+      "customer_tax_ids": [
+
+      ],
+      "date": 1604168610,
+      "default_payment_method": null,
+      "default_source": null,
+      "default_tax_rates": [
+        {
+          "id": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr",
+          "object": "tax_rate",
+          "active": true,
+          "created": 1604163022,
+          "description": null,
+          "display_name": "Tax",
+          "inclusive": false,
+          "jurisdiction": null,
+          "livemode": false,
+          "metadata": {
+          },
+          "percentage": 20.0
+        }
+      ],
+      "description": null,
+      "discount": null,
+      "discounts": [
+
+      ],
+      "due_date": null,
+      "ending_balance": 0,
+      "finalized_at": 1604168610,
+      "footer": null,
+      "forgiven": false,
+      "hosted_invoice_url": "https://pay.stripe.com/invoice/acct_16z65VJ9QQF7JMlN/invst_IJ0lonWv78P8BAoDGWqZoMGF8P45ss9",
+      "invoice_pdf": "https://pay.stripe.com/invoice/acct_16z65VJ9QQF7JMlN/invst_IJ0lonWv78P8BAoDGWqZoMGF8P45ss9/pdf",
+      "lines": {
+        "object": "list",
+        "data": [
+          {
+            "id": "sub_IJ0lENU3xaxaXc",
+            "object": "line_item",
+            "amount": 10000,
+            "currency": "gbp",
+            "description": "1 × Irit (at £100.00 / every 6 months)",
+            "discount_amounts": [
+
+            ],
+            "discountable": true,
+            "discounts": [
+
+            ],
+            "livemode": false,
+            "metadata": {
+            },
+            "period": {
+              "end": 1619807010,
+              "start": 1604168610
+            },
+            "plan": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "plan",
+              "active": true,
+              "aggregate_usage": null,
+              "amount": 10000,
+              "amount_decimal": "10000",
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "interval": "month",
+              "interval_count": 6,
+              "livemode": false,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "tiers": null,
+              "tiers_mode": null,
+              "transform_usage": null,
+              "trial_period_days": null,
+              "usage_type": "licensed"
+            },
+            "price": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "price",
+              "active": true,
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "livemode": false,
+              "lookup_key": null,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "recurring": {
+                "aggregate_usage": null,
+                "interval": "month",
+                "interval_count": 6,
+                "trial_period_days": null,
+                "usage_type": "licensed"
+              },
+              "tiers_mode": null,
+              "transform_quantity": null,
+              "type": "recurring",
+              "unit_amount": 10000,
+              "unit_amount_decimal": "10000"
+            },
+            "proration": false,
+            "quantity": 1,
+            "subscription": null,
+            "subscription_item": "si_IJ0lm8RDyQtWuv",
+            "tax_amounts": [
+              {
+                "amount": 2000,
+                "inclusive": false,
+                "tax_rate": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr"
+              }
+            ],
+            "tax_rates": [
+
+            ],
+            "type": "subscription",
+            "unique_id": "il_1HiOjeJ9QQF7JMlNvJOlThbY",
+            "unique_line_item_id": "sli_3e2f9856b840ca"
+          }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": "/v1/invoices/in_1HiOjeJ9QQF7JMlNWRzTq03l/lines"
+      },
+      "livemode": false,
+      "metadata": {
+      },
+      "next_payment_attempt": null,
+      "number": "ECA7D0B9-0001",
+      "paid": true,
+      "payment_intent": "pi_1HiOjeJ9QQF7JMlNqF75dGLG",
+      "period_end": 1604168610,
+      "period_start": 1604168610,
+      "post_payment_credit_notes_amount": 0,
+      "pre_payment_credit_notes_amount": 0,
+      "receipt_number": null,
+      "starting_balance": 0,
+      "statement_descriptor": null,
+      "status": "paid",
+      "status_transitions": {
+        "finalized_at": 1604168610,
+        "marked_uncollectible_at": null,
+        "paid_at": 1604168610,
+        "voided_at": null
+      },
+      "subscription": "sub_IJ0lENU3xaxaXc",
+      "subtotal": 10000,
+      "tax": 2000,
+      "tax_percent": 20.0,
+      "total": 12000,
+      "total_discount_amounts": [
+
+      ],
+      "total_tax_amounts": [
+        {
+          "amount": 2000,
+          "inclusive": false,
+          "tax_rate": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr"
+        }
+      ],
+      "transfer_data": null,
+      "webhooks_delivered_at": 1604168610
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 2,
+  "request": {
+    "id": "req_oQPSPcS9gBVBqU",
+    "idempotency_key": null
+  },
+  "type": "invoice.payment_succeeded"
+}
+--------------------------------------------------------------------------------------------
+20201031 18:23:33 [8] DEBUG Web [(null)] - Incoming stripe object{
+  "id": "evt_1HiOjgJ9QQF7JMlNsuALW9Q8",
+  "object": "event",
+  "api_version": "2018-02-28",
+  "created": 1604168611,
+  "data": {
+    "object": {
+      "id": "sub_IJ0lENU3xaxaXc",
+      "object": "subscription",
+      "application_fee_percent": null,
+      "billing": "charge_automatically",
+      "billing_cycle_anchor": 1604168610,
+      "billing_thresholds": null,
+      "cancel_at": null,
+      "cancel_at_period_end": false,
+      "canceled_at": null,
+      "collection_method": "charge_automatically",
+      "created": 1604168610,
+      "current_period_end": 1619807010,
+      "current_period_start": 1604168610,
+      "customer": "cus_IJ0lWBgOPmnnxu",
+      "days_until_due": null,
+      "default_payment_method": null,
+      "default_source": null,
+      "default_tax_rates": [
+        {
+          "id": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr",
+          "object": "tax_rate",
+          "active": true,
+          "created": 1604163022,
+          "description": null,
+          "display_name": "Tax",
+          "inclusive": false,
+          "jurisdiction": null,
+          "livemode": false,
+          "metadata": {
+          },
+          "percentage": 20.0
+        }
+      ],
+      "discount": null,
+      "ended_at": null,
+      "invoice_customer_balance_settings": {
+        "consume_applied_balance_on_void": true
+      },
+      "items": {
+        "object": "list",
+        "data": [
+          {
+            "id": "si_IJ0lm8RDyQtWuv",
+            "object": "subscription_item",
+            "billing_thresholds": null,
+            "created": 1604168610,
+            "metadata": {
+            },
+            "plan": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "plan",
+              "active": true,
+              "aggregate_usage": null,
+              "amount": 10000,
+              "amount_decimal": "10000",
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "interval": "month",
+              "interval_count": 6,
+              "livemode": false,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "tiers": null,
+              "tiers_mode": null,
+              "transform_usage": null,
+              "trial_period_days": null,
+              "usage_type": "licensed"
+            },
+            "price": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "price",
+              "active": true,
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "livemode": false,
+              "lookup_key": null,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "recurring": {
+                "aggregate_usage": null,
+                "interval": "month",
+                "interval_count": 6,
+                "trial_period_days": null,
+                "usage_type": "licensed"
+              },
+              "tiers_mode": null,
+              "transform_quantity": null,
+              "type": "recurring",
+              "unit_amount": 10000,
+              "unit_amount_decimal": "10000"
+            },
+            "quantity": 1,
+            "subscription": "sub_IJ0lENU3xaxaXc",
+            "tax_rates": [
+
+            ]
+          }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": "/v1/subscription_items?subscription=sub_IJ0lENU3xaxaXc"
+      },
+      "latest_invoice": "in_1HiOjeJ9QQF7JMlNWRzTq03l",
+      "livemode": false,
+      "metadata": {
+      },
+      "next_pending_invoice_item_invoice": null,
+      "pause_collection": null,
+      "pending_invoice_item_interval": null,
+      "pending_setup_intent": null,
+      "pending_update": null,
+      "plan": {
+        "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+        "object": "plan",
+        "active": true,
+        "aggregate_usage": null,
+        "amount": 10000,
+        "amount_decimal": "10000",
+        "billing_scheme": "per_unit",
+        "created": 1604160147,
+        "currency": "gbp",
+        "interval": "month",
+        "interval_count": 6,
+        "livemode": false,
+        "metadata": {
+        },
+        "nickname": "Premium",
+        "product": "prod_IIyUu1KZ63a9y9",
+        "tiers": null,
+        "tiers_mode": null,
+        "transform_usage": null,
+        "trial_period_days": null,
+        "usage_type": "licensed"
+      },
+      "quantity": 1,
+      "schedule": null,
+      "start": 1604168610,
+      "start_date": 1604168610,
+      "status": "active",
+      "tax_percent": 20.0,
+      "transfer_data": null,
+      "trial_end": null,
+      "trial_start": null
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 2,
+  "request": {
+    "id": "req_oQPSPcS9gBVBqU",
+    "idempotency_key": null
+  },
+  "type": "customer.subscription.created"
+}
+--------------------------------------------------------------------------------------------
+20201031 18:27:31 [8] DEBUG Web [(null)] - Incoming stripe object{
+  "id": "evt_1HiNrPJ9QQF7JMlNCFN9irZb",
+  "object": "event",
+  "api_version": "2018-02-28",
+  "created": 1604165247,
+  "data": {
+    "object": {
+      "id": "sub_IIzrUNVNimkChg",
+      "object": "subscription",
+      "application_fee_percent": null,
+      "billing": "charge_automatically",
+      "billing_cycle_anchor": 1604165246,
+      "billing_thresholds": null,
+      "cancel_at": null,
+      "cancel_at_period_end": false,
+      "canceled_at": null,
+      "collection_method": "charge_automatically",
+      "created": 1604165246,
+      "current_period_end": 1619803646,
+      "current_period_start": 1604165246,
+      "customer": "cus_IIzrQx2xQspbrD",
+      "days_until_due": null,
+      "default_payment_method": null,
+      "default_source": null,
+      "default_tax_rates": [
+        {
+          "id": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr",
+          "object": "tax_rate",
+          "active": true,
+          "created": 1604163022,
+          "description": null,
+          "display_name": "Tax",
+          "inclusive": false,
+          "jurisdiction": null,
+          "livemode": false,
+          "metadata": {
+          },
+          "percentage": 20.0
+        }
+      ],
+      "discount": null,
+      "ended_at": null,
+      "invoice_customer_balance_settings": {
+        "consume_applied_balance_on_void": true
+      },
+      "items": {
+        "object": "list",
+        "data": [
+          {
+            "id": "si_IIzra8t8QN30Sr",
+            "object": "subscription_item",
+            "billing_thresholds": null,
+            "created": 1604165246,
+            "metadata": {
+            },
+            "plan": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "plan",
+              "active": true,
+              "aggregate_usage": null,
+              "amount": 10000,
+              "amount_decimal": "10000",
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "interval": "month",
+              "interval_count": 6,
+              "livemode": false,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "tiers": null,
+              "tiers_mode": null,
+              "transform_usage": null,
+              "trial_period_days": null,
+              "usage_type": "licensed"
+            },
+            "price": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "price",
+              "active": true,
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "livemode": false,
+              "lookup_key": null,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "recurring": {
+                "aggregate_usage": null,
+                "interval": "month",
+                "interval_count": 6,
+                "trial_period_days": null,
+                "usage_type": "licensed"
+              },
+              "tiers_mode": null,
+              "transform_quantity": null,
+              "type": "recurring",
+              "unit_amount": 10000,
+              "unit_amount_decimal": "10000"
+            },
+            "quantity": 1,
+            "subscription": "sub_IIzrUNVNimkChg",
+            "tax_rates": [
+
+            ]
+          }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": "/v1/subscription_items?subscription=sub_IIzrUNVNimkChg"
+      },
+      "latest_invoice": "in_1HiNrOJ9QQF7JMlNxJh96tOX",
+      "livemode": false,
+      "metadata": {
+      },
+      "next_pending_invoice_item_invoice": null,
+      "pause_collection": null,
+      "pending_invoice_item_interval": null,
+      "pending_setup_intent": null,
+      "pending_update": null,
+      "plan": {
+        "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+        "object": "plan",
+        "active": true,
+        "aggregate_usage": null,
+        "amount": 10000,
+        "amount_decimal": "10000",
+        "billing_scheme": "per_unit",
+        "created": 1604160147,
+        "currency": "gbp",
+        "interval": "month",
+        "interval_count": 6,
+        "livemode": false,
+        "metadata": {
+        },
+        "nickname": "Premium",
+        "product": "prod_IIyUu1KZ63a9y9",
+        "tiers": null,
+        "tiers_mode": null,
+        "transform_usage": null,
+        "trial_period_days": null,
+        "usage_type": "licensed"
+      },
+      "quantity": 1,
+      "schedule": null,
+      "start": 1604165246,
+      "start_date": 1604165246,
+      "status": "active",
+      "tax_percent": 20.0,
+      "transfer_data": null,
+      "trial_end": null,
+      "trial_start": null
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": {
+    "id": "req_8Dl1wtU2XxKoZZ",
+    "idempotency_key": null
+  },
+  "type": "customer.subscription.created"
+}
+--------------------------------------------------------------------------------------------
+20201031 18:28:27 [17] DEBUG Web [(null)] - Incoming stripe object{
+  "id": "evt_1HiNrPJ9QQF7JMlNnFjrzZUR",
+  "object": "event",
+  "api_version": "2018-02-28",
+  "created": 1604165247,
+  "data": {
+    "object": {
+      "id": "in_1HiNrOJ9QQF7JMlNxJh96tOX",
+      "object": "invoice",
+      "account_country": "GB",
+      "account_name": "Suftnet Int",
+      "account_tax_ids": null,
+      "amount_due": 12000,
+      "amount_paid": 12000,
+      "amount_remaining": 0,
+      "application_fee": null,
+      "attempt_count": 1,
+      "attempted": true,
+      "auto_advance": false,
+      "billing": "charge_automatically",
+      "billing_reason": "subscription_update",
+      "charge": "ch_1HiNrOJ9QQF7JMlNStE8asSk",
+      "closed": true,
+      "collection_method": "charge_automatically",
+      "created": 1604165246,
+      "currency": "gbp",
+      "custom_fields": null,
+      "customer": "cus_IIzrQx2xQspbrD",
+      "customer_address": null,
+      "customer_email": "m4@adeata.com",
+      "customer_name": null,
+      "customer_phone": null,
+      "customer_shipping": null,
+      "customer_tax_exempt": "none",
+      "customer_tax_ids": [
+
+      ],
+      "date": 1604165246,
+      "default_payment_method": null,
+      "default_source": null,
+      "default_tax_rates": [
+        {
+          "id": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr",
+          "object": "tax_rate",
+          "active": true,
+          "created": 1604163022,
+          "description": null,
+          "display_name": "Tax",
+          "inclusive": false,
+          "jurisdiction": null,
+          "livemode": false,
+          "metadata": {
+          },
+          "percentage": 20.0
+        }
+      ],
+      "description": null,
+      "discount": null,
+      "discounts": [
+
+      ],
+      "due_date": null,
+      "ending_balance": 0,
+      "finalized_at": 1604165246,
+      "footer": null,
+      "forgiven": false,
+      "hosted_invoice_url": "https://pay.stripe.com/invoice/acct_16z65VJ9QQF7JMlN/invst_IIzrD6iCAhh6pmDiEutqPBmdgxvdBcn",
+      "invoice_pdf": "https://pay.stripe.com/invoice/acct_16z65VJ9QQF7JMlN/invst_IIzrD6iCAhh6pmDiEutqPBmdgxvdBcn/pdf",
+      "lines": {
+        "object": "list",
+        "data": [
+          {
+            "id": "sub_IIzrUNVNimkChg",
+            "object": "line_item",
+            "amount": 10000,
+            "currency": "gbp",
+            "description": "1 × Irit (at £100.00 / every 6 months)",
+            "discount_amounts": [
+
+            ],
+            "discountable": true,
+            "discounts": [
+
+            ],
+            "livemode": false,
+            "metadata": {
+            },
+            "period": {
+              "end": 1619803646,
+              "start": 1604165246
+            },
+            "plan": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "plan",
+              "active": true,
+              "aggregate_usage": null,
+              "amount": 10000,
+              "amount_decimal": "10000",
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "interval": "month",
+              "interval_count": 6,
+              "livemode": false,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "tiers": null,
+              "tiers_mode": null,
+              "transform_usage": null,
+              "trial_period_days": null,
+              "usage_type": "licensed"
+            },
+            "price": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "price",
+              "active": true,
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "livemode": false,
+              "lookup_key": null,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "recurring": {
+                "aggregate_usage": null,
+                "interval": "month",
+                "interval_count": 6,
+                "trial_period_days": null,
+                "usage_type": "licensed"
+              },
+              "tiers_mode": null,
+              "transform_quantity": null,
+              "type": "recurring",
+              "unit_amount": 10000,
+              "unit_amount_decimal": "10000"
+            },
+            "proration": false,
+            "quantity": 1,
+            "subscription": null,
+            "subscription_item": "si_IIzra8t8QN30Sr",
+            "tax_amounts": [
+              {
+                "amount": 2000,
+                "inclusive": false,
+                "tax_rate": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr"
+              }
+            ],
+            "tax_rates": [
+
+            ],
+            "type": "subscription",
+            "unique_id": "il_1HiNrOJ9QQF7JMlNs041joTA",
+            "unique_line_item_id": "sli_4df077dc0b80b2"
+          }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": "/v1/invoices/in_1HiNrOJ9QQF7JMlNxJh96tOX/lines"
+      },
+      "livemode": false,
+      "metadata": {
+      },
+      "next_payment_attempt": null,
+      "number": "729B4281-0001",
+      "paid": true,
+      "payment_intent": "pi_1HiNrOJ9QQF7JMlNnmnAkfS0",
+      "period_end": 1604165246,
+      "period_start": 1604165246,
+      "post_payment_credit_notes_amount": 0,
+      "pre_payment_credit_notes_amount": 0,
+      "receipt_number": null,
+      "starting_balance": 0,
+      "statement_descriptor": null,
+      "status": "paid",
+      "status_transitions": {
+        "finalized_at": 1604165246,
+        "marked_uncollectible_at": null,
+        "paid_at": 1604165246,
+        "voided_at": null
+      },
+      "subscription": "sub_IIzrUNVNimkChg",
+      "subtotal": 10000,
+      "tax": 2000,
+      "tax_percent": 20.0,
+      "total": 12000,
+      "total_discount_amounts": [
+
+      ],
+      "total_tax_amounts": [
+        {
+          "amount": 2000,
+          "inclusive": false,
+          "tax_rate": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr"
+        }
+      ],
+      "transfer_data": null,
+      "webhooks_delivered_at": 1604165246
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": {
+    "id": "req_8Dl1wtU2XxKoZZ",
+    "idempotency_key": null
+  },
+  "type": "invoice.payment_succeeded"
+}
+--------------------------------------------------------------------------------------------
+20201031 19:03:51 [13] DEBUG Web [(null)] - Incoming stripe object{
+  "id": "evt_1HiORKJ9QQF7JMlN5VxTp1wY",
+  "object": "event",
+  "api_version": "2018-02-28",
+  "created": 1604167473,
+  "data": {
+    "object": {
+      "id": "sub_IJ0S7HSHxhOybC",
+      "object": "subscription",
+      "application_fee_percent": null,
+      "billing": "charge_automatically",
+      "billing_cycle_anchor": 1604167472,
+      "billing_thresholds": null,
+      "cancel_at": null,
+      "cancel_at_period_end": false,
+      "canceled_at": null,
+      "collection_method": "charge_automatically",
+      "created": 1604167472,
+      "current_period_end": 1619805872,
+      "current_period_start": 1604167472,
+      "customer": "cus_IJ0SqGqVBdvXCF",
+      "days_until_due": null,
+      "default_payment_method": null,
+      "default_source": null,
+      "default_tax_rates": [
+        {
+          "id": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr",
+          "object": "tax_rate",
+          "active": true,
+          "created": 1604163022,
+          "description": null,
+          "display_name": "Tax",
+          "inclusive": false,
+          "jurisdiction": null,
+          "livemode": false,
+          "metadata": {
+          },
+          "percentage": 20.0
+        }
+      ],
+      "discount": null,
+      "ended_at": null,
+      "invoice_customer_balance_settings": {
+        "consume_applied_balance_on_void": true
+      },
+      "items": {
+        "object": "list",
+        "data": [
+          {
+            "id": "si_IJ0SkexAlPw4DO",
+            "object": "subscription_item",
+            "billing_thresholds": null,
+            "created": 1604167472,
+            "metadata": {
+            },
+            "plan": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "plan",
+              "active": true,
+              "aggregate_usage": null,
+              "amount": 10000,
+              "amount_decimal": "10000",
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "interval": "month",
+              "interval_count": 6,
+              "livemode": false,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "tiers": null,
+              "tiers_mode": null,
+              "transform_usage": null,
+              "trial_period_days": null,
+              "usage_type": "licensed"
+            },
+            "price": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "price",
+              "active": true,
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "livemode": false,
+              "lookup_key": null,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "recurring": {
+                "aggregate_usage": null,
+                "interval": "month",
+                "interval_count": 6,
+                "trial_period_days": null,
+                "usage_type": "licensed"
+              },
+              "tiers_mode": null,
+              "transform_quantity": null,
+              "type": "recurring",
+              "unit_amount": 10000,
+              "unit_amount_decimal": "10000"
+            },
+            "quantity": 1,
+            "subscription": "sub_IJ0S7HSHxhOybC",
+            "tax_rates": [
+
+            ]
+          }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": "/v1/subscription_items?subscription=sub_IJ0S7HSHxhOybC"
+      },
+      "latest_invoice": "in_1HiORIJ9QQF7JMlN0hyKbEHk",
+      "livemode": false,
+      "metadata": {
+      },
+      "next_pending_invoice_item_invoice": null,
+      "pause_collection": null,
+      "pending_invoice_item_interval": null,
+      "pending_setup_intent": null,
+      "pending_update": null,
+      "plan": {
+        "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+        "object": "plan",
+        "active": true,
+        "aggregate_usage": null,
+        "amount": 10000,
+        "amount_decimal": "10000",
+        "billing_scheme": "per_unit",
+        "created": 1604160147,
+        "currency": "gbp",
+        "interval": "month",
+        "interval_count": 6,
+        "livemode": false,
+        "metadata": {
+        },
+        "nickname": "Premium",
+        "product": "prod_IIyUu1KZ63a9y9",
+        "tiers": null,
+        "tiers_mode": null,
+        "transform_usage": null,
+        "trial_period_days": null,
+        "usage_type": "licensed"
+      },
+      "quantity": 1,
+      "schedule": null,
+      "start": 1604167472,
+      "start_date": 1604167472,
+      "status": "active",
+      "tax_percent": 20.0,
+      "transfer_data": null,
+      "trial_end": null,
+      "trial_start": null
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": {
+    "id": "req_qeokJQ4Ip6p9L0",
+    "idempotency_key": null
+  },
+  "type": "customer.subscription.created"
+}
+--------------------------------------------------------------------------------------------
+20201031 19:03:57 [13] DEBUG Web [(null)] - Incoming stripe object{
+  "id": "evt_1HiORKJ9QQF7JMlNC8bdplr7",
+  "object": "event",
+  "api_version": "2018-02-28",
+  "created": 1604167473,
+  "data": {
+    "object": {
+      "id": "in_1HiORIJ9QQF7JMlN0hyKbEHk",
+      "object": "invoice",
+      "account_country": "GB",
+      "account_name": "Suftnet Int",
+      "account_tax_ids": null,
+      "amount_due": 12000,
+      "amount_paid": 12000,
+      "amount_remaining": 0,
+      "application_fee": null,
+      "attempt_count": 1,
+      "attempted": true,
+      "auto_advance": false,
+      "billing": "charge_automatically",
+      "billing_reason": "subscription_update",
+      "charge": "ch_1HiORIJ9QQF7JMlNUrMvL0zo",
+      "closed": true,
+      "collection_method": "charge_automatically",
+      "created": 1604167472,
+      "currency": "gbp",
+      "custom_fields": null,
+      "customer": "cus_IJ0SqGqVBdvXCF",
+      "customer_address": null,
+      "customer_email": "m7@adeata.com",
+      "customer_name": null,
+      "customer_phone": null,
+      "customer_shipping": null,
+      "customer_tax_exempt": "none",
+      "customer_tax_ids": [
+
+      ],
+      "date": 1604167472,
+      "default_payment_method": null,
+      "default_source": null,
+      "default_tax_rates": [
+        {
+          "id": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr",
+          "object": "tax_rate",
+          "active": true,
+          "created": 1604163022,
+          "description": null,
+          "display_name": "Tax",
+          "inclusive": false,
+          "jurisdiction": null,
+          "livemode": false,
+          "metadata": {
+          },
+          "percentage": 20.0
+        }
+      ],
+      "description": null,
+      "discount": null,
+      "discounts": [
+
+      ],
+      "due_date": null,
+      "ending_balance": 0,
+      "finalized_at": 1604167472,
+      "footer": null,
+      "forgiven": false,
+      "hosted_invoice_url": "https://pay.stripe.com/invoice/acct_16z65VJ9QQF7JMlN/invst_IJ0SYeCLtlbpYwLf4bknucptVUo5LNC",
+      "invoice_pdf": "https://pay.stripe.com/invoice/acct_16z65VJ9QQF7JMlN/invst_IJ0SYeCLtlbpYwLf4bknucptVUo5LNC/pdf",
+      "lines": {
+        "object": "list",
+        "data": [
+          {
+            "id": "sub_IJ0S7HSHxhOybC",
+            "object": "line_item",
+            "amount": 10000,
+            "currency": "gbp",
+            "description": "1 × Irit (at £100.00 / every 6 months)",
+            "discount_amounts": [
+
+            ],
+            "discountable": true,
+            "discounts": [
+
+            ],
+            "livemode": false,
+            "metadata": {
+            },
+            "period": {
+              "end": 1619805872,
+              "start": 1604167472
+            },
+            "plan": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "plan",
+              "active": true,
+              "aggregate_usage": null,
+              "amount": 10000,
+              "amount_decimal": "10000",
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "interval": "month",
+              "interval_count": 6,
+              "livemode": false,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "tiers": null,
+              "tiers_mode": null,
+              "transform_usage": null,
+              "trial_period_days": null,
+              "usage_type": "licensed"
+            },
+            "price": {
+              "id": "price_1HiMX9J9QQF7JMlNqSot0VCU",
+              "object": "price",
+              "active": true,
+              "billing_scheme": "per_unit",
+              "created": 1604160147,
+              "currency": "gbp",
+              "livemode": false,
+              "lookup_key": null,
+              "metadata": {
+              },
+              "nickname": "Premium",
+              "product": "prod_IIyUu1KZ63a9y9",
+              "recurring": {
+                "aggregate_usage": null,
+                "interval": "month",
+                "interval_count": 6,
+                "trial_period_days": null,
+                "usage_type": "licensed"
+              },
+              "tiers_mode": null,
+              "transform_quantity": null,
+              "type": "recurring",
+              "unit_amount": 10000,
+              "unit_amount_decimal": "10000"
+            },
+            "proration": false,
+            "quantity": 1,
+            "subscription": null,
+            "subscription_item": "si_IJ0SkexAlPw4DO",
+            "tax_amounts": [
+              {
+                "amount": 2000,
+                "inclusive": false,
+                "tax_rate": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr"
+              }
+            ],
+            "tax_rates": [
+
+            ],
+            "type": "subscription",
+            "unique_id": "il_1HiORIJ9QQF7JMlNxcvPZlMz",
+            "unique_line_item_id": "sli_9016adbb0cffe1"
+          }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": "/v1/invoices/in_1HiORIJ9QQF7JMlN0hyKbEHk/lines"
+      },
+      "livemode": false,
+      "metadata": {
+      },
+      "next_payment_attempt": null,
+      "number": "FB07BB43-0001",
+      "paid": true,
+      "payment_intent": "pi_1HiORIJ9QQF7JMlNpSfeCOBB",
+      "period_end": 1604167472,
+      "period_start": 1604167472,
+      "post_payment_credit_notes_amount": 0,
+      "pre_payment_credit_notes_amount": 0,
+      "receipt_number": null,
+      "starting_balance": 0,
+      "statement_descriptor": null,
+      "status": "paid",
+      "status_transitions": {
+        "finalized_at": 1604167472,
+        "marked_uncollectible_at": null,
+        "paid_at": 1604167472,
+        "voided_at": null
+      },
+      "subscription": "sub_IJ0S7HSHxhOybC",
+      "subtotal": 10000,
+      "tax": 2000,
+      "tax_percent": 20.0,
+      "total": 12000,
+      "total_discount_amounts": [
+
+      ],
+      "total_tax_amounts": [
+        {
+          "amount": 2000,
+          "inclusive": false,
+          "tax_rate": "txr_1HiNHWJ9QQF7JMlN1yR4JQKr"
+        }
+      ],
+      "transfer_data": null,
+      "webhooks_delivered_at": 1604167472
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 1,
+  "request": {
+    "id": "req_qeokJQ4Ip6p9L0",
+    "idempotency_key": null
+  },
+  "type": "invoice.payment_succeeded"
+}
+--------------------------------------------------------------------------------------------

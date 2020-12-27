@@ -1,0 +1,152 @@
+﻿@using Suftnet.Cos.Extension
+@model Suftnet.Cos.Web.ViewModel.StripePlanModel
+
+@{
+    Layout = "~/Views/Shared/maviaLayout.cshtml";
+    ViewBag.Title = "SUFTNET | SUBSCRIPTION CARD ";
+}
+
+<main>
+    <div id="form_container">
+        <div class="row">
+            <div class="col-md-5">
+                <div id="left_form">
+                    <figure class="text-center">
+                        <img src="@Url.MaviaImage("icons8-shopping-cart-80.png")" alt="">
+                    </figure>
+
+                    <div class="opening-hours text-left">
+                        <ul class="list-unstyled">
+                            <li class="clearfix line-height-1">
+                                <span> Plan </span>
+                                <div class="value"> @Model.Plan </div>
+                            </li>
+                            <li class="clearfix line-height-1">
+                                <span> Billing Cycle </span>
+                                <div class="value"> @Model.BillingCycle </div>
+                            </li>
+                            <li class="clearfix line-height-1">
+                                <span> Price </span>
+                                <div class="value"> @Html.CurrencySymbol() @Model.Amount </div>
+                            </li>
+                            <li class="clearfix line-height-1">
+                                <span> Vat </span>
+                                <div class="value"> @Html.CurrencySymbol() @Model.Vat  </div>
+                            </li>
+                            <li class="clearfix line-height-1">
+                                <span> Total </span>
+                                <div class="value"> @Html.CurrencySymbol() @Model.Total  </div>
+                            </li>
+                        </ul>
+                        <a href="#0" id="more_info" data-toggle="modal" data-target="#more-info"><i class="pe-7s-info"></i></a>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-7">
+                <div id="wizard_container">
+                    <form name="form" id="form" method="post" action="@Url.Action("Create", "paid", new { area = "Subscription" })" autocomplete="off">
+                        <input type="hidden" name="token" id="token" value="" />
+                        <input id="PlanTypeId" name="PlanTypeId" type="hidden" value="@Model.PlanTypeId">
+                        <!-- Leave for security protection, read docs for details -->
+                        <div id="middle-wizard">
+                            <div class="submit step">
+                                <h3 class="main_question"><strong></strong>Payment Information</h3>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="cc-number" class="control-label">Card Number</label>
+                                            <input id="cc-number" type="tel" class="form-control cc-number required" autocomplete="cc-number" placeholder="•••• •••• •••• ••••" required maxlength="20">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="cc-exp" class="control-label">Expired Date </label>
+                                            <input id="cc-exp" type="tel" class="form-control cc-exp required" autocomplete="cc-exp" placeholder="MM / YY" required maxlength="7">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="cc-cvc" class="control-label">CVC </label>
+                                            <input id="cc-cvc" type="tel" class="form-control cc-cvc required" autocomplete="off" placeholder="•••" required maxlength="3">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button name="btnSubmit" id="btnSubmit" class="submit pull-right">Submit</button>
+                                <a href="@Url.Action("index","dashboard", new { area ="subscription" } )" class="back pull-right">Backward</a>
+
+                                <div class="alert alert-danger hide">
+                                    <strong>Error! </strong><span></span>
+                                </div>
+
+                                <div class="mb-50"></div>
+                                <p class="f-small">Our payment transaction is exclusively manage by Stripe, meaning none of your card information is store on our server. To learn more about Stripe <a href="https://stripe.com/" target="_blank">click here</a></p>
+
+                            </div>
+                        </div>
+                        <!-- /middle-wizard -->
+                        <div id="bottom-wizard">
+
+                        </div>
+                        <!-- /bottom-wizard -->
+
+                        <div class="hide">
+                            <span id="confirmationUrl" name="confirmationUrl" data-confirmationUrl="@Url.Action("index", "dashboard", new { area = "subscription" })"></span>
+                            <span id="spriteUrl" name="spriteUrl" data-spriteUrl="@Url.SpriteUrl("sprites2.png")"></span>
+                            <span id="homeUrl" name="homeUrl" data-homeUrl="@Url.Action("index", "dashboard", new { area = "subscription" })"></span>
+                        </div>
+                    </form>
+                </div>
+                <!-- /Wizard container -->
+            </div>
+        </div><!-- /Row -->
+    </div><!-- /Form_container -->
+    <div class="hide" id="map-item"></div>
+
+    <div class="modal fade" id="more-info" tabindex="-1" role="dialog" aria-labelledby="more-infoLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="more-infoLabel">Frequently asked questions</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Please enter your payment card details and when you are done, click the submit button to start the process of setting up
+                        your account with Jerur. <br /> Note : Your payment is process by stripe, meaning none of your card data is store on our
+                        server rather secure in Stripe.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn_1" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+</main>
+
+
+@Html.Partial("_stripe")
+
+@Scripts.Render("~/bundle/LoadingSpinnerSprite")
+@Scripts.Render("~/bundle/lib")
+@Scripts.Render("~/bundle/checkout")
+@Scripts.Render("~/bundle/ajax")
+
+@Html.Partial("_recaptcha", "checkout")
+
+<script type="text/javascript">
+
+    $(function () {
+        checkout.init();
+    });
+
+</script>
+
