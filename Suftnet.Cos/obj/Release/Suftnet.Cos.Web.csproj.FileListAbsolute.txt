@@ -106,3 +106,5 @@ E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Release\Suftnet.Cos.Web.csprojAssemblyRefer
 E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Release\Suftnet.Cos.Web.csproj.CoreCompileInputs.cache
 E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Release\Suftnet.Cos.Web.csproj.CopyComplete
 E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Release\Suftnet.Cos.Web.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\StructureMap.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Twilio.Api.dll

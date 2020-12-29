@@ -280,6 +280,7 @@
     <Compile Include="Areas\FrontOffice\Controllers\CartController.cs" />
     <Compile Include="Areas\FrontOffice\Controllers\DeliveryController.cs" />
     <Compile Include="Areas\FrontOffice\Controllers\ReservationController.cs" />
+    <Compile Include="Areas\FrontOffice\Controllers\DashBoardController.cs" />
     <Compile Include="Areas\FrontOffice\Controllers\TableController.cs" />
     <Compile Include="Areas\FrontOffice\FrontOfficeAreaRegistration.cs" />
     <Compile Include="Areas\FrontOffice\Controllers\FrontOfficeBaseController.cs" />
@@ -525,6 +526,7 @@
     <Content Include="Scripts\70000\addon.js" />
     <Content Include="Scripts\70000\discount.js" />
     <Content Include="Scripts\70000\logger.js" />
+    <Content Include="Scripts\90000\tableLookup.js" />
     <Content Include="Scripts\70000\order.js" />
     <Content Include="Scripts\70000\tenants.js" />
     <Content Include="Scripts\70000\unit.js" />
@@ -4130,8 +4132,6 @@
     <Content Include="Areas\BackOffice\Views\Addon\_form.cshtml" />
     <Content Include="Areas\BackOffice\Views\Addon\_load.cshtml" />
     <Content Include="Areas\FrontOffice\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Dashboard\_dashBoard.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Dashboard\_dashBoardScript.cshtml" />
     <Content Include="Areas\FrontOffice\Views\Dashboard\_footer.cshtml" />
     <Content Include="Areas\FrontOffice\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\FrontOffice\Views\Table\Index.cshtml" />
@@ -4236,6 +4236,7 @@
     <Content Include="Areas\BackOffice\Views\User\index.cshtml" />
     <Content Include="Areas\BackOffice\Views\User\_form.cshtml" />
     <Content Include="Areas\BackOffice\Views\User\_photo.cshtml" />
+    <Content Include="Areas\FrontOffice\Views\Reservation\_lookUp.cshtml" />
     <None Include="Properties\PublishProfiles\OneChurch - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\OneChurch - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\OneChurch1.0.0.pubxml" />

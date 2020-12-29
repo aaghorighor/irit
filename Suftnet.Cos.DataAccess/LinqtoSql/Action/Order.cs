@@ -56,6 +56,7 @@ namespace Suftnet.Cos.DataAccess.Action
         public decimal? DiscountRate { get; set; }
         [Column(TypeName = "money")]
         public decimal? DeliveryCost { get; set; }
-        public Guid PaymentStatusId { get; set; }
+        public Guid PaymentStatusId { get; set; }    
+        public string TableNumber { get; set; }
     }
 }

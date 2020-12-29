@@ -2,10 +2,7 @@
 
 <div id="header">
     <div id="account_info">
-        <div class="" title="Welcome"><b>Welcome </b> <b class="red">@Url.CurrentUserName()</b></div>
-        <div class="" title="Tables"><a href="@Url.Action("index", "table", new { area = "frontoffice" })">Dine In</a></div>      
-        <div class="" title="Reservation"><a href="@Url.Action("index", "reservation")">Reservation</a></div>
-        <div class="" title="Delivery"><a href="@Url.Action("index", "delivery")">Delivery</a></div>
+        <div class="" title="Welcome"><b>Welcome </b> <b class="red">@Url.CurrentUserName()</b></div>      
         <div class="" title="Back Office"><a href="@Url.Action("index", "dashboard", new { area= "BackOffice" })">Back Office</a></div>
         <div class="Disconnect tooltip" title="Disconnect"><b><a href="@Url.LogoutHref()">Logout</a></b></div>
     </div>

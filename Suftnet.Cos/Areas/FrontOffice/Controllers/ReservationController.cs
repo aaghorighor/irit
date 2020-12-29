@@ -30,15 +30,23 @@
         {
             return View();
         }
+
+        [HttpGet]
+        public async Task<JsonResult> FetchTables()
+        {
+            var model = await Task.Run(() => _table.GetAll(this.TenantId));
+            return Json(new { data = model }, JsonRequestBehavior.AllowGet);
+        }
+
         public async Task<JsonResult> Fetch(DataTableAjaxPostModel param)
         {
-            var model = await Task.Run(() => _order.GetReserveOrders(new Guid(eOrderType.Reservation), this.TenantId, param.start, param.length, param.search.value));
+            var model = await Task.Run(() => _order.GetReserveOrders(new Guid(eOrderType.Reservation.Trim()), this.TenantId, param.start, param.length, param.search.value));
 
             return Json(new
             {
                 draw = param.draw,
                 recordsTotal = model.Count(),
-                recordsFiltered = _order.CountByOrderType(new Guid(eOrderType.Reservation), this.TenantId),
+                recordsFiltered = _order.CountByOrderType(this.TenantId, new Guid(eOrderType.Reservation.Trim())),
                 data = model
             },
                       JsonRequestBehavior.AllowGet);
@@ -109,7 +117,7 @@
 
                 SetOrderTable(entityToCreate);
             }
-
+                        
             _order.UpdateReserve(entityToCreate);
             entityToCreate.flag = (int)flag.Update;
 

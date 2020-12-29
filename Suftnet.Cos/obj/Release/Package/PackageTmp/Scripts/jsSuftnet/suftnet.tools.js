@@ -130,19 +130,15 @@ var tools =
     promise: function (resolver) {
         return new RSVP.Promise(resolver);
     },
-
     stringify: function (object) {
         //old versions of prototype affect stringify
         var pjson = Array.prototype.toJSON;
         delete Array.prototype.toJSON;
-
         var result = JSON.stringify(object);
-
         Array.prototype.toJSON = pjson;
 
         return result;
-    },    
-
+    },   
     absolute: function (loc) {
         if (document && typeof document.createElement === 'function') {
             var a = document.createElement("a");

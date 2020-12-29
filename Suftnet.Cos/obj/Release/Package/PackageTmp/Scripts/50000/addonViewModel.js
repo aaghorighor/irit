@@ -26,6 +26,16 @@
        
     }.bind(self);
 
+    self.itemCount = function () {
+        var count = 0;
+        $.map(self.menuAddons(), function (option) {
+            count = count + 1
+        })
+
+        return count;
+
+    }.bind(self);
+
     self.add = function (item)
     {
         if (item.active())
@@ -93,7 +103,7 @@
 }
 
 function CreateAddOn(data) {
-                 
+
     var self = this;
     
     self.index = ko.computed(function () {
@@ -117,7 +127,7 @@ function CreateAddOn(data) {
 
     self.sellingPrice = ko.computed(function () {
         return suftnet_grid.formatCurrency(data.Price);
-    });   
+    });     
 }
 
 

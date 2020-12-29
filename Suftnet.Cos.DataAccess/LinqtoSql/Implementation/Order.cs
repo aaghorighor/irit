@@ -53,7 +53,7 @@
                 var objResult = (from o in context.Orders
                                  let baskets = (from x in context.OrderDetails                                                                                                 
                                                     where x.OrderId == o.Id 
-                                                    select new BasketDto { OrderId = o.Id, AddonIds = x.AddonIds, Addons = x.AddonItems, IsProcessed = x.IsProcessed, Menu = x.ItemName, MenuId = x.MenuId, Price = x.Price}).ToList()
+                                                    select new BasketDto { ItemName = x.ItemName, OrderId = o.Id, AddonIds = x.AddonIds, Addons = x.AddonItems, IsProcessed = x.IsProcessed, Menu = x.ItemName, MenuId = x.MenuId, Price = x.Price}).ToList()
                                  let itemOrder = new ItemOrderDto { Tax = o.TaxRate, Discount = o.DiscountRate, TableFor = o.ExpectedGuest, TableId = o.TableId, Balance = o.Balance, Paid = o.Payment, TotalTax = o.TotalTax, TotalDiscount = o.TotalDiscount, GrandTotal = o.GrandTotal,Total = o.Total, ExternalId = o.Id }                               
                                  where o.Id == orderId
                                  select new CartOrderDto { ExternalId = orderId, UserName = "Not Set", Baskets = baskets, Order = itemOrder }).FirstOrDefault();
@@ -88,7 +88,7 @@
         {          
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.Order() { PaymentStatusId= entity.PaymentStatusId, DeliveryCost = entity.DeliveryCost, DiscountRate = 0,  TaxRate = 0, Note = entity.Note, UpdateBy = entity.UpdateBy, UpdateDt = entity.UpdateDate, Email = entity.Email, GrandTotal = 0, Total = 0, TotalDiscount = 0, TotalTax = 0, StartDt = entity.StartDt, TenantId = entity.TenantId, Mobile = entity.Mobile, FirstName = entity.FirstName, LastName = entity.LastName, Balance = entity.Balance, ExpectedGuest = entity.ExpectedGuest, Time = entity.Time, Payment = 0, TableId = entity.TableId, StatusId = entity.StatusId, CreatedDt = entity.CreatedDT, OrderTypeId = entity.OrderTypeId, CreatedBy = entity.CreatedBy, Id = entity.Id };
+                var obj = new Action.Order() { TableNumber = entity.TableNumber, PaymentStatusId= entity.PaymentStatusId, DeliveryCost = entity.DeliveryCost, DiscountRate = 0,  TaxRate = 0, Note = entity.Note, UpdateBy = entity.UpdateBy, UpdateDt = entity.UpdateDate, Email = entity.Email, GrandTotal = 0, Total = 0, TotalDiscount = 0, TotalTax = 0, StartDt = entity.StartDt, TenantId = entity.TenantId, Mobile = entity.Mobile, FirstName = entity.FirstName, LastName = entity.LastName, Balance = entity.Balance, ExpectedGuest = entity.ExpectedGuest, Time = entity.Time, Payment = 0, TableId = entity.TableId, StatusId = entity.StatusId, CreatedDt = entity.CreatedDT, OrderTypeId = entity.OrderTypeId, CreatedBy = entity.CreatedBy, Id = entity.Id };
                 context.Orders.Add(obj);
                 context.SaveChanges();
                 return obj.Id;
@@ -251,6 +251,7 @@
                     objToUpdate.Email = entity.Email;
                     objToUpdate.Note = entity.Note;
                     objToUpdate.OrderTypeId = entity.OrderTypeId;
+                    objToUpdate.TableNumber = entity.TableNumber;
 
                     objToUpdate.UpdateBy = entity.UpdateBy;
                     objToUpdate.UpdateDt = entity.UpdateDate;
@@ -347,12 +348,11 @@
                 using (var context = DataContextFactory.CreateContext())
                 {
                     var objResult = (from o in context.Orders
-                                     join s in context.OrderStatuses on o.StatusId equals s.Id
-                                     join t in context.Tables on o.TableId equals t.Id
+                                     join s in context.OrderStatuses on o.StatusId equals s.Id                                   
                                      join r in context.OrderTypes on o.OrderTypeId equals r.Id
                                      where (o.TenantId == tenantId && o.OrderTypeId == orderTypeId) && (o.Mobile.Contains(isearch) || o.Email.Contains(isearch) || o.FirstName.Contains(isearch) || o.LastName.Contains(isearch) || s.Name.Contains(isearch) || r.Name.Contains(isearch))
                                      orderby o.CreatedDt descending
-                                     select new OrderDto { Email = o.Email, Note = o.Note, StartDt = o.StartDt, UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, Table = t.Number, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
+                                     select new OrderDto { TableNumber = o.TableNumber, Email = o.Email, Note = o.Note, StartDt = o.StartDt, UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
                     return objResult;
                 }
             }
@@ -366,12 +366,11 @@
             using (var context = DataContextFactory.CreateContext())
             {
                 var objResult = (from o in context.Orders
-                                 join s in context.OrderStatuses on o.StatusId equals s.Id
-                                 join t in context.Tables on o.TableId equals t.Id
+                                 join s in context.OrderStatuses on o.StatusId equals s.Id                            
                                  join r in context.OrderTypes on o.OrderTypeId equals r.Id
-                                 where o.TenantId == tenantId && (o.OrderTypeId == orderTypeId)
+                                 where o.TenantId == tenantId && (o.OrderTypeId.Equals(orderTypeId))
                                  orderby o.CreatedDt descending
-                                 select new OrderDto { Email = o.Email, Note = o.Note, StartDt = o.StartDt, UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, Table = t.Number, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
+                                 select new OrderDto { TableNumber = o.TableNumber, Email = o.Email, Note = o.Note, StartDt = o.StartDt, UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
                 return objResult;
             }
         }           
@@ -525,7 +524,7 @@
             using (var context = DataContextFactory.CreateContext())
             {
                 var objResult = (from o in context.Orders
-                                 where o.TenantId == tenantId && o.OrderTypeId == orderTypeId
+                                 where o.TenantId == tenantId && o.OrderTypeId.Equals(orderTypeId)
                                  select o
                                  ).Count();
                 return objResult;

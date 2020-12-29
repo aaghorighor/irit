@@ -32,7 +32,8 @@
         public Guid MenuId { get; set; }
         public Guid OrderId { get; set; }            
         public decimal Price { get; set; }
-        public string Menu { get; set; }      
+        public string Menu { get; set; }
+        public string ItemName { get; set; }
         public bool? IsProcessed { get; set; }        
         public string Addons { get; set; }
         public string AddonIds { get; set; }

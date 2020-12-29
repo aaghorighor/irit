@@ -48,6 +48,7 @@
         public string Email { get; set; }
         public Guid PaymentStatusId { get; set; }
         public string PaymentStatus { get; set; }
+        public string TableNumber { get; set; }
     }
     public class ItemOrderDto 
     {

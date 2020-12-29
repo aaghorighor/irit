@@ -336,9 +336,7 @@ var CartViewModel = function () {
     }
 
     self.edit = function (cart)
-    {
-        console.log(cart);
-
+    {      
         menuViewModel.find(cart.id(), cart.optionIds, self.items.indexOf(cart));
     }      
 
@@ -399,7 +397,7 @@ var CartViewModel = function () {
 };
 
 function CreateCart(menuId, data) {
-               
+                      
     var self = this;
     self.parent = null;
     self.index = ko.computed(function () {
@@ -408,7 +406,7 @@ function CreateCart(menuId, data) {
     });
 
     self.id = ko.observable(menuId);
-    self.name = ko.observable(data.Menu);
+    self.name = ko.observable(data.ItemName);
     self.isProcessed = ko.observable(data.IsProcessed);
     self.quantity = ko.observable(1);
     self.sellingprice = ko.observable(data.Price);

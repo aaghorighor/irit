@@ -1,12 +1,12 @@
-﻿@using Suftnet.Cos.Extension
-
-<form action="@Url.Action("create", "reservation")" method="post" id="form">
+﻿<form action="@Url.Action("create", "reservation")" method="post" id="form">
 
     @Html.AntiForgeryToken()
 
     <div class="forms">
 
         <input type="hidden" name="Id" id="Id" value="c7a037e8-3045-4996-9e02-1794e08622c6" />
+        <input type="hidden" name="TableNumber" id="TableNumber" />
+        <input type="hidden" name="OrderTypeId" id="OrderTypeId" value="c7a037e8-3045-4996-9e02-1794e08622c6" />
 
         <div class="grid-6-12 ">
             <label class="forms-lbl">FirstName:</label>
@@ -37,7 +37,9 @@
 
         <div class="grid-6-12">
             <label class="forms-lbl">Table: </label>
-            @Html.TableDropdown("TableId", "validate[required]")
+            <select class="validate[required]" id="TableId" name="TableId" style="padding: 6px;">
+                <option value="">-- SELECT --</option>
+            </select>
         </div>
 
         <div class="clear"></div>
@@ -69,6 +71,7 @@
                 <option value="54f834f8-8f7b-42c0-8331-e1fe5ae50c83">Reserved</option>
             </select>
         </div>
+
         <div class="clear"></div>
 
         <div class="grid-6-12">

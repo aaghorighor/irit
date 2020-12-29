@@ -8,8 +8,7 @@ var reservation = {
 
         iuHelper.resetForm("#form");
 
-        $("#Id").val(dataobject.Id);
-        $("#TableId").val(dataobject.TableId);
+        $("#Id").val(dataobject.Id);     
         $("#FirstName").val(dataobject.FirstName);
         $("#LastName").val(dataobject.LastName);
         $("#Email").val(dataobject.Email);
@@ -19,9 +18,17 @@ var reservation = {
         $("#StartDt").val(dataobject.StartOn);
         $("#Note").val(dataobject.Note);
         $("#StatusId").val(dataobject.StatusId);
+        $("#OrderTypeId").val(dataobject.OrderTypeId);
 
+        $("#StatusId").empty();
+        $("#StatusId").append('<option value="54f834f8-8f7b-42c0-8331-e1fe5ae50c83">Reserved</option>');
         $("#StatusId").append('<option value="58EE00D9-D449-4EBF-B4E8-769F51FE7EFE">Completed</option>');
         $("#StatusId").append('<option value="12BC2434-5CD8-42A2-8345-C1A3ECBC8E3B">Cancel</option>');
+
+        var $option = $("<option />");
+        $option.attr("value", dataobject.TableId).text(dataobject.TableNumber);
+        $("#TableId").empty();
+        $("#TableId").append($option);
 
         $("#reservationDialog").dialog("open");
         $("#form").attr("action", $("#editUrl").attr("data-editUrl"));
@@ -73,7 +80,7 @@ var reservation = {
 
                 }).catch(function (error) {
                     console.log(error);
-                });
+             });
         });  
 
         $("#form").attr("action", $("#createUrl").attr("data-createUrl"));
@@ -114,15 +121,20 @@ var reservation = {
             iuHelper.resetForm("#form");
 
             $("#Id").val("c7a037e8-3045-4996-9e02-1794e08622c6");
-            $("#TableId").val("c7a037e8-3045-4996-9e02-1794e08622c6");
 
+            $("#TableId").empty();
+           
+            $("#StatusId").empty();
+            $("#StatusId").append('<option value="54f834f8-8f7b-42c0-8331-e1fe5ae50c83">Reserved</option>');
+
+            $("#form").attr("action", $("#createUrl").attr("data-createUrl"));
             $("#reservationDialog").dialog("open");
         });
        
     },
     pageInit: function () {       
 
-        $("#reservationDialog").dialog({ autoOpen: false, width: 580, height: 700, modal: false, title: 'Reservation Order' });
+        $("#reservationDialog").dialog({ autoOpen: false, width: 650, height: 750, modal: false, title: 'Reservation Order' });
 
         reservation.create();
         reservation.listener();
@@ -144,7 +156,7 @@ var reservation = {
                 { "data": "Id", "visible": false, "defaultContent": "<i>-</i>" },
                 { "data": "StartOn", "visible": true, "defaultContent": "<i>-</i>" },
                 { "data": "Time", "defaultContent": "<i>-</i>" },
-                { "data": "Table", "defaultContent": "<i>-</i>" },
+                { "data": "TableNumber", "defaultContent": "<i>-</i>" },
                 { "data": "FullName", "defaultContent": "<i>-</i>" },               
                 { "data": "ExpectedGuest", "defaultContent": "<i>-</i>" },
                 { "data": "Status", "defaultContent": "<i>-</i>"  },              
@@ -191,7 +203,6 @@ var reservation = {
                 { className: "text-left", "targets": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] }],    
             destroy: true
         });
-
         _dataTables.reservation.on("draw", function () {
             $('a').tipsy({ fade: true, gravity: 'e', live: true });
         });

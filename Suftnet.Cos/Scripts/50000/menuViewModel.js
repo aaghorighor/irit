@@ -70,20 +70,18 @@
                     });
 
                     constants.addOn.optionModel = 1; // edit model
-                    constants.addOn.index = index; // cart index
-
-                    $("#addonDialog").dialog("open");
+                    constants.addOn.index = index; // cart index                    
                 }                
 
                 break;
             }
-        };
+        };   
+
+        $("#addonDialog").dialog("open");
     };
 
     self.add = function (item) {
-
         self.menues.push(item);
-
     }.bind(self);
 
     self.addToOrder = function (item)
@@ -112,10 +110,13 @@
                 addonViewModel.add(create);
             });          
 
-            $("#addonDialog").dialog("open");
+            if (addonViewModel.itemCount() > 0) {
+                $("#addonDialog").dialog("open");
+            } else {
+                CreateOrder(item.MenuId(), param);  
+            }           
 
-        } else {
-           
+        } else {           
             CreateOrder(item.MenuId(), param);           
         }  
     };    

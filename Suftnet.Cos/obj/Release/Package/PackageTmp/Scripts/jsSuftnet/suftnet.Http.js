@@ -283,7 +283,7 @@ var js = {
 
 var iuHelper = {
   
-    dropdown: function (data, element, Id) {
+   dropdown: function (data, element, Id) {
         $(element).empty();
         $(element).append('<option value=""> --SELECT-- </option>');
         $(data).each(function ()
@@ -297,9 +297,8 @@ var iuHelper = {
         {
             $(element).val(Id);
         }     
-    },    
-
-    postcodeDropdown: function (data, element, Id) {
+    },
+   postcodeDropdown: function (data, element, Id) {
         $(element).empty();
         $(element).append('<option value=""> --SELECT-- </option>');
         $(data).each(function () {
@@ -313,14 +312,13 @@ var iuHelper = {
         }
 
     },
-    roledropdown: function (data, element) {
+   roledropdown: function (data, element) {
         $(element).empty();
         $.each(data, function (i, value) {
             $(element).append('<option value="' + value + '">' + value + '</option>');
         });
     },
-
-    lookupDropdown: function (data, element) {
+   lookupDropdown: function (data, element) {
         $(element).empty();
       
         $(data).each(function ()
@@ -330,7 +328,6 @@ var iuHelper = {
             $(element).append($option);
         });
     },   
-
    stripeDropdown: function (data, element) {
 
         $(element).empty();
@@ -346,7 +343,6 @@ var iuHelper = {
         $(element).prepend('<option selected ="selected" value="">--SELECT--</option>');
 
    },
-
    addressDropdown: function (data, element, Id, title)
    {
        $(element).empty();
@@ -363,14 +359,12 @@ var iuHelper = {
            $(element).val(Id);
        }
    },
-
-    resetForm: function (element) {
+   resetForm: function (element) {
         $(element).get(0).reset();
 
         suftnet_Settings.ClearFormErrorMessages(element);
     },
-
-    submit: function (element) {
+   submit: function (element) {
         $(element).submit();
     }
 }
