@@ -35,7 +35,7 @@
 
         [HttpGet]
         [Route("verifyAppCode")]
-        public IHttpActionResult VerifyAppCode([FromUri] VerifyAppCode param)
+        public IHttpActionResult VerifyAppCode([FromUri]VerifyAppCode param)
         {
             if (!ModelState.IsValid)
             {

@@ -45,7 +45,7 @@
             {
                 var otp = Otp();
 
-                SendEmailFactory(otp, "kabelsus@yahoo.com");
+                SendEmailFactory(otp, User.UserName);
 
                 _user.UpdateAccessCode(User.Id, otp);
             }
