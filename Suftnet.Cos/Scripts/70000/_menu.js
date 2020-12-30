@@ -140,9 +140,9 @@ var _menu = {
                     "data": null,
                     "orderable": false,
                     className: "align-center",
-                    "defaultContent": '<a title="Edit this Menu" style=margin:10px; href="#" onclick=_menu.edit(this)><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>' +
-                        '<a title="Delete this Menu" style=margin:10px; href="#" onclick="_menu.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>' +
-                        '<a title="View Addons for this Menu" style=margin:10px; href="#" onclick="_menu.view(this)"><img src=' + suftnet_grid.iconUrl + 'folder.png\ alt=\"View Addon\" /></a>'
+                    "defaultContent": '<a class="tooltip" title="Edit this row" title="Edit this Menu" style=margin:10px; href="#" onclick=_menu.edit(this)><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>' +
+                        '<a class="tooltip" title="Delete this row" title="Delete this row" style=margin:10px; href="#" onclick="_menu.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>' +
+                        '<a class="tooltip" title="Add Addons to this Menu" style=margin:10px; href="#" onclick="_menu.view(this)"><img src=' + suftnet_grid.iconUrl + 'folder.png\ alt=\"View Addon\" /></a>'
                 }
             ],
             columnDefs: [
@@ -153,7 +153,7 @@ var _menu = {
         });
 
         _dataTables._menu.on("draw", function () {
-            $('a').tipsy({ fade: true, gravity: 'e', live: true });
+            $('.tooltip').tipsy({ fade: true, gravity: 'e', live: true });
         });
     }
 }

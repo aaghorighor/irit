@@ -40,8 +40,8 @@
                     "data": null,
                     "orderable": false,
                     className: "align-center",
-                    "defaultContent": '<a title="View this row" style="margin:10px;" href="#" onclick=tenants.view(this)><img src=' + suftnet_grid.iconUrl + 'folder.png\ alt=\"View this row\" /></a>' +
-                        '<a title="View Use in this row" style="margin:10px;" href="#" onclick="tenants.user(this)"><img src=' + suftnet_grid.iconUrl + 'user.png\ alt=\"View Use in this row\" /></a>'                       
+                    "defaultContent": '<a class="tooltip" title="View this row" style="margin:10px;" href="#" onclick=tenants.view(this)><img src=' + suftnet_grid.iconUrl + 'folder.png\ alt=\"View this row\" /></a>' +
+                        '<a class="tooltip" title="View Uses in this row" style="margin:10px;" href="#" onclick="tenants.user(this)"><img src=' + suftnet_grid.iconUrl + 'user.png\ alt=\"View Use in this row\" /></a>'                       
                 }
             ],
             columnDefs: [
@@ -52,7 +52,7 @@
         });
 
         _dataTables.tenants.on("draw", function () {
-            $('a').tipsy({ fade: true, gravity: 'e', live: true });
+            $('.tooltip').tipsy({ fade: true, gravity: 'e', live: true });
         });
     }
 }

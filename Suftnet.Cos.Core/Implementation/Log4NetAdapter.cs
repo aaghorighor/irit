@@ -2,6 +2,7 @@
 {
     using System;
     using System.Configuration;
+    using System.Text;
     using log4net;
     using log4net.Config;
     using Suftnet.Cos.Common;
@@ -9,7 +10,7 @@
     public class LogAdapter : ILogger
     {
         private readonly ILog _log;
-        private readonly ILogViewer _logViewer;      
+        private readonly ILogViewer _logViewer;
         public LogAdapter(ILogViewer logViewer)
         {
             XmlConfigurator.Configure();
@@ -23,49 +24,121 @@
             switch (logSeverity)
             {
                 case EventLogSeverity.Debug:
-                    _log.Debug(message);
+
+                    if (GeneralConfiguration.Configuration.ExecutingContext.Equals(ExecutingContext.TEST))
+                    {
+                        _log.Debug(message);
+                        Logger(message);
+                    }
+
                     break;
                 case EventLogSeverity.Error:
+
                     _log.Error(message);
+                    Logger(message);
+
                     break;
                 case EventLogSeverity.Fatal:
+
                     _log.Error(message);
+                    Logger(message);
+
                     break;
                 case EventLogSeverity.Information:
-                    _log.Info(message);
+
+                    if (GeneralConfiguration.Configuration.ExecutingContext.Equals(ExecutingContext.TEST))
+                    {
+                        _log.Info(message);
+                        Logger(message);
+                    }
+
                     break;
                 case EventLogSeverity.None:
-                    _log.Info(message);
+
+                    if (GeneralConfiguration.Configuration.ExecutingContext.Equals(ExecutingContext.TEST))
+                    {
+                        _log.Info(message);
+                        Logger(message);
+                    }
                     break;
                 case EventLogSeverity.Warning:
-                    _log.Warn(message);
+                    if (GeneralConfiguration.Configuration.ExecutingContext.Equals(ExecutingContext.TEST))
+                    {
+                        _log.Warn(message);
+                        Logger(message);
+                    }
                     break;
             }
 
-            this.Logger(message);
         }
 
         public void LogError(Exception ex)
         {
-            if(ex.InnerException != null)
-            {
-                this.Logger(ex.InnerException.Message);
-                _log.Error(ex.InnerException.Message);
-            }
-            else
-            {
-                this.Logger(ex.Message);
-                _log.Error(ex.Message);
-            }            
+            var messages = Build(ex);
+
+            this.Logger(messages);
+            _log.Error(messages);
         }
 
+        #region private function
+        private string Build(System.Exception ex)
+        {
+            var content = new StringBuilder();
+
+            if (ex.StackTrace != null)
+            {
+                content.Append("StackTrace");
+                content.AppendLine();
+                content.Append(ex.StackTrace);
+            }
+
+            if (!string.IsNullOrEmpty(ex.Message))
+            {
+                content.Append("Messages");
+                content.AppendLine();
+                content.Append(ex.StackTrace);
+            }
+
+            content.AppendLine();
+            content.Append("--------------------------------------------");
+            content.AppendLine();
+            if (ex.Data != null && ex.Data.Count > 0)
+            {
+                foreach (object item in ex.Data.Keys)
+                {
+                    if (item != null && ex.Data != null && ex.Data[item] != null)
+                    {
+                        content.AppendFormat("{0} = {1}", item, ex.Data[item]);
+                    }
+                    content.AppendLine();
+                }
+            }
+
+            if (ex.InnerException != null)
+            {
+                content.Append("--------------------------------------------");
+                content.AppendLine();
+                content.Append("Inner Exception");
+                content.AppendLine();
+                content.Append("Messages");
+                content.AppendLine();
+                content.Append(ex.InnerException.Message);
+
+                if (ex.InnerException.InnerException != null)
+                {
+                    content.Append("Messages");
+                    content.AppendLine();
+                    content.Append(ex.InnerException.InnerException.Message);
+                }
+            }
+            return content.ToString();
+        }
         private void Logger(string message)
         {
             _logViewer.Insert(new LogDto { CreatedBy = Environment.UserName, CreatedDt = DateTime.UtcNow, Description = message });
         }
+
+        #endregion
     }
-    /// <summary>
-    /// EventLogSeverity
-    /// </summary>
- 
+
 }

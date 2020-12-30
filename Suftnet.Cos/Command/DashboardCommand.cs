@@ -32,8 +32,8 @@
             var continuation = Task.WhenAll(
                 Task.Run(() => _table.GetFreeCount(TenantId)),
                 Task.Run(() => _order.Count(new Guid(eOrderStatus.Reserved), TenantId, new Guid(eOrderType.Reservation))),
-                Task.Run(() => _order.Count(TenantId, new Guid(eOrderType.DineIn), new Guid(eOrderStatus.Pending), new Guid(eOrderStatus.Processing), new Guid(eOrderStatus.Ready))),
-                Task.Run(() => _order.Count(new Guid(eOrderStatus.Occupied), TenantId, new Guid(eOrderType.DineIn))));                
+                Task.Run(() => _order.Count(TenantId, new Guid(eOrderType.Delivery), new Guid(eOrderStatus.Pending), new Guid(eOrderStatus.Processing), new Guid(eOrderStatus.Ready))),
+                Task.Run(() => _order.CountByOrderType(new Guid(eOrderType.DineIn), TenantId, new Guid(ePaymentStatus.Pending))));                
             try
             {
                 continuation.Wait();

@@ -31,5 +31,6 @@
         int Count(Guid tenantId, Guid orderTypeId, params Guid[] statuses);
         bool UpdatePayment(OrderDto entity);
         bool CancelOrder(Guid orderId, Guid orderStatusId, Guid paymentStatusId, DateTime createDt, string createdBy, Guid tenantId);
+        int CountByOrderType(Guid orderTypeId, Guid tenantId, Guid paymentStatusId);
     }
 }

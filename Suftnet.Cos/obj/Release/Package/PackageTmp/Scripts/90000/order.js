@@ -2,10 +2,10 @@
 
 var order = {
 
-    create: function () {
+    editOrder: function () {
 
         $(document).on("click", "#btnSaveChanges", function (e) {
-
+            
             e.preventDefault();
             e.stopImmediatePropagation();
 
@@ -27,7 +27,7 @@ var order = {
             } else {
                 params.ChangeTable = false;
             }
-                       
+                                 
             js.ajaxPost($("#editform").attr("action"), params).then(
                 function (data) {
                     switch (data.flag) {
@@ -66,7 +66,7 @@ var order = {
         $("#editStatusId").val(dataobject.StatusId);
 
         if (dataobject.StatusId.toUpperCase() === constants.orderStatus.completed) {
-            $('#btnSaveChanges').addClass('disabled');
+            $('#btnSubmitOrder').addClass('disabled');
         }
 
         $("#dineInDialog").dialog("open");
@@ -103,10 +103,17 @@ var order = {
 
     },
     pageInit: function () {       
-       
+
+        $("#editTime").timepicker({
+            showOn: "button",
+            buttonImage: suftnet_Settings.icon + "calendar.png",
+            buttonText: "Open datepicker",
+            buttonImageOnly: true
+        });
+
         order.load();
         order.listener();
-        order.create();
+        order.editOrder();
 
         $("#dineInDialog").dialog({ autoOpen: false, width: 580, height: 400, modal: false, title: 'Edit' });
     },
@@ -161,9 +168,9 @@ var order = {
                     "data": null,
                     "orderable": false,    
                     className: "align-center",
-                    "defaultContent": '<a style=margin:10px; href="#" onclick=order.view(this)><img src=' + suftnet_grid.iconUrl + 'basket.png\ alt=\"View this Order\" /></a>'+
-                                      '<a style=margin:10px; href="#" onclick="order.edit(this)"><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>' +
-                                      '<a style=margin:10px; href="#" onclick="order.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>'                }
+                    "defaultContent": '<a class="tooltip" title="Add Menu to this Order" style=margin:10px; href="#" onclick=order.view(this)><img src=' + suftnet_grid.iconUrl + 'basket.png\ alt=\"Add Menu to this Order\" /></a>'+
+                                      '<a class="tooltip" title="Edit this row" style=margin:10px; href="#" onclick="order.edit(this)"><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>' +
+                                      '<a class="tooltip" title="Delete this row" style=margin:10px; href="#" onclick="order.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>'                }
             ],            
             columnDefs: [
             { "targets":[] , "visible": false, "searchable": false },
@@ -173,7 +180,7 @@ var order = {
         });
 
         _dataTables.order.on("draw", function () {
-            $('a').tipsy({ fade: true, gravity: 'e', live: true });
+            $('.tooltip').tipsy({ fade: true, gravity: 'e', live: true });
         });
     }
 }

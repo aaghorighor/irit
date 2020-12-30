@@ -182,9 +182,9 @@ var delivery = {
                     "data": null,
                     "orderable": false,    
                     className: "align-center",
-                    "defaultContent": '<a style=margin:10px; href="#" onclick=delivery.view(this)><img src=' + suftnet_grid.iconUrl + 'basket.png\ alt=\"View this Order\" /></a>'+
-                                      '<a style=margin:10px; href="#" onclick="delivery.edit(this)"><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>' +
-                                      '<a style=margin:10px; href="#" onclick="delivery.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>'                }
+                    "defaultContent": '<a class="tooltip" title="Add Menu to this Order" style=margin:10px; href="#" onclick=delivery.view(this)><img src=' + suftnet_grid.iconUrl + 'basket.png\ alt=\"Add Menu to this Order\" /></a>'+
+                                      '<a class="tooltip" title="Edit this row" style=margin:10px; href="#" onclick="delivery.edit(this)"><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>' +
+                                      '<a class="tooltip" title="Delete this row" style=margin:10px; href="#" onclick="delivery.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>'                }
             ],            
             columnDefs: [
             { "targets":[] , "visible": false, "searchable": false },
@@ -194,7 +194,7 @@ var delivery = {
         });
 
         _dataTables.delivery.on("draw", function () {
-            $('a').tipsy({ fade: true, gravity: 'e', live: true });
+            $('.tooltip').tipsy({ fade: true, gravity: 'e', live: true });
         });
     }
 }

@@ -110,8 +110,8 @@ var category = {
                     "data": null,
                     "orderable": false,
                     className: "align-center",
-                    "defaultContent": '<a style=margin:10px; href="#" onclick=category.edit(this)><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>'+
-                        '<a style=margin:10px; href="#" onclick="category.delete(this)" > <img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>'
+                    "defaultContent": '<a class="tooltip" title="Edit this row" style=margin:10px; href="#" onclick=category.edit(this)><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>'+
+                        '<a class="tooltip" title="Delete this row" style=margin:10px; href="#" onclick="category.delete(this)" > <img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>'
                 }
             ],
             columnDefs: [
@@ -122,7 +122,7 @@ var category = {
         });
 
         _dataTables.category.on("draw", function () {
-            $('a').tipsy({ fade: true, gravity: 'e', live: true });
+            $('.tooltip').tipsy({ fade: true, gravity: 'e', live: true });
         });
     }
 }

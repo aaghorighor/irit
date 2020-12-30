@@ -2,9 +2,9 @@
 
 <div id="header">
     <div id="account_info">
-        <div class="" title="Welcome"><b>Welcome </b> <b class="red">@Url.CurrentUserName()</b></div>      
-        <div class="" title="Back Office"><a href="@Url.Action("index", "dashboard", new { area= "BackOffice" })">Back Office</a></div>
-        <div class="Disconnect tooltip" title="Disconnect"><b><a href="@Url.LogoutHref()">Logout</a></b></div>
+        <div class="tooltip" title="Welcome"><b>Welcome </b> <b class="red">@Url.CurrentUserName()</b></div>      
+        <div class="tooltip" title="Back Office"><a href="@Url.Action("index", "dashboard", new { area= "BackOffice" })">Back Office</a></div>
+        <div class="Disconnect tooltip" title="Logout"><b><a href="@Url.LogoutHref()">Logout</a></b></div>
     </div>
 </div>
 

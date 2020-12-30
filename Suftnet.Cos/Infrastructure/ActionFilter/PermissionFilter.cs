@@ -1,13 +1,12 @@
 ﻿namespace Suftnet.Cos.CommonController.Controllers
 {
     using Core;
-       
+
     using Suftnet.Cos.Extension;
     using Suftnet.Cos.Common;
     using System.Linq;
     using System.Web.Mvc;
     using System.Security.Claims;
-    using Web.Services.Interface;
     using Suftnet.Cos.DataAccess;
 
     public sealed class PermissionFilter : ActionFilterAttribute
@@ -24,15 +23,22 @@
         {
             var identity = ((ClaimsIdentity)filterContext.HttpContext.User.Identity);
             var userId = identity.Claims.Where(x => x.Type == Identity.UserId).Select(x => x.Value).SingleOrDefault();
-                       
+
             var permission = GeneralConfiguration.Configuration.DependencyResolver.GetService<IPermission>();
             var match = permission.Match(this.viewId, userId);
+
             if (match == null)
             {
                 Chanllenge(filterContext);
                 return;
             }
-          
+
+            if (match != null && !Test(match))
+            {
+                Chanllenge(filterContext);
+                return;
+            }
+
             base.OnActionExecuting(filterContext);
         }
 
@@ -46,7 +52,7 @@
                     Data = new
                     {
                         ok = false,
-                        msg = "Access Denied."
+                        msg = "You don't have the Permission."
                     },
                     JsonRequestBehavior = JsonRequestBehavior.AllowGet,
                     ContentType = "application/json; charset=utf-8"
@@ -63,7 +69,48 @@
                     filterContext.Result = new RedirectResult(filterContext.LoginUrl());
                 }
             }
-          
+        }
+
+        private bool Test(PermissionDto permission)
+        {
+            var flag = false;
+
+            switch (this.permissionId)
+            {
+                case (int)PermissionType.Create:
+                    if (permission.Create == Suftnet.Cos.Common.Permission.Enable)
+                    {
+                        flag = true;
+                    }
+
+                    break;
+                case (int)PermissionType.Edit:
+                    if (permission.Edit == Suftnet.Cos.Common.Permission.Enable)
+                    {
+                        flag = true;
+                    }
+                    break;
+                case (int)PermissionType.Remove:
+                    if (permission.Remove == Suftnet.Cos.Common.Permission.Enable)
+                    {
+                        flag = true;
+                    }
+                    break;
+                case (int)PermissionType.Get:
+                    if (permission.Get == Suftnet.Cos.Common.Permission.Enable)
+                    {
+                        flag = true;
+                    }
+                    break;
+                case (int)PermissionType.GetAll:
+                    if (permission.GetAll == Suftnet.Cos.Common.Permission.Enable)
+                    {
+                        flag = true;
+                    }
+                    break;
+            }
+
+            return flag;
         }
         #endregion       
     }

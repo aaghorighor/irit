@@ -50,7 +50,7 @@ var tables = {
                 {
                     "data": null,
                     "orderable": false,           
-                    "defaultContent": '<a class="etip" title="Add this Table" style="margin:10px;" href="#" onclick=tables.select(this)><img src=' + suftnet_grid.iconUrl + 'add.png\ alt=\"Select this Table\" /></a>'
+                    "defaultContent": '<a class="etip" title="Select this Table" style="margin:10px;" href="#" onclick=tables.select(this)><img src=' + suftnet_grid.iconUrl + 'add.png\ alt=\"Select this Table\" /></a>'
                 }
             ],            
             columnDefs: [

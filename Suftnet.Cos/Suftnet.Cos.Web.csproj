@@ -346,6 +346,7 @@
     <Compile Include="Extensions\MvcModelStateError.cs" />
     <Compile Include="Infrastructure\ActionFilter\AddChallengeOnUnauthorizedResult.cs" />
     <Compile Include="Infrastructure\ActionFilter\AuthenticationFailureResult.cs" />
+    <Compile Include="Infrastructure\ActionFilter\AuthentificateAttribute.cs" />
     <Compile Include="Infrastructure\ActionFilter\JsonFilter.cs" />
     <Compile Include="Infrastructure\ActionFilter\SubscriptionAuthorizeActionFilter.cs" />
     <Compile Include="Infrastructure\ActionFilter\ExceptionActionFilter.cs" />
@@ -3694,10 +3695,8 @@
     <Content Include="Scripts\common\collapsible.js" />
     <Content Include="Scripts\common\startup.js" />
     <Content Include="Scripts\common\constant.js" />
-    <Content Include="Scripts\common\dynamicTable.js" />
     <Content Include="Scripts\jsSuftnet\suftnet.Http.js" />
     <Content Include="Scripts\jsSuftnet\suftnet.tools.js" />
-    <Content Include="Scripts\common\dashboard.js" />
     <Content Include="Scripts\common\grid.js" />
     <Content Include="Scripts\common\utility.js" />
     <Content Include="Scripts\common\validation.js" />

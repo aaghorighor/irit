@@ -37,21 +37,20 @@
             }
 
             string line = _claims.FirstOrDefault();
-            var test = line.Contains(claim);
-           
-            if (!test)
+
+            if (!string.IsNullOrEmpty(line))
             {
                 Chanllenge(filterContext);
                 return;
             }
 
-            var userId = identity.Claims.Where(x => x.Type == Identity.UserId).Select(x => x.Value).SingleOrDefault();
+            var test = line.Contains(claim);
 
-            if (string.IsNullOrEmpty(userId))
+            if (!test)
             {
                 Chanllenge(filterContext);
                 return;
-            }                     
+            }
 
             base.OnActionExecuting(filterContext);
         }
@@ -65,7 +64,7 @@
                 {
                     Data = new
                     {
-                        ok = false,                    
+                        ok = false,
                         msg = "Access Denied."
                     },
                     JsonRequestBehavior = JsonRequestBehavior.AllowGet,
@@ -83,7 +82,7 @@
                     filterContext.Result = new RedirectResult(filterContext.LoginUrl());
                 }
             }
-          
+
         }
         #endregion
     }

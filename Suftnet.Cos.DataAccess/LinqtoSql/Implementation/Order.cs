@@ -530,5 +530,16 @@
                 return objResult;
             }
         }
+        public int CountByOrderType(Guid orderTypeId, Guid tenantId, Guid paymentStatusId)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objResult = (from o in context.Orders
+                                 where o.TenantId == tenantId && o.PaymentStatusId == paymentStatusId && o.OrderTypeId == orderTypeId
+                                 select o
+                                 ).Count();
+                return objResult;
+            }
+        }
     }
 }

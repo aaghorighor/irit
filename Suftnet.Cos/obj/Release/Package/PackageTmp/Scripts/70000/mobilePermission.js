@@ -77,7 +77,7 @@
                     "data": null,
                     "orderable": false,
                     className: "align-center",
-                    "defaultContent": '<a title="Delete this row" style="margin:10px;" href="#" onclick="mobilePermission.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>'
+                    "defaultContent": '<a class="tooltip" title="Delete this row" style="margin:10px;" href="#" onclick="mobilePermission.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>'
                 }
             ],
             columnDefs: [
@@ -88,7 +88,7 @@
         });
 
         _dataTables.mobilePermission.on("draw", function () {
-            $('a').tipsy({ fade: true, gravity: 'e', live: true });
+            $('.tooltip').tipsy({ fade: true, gravity: 'e', live: true });
         });
     }
 }

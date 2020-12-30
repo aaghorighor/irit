@@ -2,23 +2,7 @@
 var order = {
 
     create: function ()
-    {
-        $("#Time").timepicker({
-            showOn: "button",
-            buttonImage: suftnet_Settings.icon + "calendar.png",
-            buttonText: "Open datepicker",
-            buttonImageOnly: true
-        });
-
-        $("#CreatedDt").datepicker({
-            showOn: "button",
-            buttonImage: suftnet_Settings.icon + "calendar.png",
-            buttonText: "Open datepicker",
-            dateFormat: suftnet_Settings.dateTimeFormat,
-            buttonImageOnly: true
-        });
-
-
+    {       
         $("#btnSaveChanges").click(function (event) {
 
             event.preventDefault();
@@ -71,7 +55,23 @@ var order = {
         var dataobject = _dataTables.order.row($(obj).parents('tr')).data();
         window.location.href = $("#cartUrl").attr("data-cartUrl") + "/" + dataobject.Id;
     },
-    pageInit: function () {      
+    pageInit: function () {   
+
+        $("#Time").timepicker({
+            showOn: "button",
+            buttonImage: suftnet_Settings.icon + "calendar.png",
+            buttonText: "Open datepicker",
+            buttonImageOnly: true
+        });      
+
+        $("#CreatedDt").datepicker({
+            showOn: "button",
+            buttonImage: suftnet_Settings.icon + "calendar.png",
+            buttonText: "Open datepicker",
+            dateFormat: suftnet_Settings.dateTimeFormat,
+            buttonImageOnly: true
+        });
+
         order.load();
     },
     load: function () {
@@ -116,9 +116,9 @@ var order = {
                     "data": null,
                     "orderable": false,
                     className: "align-center",
-                    "defaultContent": '<a style=margin:10px; href="#" onclick=order.edit(this)><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>' +
-                        '<a style=margin:10px; href="#" onclick="order.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>' +
-                        '<a style=margin:10px; href="#" onclick="order.view(this)"><img src=' + suftnet_grid.iconUrl + 'folder.png\ alt=\"View Order Details\" /></a>'
+                    "defaultContent": '<a class="tooltip" title="Edit this row" style=margin:10px; href="#" onclick=order.edit(this)><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>' +
+                        '<a class="tooltip" title="Delete this row" style=margin:10px; href="#" onclick="order.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>' +
+                        '<a class="tooltip" title="View Order Details" style=margin:10px; href="#" onclick="order.view(this)"><img src=' + suftnet_grid.iconUrl + 'folder.png\ alt=\"View Order Details\" /></a>'
                 }
             ],
             columnDefs: [
@@ -129,7 +129,7 @@ var order = {
         });
 
         _dataTables.order.on("draw", function () {
-            $('a').tipsy({ fade: true, gravity: 'e', live: true });
+            $('.tooltip').tipsy({ fade: true, gravity: 'e', live: true });
         });
     }
 }

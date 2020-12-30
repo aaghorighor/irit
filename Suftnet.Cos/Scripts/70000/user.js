@@ -146,9 +146,9 @@ var user = {
                     "data": null,
                     "orderable": false,
                     className: "align-center",
-                    "defaultContent": '<a style=margin:10px; href="#" onclick=user.edit(this)><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>'+
-                        '<a style=margin:10px; href="#" onclick="user.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>' +
-                        '<a style=margin:10px; href="#" onclick="user.view(this)"><img src=' + suftnet_grid.iconUrl + 'folder.png\ alt=\"Give userPermission\" /></a>'                     
+                    "defaultContent": '<a class="tooltip" title="Edit this row" style=margin:10px; href="#" onclick=user.edit(this)><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>'+
+                        '<a class="tooltip" title="Delete this row" style=margin:10px; href="#" onclick="user.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>' +
+                        '<a class="tooltip" title="View User Permissions" style=margin:10px; href="#" onclick="user.view(this)"><img src=' + suftnet_grid.iconUrl + 'folder.png\ alt=\"Give userPermission\" /></a>'                     
                 }
             ],
             columnDefs: [
@@ -159,7 +159,7 @@ var user = {
            });
 
         _dataTables.user.on("draw", function () {
-            $('a').tipsy({ fade: true, gravity: 'e', live: true });
+            $('.tooltip').tipsy({ fade: true, gravity: 'e', live: true });
         });
     }
 }

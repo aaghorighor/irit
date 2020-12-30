@@ -211,8 +211,8 @@ var userAdmin = {
                     "data": null,
                     "orderable": false,
                     className: "align-center",
-                    "defaultContent": '<a title="Edit this row" style=margin:10px; href="#" onclick=userAdmin.edit(this)><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>' +
-                        '<a title="Delete this row" style=margin:10px; href="#" onclick="userAdmin.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>'
+                    "defaultContent": '<a class="tooltip" title="Edit this row" style=margin:10px; href="#" onclick=userAdmin.edit(this)><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>' +
+                        '<a class="tooltip" title="Delete this row" style=margin:10px; href="#" onclick="userAdmin.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>'
                 }
             ],
             columnDefs: [
@@ -223,7 +223,7 @@ var userAdmin = {
         });
 
         _dataTables.userAdmin.on("draw", function () {
-            $('a').tipsy({ fade: true, gravity: 'e', live: true });
+            $('.tooltip').tipsy({ fade: true, gravity: 'e', live: true });
         });
     },
     loadTenant: function () {
@@ -249,9 +249,9 @@ var userAdmin = {
                     "data": null,
                     "orderable": false,
                     className: "align-center",
-                    "defaultContent": '<a title="Edit this row" style=margin:10px; href="#" onclick=userAdmin.edit(this)><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>' +
-                        '<a title="Delete this row" style=margin:10px; href="#" onclick="userAdmin.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>' +
-                        '<a title="Add Permissions  to this User " style=margin:10px; href="#" onclick="userAdmin.view(this)"><img src=' + suftnet_grid.iconUrl + 'folder.png\ alt=\"Add Permission  to this User \" /></a>'
+                    "defaultContent": '<a class="tooltip" title="Edit this row" style=margin:10px; href="#" onclick=userAdmin.edit(this)><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>' +
+                        '<a class="tooltip" title="Delete this row" style=margin:10px; href="#" onclick="userAdmin.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>' +
+                        '<a class="tooltip" title="Add Permissions to this User" style=margin:10px; href="#" onclick="userAdmin.view(this)"><img src=' + suftnet_grid.iconUrl + 'folder.png\ alt=\"Add Permission  to this User \" /></a>'
                 }
             ],
             columnDefs: [
@@ -262,7 +262,7 @@ var userAdmin = {
         });
 
         _dataTables.userAdmin.on("draw", function () {
-            $('a').tipsy({ fade: true, gravity: 'e', live: true });
+            $('.tooltip').tipsy({ fade: true, gravity: 'e', live: true });
         });
     }
 }

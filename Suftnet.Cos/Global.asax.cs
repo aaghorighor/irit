@@ -1,9 +1,10 @@
 ﻿namespace Suftnet.Cos.Web
 {
     using Suftnet.Cos.Core;
-    using System;
+    using System;   
+    using System.Web; 
     using System.Web.Mvc;
-      
+
     public class MvcApplication : System.Web.HttpApplication
     {
         static bool isFirstRequest = true;
@@ -37,12 +38,11 @@
         protected void Application_Error(object sender, EventArgs e)
         {
             GeneralConfiguration.Configuration.Logger.LogError(Server.GetLastError());
-
             Response.Clear();
             Server.ClearError();
-            Response.TrySkipIisCustomErrors = true;
 
-            Server.TransferRequest("~/Error");
+            HttpContext.Current.Server.ClearError();
+            HttpContext.Current.Response.Redirect("~/Error", true);
         }
 
         protected void Application_OnPostAuthenticateRequest(object sender, EventArgs args)

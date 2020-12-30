@@ -91,8 +91,8 @@ var commonType = {
                     "data": null,
                     "orderable": false,
                     className: "align-center",
-                    "defaultContent": '<a style=margin:10px; href="#" onclick=commonType.edit(this)><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>'+
-                        '<a style=margin:10px; href="#" onclick="commonType.delete(this)" > <img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>'
+                    "defaultContent": '<a class="tooltip" title="Edit this row" style=margin:10px; href="#" onclick=commonType.edit(this)><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>'+
+                        '<a class="tooltip" title="Delete this row" style=margin:10px; href="#" onclick="commonType.delete(this)" > <img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>'
                 }
             ],
             columnDefs: [
@@ -103,7 +103,7 @@ var commonType = {
         });
 
         _dataTables.commonType.on("draw", function () {
-            $('a').tipsy({ fade: true, gravity: 'e', live: true });
+            $('.tooltip').tipsy({ fade: true, gravity: 'e', live: true });
         });
     }
 }
