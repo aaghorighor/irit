@@ -86,8 +86,14 @@
         {
             var id = guid.GetHashCode();
             var appCode = Math.Abs(id).ToString();
+            var subString = appCode;
 
-            return appCode.Substring(0,8);
+            if(subString.Length > 8)
+            {
+                subString = subString.Substring(0, 8);
+            }
+
+            return subString;
         }
 
         private int CryptoServiceProvider(Guid guid)

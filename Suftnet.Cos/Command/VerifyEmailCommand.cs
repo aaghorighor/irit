@@ -130,7 +130,14 @@
         {
             var newGuid = Guid.NewGuid().GetHashCode();
             var appCode = Math.Abs(newGuid);
-            return appCode.ToString().Substring(0,6);
+            var subString = appCode.ToString();
+
+            if (subString.Length > 6)
+            {
+                subString = subString.Substring(0, 6);
+            }
+
+            return subString;           
         }
 
         #endregion

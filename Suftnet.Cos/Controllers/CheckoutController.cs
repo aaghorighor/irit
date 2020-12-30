@@ -405,7 +405,12 @@
         }
         private decimal? CreateTaxRate()
         {
-            return GeneralConfiguration.Configuration.Settings.General.TaxRate ?? 1;
+            var taxRate = GeneralConfiguration.Configuration.Settings.General.TaxRate;
+            if (taxRate == null)
+            {
+                taxRate = 1;
+            }
+            return taxRate;
         }
         private async Task SignInAsync(ApplicationUser user, bool isPersistent)
         {

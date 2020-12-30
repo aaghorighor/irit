@@ -50,8 +50,9 @@
                     password = Constant.DefaultPassword;
                 }
 
-                model.Id = Guid.NewGuid().ToString();
-                model.UserCode = GetHashCode(new Guid(model.Id));
+                var newGuid = Guid.NewGuid();
+                model.Id = newGuid.ToString();
+                model.UserCode = GetHashCode(newGuid);
                 result = userManager.Create(model, password);
 
                 if (result.Succeeded)
@@ -163,10 +164,17 @@
         }
         private string GetHashCode(Guid guid)
         {
-            var id = guid.GetHashCode();
-            var appCode = Math.Abs(id).ToString();
+            var hashCode = guid.GetHashCode();
+            var abs = Math.Abs(hashCode);
+            var appCode = abs.ToString();
+            var subString = appCode;
 
-            return appCode.Substring(0, 10);
+            if (subString.Length > 10)
+            {
+                subString = subString.Substring(0, 10);
+            }
+
+            return subString;
         }
     }
 }
