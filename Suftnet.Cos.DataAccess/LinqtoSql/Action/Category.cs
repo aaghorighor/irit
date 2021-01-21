@@ -36,6 +36,8 @@ namespace Suftnet.Cos.DataAccess.Action
         public byte[] TimeStamp { get; set; }
 
         public Guid Id { get; set; }
+        [Required]
+        [StringLength(50)]
 
         public Guid TenantId { get; set; }
      

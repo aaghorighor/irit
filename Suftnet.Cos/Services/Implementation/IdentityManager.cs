@@ -61,9 +61,13 @@
                 claims.Add(new Claim("ExpirationDate", account.ExpirationDate.ToString()));
                 claims.Add(new Claim("TenantName", account.TenantName));              
                 claims.Add(new Claim("CompleteAddress", account.CompleteAddress));           
-                claims.Add(new Claim("TenantEmail", account.TenantEmail));
-                claims.Add(new Claim("TenantMobile", account.TenantMobile));
+                claims.Add(new Claim("TenantEmail", account.TenantEmail));              
                 claims.Add(new Claim("AppCode", account.AppCode));
+
+                if (account.TenantMobile == null)
+                {
+                    claims.Add(new Claim("TenantMobile", "0000000000"));
+                }               
 
                 if ((bool)account.IsFlatRate == true)
                 {

@@ -1,6 +1,8 @@
 ﻿namespace Suftnet.Cos.Web.Command
 {
+    using Microsoft.AspNet.Identity;
     using Suftnet.Cos.DataAccess;
+    using Suftnet.Cos.DataAccess.Identity;
     using Suftnet.Cos.Web.ViewModel;
     using System;
     using System.Collections.Generic;
@@ -37,5 +39,15 @@
         DateTime UpdateDate { get; set; }
         void Execute();
 
+    }
+
+    public interface ICreateUserCommand
+    {
+        UserManager<ApplicationUser> UserManager { get; set; }
+        string VIEW_PATH { get; set; }
+        CreateCustomerDto User { get; set; }
+        MobileTenantDto MobileUser { get; set; }
+        bool FLAG { get; set; }
+        void Execute();
     }
 }

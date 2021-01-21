@@ -121,6 +121,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\ICustomer.cs" />
     <Compile Include="Interface\IAddon.cs" />
     <Compile Include="Interface\IAddOnType.cs" />
     <Compile Include="Interface\IAddress.cs" />
@@ -163,6 +164,12 @@
     <Compile Include="Interface\IUserAccount.cs" />
     <Compile Include="LinqtoSql\Action\Addon.cs" />
     <Compile Include="LinqtoSql\Action\AddonType.cs" />
+    <Compile Include="LinqtoSql\Action\Customer.cs" />
+    <Compile Include="LinqtoSql\Action\CustomerAddress.cs" />
+    <Compile Include="LinqtoSql\Action\CustomerDeliveryStatus.cs" />
+    <Compile Include="LinqtoSql\Action\CustomerOrder.cs" />
+    <Compile Include="LinqtoSql\Action\CustomerOrderDelivery.cs" />
+    <Compile Include="LinqtoSql\Action\CustomerOrderNotification.cs" />
     <Compile Include="LinqtoSql\Action\MobileLogger.cs" />
     <Compile Include="LinqtoSql\Action\PaymentStatus.cs" />
     <Compile Include="LinqtoSql\Action\DeliveryAddress.cs" />
@@ -208,6 +215,12 @@
     <Compile Include="LinqtoSql\DataContextFactory.cs" />
     <Compile Include="LinqtoSql\Identity\ApplicationRole.cs" />
     <Compile Include="LinqtoSql\Identity\ApplicationUser.cs" />
+    <Compile Include="LinqtoSql\Implementation\CustomerNotification.cs" />
+    <Compile Include="LinqtoSql\Implementation\CustomerOrder.cs" />
+    <Compile Include="LinqtoSql\Implementation\CustomerOrderDelivery.cs" />
+    <Compile Include="LinqtoSql\Implementation\CustomerDeliveryStatus.cs" />
+    <Compile Include="LinqtoSql\Implementation\CustomerAddress.cs" />
+    <Compile Include="LinqtoSql\Implementation\Customer.cs" />
     <Compile Include="LinqtoSql\Implementation\Addon.cs" />
     <Compile Include="LinqtoSql\Implementation\DeliveryAddress.cs" />
     <Compile Include="LinqtoSql\Action\Logger.cs" />

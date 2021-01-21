@@ -1,0 +1,50 @@
+namespace Suftnet.Cos.DataAccess
+{
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+  
+    public partial class CustomerAddressDto : Base2Dto
+    {        
+    
+        public Guid CustomerId { get; set; }
+
+        [Column(TypeName = "smalldatetime")]
+        public DateTime CreatedAt { get; set; }
+
+        [StringLength(20)]
+        public string Latitude { get; set; }
+
+        [StringLength(20)]
+        public string Logitude { get; set; }
+
+        [Required]
+        [StringLength(150)]
+        public string AddressLine { get; set; }
+
+        [Column(TypeName = "timestamp")]
+        [MaxLength(8)]
+        [Timestamp]
+        public byte[] TimeStamp { get; set; }
+
+        [StringLength(50)]
+        public string Town { get; set; }
+
+        [StringLength(50)]
+        public string County { get; set; }
+
+        [StringLength(50)]
+        public string Country { get; set; }
+
+        [StringLength(150)]
+        public string AddressLine2 { get; set; }
+
+        [StringLength(150)]
+        public string AddressLine3 { get; set; }
+
+        [StringLength(250)]
+        public string CompleteAddress { get; set; }
+       
+    }
+}

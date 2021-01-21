@@ -19,6 +19,12 @@ namespace Suftnet.Cos.DataAccess.Action
             this.Configuration.LazyLoadingEnabled = false;
         }
 
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<CustomerAddress> CustomerAddresses { get; set; }
+        public virtual DbSet<CustomerDeliveryStatus> CustomerDeliveryStatuses { get; set; }
+        public virtual DbSet<CustomerOrder> CustomerOrders { get; set; }
+        public virtual DbSet<CustomerOrderDelivery> CustomerOrderDeliveries { get; set; }
+        public virtual DbSet<CustomerOrderNotification> CustomerOrderNotifications { get; set; }
         public virtual DbSet<Addon> Addons { get; set; }
         public virtual DbSet<AddonType> AddonTypes { get; set; }
         public virtual DbSet<Address> Addresses { get; set; }

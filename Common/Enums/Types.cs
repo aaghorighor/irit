@@ -143,7 +143,8 @@ namespace Suftnet.Cos.Common
         SiteAdmin = 6241,
         Admin = 2033,
         BackOffice = 2034,
-        FrontOffice = 5219
+        FrontOffice = 5219,
+        Customer = 5218
     }
     public enum eExecutingContext : ushort
     {

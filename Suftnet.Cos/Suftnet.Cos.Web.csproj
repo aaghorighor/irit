@@ -302,6 +302,7 @@
     <Compile Include="Command\CloseOrderCommand.cs" />
     <Compile Include="Command\PaymentCommand.cs" />
     <Compile Include="Command\IPaymentCommand.cs" />
+    <Compile Include="Command\CreateUserCommand.cs" />
     <Compile Include="Command\UpdateOrderCommand.cs" />
     <Compile Include="Command\UserBoostrapCommand.cs" />
     <Compile Include="Command\CreateOrderCommand.cs" />
@@ -330,6 +331,7 @@
     <Compile Include="Content\reports\MenuItem.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controllers\Api\v1\CustomerController.cs" />
     <Compile Include="Controllers\Api\v1\OrderCartController.cs" />
     <Compile Include="Controllers\Api\v1\PaymentController.cs" />
     <Compile Include="Controllers\Api\v1\UserController.cs" />
@@ -515,6 +517,13 @@
     <Content Include="App_Data\Email\passwordReset.html" />
     <Content Include="App_Data\Email\otp.html" />
     <Content Include="Content\css\dashboard.css" />
+    <Content Include="Content\frontoffice-2\img\screens\app\Screenshot_20201231-112318.png" />
+    <Content Include="Content\frontoffice-2\img\screens\app\Screenshot_20201231-112323.png" />
+    <Content Include="Content\frontoffice-2\img\screens\app\Screenshot_20201231-112344.png" />
+    <Content Include="Content\frontoffice-2\img\screens\app\Screenshot_20201231-112442.png" />
+    <Content Include="Content\frontoffice-2\img\screens\dash\2020-12-31 11_47_39-Window.png" />
+    <Content Include="Content\frontoffice-2\img\screens\dash\Screenshot_20201231-112318.png" />
+    <Content Include="Content\frontoffice-2\img\screens\dash\Screenshot_20201231-112344.png" />
     <Content Include="Content\mavia\js\main.js" />
     <Content Include="Content\photo\category\Blank.jpg" />
     <Content Include="Content\zice-OneChurch\components\scrolltop\scrolltopcontrol.js" />

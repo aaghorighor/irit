@@ -32,6 +32,12 @@
             For<IPaymentStatus>().Use<PaymentStatus>();
             For<IDeliveryAddress>().Use<DeliveryAddress>();
             For<ITenantStatus>().Use<TenantStatus>();
+            For<ICustomer>().Use<Customer>();
+            For<ICustomerAddress>().Use<CustomerAddress>();
+            For<ICustomerDeliveryStatus>().Use<CustomerDeliveryStatus>();
+            For<ICustomerOrder>().Use<CustomerOrder>();
+            For<ICustomerNotification>().Use<CustomerNotification>();
+            For<ICustomerOrderDelivery>().Use<CustomerOrderDelivery>();
         }
 
    } 

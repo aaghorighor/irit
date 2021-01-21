@@ -55,6 +55,7 @@
                 x.For<IPaymentCommand>().Use<PaymentCommand>();
                 x.For<ICloseOrderCommand>().Use<CloseOrderCommand>();
                 x.For<ICancelOrderCommand>().Use<CancelOrderCommand>();
+                x.For<ICreateUserCommand>().Use<CreateUserCommand>();
             });           
         }
     }

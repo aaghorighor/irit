@@ -58,6 +58,12 @@
     <Compile Include="Dto\CommonTypeDto.cs" />
     <Compile Include="Dto\CommonDto.cs" />
     <Compile Include="Dto\AddonTypeDto.cs" />
+    <Compile Include="Dto\CustomerAddressDto.cs" />
+    <Compile Include="Dto\CustomerDeliveryStatusDto.cs" />
+    <Compile Include="Dto\CustomerDto.cs" />
+    <Compile Include="Dto\CustomerOrderDeliveryDto.cs" />
+    <Compile Include="Dto\CustomerOrderDto.cs" />
+    <Compile Include="Dto\CustomerOrderNotificationDto.cs" />
     <Compile Include="Dto\DeliveryAddressDto.cs" />
     <Compile Include="Dto\MobileLoggerDto.cs" />
     <Compile Include="Dto\UnitDto.cs" />

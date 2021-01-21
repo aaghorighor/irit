@@ -24,7 +24,7 @@
         private readonly ITenant _tenant;      
         private readonly ISmtp _messenger;
         private readonly IFactoryCommand _factoryCommand;
-        private Customer customer;
+        private global::Stripe.Customer customer;
         private Guid tenantId;
         private string tenantName = string.Empty;
         private string appCode = string.Empty;
