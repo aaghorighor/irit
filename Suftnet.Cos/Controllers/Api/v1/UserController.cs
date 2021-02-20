@@ -48,6 +48,24 @@
             return await OkResult(user);
         }
 
+        [HttpGet]
+        [Route("verifyUserByOtp")]
+        public async Task<IHttpActionResult> VerifyUserByOtp([FromUri] AccessCodeModel param)
+        {
+            if (!ModelState.IsValid)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
+            }
+
+            var user = _user.VerifyAccessCode(param.Otp, param.EmailAddress, param.AppCode);
+            if (user == null)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.NotFound, new { Message = Constant.USER_NOT_FOUND }));
+            }
+
+            return await OkResult(user);
+        }
+
         #region private function       
         private async Task<IHttpActionResult> OkResult(MobileTenantDto user)
         {

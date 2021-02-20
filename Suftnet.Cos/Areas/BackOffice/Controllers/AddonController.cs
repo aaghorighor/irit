@@ -50,7 +50,8 @@
           
             entityToCreate.CreatedDT = DateTime.Now;
             entityToCreate.CreatedBy = this.UserName;
-         
+            entityToCreate.TenantId = this.TenantId;
+
             entityToCreate.Id = Guid.NewGuid();
 
             _addon.Insert(entityToCreate);

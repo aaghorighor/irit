@@ -49,13 +49,14 @@
                         user = new
                         {
                             firstName = User.FirstName,
-                            lastName = User.LastName,
-                            area = User.LastName,
+                            lastName = User.LastName,                         
                             areaId = User.AreaId,
                             phoneNumber = User.PhoneNumber,
                             userName = User.UserName,
-                            externalId = User.Id
-                        },
+                            userId = User.Id,
+                            permissions = GetUserPermissions(),
+                            token = _jwToken.Create(User.UserName, User.Id)
+                        },                       
                         tenant = new
                         {
                             name = User.Name,
@@ -69,9 +70,8 @@
                             latitude = User.Latitude,
                             town = User.Town,
                             externalId = User.TenantId
-                        },
-                        permissions = GetUserPermissions(),
-                        token = _jwToken.Create(User.UserName, User.Id)                      
+                        }                                           
+
                     }
                 };
 

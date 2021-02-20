@@ -5,30 +5,26 @@
     using System.Net;
     using System.Net.Http;
     using System.Web.Http;
-    using Web;
     using Web.Command;
     using Extension; 
     using System.Web;
     using System.Threading.Tasks;
     using Suftnet.Cos.Common;
-    using Suftnet.Cos.Web.Services.Implementation;
-    using Suftnet.Cos.DataAccess.Identity;
+  
 
     [RoutePrefix("api/v1/customer")]
     public class CustomerController : BaseController
     {         
         private readonly IUser _user;
         private readonly ICustomer _customer;
-        private readonly IFactoryCommand _factoryCommand;    
-        private readonly IBoostrapCommand _boostrapCommand;
+              private readonly ICustomerBoostrapCommand _boostrapCommand;
         private readonly ICreateUserCommand _createUserCommand;
        
-        public CustomerController(IUser user,IBoostrapCommand boostrapCommand,
-            ICreateUserCommand createUserCommand, ICustomer customer,
-         IFactoryCommand factoryCommand)
+        public CustomerController(IUser user, ICustomerBoostrapCommand boostrapCommand,
+            ICreateUserCommand createUserCommand, ICustomer customer)
         {
-            _user = user;         
-            _factoryCommand = factoryCommand;         
+            _user = user;       
+                
             _boostrapCommand = boostrapCommand;
             _createUserCommand = createUserCommand;
             _customer = customer;
@@ -59,7 +55,7 @@
             }
 
             _createUserCommand.User = param;         
-            _createUserCommand.VIEW_PATH = HttpContext.Current.Server.MapPath("~/App_Data/Email/otp.html");
+            _createUserCommand.VIEW_PATH = HttpContext.Current.Server.MapPath("~/App_Data/Email/newCustomer.html");
             _createUserCommand.Execute();
 
             if(!_createUserCommand.FLAG)
@@ -80,7 +76,7 @@
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
             }
 
-            var user = _user.CheckEmailAddress(param.Email, new Guid(param.ExternalId));
+            var user = _user.CheckEmailAddress(param.Email, param.ExternalId);
 
             if (!user)
             {

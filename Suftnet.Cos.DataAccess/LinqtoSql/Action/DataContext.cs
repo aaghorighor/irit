@@ -27,12 +27,7 @@ namespace Suftnet.Cos.DataAccess.Action
         public virtual DbSet<CustomerOrderNotification> CustomerOrderNotifications { get; set; }
         public virtual DbSet<Addon> Addons { get; set; }
         public virtual DbSet<AddonType> AddonTypes { get; set; }
-        public virtual DbSet<Address> Addresses { get; set; }
-        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
-        public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
-        public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
-        public virtual DbSet<AspNetUserRole> AspNetUserRoles { get; set; }
-        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+        public virtual DbSet<Address> Addresses { get; set; }    
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Chapter> Chapters { get; set; }
         public virtual DbSet<Common> Commons { get; set; }
@@ -63,12 +58,12 @@ namespace Suftnet.Cos.DataAccess.Action
         public virtual DbSet<OrderStatus> OrderStatuses { get; set; }
         public virtual DbSet<OrderType> OrderTypes { get; set; }
         public virtual DbSet<PaymentStatus> PaymentStatuses { get; set; }
-        public virtual DbSet<TenantState> TenantStates { get; set; }
-        public virtual DbSet<Device> Devices { get; set; }    
+        public virtual DbSet<TenantState> TenantStates { get; set; }      
         public virtual DbSet<Unit> Units { get; set; }
         public virtual DbSet<TenantAddress> TenantAddress { get; set; }
-        public virtual DbSet<DeliveryAddress> DeliveryAddresses { get; set; }
+       // public virtual DbSet<DeliveryAddress> DeliveryAddresses { get; set; }
         public virtual DbSet<MobileLogger> MobileLoggers { get; set; }
+        public virtual DbSet<Notification> Notifications { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {                 

@@ -19,13 +19,15 @@
     {       
         private readonly IUserAccount _userAccount;
         private readonly ICustomer _customer;
+        private readonly ITenant _tenant;
         private readonly ISmtp _messenger;
         private readonly IFactoryCommand _factoryCommand;
         private UserManager<ApplicationUser> _userManager;
         public CreateUserCommand(
-           ISmtp messenger, IFactoryCommand factoryCommand,
+           ISmtp messenger, IFactoryCommand factoryCommand, ITenant tenant,
            IUserAccount userAccount,ICustomer customer)
         {
+            _tenant = tenant;
             _userAccount = userAccount;
             _messenger = messenger;
             _customer = customer;
@@ -120,10 +122,12 @@
                 CreatedBy = User.Email
             };
 
+             user.CustomerId = customer.Id;
             _customer.Insert(customer);
         }
         private void MapMobileUser(ApplicationUser user)
         {
+            var tenant = _tenant.Get(User.ExternalId);
             var mobileUser = new MobileTenantDto
             {
                 Id = user.Id,             
@@ -134,7 +138,10 @@
                 AreaId = user.AreaId,
                 Area = user.Area,
                 UserName = user.UserName,
-                PhoneNumber = user.PhoneNumber               
+                PhoneNumber = user.PhoneNumber,
+                TenantId = User.ExternalId,
+                CustomerId = user.CustomerId,
+                Tenant = tenant
             };
 
             MobileUser = mobileUser;

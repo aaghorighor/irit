@@ -196,6 +196,34 @@
             return 0;
         }
 
+        public static decimal ToDecimal(this string value)
+        {
+            decimal output = 0;
+
+            if (string.IsNullOrEmpty(value))
+            {
+                return 0;
+            }
+
+            if (decimal.TryParse(value, out output))
+            {
+                return output;
+            }
+
+            return 0;
+        }
+
+        public static string EmptyOrNull(this string value)
+        {            
+
+            if (string.IsNullOrEmpty(value))
+            {
+                return " ";
+            }           
+
+            return value;
+        }
+
         public static bool ToBoolean(this string value)
         {
             if(string.IsNullOrEmpty(value))

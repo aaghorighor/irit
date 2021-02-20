@@ -8,13 +8,7 @@ namespace Suftnet.Cos.DataAccess.Action
 
     [Table("Customer")]
     public partial class Customer
-    {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customer()
-        {
-           
-        }
-
+    {        
         public Guid Id { get; set; }
 
         [Required]
@@ -50,9 +44,7 @@ namespace Suftnet.Cos.DataAccess.Action
         public string Serial { get; set; }
 
         [StringLength(100)]
-        public string DeviceId { get; set; }
-        [Required]
-        [StringLength(50)]
+        public string DeviceId { get; set; }     
         public Guid TenantId { get; set; }
 
     }

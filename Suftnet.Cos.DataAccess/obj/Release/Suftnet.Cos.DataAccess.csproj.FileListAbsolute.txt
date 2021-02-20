@@ -1,68 +1,3 @@
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Suftnet.Cos.DataAccess.dll.config
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Suftnet.Cos.DataAccess.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Suftnet.Cos.DataAccess.pdb
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\StructureMap.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Suftnet.Cos.Model.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\FluentValidation.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Suftnet.Cos.Model.pdb
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\de\FluentValidation.resources.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\es\FluentValidation.resources.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\fr\FluentValidation.resources.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\it\FluentValidation.resources.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\ko\FluentValidation.resources.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\nl\FluentValidation.resources.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\pl\FluentValidation.resources.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\pt\FluentValidation.resources.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\ru\FluentValidation.resources.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\sv\FluentValidation.resources.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\tr\FluentValidation.resources.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.dll
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.pdb
-C:\SUT-DV-200\Suftnet.Branch\Suftnet.Church.Package\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.csprojResolveAssemblyReference.cache
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Suftnet.Cos.DataAccess.dll.config
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Suftnet.Cos.DataAccess.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\EntityFramework.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\EntityFramework.SqlServer.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Microsoft.AspNet.Identity.Core.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Microsoft.AspNet.Identity.Owin.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Microsoft.Owin.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Microsoft.Owin.Host.SystemWeb.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Microsoft.Owin.Security.Cookies.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Microsoft.Owin.Security.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Microsoft.Owin.Security.OAuth.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Newtonsoft.Json.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Owin.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\StructureMap.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Suftnet.Cos.Model.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\FluentValidation.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\EntityFramework.xml
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\EntityFramework.SqlServer.xml
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Microsoft.AspNet.Identity.Core.xml
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Microsoft.AspNet.Identity.Owin.xml
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Microsoft.Owin.xml
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Microsoft.Owin.Host.SystemWeb.xml
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Microsoft.Owin.Security.xml
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Microsoft.Owin.Security.Cookies.xml
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Microsoft.Owin.Security.OAuth.xml
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\Newtonsoft.Json.xml
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\de\FluentValidation.resources.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\es\FluentValidation.resources.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\fr\FluentValidation.resources.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\it\FluentValidation.resources.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\ko\FluentValidation.resources.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\nl\FluentValidation.resources.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\pl\FluentValidation.resources.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\pt\FluentValidation.resources.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\ru\FluentValidation.resources.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\sv\FluentValidation.resources.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\bin\Release\tr\FluentValidation.resources.dll
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.Migrations.migration09032020.resources
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.csproj.GenerateResource.cache
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.csproj.CoreCompileInputs.cache
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.csproj.CopyComplete
-C:\SUT-CS-100\Suftnet.Church.Package -1.0.0\Suftnet.Church.SaaS.1.0.0\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Release\Suftnet.Cos.DataAccess.dll.config
 E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Release\Suftnet.Cos.DataAccess.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Release\EntityFramework.dll
@@ -90,7 +25,7 @@ E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Release\Microsoft.Owin.Security.
 E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Release\Microsoft.Owin.Security.Cookies.xml
 E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Release\Microsoft.Owin.Security.OAuth.xml
 E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Release\Newtonsoft.Json.xml
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.csprojAssemblyReference.cache
 E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.csproj.CoreCompileInputs.cache
 E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.csproj.CopyComplete
 E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.dll
-E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.csprojAssemblyReference.cache

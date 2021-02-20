@@ -42,7 +42,7 @@
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.Addon() { Id = entity.Id, AddonTypeId = entity.AddonTypeId, Active = entity.Active, Price = entity.Price, MenuId = entity.MenuId, Name = entity.Name, CreatedDt = entity.CreatedDT, CreatedBy = entity.CreatedBy };
+                var obj = new Action.Addon() { TenantId = entity.TenantId, Id = entity.Id, AddonTypeId = entity.AddonTypeId, Active = entity.Active, Price = entity.Price, MenuId = entity.MenuId, Name = entity.Name, CreatedDt = entity.CreatedDT, CreatedBy = entity.CreatedBy };
                 context.Addons.Add(obj);
                 context.SaveChanges();
                 return obj.Id;
@@ -101,7 +101,7 @@
                                  let c = o.AddonTypes
                                  where o.TenantId == tenantId
                                  orderby o.Id descending
-                                 select new MobileAddonDto { AddonType = c.Name, Price = o.Price, MenuId = o.MenuId, Name = o.Name, Id = o.Id }).ToList();
+                                 select new MobileAddonDto { AddonTypeId = c.Id, AddonType = c.Name, Price = o.Price, MenuId = o.MenuId, Name = o.Name, Id = o.Id }).ToList();
                 return objResult;
             }
         }

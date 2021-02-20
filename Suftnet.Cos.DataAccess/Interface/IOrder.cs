@@ -17,8 +17,8 @@
         IEnumerable<OrderDto> GetAllOrderByStatus(TermDto term);    
         List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch);
         List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake);
-        List<DeliveryAddressDto> GetDeliveryOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch);
-        List<DeliveryAddressDto> GetDeliveryOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake);       
+        //List<DeliveryAddressDto> GetDeliveryOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch);
+        //List<DeliveryAddressDto> GetDeliveryOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake);       
         int Count(Guid tenantId);
         int Count(Guid statusId, Guid tenantId);
         int Count(Guid statusId, Guid tenantId, Guid orderTypeId);

@@ -23,8 +23,7 @@
           For<ITour>().Use<Tour>();          
           For<IChapter>().Use<Chapter>();
           For<ITopic>().Use<Topic>();
-          For<ISubTopic>().Use<SubTopic>();
-          For<IDevice>().Use<Device>();         
+          For<ISubTopic>().Use<SubTopic>();            
         }
 
    } 

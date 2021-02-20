@@ -11,7 +11,8 @@
         [Required()]
         [StringLength(6)]
         public string Otp { get; set; }
-        [Required()]       
+        [Required()]
+        [StringLength(15)]
         public string AppCode { get; set; }       
 
     }

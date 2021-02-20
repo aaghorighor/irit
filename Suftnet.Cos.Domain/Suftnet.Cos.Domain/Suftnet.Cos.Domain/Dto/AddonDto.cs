@@ -35,6 +35,7 @@
         [JsonIgnore]
         public Guid MenuId { get; set; }      
         public string AddonType { get; set; }
+        public Guid AddonTypeId { get; set; }
         public decimal Price { get; set; }
     }
 }

@@ -68,8 +68,7 @@ namespace Suftnet.Cos.DataAccess
 
         [StringLength(100)]
         public string DeviceId { get; set; }
-        [Required]
-        [StringLength(50)]
+        [Required]      
         public Guid ExternalId { get; set; }
         [Required]
         [StringLength(50)]
@@ -95,20 +94,20 @@ namespace Suftnet.Cos.DataAccess
         [Required]
         [StringLength(50)]
         public string Email { get; set; }
-        [Required]
-        [StringLength(50)]
-        public string ExternalId { get; set; }
+        [Required]  
+        public Guid ExternalId { get; set; }
 
         public CustomerDto CustomerDto
         {
             get
             {
                 return new CustomerDto
-                {
+                {    
+                      Id = this.Id,
                       FirstName = this.FirstName,
                       LastName = this.LastName,
                       Mobile = this.Mobile,
-                      TenantId = new Guid(this.ExternalId)
+                      TenantId = this.ExternalId
                 };
             }
         }

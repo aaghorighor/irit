@@ -56,6 +56,7 @@
                 x.For<ICloseOrderCommand>().Use<CloseOrderCommand>();
                 x.For<ICancelOrderCommand>().Use<CancelOrderCommand>();
                 x.For<ICreateUserCommand>().Use<CreateUserCommand>();
+                x.For<ICustomerBoostrapCommand>().Use<CustomerBoostrapCommand>();
             });           
         }
     }

@@ -34,6 +34,8 @@
         [StringLength(50)]
         [Required]
         public string UserCode { get; set; }
+        [NotMapped]
+        public Guid CustomerId { get; set; }
 
     }
 }

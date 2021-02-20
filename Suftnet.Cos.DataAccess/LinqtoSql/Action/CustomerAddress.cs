@@ -8,13 +8,7 @@ namespace Suftnet.Cos.DataAccess.Action
 
     [Table("CustomerAddress")]
     public partial class CustomerAddress
-    {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CustomerAddress()
-        {
-          
-        }
-
+    {       
         public Guid Id { get; set; }
 
         public Guid CustomerId { get; set; }

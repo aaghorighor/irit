@@ -16,7 +16,7 @@
     <AssemblyName>Suftnet.Cos.Web</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
@@ -278,7 +278,6 @@
     <Compile Include="Areas\BackOffice\Controllers\TableController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\UserController.cs" />
     <Compile Include="Areas\FrontOffice\Controllers\CartController.cs" />
-    <Compile Include="Areas\FrontOffice\Controllers\DeliveryController.cs" />
     <Compile Include="Areas\FrontOffice\Controllers\ReservationController.cs" />
     <Compile Include="Areas\FrontOffice\Controllers\DashBoardController.cs" />
     <Compile Include="Areas\FrontOffice\Controllers\TableController.cs" />
@@ -298,6 +297,7 @@
     <Compile Include="Areas\Subscription\Controllers\PlanController.cs" />
     <Compile Include="Areas\Subscription\Controllers\TrialController.cs" />
     <Compile Include="Areas\Subscription\Models\DeleteCard.cs" />
+    <Compile Include="Command\CustomerBoostrapCommand.cs" />
     <Compile Include="Command\CancelOrderCommand.cs" />
     <Compile Include="Command\CloseOrderCommand.cs" />
     <Compile Include="Command\PaymentCommand.cs" />
@@ -503,6 +503,7 @@
     <Compile Include="ViewModel\LoginModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Email\newCustomer.html" />
     <Content Include="App_Data\Email\userRegistration.html" />
     <Content Include="App_Data\Email\paymentRefunded.html" />
     <Content Include="App_Data\Email\subscriptionExpired.html" />
@@ -4389,7 +4390,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>5008</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:5004/</IISUrl>
+          <IISUrl>http://localhost/dev2</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

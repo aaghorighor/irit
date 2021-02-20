@@ -67,14 +67,7 @@
             {
                 var objToDelete = context.Orders.SingleOrDefault(o => o.Id == orderId);
                 if (objToDelete != null)
-                {
-                    var objToDeliveryAddresses = context.DeliveryAddresses.SingleOrDefault(o => o.Id == orderId);
-
-                    if(objToDeliveryAddresses != null)
-                    {
-                        context.DeliveryAddresses.Remove(objToDeliveryAddresses);
-                        context.SaveChanges();
-                    }
+                {     
 
                     context.Orders.Remove(objToDelete);
                     context.SaveChanges();
@@ -307,40 +300,40 @@
                 return objResult;
             }
         }           
-        public List<DeliveryAddressDto> GetDeliveryOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch)
-        {
-            if (!string.IsNullOrEmpty(isearch))
-            {
-                using (var context = DataContextFactory.CreateContext())
-                {
-                    var objResult = (from o in context.DeliveryAddresses.Include("Order")
-                                     join s in context.OrderStatuses on o.Order.StatusId equals s.Id                                  
-                                     join r in context.OrderTypes on o.Order.OrderTypeId equals r.Id
-                                     let order = o.Order
-                                     where (o.Order.TenantId == tenantId && o.Order.OrderTypeId == orderTypeId) && (order.Mobile.Contains(isearch) || order.Email.Contains(isearch) || order.FirstName.Contains(isearch) || order.LastName.Contains(isearch) || s.Name.Contains(isearch) || r.Name.Contains(isearch) || o.AddressLine.Contains(isearch))
-                                     orderby o.Order.CreatedDt descending
-                                     select new DeliveryAddressDto { DeliveryCost = order.DeliveryCost, DeliveryId = o.Id, Email = order.Email, AddressLine = o.AddressLine, Distance = o.Distance, Duration = o.Duration, Latitude = o.Latitude, Logitude = o.Logitude, UpdateDate = order.UpdateDt, UpdateBy = order.UpdateBy, OrderType = r.Name, Mobile = order.Mobile, FirstName = order.FirstName, LastName = order.LastName, Time = order.Time, Balance = order.Balance, Payment = order.Payment, TotalTax = order.TotalTax, StatusId = order.StatusId, TableId = order.TableId, Status = s.Name, GrandTotal = order.GrandTotal,  OrderTypeId = order.OrderTypeId, Total = order.Total, CreatedBy = o.CreatedBy, Id = order.Id }).Skip(iskip).Take(itake).ToList();
-                    return objResult;
-                }
-            }else
-            {
-                return GetDeliveryOrders(orderTypeId, tenantId, iskip, itake);
-            }
-        }
-        public List<DeliveryAddressDto> GetDeliveryOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake)
-        {
-            using (var context = DataContextFactory.CreateContext())
-            {
-                var objResult = (from o in context.DeliveryAddresses.Include("Order")
-                                 join s in context.OrderStatuses on o.Order.StatusId equals s.Id
-                                 join r in context.OrderTypes on o.Order.OrderTypeId equals r.Id
-                                 let order = o.Order
-                                 where o.Order.TenantId == tenantId && (o.Order.OrderTypeId == orderTypeId)
-                                 orderby o.Order.CreatedDt descending
-                                 select new DeliveryAddressDto { DeliveryCost = order.DeliveryCost, DeliveryId = o.Id, Email = order.Email, AddressLine = o.AddressLine, Distance = o.Distance, Duration = o.Duration, Latitude = o.Latitude, Logitude = o.Logitude, UpdateDate = order.UpdateDt, UpdateBy = order.UpdateBy, OrderType = r.Name, Mobile = order.Mobile, FirstName = order.FirstName, LastName = order.LastName, Time = order.Time, Balance = order.Balance, Payment = order.Payment, TotalTax = order.TotalTax, StatusId = order.StatusId, TableId = order.TableId, Status = s.Name, GrandTotal = order.GrandTotal, OrderTypeId = order.OrderTypeId, Total = order.Total, CreatedBy = o.CreatedBy, Id = order.Id }).Skip(iskip).Take(itake).ToList();
-                return objResult;
-            }
-        }
+        //public List<DeliveryAddressDto> GetDeliveryOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch)
+        //{
+        //    if (!string.IsNullOrEmpty(isearch))
+        //    {
+        //        using (var context = DataContextFactory.CreateContext())
+        //        {
+        //            var objResult = (from o in context.DeliveryAddresses.Include("Order")
+        //                             join s in context.OrderStatuses on o.Order.StatusId equals s.Id                                  
+        //                             join r in context.OrderTypes on o.Order.OrderTypeId equals r.Id
+        //                             let order = o.Order
+        //                             where (o.Order.TenantId == tenantId && o.Order.OrderTypeId == orderTypeId) && (order.Mobile.Contains(isearch) || order.Email.Contains(isearch) || order.FirstName.Contains(isearch) || order.LastName.Contains(isearch) || s.Name.Contains(isearch) || r.Name.Contains(isearch) || o.AddressLine.Contains(isearch))
+        //                             orderby o.Order.CreatedDt descending
+        //                             select new DeliveryAddressDto { DeliveryCost = order.DeliveryCost, DeliveryId = o.Id, Email = order.Email, AddressLine = o.AddressLine, Distance = o.Distance, Duration = o.Duration, Latitude = o.Latitude, Logitude = o.Logitude, UpdateDate = order.UpdateDt, UpdateBy = order.UpdateBy, OrderType = r.Name, Mobile = order.Mobile, FirstName = order.FirstName, LastName = order.LastName, Time = order.Time, Balance = order.Balance, Payment = order.Payment, TotalTax = order.TotalTax, StatusId = order.StatusId, TableId = order.TableId, Status = s.Name, GrandTotal = order.GrandTotal,  OrderTypeId = order.OrderTypeId, Total = order.Total, CreatedBy = o.CreatedBy, Id = order.Id }).Skip(iskip).Take(itake).ToList();
+        //            return objResult;
+        //        }
+        //    }else
+        //    {
+        //        return GetDeliveryOrders(orderTypeId, tenantId, iskip, itake);
+        //    }
+        //}
+        //public List<DeliveryAddressDto> GetDeliveryOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake)
+        //{
+        //    using (var context = DataContextFactory.CreateContext())
+        //    {
+        //        var objResult = (from o in context.DeliveryAddresses.Include("Order")
+        //                         join s in context.OrderStatuses on o.Order.StatusId equals s.Id
+        //                         join r in context.OrderTypes on o.Order.OrderTypeId equals r.Id
+        //                         let order = o.Order
+        //                         where o.Order.TenantId == tenantId && (o.Order.OrderTypeId == orderTypeId)
+        //                         orderby o.Order.CreatedDt descending
+        //                         select new DeliveryAddressDto { DeliveryCost = order.DeliveryCost, DeliveryId = o.Id, Email = order.Email, AddressLine = o.AddressLine, Distance = o.Distance, Duration = o.Duration, Latitude = o.Latitude, Logitude = o.Logitude, UpdateDate = order.UpdateDt, UpdateBy = order.UpdateBy, OrderType = r.Name, Mobile = order.Mobile, FirstName = order.FirstName, LastName = order.LastName, Time = order.Time, Balance = order.Balance, Payment = order.Payment, TotalTax = order.TotalTax, StatusId = order.StatusId, TableId = order.TableId, Status = s.Name, GrandTotal = order.GrandTotal, OrderTypeId = order.OrderTypeId, Total = order.Total, CreatedBy = o.CreatedBy, Id = order.Id }).Skip(iskip).Take(itake).ToList();
+        //        return objResult;
+        //    }
+        //}
         public List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch)
         {
             if (!string.IsNullOrEmpty(isearch))

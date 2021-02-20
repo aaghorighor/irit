@@ -96,7 +96,7 @@
             {
                 content.Append("Messages");
                 content.AppendLine();
-                content.Append(ex.StackTrace);
+                content.Append(ex.Message);
             }
 
             content.AppendLine();

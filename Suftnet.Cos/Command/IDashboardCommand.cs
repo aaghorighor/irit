@@ -23,6 +23,13 @@
         Task<BoostrapModel> Execute();
     }
 
+    public interface ICustomerBoostrapCommand
+    {
+        Guid TenantId { get; set; }
+        MobileTenantDto User { get; set; }
+        Task<BoostrapModel> Execute();
+    }    
+
     public interface IUserBoostrapCommand
     {
         Guid TenantId { get; set; }

@@ -31,16 +31,14 @@
                     user = new
                     {
                         firstName = User.FirstName,
-                        lastName = User.LastName,
-                        area = User.LastName,
+                        lastName = User.LastName,                      
                         areaId = User.AreaId,
                         phoneNumber = User.PhoneNumber,
                         userName = User.UserName,
-                        externalId = User.Id
-                    },
-
-                    permissions = GetUserPermissions(),
-                    token = _jwToken.Create(User.UserName, User.Id)
+                        userId = User.Id,
+                        permissions = GetUserPermissions(),
+                        token = _jwToken.Create(User.UserName, User.Id)
+                    }                   
                 };
 
                 return model;
