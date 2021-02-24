@@ -55,6 +55,7 @@
                             phoneNumber = User.PhoneNumber,
                             userName = User.UserName,
                             userId = User.Id,
+                            customerId = User.CustomerId,
                             permissions = GetUserPermissions(),
                             token = _jwToken.Create(User.UserName, User.Id)
                         },                       

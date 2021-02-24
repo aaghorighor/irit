@@ -24,7 +24,7 @@ namespace Suftnet.Cos.DataAccess.Action
         public string Latitude { get; set; }
 
         [StringLength(20)]
-        public string Logitude { get; set; }
+        public string Longitude { get; set; }
 
         [Required]
         [StringLength(150)]
@@ -42,16 +42,12 @@ namespace Suftnet.Cos.DataAccess.Action
         public string County { get; set; }
 
         [StringLength(50)]
-        public string Country { get; set; }
-
-        [StringLength(150)]
-        public string AddressLine2 { get; set; }
-
-        [StringLength(150)]
-        public string AddressLine3 { get; set; }
+        public string Country { get; set; }       
 
         [StringLength(250)]
         public string CompleteAddress { get; set; }
-       
+        [StringLength(50)]
+        public string Postcode { get; set; }
+
     }
 }

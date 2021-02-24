@@ -57,21 +57,18 @@
         [HttpPost]
        // [JwtAuthenticationAttribute]
         [Route("create")]
-        public async Task<IHttpActionResult> Create([FromBody]CreateOrder param)
+        public async Task<IHttpActionResult> Create([FromBody]CreateOrder createOrder)
         {
             if (!ModelState.IsValid)
             {
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
             }
 
-            _createOrderCommand.entityToCreate = param;
+            _createOrderCommand.entityToCreate = createOrder;
             await Task.Run(()=> _createOrderCommand.Execute());
 
-            var order = new
-            {
-                externalId = param.ExternalId,
-                orderId = param.OrderId,
-                tableId = param.TableId
+            var order = new {externalId = createOrder.ExternalId,orderId = createOrder.OrderId,
+                tableId = createOrder.TableId
             };
 
             return Ok(order);           
@@ -80,14 +77,14 @@
         [HttpPost]
         // [JwtAuthenticationAttribute]
         [Route("update")]
-        public async Task<IHttpActionResult> Update([FromBody]OrderAdapter param)
+        public async Task<IHttpActionResult> Update([FromBody]OrderAdapter orderAdapter)
         {
             if (!ModelState.IsValid)
             {
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
             }
 
-            _updateOrderCommand.OrderAdapter = param;      
+            _updateOrderCommand.OrderAdapter = orderAdapter;      
              await Task.Run(() => _updateOrderCommand.Execute());
 
             return Ok(true);
@@ -96,17 +93,17 @@
         [HttpPost]
         // [JwtAuthenticationAttribute]
         [Route("done")]
-        public async Task<IHttpActionResult> Done([FromBody]OrderDone param)
+        public async Task<IHttpActionResult> Done([FromBody]OrderDone orderDone)
         {
             if (!ModelState.IsValid)
             {
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
             }
                       
-            _closeOrderCommand.OrderId = new Guid(param.orderId);       
-            _closeOrderCommand.CreatedBy = param.userName;
-            _closeOrderCommand.TenantId = new Guid(param.externalId);
-            _closeOrderCommand.CreatedDt = param.updateDate;
+            _closeOrderCommand.OrderId = new Guid(orderDone.orderId);       
+            _closeOrderCommand.CreatedBy = orderDone.userName;
+            _closeOrderCommand.TenantId = new Guid(orderDone.externalId);
+            _closeOrderCommand.CreatedDt = orderDone.updateDate;
             _closeOrderCommand.StatusId = new Guid(eOrderStatus.Completed.ToUpper());
 
             await Task.Run(() => _closeOrderCommand.Execute());     
@@ -117,18 +114,18 @@
         [HttpPost]
         // [JwtAuthenticationAttribute]
         [Route("Cancel")]
-        public async Task<IHttpActionResult> Cancel([FromBody]CancelOrder param)
+        public async Task<IHttpActionResult> Cancel([FromBody]CancelOrder cancelOrder)
         {
             if (!ModelState.IsValid)
             {
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
             }
 
-            _cancelOrderCommand.OrderId = new Guid(param.orderId);
-            _cancelOrderCommand.UserName = param.userName;
-            _cancelOrderCommand.TenantId = new Guid(param.externalId);
-            _cancelOrderCommand.UpdateDate = param.updateDate;
-            _cancelOrderCommand.TableId = new Guid(param.tableId);
+            _cancelOrderCommand.OrderId = new Guid(cancelOrder.orderId);
+            _cancelOrderCommand.UserName = cancelOrder.userName;
+            _cancelOrderCommand.TenantId = new Guid(cancelOrder.externalId);
+            _cancelOrderCommand.UpdateDate = cancelOrder.updateDate;
+            _cancelOrderCommand.TableId = new Guid(cancelOrder.tableId);
 
             await Task.Run(() => _cancelOrderCommand.Execute());
 

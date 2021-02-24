@@ -1,0 +1,140 @@
+20210224 10:44:53 [24] ERROR Web [(null)] - StackTrace
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Suftnet.Cos.DataAccess.CustomerAddress.Insert(CustomerAddressDto entity) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\CustomerAddress.cs:line 45
+   at Suftnet.Cos.Mobile.CustomerAddressController.Create(CustomerAddressDto customerAddressDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerAddressController.cs:line 40
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
+Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+--------------------------------------------
+Request.Body = {"addressId":"00000000","addressLine":"2 Riseholme","completeAddress":"","country":"uk","county":"Cambridgeshire","customerId":"d30bf50b-33d7-465c-b6e2-3ed0e4b334ae","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+
+--------------------------------------------------------------------------------------------
+20210224 10:49:55 [24] ERROR Web [(null)] - StackTrace
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Suftnet.Cos.DataAccess.CustomerAddress.Insert(CustomerAddressDto entity) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\CustomerAddress.cs:line 45
+   at Suftnet.Cos.Mobile.CustomerAddressController.Create(CustomerAddressDto customerAddressDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerAddressController.cs:line 40
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
+An error occurred while updating the entries. See the inner exception for details.
+--------------------------------------------
+Request.Body = {"addressId":"00000000","addressLine":"2 Riseholme","completeAddress":"","country":"uk","county":"Cambridgeshire","customerId":"d30bf50b-33d7-465c-b6e2-3ed0e4b334ae","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+--------------------------------------------
+Inner Exception
+Messages
+An error occurred while updating the entries. See the inner exception for details.Messages
+The conversion of a datetime2 data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+--------------------------------------------------------------------------------------------
+20210224 10:52:49 [24] ERROR Web [(null)] - StackTrace
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Suftnet.Cos.DataAccess.CustomerAddress.Insert(CustomerAddressDto entity) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\CustomerAddress.cs:line 45
+   at Suftnet.Cos.Mobile.CustomerAddressController.Create(CustomerAddressDto customerAddressDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerAddressController.cs:line 40
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
+An error occurred while updating the entries. See the inner exception for details.
+--------------------------------------------
+Request.Body = {"addressId":"00000000","addressLine":"2 Riseholme","completeAddress":"","country":"uk","county":"Cambridgeshire","customerId":"d30bf50b-33d7-465c-b6e2-3ed0e4b334ae","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+--------------------------------------------
+Inner Exception
+Messages
+An error occurred while updating the entries. See the inner exception for details.Messages
+The conversion of a datetime2 data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+--------------------------------------------------------------------------------------------
+20210224 10:56:09 [23] ERROR Web [(null)] - StackTrace
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Suftnet.Cos.DataAccess.CustomerAddress.Insert(CustomerAddressDto entity) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\CustomerAddress.cs:line 45
+   at Suftnet.Cos.Mobile.CustomerAddressController.Create(CustomerAddressDto customerAddressDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerAddressController.cs:line 40
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
+An error occurred while updating the entries. See the inner exception for details.
+--------------------------------------------
+Request.Body = {"addressId":"00000000","addressLine":"2 Riseholme","completeAddress":"","country":"uk","county":"Cambridgeshire","customerId":"d30bf50b-33d7-465c-b6e2-3ed0e4b334ae","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+--------------------------------------------
+Inner Exception
+Messages
+An error occurred while updating the entries. See the inner exception for details.Messages
+The conversion of a datetime2 data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+--------------------------------------------------------------------------------------------
+20210224 10:57:15 [25] ERROR Web [(null)] - StackTrace
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Suftnet.Cos.DataAccess.CustomerAddress.Insert(CustomerAddressDto entity) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\CustomerAddress.cs:line 45
+   at Suftnet.Cos.Mobile.CustomerAddressController.Create(CustomerAddressDto customerAddressDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerAddressController.cs:line 40
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
+An error occurred while updating the entries. See the inner exception for details.
+--------------------------------------------
+Request.Body = {"addressId":"00000000","addressLine":"2 Riseholme","completeAddress":"","country":"uk","county":"Cambridgeshire","customerId":"d30bf50b-33d7-465c-b6e2-3ed0e4b334ae","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+--------------------------------------------
+Inner Exception
+Messages
+An error occurred while updating the entries. See the inner exception for details.Messages
+The conversion of a datetime2 data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
+--------------------------------------------------------------------------------------------

@@ -6,10 +6,9 @@ namespace Suftnet.Cos.DataAccess
     using System.ComponentModel.DataAnnotations.Schema;
   
     public partial class CustomerOrderDeliveryDto :CustomerAddressDto
-    {   
-        public Guid AddressId { get; set; }
-
-        public Guid OrderId { get; set; }       
+    {
+        public new Guid AddressId { get; set; }
+        public Guid CustomerIdOrderId { get; set; }       
        
     }
 }

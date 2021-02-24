@@ -14,7 +14,7 @@
             {
                 var objResult = (from o in context.CustomerAddresses                               
                                  where o.Id == Id
-                                 select new CustomerAddressDto { AddressLine = o.AddressLine, AddressLine2 = o.AddressLine2, AddressLine3 = o.AddressLine3, CompleteAddress = o.CompleteAddress, Country = o.Country, County = o.County, Latitude = o.Latitude, Logitude = o.Logitude, Town = o.Town, Id = o.Id }).FirstOrDefault();
+                                 select new CustomerAddressDto { AddressLine = o.AddressLine, Postcode = o.Postcode, CompleteAddress = o.CompleteAddress, Country = o.Country, County = o.County, Latitude = o.Latitude, Longitude = o.Longitude, Town = o.Town, Id = o.Id }).FirstOrDefault();
                 return objResult;
             }
         }
@@ -40,7 +40,7 @@
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.CustomerAddress() { Town = entity.Town, Id = entity.Id, AddressLine = entity.AddressLine, AddressLine2 = entity.AddressLine2, AddressLine3 = entity.AddressLine3, CompleteAddress = entity.CompleteAddress, Country = entity.Country, County = entity.County, CustomerId = entity.CustomerId, Latitude = entity.Latitude, Logitude = entity.Logitude, CreatedAt = entity.CreatedDT, CreatedBy = entity.CreatedBy };
+                var obj = new Action.CustomerAddress() {  Postcode = entity.Postcode, Town = entity.Town, Id = entity.Id, AddressLine = entity.AddressLine, CompleteAddress = entity.CompleteAddress, Country = entity.Country, County = entity.County, CustomerId = entity.CustomerId, Latitude = entity.Latitude, Longitude = entity.Longitude, CreatedAt = entity.CreatedDT, CreatedBy = entity.CreatedBy };
                 context.CustomerAddresses.Add(obj);
                 context.SaveChanges();
                 return obj.Id;
@@ -59,13 +59,12 @@
                 {
                     objToUpdate.Town = entity.Town;                                   
                     objToUpdate.AddressLine = entity.AddressLine;
-                    objToUpdate.AddressLine2 = entity.AddressLine2;
-                    objToUpdate.AddressLine3 = entity.AddressLine3;
+                    objToUpdate.Postcode = entity.Postcode;              
                     objToUpdate.Country = entity.Country;
                     objToUpdate.Town = entity.Town;
                     objToUpdate.County = entity.County;
                     objToUpdate.Latitude = entity.Latitude;
-                    objToUpdate.Logitude = entity.Logitude;
+                    objToUpdate.Longitude = entity.Longitude;
                     objToUpdate.CompleteAddress = entity.CompleteAddress;                 
 
                     try
@@ -90,7 +89,7 @@
                 var objResult = (from o in context.CustomerAddresses
                                  where o.CustomerId == customerId
                                  orderby o.Id descending
-                                 select new CustomerAddressDto { AddressLine = o.AddressLine, AddressLine2 = o.AddressLine2, AddressLine3 = o.AddressLine3, CompleteAddress = o.CompleteAddress, Country = o.Country, County = o.County, Latitude = o.Latitude, Logitude = o.Logitude, Town = o.Town, Id = o.Id }).ToList();                     
+                                 select new CustomerAddressDto {  AddressLine = o.AddressLine, Postcode = o.Postcode, CompleteAddress = o.CompleteAddress, Country = o.Country, County = o.County, Latitude = o.Latitude, Longitude = o.Longitude, Town = o.Town, Id = o.Id }).ToList();                     
                 return objResult;
             }
         }

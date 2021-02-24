@@ -380,3 +380,27 @@
 -------------------------------------------------------------------------------------------
 20210220 16:57:14 [19] INFO  Web [(null)] - Post-Request Content:{"active":true,"appCode":"11303376","description":"","deviceId":"123456","email":"c@gmail.com","externalId":"115924FB-79F9-4E0C-AB5F-D4E1DFC1C893","firstName":"Bell","lastName":"Bell","mobile":"07850875689","password":" "}
 -------------------------------------------------------------------------------------------
+20210221 05:24:38 [10] INFO  Web [(null)] - Jerur webapi started at :21/02/2021 05:24:38
+-------------------------------------------------------------------------------------------
+20210221 05:24:47 [10] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210221 05:24:47 [10] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210221 05:24:47 [10] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210221 05:25:57 [10] INFO  Web [(null)] - Post-Request Content:{"active":true,"appCode":"11303376","description":"","deviceId":"123456","email":"j@gmail.com","externalId":"115924FB-79F9-4E0C-AB5F-D4E1DFC1C893","firstName":"Bellevue","lastName":"James","mobile":"07858096532","password":" "}
+-------------------------------------------------------------------------------------------
+20210221 05:26:15 [10] INFO  Web [(null)] - Post-Request Content:{"active":true,"appCode":"11303376","description":"","deviceId":"123456","email":"jc@gmail.com","externalId":"115924FB-79F9-4E0C-AB5F-D4E1DFC1C893","firstName":"Bellevue","lastName":"James","mobile":"07858096532","password":" "}
+-------------------------------------------------------------------------------------------
+20210221 12:19:36 [10] INFO  Web [(null)] - Jerur webapi started at :21/02/2021 12:19:36
+-------------------------------------------------------------------------------------------
+20210221 12:19:40 [10] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210221 12:19:41 [10] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210221 12:19:41 [10] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210221 12:19:42 [10] INFO  Web [(null)] - Post-Request Content:{"active":true,"appCode":"11303376","description":"","deviceId":"123456","email":"w@gmail.com","externalId":"115924FB-79F9-4E0C-AB5F-D4E1DFC1C893","firstName":"Bellevue","lastName":"Bell","mobile":"07804555369","password":" "}
+-------------------------------------------------------------------------------------------
+20210221 12:22:57 [6] INFO  Web [(null)] - Post-Request Content:{"active":true,"appCode":"11303376","description":"","deviceId":"123456","email":"a@gmail.com","externalId":"115924FB-79F9-4E0C-AB5F-D4E1DFC1C893","firstName":"Bellevue","lastName":"Bell","mobile":"078569324758","password":" "}
+-------------------------------------------------------------------------------------------
