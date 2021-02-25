@@ -8,7 +8,7 @@ namespace Suftnet.Cos.DataAccess
     public partial class CustomerOrderDeliveryDto :CustomerAddressDto
     {
         public new Guid AddressId { get; set; }
-        public Guid CustomerIdOrderId { get; set; }       
+        public Guid CustomerOrderId { get; set; }       
        
     }
 }

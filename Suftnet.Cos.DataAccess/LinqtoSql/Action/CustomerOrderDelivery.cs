@@ -13,7 +13,7 @@ namespace Suftnet.Cos.DataAccess.Action
 
         public Guid AddressId { get; set; }
 
-        public Guid CustomerIdOrderId { get; set; }
+        public Guid CustomerOrderId { get; set; }
 
         [Column(TypeName = "smalldatetime")]
         public DateTime CreatedAt { get; set; }

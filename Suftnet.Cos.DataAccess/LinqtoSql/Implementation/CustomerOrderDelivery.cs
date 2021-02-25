@@ -13,7 +13,7 @@
             using (var context = DataContextFactory.CreateContext())
             {
                 var objResult = (from a in context.CustomerOrderDeliveries
-                                 join r in context.CustomerOrders on a.CustomerIdOrderId equals r.Id
+                                 join r in context.CustomerOrders on a.CustomerOrderId equals r.Id
                                  join o in context.CustomerAddresses on a.AddressId equals o.Id
                                  where r.OrderId == orderId
                                  select new CustomerOrderDeliveryDto { AddressLine = o.AddressLine, Postcode = o.Postcode, CompleteAddress = o.CompleteAddress, Country = o.Country, County = o.County, Latitude = o.Latitude, Longitude = o.Longitude, Town = o.Town, Id = o.Id }).FirstOrDefault();
@@ -42,7 +42,7 @@
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.CustomerOrderDelivery() { Id = entity.Id, CustomerIdOrderId = entity.CustomerIdOrderId, AddressId = entity.AddressId, CreatedAt = entity.CreatedDT, CreatedBy = entity.CreatedBy };
+                var obj = new Action.CustomerOrderDelivery() { Id = entity.Id, CustomerOrderId = entity.CustomerOrderId, AddressId = entity.AddressId, CreatedAt = entity.CreatedDT, CreatedBy = entity.CreatedBy };
                 context.CustomerOrderDeliveries.Add(obj);
                 context.SaveChanges();
                 return obj.Id;

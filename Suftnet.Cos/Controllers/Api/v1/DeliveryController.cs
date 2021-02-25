@@ -24,8 +24,7 @@
         public IHttpActionResult Ping()
         {
             return Ok(DateTime.Now);
-        }
-       
+        }       
 
         [HttpPost]
        // [JwtAuthenticationAttribute]

@@ -8,11 +8,12 @@
     public class DeliveryBasket
     {
         public string addonIds { get; set; }
-        public string addons { get; set; }
+        public string addonNames { get; set; }
         public int id { get; set; }
         public string menu { get; set; }
         public string menuId { get; set; }   
         public double price { get; set; }
+        public int quantity { get; set; }
     }
 
     public class DeliverOrder

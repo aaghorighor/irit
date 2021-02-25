@@ -29,6 +29,7 @@ E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Mvc.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Web.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stripe.net.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\StructureMap.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Suftnet.Cos.Common.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Suftnet.Cos.Core.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Suftnet.Cos.DataAccess.dll
@@ -46,6 +47,7 @@ E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.Razor.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.WebPages.Deployment.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.WebPages.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\System.Web.WebPages.Razor.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Twilio.Api.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\WebGrease.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Data.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.WebDesign.dll
@@ -106,5 +108,3 @@ E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Release\Suftnet.Cos.Web.csprojAssemblyRefer
 E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Release\Suftnet.Cos.Web.csproj.CoreCompileInputs.cache
 E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Release\Suftnet.Cos.Web.csproj.CopyComplete
 E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Release\Suftnet.Cos.Web.dll
-E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\StructureMap.dll
-E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Twilio.Api.dll

@@ -73,7 +73,7 @@
                         var orderItem = new OrderDetailDto()
                         {
                             IsKitchen = isKitchen,                           
-                            Quantity = 1,
+                            Quantity = this.OrderTypeId == new Guid(eOrderType.Delivery.ToLower()) ? item.Quantity : 1,
                             Price = item.Price,
                             IsProcessed = item.IsProcessed,
                             ItemName = item.Name,
@@ -82,6 +82,7 @@
                             Total = lineTotal,
                             AddonIds = item.AddonIds,                          
                             AddonItems = item.AddonItems,
+                            LineTotal = lineTotal,
                             Id = Guid.NewGuid(),
 
                             CreatedBy = CreatedBy,

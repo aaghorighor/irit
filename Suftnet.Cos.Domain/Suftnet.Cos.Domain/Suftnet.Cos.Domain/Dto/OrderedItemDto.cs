@@ -10,6 +10,7 @@
         public decimal Price { get; set; }
         public string AddonIds { get; set; }
         public string AddonItems { get; set; }
+        public int Quantity { get; set; }
 
     }
 }

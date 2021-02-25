@@ -15,14 +15,7 @@
         public Guid OrderId { get; set; }
         public bool? IsProcessed { get; set; }
         public bool? IsKitchen { get; set; }
-
-        public decimal LineTotal {
-            get {
-
-                decimal total = (Quantity * Price);              
-                return total;
-             }
-        }
+        public decimal LineTotal { get; set; }   
 
         public string AddonIds { get; set; }  
         public string AddonItems { get; set; }

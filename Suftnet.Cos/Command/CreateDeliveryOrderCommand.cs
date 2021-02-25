@@ -77,7 +77,7 @@
             var customerOrderDelivery = new CustomerOrderDeliveryDto
             {                 
                 Id = Guid.NewGuid(),
-                CustomerIdOrderId = customerOrderId,
+                CustomerOrderId = customerOrderId,
                 AddressId = new Guid(entityToCreate.Order.addressId),
                 CreatedDT = DateTime.UtcNow,
                 CreatedBy = entityToCreate.UserName
@@ -135,11 +135,12 @@
                  OrderedItemDto
                     {
                         AddonIds = item.addonIds,
-                        AddonItems = item.addons,
+                        AddonItems = item.addonNames,
                         IsProcessed = false,
                         MenuId = new Guid(item.menuId),
                         Name = item.menu,
                         Price = item.price.ToDecimal(),
+                        Quantity = item.quantity
                     });
             }
 
