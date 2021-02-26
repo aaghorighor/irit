@@ -51,8 +51,7 @@
             {
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
             }
-
-            customerAddressDto.Id = customerAddressDto.AddressId;
+         
             customerAddressDto.UpdateDate = DateTime.UtcNow;
             customerAddressDto.UpdateBy = "Tester";        
            _customerAddress.Update(customerAddressDto);

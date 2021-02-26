@@ -335,13 +335,13 @@
     </Compile>
     <Compile Include="Controllers\Api\v1\CustomerAddressController.cs" />
     <Compile Include="Controllers\Api\v1\CustomerController.cs" />
-    <Compile Include="Controllers\Api\v1\DeliveryController.cs" />
+    <Compile Include="Controllers\Api\v1\CustomerDeliveryOrderController.cs" />
     <Compile Include="Controllers\Api\v1\OrderCartController.cs" />
     <Compile Include="Controllers\Api\v1\PaymentController.cs" />
     <Compile Include="Controllers\Api\v1\UserController.cs" />
     <Compile Include="Controllers\Api\v1\AccountController.cs" />
     <Compile Include="Controllers\Api\v1\MobileLoggerController.cs" />
-    <Compile Include="Controllers\Api\v1\OrdeController.cs" />
+    <Compile Include="Controllers\Api\v1\OrderController.cs" />
     <Compile Include="Controllers\Api\v1\TableController.cs" />
     <Compile Include="Controllers\Api\v1\ItemController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />

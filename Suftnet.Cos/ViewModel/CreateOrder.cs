@@ -34,4 +34,11 @@
         [StringLength(50)]
         public string ExternalId { get; set; }
     }
+
+    public class CustomerOrderQuery
+    {
+        [Required]
+        [StringLength(50)]
+        public string CustomerId { get; set; }
+    }
 }
