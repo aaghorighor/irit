@@ -15,11 +15,13 @@
     {
         private readonly ICreateDeliveryOrderCommand _createDeliveryOrderCommand;
         private readonly ICustomerOrder _customerOrder;
+        private readonly IOrderDetail _orderDetail;
 
-        public CustomerDeliveryOrderController(ICustomerOrder customerOrder,
-            ICreateDeliveryOrderCommand createDeliveryOrderCommand)
+        public CustomerDeliveryOrderController(ICustomerOrder customerOrder, IOrderDetail orderDetail,
+        ICreateDeliveryOrderCommand createDeliveryOrderCommand)
         {
             _customerOrder = customerOrder;
+            _orderDetail = orderDetail;
             _createDeliveryOrderCommand = createDeliveryOrderCommand;        
         }
 
@@ -41,6 +43,21 @@
             }
 
             var model = await Task.Run(() => _customerOrder.Fetch(new Guid(customerOrderQuery.CustomerId)));
+
+            return Ok(model);
+        }        
+
+        [HttpGet]
+        // [JwtAuthenticationAttribute]
+        [Route("fetchBasket")]
+        public async Task<IHttpActionResult> FetchBasket([FromUri] OrderQuery orderQuery)
+        {
+            if (!ModelState.IsValid)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
+            }
+
+            var model = await Task.Run(() => _orderDetail.FetchMobileBasket(new Guid(orderQuery.OrderId)));
 
             return Ok(model);
         }

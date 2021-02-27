@@ -36,7 +36,7 @@
             return response;
         }
 
-        public Guid Insert(CustomerAddressDto entity)
+        public Guid Insert(CreateCustomerAddressDto entity)
         {
             using (var context = DataContextFactory.CreateContext())
             {
@@ -47,7 +47,7 @@
             }
         }
 
-        public bool Update(CustomerAddressDto entity)
+        public bool Update(CreateCustomerAddressDto entity)
         {
             bool response = false;
 

@@ -20,7 +20,7 @@ namespace Suftnet.Cos.DataAccess.Action
 
         [Required]
         [StringLength(50)]
-        public string CreatedBy { get; set; }
-      
+        public string CreatedBy { get; set; }       
+
     }
 }

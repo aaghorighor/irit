@@ -143,7 +143,7 @@
                 return objResult;
             }
         }
-        public IList<BasketDto> FetchOrder(Guid orderId)
+        public IList<BasketDto> FetchBasket(Guid orderId)
         {
             using (var context = DataContextFactory.CreateContext())
             {
@@ -152,6 +152,17 @@
                                  orderby x.CreatedDt descending
                                  select new BasketDto { OrderId = orderId, AddonIds = x.AddonIds, Addons = x.AddonItems, IsProcessed = x.IsProcessed, Menu = x.ItemName, MenuId = x.MenuId, Price = x.Price }).ToList();
                return objResult;
+            }
+        }
+        public IList<MobileBasketDto> FetchMobileBasket(Guid orderId)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objResult = (from x in context.OrderDetails
+                                 where x.OrderId == orderId
+                                 orderby x.CreatedDt descending
+                                 select new MobileBasketDto { Quantity = x.Quantity, AddonIds = x.AddonIds, addonNames = x.AddonItems, Menu = x.ItemName, Price = x.Price }).ToList();
+                return objResult;
             }
         }
         public List<OrderDetailWrapperDto> FetchPendingOrders(Guid statusId, Guid tenantId)

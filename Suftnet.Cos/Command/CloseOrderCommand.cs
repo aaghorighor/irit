@@ -35,7 +35,7 @@
         {
             _order.UpdateOrderStatus(OrderId, StatusId, CreatedDt, CreatedBy, TenantId);
             _orderDetail.UpdateCompletedOrders(OrderId, CreatedBy);
-             Baskets = _orderDetail.FetchOrder(OrderId);
+             Baskets = _orderDetail.FetchBasket(OrderId);
         }
         #endregion
 

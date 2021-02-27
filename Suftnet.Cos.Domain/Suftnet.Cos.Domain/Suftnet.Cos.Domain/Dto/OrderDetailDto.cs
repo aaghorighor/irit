@@ -32,6 +32,16 @@
         public string AddonIds { get; set; }
     }
 
+    public class MobileBasketDto
+    {        
+        public decimal Price { get; set; }
+        public string Menu { get; set; }
+        public string Category { get; set; }
+        public int Quantity { get; set; }
+        public string addonNames { get; set; }
+        public string AddonIds { get; set; }
+    }
+
     public class KitchenBasketDto
     {
         public Guid Id { get; set; }     

@@ -42,14 +42,14 @@
         [HttpGet]
         // [JwtAuthenticationAttribute]
         [Route("fetch")]
-        public async Task<IHttpActionResult> Fetch([FromUri] OrderParam param)
+        public async Task<IHttpActionResult> Fetch([FromUri] OrderQuery orderQuery)
         {
             if (!ModelState.IsValid)
             {
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
             }
 
-            var model = await Task.Run(() => _order.FetchOrder(new Guid(param.OrderId)));
+            var model = await Task.Run(() => _order.FetchOrder(new Guid(orderQuery.OrderId)));
 
             return Ok(model);
         }

@@ -45,5 +45,6 @@ namespace Suftnet.Cos.DataAccess
                 return this.CreatedAt.ToLongDateString();
             }
         }
+      
     }
 }

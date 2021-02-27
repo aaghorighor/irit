@@ -694,3 +694,437 @@
 -------------------------------------------------------------------------------------------
 20210225 19:13:11 [34] INFO  Web [(null)] - Post-Request Content:{"baskets":[{"addonIds":"","addonNames":"","category":"STARTERS","id":9,"imageUrl":"20297964-1d30-48d8-96c8-a25ae8ae5b20.jpg","menu":"CINNAMON FRENCH TOAST STICKS","menuId":"0f85ffe5-2e7b-409a-955e-a390bd40c64f","price":14.0,"quantity":2}],"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","order":{"addressId":"554ab0ee-5820-451c-b2db-5e7a955f8576","balance":0.0,"customerId":"231b4e8b-211a-448e-accd-ba31fd10bdae","discount":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":0.0,"orderDate":"2/25/2021 07:13:10","paid":0.0,"tax":0.0,"total":14.0,"totalDiscount":0.0,"totalTax":0.0},"userName":"howbut"}
 -------------------------------------------------------------------------------------------
+20210226 13:34:13 [10] INFO  Web [(null)] - Jerur webapi started at :26/02/2021 13:34:13
+-------------------------------------------------------------------------------------------
+20210226 13:34:20 [10] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210226 13:34:20 [10] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210226 13:34:21 [10] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210226 13:34:23 [10] INFO  Web [(null)] - Post-Request Content:{"baskets":[{"addonIds":"","addonNames":"","category":"SOUP MEALS SPECIAL","id":39,"imageUrl":"179f3c81-8c2a-432a-960d-b89c69f4f9ef.jpg","menu":"AFANG SOUP","menuId":"8c9de96d-39dc-41cc-8e2d-74533df463d0","price":18.99,"quantity":1},{"addonIds":"","addonNames":"","category":"FROM THE GRILL","id":40,"imageUrl":"b9f329f8-e260-425c-8556-b2e51929f2e2.jpg","menu":"CHICKEN SUYA","menuId":"bce55364-ee75-466f-8b92-6726c898c2f5","price":10.0,"quantity":1},{"addonIds":"","addonNames":"","category":"STARTERS","id":41,"imageUrl":"333bed2d-2998-44c8-a6cd-ca8400134f5f.jpg","menu":"GIZZARD ON A STICK","menuId":"31630e91-9544-4bfe-9955-90b14a17c7b2","price":44.97,"quantity":3},{"addonIds":"","addonNames":"","category":"SIDE DISHES","id":42,"imageUrl":"fcc729bd-ef02-4324-9111-9c1168940610.jpg","menu":"PEPPERED SNAILS","menuId":"409bdc70-1ec8-4a8a-8483-76379f5c13cc","price":20.0,"quantity":1}],"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","order":{"addressId":"554ab0ee-5820-451c-b2db-5e7a955f8576","balance":0.0,"customerId":"231b4e8b-211a-448e-accd-ba31fd10bdae","discount":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":0.0,"orderDate":"2/26/2021 01:33:51","paid":0.0,"tax":0.0,"total":93.96,"totalDiscount":0.0,"totalTax":0.0},"userName":"howbut"}
+-------------------------------------------------------------------------------------------
+20210226 13:37:24 [10] INFO  Web [(null)] - Post-Request Content:{"addressId":"554ab0ee-5820-451c-b2db-5e7a955f8576","addressLine":"2 Riseholme","completeAddress":"2 Riseholme, Peterborough, Cambridgeshire, pe2 5sp, uk","country":"uk","county":"Cambridgeshire","customerId":"231b4e8b-211a-448e-accd-ba31fd10bdae","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210226 13:39:50 [5] INFO  Web [(null)] - Jerur webapi started at :26/02/2021 13:39:50
+-------------------------------------------------------------------------------------------
+20210226 13:39:55 [5] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210226 13:39:55 [5] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210226 13:39:56 [5] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210226 13:41:14 [5] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 13:41:39 [5] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 14:13:21 [9] INFO  Web [(null)] - Jerur webapi started at :26/02/2021 14:13:21
+-------------------------------------------------------------------------------------------
+20210226 14:13:26 [9] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210226 14:13:26 [9] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210226 14:13:26 [9] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210226 14:13:35 [9] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 14:16:09 [10] INFO  Web [(null)] - Jerur webapi started at :26/02/2021 14:16:09
+-------------------------------------------------------------------------------------------
+20210226 14:16:15 [10] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210226 14:16:15 [10] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210226 14:16:15 [10] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210226 14:16:16 [10] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 14:19:04 [14] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 14:42:12 [10] INFO  Web [(null)] - Jerur webapi started at :26/02/2021 14:42:12
+-------------------------------------------------------------------------------------------
+20210226 14:42:17 [10] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210226 14:42:17 [10] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210226 14:42:18 [10] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210226 14:42:18 [10] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 17:46:11 [10] INFO  Web [(null)] - Jerur webapi started at :26/02/2021 17:46:11
+-------------------------------------------------------------------------------------------
+20210226 17:50:28 [10] INFO  Web [(null)] - Jerur webapi started at :26/02/2021 17:50:28
+-------------------------------------------------------------------------------------------
+20210226 17:50:31 [10] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210226 17:50:31 [10] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210226 17:50:31 [10] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210226 17:50:31 [10] INFO  Web [(null)] - Post-Request Content:{"addressId":"554ab0ee-5820-451c-b2db-5e7a955f8576","addressLine":"2 Riseholme","completeAddress":"2 Riseholme, Peterborough, Cambridgeshire, pe2 5sp, uk","country":"uk","county":"Cambridgeshire","customerId":"231b4e8b-211a-448e-accd-ba31fd10bdae","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210226 17:51:23 [10] INFO  Web [(null)] - Post-Request Content:{"addressId":"554ab0ee-5820-451c-b2db-5e7a955f8576","addressLine":"2 Riseholme Orten","completeAddress":"2 Riseholme Orten, Peterborough, Cambridgeshire, pe2 5sp, uk","country":"uk","county":"Cambridgeshire","customerId":"231b4e8b-211a-448e-accd-ba31fd10bdae","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210226 17:53:44 [10] INFO  Web [(null)] - Post-Request Content:{"addressId":"554ab0ee-5820-451c-b2db-5e7a955f8576","addressLine":"2 Riseholme Orten","completeAddress":"2 Riseholme Orten, Peterborough, Cambridgeshire, pe2 5sp, uk","country":"uk","county":"Cambridgeshire","customerId":"231b4e8b-211a-448e-accd-ba31fd10bdae","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210226 17:57:29 [11] INFO  Web [(null)] - Post-Request Content:{"addressId":"554ab0ee-5820-451c-b2db-5e7a955f8576","addressLine":"2 Riseholme Orten","completeAddress":"2 Riseholme Orten, Peterborough, Cambridgeshire, pe2 5sp, uk","country":"uk","county":"Cambridgeshire","customerId":"231b4e8b-211a-448e-accd-ba31fd10bdae","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210226 17:59:53 [10] INFO  Web [(null)] - Post-Request Content:{"addressLine":"2 Riseholme Orten","completeAddress":"2 Riseholme Orten, Peterborough, Cambridgeshire, pe2 5sp, uk","country":"uk","county":"Cambridgeshire","customerId":"231b4e8b-211a-448e-accd-ba31fd10bdae","id":"554ab0ee-5820-451c-b2db-5e7a955f8576","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210226 18:02:35 [10] INFO  Web [(null)] - Jerur webapi started at :26/02/2021 18:02:35
+-------------------------------------------------------------------------------------------
+20210226 18:02:40 [10] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210226 18:02:40 [10] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210226 18:02:40 [10] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210226 18:02:41 [10] INFO  Web [(null)] - Post-Request Content:{"addressLine":"2 Riseholme Orten","completeAddress":"2 Riseholme Orten, Peterborough, Cambridgeshire, pe2 5sp, uk","country":"uk","county":"Cambridgeshire","customerId":"231b4e8b-211a-448e-accd-ba31fd10bdae","id":"554ab0ee-5820-451c-b2db-5e7a955f8576","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210226 18:14:41 [31] INFO  Web [(null)] - Post-Request Content:{"addressLine":"2 Riseholme Orten","completeAddress":"2 Riseholme Orten, Peterborough, Cambridgeshire, pe2 5sp, uk","country":"uk","county":"Cambridgeshire","customerId":"231b4e8b-211a-448e-accd-ba31fd10bdae","id":"554ab0ee-5820-451c-b2db-5e7a955f8576","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210226 18:15:07 [30] INFO  Web [(null)] - Post-Request Content:{"baskets":[{"addonIds":"","addonNames":"","category":"SOUP MEALS SPECIAL","id":43,"imageUrl":"179f3c81-8c2a-432a-960d-b89c69f4f9ef.jpg","menu":"AFANG SOUP","menuId":"8c9de96d-39dc-41cc-8e2d-74533df463d0","price":18.99,"quantity":1}],"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","order":{"addressId":"","balance":0.0,"customerId":"231b4e8b-211a-448e-accd-ba31fd10bdae","discount":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":0.0,"orderDate":"2/26/2021 06:15:05","paid":0.0,"tax":0.0,"total":18.99,"totalDiscount":0.0,"totalTax":0.0},"userName":"howbut"}
+-------------------------------------------------------------------------------------------
+20210226 18:15:12 [30] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 18:33:17 [42] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 18:34:41 [42] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 18:38:31 [50] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 18:39:19 [51] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 18:40:10 [56] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 18:44:17 [52] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 18:45:52 [52] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 18:47:59 [61] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 18:50:12 [52] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 18:51:24 [52] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 18:52:50 [60] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 18:53:04 [52] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 18:59:55 [52] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210226 19:01:34 [52] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 01:09:22 [26] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 01:39:43 [12] INFO  Web [(null)] - Jerur webapi started at :27/02/2021 01:39:43
+-------------------------------------------------------------------------------------------
+20210227 01:39:48 [12] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210227 01:39:48 [12] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210227 01:39:49 [12] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210227 01:39:49 [12] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:32:38 [9] INFO  Web [(null)] - Jerur webapi started at :27/02/2021 02:32:38
+-------------------------------------------------------------------------------------------
+20210227 02:32:41 [9] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210227 02:32:41 [9] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210227 02:32:41 [9] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210227 02:32:42 [9] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:35:20 [11] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:35:42 [11] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:38:18 [5] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:38:38 [11] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:44:11 [11] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:44:37 [17] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:47:39 [11] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:49:12 [5] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:51:17 [17] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:52:55 [5] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:53:13 [16] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:53:48 [9] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:54:56 [16] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:55:26 [5] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:55:30 [9] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:55:34 [17] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:56:21 [5] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:56:25 [16] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:56:29 [5] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 02:59:22 [5] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 03:00:28 [24] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 03:02:03 [21] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 03:11:20 [32] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 03:12:44 [38] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 03:14:06 [37] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 03:30:19 [9] INFO  Web [(null)] - Jerur webapi started at :27/02/2021 03:30:19
+-------------------------------------------------------------------------------------------
+20210227 03:30:23 [9] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210227 03:30:24 [9] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210227 03:30:24 [9] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210227 03:32:00 [45] INFO  Web [(null)] - Jerur webapi started at :27/02/2021 03:32:00
+-------------------------------------------------------------------------------------------
+20210227 03:32:04 [45] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210227 03:32:04 [45] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210227 03:32:05 [45] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210227 03:32:05 [45] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 03:32:18 [38] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 03:32:39 [44] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 03:38:02 [9] INFO  Web [(null)] - Jerur webapi started at :27/02/2021 03:38:02
+-------------------------------------------------------------------------------------------
+20210227 03:38:06 [9] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210227 03:38:06 [9] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210227 03:38:07 [9] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210227 03:38:45 [38] INFO  Web [(null)] - Jerur webapi started at :27/02/2021 03:38:45
+-------------------------------------------------------------------------------------------
+20210227 03:38:50 [38] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210227 03:38:50 [38] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210227 03:38:50 [38] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210227 03:38:51 [38] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 04:03:22 [5] INFO  Web [(null)] - Jerur webapi started at :27/02/2021 04:03:22
+-------------------------------------------------------------------------------------------
+20210227 04:03:26 [5] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210227 04:03:26 [5] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210227 04:03:27 [5] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210227 04:03:33 [5] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 04:03:47 [5] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 04:10:04 [9] INFO  Web [(null)] - Jerur webapi started at :27/02/2021 04:10:04
+-------------------------------------------------------------------------------------------
+20210227 04:10:08 [9] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210227 04:10:08 [9] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210227 04:10:08 [9] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210227 04:10:44 [11] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 04:48:35 [9] INFO  Web [(null)] - Jerur webapi started at :27/02/2021 04:48:35
+-------------------------------------------------------------------------------------------
+20210227 04:48:40 [9] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210227 04:48:40 [9] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210227 04:48:40 [9] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210227 04:48:41 [9] INFO  Web [(null)] - Post-Request Content:{"active":true,"appCode":"11303376","description":"","deviceId":"123456","email":"o@gmail.com","externalId":"115924FB-79F9-4E0C-AB5F-D4E1DFC1C893","firstName":"About","lastName":"Aghorighor","mobile":"07407022745","password":" "}
+-------------------------------------------------------------------------------------------
+20210227 04:48:51 [12] INFO  Web [(null)] - Post-Request Content:{"active":true,"appCode":"11303376","description":"","deviceId":"123456","email":"ox@gmail.com","externalId":"115924FB-79F9-4E0C-AB5F-D4E1DFC1C893","firstName":"About","lastName":"Aghorighor","mobile":"07407022745","password":" "}
+-------------------------------------------------------------------------------------------
+20210227 04:49:26 [10] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 04:50:51 [9] INFO  Web [(null)] - Post-Request Content:{"addressLine":"2 Riseholme Orten","completeAddress":"2 Riseholme Orten, Peterborough, Cambridgeshire, pe2 5sp, uk","country":"uk","county":"Cambridgeshire","customerId":"e7bbfad5-7f83-4bca-864f-c8222f85932c","id":"","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210227 04:52:06 [11] INFO  Web [(null)] - Post-Request Content:{"addressLine":"2 Riseholme Orten","completeAddress":"2 Riseholme Orten, Peterborough, Cambridgeshire, pe2 5sp, uk","country":"uk","county":"Cambridgeshire","customerId":"e7bbfad5-7f83-4bca-864f-c8222f85932c","id":"","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210227 05:10:14 [30] INFO  Web [(null)] - Jerur webapi started at :27/02/2021 05:10:14
+-------------------------------------------------------------------------------------------
+20210227 05:10:19 [30] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210227 05:10:19 [30] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210227 05:10:20 [30] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210227 05:10:20 [30] INFO  Web [(null)] - Post-Request Content:{"addressLine":"2 Riseholme  Orten","completeAddress":"2 Riseholme  Orten, Peterborough, Cambridgeshire, pe2 5sp, UK","country":"UK","county":"Cambridgeshire","customerId":"e7bbfad5-7f83-4bca-864f-c8222f85932c","id":"","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210227 05:15:44 [30] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 05:16:26 [37] INFO  Web [(null)] - Post-Request Content:{"addressLine":"2 Riseholme  Orten","completeAddress":"2 Riseholme  Orten, Peterborough, Cambridgeshire, pe2 5sp, Uk","country":"Uk","county":"Cambridgeshire","customerId":"e7bbfad5-7f83-4bca-864f-c8222f85932c","id":"e7bbfad5-7f83-4bca-864f-c8222f85932c","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210227 05:17:05 [27] INFO  Web [(null)] - Post-Request Content:{"baskets":[{"addonIds":"57,61","addonNames":"Bebidas,BOTTLEGREEN-APPLE-CORDIAL","category":"SOUP MEALS SPECIAL","id":1,"imageUrl":"179f3c81-8c2a-432a-960d-b89c69f4f9ef.jpg","menu":"AFANG SOUP","menuId":"8c9de96d-39dc-41cc-8e2d-74533df463d0","price":24.979999999999997,"quantity":1},{"addonIds":"","addonNames":"","category":"FROM THE GRILL","id":2,"imageUrl":"d92f6a12-86ee-4438-9036-65e707a1f261.jpg","menu":"BEEF SUYA","menuId":"f6476848-a355-4e98-abb8-9342c2d298cf","price":13.99,"quantity":1},{"addonIds":"","addonNames":"","category":"DESSERTS","id":3,"imageUrl":"e65a7715-560e-4c7c-9f5a-72b6ee1f4709.jpg","menu":"Banana Milo Pudding","menuId":"b5283d67-3075-4159-b9e4-1d53be5513ba","price":10.0,"quantity":1},{"addonIds":"","addonNames":"","category":"STARTERS","id":4,"imageUrl":"20297964-1d30-48d8-96c8-a25ae8ae5b20.jpg","menu":"CINNAMON FRENCH TOAST STICKS","menuId":"0f85ffe5-2e7b-409a-955e-a390bd40c64f","price":7.0,"quantity":1}],"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","order":{"addressId":"","balance":0.0,"customerId":"e7bbfad5-7f83-4bca-864f-c8222f85932c","discount":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":0.0,"orderDate":"2/27/2021 05:17:03","paid":0.0,"tax":0.0,"total":55.97,"totalDiscount":0.0,"totalTax":0.0},"userName":"AboutAghorighor"}
+-------------------------------------------------------------------------------------------
+20210227 05:17:10 [27] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 05:18:23 [28] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 05:19:03 [37] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 05:20:20 [37] INFO  Web [(null)] - Post-Request Content:{"addressLine":"2 Riseholme  Orten","completeAddress":"2 Riseholme  Orten, Peterborough, Cambridgeshire, pe2 5sp, Uk","country":"Uk","county":"Cambridgeshire","customerId":"e7bbfad5-7f83-4bca-864f-c8222f85932c","id":"","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210227 05:21:51 [10] INFO  Web [(null)] - Jerur webapi started at :27/02/2021 05:21:51
+-------------------------------------------------------------------------------------------
+20210227 05:22:35 [9] INFO  Web [(null)] - Jerur webapi started at :27/02/2021 05:22:35
+-------------------------------------------------------------------------------------------
+20210227 05:22:39 [9] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210227 05:22:40 [9] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210227 05:22:40 [9] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210227 05:22:40 [9] INFO  Web [(null)] - Post-Request Content:{"addressLine":"2 Riseholme  Orten","completeAddress":"2 Riseholme  Orten, Peterborough, Cambridgeshire, pe2 5sp, Uk","country":"Uk","county":"Cambridgeshire","customerId":"e7bbfad5-7f83-4bca-864f-c8222f85932c","id":"","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210227 05:22:47 [9] INFO  Web [(null)] - Post-Request Content:{"addressLine":"2 Riseholme  Orten","completeAddress":"2 Riseholme  Orten, Peterborough, Cambridgeshire, pe2 5sp, Uk","country":"Uk","county":"Cambridgeshire","customerId":"e7bbfad5-7f83-4bca-864f-c8222f85932c","id":"","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210227 05:24:13 [9] INFO  Web [(null)] - Post-Request Content:{"addressLine":"2 Riseholme  Orten","completeAddress":"2 Riseholme  Orten, Peterborough, Cambridgeshire, pe2 5sp, Uk","country":"Uk","county":"Cambridgeshire","customerId":"e7bbfad5-7f83-4bca-864f-c8222f85932c","id":"e7bbfad5-7f83-4bca-864f-c8222f85932c","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210227 05:24:56 [9] INFO  Web [(null)] - Post-Request Content:{"addressLine":"2 Riseholme  Orten","completeAddress":"2 Riseholme  Orten, Peterborough, Cambridgeshire, pe2 5sp, Uk","country":"Uk","county":"Cambridgeshire","customerId":"e7bbfad5-7f83-4bca-864f-c8222f85932c","id":"e7bbfad5-7f83-4bca-864f-c8222f85932c","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210227 05:25:47 [15] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 05:26:17 [9] INFO  Web [(null)] - Post-Request Content:{"baskets":[{"addonIds":"57","addonNames":"Bebidas","category":"SOUP MEALS SPECIAL","id":5,"imageUrl":"179f3c81-8c2a-432a-960d-b89c69f4f9ef.jpg","menu":"AFANG SOUP","menuId":"8c9de96d-39dc-41cc-8e2d-74533df463d0","price":21.99,"quantity":1},{"addonIds":"","addonNames":"","category":"SOUP MEALS SPECIAL","id":6,"imageUrl":"179f3c81-8c2a-432a-960d-b89c69f4f9ef.jpg","menu":"AFANG SOUP","menuId":"8c9de96d-39dc-41cc-8e2d-74533df463d0","price":18.99,"quantity":1}],"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","order":{"addressId":"","balance":0.0,"customerId":"e7bbfad5-7f83-4bca-864f-c8222f85932c","discount":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":0.0,"orderDate":"2/27/2021 05:26:15","paid":0.0,"tax":0.0,"total":40.98,"totalDiscount":0.0,"totalTax":0.0},"userName":"AboutAghorighor"}
+-------------------------------------------------------------------------------------------
+20210227 05:26:23 [9] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 05:26:57 [10] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 05:31:42 [30] INFO  Web [(null)] - Post-Request Content:{"baskets":[{"addonIds":"","addonNames":"","category":"FROM THE GRILL","id":7,"imageUrl":"5d69a43b-68fa-42b9-8b1a-4e1a2592aba3.jpg","menu":"ASUN","menuId":"147ee6fb-7e5f-42e2-9d7d-3526f7f26767","price":13.99,"quantity":1},{"addonIds":"","addonNames":"","category":"FROM THE GRILL","id":8,"imageUrl":"d92f6a12-86ee-4438-9036-65e707a1f261.jpg","menu":"BEEF SUYA","menuId":"f6476848-a355-4e98-abb8-9342c2d298cf","price":13.99,"quantity":1},{"addonIds":"","addonNames":"","category":"DESSERTS","id":9,"imageUrl":"e65a7715-560e-4c7c-9f5a-72b6ee1f4709.jpg","menu":"Banana Milo Pudding","menuId":"b5283d67-3075-4159-b9e4-1d53be5513ba","price":10.0,"quantity":1}],"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","order":{"addressId":"","balance":0.0,"customerId":"e7bbfad5-7f83-4bca-864f-c8222f85932c","discount":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":0.0,"orderDate":"2/27/2021 05:31:40","paid":0.0,"tax":0.0,"total":37.980000000000004,"totalDiscount":0.0,"totalTax":0.0},"userName":"AboutAghorighor"}
+-------------------------------------------------------------------------------------------
+20210227 05:33:08 [10] INFO  Web [(null)] - Post-Request Content:{"baskets":[{"addonIds":"","addonNames":"","category":"FROM THE GRILL","id":10,"imageUrl":"5d69a43b-68fa-42b9-8b1a-4e1a2592aba3.jpg","menu":"ASUN","menuId":"147ee6fb-7e5f-42e2-9d7d-3526f7f26767","price":13.99,"quantity":1},{"addonIds":"","addonNames":"","category":"FROM THE GRILL","id":12,"imageUrl":"d92f6a12-86ee-4438-9036-65e707a1f261.jpg","menu":"BEEF SUYA","menuId":"f6476848-a355-4e98-abb8-9342c2d298cf","price":13.99,"quantity":1},{"addonIds":"","addonNames":"","category":"STARTERS","id":11,"imageUrl":"20297964-1d30-48d8-96c8-a25ae8ae5b20.jpg","menu":"CINNAMON FRENCH TOAST STICKS","menuId":"0f85ffe5-2e7b-409a-955e-a390bd40c64f","price":7.0,"quantity":1}],"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","order":{"addressId":"","balance":0.0,"customerId":"e7bbfad5-7f83-4bca-864f-c8222f85932c","discount":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":0.0,"orderDate":"2/27/2021 05:33:06","paid":0.0,"tax":0.0,"total":34.980000000000004,"totalDiscount":0.0,"totalTax":0.0},"userName":"AboutAghorighor"}
+-------------------------------------------------------------------------------------------
+20210227 05:33:42 [9] INFO  Web [(null)] - Post-Request Content:{"baskets":[{"addonIds":"","addonNames":"","category":"SOUP MEALS SPECIAL","id":15,"imageUrl":"179f3c81-8c2a-432a-960d-b89c69f4f9ef.jpg","menu":"AFANG SOUP","menuId":"8c9de96d-39dc-41cc-8e2d-74533df463d0","price":18.99,"quantity":1},{"addonIds":"","addonNames":"","category":"DESSERTS","id":13,"imageUrl":"e65a7715-560e-4c7c-9f5a-72b6ee1f4709.jpg","menu":"Banana Milo Pudding","menuId":"b5283d67-3075-4159-b9e4-1d53be5513ba","price":10.0,"quantity":1},{"addonIds":"","addonNames":"","category":"DRINKS","id":14,"imageUrl":"35595467-031e-40ee-bed5-ff9e295f0a96.jpg","menu":"COKE COLA","menuId":"9d4fd6b1-3483-4aee-a6a8-466514789e5d","price":5.0,"quantity":1}],"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","order":{"addressId":"","balance":0.0,"customerId":"e7bbfad5-7f83-4bca-864f-c8222f85932c","discount":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":0.0,"orderDate":"2/27/2021 05:33:40","paid":0.0,"tax":0.0,"total":33.989999999999995,"totalDiscount":0.0,"totalTax":0.0},"userName":"AboutAghorighor"}
+-------------------------------------------------------------------------------------------
+20210227 05:39:38 [15] INFO  Web [(null)] - Post-Request Content:{"active":true,"appCode":"11303376","description":"","deviceId":"123456","email":"ji@gmail.com","externalId":"115924FB-79F9-4E0C-AB5F-D4E1DFC1C893","firstName":"About","lastName":"James","mobile":"07407077236","password":" "}
+-------------------------------------------------------------------------------------------
+20210227 05:51:13 [6] INFO  Web [(null)] - Jerur webapi started at :27/02/2021 05:51:13
+-------------------------------------------------------------------------------------------
+20210227 05:51:18 [6] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210227 05:51:18 [6] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210227 05:51:19 [6] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210227 05:51:19 [6] INFO  Web [(null)] - Post-Request Content:{"active":true,"appCode":"11303376","description":"","deviceId":"123456","email":"mc@gmail.com","externalId":"115924FB-79F9-4E0C-AB5F-D4E1DFC1C893","firstName":"bm","lastName":"fc","mobile":"078545266888","password":" "}
+-------------------------------------------------------------------------------------------
+20210227 05:56:04 [31] INFO  Web [(null)] - Post-Request Content:{"addressLine":"2 Riseholme Orten","completeAddress":"2 Riseholme Orten, Peterborough, Cambridgeshire, pe2 5sp, Uk","country":"Uk","county":"Cambridgeshire","customerId":"805bad67-e347-4c22-b4a8-915f70fedfcc","id":"805bad67-e347-4c22-b4a8-915f70fedfcc","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210227 05:56:25 [29] INFO  Web [(null)] - Post-Request Content:{"addressLine":"2 Riseholme Orten","completeAddress":"2 Riseholme Orten, Peterborough, Cambridgeshire, pe2 5sp, Uk","country":"Uk","county":"Cambridgeshire","customerId":"805bad67-e347-4c22-b4a8-915f70fedfcc","id":"e91f348e-6ae5-407a-a918-4a31b30ae1c5","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210227 05:56:57 [29] INFO  Web [(null)] - Post-Request Content:{"baskets":[{"addonIds":"","addonNames":"","category":"FROM THE GRILL","id":1,"imageUrl":"5d69a43b-68fa-42b9-8b1a-4e1a2592aba3.jpg","menu":"ASUN","menuId":"147ee6fb-7e5f-42e2-9d7d-3526f7f26767","price":13.99,"quantity":1},{"addonIds":"","addonNames":"","category":"SOUP MEALS SPECIAL","id":2,"imageUrl":"80181e6d-1d04-4575-9697-e4be18fa188e.jpg","menu":"BITTER LEAF SOUP","menuId":"2266c369-8b10-451f-8c05-b17ab7d02bcf","price":18.99,"quantity":1},{"addonIds":"","addonNames":"","category":"STARTERS","id":3,"imageUrl":"20297964-1d30-48d8-96c8-a25ae8ae5b20.jpg","menu":"CINNAMON FRENCH TOAST STICKS","menuId":"0f85ffe5-2e7b-409a-955e-a390bd40c64f","price":7.0,"quantity":1},{"addonIds":"","addonNames":"","category":"DRINKS","id":4,"imageUrl":"35595467-031e-40ee-bed5-ff9e295f0a96.jpg","menu":"COKE COLA","menuId":"9d4fd6b1-3483-4aee-a6a8-466514789e5d","price":10.0,"quantity":2},{"addonIds":"","addonNames":"","category":"SIDE DISHES","id":5,"imageUrl":"8621ceb5-d455-44f7-8845-ca15404dc263.jpg","menu":"DODOGIZZARD","menuId":"1edf88c0-65f4-49e6-9c65-13f47735b4b2","price":15.0,"quantity":3}],"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","order":{"addressId":"","balance":0.0,"customerId":"805bad67-e347-4c22-b4a8-915f70fedfcc","discount":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":0.0,"orderDate":"2/27/2021 05:56:55","paid":0.0,"tax":0.0,"total":64.97999999999999,"totalDiscount":0.0,"totalTax":0.0},"userName":"bmfc"}
+-------------------------------------------------------------------------------------------
+20210227 06:01:46 [29] INFO  Web [(null)] - Post-Request Content:{"baskets":[{"addonIds":"61,59","addonNames":"BOTTLEGREEN-APPLE-CORDIAL,Bebidas","category":"SOUP MEALS SPECIAL","id":7,"imageUrl":"179f3c81-8c2a-432a-960d-b89c69f4f9ef.jpg","menu":"AFANG SOUP","menuId":"8c9de96d-39dc-41cc-8e2d-74533df463d0","price":24.979999999999997,"quantity":1},{"addonIds":"","addonNames":"","category":"FROM THE GRILL","id":6,"imageUrl":"d92f6a12-86ee-4438-9036-65e707a1f261.jpg","menu":"BEEF SUYA","menuId":"f6476848-a355-4e98-abb8-9342c2d298cf","price":13.99,"quantity":1},{"addonIds":"26","addonNames":"SIDES","category":"FROM THE GRILL","id":8,"imageUrl":"b9f329f8-e260-425c-8556-b2e51929f2e2.jpg","menu":"CHICKEN SUYA","menuId":"bce55364-ee75-466f-8b92-6726c898c2f5","price":40.0,"quantity":2}],"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","order":{"addressId":"","balance":0.0,"customerId":"805bad67-e347-4c22-b4a8-915f70fedfcc","discount":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":0.0,"orderDate":"2/27/2021 06:01:44","paid":0.0,"tax":0.0,"total":78.97,"totalDiscount":0.0,"totalTax":0.0},"userName":"bmfc"}
+-------------------------------------------------------------------------------------------
+20210227 06:05:44 [41] INFO  Web [(null)] - Post-Request Content:{"addressLine":"2 Riseholme Orten","completeAddress":"2 Riseholme Orten, Peterborough, Cambridgeshire, pe2 5sp, uk","country":"uk","county":"Cambridgeshire","customerId":"805bad67-e347-4c22-b4a8-915f70fedfcc","id":"805bad67-e347-4c22-b4a8-915f70fedfcc","latitude":"","longitude":"","postcode":"pe2 5sp","town":"Peterborough"}
+-------------------------------------------------------------------------------------------
+20210227 06:06:32 [41] INFO  Web [(null)] - Post-Request Content:{"baskets":[{"addonIds":"61","addonNames":"BOTTLEGREEN-APPLE-CORDIAL","category":"SOUP MEALS SPECIAL","id":9,"imageUrl":"179f3c81-8c2a-432a-960d-b89c69f4f9ef.jpg","menu":"AFANG SOUP","menuId":"8c9de96d-39dc-41cc-8e2d-74533df463d0","price":21.979999999999997,"quantity":1},{"addonIds":"46","addonNames":"SWALLOW","category":"SOUP MEALS SPECIAL","id":10,"imageUrl":"80181e6d-1d04-4575-9697-e4be18fa188e.jpg","menu":"BITTER LEAF SOUP","menuId":"2266c369-8b10-451f-8c05-b17ab7d02bcf","price":21.99,"quantity":1},{"addonIds":"22","addonNames":"SWALLOW","category":"SOUP MEALS SPECIAL","id":13,"imageUrl":"80181e6d-1d04-4575-9697-e4be18fa188e.jpg","menu":"BITTER LEAF SOUP","menuId":"2266c369-8b10-451f-8c05-b17ab7d02bcf","price":65.97,"quantity":3},{"addonIds":"","addonNames":"","category":"DESSERTS","id":11,"imageUrl":"95917502-97e4-4fe1-9470-af4e17ccc8dc.jpg","menu":"CHIN CHIN","menuId":"69ef3449-1558-4150-b795-6a3fd13c26ec","price":5.0,"quantity":1},{"addonIds":"","addonNames":"","category":"SIDE DISHES","id":12,"imageUrl":"8621ceb5-d455-44f7-8845-ca15404dc263.jpg","menu":"DODOGIZZARD","menuId":"1edf88c0-65f4-49e6-9c65-13f47735b4b2","price":5.0,"quantity":1}],"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","order":{"addressId":"47d794fc-bd3c-4f6e-ac69-3d94ad79cadd","balance":0.0,"customerId":"805bad67-e347-4c22-b4a8-915f70fedfcc","discount":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":0.0,"orderDate":"2/27/2021 06:06:30","paid":0.0,"tax":0.0,"total":119.94,"totalDiscount":0.0,"totalTax":0.0},"userName":"bmfc"}
+-------------------------------------------------------------------------------------------
+20210227 06:06:53 [41] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:10:36 [41] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:11:52 [41] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:13:03 [41] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:13:04 [41] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:13:31 [40] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:16:56 [40] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:16:58 [40] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:17:54 [57] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:17:56 [57] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:19:59 [62] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:20:01 [58] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:24:45 [63] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:24:47 [63] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:26:24 [63] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:26:27 [63] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:27:23 [63] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:27:25 [63] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:29:10 [69] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:29:12 [64] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:30:24 [64] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:30:26 [64] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:30:55 [64] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:30:57 [64] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:35:06 [64] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:35:09 [64] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:36:12 [64] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:36:14 [64] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:37:39 [67] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:37:40 [77] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:39:24 [77] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:39:26 [67] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210227 06:54:45 [8] INFO  Web [(null)] - Jerur webapi started at :27/02/2021 06:54:45
+-------------------------------------------------------------------------------------------
+20210227 06:54:50 [8] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210227 06:54:50 [8] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210227 06:54:50 [8] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210227 06:58:22 [10] INFO  Web [(null)] - Jerur webapi started at :27/02/2021 06:58:22
+-------------------------------------------------------------------------------------------
+20210227 06:58:26 [10] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210227 06:58:26 [10] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210227 06:58:27 [10] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210227 06:58:29 [11] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------

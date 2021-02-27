@@ -5,8 +5,9 @@
     using System.Net;
     using System.Net.Http;
     using System.Web.Http;  
-    using Extension; 
+    using Extension;
   
+
     [RoutePrefix("api/v1/customerAddress")]
     public class CustomerAddressController : BaseController
     {          
@@ -27,13 +28,13 @@
         [HttpPost]
         // [JwtAuthenticationAttribute]
         [Route("create")]
-        public IHttpActionResult Create([FromBody]CustomerAddressDto customerAddressDto)
+        public IHttpActionResult Create([FromBody]CreateCustomerAddressDto customerAddressDto)
         {
             if (!ModelState.IsValid)
             {
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
             }
-
+          
             customerAddressDto.CreatedDT = DateTime.UtcNow;
             customerAddressDto.CreatedBy = "Tester";
             customerAddressDto.Id = Guid.NewGuid();
@@ -45,7 +46,7 @@
         [HttpPost]
         // [JwtAuthenticationAttribute]
         [Route("update")]
-        public IHttpActionResult Update([FromBody] CustomerAddressDto customerAddressDto)
+        public IHttpActionResult Update([FromBody]CreateCustomerAddressDto customerAddressDto)
         {
             if (!ModelState.IsValid)
             {

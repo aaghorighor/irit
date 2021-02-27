@@ -12,7 +12,7 @@ namespace Suftnet.Cos.DataAccess.Action
         public Guid Id { get; set; }
 
         public int Quantity { get; set; }
-
+        [Required]
         public Guid MenuId { get; set; }
 
         [Column(TypeName = "money")]
@@ -28,6 +28,7 @@ namespace Suftnet.Cos.DataAccess.Action
         [StringLength(50)]
         public string CreatedBy { get; set; }
 
+        [Required]
         public Guid OrderId { get; set; }       
 
         public bool? IsProcessed { get; set; }

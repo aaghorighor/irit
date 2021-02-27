@@ -21,7 +21,7 @@
         [Required] 
         public int TableFor { get; set; }
     }
-    public class OrderParam
+    public class OrderQuery
     {
         [Required]
         [StringLength(50)]

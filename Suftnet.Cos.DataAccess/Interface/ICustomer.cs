@@ -16,8 +16,8 @@
     {
         CustomerAddressDto Get(Guid Id);
         bool Delete(Guid Id);
-        Guid Insert(CustomerAddressDto entity);
-        bool Update(CustomerAddressDto entity);
+        Guid Insert(CreateCustomerAddressDto entity);
+        bool Update(CreateCustomerAddressDto entity);
         List<CustomerAddressDto> GetAll(Guid customerId);
     }
 
