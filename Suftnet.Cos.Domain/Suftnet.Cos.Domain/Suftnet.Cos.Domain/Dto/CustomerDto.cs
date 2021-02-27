@@ -78,6 +78,7 @@ namespace Suftnet.Cos.DataAccess
 
     public class UpadteCustomerDto
     {
+        [Required]
         public Guid Id { get; set; }
         [Required]
         [StringLength(50)]
@@ -96,21 +97,7 @@ namespace Suftnet.Cos.DataAccess
         public string Email { get; set; }
         [Required]  
         public Guid ExternalId { get; set; }
-
-        public CustomerDto CustomerDto
-        {
-            get
-            {
-                return new CustomerDto
-                {    
-                      Id = this.Id,
-                      FirstName = this.FirstName,
-                      LastName = this.LastName,
-                      Mobile = this.Mobile,
-                      TenantId = this.ExternalId
-                };
-            }
-        }
+        
 
     }
 }

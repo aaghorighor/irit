@@ -40,21 +40,21 @@
         [HttpPost]
         // [JwtAuthenticationAttribute]
         [Route("create")]
-        public async Task<IHttpActionResult> Create([FromBody]CreateCustomerDto param)
+        public async Task<IHttpActionResult> Create([FromBody]CreateCustomerDto createCustomerDto)
         {
             if (!ModelState.IsValid)
             {
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
             }
 
-            var user = _user.CheckEmailAddress(param.Email, param.ExternalId);
+            var user = _user.CheckEmailAddress(createCustomerDto.Email, createCustomerDto.ExternalId);
 
             if (user)
             {
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = Constant.InvalidEmailReasonPhrase }));
             }
 
-            _createUserCommand.User = param;         
+            _createUserCommand.User = createCustomerDto;         
             _createUserCommand.VIEW_PATH = HttpContext.Current.Server.MapPath("~/App_Data/Email/newCustomer.html");
             _createUserCommand.Execute();
 
@@ -69,21 +69,21 @@
         [HttpPost]
         // [JwtAuthenticationAttribute]
         [Route("update")]
-        public IHttpActionResult Update([FromBody]UpadteCustomerDto param)
+        public IHttpActionResult Update([FromBody]UpadteCustomerDto upadteCustomerDto)
         {
             if (!ModelState.IsValid)
             {
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
             }
 
-            var user = _user.CheckEmailAddress(param.Email, param.ExternalId);
+            var user = _user.CheckEmailAddress(upadteCustomerDto.Email, upadteCustomerDto.ExternalId);
 
             if (!user)
             {
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = Constant.USER_NOT_FOUND }));
             }
 
-            _customer.Update(param.CustomerDto);
+            _customer.Update(upadteCustomerDto);
 
             return Ok(true);
         }

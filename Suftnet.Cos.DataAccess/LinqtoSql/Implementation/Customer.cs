@@ -48,13 +48,13 @@
             }
         }
 
-        public bool Update(CustomerDto entity)
+        public bool Update(UpadteCustomerDto entity)
         {
             bool response = false;
 
             using (var context = DataContextFactory.CreateContext())
             {
-                var objToUpdate = context.Customers.SingleOrDefault(o => o.Id == entity.Id && o.TenantId == entity.TenantId);
+                var objToUpdate = context.Customers.SingleOrDefault(o => o.Id == entity.Id && o.TenantId == entity.ExternalId);
 
                 if (objToUpdate != null)
                 {                                               

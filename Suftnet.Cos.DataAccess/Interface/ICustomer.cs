@@ -8,7 +8,7 @@
         CustomerDto Get(Guid Id);
         bool Delete(Guid Id);
         Guid Insert(CustomerDto entity);
-        bool Update(CustomerDto entity);
+        bool Update(UpadteCustomerDto entity);
         List<CustomerDto> GetAll(Guid tenantId);    
     }
 
