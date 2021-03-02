@@ -16,7 +16,7 @@
                                  let s = o.TenantStates
                                  let a = o.TenantAddresses
                                  where o.Id == Id
-                                 select new TenantDto { AppCode = o.AppCode, FlatRate = o.FlatRate, DeliveryLimitNote = o.DeliveryLimitNote, IsFlatRate = o.IsFlatRate, StatusId = s.Id, DeliveryRate = o.DeliveryRate, DeliveryUnitId = o.DeliveryUnitId, Description = o.Description, BackgroundUrl = o.BackgroundUrl, CurrencyCode = o.CurrencyCode, CompleteAddress = a.CompleteAddress, Latitude = a.Latitude, Longitude = a.Logitude, AddressLine3 = a.AddressLine3, AddressLine2 = a.AddressLine2, AddressLine1 = a.AddressLine1, Country = a.Country, County = a.County, Town = a.Town, PostCode = a.PostCode, SubscriptionId = o.SubscriptionId, StripeSecretKey = o.StripeSecretKey, StripePublishableKey = o.StripePublishableKey, Publish = o.Publish, LogoUrl = o.LogoUrl, TenantId = o.Id, IsExpired = (bool)o.IsExpired, PlanTypeId = o.PlanTypeId, WebsiteUrl = o.WebsiteUrl, Status = s.Name, StartDate = o.StartDate, Startup = o.Startup, CurrencyId = o.CurrencyId, CustomerStripeId = o.CustomerStripeId, ExpirationDate = o.ExpirationDate, Telephone = o.Telephone, Name = o.Name, Email = o.Email, Mobile = o.Mobile, AddressId = a.Id, CreatedDT = o.CreatedDt, Id = o.Id }).FirstOrDefault();
+                                 select new TenantDto { AppCode = o.AppCode, StatusId = s.Id, DiscountRate = o.DiscountRate, DeliveryCost = o.DeliveryCost, TaxRate = o.TaxRate, Description = o.Description, BackgroundUrl = o.BackgroundUrl, CurrencyCode = o.CurrencyCode, CompleteAddress = a.CompleteAddress, Latitude = a.Latitude, Longitude = a.Logitude, AddressLine3 = a.AddressLine3, AddressLine2 = a.AddressLine2, AddressLine1 = a.AddressLine1, Country = a.Country, County = a.County, Town = a.Town, PostCode = a.PostCode, SubscriptionId = o.SubscriptionId, StripeSecretKey = o.StripeSecretKey, StripePublishableKey = o.StripePublishableKey, Publish = o.Publish, LogoUrl = o.LogoUrl, TenantId = o.Id, IsExpired = (bool)o.IsExpired, PlanTypeId = o.PlanTypeId, WebsiteUrl = o.WebsiteUrl, Status = s.Name, StartDate = o.StartDate, Startup = o.Startup, CurrencyId = o.CurrencyId, CustomerStripeId = o.CustomerStripeId, ExpirationDate = o.ExpirationDate, Telephone = o.Telephone, Name = o.Name, Email = o.Email, Mobile = o.Mobile, AddressId = a.Id, CreatedDT = o.CreatedDt, Id = o.Id }).FirstOrDefault();
                 return objResult;                
             }          
         }
@@ -25,7 +25,7 @@
         {
             var a = o.TenantAddresses;
             var s = o.TenantStates;
-            var test = new TenantDto { AppCode = o.AppCode, FlatRate = o.FlatRate, DeliveryLimitNote = o.DeliveryLimitNote, IsFlatRate = o.IsFlatRate, StatusId = s.Id, DeliveryRate = o.DeliveryRate, DeliveryUnitId = o.DeliveryUnitId, Description = o.Description, BackgroundUrl = o.BackgroundUrl, CurrencyCode = o.CurrencyCode, CompleteAddress = a.CompleteAddress, Latitude = a.Latitude, Longitude = a.Logitude, AddressLine3 = a.AddressLine3, AddressLine2 = a.AddressLine2, AddressLine1 = a.AddressLine1, Country = a.Country, County = a.County, Town = a.Town, PostCode = a.PostCode, SubscriptionId = o.SubscriptionId, StripeSecretKey = o.StripeSecretKey, StripePublishableKey = o.StripePublishableKey, Publish = o.Publish, LogoUrl = o.LogoUrl, TenantId = o.Id, IsExpired = (bool)o.IsExpired, PlanTypeId = o.PlanTypeId, WebsiteUrl = o.WebsiteUrl, Status = s.Name, StartDate = o.StartDate, Startup = o.Startup, CurrencyId = o.CurrencyId, CustomerStripeId = o.CustomerStripeId, ExpirationDate = o.ExpirationDate, Telephone = o.Telephone, Name = o.Name, Email = o.Email, Mobile = o.Mobile, AddressId = a.Id, CreatedDT = o.CreatedDt, Id = o.Id };
+            var test = new TenantDto { AppCode = o.AppCode, DiscountRate = o.DiscountRate, DeliveryCost = o.DeliveryCost, TaxRate = o.TaxRate, StatusId = s.Id, Description = o.Description, BackgroundUrl = o.BackgroundUrl, CurrencyCode = o.CurrencyCode, CompleteAddress = a.CompleteAddress, Latitude = a.Latitude, Longitude = a.Logitude, AddressLine3 = a.AddressLine3, AddressLine2 = a.AddressLine2, AddressLine1 = a.AddressLine1, Country = a.Country, County = a.County, Town = a.Town, PostCode = a.PostCode, SubscriptionId = o.SubscriptionId, StripeSecretKey = o.StripeSecretKey, StripePublishableKey = o.StripePublishableKey, Publish = o.Publish, LogoUrl = o.LogoUrl, TenantId = o.Id, IsExpired = (bool)o.IsExpired, PlanTypeId = o.PlanTypeId, WebsiteUrl = o.WebsiteUrl, Status = s.Name, StartDate = o.StartDate, Startup = o.Startup, CurrencyId = o.CurrencyId, CustomerStripeId = o.CustomerStripeId, ExpirationDate = o.ExpirationDate, Telephone = o.Telephone, Name = o.Name, Email = o.Email, Mobile = o.Mobile, AddressId = a.Id, CreatedDT = o.CreatedDt, Id = o.Id };
             return test;
         }
 
@@ -94,18 +94,18 @@
                 var obj = new Action.Tenant()
                 {
                     CurrencyCode =entity.CurrencyCode, SubscriptionId = entity.SubscriptionId,
-                    DeliveryRate = entity.DeliveryRate,
-                    DeliveryUnitId = entity.DeliveryUnitId,
+                    DeliveryCost = entity.DeliveryCost,
+                    DiscountRate = entity.DiscountRate,
                     BackgroundUrl = entity.BackgroundUrl,Description = entity.Description,                 
                     StripeSecretKey = entity.StripeSecretKey,
                     StripePublishableKey = entity.StripePublishableKey, Publish = entity.Publish, LogoUrl = entity.LogoUrl,
                     StartDate = entity.StartDate, PlanTypeId = entity.PlanTypeId,
                     IsExpired = entity.IsExpired, AppCode = entity.AppCode,
-                    WebsiteUrl = entity.WebsiteUrl, FlatRate= entity.FlatRate,                 
+                    WebsiteUrl = entity.WebsiteUrl, TaxRate= entity.TaxRate,                 
                     Startup = entity.Startup, CurrencyId = entity.CurrencyId,
                     ExpirationDate = entity.ExpirationDate, CustomerStripeId = entity.CustomerStripeId, Telephone = entity.Telephone,
                     Mobile = entity.Mobile, Email = entity.Email, Name = entity.Name, AddressId = entity.AddressId, StateId = entity.StatusId,
-                    CreatedBy = entity.CreatedBy, CreatedDt = entity.CreatedDT, Id = entity.Id, DeliveryLimitNote = entity.DeliveryLimitNote, IsFlatRate = entity.IsFlatRate
+                    CreatedBy = entity.CreatedBy, CreatedDt = entity.CreatedDT, Id = entity.Id, 
                 };
 
                 context.Tenants.Add(obj);
@@ -132,11 +132,9 @@
                     objToUpdate.Name = entity.Name;
                     objToUpdate.AddressId = entity.AddressId;
                     objToUpdate.StateId = entity.StatusId;
-                    objToUpdate.DeliveryRate = entity.DeliveryRate;
-                    objToUpdate.DeliveryUnitId = entity.DeliveryUnitId;
-                    objToUpdate.FlatRate = entity.FlatRate;
-                    objToUpdate.IsFlatRate = entity.IsFlatRate;
-                    objToUpdate.DeliveryLimitNote = entity.DeliveryLimitNote;
+                    objToUpdate.DeliveryCost = entity.DeliveryCost;
+                    objToUpdate.TaxRate = entity.TaxRate;
+                    objToUpdate.DiscountRate = entity.DiscountRate;                 
                     objToUpdate.WebsiteUrl = entity.WebsiteUrl;
                     objToUpdate.Description = entity.Description;
                     objToUpdate.StripeSecretKey = entity.StripeSecretKey;
@@ -250,11 +248,9 @@
                     objToUpdate.Name = entity.Name;
                     objToUpdate.AddressId = entity.AddressId;
                     objToUpdate.StateId = entity.StatusId;
-                    objToUpdate.DeliveryRate = entity.DeliveryRate;
-                    objToUpdate.DeliveryUnitId = entity.DeliveryUnitId;
-                    objToUpdate.IsFlatRate = entity.IsFlatRate;
-                    objToUpdate.FlatRate = entity.FlatRate;
-                    objToUpdate.DeliveryLimitNote = entity.DeliveryLimitNote;
+                    objToUpdate.DeliveryCost = entity.DeliveryCost;
+                    objToUpdate.TaxRate = entity.TaxRate;
+                    objToUpdate.DiscountRate = entity.DiscountRate;
                     objToUpdate.WebsiteUrl = entity.WebsiteUrl;
                     objToUpdate.Description = entity.Description;
                     objToUpdate.StripeSecretKey = entity.StripeSecretKey;

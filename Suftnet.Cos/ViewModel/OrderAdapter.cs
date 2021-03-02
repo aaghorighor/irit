@@ -54,6 +54,9 @@
         [Required]
         [StringLength(50)]
         public string orderId { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string orderTypeId { get; set; }
         public DateTime updateDate { get; set; }
     }
 

@@ -282,12 +282,12 @@ namespace Suftnet.Cos.Common
 
     public static class eOrderStatus
     {
-        public const string Pending = "DCDC8A0D-E38A-43B5-8091-F167B001F0B5";
-        public const string Ready = "E4E6975E-4881-459D-BB2D-2AD841FBA835";
+        public const string Pending = "dcdc8a0d-e38a-43b5-8091-f167b001f0b5";
+        public const string Ready = "e4e6975e-4881-459d-bb2d-2ad841fba835";
         public const string Processing = "85616F94-1826-43B1-ACFF-819B37F028E4";
-        public const string Reserved = "54F834F8-8F7B-42C0-8331-E1FE5AE50C83";
-        public const string Occupied = "C84F0A40-4C93-4200-9531-E6AB0D8FF5D7";
-        public const string Completed = "58EE00D9-D449-4EBF-B4E8-769F51FE7EFE";
+        public const string Reserved = "e4e6975e-4881-459d-bb2d-2ad841fba835";
+        public const string Occupied = "c84f0a40-4c93-4200-9531-e6ab0d8ff5d7";
+        public const string Completed = "58ee00d9-d449-4ebf-b4e8-769f51fe7efe";
         public const string Cancelled = "12bc2434-5cd8-42a2-8345-c1a3ecbc8e3b";
       
         public const string Transist = "f666a5ac-800d-4ee2-8b42-1a662ecc183e";

@@ -67,51 +67,15 @@
                 if (account.TenantMobile == null)
                 {
                     claims.Add(new Claim("TenantMobile", "0000000000"));
-                }               
-
-                if ((bool)account.IsFlatRate == true)
-                {
-                    claims.Add(new Claim("IsFlatRate", "true"));
-                }
-                else
-                {
-                    claims.Add(new Claim("IsFlatRate", "false"));
-                }
-
-                if (string.IsNullOrEmpty(account.DeliveryUnit))
-                {
-                    claims.Add(new Claim("DeliveryUnit", "0"));
-                }else
-                {
-                    claims.Add(new Claim("DeliveryUnit", account.DeliveryUnit));
-                }           
-          
-                if(account.DeliveryLimitNote == null)
-                {
-                    claims.Add(new Claim("DeliveryLimitNote", ""));
-                }else
-                {
-                    claims.Add(new Claim("DeliveryLimitNote", account.DeliveryLimitNote));
-                }
-
-                claims.Add(new Claim("DeliveryRate", account.DeliveryRate.ToString()));
-             
+                }   
+                
                 if (!string.IsNullOrEmpty(account.CurrencyCode))
                 {
                     claims.Add(new Claim("CurrencyCode", account.CurrencyCode));
                 }else
                 {
                     claims.Add(new Claim("CurrencyCode", Constant.DefaultHexCurrencySymbol));
-                }
-                
-                if (account.FlatRate != null)
-                {
-                    claims.Add(new Claim("FlatRate", account.FlatRate.ToString()));
-                }
-                else
-                {
-                    claims.Add(new Claim("FlatRate", "0.0"));
-                }
+                }     
 
             }           
         }

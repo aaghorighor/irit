@@ -144,8 +144,7 @@ var delivery = {
             },
             "columns": [
                 { "data": "Id", "visible": false, "defaultContent": "<i>-</i>" },
-                { "data": "UpdatedOn", "visible": true, "defaultContent": "<i>-</i>" },
-                { "data": "Time", "defaultContent": "<i>-</i>" },               
+                { "data": "UpdatedOn", "visible": true, "defaultContent": "<i>-</i>" },                     
                 { "data": "FullName", "defaultContent": "<i>-</i>" },
                 { "data": "Mobile", "defaultContent": "<i>-</i>" },               
                 { "data": "Status", "defaultContent": "<i>-</i>"  },              
@@ -167,6 +166,12 @@ var delivery = {
                     }, "defaultContent": "<i>-</i > "
                 }, 
                 {
+                    "data": "Payment", render: function (data, type, row) {
+                        return suftnet_grid.formatCurrency(data);
+
+                    }, "defaultContent": "<i>-</i > "
+                }, 
+                {
                     "data": "GrandTotal", render: function (data, type, row) {
                         return suftnet_grid.formatCurrency(data);
 
@@ -182,14 +187,13 @@ var delivery = {
                     "data": null,
                     "orderable": false,    
                     className: "align-center",
-                    "defaultContent": '<a class="tooltip" title="Add Menu to this Order" style=margin:10px; href="#" onclick=delivery.view(this)><img src=' + suftnet_grid.iconUrl + 'basket.png\ alt=\"Add Menu to this Order\" /></a>'+
-                                      '<a class="tooltip" title="Edit this row" style=margin:10px; href="#" onclick="delivery.edit(this)"><img src=' + suftnet_grid.iconUrl + 'edit.png\ alt=\"Edit this row\" /></a>' +
+                    "defaultContent": '<a class="tooltip" title="View Menu to this Order" style=margin:10px; href="#" onclick=delivery.view(this)><img src=' + suftnet_grid.iconUrl + 'basket.png\ alt=\"View Menu to this Order\" /></a>'+                                      
                                       '<a class="tooltip" title="Delete this row" style=margin:10px; href="#" onclick="delivery.delete(this)"><img src=' + suftnet_grid.iconUrl + 'delete.png\ alt=\"Delete this row\" /></a>'                }
             ],            
             columnDefs: [
             { "targets":[] , "visible": false, "searchable": false },
-                { "orderable": false, "targets": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10] },
-                { className: "text-left", "targets": [0, 1, 2, 3, 4, 5, 6, 7,8,9,10] }],    
+                { "orderable": false, "targets": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
+                { className: "text-left", "targets": [0, 1, 2, 3, 4, 5, 6, 7,8,9] }],    
             destroy: true
         });
 

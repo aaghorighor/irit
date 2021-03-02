@@ -53,7 +53,11 @@
                 PaymentStatusId = new Guid(ePaymentStatus.Pending),
 
                 TenantId = new Guid(entityToCreate.ExternalId),
-                Id = Guid.NewGuid()
+                Id = Guid.NewGuid(),
+
+                FirstName = entityToCreate.FirstName,
+                LastName = entityToCreate.LastName,
+                Mobile = entityToCreate.Mobile
             };
            _order.Insert(order);
             return order.Id;

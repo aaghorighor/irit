@@ -419,7 +419,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/26/2020 20:48:14</publishTime>
     </File>
     <File Include="Areas/BackOffice/Views/Settings/_delivery.cshtml">
-      <publishTime>10/30/2020 12:39:56</publishTime>
+      <publishTime>03/02/2021 09:54:52</publishTime>
     </File>
     <File Include="Areas/BackOffice/Views/Settings/_general.cshtml">
       <publishTime>10/30/2020 12:38:30</publishTime>
@@ -512,7 +512,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/30/2020 11:27:58</publishTime>
     </File>
     <File Include="Areas/FrontOffice/Views/cart/_cart.cshtml">
-      <publishTime>10/24/2020 12:35:22</publishTime>
+      <publishTime>03/02/2021 18:27:41</publishTime>
     </File>
     <File Include="Areas/FrontOffice/Views/cart/_cartSummary.cshtml">
       <publishTime>10/27/2020 10:53:08</publishTime>
@@ -542,7 +542,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/24/2020 07:56:17</publishTime>
     </File>
     <File Include="Areas/FrontOffice/Views/Delivery/Index.cshtml">
-      <publishTime>12/30/2020 11:06:06</publishTime>
+      <publishTime>03/02/2021 10:14:12</publishTime>
     </File>
     <File Include="Areas/FrontOffice/Views/Delivery/_delivery.cshtml">
       <publishTime>10/27/2020 07:39:40</publishTime>
@@ -551,7 +551,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Areas/FrontOffice/Views/Delivery/_load.cshtml">
-      <publishTime>10/27/2020 12:42:35</publishTime>
+      <publishTime>03/02/2021 12:20:17</publishTime>
     </File>
     <File Include="Areas/FrontOffice/Views/Delivery/_locationPicker.cshtml">
       <publishTime>12/30/2020 11:25:32</publishTime>
@@ -980,28 +980,28 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/06/2012 18:43:35</publishTime>
     </File>
     <File Include="bin/Suftnet.Cos.Common.dll">
-      <publishTime>02/27/2021 11:02:16</publishTime>
+      <publishTime>03/02/2021 16:55:24</publishTime>
     </File>
     <File Include="bin/Suftnet.Cos.Core.dll">
-      <publishTime>02/27/2021 18:33:43</publishTime>
+      <publishTime>03/02/2021 18:28:35</publishTime>
     </File>
     <File Include="bin/Suftnet.Cos.Core.dll.config">
       <publishTime>07/07/2020 14:49:28</publishTime>
     </File>
     <File Include="bin/Suftnet.Cos.DataAccess.dll">
-      <publishTime>02/27/2021 18:33:42</publishTime>
+      <publishTime>03/02/2021 18:28:34</publishTime>
     </File>
     <File Include="bin/Suftnet.Cos.DataAccess.dll.config">
       <publishTime>01/25/2021 15:16:03</publishTime>
     </File>
     <File Include="bin/Suftnet.Cos.Model.dll">
-      <publishTime>02/27/2021 18:33:41</publishTime>
+      <publishTime>02/03/2021 17:41:27</publishTime>
     </File>
     <File Include="bin/Suftnet.Cos.Stripe.dll">
-      <publishTime>02/27/2021 11:02:18</publishTime>
+      <publishTime>03/02/2021 16:55:25</publishTime>
     </File>
     <File Include="bin/Suftnet.Cos.Web.dll">
-      <publishTime>02/27/2021 18:33:46</publishTime>
+      <publishTime>03/02/2021 18:28:38</publishTime>
     </File>
     <File Include="bin/System.Collections.Immutable.dll">
       <publishTime>05/15/2018 13:29:34</publishTime>
@@ -13493,10 +13493,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/25/2021 13:50:17</publishTime>
     </File>
     <File Include="logs/error.txt">
-      <publishTime>02/25/2021 13:33:49</publishTime>
+      <publishTime>03/02/2021 13:37:16</publishTime>
     </File>
     <File Include="logs/log.txt">
-      <publishTime>02/27/2021 18:32:08</publishTime>
+      <publishTime>03/02/2021 18:19:14</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>05/17/2020 21:51:35</publishTime>
@@ -13511,7 +13511,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/29/2020 22:53:11</publishTime>
     </File>
     <File Include="Scripts/50000/cartViewModel.js">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>03/02/2021 18:27:21</publishTime>
     </File>
     <File Include="Scripts/50000/categoryViewModel.js">
       <publishTime>10/23/2020 22:09:06</publishTime>
@@ -13622,10 +13622,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/26/2020 21:41:45</publishTime>
     </File>
     <File Include="Scripts/90000/constant.js">
-      <publishTime>12/26/2020 22:55:03</publishTime>
+      <publishTime>03/02/2021 16:40:32</publishTime>
     </File>
     <File Include="Scripts/90000/delivery.js">
-      <publishTime>12/30/2020 11:08:09</publishTime>
+      <publishTime>03/02/2021 12:20:38</publishTime>
     </File>
     <File Include="Scripts/90000/order.js">
       <publishTime>12/30/2020 12:28:58</publishTime>

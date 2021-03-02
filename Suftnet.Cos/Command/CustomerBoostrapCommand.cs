@@ -42,9 +42,7 @@
                 {
                     Menus = _menu.GetBy(TenantId),
                     Categories = _category.GetBy(TenantId),
-                    Addons = _addon.GetBy(TenantId),
-                    Taxes = _tax.Fetch(TenantId),
-                    Discounts = _discount.Fetch(TenantId),
+                    Addons = _addon.GetBy(TenantId),                   
                     Outlet = new
                     {
                         user = new
@@ -71,7 +69,11 @@
                             longitude = User.Tenant.Longitude.ToDecimal(),
                             latitude = User.Tenant.Latitude.ToDecimal(),
                             town = User.Tenant.Town.EmptyOrNull(),
-                            externalId = User.TenantId
+                            externalId = User.TenantId,
+                            taxRate = User.Tenant.TaxRate.ToDecimal(),
+                            discountRate = User.Tenant.DiscountRate.ToDecimal(),
+                            deliveryCost = User.Tenant.DeliveryCost.ToDecimal(),
+                            stripePublishableKey = User.Tenant.StripePublishableKey.EmptyOrNull()
                         }                     
                     }
                 };

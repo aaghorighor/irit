@@ -75,22 +75,17 @@ namespace Suftnet.Cos.DataAccess.Action
         [StringLength(50)]
         public string CurrencyCode { get; set; }
         [StringLength(50)]
-        public string BackgroundUrl { get; set; }         
-        public decimal DeliveryRate { get; set; }
-        [StringLength(15)]
-        public string DeliveryUnitId { get; set; }
+        public string BackgroundUrl { get; set; }          
         public Guid AddressId { get; set; }
         public Guid StateId { get; set; }
-
         [ForeignKey("AddressId")]
         public virtual TenantAddress TenantAddresses { get; set; }
         [ForeignKey("StateId")]
         public virtual TenantState TenantStates { get; set; }
-        [StringLength(250)]
-        public string DeliveryLimitNote { get; set; }
-        public bool? IsFlatRate { get; set; }
-        public decimal? FlatRate { get; set; }
+        public decimal? DeliveryCost { get; set; }
         public string AppCode { get; set; }
+        public decimal? TaxRate { get; set; }
+        public decimal? DiscountRate { get; set; }
 
     }
 }

@@ -57,7 +57,7 @@
             customerAddressDto.UpdateBy = "Tester";        
            _customerAddress.Update(customerAddressDto);
 
-            return Ok(true);
+            return Ok(customerAddressDto);
         }
        
     }

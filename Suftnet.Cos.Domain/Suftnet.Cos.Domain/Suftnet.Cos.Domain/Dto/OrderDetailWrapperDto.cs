@@ -34,6 +34,7 @@
 
         public List<KitchenBasketDto> KitchenBasket { get; set; }
         public Guid OrderId { get; set; }
+        public Guid OrderTypeId { get; set; }
         public string OrderType { get; set; }
         public string Note { get; set; }
         public string Table { get; set; }

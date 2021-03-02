@@ -31,12 +31,11 @@
             }
         }       
         public string CompleteAddress { get; set; }
-        public decimal DeliveryRate { get; set; }
+        public decimal? DeliveryCost { get; set; }
+        public decimal? TaxRate { get; set; }
+        public decimal? DiscountRate { get; set; }
         public string DeliveryUnit { get; set; }
-        public string CurrencyCode { get; set; }
-        public bool? IsFlatRate { get; set; }
-        public string DeliveryLimitNote { get; set; }
-        public decimal? FlatRate { get; set; }
+        public string CurrencyCode { get; set; }        
         public string TenantEmail { get; set; }
         public string TenantMobile { get; set; }
         public TenantDto TenantDto { get; set; }

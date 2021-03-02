@@ -7,7 +7,7 @@
 
     <ul style="margin-left:0px; margin-top :5px" class="uibutton-group">
         <li><span><a href="@Url.Action("index", "dashBoard", new { area = "frontoffice" })" class="uibutton icon prev etip" title="Back to Dashboard">Back</a></span></li>
-        <li><span><a id="btnOpen" href="javascript:void(0)" class="uibutton icon add normal etip" title="Add New Delivery">Create</a></span></li>
+        <li class="hide"><span><a id="btnOpen" href="javascript:void(0)" class="uibutton icon add normal etip" title="Add New Delivery">Create</a></span></li>
     </ul>
 
     <div class="widgets">
@@ -37,7 +37,7 @@
 
     $(function () {
         delivery.pageInit();
-        locationPicker.pageInit();
+        //locationPicker.pageInit();
     });
 
 </script>

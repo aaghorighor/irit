@@ -63,6 +63,8 @@
         public decimal? Balance { get; set; }
         public decimal? GrandTotal { get; set; }
         public Guid ExternalId { get; set; }
+        public Guid OrderTypeId { get; set; }
+        public Guid StatusId { get; set; }
 
     }
     public class CartOrderDto 

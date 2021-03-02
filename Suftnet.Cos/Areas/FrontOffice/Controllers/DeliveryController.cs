@@ -16,12 +16,12 @@
         #region Resolving dependencies
 
         private readonly IOrder _order;
-        private readonly IDeliveryAddress _deliveryAddress;
+        private readonly ICustomerOrder _customerOrder;
 
-        public DeliveryController(IOrder order, IDeliveryAddress deliveryAddress) 
+        public DeliveryController(IOrder order, ICustomerOrder customerOrder) 
         {
             _order = order;
-            _deliveryAddress = deliveryAddress;
+            _customerOrder = customerOrder;
         }
 
         #endregion      
@@ -32,7 +32,7 @@
         }
         public async Task<JsonResult> Fetch(DataTableAjaxPostModel param)
         {
-            var model = await Task.Run(() => _order.GetDeliveryOrders(new Guid(eOrderType.Delivery), this.TenantId, param.start, param.length, param.search.value));
+            var model = await Task.Run(() => _customerOrder.Fetch(this.TenantId, param.start, param.length, param.search.value));
 
             return Json(new
             {
@@ -42,80 +42,7 @@
                 data = model
             },
                       JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpPost]
-        [PermissionFilter(BackOfficeViews.Member, PermissionType.Create)]
-        [ValidateAntiForgeryToken]
-        public JsonResult Create(DeliveryAddressDto entityToCreate)
-        {
-            Ensure.Argument.NotNull(entityToCreate);
-
-            if (!ModelState.IsValid)
-            {
-                return Json(new
-                {
-                    ok = false,
-                    isValid = true,
-                    errors = ModelState.AjaxErrors()
-                });
-            }
-
-            entityToCreate.CreatedDT = DateTime.UtcNow;
-            entityToCreate.CreatedBy = this.UserName;
-
-            entityToCreate.UpdateDate = DateTime.UtcNow;
-            entityToCreate.UpdateBy = this.UserName;
-
-            entityToCreate.StartDt = DateTime.UtcNow;
-
-            entityToCreate.OrderTypeId = new Guid(eOrderType.Delivery);
-            entityToCreate.StatusId = new Guid(eOrderStatus.Pending);
-            entityToCreate.PaymentStatusId = new Guid(ePaymentStatus.Pending);
-
-            entityToCreate.TenantId = this.TenantId;
-            entityToCreate.Id = Guid.NewGuid();
-
-            _order.Insert(entityToCreate);
-
-            entityToCreate.DeliveryId = Guid.NewGuid();
-            entityToCreate.OrderId = entityToCreate.Id;
-            entityToCreate.CreatedAt = DateTime.UtcNow;
-
-            _deliveryAddress.Insert(entityToCreate);
-
-            entityToCreate.flag = (int)flag.Add;
-          
-            return Json(new { ok = true, order = new { orderId = entityToCreate.Id, tableId = entityToCreate.TableId, orderStatusId = entityToCreate.StatusId, orderType = entityToCreate.OrderTypeId }, flag = entityToCreate.flag }, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpPost]
-        [PermissionFilter(BackOfficeViews.Member, PermissionType.Create)]
-        [ValidateAntiForgeryToken]
-        public JsonResult Edit(DeliveryAddressDto entityToCreate)
-        {
-            Ensure.Argument.NotNull(entityToCreate);
-
-            if (!ModelState.IsValid)
-            {
-                return Json(new
-                {
-                    ok = false,
-                    isValid = true,
-                    errors = ModelState.AjaxErrors()
-                });
-            }
-
-            entityToCreate.UpdateDate = DateTime.UtcNow;
-            entityToCreate.UpdateBy = this.UserName;
-
-            _order.UpdateDelivery(entityToCreate);
-            _deliveryAddress.Update(entityToCreate);
-
-            entityToCreate.flag = (int)flag.Update;
-           
-            return Json(new { ok = true, flag = entityToCreate.flag }, JsonRequestBehavior.AllowGet);
-        }
+        }     
 
         [HttpPost]
         [PermissionFilter(BackOfficeViews.Member, PermissionType.Remove)]

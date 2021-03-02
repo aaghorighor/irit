@@ -196,6 +196,16 @@
             return 0;
         }
 
+        public static decimal? ToDecimal(this decimal? value)
+        {        
+            if (value == null)
+            {
+                return 0;
+            }            
+
+            return value;
+        }
+
         public static decimal ToDecimal(this string value)
         {
             decimal output = 0;

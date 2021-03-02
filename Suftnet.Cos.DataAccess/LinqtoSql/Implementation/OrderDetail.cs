@@ -195,7 +195,7 @@
                                                     select new KitchenBasketDto { AddonItems = o.AddonItems, IsProcessed = o.IsProcessed, ItemName = o.ItemName, Id = o.Id }).ToList()
                                  where kitchenBasket.Count > 0 && s.TenantId == tenantId 
                                  orderby s.CreatedDt ascending
-                                 select new KitchenAdapter { Note = s.Note, CreatedDT =s.CreatedDt, OrderType = r.Name, Table = t.Number, OrderId = s.Id, KitchenBasket = kitchenBasket }).ToList();
+                                 select new KitchenAdapter { OrderTypeId = s.OrderTypeId, Note = s.Note, CreatedDT =s.CreatedDt, OrderType = r.Name, Table = t.Number, OrderId = s.Id, KitchenBasket = kitchenBasket }).ToList();
 
                 return objResult;
             }

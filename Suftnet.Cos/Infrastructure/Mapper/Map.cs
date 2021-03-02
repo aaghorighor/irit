@@ -31,11 +31,9 @@
             _model.Publish = model.Publish;            
             _model.CurrencyCode = model.CurrencyCode;
             _model.AddressId = model.AddressId;
-            _model.DeliveryUnitId = model.DeliveryUnitId;
-            _model.DeliveryLimitNote = model.DeliveryLimitNote;
-            _model.IsFlatRate = model.IsFlatRate == null ? false : model.IsFlatRate;
-            _model.DeliveryRate = model.DeliveryRate;
-            _model.FlatRate = model.FlatRate;
+            _model.DeliveryCost = model.DeliveryCost;           
+            _model.DiscountRate = model.DiscountRate;
+            _model.TaxRate = model.TaxRate;
             _model.StatusId = model.StatusId;
 
             _model.CreatedDT = model.CreatedDT;

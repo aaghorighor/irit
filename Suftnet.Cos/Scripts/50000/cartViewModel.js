@@ -281,7 +281,9 @@ var CartViewModel = function () {
     self.optionValues.getStatusByStatusId = function (statusId) {
         var ret;
         this().forEach(function (status) {
+         
             if (status.OrderStatusId == statusId) {
+      
                 ret = status;
             }
         });
@@ -290,22 +292,24 @@ var CartViewModel = function () {
     };
        
     self.getSelectedStatus = function(statusId, orderTypeId)
-    {       
-        self.optionValues.removeAll();     
-      
+    {                                
         switch (orderTypeId)
         {
             case constants.orderType.reservation: 
-               
-                self.optionValues.push(new Status("Reserved", constants.orderStatus.reserve));  
+
+                self.optionValues.removeAll();
+
+                self.optionValues.push(new Status("Reserved", constants.orderStatus.reserved));  
                 self.optionValues.push(new Status("Cancelled", constants.orderStatus.cancelled));
 
                 break;
 
             case constants.orderType.dineIn: 
 
-                self.optionValues.push(new Status("Processing", constants.orderStatus.processing));
+                self.optionValues.removeAll();
+
                 self.optionValues.push(new Status("Occupied", constants.orderStatus.occupied));  
+                self.optionValues.push(new Status("Processing", constants.orderStatus.processing));             
                 self.optionValues.push(new Status("Completed", constants.orderStatus.completed));  
                 self.optionValues.push(new Status("Cancelled", constants.orderStatus.cancelled));
 
@@ -313,10 +317,14 @@ var CartViewModel = function () {
 
             case constants.orderType.delivery:
 
+                self.optionValues.removeAll();
+
                 self.optionValues.push(new Status("Pending", constants.orderStatus.pending));
-                self.optionValues.push(new Status("Ready", constants.orderStatus.ready));
                 self.optionValues.push(new Status("Processing", constants.orderStatus.processing));
-                self.optionValues.push(new Status("Completed", constants.orderStatus.completed));
+                self.optionValues.push(new Status("Ready", constants.orderStatus.ready));
+                self.optionValues.push(new Status("Dispatched", constants.orderStatus.dispatched));           
+                self.optionValues.push(new Status("Transit", constants.orderStatus.transit));
+                self.optionValues.push(new Status("Delivered", constants.orderStatus.delivered));
                 self.optionValues.push(new Status("Cancelled", constants.orderStatus.cancelled));
 
                 break;                       
@@ -324,7 +332,8 @@ var CartViewModel = function () {
             default:
                 break;
 
-        }       
+        }   
+    
 
         self.selectedOptionValue(self.optionValues.getStatusByStatusId(statusId));
         self.orderStatus(statusId);
@@ -351,8 +360,9 @@ var CartViewModel = function () {
                 MenuId: data.id(),
                 Name: data.name(),
                 IsProcessed: data.isProcessed(),
-                Price: data.sellingprice
-            }
+                Price: data.sellingprice,
+                Quantity: data.quantity()
+            }     
 
             basket.push(item)
         });
@@ -408,7 +418,7 @@ function CreateCart(menuId, data) {
     self.id = ko.observable(menuId);
     self.name = ko.observable(data.ItemName);
     self.isProcessed = ko.observable(data.IsProcessed);
-    self.quantity = ko.observable(1);
+    self.quantity = ko.observable(data.Quantity);
     self.sellingprice = ko.observable(data.Price);
        
     if (data.OptionIds != null)

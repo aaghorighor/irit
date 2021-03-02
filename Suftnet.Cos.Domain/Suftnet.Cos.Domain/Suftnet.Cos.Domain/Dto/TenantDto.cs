@@ -49,13 +49,11 @@
       public string StripePublishableKey { get; set; }
       public string StripeSecretKey { get; set; }     
       public string CurrencyCode { get; set; }
-      public string BackgroundUrl { get; set; }
-      public decimal DeliveryRate { get; set; }    
-      public string DeliveryUnitId { get; set; }       
-      public string DeliveryLimitNote { get; set; }
-      public bool? IsFlatRate { get; set; }
-      public decimal? FlatRate { get; set; }
+      public string BackgroundUrl { get; set; }     
       public string AppCode { get; set; }
+      public decimal? TaxRate { get; set; }
+      public decimal? DiscountRate { get; set; }
+      public decimal? DeliveryCost { get; set; }
     }
 
     public class MobileTenantDto

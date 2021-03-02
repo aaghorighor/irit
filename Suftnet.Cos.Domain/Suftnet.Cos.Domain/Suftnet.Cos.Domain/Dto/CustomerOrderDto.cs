@@ -11,8 +11,15 @@ namespace Suftnet.Cos.DataAccess
         public Guid OrderId { get; set; }
 
         [Column(TypeName = "smalldatetime")]
-        public DateTime CreatedAt { get; set; }     
-       
+        public DateTime CreatedAt { get; set; }
+
+        public new string OrderType
+        {
+            get
+            {
+                return "Delivery";
+            }
+        }
     }
 
     public partial class MobileCustomerOrderDto 
@@ -23,7 +30,6 @@ namespace Suftnet.Cos.DataAccess
         public string Email { get; set; }
         public string PaymentStatus { get; set; }
         public decimal? TaxRate { get; set; }
-        public decimal? DiscountRate { get; set; }
         public decimal? DeliveryCost { get; set; }
         public decimal? Payment { get; set; }
         public decimal? TotalDiscount { get; set; }

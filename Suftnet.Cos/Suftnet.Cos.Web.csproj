@@ -278,6 +278,7 @@
     <Compile Include="Areas\BackOffice\Controllers\TableController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\UserController.cs" />
     <Compile Include="Areas\FrontOffice\Controllers\CartController.cs" />
+    <Compile Include="Areas\FrontOffice\Controllers\DeliveryController.cs" />
     <Compile Include="Areas\FrontOffice\Controllers\ReservationController.cs" />
     <Compile Include="Areas\FrontOffice\Controllers\DashBoardController.cs" />
     <Compile Include="Areas\FrontOffice\Controllers\TableController.cs" />

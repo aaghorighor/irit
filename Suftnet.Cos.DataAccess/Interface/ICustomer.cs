@@ -39,7 +39,8 @@
     {     
         bool Delete(Guid Id);
         Guid Insert(CustomerOrderDto entity);
-        List<CustomerOrderDto> GetAll(Guid orderId);
+        List<CustomerOrderDto> Fetch(Guid tenantId, int iskip, int itake);
+        List<CustomerOrderDto> Fetch(Guid tenantId, int iskip, int itake, string search);
         List<MobileCustomerOrderDto> Fetch(Guid customerId);
     }
 

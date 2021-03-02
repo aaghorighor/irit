@@ -104,7 +104,15 @@
             _closeOrderCommand.CreatedBy = orderDone.userName;
             _closeOrderCommand.TenantId = new Guid(orderDone.externalId);
             _closeOrderCommand.CreatedDt = orderDone.updateDate;
-            _closeOrderCommand.StatusId = new Guid(eOrderStatus.Completed.ToUpper());
+
+            if(new Guid(orderDone.orderTypeId) == new Guid(eOrderType.DineIn))
+            {
+                _closeOrderCommand.StatusId = new Guid(eOrderStatus.Completed.ToUpper());
+            }
+            else if (new Guid(orderDone.orderTypeId) == new Guid(eOrderType.Delivery))
+            {
+                _closeOrderCommand.StatusId = new Guid(eOrderStatus.Ready);
+            }  
 
             await Task.Run(() => _closeOrderCommand.Execute());     
            
