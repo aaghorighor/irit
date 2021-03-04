@@ -49,7 +49,7 @@
 
         [ValidateInput(false)]
         [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
-        [PermissionFilter(BackOfficeViews.Settings, PermissionType.Create)]
+       // [PermissionFilter(BackOfficeViews.Settings, PermissionType.Create)]
         [ValidateAntiForgeryToken]
         public JsonResult Edit(TenantModel entityToCreate)
         {              

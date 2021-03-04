@@ -73,6 +73,7 @@
                             taxRate = User.Tenant.TaxRate.ToDecimal(),
                             discountRate = User.Tenant.DiscountRate.ToDecimal(),
                             deliveryCost = User.Tenant.DeliveryCost.ToDecimal(),
+                            currencySymbol = User.Tenant.CurrencySymbol,
                             stripePublishableKey = User.Tenant.StripePublishableKey.EmptyOrNull()
                         }                     
                     }

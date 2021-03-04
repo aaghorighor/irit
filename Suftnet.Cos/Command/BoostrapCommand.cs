@@ -69,7 +69,8 @@
                             longitude = User.Longitude,
                             latitude = User.Latitude,
                             town = User.Town,
-                            externalId = User.TenantId
+                            externalId = User.TenantId,
+                            currencySymbol = User.CurrencySymbol,
                         }                                           
 
                     }

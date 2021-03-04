@@ -39,7 +39,10 @@ namespace Suftnet.Cos.DataAccess
 
         [StringLength(100)]
         public string DeviceId { get; set; }
-       
+
+        [StringLength(50)]
+        public string StripeCustomerId { get; set; }
+
     }
 
     public class CreateCustomerDto

@@ -4,8 +4,7 @@
     using System;
 
     public interface ICreateDeliveryOrderCommand
-    {
-        Guid OrderId { get; set; }
+    {      
         DeliveryOrderAdapter entityToCreate { get; set; }
         void Execute();
    }

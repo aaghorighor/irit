@@ -40,12 +40,20 @@
         [StringLength(50)]
         public string ExternalId { get; set; }
         public DeliverOrder Order { get; set; }
+        public Guid OrderId { get; set; }
         public string UserName { get; set; }
         public string Note { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Token { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string SourceToken { get; set; }
+        public double Amount { get; set; }
         public string Mobile { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string CustomerId { get; set; }     
+      
     }
 
 }

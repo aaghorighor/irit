@@ -9,7 +9,8 @@
         bool Delete(Guid Id);
         Guid Insert(CustomerDto entity);
         bool Update(UpadteCustomerDto entity);
-        List<CustomerDto> GetAll(Guid tenantId);    
+        List<CustomerDto> GetAll(Guid tenantId);
+        bool Update(string stripeCustomerId, Guid customerId, Guid externalId);
     }
 
     public interface ICustomerAddress

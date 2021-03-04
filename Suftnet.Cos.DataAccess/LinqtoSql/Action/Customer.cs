@@ -46,6 +46,8 @@ namespace Suftnet.Cos.DataAccess.Action
         [StringLength(100)]
         public string DeviceId { get; set; }     
         public Guid TenantId { get; set; }
+        [StringLength(50)]
+        public string StripeCustomerId { get; set; }
 
     }
 }

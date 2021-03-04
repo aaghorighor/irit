@@ -141,6 +141,9 @@ var setting = {
                 $("#Name").val(model.Name);               
                 $("#Telephone").val(model.Telephone);
                 $("#Mobile").val(model.Mobile);
+                $("#DeliveryCost").val(model.DeliveryCost);
+                $("#TaxRate").val(model.TaxRate);
+                $("#DiscountRate").val(model.DiscountRate);
                 $("#Email").val(model.Email);
                 $("#WebsiteUrl").val(model.WebsiteUrl);
                 $("#Description").val(model.Description);

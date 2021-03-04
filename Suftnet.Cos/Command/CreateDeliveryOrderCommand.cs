@@ -26,12 +26,11 @@
         }               
               
         public DeliveryOrderAdapter entityToCreate { get; set; }
-        public Guid OrderId { get; set; }
-
+       
         public void Execute()
         {
-            OrderId = CreateOrder();
-            System.Threading.Tasks.Task.Run(() => ExecuteOrder(OrderId));
+            CreateOrder();
+            System.Threading.Tasks.Task.Run(() => ExecuteOrder(entityToCreate.OrderId));
         }
 
         #region private function
@@ -53,7 +52,7 @@
                 PaymentStatusId = new Guid(ePaymentStatus.Pending),
 
                 TenantId = new Guid(entityToCreate.ExternalId),
-                Id = Guid.NewGuid(),
+                Id = entityToCreate.OrderId,
 
                 FirstName = entityToCreate.FirstName,
                 LastName = entityToCreate.LastName,
@@ -108,7 +107,7 @@
         {
             var orderedSummaryDto = new OrderedSummaryDto
             {
-                AmountPaid = entityToCreate.Order.paid.ToDecimal(),
+                AmountPaid = entityToCreate.Amount.ToDecimal(),
                 Balance = entityToCreate.Order.balance.ToDecimal(),
                 DeliveryCost = entityToCreate.Order.deliveryCost.ToDecimal(),
                 DiscountRate = entityToCreate.Order.discount.ToDecimal(),

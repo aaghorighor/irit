@@ -12,3 +12,73 @@ The controller for path '/tes' was not found or does not implement IController.
 --------------------------------------------
 
 --------------------------------------------------------------------------------------------
+20210303 17:57:13 [10] ERROR Web [(null)] - StackTrace
+   at Stripe.Infrastructure.Requestor.ExecuteRequest(HttpRequestMessage requestMessage)
+   at Stripe.Service`1.PostRequest[T](String url, BaseOptions options, RequestOptions requestOptions)
+   at Stripe.ChargeService.Create(ChargeCreateOptions options, RequestOptions requestOptions)
+   at Suftnet.Cos.Stripe.ChargeProvider.Charge(Int64 amount, String currency, String customerId, String sourceToken, String description, String& error) in E:\Git\Web\Irit\Irit\Suftnet.Cos.Stripe\ServiceProvider\ChargeProvider.cs:line 31
+   at Suftnet.Cos.Web.Command.OrderPaymentCommand.Charge() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\OrderPaymentCommand.cs:line 76Messages
+This value must be greater than or equal to 1.
+--------------------------------------------
+
+--------------------------------------------------------------------------------------------
+20210303 18:08:30 [15] ERROR Web [(null)] - StackTrace
+   at Suftnet.Cos.Web.Command.OrderPaymentCommand.CreateCustomer(String stripeCustomerId) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\OrderPaymentCommand.cs:line 97
+   at Suftnet.Cos.Web.Command.OrderPaymentCommand.Charge() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\OrderPaymentCommand.cs:line 66Messages
+Object reference not set to an instance of an object.
+--------------------------------------------
+
+--------------------------------------------------------------------------------------------
+20210303 18:10:12 [15] ERROR Web [(null)] - StackTrace
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   at System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   at System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`1.VerifyColumns(SqlConnection conn, String table, String[] columns)
+   at Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`1.IsIdentityV1Schema(DbContext db)
+   at Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`1..ctor(String nameOrConnectionString, Boolean throwIfV1Schema)
+   at Suftnet.Cos.DataAccess.Action.DataContext..ctor(String connectionString) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Action\DataContext.cs:line 17
+   at Suftnet.DataFactory.LinqToSql.DataContextFactory.CreateContext() in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\DataContextFactory.cs:line 15
+   at Suftnet.Cos.DataAccess.Logger.Insert(LogDto entity) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\Logger.cs:line 49
+   at Suftnet.Cos.Core.LogAdapter.Logger(String message) in E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\Implementation\Log4NetAdapter.cs:line 138
+   at Suftnet.Cos.Core.LogAdapter.LogError(Exception ex) in E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\Implementation\Log4NetAdapter.cs:line 79
+   at Suftnet.Cos.Web.Command.OrderPaymentCommand.Charge() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\OrderPaymentCommand.cs:line 90
+   at Suftnet.Cos.Web.Command.OrderPaymentCommand.Execute() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\OrderPaymentCommand.cs:line 31
+   at Suftnet.Cos.Mobile.CustomerDeliveryOrderController.Create(DeliveryOrderAdapter entityToCreate) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerDeliveryOrderController.cs:line 79
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
+A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+--------------------------------------------
+HelpLink.ProdName = Microsoft SQL Server
+HelpLink.EvtSrc = MSSQLServer
+HelpLink.EvtID = -1
+HelpLink.BaseHelpUrl = http://go.microsoft.com/fwlink
+HelpLink.LinkId = 20476
+Request.Body = {"amount":150.96,"baskets":[{"addonIds":"57,61","addonNames":"Bebidas,BOTTLEGREEN-APPLE-CORDIAL","category":"SOUP MEALS SPECIAL","id":5,"imageUrl":"179f3c81-8c2a-432a-960d-b89c69f4f9ef.jpg","menu":"AFANG SOUP","menuId":"8c9de96d-39dc-41cc-8e2d-74533df463d0","price":24.979999999999997,"quantity":1},{"addonIds":"","addonNames":"","category":"STARTERS","id":6,"imageUrl":"20297964-1d30-48d8-96c8-a25ae8ae5b20.jpg","menu":"CINNAMON FRENCH TOAST STICKS","menuId":"0f85ffe5-2e7b-409a-955e-a390bd40c64f","price":14.0,"quantity":2},{"addonIds":"","addonNames":"","category":"STARTERS","id":7,"imageUrl":"20297964-1d30-48d8-96c8-a25ae8ae5b20.jpg","menu":"CINNAMON FRENCH TOAST STICKS","menuId":"0f85ffe5-2e7b-409a-955e-a390bd40c64f","price":14.0,"quantity":2},{"addonIds":"","addonNames":"","category":"MAIN COURSE","id":8,"imageUrl":"834bcd13-4ae5-403d-a7c9-7fcad7c5aa7d.jpg","menu":"JOLLOF RICE","menuId":"6c55fc4d-d92b-42ca-a3eb-51f130e62981","price":60.0,"quantity":3},{"addonIds":"","addonNames":"","category":"STARTERS","id":9,"imageUrl":"690afbd9-bb03-4710-b2fc-f56651c89565.jpg","menu":"YAM PEPPER SOUP","menuId":"8010d9df-ced6-46a7-8a6e-a891e2eeb00d","price":37.98,"quantity":2}],"customerId":"61397851-b219-4964-af1d-9da1ad3a1a73","externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","firstName":"James","lastName":"Micheal","mobile":"074070227236","order":{"addressId":"d667c8fd-59c1-49a7-a506-72ba4ccaa0e0","balance":0.0,"customerId":"61397851-b219-4964-af1d-9da1ad3a1a73","discount":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":0.0,"orderDate":"3/03/2021 06:08:57","paid":0.0,"tax":0.0,"total":150.95999999999998,"totalDiscount":0.0,"totalTax":0.0},"sourceToken":"tok_1IQz82F5qtVzXXPMoqGzQ2IF","userName":"JamesMicheal"}
+
+--------------------------------------------------------------------------------------------

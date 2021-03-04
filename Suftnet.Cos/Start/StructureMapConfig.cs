@@ -58,6 +58,7 @@
                 x.For<ICreateUserCommand>().Use<CreateUserCommand>();
                 x.For<ICustomerBoostrapCommand>().Use<CustomerBoostrapCommand>();
                 x.For<ICreateDeliveryOrderCommand>().Use<CreateDeliveryOrderCommand>();
+                x.For<IOrderPaymentCommand>().Use<OrderPaymentCommand>();
             });           
         }
     }

@@ -93,9 +93,9 @@ namespace Suftnet.Cos.Common
     public class PlanType
     {
         public const string Trial = "1015_1461";
-        public const string Basic = "price_1HiMX9J9QQF7JMlNTPeIAz81";
-        public const string Premium = "price_1HiMX9J9QQF7JMlNqSot0VCU";
-        public const string PremiumPlus = "price_1HiMX9J9QQF7JMlNkDdQsDtR";       
+        public const string Basic = "price_1IQtWtIPXLzYa41IMF3Z7v2Q";
+        public const string Premium = "price_1IQtWtIPXLzYa41I5DDM8zVu";
+        public const string PremiumPlus = "price_1IQtWtIPXLzYa41IJ0zTfNEf";       
     }
 
     public static class PlanNameType
@@ -260,6 +260,12 @@ namespace Suftnet.Cos.Common
     {
         public const string Pound = "gbp";
         public const string Dollar = "usb";
+    }
+
+    public static class CurrencyCode
+    {
+        public const int US = 266;
+        public const int UK = 265;
     }
 
     public static class Settings

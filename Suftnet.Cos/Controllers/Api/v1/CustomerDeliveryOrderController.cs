@@ -16,13 +16,15 @@
         private readonly ICreateDeliveryOrderCommand _createDeliveryOrderCommand;
         private readonly ICustomerOrder _customerOrder;
         private readonly IOrderDetail _orderDetail;
+        private readonly IOrderPaymentCommand _orderPaymentCommand;
 
-        public CustomerDeliveryOrderController(ICustomerOrder customerOrder, IOrderDetail orderDetail,
+        public CustomerDeliveryOrderController(ICustomerOrder customerOrder, IOrderDetail orderDetail, IOrderPaymentCommand orderPaymentCommand,
         ICreateDeliveryOrderCommand createDeliveryOrderCommand)
         {
             _customerOrder = customerOrder;
             _orderDetail = orderDetail;
-            _createDeliveryOrderCommand = createDeliveryOrderCommand;        
+            _createDeliveryOrderCommand = createDeliveryOrderCommand;
+            _orderPaymentCommand = orderPaymentCommand;
         }
 
         [HttpGet]
@@ -73,10 +75,18 @@
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
             }
 
+            _orderPaymentCommand.entityToCreate = entityToCreate;
+            _orderPaymentCommand.Execute();
+
+            if(_orderPaymentCommand.Error)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = _orderPaymentCommand.Reason }));
+            }
+
             _createDeliveryOrderCommand.entityToCreate = entityToCreate;
             _createDeliveryOrderCommand.Execute();
 
-            return Ok(_createDeliveryOrderCommand.OrderId);           
+            return Ok(entityToCreate.OrderId);           
         }       
 
     }

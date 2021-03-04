@@ -14,7 +14,7 @@
             {
                 var objResult = (from o in context.Customers                               
                                  where o.Id == Id
-                                 select new CustomerDto { FirstName = o.FirstName, LastName = o.LastName, Email = o.Email, DeviceId = o.DeviceId, Mobile = o.Mobile, Serial=o.Serial, Id = o.Id }).FirstOrDefault();
+                                 select new CustomerDto { StripeCustomerId = o.StripeCustomerId, FirstName = o.FirstName, LastName = o.LastName, Email = o.Email, DeviceId = o.DeviceId, Mobile = o.Mobile, Serial=o.Serial, Id = o.Id }).FirstOrDefault();
                 return objResult;
             }
         }
@@ -41,7 +41,7 @@
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.Customer() { Id = entity.Id, FirstName = entity.FirstName, LastName = entity.LastName, Email = entity.Email, DeviceId = entity.DeviceId, Serial = entity.Serial, Mobile = entity.Mobile, TenantId = entity.TenantId, UserId = entity.UserId, Active = entity.Active, CreatedAt = entity.CreatedDT, CreatedBy = entity.CreatedBy };
+                var obj = new Action.Customer() { StripeCustomerId = entity.StripeCustomerId, Id = entity.Id, FirstName = entity.FirstName, LastName = entity.LastName, Email = entity.Email, DeviceId = entity.DeviceId, Serial = entity.Serial, Mobile = entity.Mobile, TenantId = entity.TenantId, UserId = entity.UserId, Active = entity.Active, CreatedAt = entity.CreatedDT, CreatedBy = entity.CreatedBy };
                 context.Customers.Add(obj);
                 context.SaveChanges();
                 return obj.Id;
@@ -75,7 +75,34 @@
 
                 return response;
             }
-        }        
+        }
+
+        public bool Update(string stripeCustomerId, Guid customerId, Guid externalId)
+        {
+            bool response = false;
+
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objToUpdate = context.Customers.SingleOrDefault(o => o.Id == customerId && o.TenantId == externalId);
+
+                if (objToUpdate != null)
+                {
+                    objToUpdate.StripeCustomerId = stripeCustomerId;                   
+
+                    try
+                    {
+                        context.SaveChanges();
+                        response = true;
+                    }
+                    catch (ChangeConflictException)
+                    {
+                        response = false;
+                    }
+                }
+
+                return response;
+            }
+        }
 
         public List<CustomerDto> GetAll(Guid tenantId)
         {
