@@ -73,8 +73,8 @@
                     _stripeCustomerId = _customerProvider.Create(customer.Email, customer.FirstName, customer.LastName);                   
                 }
 
-               var _charge = _chargeProvider.Charge((long)entityToCreate.Amount,
-                  chargeCurrency, _stripeCustomerId, entityToCreate.SourceToken, $"{"Order -" + $"{entityToCreate.OrderId.ToString().Substring(0,10)} from " + tenant.Name}", out error);
+               var _charge = _chargeProvider.Charge((long)entityToCreate.Order.GrandTotal,
+                chargeCurrency, _stripeCustomerId, entityToCreate.SourceToken, $"{"Order -" + $"{entityToCreate.OrderId.ToString().Substring(0,10)} from " + tenant.Name}", out error);;
 
                 if (_charge)
                 {

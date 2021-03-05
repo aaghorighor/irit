@@ -18,19 +18,19 @@
 
     public class DeliverOrder
     {
-        public double balance { get; set; }
-        public double discount { get; set; }
-        public string externalId { get; set; }
-        public double grandTotal { get; set; }
+        public decimal Balance { get; set; }
+        public decimal DiscountRate { get; set; }
+        public string ExternalId { get; set; }
+        public decimal GrandTotal { get; set; }
         public int id { get; set; }
-        public double paid { get; set; }
-        public string addressId { get; set; }
-        public string customerId { get; set; }
-        public double tax { get; set; }
-        public double total { get; set; }
-        public double totalDiscount { get; set; }
-        public double totalTax { get; set; }
-        public double deliveryCost { get; set; }
+        public decimal Paid { get; set; }
+        public string AddressId { get; set; }
+        public string CustomerId { get; set; }
+        public decimal TaxRate { get; set; }
+        public decimal Total { get; set; }
+        public decimal TotalDiscount { get; set; }
+        public decimal TotalTax { get; set; }
+        public decimal DeliveryCost { get; set; }
     }
 
     public class DeliveryOrderAdapter
@@ -47,8 +47,7 @@
         public string LastName { get; set; }
         [Required]
         [StringLength(50)]
-        public string SourceToken { get; set; }
-        public double Amount { get; set; }
+        public string SourceToken { get; set; }        
         public string Mobile { get; set; }
         [Required]
         [StringLength(50)]

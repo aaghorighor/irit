@@ -56,7 +56,14 @@
 
                 FirstName = entityToCreate.FirstName,
                 LastName = entityToCreate.LastName,
-                Mobile = entityToCreate.Mobile
+                Mobile = entityToCreate.Mobile,
+
+                TaxRate = entityToCreate.Order.TaxRate,
+
+                DiscountRate = entityToCreate.Order.DiscountRate,
+                DeliveryCost = entityToCreate.Order.DeliveryCost,
+                TotalDiscount = entityToCreate.Order.TotalDiscount,
+                TotalTax = entityToCreate.Order.TotalTax
             };
            _order.Insert(order);
             return order.Id;
@@ -67,7 +74,7 @@
             {
                 Id = Guid.NewGuid(),
                 OrderId = orderId,
-                CustomerId = new Guid(entityToCreate.Order.customerId),
+                CustomerId = new Guid(entityToCreate.Order.CustomerId),
                 CreatedDT = DateTime.UtcNow,
                 CreatedBy = entityToCreate.UserName
             };
@@ -81,7 +88,7 @@
             {                 
                 Id = Guid.NewGuid(),
                 CustomerOrderId = customerOrderId,
-                AddressId = new Guid(entityToCreate.Order.addressId),
+                AddressId = new Guid(entityToCreate.Order.AddressId),
                 CreatedDT = DateTime.UtcNow,
                 CreatedBy = entityToCreate.UserName
             };
@@ -107,14 +114,14 @@
         {
             var orderedSummaryDto = new OrderedSummaryDto
             {
-                AmountPaid = entityToCreate.Amount.ToDecimal(),
-                Balance = entityToCreate.Order.balance.ToDecimal(),
-                DeliveryCost = entityToCreate.Order.deliveryCost.ToDecimal(),
-                DiscountRate = entityToCreate.Order.discount.ToDecimal(),
-                TaxRate = entityToCreate.Order.tax.ToDecimal(),             
-                Total = entityToCreate.Order.total.ToDecimal(),
-                TotalDiscount = entityToCreate.Order.totalDiscount.ToDecimal(),
-                TotalTax = entityToCreate.Order.totalTax.ToDecimal(),
+                AmountPaid =(decimal)entityToCreate.Order.Paid.ToDecimal(),
+                Balance = entityToCreate.Order.Balance.ToDecimal(),
+                DeliveryCost = entityToCreate.Order.DeliveryCost.ToDecimal(),
+                DiscountRate = entityToCreate.Order.DiscountRate.ToDecimal(),
+                TaxRate = entityToCreate.Order.TaxRate.ToDecimal(),             
+                Total = entityToCreate.Order.Total.ToDecimal(),
+                TotalDiscount = entityToCreate.Order.TotalDiscount.ToDecimal(),
+                TotalTax = entityToCreate.Order.TotalTax.ToDecimal(),
                 OrderId = orderId,
                 Note = entityToCreate.Note,
                 OrderStatusId = new Guid(eOrderStatus.Pending.ToUpper()),

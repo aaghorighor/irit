@@ -33,6 +33,7 @@ namespace Suftnet.Cos.DataAccess
         public decimal? DeliveryCost { get; set; }
         public decimal? Payment { get; set; }
         public decimal? TotalDiscount { get; set; }
+        public decimal? DiscountRate { get; set; }
         public decimal? TotalTax { get; set; }
         public decimal? Total { get; set; }
         public decimal? GrandTotal { get; set; }

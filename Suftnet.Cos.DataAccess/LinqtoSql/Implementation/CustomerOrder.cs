@@ -59,7 +59,7 @@
                                  join p in context.PaymentStatuses on o.PaymentStatusId equals p.Id
                                  where a.CustomerId == customerId
                                  orderby o.CreatedDt descending
-                                 select new MobileCustomerOrderDto { CreatedAt = o.CreatedDt, OrderId = o.Id, StatusId = o.StatusId, CompletedAddress = d.CompleteAddress, AddressId = e.AddressId, CustomerId = customerId, Email = c.Email, PaymentStatus = p.Name, Mobile = c.Mobile, FirstName = c.FirstName, LastName = c.LastName, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, TotalDiscount = o.TotalDiscount, DeliveryCost = o.DeliveryCost, TaxRate = o.TaxRate, Status = s.Name, GrandTotal = o.GrandTotal, Total = o.Total }).ToList();
+                                 select new MobileCustomerOrderDto { DiscountRate = o.DiscountRate, CreatedAt = o.CreatedDt, OrderId = o.Id, StatusId = o.StatusId, CompletedAddress = d.CompleteAddress, AddressId = e.AddressId, CustomerId = customerId, Email = c.Email, PaymentStatus = p.Name, Mobile = c.Mobile, FirstName = c.FirstName, LastName = c.LastName, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, TotalDiscount = o.TotalDiscount, DeliveryCost = o.DeliveryCost, TaxRate = o.TaxRate, Status = s.Name, GrandTotal = o.GrandTotal, Total = o.Total }).ToList();
                 return objResult;
             }
         }

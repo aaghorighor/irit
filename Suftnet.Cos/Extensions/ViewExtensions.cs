@@ -949,6 +949,16 @@
             return (decimal)value;
         }
 
+        public static decimal ToDecimal(this decimal value)
+        {
+            if (value == 0)
+            {
+                return 0;
+            }
+
+            return (decimal)value;
+        }
+
         public static string ReCAPTCHA(this HtmlHelper helper)
         {
             return GeneralConfiguration.Configuration.Settings.CaptchaSiteKey;

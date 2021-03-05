@@ -1544,3 +1544,101 @@
 -------------------------------------------------------------------------------------------
 20210304 18:21:22 [12] INFO  Web [(null)] - Post-Request Content:
 -------------------------------------------------------------------------------------------
+20210305 10:41:31 [10] INFO  Web [(null)] - Jerur webapi started at :05/03/2021 10:41:31
+-------------------------------------------------------------------------------------------
+20210305 10:41:35 [10] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210305 10:41:36 [10] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210305 10:41:36 [10] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210305 10:41:36 [10] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 10:49:05 [10] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 10:55:05 [21] INFO  Web [(null)] - Jerur webapi started at :05/03/2021 10:55:05
+-------------------------------------------------------------------------------------------
+20210305 10:55:08 [21] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210305 10:55:09 [21] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210305 10:55:09 [21] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210305 10:55:09 [21] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 10:56:53 [18] INFO  Web [(null)] - Post-Request Content:{"amount":0.0,"baskets":[{"addonIds":"61","addonNames":"BOTTLEGREEN-APPLE-CORDIAL","category":"SOUP MEALS SPECIAL","id":19,"imageUrl":"179f3c81-8c2a-432a-960d-b89c69f4f9ef.jpg","menu":"AFANG SOUP","menuId":"8c9de96d-39dc-41cc-8e2d-74533df463d0","price":21.979999999999997,"quantity":1},{"addonIds":"","addonNames":"","category":"FROM THE GRILL","id":20,"imageUrl":"5d69a43b-68fa-42b9-8b1a-4e1a2592aba3.jpg","menu":"ASUN","menuId":"147ee6fb-7e5f-42e2-9d7d-3526f7f26767","price":55.96,"quantity":4},{"addonIds":"10,23","addonNames":"SIDES,SIDES","category":"FROM THE GRILL","id":21,"imageUrl":"d92f6a12-86ee-4438-9036-65e707a1f261.jpg","menu":"BEEF SUYA","menuId":"f6476848-a355-4e98-abb8-9342c2d298cf","price":39.980000000000004,"quantity":2},{"addonIds":"46,22","addonNames":"SWALLOW,SWALLOW","category":"SOUP MEALS SPECIAL","id":22,"imageUrl":"80181e6d-1d04-4575-9697-e4be18fa188e.jpg","menu":"BITTER LEAF SOUP","menuId":"2266c369-8b10-451f-8c05-b17ab7d02bcf","price":24.99,"quantity":1}],"customerId":"a5010c48-0141-4f22-b26d-a5354ee7af32","deliveryCost":0.0,"discountRate":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","firstName":"James","lastName":"Aghorighor","mobile":"07407022374","order":{"addressId":"4968ccbc-d70f-4bad-a6a0-7ac7bc0a3078","balance":0.0,"customerId":"a5010c48-0141-4f22-b26d-a5354ee7af32","deliveryCost":10.0,"discount":2.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":155.7682,"orderDate":"3/05/2021 10:56:51","paid":155.7682,"tax":2.0,"total":142.91,"totalDiscount":2.8582,"totalTax":2.8582},"sourceToken":"tok_1IRbKxF5qtVzXXPMcHrhBujZ","taxRate":0.0,"totalDiscount":0.0,"totalTax":0.0,"userName":"JamesAghorighor"}
+-------------------------------------------------------------------------------------------
+20210305 11:00:47 [13] INFO  Web [(null)] - Post-Request Content:{"amount":0.0,"baskets":[{"addonIds":"61","addonNames":"BOTTLEGREEN-APPLE-CORDIAL","category":"SOUP MEALS SPECIAL","id":23,"imageUrl":"179f3c81-8c2a-432a-960d-b89c69f4f9ef.jpg","menu":"AFANG SOUP","menuId":"8c9de96d-39dc-41cc-8e2d-74533df463d0","price":21.979999999999997,"quantity":1},{"addonIds":"","addonNames":"","category":"FROM THE GRILL","id":24,"imageUrl":"5d69a43b-68fa-42b9-8b1a-4e1a2592aba3.jpg","menu":"ASUN","menuId":"147ee6fb-7e5f-42e2-9d7d-3526f7f26767","price":27.98,"quantity":2},{"addonIds":"10","addonNames":"SIDES","category":"FROM THE GRILL","id":25,"imageUrl":"d92f6a12-86ee-4438-9036-65e707a1f261.jpg","menu":"BEEF SUYA","menuId":"f6476848-a355-4e98-abb8-9342c2d298cf","price":16.990000000000002,"quantity":1},{"addonIds":"46","addonNames":"SWALLOW","category":"SOUP MEALS SPECIAL","id":26,"imageUrl":"80181e6d-1d04-4575-9697-e4be18fa188e.jpg","menu":"BITTER LEAF SOUP","menuId":"2266c369-8b10-451f-8c05-b17ab7d02bcf","price":21.99,"quantity":1},{"addonIds":"","addonNames":"","category":"DESSERTS","id":27,"imageUrl":"e65a7715-560e-4c7c-9f5a-72b6ee1f4709.jpg","menu":"Banana Milo Pudding","menuId":"b5283d67-3075-4159-b9e4-1d53be5513ba","price":20.0,"quantity":2}],"customerId":"a5010c48-0141-4f22-b26d-a5354ee7af32","deliveryCost":0.0,"discountRate":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","firstName":"James","lastName":"Aghorighor","mobile":"07407022374","order":{"addressId":"4968ccbc-d70f-4bad-a6a0-7ac7bc0a3078","balance":0.0,"customerId":"a5010c48-0141-4f22-b26d-a5354ee7af32","deliveryCost":10.0,"discount":2.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":121.11879999999998,"orderDate":"3/05/2021 11:00:45","paid":121.11879999999998,"tax":2.0,"total":108.93999999999998,"totalDiscount":2.1788,"totalTax":2.1788},"sourceToken":"tok_1IRbOkF5qtVzXXPMCvPAGW9A","taxRate":0.0,"totalDiscount":0.0,"totalTax":0.0,"userName":"JamesAghorighor"}
+-------------------------------------------------------------------------------------------
+20210305 11:03:21 [13] INFO  Web [(null)] - Post-Request Content:{"amount":0.0,"baskets":[{"addonIds":"61,59","addonNames":"BOTTLEGREEN-APPLE-CORDIAL,Bebidas","category":"SOUP MEALS SPECIAL","id":28,"imageUrl":"179f3c81-8c2a-432a-960d-b89c69f4f9ef.jpg","menu":"AFANG SOUP","menuId":"8c9de96d-39dc-41cc-8e2d-74533df463d0","price":24.979999999999997,"quantity":1},{"addonIds":"","addonNames":"","category":"FROM THE GRILL","id":29,"imageUrl":"5d69a43b-68fa-42b9-8b1a-4e1a2592aba3.jpg","menu":"ASUN","menuId":"147ee6fb-7e5f-42e2-9d7d-3526f7f26767","price":41.97,"quantity":3},{"addonIds":"23","addonNames":"SIDES","category":"FROM THE GRILL","id":30,"imageUrl":"d92f6a12-86ee-4438-9036-65e707a1f261.jpg","menu":"BEEF SUYA","menuId":"f6476848-a355-4e98-abb8-9342c2d298cf","price":33.980000000000004,"quantity":2},{"addonIds":"22","addonNames":"SWALLOW","category":"SOUP MEALS SPECIAL","id":31,"imageUrl":"80181e6d-1d04-4575-9697-e4be18fa188e.jpg","menu":"BITTER LEAF SOUP","menuId":"2266c369-8b10-451f-8c05-b17ab7d02bcf","price":21.99,"quantity":1}],"customerId":"a5010c48-0141-4f22-b26d-a5354ee7af32","deliveryCost":0.0,"discountRate":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","firstName":"James","lastName":"Aghorighor","mobile":"07407022374","order":{"addressId":"4968ccbc-d70f-4bad-a6a0-7ac7bc0a3078","balance":0.0,"customerId":"a5010c48-0141-4f22-b26d-a5354ee7af32","deliveryCost":10.0,"discountRate":2.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":135.3784,"orderDate":"3/05/2021 11:03:19","paid":135.3784,"taxRate":2.0,"total":122.91999999999999,"totalDiscount":2.4583999999999997,"totalTax":2.4583999999999997},"sourceToken":"tok_1IRbRDF5qtVzXXPMFgQGRBRx","taxRate":0.0,"totalDiscount":0.0,"totalTax":0.0,"userName":"JamesAghorighor"}
+-------------------------------------------------------------------------------------------
+20210305 11:06:11 [13] INFO  Web [(null)] - Post-Request Content:{"amount":0.0,"baskets":[{"addonIds":"61,59","addonNames":"BOTTLEGREEN-APPLE-CORDIAL,Bebidas","category":"SOUP MEALS SPECIAL","id":28,"imageUrl":"179f3c81-8c2a-432a-960d-b89c69f4f9ef.jpg","menu":"AFANG SOUP","menuId":"8c9de96d-39dc-41cc-8e2d-74533df463d0","price":24.979999999999997,"quantity":1},{"addonIds":"","addonNames":"","category":"FROM THE GRILL","id":29,"imageUrl":"5d69a43b-68fa-42b9-8b1a-4e1a2592aba3.jpg","menu":"ASUN","menuId":"147ee6fb-7e5f-42e2-9d7d-3526f7f26767","price":41.97,"quantity":3},{"addonIds":"23","addonNames":"SIDES","category":"FROM THE GRILL","id":30,"imageUrl":"d92f6a12-86ee-4438-9036-65e707a1f261.jpg","menu":"BEEF SUYA","menuId":"f6476848-a355-4e98-abb8-9342c2d298cf","price":33.980000000000004,"quantity":2},{"addonIds":"22","addonNames":"SWALLOW","category":"SOUP MEALS SPECIAL","id":31,"imageUrl":"80181e6d-1d04-4575-9697-e4be18fa188e.jpg","menu":"BITTER LEAF SOUP","menuId":"2266c369-8b10-451f-8c05-b17ab7d02bcf","price":21.99,"quantity":1}],"customerId":"a5010c48-0141-4f22-b26d-a5354ee7af32","deliveryCost":0.0,"discountRate":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","firstName":"James","lastName":"Aghorighor","mobile":"07407022374","order":{"addressId":"4968ccbc-d70f-4bad-a6a0-7ac7bc0a3078","balance":0.0,"customerId":"a5010c48-0141-4f22-b26d-a5354ee7af32","deliveryCost":10.0,"discountRate":2.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":135.3784,"orderDate":"3/05/2021 11:06:09","paid":135.3784,"taxRate":2.0,"total":122.91999999999999,"totalDiscount":2.4583999999999997,"totalTax":2.4583999999999997},"sourceToken":"tok_1IRbTyF5qtVzXXPMhlGRqhZq","taxRate":0.0,"totalDiscount":0.0,"totalTax":0.0,"userName":"JamesAghorighor"}
+-------------------------------------------------------------------------------------------
+20210305 11:07:57 [13] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 12:20:09 [8] INFO  Web [(null)] - Jerur webapi started at :05/03/2021 12:20:09
+-------------------------------------------------------------------------------------------
+20210305 12:20:13 [8] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210305 12:20:13 [8] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210305 12:20:14 [8] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210305 12:20:14 [8] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 12:20:19 [10] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 12:44:49 [10] INFO  Web [(null)] - Jerur webapi started at :05/03/2021 12:44:49
+-------------------------------------------------------------------------------------------
+20210305 12:44:52 [10] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210305 12:44:52 [10] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210305 12:44:52 [10] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210305 12:44:52 [10] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 12:46:59 [11] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 12:47:01 [13] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 12:54:51 [23] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 12:54:53 [9] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 12:55:35 [20] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 12:56:22 [20] INFO  Web [(null)] - Post-Request Content:{"amount":0.0,"baskets":[{"addonIds":"61,59","addonNames":"BOTTLEGREEN-APPLE-CORDIAL,Bebidas","category":"SOUP MEALS SPECIAL","id":32,"imageUrl":"179f3c81-8c2a-432a-960d-b89c69f4f9ef.jpg","menu":"AFANG SOUP","menuId":"8c9de96d-39dc-41cc-8e2d-74533df463d0","price":24.979999999999997,"quantity":1},{"addonIds":"10","addonNames":"SIDES","category":"FROM THE GRILL","id":33,"imageUrl":"d92f6a12-86ee-4438-9036-65e707a1f261.jpg","menu":"BEEF SUYA","menuId":"f6476848-a355-4e98-abb8-9342c2d298cf","price":16.990000000000002,"quantity":1},{"addonIds":"22","addonNames":"SWALLOW","category":"SOUP MEALS SPECIAL","id":34,"imageUrl":"80181e6d-1d04-4575-9697-e4be18fa188e.jpg","menu":"BITTER LEAF SOUP","menuId":"2266c369-8b10-451f-8c05-b17ab7d02bcf","price":21.99,"quantity":1}],"customerId":"a5010c48-0141-4f22-b26d-a5354ee7af32","deliveryCost":0.0,"discountRate":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","firstName":"James","lastName":"Aghorighor","mobile":"07407022374","order":{"addressId":"4968ccbc-d70f-4bad-a6a0-7ac7bc0a3078","balance":0.0,"customerId":"a5010c48-0141-4f22-b26d-a5354ee7af32","deliveryCost":10.0,"discountRate":2.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":73.96,"orderDate":"3/05/2021 12:56:20","paid":73.96,"taxRate":2.0,"total":63.959999999999994,"totalDiscount":1.2792,"totalTax":1.2792},"sourceToken":"tok_1IRdCbF5qtVzXXPMKe7utH8s","taxRate":0.0,"totalDiscount":0.0,"totalTax":0.0,"userName":"JamesAghorighor"}
+-------------------------------------------------------------------------------------------
+20210305 12:56:30 [23] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 12:56:31 [9] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 12:59:54 [30] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 12:59:57 [30] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 13:00:47 [17] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 13:00:50 [30] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 13:03:25 [33] INFO  Web [(null)] - Jerur webapi started at :05/03/2021 13:03:25
+-------------------------------------------------------------------------------------------
+20210305 13:03:29 [33] INFO  Web [(null)] - routes configured
+-------------------------------------------------------------------------------------------
+20210305 13:03:29 [33] INFO  Web [(null)] - bundles configured
+-------------------------------------------------------------------------------------------
+20210305 13:03:30 [33] INFO  Web [(null)] - Website configuration enabled
+-------------------------------------------------------------------------------------------
+20210305 13:03:30 [33] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 13:04:24 [29] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 13:04:43 [13] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 13:05:30 [26] INFO  Web [(null)] - Post-Request Content:{"amount":0.0,"baskets":[{"addonIds":"","addonNames":"","category":"FROM THE GRILL","id":35,"imageUrl":"d92f6a12-86ee-4438-9036-65e707a1f261.jpg","menu":"BEEF SUYA","menuId":"f6476848-a355-4e98-abb8-9342c2d298cf","price":13.99,"quantity":1},{"addonIds":"","addonNames":"","category":"SOUP MEALS SPECIAL","id":36,"imageUrl":"80181e6d-1d04-4575-9697-e4be18fa188e.jpg","menu":"BITTER LEAF SOUP","menuId":"2266c369-8b10-451f-8c05-b17ab7d02bcf","price":18.99,"quantity":1}],"customerId":"a5010c48-0141-4f22-b26d-a5354ee7af32","deliveryCost":0.0,"discountRate":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","firstName":"James","lastName":"Aghorighor","mobile":"07407022374","order":{"addressId":"4968ccbc-d70f-4bad-a6a0-7ac7bc0a3078","balance":0.0,"customerId":"a5010c48-0141-4f22-b26d-a5354ee7af32","deliveryCost":10.0,"discountRate":2.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":42.98,"orderDate":"3/05/2021 01:05:28","paid":42.98,"taxRate":2.0,"total":32.98,"totalDiscount":0.6596,"totalTax":0.6596},"sourceToken":"tok_1IRdLRF5qtVzXXPM7kyZNjCp","taxRate":0.0,"totalDiscount":0.0,"totalTax":0.0,"userName":"JamesAghorighor"}
+-------------------------------------------------------------------------------------------
+20210305 13:05:38 [13] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
+20210305 13:05:40 [13] INFO  Web [(null)] - Post-Request Content:
+-------------------------------------------------------------------------------------------
