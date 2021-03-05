@@ -8,9 +8,10 @@
         CustomerDto Get(Guid Id);
         bool Delete(Guid Id);
         Guid Insert(CustomerDto entity);
-        bool Update(UpadteCustomerDto entity);
+        bool Update(UpdateCustomerDto entity);
         List<CustomerDto> GetAll(Guid tenantId);
         bool Update(string stripeCustomerId, Guid customerId, Guid externalId);
+        bool UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto);
     }
 
     public interface ICustomerAddress

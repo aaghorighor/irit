@@ -48,7 +48,7 @@
             }
         }
 
-        public bool Update(UpadteCustomerDto entity)
+        public bool Update(UpdateCustomerDto entity)
         {
             bool response = false;
 
@@ -88,6 +88,33 @@
                 if (objToUpdate != null)
                 {
                     objToUpdate.StripeCustomerId = stripeCustomerId;                   
+
+                    try
+                    {
+                        context.SaveChanges();
+                        response = true;
+                    }
+                    catch (ChangeConflictException)
+                    {
+                        response = false;
+                    }
+                }
+
+                return response;
+            }
+        }
+
+        public bool UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto)
+        {
+            bool response = false;
+
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objToUpdate = context.Customers.SingleOrDefault(o => o.Id == updateFcmTokenDto.CustomerId && o.TenantId == updateFcmTokenDto.ExternalId);
+
+                if (objToUpdate != null)
+                {
+                    objToUpdate.DeviceId = updateFcmTokenDto.FcmToken;
 
                     try
                     {

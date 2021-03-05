@@ -51,8 +51,11 @@
         public string Mobile { get; set; }
         [Required]
         [StringLength(50)]
-        public string CustomerId { get; set; }     
-      
+        public string CustomerId { get; set; }
+        [Required]
+        [StringLength(500)]
+        public string FcmToken { get; set; }
+
     }
 
 }

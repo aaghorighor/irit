@@ -69,7 +69,7 @@
         [HttpPost]
         // [JwtAuthenticationAttribute]
         [Route("update")]
-        public IHttpActionResult Update([FromBody]UpadteCustomerDto upadteCustomerDto)
+        public IHttpActionResult Update([FromBody]UpdateCustomerDto upadteCustomerDto)
         {
             if (!ModelState.IsValid)
             {
@@ -84,6 +84,21 @@
             }
 
             _customer.Update(upadteCustomerDto);
+
+            return Ok(true);
+        }
+
+        [HttpPost]
+        // [JwtAuthenticationAttribute]
+        [Route("updateFcmToken")]
+        public IHttpActionResult UpdateFcmToken([FromBody]UpdateFcmTokenDto updateFcmTokenDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
+            }
+           
+           _customer.UpdateFcmToken(updateFcmTokenDto);
 
             return Ok(true);
         }

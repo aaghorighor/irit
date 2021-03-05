@@ -82,3 +82,147 @@ HelpLink.LinkId = 20476
 Request.Body = {"amount":150.96,"baskets":[{"addonIds":"57,61","addonNames":"Bebidas,BOTTLEGREEN-APPLE-CORDIAL","category":"SOUP MEALS SPECIAL","id":5,"imageUrl":"179f3c81-8c2a-432a-960d-b89c69f4f9ef.jpg","menu":"AFANG SOUP","menuId":"8c9de96d-39dc-41cc-8e2d-74533df463d0","price":24.979999999999997,"quantity":1},{"addonIds":"","addonNames":"","category":"STARTERS","id":6,"imageUrl":"20297964-1d30-48d8-96c8-a25ae8ae5b20.jpg","menu":"CINNAMON FRENCH TOAST STICKS","menuId":"0f85ffe5-2e7b-409a-955e-a390bd40c64f","price":14.0,"quantity":2},{"addonIds":"","addonNames":"","category":"STARTERS","id":7,"imageUrl":"20297964-1d30-48d8-96c8-a25ae8ae5b20.jpg","menu":"CINNAMON FRENCH TOAST STICKS","menuId":"0f85ffe5-2e7b-409a-955e-a390bd40c64f","price":14.0,"quantity":2},{"addonIds":"","addonNames":"","category":"MAIN COURSE","id":8,"imageUrl":"834bcd13-4ae5-403d-a7c9-7fcad7c5aa7d.jpg","menu":"JOLLOF RICE","menuId":"6c55fc4d-d92b-42ca-a3eb-51f130e62981","price":60.0,"quantity":3},{"addonIds":"","addonNames":"","category":"STARTERS","id":9,"imageUrl":"690afbd9-bb03-4710-b2fc-f56651c89565.jpg","menu":"YAM PEPPER SOUP","menuId":"8010d9df-ced6-46a7-8a6e-a891e2eeb00d","price":37.98,"quantity":2}],"customerId":"61397851-b219-4964-af1d-9da1ad3a1a73","externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","firstName":"James","lastName":"Micheal","mobile":"074070227236","order":{"addressId":"d667c8fd-59c1-49a7-a506-72ba4ccaa0e0","balance":0.0,"customerId":"61397851-b219-4964-af1d-9da1ad3a1a73","discount":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":0.0,"orderDate":"3/03/2021 06:08:57","paid":0.0,"tax":0.0,"total":150.95999999999998,"totalDiscount":0.0,"totalTax":0.0},"sourceToken":"tok_1IQz82F5qtVzXXPMoqGzQ2IF","userName":"JamesMicheal"}
 
 --------------------------------------------------------------------------------------------
+20210305 20:33:19 [18] ERROR Web [(null)] - StackTrace
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Suftnet.Cos.DataAccess.Customer.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\Customer.cs:line 121
+   at Suftnet.Cos.Mobile.CustomerController.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerController.cs:line 101
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
+Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+--------------------------------------------
+Request.Body = {"customerId":"611047c7-3142-4d63-890b-376a06f85811","externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","fcmToken":"epIX3veVyhg:APA91bHNoh0gWAk9gGhSE9kfSDmYDNmt1mwLhGwf2IP_DBjGEU_wW2dXcj2vWJwobcT8QiluqeoTZ677nc2vpc3HeC4nHop9ohc5SlaqnU0WWkCZat5gySp2oBpTr3_0O8_7X_HHaVVf"}
+
+--------------------------------------------------------------------------------------------
+20210305 20:54:35 [22] ERROR Web [(null)] - StackTrace
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Suftnet.Cos.DataAccess.Customer.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\Customer.cs:line 121
+   at Suftnet.Cos.Mobile.CustomerController.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerController.cs:line 101
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
+Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+--------------------------------------------
+Request.Body = {"customerId":"aed10fef-2b1b-48f0-8bc7-293bff635ae3","externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","fcmToken":"epIX3veVyhg:APA91bHNoh0gWAk9gGhSE9kfSDmYDNmt1mwLhGwf2IP_DBjGEU_wW2dXcj2vWJwobcT8QiluqeoTZ677nc2vpc3HeC4nHop9ohc5SlaqnU0WWkCZat5gySp2oBpTr3_0O8_7X_HHaVVf"}
+
+--------------------------------------------------------------------------------------------
+20210305 20:59:16 [41] ERROR Web [(null)] - StackTrace
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Suftnet.Cos.DataAccess.Customer.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\Customer.cs:line 121
+   at Suftnet.Cos.Mobile.CustomerController.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerController.cs:line 101
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
+Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+--------------------------------------------
+Request.Body = {"customerId":"3e753502-514e-4e0b-a314-8bd944448f86","externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","fcmToken":"epIX3veVyhg:APA91bHNoh0gWAk9gGhSE9kfSDmYDNmt1mwLhGwf2IP_DBjGEU_wW2dXcj2vWJwobcT8QiluqeoTZ677nc2vpc3HeC4nHop9ohc5SlaqnU0WWkCZat5gySp2oBpTr3_0O8_7X_HHaVVf"}
+
+--------------------------------------------------------------------------------------------
+20210305 21:05:11 [55] ERROR Web [(null)] - StackTrace
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Suftnet.Cos.DataAccess.Customer.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\Customer.cs:line 121
+   at Suftnet.Cos.Mobile.CustomerController.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerController.cs:line 101
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
+Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+--------------------------------------------
+Request.Body = {"customerId":"53b627c5-6328-49de-ba77-1e4abfce20c2","externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","fcmToken":"epIX3veVyhg:APA91bHNoh0gWAk9gGhSE9kfSDmYDNmt1mwLhGwf2IP_DBjGEU_wW2dXcj2vWJwobcT8QiluqeoTZ677nc2vpc3HeC4nHop9ohc5SlaqnU0WWkCZat5gySp2oBpTr3_0O8_7X_HHaVVf"}
+
+--------------------------------------------------------------------------------------------
+20210305 21:51:25 [9] ERROR Web [(null)] - StackTrace
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Suftnet.Cos.DataAccess.Customer.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\Customer.cs:line 121
+   at Suftnet.Cos.Mobile.CustomerController.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerController.cs:line 101
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
+Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+--------------------------------------------
+Request.Body = {"customerId":"cf845d3c-0776-4948-b8e2-3b37679c140c","externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","fcmToken":"epIX3veVyhg:APA91bHNoh0gWAk9gGhSE9kfSDmYDNmt1mwLhGwf2IP_DBjGEU_wW2dXcj2vWJwobcT8QiluqeoTZ677nc2vpc3HeC4nHop9ohc5SlaqnU0WWkCZat5gySp2oBpTr3_0O8_7X_HHaVVf"}
+
+--------------------------------------------------------------------------------------------
+20210305 21:54:33 [9] ERROR Web [(null)] - StackTrace
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Suftnet.Cos.DataAccess.Customer.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\Customer.cs:line 121
+   at Suftnet.Cos.Mobile.CustomerController.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerController.cs:line 101
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
+Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+--------------------------------------------
+Request.Body = {"customerId":"5309f555-e7e0-4c5e-836b-19bb3be54623","externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","fcmToken":"epIX3veVyhg:APA91bHNoh0gWAk9gGhSE9kfSDmYDNmt1mwLhGwf2IP_DBjGEU_wW2dXcj2vWJwobcT8QiluqeoTZ677nc2vpc3HeC4nHop9ohc5SlaqnU0WWkCZat5gySp2oBpTr3_0O8_7X_HHaVVf"}
+
+--------------------------------------------------------------------------------------------

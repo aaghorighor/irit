@@ -79,7 +79,7 @@ namespace Suftnet.Cos.DataAccess
 
     }
 
-    public class UpadteCustomerDto
+    public class UpdateCustomerDto
     {
         [Required]
         public Guid Id { get; set; }
@@ -99,8 +99,18 @@ namespace Suftnet.Cos.DataAccess
         [StringLength(50)]
         public string Email { get; set; }
         [Required]  
+        public Guid ExternalId { get; set; }      
+
+    }
+
+    public class UpdateFcmTokenDto
+    {
+        [Required]
+        public Guid CustomerId { get; set; }        
+        [Required]
         public Guid ExternalId { get; set; }
-        
+        [Required]
+        public string FcmToken { get; set; }
 
     }
 }

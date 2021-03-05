@@ -11,16 +11,17 @@
     {
         private ICustomerProvider _customerProvider;
         private IChargeProvider _chargeProvider;
-
+        private readonly IFactoryCommand _factoryCommand;
         private readonly ICustomer _customer;     
         private readonly ITenant _tenant;  
         private string chargeCurrency = ChargeCurrency.Pound;
 
-        public OrderPaymentCommand(ICustomer customer, 
+        public OrderPaymentCommand(ICustomer customer, IFactoryCommand factoryCommand,
             ITenant tenant)
         {
             _customer = customer;      
-            _tenant = tenant;          
+            _tenant = tenant;
+            _factoryCommand = factoryCommand;
         }
 
         public DeliveryOrderAdapter entityToCreate { get; set; }
@@ -78,12 +79,14 @@
 
                 if (_charge)
                 {
-                    Error = false;
+                    Error = false;                    
+
+                    System.Threading.Tasks.Task.Run(() => OnPushNotification());
 
                     if (string.IsNullOrEmpty(customer.StripeCustomerId))
                     {
-                        OnUpdateCustomerStrip(_stripeCustomerId);
-                    }                  
+                        OnUpdateCustomerStripe(_stripeCustomerId);
+                    }
                 }
 
             }
@@ -98,8 +101,7 @@
         private string CreateCustomer(string stripeCustomerId)
         {
            return stripeCustomerId != null? _customerProvider.GetCustomerId(stripeCustomerId) : string.Empty;
-        }
-       
+        }       
         private CustomerDto GetCustomer()
         {
             var model = _customer.Get(new Guid(entityToCreate.CustomerId));        
@@ -121,10 +123,16 @@
                 chargeCurrency = ChargeCurrency.Dollar;
             }
         }
-
-        private void OnUpdateCustomerStrip(string customerStripId)
+        private void OnUpdateCustomerStripe(string stripeCustomerId)
         {           
-            _customer.Update(customerStripId, new Guid(entityToCreate.CustomerId), new Guid(entityToCreate.ExternalId));
+            _customer.Update(stripeCustomerId, new Guid(entityToCreate.CustomerId), new Guid(entityToCreate.ExternalId));
+        }
+        private void OnPushNotification()
+        {
+            var command = _factoryCommand.Create<PushNotificationCommand>();
+            command.MessageTypeId = MessageType.PaymentStatus;
+            command.FcmToken = entityToCreate.FcmToken;
+            command.Execute();
         }
     }
 }

@@ -1,29 +1,28 @@
 ﻿namespace Suftnet.Cos.Web.Command
 {
     using System;
-    using Suftnet.Cos.DataAccess;
-    using Suftnet.Cos.Extension;
+    using Suftnet.Cos.DataAccess;   
     using System.Net.Http;
     using Newtonsoft.Json;
     using System.Text;   
-    using Core;
-    using System.Collections.Generic;
-    using System.Threading;
+    using Core;  
+   
 
     public class PushNotificationCommand : ICommand
     {
-        private readonly IDevice _device;
+        private readonly ICustomer _customer;
 
-        public PushNotificationCommand(IDevice device)
+        public PushNotificationCommand(ICustomer customer)
         {
-            _device = device;
+            _customer = customer;
         }
                
         public string Title { get; set; }
         public string Body { get; set; }
         public string Id { get; set; }
-        public string ClickAction { get; set; }
-        public Guid TenantId { get; set; }
+        public string MessageTypeId { get; set; }
+        public string OrderStatusId { get; set; }
+        public string FcmToken { get; set; }
 
         public void Execute()
         {
@@ -31,37 +30,28 @@
         }
 
         #region private function
-        public void NotifyAsync()
-        {
-            
-            var devices = PrepareDeviceId();
-            int milliseconds = 2000;
-
-            foreach (var deviceId in devices)
-            {
-                var messages = PrepareNotification(deviceId.DeviceId);
-                Send(messages);
-                Thread.Sleep(milliseconds);
-            }          
-       
+        private void NotifyAsync()
+        {                 
+            var messages = CreateNotification(FcmToken);
+            Send(messages);
         }
 
-        private string PrepareNotification(string toDevice)
+        private string CreateNotification(string toDevice)
         {           
             var payload = new
             {
                 notification = new
                 {
                     title = Title,
-                    body = Body,                   
-                    tag = ClickAction
+                    body = Body          
                 },
 
                 data = new
                 {
-                    click_action = ClickAction,
-                    info = ClickAction,
-                    Identity = Id
+                    title = Title,
+                    body = Body,
+                    orderStatusId = OrderStatusId,
+                    messageTypeId = MessageTypeId
                 },
                 to = toDevice,
                 priority = "high",
@@ -69,12 +59,7 @@
             };
 
             return JsonConvert.SerializeObject(payload);
-        }
-
-        private List<DeviceDto> PrepareDeviceId()
-        {
-            return _device.GetAll(this.TenantId);
-        }
+        }     
 
         private async void Send(string messages)
         {

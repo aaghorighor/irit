@@ -55,7 +55,8 @@
                             userId = User.Id,
                             customerId = User.CustomerId,
                             permissions = GetUserPermissions(),
-                            token = _jwToken.Create(User.UserName, User.Id)
+                            fcmToken = "",
+                            jwtToken = _jwToken.Create(User.UserName, User.Id)
                         },                       
                         tenant = new
                         {

@@ -43,7 +43,7 @@ namespace Suftnet.Cos.DataAccess.Action
         [StringLength(100)]
         public string Serial { get; set; }
 
-        [StringLength(100)]
+        [StringLength(500)]
         public string DeviceId { get; set; }     
         public Guid TenantId { get; set; }
         [StringLength(50)]

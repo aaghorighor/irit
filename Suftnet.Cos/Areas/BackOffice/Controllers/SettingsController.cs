@@ -181,9 +181,9 @@
 
                     command.Title = entityToCreate.Name + "app updates";
                     command.Body = entityToCreate.Name + "app updates";
-                    command.TenantId = this.TenantId;
-                    command.Id = entityToCreate.Id.ToString();
-                    command.ClickAction = "settingActivity";
+                    //command.TenantId = this.TenantId;
+                    //command.Id = entityToCreate.Id.ToString();
+                    //command.ClickAction = "settingActivity";
 
                     await Task.Run(() => command.Execute());
                 }
