@@ -24,6 +24,8 @@ namespace Suftnet.Cos.DataAccess
 
     public partial class MobileCustomerOrderDto 
     {
+        public Guid OrderTypeId { get; set; }
+        public string OrderType { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Mobile { get; set; }

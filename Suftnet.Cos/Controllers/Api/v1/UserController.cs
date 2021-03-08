@@ -7,21 +7,26 @@
     using System.Web.Http;
     using Web;
     using Web.Command;
-    using Extension;  
-    using System.Threading.Tasks;
+    using Extension;   
     using Suftnet.Cos.Common;
+    using Suftnet.Cos.Services.Interface;
 
     [RoutePrefix("api/v1/user")]
     public class UserController : BaseController
     {         
-        private readonly IUser _user;     
-      
+        private readonly IUser _user;
+        private readonly IJwToken _jwToken;
+        private readonly IMobilePermission _mobilePermission;
         private readonly IUserBoostrapCommand _boostrapCommand;
 
-        public UserController(IUser user, IUserBoostrapCommand boostrapCommand)
+        public UserController(IUser user, IUserBoostrapCommand boostrapCommand,
+             IMobilePermission mobilePermission,
+             IJwToken jwToken)
         {
             _user = user;                 
             _boostrapCommand = boostrapCommand;
+            _jwToken = jwToken;
+            _mobilePermission = mobilePermission;
         }        
 
         [Route("Ping")]
@@ -32,7 +37,7 @@
         
         [HttpGet]
         [Route("verifyUser")]
-        public async Task<IHttpActionResult> VerifyCode([FromUri]VerifyUser param)
+        public IHttpActionResult VerifyCode([FromUri]VerifyUser param)
         {
             if (!ModelState.IsValid)
             {
@@ -45,12 +50,12 @@
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.NotFound, new { Message = Constant.USER_NOT_FOUND }));
             }
 
-            return await OkResult(user);
+            return OkResult(user);
         }
 
         [HttpGet]
         [Route("verifyUserByOtp")]
-        public async Task<IHttpActionResult> VerifyUserByOtp([FromUri] AccessCodeModel param)
+        public IHttpActionResult VerifyUserByOtp([FromUri] AccessCodeModel param)
         {
             if (!ModelState.IsValid)
             {
@@ -63,18 +68,34 @@
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.NotFound, new { Message = Constant.USER_NOT_FOUND }));
             }
 
-            return await OkResult(user);
+            return OkResult(user);
         }
 
         #region private function       
-        private async Task<IHttpActionResult> OkResult(MobileTenantDto user)
-        {
-            _boostrapCommand.User = user;
-            _boostrapCommand.TenantId = user.TenantId;
-             var model = await Task.Run(() => _boostrapCommand.Execute());
+        private IHttpActionResult OkResult(MobileTenantDto user)
+        {            
+            dynamic model = new
+            {
+                externalId = user.ExternalId,
+                firstName = user.FirstName,
+                lastName = user.LastName,
+                areaId = user.AreaId,
+                area = user.Area,
+                phoneNumber = user.PhoneNumber,
+                userName = user.UserName,
+                permissions = GetUserPermissions(user),
+                token = _jwToken.Create(user.UserName, user.Id)
+            };
 
             return Ok(model);
-        }      
+        }
+
+        private string GetUserPermissions(MobileTenantDto user)
+        {
+            var array = _mobilePermission.GetPermissionByUserId(user.Id);
+            string result = string.Join(",", array);
+            return result;
+        }
         #endregion
     }
 }

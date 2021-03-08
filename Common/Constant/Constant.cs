@@ -61,6 +61,11 @@ namespace Suftnet.Cos.Common
         public static string DeleteUserError = "This user can not be deleted at this time";
         public const string USER_NOT_FOUND = "User Not Found";
         public const string USER_ACCOUNT_NOT_CREATED = "Your account cannot be created at this time, please try later.";
+        public const string TENANT_NOT_FOUND = "No match found for this Tenant";
+        public const string CUSTOMER_NOT_FOUND = "No match found for this Customer";
+        public const string CARD_NOT_SET = "Payment Account Not Set";
+        public const string ISSUE_WITH_CARD = "There an issue charging your payment card, please try a different card";
+        public const string ERROR_WHILE_CHARGING_CARD = "An error occurred while charging your card, please try later";
 
     }
 

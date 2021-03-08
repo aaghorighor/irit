@@ -15,5 +15,6 @@
         List<KitchenAdapter> FetchKitchenOrders(Guid statusId, Guid tenantId);
         IList<BasketDto> FetchBasket(Guid orderId);
         IList<MobileBasketDto> FetchMobileBasket(Guid orderId);
+        List<KitchenAdapter> FetchKitchenDeliveryOrders(Guid statusId, Guid tenantId, Guid orderTypeId);
     }
 }

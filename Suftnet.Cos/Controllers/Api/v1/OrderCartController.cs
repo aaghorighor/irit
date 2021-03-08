@@ -36,7 +36,22 @@
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
             }
 
-            var model = await Task.Run(() => _cart.FetchKitchenOrders(new Guid(eOrderStatus.Processing.ToUpper()), new Guid(param.ExternalId.ToUpper())));
+            var model = await Task.Run(() => _cart.FetchKitchenOrders(new Guid(eOrderStatus.Processing), new Guid(param.ExternalId.ToUpper())));
+
+            return Ok(model);
+        }
+
+        [HttpGet]
+        // [JwtAuthenticationAttribute]
+        [Route("fetchKitchenDeliveryOrders")]
+        public async Task<IHttpActionResult> FetchKitchenDeliveryOrders([FromUri]ExternalParam param)
+        {
+            if (!ModelState.IsValid)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
+            }
+
+            var model = await Task.Run(() => _cart.FetchKitchenDeliveryOrders(new Guid(eOrderStatus.Processing), new Guid(param.ExternalId.ToUpper()), new Guid(eOrderType.Delivery)));
 
             return Ok(model);
         }

@@ -14,12 +14,15 @@
         private readonly ICustomerDeliveryStatus _customerDeliveryStatus;
         private readonly ICustomerOrderDelivery _customerOrderDelivery;
         private readonly IOrderCommand _orderCommand;
+        private readonly IFactoryCommand _factoryCommand;
 
         public CreateDeliveryOrderCommand(ICustomerOrderDelivery customerOrderDelivery, IOrderCommand orderCommand,
+            IFactoryCommand factoryCommand,
             IOrder order, ICustomerOrder customerOrder, ICustomerDeliveryStatus customerDeliveryStatus)
         {
             _orderCommand = orderCommand;
             _order = order;
+            _factoryCommand = factoryCommand;
             _customerOrder = customerOrder;
             _customerDeliveryStatus = customerDeliveryStatus;
             _customerOrderDelivery = customerOrderDelivery;
@@ -48,8 +51,8 @@
                 StartDt = DateTime.UtcNow,
 
                 OrderTypeId = new Guid(eOrderType.Delivery),
-                StatusId = new Guid(eOrderStatus.Pending.ToUpper()),
-                PaymentStatusId = new Guid(ePaymentStatus.Pending),
+                StatusId = new Guid(eOrderStatus.Processing),
+                PaymentStatusId = new Guid(ePaymentStatus.Paid),
 
                 TenantId = new Guid(entityToCreate.ExternalId),
                 Id = entityToCreate.OrderId,
@@ -155,7 +158,8 @@
             }
 
             return items;
-        }
+        }       
+
         private void ExecuteOrder(Guid orderId)
         {
             var customerOrderId = CreateCustomerOrder(orderId);
@@ -165,10 +169,22 @@
 
            _orderCommand.TenantId = new Guid(entityToCreate.ExternalId);
            _orderCommand.OrderedSummary = OrderSummary(orderId);
+
            _orderCommand.CreatedBy = entityToCreate.UserName;
            _orderCommand.CreatedDt = DateTime.UtcNow;
 
            _orderCommand.Execute();
+
+            OnPushNotification();
+        }
+
+        private void OnPushNotification()
+        {
+            var command = _factoryCommand.Create<PushNotificationCommand>();
+            command.MessageTypeId = MessageType.OrderStatus;
+            command.OrderStatusId = eOrderStatus.Processing;
+            command.FcmToken = entityToCreate.FcmToken;
+            command.Execute();
         }
 
         #endregion

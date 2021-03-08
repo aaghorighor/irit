@@ -5,7 +5,8 @@
     using Common;
     using System;
     using System.Threading.Tasks;
-    
+    using Suftnet.Cos.Core;
+
     public class DashboardCommand : IDashboardCommand
     {      
         private readonly ITable _table;
@@ -38,8 +39,10 @@
             {
                 continuation.Wait();
             }
-            catch (AggregateException)
-            { }
+            catch (AggregateException ex)
+            {
+                GeneralConfiguration.Configuration.Logger.LogError(ex);
+            }
 
             if(continuation.IsCompleted)
             {

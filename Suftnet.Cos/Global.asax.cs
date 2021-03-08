@@ -12,7 +12,8 @@
 
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();                   
+            AreaRegistration.RegisterAllAreas();
+            MvcHandler.DisableMvcResponseHeader = true;
         }
 
         protected void Application_End()

@@ -43,21 +43,21 @@
                 if (tenant == null)
                 {
                     Error = true;
-                    Reason = "No match found for this Tenant";
+                    Reason = Constant.TENANT_NOT_FOUND;
                     return;
                 }
 
                 if (customer == null)
                 {
                     Error = true;
-                    Reason = "No match found for this Customer";
+                    Reason = Constant.CUSTOMER_NOT_FOUND;
                     return;
                 }
 
                 if (string.IsNullOrEmpty(tenant.StripePublishableKey) || string.IsNullOrEmpty(tenant.StripeSecretKey))
                  {
                     Error = true;
-                    Reason = "Payment Account Not Set";
+                    Reason = Constant.CARD_NOT_SET;
                     return;
                  }
 
@@ -77,23 +77,25 @@
                var _charge = _chargeProvider.Charge((long)entityToCreate.Order.GrandTotal,
                 chargeCurrency, _stripeCustomerId, entityToCreate.SourceToken, $"{"Order -" + $"{entityToCreate.OrderId.ToString().Substring(0,10)} from " + tenant.Name}", out error);;
 
-                if (_charge)
+                if (!_charge)
                 {
-                    Error = false;                    
+                    Reason = Constant.ISSUE_WITH_CARD;
+                    return;
+                }
 
-                    System.Threading.Tasks.Task.Run(() => OnPushNotification());
+                Error = false;
 
-                    if (string.IsNullOrEmpty(customer.StripeCustomerId))
-                    {
-                        OnUpdateCustomerStripe(_stripeCustomerId);
-                    }
+                System.Threading.Tasks.Task.Run(() => OnPushNotification());
+
+                if (string.IsNullOrEmpty(customer.StripeCustomerId))
+                {
+                    OnUpdateCustomerStripe(_stripeCustomerId);
                 }
 
             }
             catch (Exception ex)
             {
-                Error = true;
-                Reason = "There an issue charging your payment card, please try a different card";
+                Reason = Constant.ERROR_WHILE_CHARGING_CARD;
                 GeneralConfiguration.Configuration.Logger.LogError(ex);             
             }                     
         }

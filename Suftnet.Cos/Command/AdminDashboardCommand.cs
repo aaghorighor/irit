@@ -5,7 +5,8 @@
     using Common;
     using System;
     using System.Threading.Tasks;
-    
+    using Suftnet.Cos.Core;
+
     public class AdminDashboardCommand : IAdminDashboardCommand
     {      
         private readonly ITenant _tenant;
@@ -44,8 +45,10 @@
             {
                 continuation.Wait();
             }
-            catch (AggregateException)
-            { }
+            catch (AggregateException ex)
+            {
+                GeneralConfiguration.Configuration.Logger.LogError(ex);
+            }
 
             if(continuation.IsCompleted)
             {

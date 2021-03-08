@@ -64,7 +64,7 @@
              var totalPayment = _orderPayment.GetTotalPaymentByOrderId(new Guid(Model.OrderId));
             _amountPaid = totalPayment + Model.AmountPaid;
 
-                var paymentId = _payment.Insert(new PaymentDto
+             var paymentId = _payment.Insert(new PaymentDto
                 {
                     Amount = _amountPaid,
                     Reference = Model.OrderId,
@@ -77,7 +77,7 @@
                     UpdateDate = Model.CreatedDt.ToDate(),
                     UpdateBy = Model.UserName
                 });
-               _orderPayment.Insert(new OrderPaymentDto
+            _orderPayment.Insert(new OrderPaymentDto
                 {
                     OrderId = new Guid(Model.OrderId),
                     PaymentId = paymentId,

@@ -281,7 +281,7 @@
                            let t=o.Tenants
                            let a = o.Tenants.TenantAddresses
                            where o.EmailAddress == emailAddress && o.AppCode == appCode && u.OTP == otp
-                           select new MobileTenantDto { CompleteAddress = a.CompleteAddress, Country = a.Country, Town = a.Town, PostCode = a.PostCode, Description = t.Description, Email =t.Email, ImageUrl = u.ImageUrl, FirstName = u.FirstName, LastName =u.LastName, Name = t.Name,
+                           select new MobileTenantDto { CurrencySymbol = t.CurrencyCode, CompleteAddress = a.CompleteAddress, Country = a.Country, Town = a.Town, PostCode = a.PostCode, Description = t.Description, Email =t.Email, ImageUrl = u.ImageUrl, FirstName = u.FirstName, LastName =u.LastName, Name = t.Name,
                               AreaId =u.AreaId, LogoUrl = t.LogoUrl, WebsiteUrl = t.WebsiteUrl, Telephone = t.Telephone, Latitude = a.Latitude, Longitude = a.Logitude, Mobile = t.Mobile, Area =u.Area,  UserName = u.UserName, PhoneNumber = u.PhoneNumber, TenantId =t.Id, Id = u.Id }).FirstOrDefault();
 
                 if (obj != null)
@@ -307,9 +307,9 @@
                            join u in context.Users on o.UserId equals u.Id                          
                            where o.TenantId == tenantId && o.UserCode == userCode 
                            select new MobileTenantDto
-                           {                                
-                               Email = u.Email,
-                               ImageUrl = u.ImageUrl,
+                           {
+                               ExternalId = o.TenantId.ToString(),
+                               Email = u.Email,                           
                                FirstName = u.FirstName,
                                LastName = u.LastName,                              
                                AreaId = u.AreaId,                           

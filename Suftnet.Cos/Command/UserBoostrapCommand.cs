@@ -30,12 +30,13 @@
                 {
                     user = new
                     {
+                        externalId = User.ExternalId,
                         firstName = User.FirstName,
                         lastName = User.LastName,                      
                         areaId = User.AreaId,
+                        area = User.Area,
                         phoneNumber = User.PhoneNumber,
-                        userName = User.UserName,
-                        userId = User.Id,
+                        userName = User.UserName,                      
                         permissions = GetUserPermissions(),
                         token = _jwToken.Create(User.UserName, User.Id)
                     }                   

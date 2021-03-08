@@ -59,7 +59,20 @@
                                  join p in context.PaymentStatuses on o.PaymentStatusId equals p.Id
                                  where a.CustomerId == customerId
                                  orderby o.CreatedDt descending
-                                 select new MobileCustomerOrderDto { DiscountRate = o.DiscountRate, CreatedAt = o.CreatedDt, OrderId = o.Id, StatusId = o.StatusId, CompletedAddress = d.CompleteAddress, AddressId = e.AddressId, CustomerId = customerId, Email = c.Email, PaymentStatus = p.Name, Mobile = c.Mobile, FirstName = c.FirstName, LastName = c.LastName, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, TotalDiscount = o.TotalDiscount, DeliveryCost = o.DeliveryCost, TaxRate = o.TaxRate, Status = s.Name, GrandTotal = o.GrandTotal, Total = o.Total }).ToList();
+                                 select new MobileCustomerOrderDto { OrderTypeId = o.OrderTypeId, DiscountRate = o.DiscountRate, CreatedAt = o.CreatedDt, OrderId = o.Id, StatusId = o.StatusId, CompletedAddress = d.CompleteAddress, AddressId = e.AddressId, CustomerId = customerId, Email = c.Email, PaymentStatus = p.Name, Mobile = c.Mobile, FirstName = c.FirstName, LastName = c.LastName, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, TotalDiscount = o.TotalDiscount, DeliveryCost = o.DeliveryCost, TaxRate = o.TaxRate, Status = s.Name, GrandTotal = o.GrandTotal, Total = o.Total }).ToList();
+                return objResult;
+            }
+        }
+
+        public string FetchByFcmToken(Guid orderId)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objResult = (from a in context.CustomerOrders
+                                 join o in context.Orders on a.OrderId equals o.Id
+                                 join c in context.Customers on a.CustomerId equals c.Id
+                                 where a.OrderId == orderId
+                                 select c.DeviceId).FirstOrDefault();
                 return objResult;
             }
         }

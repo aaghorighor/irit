@@ -5,22 +5,22 @@ namespace Suftnet.Cos.Web.ViewModel
 {
     public class DashboardModel
     {
-        public int FreeTables { get; set; }
-        public int DineIn { get; set; }
-        public int PendingDeliveries { get; set; }
-        public int Reservations { get; set; }
+        public int FreeTables { get; set; } = 0;
+        public int DineIn { get; set; } = 0;
+        public int PendingDeliveries { get; set; } = 0;
+        public int Reservations { get; set; } = 0;
     }
 
     public class AdminDashboardModel
-    {    
-        public int Tenants { get; set; }
-        public int Paid { get; set; }
-        public int Expired { get; set; }
-        public int Cancelled { get; set; }
-        public int Mobile { get; set; } // logger
-        public int Web { get; set; } // logger
-        public int Trials { get; set; }
-        public int Suspended { get; set; }
+    {
+        public int Tenants { get; set; } = 0;
+        public int Paid { get; set; } = 0;
+        public int Expired { get; set; } = 0;
+        public int Cancelled { get; set; } = 0;
+        public int Mobile { get; set; } = 0; // logger
+        public int Web { get; set; } = 0; // logger
+        public int Trials { get; set; } = 0;
+        public int Suspended { get; set; } = 0;
     }
 
     public class BoostrapModel
@@ -35,9 +35,7 @@ namespace Suftnet.Cos.Web.ViewModel
 
     public class UserBoostrap
     {       
-        public dynamic user { get; set; }
-        public dynamic permissions { get; set; }
-        public dynamic token { get; set; }
+        public dynamic user { get; set; }     
     }
 
 }

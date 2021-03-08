@@ -44,6 +44,7 @@
         List<CustomerOrderDto> Fetch(Guid tenantId, int iskip, int itake);
         List<CustomerOrderDto> Fetch(Guid tenantId, int iskip, int itake, string search);
         List<MobileCustomerOrderDto> Fetch(Guid customerId);
+        string FetchByFcmToken(Guid orderId);
     }
 
     public interface ICustomerNotification
