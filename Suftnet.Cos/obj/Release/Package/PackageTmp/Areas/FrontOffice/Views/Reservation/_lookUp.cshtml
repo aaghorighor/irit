@@ -1,0 +1,31 @@
+﻿<div id="tableDialog" style="display:none">
+    <div class="widget">
+        <div class="header"><span><span class="ico gray window"></span></span></div>
+        <div class="content">
+            <div class="tableName">
+                <table id="tblTables" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th align="left">Name</th>
+                            <th align="left">Size</th>
+                            <th align="left">Active</th>                            
+                            <th style="text-align:left">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="hide">
+                <span id="loadTableUrl" name="loadTableUrl" data-loadTableUrl="@Url.Action("fetchTables", "reservation", new { area = "frontoffice"  })"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+        tables.pageInit();
+    });
+
+</script>

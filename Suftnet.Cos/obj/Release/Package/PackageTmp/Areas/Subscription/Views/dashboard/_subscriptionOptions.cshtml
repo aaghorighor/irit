@@ -1,0 +1,39 @@
+﻿@using Suftnet.Cos.Extension;
+
+<div class="col-lg-4 mg-t-20 mg-lg-t-0">
+    <div class="card card-info">
+        <div class="card-body pd-40">
+            <div class="d-flex justify-content-center mg-b-30">
+                <img src="@Url.SlimImage("icons8-cancel-subscription-80.png")" alt="">
+            </div>
+            <h5 class="tx-inverse mg-b-20">Cancel Subscription </h5>
+            <p>You are free to cancel your subscription at any time.</p>
+            <a href="@Url.Action("cancel","paid", new { area = "subscription" })" class="btn btn-primary">Cancel</a>
+        </div><!-- card-body -->
+    </div><!-- card -->
+</div><!-- col-4 -->
+<div class="col-lg-4 mg-t-20 mg-lg-t-0">
+    <div class="card card-info">
+        <div class="card-body pd-40">
+            <div class="d-flex justify-content-center mg-b-30">
+                <img src="@Url.SlimImage("icons8-bank-cards-80.png")" alt="">
+            </div>
+            <h5 class="tx-inverse mg-b-20">Add Payment Card</h5>
+            <p>You can add new payment cards, if you have a new one.</p>
+            <a href="@Url.Action("index","card", new { area = "subscription" })" target="_self" class="btn btn-primary">Add</a>
+        </div><!-- card-body -->
+    </div><!-- card -->
+</div><!-- col-4 -->
+<div class="col-lg-4 mg-t-20 mg-lg-t-0">
+    <div class="card card-info">
+        <div class="card-body pd-40">
+            <div class="d-flex justify-content-center mg-b-30">
+                <img src="@Url.SlimImage("icons8-downloading-updates-80.png")" alt="">
+            </div>
+            <h5 class="tx-inverse mg-b-20">Download </h5>
+            <p>You can download the entire data of your church </p>
+            <a href="@Url.Action("download","paid", new { area = "subscription" })" target="_self" class="btn btn-primary">Download</a>
+        </div><!-- card-body -->
+    </div><!-- card -->
+</div><!-- col-4 -->
+

@@ -47,7 +47,7 @@
             var user = _user.VerifyUser(new Guid(param.ExternalId), param.UserCode);
             if (user == null)
             {
-                return ResponseMessage(Request.CreateResponse(HttpStatusCode.NotFound, new { Message = Constant.USER_NOT_FOUND }));
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = Constant.USER_NOT_FOUND }));
             }
 
             return OkResult(user);
@@ -65,7 +65,7 @@
             var user = _user.VerifyAccessCode(param.Otp, param.EmailAddress, param.AppCode);
             if (user == null)
             {
-                return ResponseMessage(Request.CreateResponse(HttpStatusCode.NotFound, new { Message = Constant.USER_NOT_FOUND }));
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = Constant.USER_NOT_FOUND }));
             }
 
             return OkResult(user);
@@ -77,14 +77,14 @@
             dynamic model = new
             {
                 externalId = user.ExternalId,
-                firstName = user.FirstName,
-                lastName = user.LastName,
+                firstName = user.FirstName.EmptyOrNull(),
+                lastName = user.LastName.EmptyOrNull(),
                 areaId = user.AreaId,
                 area = user.Area,
-                phoneNumber = user.PhoneNumber,
-                userName = user.UserName,
+                phoneNumber = user.PhoneNumber.EmptyOrNull(),
+                userName = user.UserName.EmptyOrNull(),
                 permissions = GetUserPermissions(user),
-                token = _jwToken.Create(user.UserName, user.Id)
+                jwtToken = _jwToken.Create(user.UserName, user.Id)
             };
 
             return Ok(model);

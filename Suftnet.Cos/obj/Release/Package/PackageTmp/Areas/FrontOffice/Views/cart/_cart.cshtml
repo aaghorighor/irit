@@ -1,0 +1,50 @@
+﻿<div id="cartContainer" style="height:0px; min-height:380px; margin-bottom:11px; background-color:#F9FAFA;">  
+    <table id="cartTable" class="table" style="width:100%; margin-top:1px; margin-bottom:5px" border="1">
+        <thead>
+            <tr>
+                <th style="width:45%; text-align:left">Item Name</th>
+                <th style="text-align:center">Quantity</th>
+                <th style="text-align:right">Price</th>              
+                <th style="text-align:center">Delete</th>
+            </tr>
+        </thead>
+        <tbody data-bind='foreach: items'>
+            <tr>
+                <td>
+                    <a style="color:black" data-bind="click: $parent.edit">
+                        <span data-bind="value:id" style="display:none"></span>
+                        <span data-bind="value:optionIds" style="display:none"></span>
+                        <span data-bind='text: name'> </span>
+                    </a>                                                  
+                </td>
+                <td style="text-align:center">
+                    <span data-bind='text: quantity'> </span>
+                </td>
+                <td style="text-align:right">
+                    <span data-bind='text: price'> </span>
+                </td>               
+                <td style="text-align:center">
+
+                    <!-- ko if: isProcessed -->
+                    <img src="@Url.Content("~/Content/zice-OneChurch/images/icon/color_18/checkmark.png")" />
+                    <!-- /ko -->
+
+                    <!-- ko ifnot: isProcessed -->
+                    <a href='#' data-bind='click: $parent.remove'>
+                        <img src="@Url.Content("~/Content/zice-OneChurch/images/icon/color_18/delete.png")" />
+                    </a>
+                    <!-- /ko -->
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+    
+
+
+
+
+
+

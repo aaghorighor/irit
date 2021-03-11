@@ -1,0 +1,58 @@
+﻿
+<div class="tableName">    
+          
+<table id="tdTicketThread" class="display" >
+    <thead>
+        <tr>   
+            <th align="left">#Id</th>  
+            <th align="left">Date</th>                           
+            <th align="left">Assign To</th>                             
+            <th style="text-align:center ">Actions</th>   
+        </tr>
+    </thead>
+    <tbody>        
+            
+    </tbody>
+</table>               
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $("#DeleteTicketThread").live("click", function (e)
+        {
+            e.preventDefault();
+
+            js.confirm('@Url.Action("Delete", "TicketThread")', { Id: $(this).attr("DeleteId") }, $(this).attr("DeleteId"), "#tdTicketThread").then(
+            function (data) {
+
+            });
+        });
+
+        $("#EditTicketThreadLink").live("click", function (e)
+        {
+            e.preventDefault();
+
+            js.ajaxGet('@Url.Action("Get", "TicketThread")', { Id: $(this).attr("EditId") }).then(
+             function (data) {
+                 var dataobject = data.dataobject;
+
+                 $("#ticketThreadform #AssignToId").val(dataobject.AssignToId);
+                 $("#ticketThreadform #Id").val(dataobject.Id);
+                 $("#ticketThreadform #Comment").val(dataobject.Comment);
+                 $("#ticketThreadform #TicketThreadId").val(dataobject.Id);
+                 $("#ticketThreadform #CreatedDT").val(dataobject.CreatedOn);
+
+             });
+        });
+
+        suftnet_Settings.TableInit('#tdTicketThread', [0,1,2,3]);
+       
+    });
+
+ </script>
+
+
+
+

@@ -281,7 +281,7 @@
                            let t=o.Tenants
                            let a = o.Tenants.TenantAddresses
                            where o.EmailAddress == emailAddress && o.AppCode == appCode && u.OTP == otp
-                           select new MobileTenantDto { CurrencySymbol = t.CurrencyCode, CompleteAddress = a.CompleteAddress, Country = a.Country, Town = a.Town, PostCode = a.PostCode, Description = t.Description, Email =t.Email, ImageUrl = u.ImageUrl, FirstName = u.FirstName, LastName =u.LastName, Name = t.Name,
+                           select new MobileTenantDto { TaxRate = t.TaxRate, DeliveryCost = t.DeliveryCost, DiscountRate = t.DiscountRate, CurrencySymbol = t.CurrencyCode, CompleteAddress = a.CompleteAddress, Country = a.Country, Town = a.Town, PostCode = a.PostCode, Description = t.Description, Email =t.Email, ImageUrl = u.ImageUrl, FirstName = u.FirstName, LastName =u.LastName, Name = t.Name,
                               AreaId =u.AreaId, LogoUrl = t.LogoUrl, WebsiteUrl = t.WebsiteUrl, Telephone = t.Telephone, Latitude = a.Latitude, Longitude = a.Logitude, Mobile = t.Mobile, Area =u.Area,  UserName = u.UserName, PhoneNumber = u.PhoneNumber, TenantId =t.Id, Id = u.Id }).FirstOrDefault();
 
                 if (obj != null)

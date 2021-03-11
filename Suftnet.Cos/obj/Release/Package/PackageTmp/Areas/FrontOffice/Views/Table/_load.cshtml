@@ -1,0 +1,29 @@
+﻿<table id="tblOrder" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th align="left"></th>
+            <th align="left">CreatedAt</th>
+            <th align="left">Payment Status</th>
+            <th align="left">Table</th>
+            <th align="left">Order Status</th>
+            <th align="left">Total</th>
+            <th align="left">Tax</th>
+            <th align="left">Discount</th>
+            <th align="left">Grand Total </th>
+            <th align="left">Balance </th>
+            <th class="align-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<div class="hide">
+    <span id="fetchUrl" name="fetchUrl" data-fetchUrl="@Url.Action("fetch", "dineIn", new { area = "frontOffice" })"></span>
+    <span id="editUrl" name="editUrl" data-editUrl="@Url.Action("edit", "dineIn", new { area = "frontOffice" })"></span>
+    <span id="cartUrl" name="cartUrl" data-cartUrl="@Url.Action("entry", "cart",  new { area = "frontOffice" })"></span>
+    <span id="deleteUrl" name="deleteUrl" data-deleteUrl="@Url.Action("delete", "dineIn",  new { area = "frontOffice" })"></span>
+</div>
+
+
+
+

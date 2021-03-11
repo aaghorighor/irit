@@ -1,0 +1,38 @@
+﻿<div class="tableName">
+
+    <table id="tblUser" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th align="left">FirstName</th>
+                <th align="left">LastName</th>
+                <th align="left">Email</th>
+                <th align="left">Area</th>
+                <th align="left">Active</th>
+                <th class="align-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div class="hidden">
+        <span id="loadUrl" name="loadUrl" data-loadUrl="@Url.Action("fetch", "user", new { area = "BackOffice" })"></span>
+        <span id="permissionUrl" name="permissionUrl" data-permissionUrl="@Url.Action("entry", "permission", new { area = "BackOffice" })"></span>
+        <span id="editUrl" name="editUrl" data-editUrl="@Url.Action("edit", "user", new { area = "BackOffice" })"></span>
+        <span id="createUrl" name="createUrl" data-createUrl="@Url.Action("create", "user", new { area = "BackOffice" })"></span>
+        <span id="deleteUrl" name="deleteUrl" data-deleteUrl="@Url.Action("delete", "user", new { area = "BackOffice" })"></span>
+        <span id="imageUrl" name="imageUrl" data-imageUrl="@Url.Content("~/Content/Photo/User/216X196/")"></span>
+        <span id="uploadUrl" name="uploadUrl" data-uploadUrl='@Url.Action("upload", "user")'></span>
+        <span id="defaultImageUrl" name="defaultImageUrl" data-defaultImageUrl="@Url.Content("~/Content/Photo/Blank.jpg")"></span>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

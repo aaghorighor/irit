@@ -1,0 +1,19 @@
+﻿
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuK6uanX8JhO55FOdTAvi9fOLP89zbpnE&libraries=places"></script>
+
+<script src="~/Content/map/markerwithlabel_packed.js"></script>
+<script src="~/Content/map/markerclusterer_packed.js"></script>
+<script src="~/Content/map/infobox.js"></script>
+<script src="~/Content/map/jquery.simpleWeather.min.js"></script>
+<script src="~/Content/map/maps.js"></script>
+<script src="~/Content/map/richmarker-compiled.js"></script>
+<script src="~/Content/map/mapScript.js"></script>
+
+<script>
+    $(function()
+    {
+        map.init('@Url.Content("~/Content/map/map-marker.png")');
+        map.initMap();
+    })
+</script>

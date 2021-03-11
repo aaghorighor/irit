@@ -35,9 +35,7 @@
                 {
                     Menus = _menu.GetBy(TenantId),
                     Categories = _category.GetBy(TenantId),
-                    Addons = _addon.GetBy(TenantId),
-                    Taxes = _tax.Fetch(TenantId),
-                    Discounts = _discount.Fetch(TenantId)
+                    Addons = _addon.GetBy(TenantId)                    
                 };
 
                 return model;

@@ -35,7 +35,7 @@
 
         [HttpGet]
         [Route("verifyAppCode")]
-        public IHttpActionResult VerifyAppCode([FromUri]VerifyAppCode param)
+        public IHttpActionResult VerifyAppCode([FromUri] VerifyAppCode param)
         {
             if (!ModelState.IsValid)
             {
@@ -45,7 +45,7 @@
             var user = _user.GetUserByUserName(param.EmailAddress, param.AppCode);
             if (user == null)
             {
-                return ResponseMessage(Request.CreateResponse(HttpStatusCode.NotFound, new { Message = Constant.USER_NOT_FOUND }));
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = Constant.USER_NOT_FOUND }));
             }
 
             var command = _factoryCommand.Create<VerifyEmailCommand>();
@@ -69,7 +69,7 @@
             var user = _user.VerifyAccessCode(param.Otp, param.EmailAddress, param.AppCode);
             if (user == null)
             {
-                return ResponseMessage(Request.CreateResponse(HttpStatusCode.NotFound, new { Message = Constant.USER_NOT_FOUND }));
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = Constant.USER_NOT_FOUND }));
             }
 
             return await OkResult(user);

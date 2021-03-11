@@ -89,6 +89,9 @@
         public string UserName { get; set; }
         public Guid CustomerId { get; set; }
         public TenantDto Tenant { get; set; }
+        public decimal? TaxRate { get; set; }
+        public decimal? DiscountRate { get; set; }
+        public decimal? DeliveryCost { get; set; }
     }
 
     public class TenantAdapter

@@ -9,7 +9,7 @@
     using System.Web.Http;
     using Web.Command;
     
-    [RoutePrefix("api/v1/item")]
+    [RoutePrefix("api/v1/menu")]
     public class ItemController : BaseController
     {
         private readonly IItemCommand _itemCommand;

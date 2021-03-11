@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "SUFTNET | DINE-IN ORDER";
+}
+
+<div style="margin:20px">
+
+    <ul style="margin-left:0px; margin-top :5px" class="uibutton-group">
+        <li><span><a href="@Url.Action("index", "dashBoard", new { area = "frontoffice" })" class="uibutton icon prev etip" title="Back to Dashboard">Back</a></span></li>       
+    </ul>
+
+    <ul class="tabs">
+        <li><a class="etip" title="Add new Dine-In Order by clicking on the free Tile." href="#tab1">Tables </a></li>
+        <li><a class="etip" title="View existing Orders" href="#tab2">Orders </a></li>
+    </ul>
+
+    <div class="tab_container">
+        <div id="tab1" class="tab_content" style="padding-left: 10px; padding-right: 10px">
+
+            <div class="tableContainers" style="text-align:center">
+                @Html.Partial("_table")
+            </div>
+
+        </div>
+        <div id="tab2" class="tab_content" style="padding-left:10px;padding-right:10px">
+
+            <div class="widgets">
+                <div class="widget">
+                    <div class="header"><span><span class="ico  gray window"></span></span></div>
+                    <div class="content">
+                        <div class="tableName">
+                            @Html.Partial("_load")
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    <div id="orderDialog" style="display :none">
+        <div class="widget">
+            <div class="header"><span><span class="ico gray window"></span></span></div>
+            <div class="content">
+                @Html.Partial("_create")
+            </div>
+        </div>
+    </div>
+
+    <div id="dineInDialog" style="display :none">
+        <div class="widget">
+            <div class="header"><span><span class="ico gray window"></span></span></div>
+            <div class="content">
+                @Html.Partial("_edit")
+            </div>
+        </div>
+    </div>
+
+    <div class="hide">
+        <span id="loadUrl" name="loadUrl" data-loadUrl="@Url.Action("fetch", "table", new { area = "frontOffice" })"></span>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            tableOder.pageInit();
+            order.pageInit();
+            setTimeout(function () {
+            }, 0);
+        });
+    </script>
+
+
+
+
+

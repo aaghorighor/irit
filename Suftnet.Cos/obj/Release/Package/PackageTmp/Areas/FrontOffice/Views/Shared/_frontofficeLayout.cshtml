@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <title>SUFTNET | POINT OF SALES</title>
+
+    @Html.Partial("_master-header-css")
+
+</head>
+
+<body class="dashboards">
+    <div id="alertMessage" class="error"></div>
+    @Html.Partial("_header")
+    <div id="shadowhead"></div>
+
+    <div id="table_layer">
+        @RenderBody()
+    </div>
+
+</body>
+</html>
+
+@Html.Partial("_init")
+

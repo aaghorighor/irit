@@ -13,21 +13,17 @@
         private readonly IMenu _menu;
         private readonly IAddon _addon;
         private readonly IJwToken _jwToken;
-        private readonly IMobilePermission _mobilePermission;
-        private readonly ITax _tax;
-        private readonly IDiscount _discount;
+        private readonly IMobilePermission _mobilePermission;    
 
         public CustomerBoostrapCommand(
             ICategory category, IAddon addon, IMobilePermission mobilePermission,
-             IJwToken jwToken, IDiscount discount, ITax tax,
+             IJwToken jwToken, 
             IMenu menu)
         {
             _category = category;
             _menu = menu;
             _addon = addon;
-            _jwToken = jwToken;
-            _tax = tax;
-            _discount = discount;
+            _jwToken = jwToken;          
             _mobilePermission = mobilePermission;
         }               
               
@@ -51,7 +47,7 @@
                             lastName = User.LastName,
                             areaId = User.AreaId,
                             phoneNumber = User.PhoneNumber,
-                            userName = User.UserName,
+                            userName = User.FirstName + " " + User.LastName,
                             userId = User.Id,
                             customerId = User.CustomerId,
                             permissions = GetUserPermissions(),

@@ -1,0 +1,41 @@
+﻿
+var registration = {
+
+    create : function(imageUrl)
+    {      
+        if (imageUrl != "")
+        {           
+            $("#TempUrl").attr('src', "/Content/Photo/Member/216X196/" + imageUrl);
+        }
+
+        suftnet_upload.init($("#uploadUrl").attr("data-uploadUrl"));
+
+        registration.pageEvent();
+    },
+
+    pageEvent : function()
+    {
+        $("#form-registration").submit(function ()
+        {
+            if ($('#IsEmail').is(':checked')) {
+                $("#IsEmail").val(true);
+            } else {
+                $("#IsEmail").val(false);
+            }
+
+            if ($('#IsSms').is(':checked')) {
+                $("#IsSms").val(true);
+            } else {
+                $("#IsSms").val(false);
+            }
+
+            if ($('#CreateFamilyGroup').is(':checked')) {
+                $("#CreateFamilyGroup").val(true);
+            } else {
+                $("#CreateFamilyGroup").val(false);
+
+            }        
+
+        });
+    }    
+}

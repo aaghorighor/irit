@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = " SUFTNET | SLIDER"; 
+}
+
+<div class="widgets" style="display:none">
+
+    <div class="twoOne">
+        <div class="widget">
+            <div class="header"><span><span class="ico  gray random"></span>Slider</span></div>
+            <div class="content">
+                <div class="tableName">
+                 @Html.Partial("_LoadSlider")
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="oneThree">
+        <div class="widget">
+            <div class="header"><span><span class="ico gray window"></span></span></div>
+            <div class="content">
+                @Html.Partial("_Sliderform")
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        setTimeout(function () {
+            $(".widgets").show();
+        }, 0);
+
+    });
+
+</script>

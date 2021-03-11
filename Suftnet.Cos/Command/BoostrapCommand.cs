@@ -5,7 +5,8 @@
     using System;
     using System.Threading.Tasks;
     using Suftnet.Cos.Services.Interface;
-    
+    using Suftnet.Cos.Extension;
+
     public class BoostrapCommand : IBoostrapCommand
     {      
         private readonly ICategory _category;
@@ -13,20 +14,16 @@
         private readonly IAddon _addon;
         private readonly IJwToken _jwToken;
         private readonly IMobilePermission _mobilePermission;
-        private readonly ITax _tax;
-        private readonly IDiscount _discount;
 
         public BoostrapCommand(
             ICategory category, IAddon addon, IMobilePermission mobilePermission,
-             IJwToken jwToken, IDiscount discount, ITax tax,
+             IJwToken jwToken,
             IMenu menu)
         {
             _category = category;
             _menu = menu;
             _addon = addon;
-            _jwToken = jwToken;
-            _tax = tax;
-            _discount = discount;
+            _jwToken = jwToken;          
             _mobilePermission = mobilePermission;
         }               
               
@@ -41,37 +38,39 @@
                 {
                     Menus = _menu.GetBy(TenantId),
                     Categories = _category.GetBy(TenantId),
-                    Addons = _addon.GetBy(TenantId),
-                    Taxes = _tax.Fetch(TenantId),
-                    Discounts = _discount.Fetch(TenantId),
+                    Addons = _addon.GetBy(TenantId),                   
                     Outlet = new
                     {
                         user = new
                         {
-                            firstName = User.FirstName,
-                            lastName = User.LastName,                         
+                            firstName = User.FirstName.EmptyOrNull(),
+                            lastName = User.LastName.EmptyOrNull(),                         
                             areaId = User.AreaId,
-                            phoneNumber = User.PhoneNumber,
-                            userName = User.UserName,
+                            area = User.Area.EmptyOrNull(),
+                            phoneNumber = User.PhoneNumber.EmptyOrNull(),
+                            userName = User.FirstName.EmptyOrNull() + " " + User.LastName.EmptyOrNull(),
                             userId = User.Id,
                             externalId = User.TenantId,
                             permissions = GetUserPermissions(),
-                            token = _jwToken.Create(User.UserName, User.Id)
+                            jwtToken = _jwToken.Create(User.UserName, User.Id)
                         },                       
                         tenant = new
                         {
-                            name = User.Name,
-                            mobile = User.Mobile,
-                            telephone = User.Telephone,
-                            email = User.Email,
-                            description = User.Description,
-                            completeAddress = User.CompleteAddress,
-                            country = User.Country,
-                            longitude = User.Longitude,
-                            latitude = User.Latitude,
-                            town = User.Town,
+                            name = User.Name.EmptyOrNull(),
+                            mobile = User.Mobile.EmptyOrNull(),
+                            telephone = User.Telephone.EmptyOrNull(),
+                            email = User.Email.EmptyOrNull(),
+                            description = User.Description.EmptyOrNull(),
+                            completeAddress = User.CompleteAddress.EmptyOrNull(),
+                            country = User.Country.EmptyOrNull(),
+                            longitude = User.Longitude.ToDecimal(),
+                            latitude = User.Latitude.ToDecimal(),
+                            town = User.Town.EmptyOrNull(),
                             externalId = User.TenantId,
                             currencySymbol = User.CurrencySymbol,
+                            taxRate = User.TaxRate.ToDecimal(),
+                            discountRate = User.DiscountRate.ToDecimal(),
+                            deliveryCost = User.DeliveryCost.ToDecimal()
                         }                                           
 
                     }
