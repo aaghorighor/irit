@@ -3,6 +3,7 @@
     using Suftnet.Cos.Common;
     using Suftnet.Cos.DataAccess;
     using Suftnet.Cos.Extension;
+    using Suftnet.Cos.Web.ActionFilter;
     using Suftnet.Cos.Web.Command;
     using Suftnet.Cos.Web.ViewModel;
     using System;
@@ -40,7 +41,7 @@
         }
 
         [HttpGet]
-        // [JwtAuthenticationAttribute]
+        [JwtAuthenticationAttribute]
         [Route("fetch")]
         public async Task<IHttpActionResult> Fetch([FromUri] OrderQuery orderQuery)
         {
@@ -55,7 +56,7 @@
         }
 
         [HttpPost]
-       // [JwtAuthenticationAttribute]
+        [JwtAuthenticationAttribute]
         [Route("create")]
         public async Task<IHttpActionResult> Create([FromBody]CreateOrder createOrder)
         {
@@ -75,7 +76,7 @@
         }
 
         [HttpPost]
-        // [JwtAuthenticationAttribute]
+        [JwtAuthenticationAttribute]
         [Route("update")]
         public async Task<IHttpActionResult> Update([FromBody]OrderAdapter orderAdapter)
         {
@@ -91,7 +92,7 @@
         }
 
         [HttpPost]
-        // [JwtAuthenticationAttribute]
+        [JwtAuthenticationAttribute]
         [Route("done")]
         public async Task<IHttpActionResult> Done([FromBody]OrderDone orderDone)
         {
@@ -120,7 +121,7 @@
         }
 
         [HttpPost]
-        // [JwtAuthenticationAttribute]
+        [JwtAuthenticationAttribute]
         [Route("Cancel")]
         public async Task<IHttpActionResult> Cancel([FromBody]CancelOrder cancelOrder)
         {

@@ -10,7 +10,8 @@
             orderedItems = new List<OrderedItemDto>();
         }
         public Guid OrderId { get; set; }             
-        public Guid PaymentMethodId { get; set; }    
+        public Guid PaymentMethodId { get; set; }
+        public Guid AccountTypeId { get; set; }
         public Guid OrderStatusId { get; set; }
         public Guid OrderTypeId { get; set; }
         public string Note { get; set; }

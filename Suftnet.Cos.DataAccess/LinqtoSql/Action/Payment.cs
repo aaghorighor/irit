@@ -24,6 +24,7 @@ namespace Suftnet.Cos.DataAccess.Action
         [MaxLength(8)]
         public byte[] TimeStamp { get; set; }
         public Guid PaymentMethodId { get; set; }
+        public Guid AccountTypeId { get; set; }
         public Guid TenantId { get; set; }
         [Column(TypeName = "smalldatetime")]
         public DateTime? UpdateDt { get; set; }      

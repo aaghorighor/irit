@@ -1,5 +1,6 @@
 ﻿namespace Suftnet.Cos.FrontOffice
 {
+    using Suftnet.Cos.Common;
     using Suftnet.Cos.DataAccess;
     using Suftnet.Cos.Service;
     using Suftnet.Cos.Web.Command;
@@ -61,7 +62,9 @@
         public JsonResult Create(OrderedSummaryDto entityToCreate)
         {
             Ensure.Argument.NotNull(entityToCreate);
-                        
+
+             entityToCreate.AccountTypeId = new Guid(eAccountType.Delivery);
+
             _orderCommand.TenantId = this.TenantId;
             _orderCommand.OrderedSummary = entityToCreate;
             _orderCommand.CreatedBy = this.UserName;

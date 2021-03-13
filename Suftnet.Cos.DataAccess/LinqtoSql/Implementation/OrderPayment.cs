@@ -45,7 +45,7 @@
                                  join b in context.Payments on o.PaymentId equals b.Id
                                  join m in context.PaymentMethods on b.PaymentMethodId equals m.Id
                                  where o.OrderId == orderId
-                                 select new PaymentDto { PaymentMethod = m.Name,  CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, AccountId = 0, Amount = b.Amount, PaymentMethodId = b.PaymentMethodId, Id = o.Id }).ToList();
+                                 select new PaymentDto { PaymentMethod = m.Name,  CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, Amount = b.Amount, PaymentMethodId = b.PaymentMethodId, Id = o.Id }).ToList();
                 return objResult;
             }
         }
@@ -58,7 +58,7 @@
                                  join b in context.Payments on o.PaymentId equals b.Id
                                  join m in context.PaymentMethods on b.PaymentMethodId equals m.Id
                                  where o.CreatedBy == userName
-                                 select new PaymentDto { PaymentMethod = m.Name, CreatedBy = o.CreatedBy,  AccountId = 0, Amount = b.Amount, PaymentMethodId = b.PaymentMethodId, Id = o.Id }).ToList();
+                                 select new PaymentDto { PaymentMethod = m.Name, CreatedBy = o.CreatedBy, Amount = b.Amount, PaymentMethodId = b.PaymentMethodId, Id = o.Id }).ToList();
                 return objResult;
             }
         }

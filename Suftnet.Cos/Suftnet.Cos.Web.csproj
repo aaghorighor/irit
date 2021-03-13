@@ -396,7 +396,6 @@
     <Compile Include="Areas\Admin\Controllers\AdminBaseController.cs" />
     <Compile Include="Infrastructure\AuthHandler.cs" />
     <Compile Include="Controllers\Api\v1\BaseController.cs" />
-    <Compile Include="Controllers\Api\v1\DeviceController.cs" />
     <Compile Include="Controllers\EntryController.cs" />
     <Compile Include="Controllers\TourController.cs" />
     <Compile Include="Controllers\FaqController.cs" />

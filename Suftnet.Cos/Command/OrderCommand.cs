@@ -115,6 +115,7 @@
                         Reference = order.Id.ToString(),
                         TenantId = this.TenantId,
                         PaymentMethodId = PaymentMethodId,
+                        AccountTypeId = AccountTypeId,
                         Id = Guid.NewGuid(),
 
                         CreatedBy = CreatedBy,
@@ -164,6 +165,13 @@
             get {
                 return this.OrderedSummary.PaymentMethodId;
             } 
+        }
+        private Guid AccountTypeId
+        {
+            get
+            {
+                return this.OrderedSummary.AccountTypeId;
+            }
         }
         private decimal AmountPaid
         {

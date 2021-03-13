@@ -59,11 +59,11 @@ namespace Suftnet.Cos.DataAccess.Action
         public virtual DbSet<OrderStatus> OrderStatuses { get; set; }
         public virtual DbSet<OrderType> OrderTypes { get; set; }
         public virtual DbSet<PaymentStatus> PaymentStatuses { get; set; }
+        public virtual DbSet<AccountType> AccountTypes { get; set; }
         public virtual DbSet<TenantState> TenantStates { get; set; }      
         public virtual DbSet<Unit> Units { get; set; }
         public virtual DbSet<TenantAddress> TenantAddress { get; set; }
-       // public virtual DbSet<DeliveryAddress> DeliveryAddresses { get; set; }
-        public virtual DbSet<MobileLogger> MobileLoggers { get; set; }
+           public virtual DbSet<MobileLogger> MobileLoggers { get; set; }
         public virtual DbSet<Notification> Notifications { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

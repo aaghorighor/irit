@@ -2,7 +2,7 @@
 {   
     public interface IPaymentCommand
     {       
-        PaymentModel Model { get; set; }
+        PaymentModel paymentModel { get; set; }
         void Execute();
    }
 }

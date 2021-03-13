@@ -10,7 +10,7 @@
     using System.Web;
     using System.Threading.Tasks;
     using Suftnet.Cos.Common;
-  
+    using Suftnet.Cos.Web.ActionFilter;
 
     [RoutePrefix("api/v1/customer")]
     public class CustomerController : BaseController
@@ -38,7 +38,7 @@
         }
 
         [HttpPost]
-        // [JwtAuthenticationAttribute]
+        [JwtAuthenticationAttribute]
         [Route("create")]
         public async Task<IHttpActionResult> Create([FromBody]CreateCustomerDto createCustomerDto)
         {
@@ -67,7 +67,7 @@
         }
 
         [HttpPost]
-        // [JwtAuthenticationAttribute]
+        [JwtAuthenticationAttribute]
         [Route("update")]
         public IHttpActionResult Update([FromBody]UpdateCustomerDto upadteCustomerDto)
         {
@@ -89,7 +89,7 @@
         }
 
         [HttpPost]
-        // [JwtAuthenticationAttribute]
+        [JwtAuthenticationAttribute]
         [Route("updateFcmToken")]
         public IHttpActionResult UpdateFcmToken([FromBody]UpdateFcmTokenDto updateFcmTokenDto)
         {

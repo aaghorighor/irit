@@ -199,6 +199,7 @@
     <Compile Include="LinqtoSql\Action\OrderStatus.cs" />
     <Compile Include="LinqtoSql\Action\OrderType.cs" />
     <Compile Include="LinqtoSql\Action\Payment.cs" />
+    <Compile Include="LinqtoSql\Action\AccountType.cs" />
     <Compile Include="LinqtoSql\Action\PaymentMethod.cs" />
     <Compile Include="LinqtoSql\Action\PaymentStatus.cs" />
     <Compile Include="LinqtoSql\Action\Permission.cs" />

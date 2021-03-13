@@ -50,44 +50,7 @@
                 var settings = new TenantDto { CurrencySymbol= term.Currency, Name = this.TenantName, Email = this.TenantEmail, Mobile = this.TenantMobile, CompleteAddress = this.TenantAddress };
 
                 switch (term.ReportTypeId)
-                {
-                    case (int)ReportType.Sales:
-
-                        term.StatusId = new Guid(eOrderStatus.Completed);
-                     
-                        report.Load(Server.MapPath("~/Content/Reports/Sales.mrt"));
-                        var repSales = new List<OrderDto>();
-
-                        if (term.UserId != null )
-                        {                            
-                            var user = _userAccount.GetByUserId(term.UserId);
-                            if (user != null)
-                            {
-                                term.Cashier = user.FirstName + " " + user.LastName;                               
-                            }
-
-                            term.UserName = this.UserName;
-
-                            repSales = _report.GetSalesByUserName(term) as List<OrderDto>;
-                        }
-                        else
-                        {
-                            repSales = _report.GetSales(term) as List<OrderDto>;
-                        }
-
-                        if (repSales.Count > 0)
-                        {
-                            report.RegBusinessObject("Settings", "Setting", settings);
-                            report.RegBusinessObject("Terms", "Term", term);
-                            report.RegBusinessObject("SalesOrder", "SalesOrder", repSales);
-                        }
-                        else {
-
-                            report.Load(Server.MapPath("~/Content/Reports/Blank.mrt"));   
-                        }
-
-                        break;
-
+                {                 
                     case ReportType.Menu:
 
                         report.Load(Server.MapPath("~/Content/Reports/MenuItem.mrt"));

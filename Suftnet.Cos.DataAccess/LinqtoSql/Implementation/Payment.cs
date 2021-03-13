@@ -13,9 +13,10 @@
             using (var context = DataContextFactory.CreateContext())
             {
                 var objResult = (from o in context.Payments
-                                 join m in context.PaymentMethods on o.PaymentMethodId equals m.Id                     
+                                 join m in context.PaymentMethods on o.PaymentMethodId equals m.Id
+                                 join a in context.AccountTypes on o.AccountTypeId equals a.Id
                                  where o.Id == Id
-                                 select new PaymentDto { UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, Reference = o.Reference, PaymentMethodId = o.PaymentMethodId, PaymentMethod = m.Name, Amount = o.Amount, CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).FirstOrDefault();
+                                 select new PaymentDto { AccountType = a.Name, AccountTypeId = o.AccountTypeId, UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, Reference = o.Reference, PaymentMethodId = o.PaymentMethodId, PaymentMethod = m.Name, Amount = o.Amount, CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).FirstOrDefault();
                 return objResult;
             }
         }
@@ -48,7 +49,7 @@
         {
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.Payment() { Id = entity.Id, TenantId = entity.TenantId, Reference = entity.Reference, PaymentMethodId = entity.PaymentMethodId,  Amount = entity.Amount, CreatedDt = entity.CreatedDT, CreatedBy = entity.CreatedBy };
+                var obj = new Action.Payment() { AccountTypeId = entity.AccountTypeId, Id = entity.Id, TenantId = entity.TenantId, Reference = entity.Reference, PaymentMethodId = entity.PaymentMethodId,  Amount = entity.Amount, CreatedDt = entity.CreatedDT, CreatedBy = entity.CreatedBy };
                 context.Payments.Add(obj);
                 context.SaveChanges();
                 return obj.Id;
@@ -91,10 +92,11 @@
             using (var context = DataContextFactory.CreateContext())
             {
                 var objResult = (from o in context.Payments
-                                 join m in context.PaymentMethods on o.PaymentMethodId equals m.Id                           
+                                 join m in context.PaymentMethods on o.PaymentMethodId equals m.Id
+                                 join a in context.AccountTypes on o.AccountTypeId equals a.Id
                                  where o.TenantId == tenantId
                                  orderby o.Id descending 
-                                 select new PaymentDto { UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, Reference = o.Reference, PaymentMethodId = o.PaymentMethodId, PaymentMethod = m.Name, Amount = o.Amount, CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
+                                 select new PaymentDto { AccountType = a.Name, AccountTypeId = o.AccountTypeId, UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, Reference = o.Reference, PaymentMethodId = o.PaymentMethodId, PaymentMethod = m.Name, Amount = o.Amount, CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
                 return objResult;
             }
         }       
@@ -106,9 +108,10 @@
             {
                 var objResult = (from o in context.Payments
                                  join m in context.PaymentMethods on o.PaymentMethodId equals m.Id
+                                 join a in context.AccountTypes on o.AccountTypeId equals a.Id
                                  where m.Name.Contains(isearch) || o.Reference.Contains(isearch) && o.TenantId == tenantId
                                  orderby o.Id descending 
-                                 select new PaymentDto { UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, Reference = o.Reference, PaymentMethodId = o.PaymentMethodId, PaymentMethod = m.Name, Amount = o.Amount, CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
+                                 select new PaymentDto { AccountType = a.Name, AccountTypeId = o.AccountTypeId, UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, Reference = o.Reference, PaymentMethodId = o.PaymentMethodId, PaymentMethod = m.Name, Amount = o.Amount, CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
                 return objResult;
             }
         }
@@ -119,9 +122,10 @@
             {
                 var objResult = (from o in context.Payments
                                  join m in context.PaymentMethods on o.PaymentMethodId equals m.Id
+                                 join a in context.AccountTypes on o.AccountTypeId equals a.Id
                                  where o.TenantId == tenantId
                                  orderby o.Id descending 
-                                 select new PaymentDto { UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, Reference = o.Reference, PaymentMethodId = o.PaymentMethodId, PaymentMethod = m.Name, Amount = o.Amount, CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
+                                 select new PaymentDto { AccountType = a.Name, AccountTypeId = o.AccountTypeId, UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, Reference = o.Reference, PaymentMethodId = o.PaymentMethodId, PaymentMethod = m.Name, Amount = o.Amount, CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
                 return objResult;
             }
         }

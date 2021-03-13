@@ -27,6 +27,9 @@
         public string PaymentMethodId { get; set; }
         [Required()]
         public decimal GrandTotal { get; set; }
+     
+        [StringLength(50)]
+        public string AccountTypeId { get; set; }
         
     }
 

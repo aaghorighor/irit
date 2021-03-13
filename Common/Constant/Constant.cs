@@ -291,6 +291,12 @@ namespace Suftnet.Cos.Common
         public const string DineIn = "BFF4A1B2-8D64-4919-A91D-4E96E61E1A5B";             
     }
 
+    public static class eAccountType
+    {
+        public const string Delivery = "ED9EB336-D246-4747-ADB1-42FD95D98E4C";
+        public const string DineIn = "FFA01FE4-8B49-41E9-A630-70FD7E756ECC";   
+    }
+
     public static class eOrderStatus
     {
         public const string Pending = "dcdc8a0d-e38a-43b5-8091-f167b001f0b5";

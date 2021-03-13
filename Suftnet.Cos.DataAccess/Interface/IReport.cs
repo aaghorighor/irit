@@ -4,9 +4,7 @@
     using System.Collections.Generic;
 
     public interface IReport
-    {
-        IEnumerable<OrderDto> GetSales(TermDto term);
-        IEnumerable<OrderDto> GetSalesByUserName(TermDto term);     
+    {       
         IEnumerable<MenuDto> GetMenus(Guid tenantId);    
         IEnumerable<PaymentDto> GetPaymentByDates(TermDto term);
         IEnumerable<PaymentDto> GetPaymentByDatesAndUsername(TermDto term);

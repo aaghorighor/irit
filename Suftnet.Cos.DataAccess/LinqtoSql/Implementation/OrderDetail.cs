@@ -192,7 +192,7 @@
                                  join r in context.OrderTypes on s.OrderTypeId equals r.Id
                                  let kitchenBaskets = (from o in context.OrderDetails
                                                     where o.OrderId == s.Id && o.IsKitchen == true && o.IsProcessed == false
-                                                    select new KitchenBasketDto { AddonItems = o.AddonItems, IsProcessed = o.IsProcessed, ItemName = o.ItemName, Id = o.Id }).ToList()
+                                                    select new KitchenBasketDto { Quantity = o.Quantity, AddonItems = o.AddonItems, IsProcessed = o.IsProcessed, ItemName = o.ItemName, Id = o.Id }).ToList()
                                  where kitchenBaskets.Count > 0 && s.TenantId == tenantId 
                                  orderby s.CreatedDt ascending
                                  select new KitchenAdapter { OrderTypeId = s.OrderTypeId, Note = s.Note, CreatedDT =s.CreatedDt, OrderType = r.Name, Table = t.Number, OrderId = s.Id, KitchenBasket = kitchenBaskets }).ToList();
@@ -209,7 +209,7 @@
                                  join r in context.OrderTypes on s.OrderTypeId equals r.Id
                                  let kitchenBaskets = (from o in context.OrderDetails
                                                       where o.OrderId == s.Id && o.IsKitchen == true && o.IsProcessed == false
-                                                      select new KitchenBasketDto { AddonItems = o.AddonItems, IsProcessed = o.IsProcessed, ItemName = o.ItemName, Id = o.Id }).ToList()
+                                                      select new KitchenBasketDto { Quantity = o.Quantity, AddonItems = o.AddonItems, IsProcessed = o.IsProcessed, ItemName = o.ItemName, Id = o.Id }).ToList()
                                  where kitchenBaskets.Count > 0 && s.TenantId == tenantId && s.OrderTypeId == orderTypeId
                                  orderby s.CreatedDt ascending
                                  select new KitchenAdapter { OrderTypeId = s.OrderTypeId, Note = s.Note, CreatedDT = s.CreatedDt, OrderType = r.Name, OrderId = s.Id, KitchenBasket = kitchenBaskets }).ToList();

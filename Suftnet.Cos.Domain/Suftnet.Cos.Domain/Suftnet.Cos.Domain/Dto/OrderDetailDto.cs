@@ -49,6 +49,7 @@
         public string ItemName { get; set; }
         public string AddonItems { get; set; }
         public bool? IsProcessed { get; set; }
-        public string Addons { get; set; }       
+        public string Addons { get; set; }
+        public int Quantity { get; set; }
     }
 }

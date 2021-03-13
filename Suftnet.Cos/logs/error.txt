@@ -1,87 +1,15 @@
-20210312 15:59:28 [83] ERROR Web [(null)] - StackTrace
+20210313 18:24:34 [36] ERROR Web [(null)] - StackTrace
    at System.Data.Entity.Internal.InternalContext.SaveChanges()
-   at Suftnet.Cos.DataAccess.DeliveryOrder.Insert(DeliveryOrderDto entity) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\DeliveryOrder.cs:line 52
-   at Suftnet.Cos.Mobile.DeliveryOrderController.<>c__DisplayClass8_0.<Create>b__0() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\DeliveryOrderController.cs:line 93
-   at System.Threading.Tasks.Task`1.InnerInvoke()
-   at System.Threading.Tasks.Task.Execute()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
-   at Suftnet.Cos.Mobile.DeliveryOrderController.<Create>d__8.MoveNext() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\DeliveryOrderController.cs:line 93
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Threading.Tasks.TaskHelpersExtensions.<CastToObject>d__3`1.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-An error occurred while updating the entries. See the inner exception for details.
---------------------------------------------
-Request.Body = {"orderId":"fdce2caf-2c11-4b4a-9895-6916e79f2ce4","userId":"fee9a2ef-c152-45b6-a2ee-5c74fe1cabf9"}
---------------------------------------------
-Inner Exception
-Messages
-An error occurred while updating the entries. See the inner exception for details.Messages
-The conversion of a datetime2 data type to a smalldatetime data type resulted in an out-of-range value.
-The statement has been terminated.
---------------------------------------------------------------------------------------------
-20210312 16:00:10 [83] ERROR Web [(null)] - StackTrace
-   at System.Data.Entity.Internal.InternalContext.SaveChanges()
-   at Suftnet.Cos.DataAccess.DeliveryOrder.Insert(DeliveryOrderDto entity) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\DeliveryOrder.cs:line 52
-   at Suftnet.Cos.Mobile.DeliveryOrderController.<>c__DisplayClass8_0.<Create>b__0() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\DeliveryOrderController.cs:line 93
-   at System.Threading.Tasks.Task`1.InnerInvoke()
-   at System.Threading.Tasks.Task.Execute()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
-   at Suftnet.Cos.Mobile.DeliveryOrderController.<Create>d__8.MoveNext() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\DeliveryOrderController.cs:line 93
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Threading.Tasks.TaskHelpersExtensions.<CastToObject>d__3`1.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-An error occurred while updating the entries. See the inner exception for details.
---------------------------------------------
-Request.Body = {"orderId":"6ad41dbf-ed84-4ee5-8274-ba1d94bef3f6","userId":"fee9a2ef-c152-45b6-a2ee-5c74fe1cabf9"}
---------------------------------------------
-Inner Exception
-Messages
-An error occurred while updating the entries. See the inner exception for details.Messages
-The conversion of a datetime2 data type to a smalldatetime data type resulted in an out-of-range value.
-The statement has been terminated.
---------------------------------------------------------------------------------------------
-20210312 17:51:10 [18] ERROR Web [(null)] - StackTrace
-   at Suftnet.Cos.Web.Command.AcceptDeliveryOrderCommand.AcceptOrder() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\AcceptOrderCommand.cs:line 42
-   at Suftnet.Cos.Web.Command.AcceptDeliveryOrderCommand.Execute() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\AcceptOrderCommand.cs:line 35
-   at Suftnet.Cos.Mobile.DeliveryOrderController.<Create>b__9_0() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\DeliveryOrderController.cs:line 99
+   at Suftnet.Cos.DataAccess.OrderPayment.Insert(OrderPaymentDto entity) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\OrderPayment.cs:line 35
+   at Suftnet.Cos.Web.Command.PaymentCommand.CreatePayment() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\PaymentCommand.cs:line 83
+   at Suftnet.Cos.Web.Command.PaymentCommand.Execute() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\PaymentCommand.cs:line 32
+   at Suftnet.Cos.Mobile.PaymentController.<Create>b__3_0() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\PaymentController.cs:line 41
    at System.Threading.Tasks.Task.Execute()
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
-   at Suftnet.Cos.Mobile.DeliveryOrderController.<Create>d__9.MoveNext() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\DeliveryOrderController.cs:line 99
+   at Suftnet.Cos.Mobile.PaymentController.<Create>d__3.MoveNext() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\PaymentController.cs:line 41
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
@@ -107,21 +35,70 @@ The statement has been terminated.
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-Object reference not set to an instance of an object.
+An error occurred while updating the entries. See the inner exception for details.
 --------------------------------------------
-Request.Body = {"orderId":"0900b42b-3b3f-43b9-9d2d-6fa7a802488d"}
+Request.Body = {"amountPaid":52.98,"createdDt":"3/13/2021 06:24:28","externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":52.980000000000004,"orderId":"a2bc3624-6fe9-44f0-8c27-024ed4af406c","paymentMethodId":"E0DF7037-BE71-4D90-871D-04AD8E4AD960","tableId":"2d7dcc2a-05e2-4363-bf22-ea7355d943d2","userName":"Abel James"}
+--------------------------------------------
+Inner Exception
+Messages
+An error occurred while updating the entries. See the inner exception for details.Messages
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK_OrderPayment_PaymentMethod". The conflict occurred in database "DB_A28530_irit", table "dbo.PaymentMethod", column 'Id'.
+The statement has been terminated.
+--------------------------------------------------------------------------------------------
+20210313 18:26:54 [33] ERROR Web [(null)] - StackTrace
+   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at Suftnet.Cos.Extension.ViewExtensions.ToDate(String value) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Extensions\ViewExtensions.cs:line 303
+   at Suftnet.Cos.Web.Command.PaymentCommand.ResetTable() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\PaymentCommand.cs:line 40
+   at Suftnet.Cos.Web.Command.PaymentCommand.Execute() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\PaymentCommand.cs:line 33
+   at Suftnet.Cos.Mobile.PaymentController.<Create>b__3_0() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\PaymentController.cs:line 41
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at Suftnet.Cos.Mobile.PaymentController.<Create>d__3.MoveNext() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\PaymentController.cs:line 41
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Threading.Tasks.TaskHelpersExtensions.<CastToObject>d__3`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Suftnet.Cos.Web.ActionFilter.AddChallengeOnUnauthorizedResult.<ExecuteAsync>d__7.MoveNext() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Infrastructure\ActionFilter\AddChallengeOnUnauthorizedResult.cs:line 25
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
+String was not recognized as a valid DateTime.
+--------------------------------------------
+Request.Body = {"amountPaid":52.98,"createdDt":"3/13/2021 06:26:44","externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":52.980000000000004,"orderId":"a2bc3624-6fe9-44f0-8c27-024ed4af406c","paymentMethodId":"E0DF7037-BE71-4D90-871D-04AD8E4AD960","tableId":"2d7dcc2a-05e2-4363-bf22-ea7355d943d2","userName":"Abel James"}
 
 --------------------------------------------------------------------------------------------
-20210313 10:37:56 [12] ERROR Web [(null)] - StackTrace
-   at Suftnet.Cos.Web.Command.AcceptDeliveryOrderCommand.AcceptOrder() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\AcceptOrderCommand.cs:line 34
-   at Suftnet.Cos.Web.Command.AcceptDeliveryOrderCommand.Execute() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\AcceptOrderCommand.cs:line 28
-   at Suftnet.Cos.Mobile.DeliveryOrderController.<UpdateStatus>b__12_0() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\DeliveryOrderController.cs:line 138
+20210313 18:27:29 [33] ERROR Web [(null)] - StackTrace
+   at System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at Suftnet.Cos.Extension.ViewExtensions.ToDate(String value) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Extensions\ViewExtensions.cs:line 303
+   at Suftnet.Cos.Web.Command.PaymentCommand.ResetTable() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\PaymentCommand.cs:line 40
+   at Suftnet.Cos.Web.Command.PaymentCommand.Execute() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\PaymentCommand.cs:line 33
+   at Suftnet.Cos.Mobile.PaymentController.<Create>b__3_0() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\PaymentController.cs:line 41
    at System.Threading.Tasks.Task.Execute()
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
-   at Suftnet.Cos.Mobile.DeliveryOrderController.<UpdateStatus>d__12.MoveNext() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\DeliveryOrderController.cs:line 138
+   at Suftnet.Cos.Mobile.PaymentController.<Create>d__3.MoveNext() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\PaymentController.cs:line 41
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
@@ -147,8 +124,8 @@ Request.Body = {"orderId":"0900b42b-3b3f-43b9-9d2d-6fa7a802488d"}
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-Object reference not set to an instance of an object.
+String was not recognized as a valid DateTime.
 --------------------------------------------
-Request.Body = {"orderId":"d2a5959d-682e-4095-a282-9a6f17382fec","statusId":"1e6f1192-c4f3-428c-9762-152753b059b7"}
+Request.Body = {"amountPaid":52.98,"createdDt":"3/13/2021 06:27:01","externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":52.980000000000004,"orderId":"a2bc3624-6fe9-44f0-8c27-024ed4af406c","paymentMethodId":"E0DF7037-BE71-4D90-871D-04AD8E4AD960","tableId":"2d7dcc2a-05e2-4363-bf22-ea7355d943d2","userName":"Abel James"}
 
 --------------------------------------------------------------------------------------------

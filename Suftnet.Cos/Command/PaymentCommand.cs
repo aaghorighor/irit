@@ -1,4 +1,5 @@
-﻿namespace Suftnet.Cos.Web.Command
+﻿
+namespace Suftnet.Cos.Web.Command
 {
     using Suftnet.Cos.DataAccess;    
     using System;   
@@ -24,7 +25,7 @@
             _orderPayment = orderPayment;
         }               
               
-        public PaymentModel Model { get; set; }     
+        public PaymentModel paymentModel { get; set; }     
 
         public void Execute()
         {
@@ -38,10 +39,10 @@
         {
             _table.Reset(new TableDto
             {
-                Id = new Guid(Model.TableId),
-                TenantId = new Guid(Model.ExternalId),
-                UpdateBy = Model.UserName,
-                UpdateDate = Model.CreatedDt.ToDate()
+                Id = new Guid(paymentModel.TableId),
+                TenantId = new Guid(paymentModel.ExternalId),
+                UpdateBy = paymentModel.UserName,
+                UpdateDate = paymentModel.CreatedDt.ToDate()
             });
         }
 
@@ -49,44 +50,46 @@
         {
             _order.UpdatePayment(new OrderDto
             {
-                Id = new Guid(Model.OrderId),
+                Id = new Guid(paymentModel.OrderId),
                 Payment = _amountPaid,
                 PaymentStatusId = new Guid(ePaymentStatus.Paid),
                 StatusId = new Guid(eOrderStatus.Completed),
-                Balance = Util.Balance(Model.GrandTotal, _amountPaid),
-                UpdateBy = Model.UserName,
-                UpdateDate = Model.CreatedDt.ToDate()
+                Balance = Util.Balance(paymentModel.GrandTotal, _amountPaid),
+                UpdateBy = paymentModel.UserName,
+                UpdateDate = paymentModel.CreatedDt.ToDate()
             });
         }
 
         private void CreatePayment()
         {
-             var totalPayment = _orderPayment.GetTotalPaymentByOrderId(new Guid(Model.OrderId));
-            _amountPaid = totalPayment + Model.AmountPaid;
+             var totalPayment = _orderPayment.GetTotalPaymentByOrderId(new Guid(paymentModel.OrderId));
+            _amountPaid = totalPayment + paymentModel.AmountPaid;
 
              var paymentId = _payment.Insert(new PaymentDto
                 {
                     Amount = _amountPaid,
-                    Reference = Model.OrderId,
-                    TenantId = new Guid(Model.ExternalId),
-                    PaymentMethodId = new Guid(Model.PaymentMethodId),
+                    Reference = paymentModel.OrderId,
+                    TenantId = new Guid(paymentModel.ExternalId),
+                    PaymentMethodId = new Guid(paymentModel.PaymentMethodId),
+                    AccountTypeId = new Guid(paymentModel.AccountTypeId),
                     Id = Guid.NewGuid(),
 
-                    CreatedBy = Model.UserName,
-                    CreatedDT = Model.CreatedDt.ToDate(),
-                    UpdateDate = Model.CreatedDt.ToDate(),
-                    UpdateBy = Model.UserName
+                    CreatedBy = paymentModel.UserName,
+                    CreatedDT = paymentModel.CreatedDt.ToDate(),
+                    UpdateDate = paymentModel.CreatedDt.ToDate(),
+                    UpdateBy = paymentModel.UserName
                 });
+
             _orderPayment.Insert(new OrderPaymentDto
                 {
-                    OrderId = new Guid(Model.OrderId),
+                    OrderId = new Guid(paymentModel.OrderId),
                     PaymentId = paymentId,
                     Id = Guid.NewGuid(),
 
-                    CreatedBy = Model.UserName,
-                    CreatedDT = Model.CreatedDt.ToDate(),
-                    UpdateDate = Model.CreatedDt.ToDate(),
-                    UpdateBy = Model.UserName
+                    CreatedBy = paymentModel.UserName,
+                    CreatedDT = paymentModel.CreatedDt.ToDate(),
+                    UpdateDate = paymentModel.CreatedDt.ToDate(),
+                    UpdateBy = paymentModel.UserName
                  });
         }
 

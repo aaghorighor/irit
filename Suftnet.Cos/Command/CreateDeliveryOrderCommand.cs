@@ -130,6 +130,7 @@
                 OrderStatusId = new Guid(eOrderStatus.Pending.ToUpper()),
                 OrderTypeId = new Guid(eOrderType.Delivery),
                 PaymentMethodId = new Guid(ePaymentMethod.CARD),
+                AccountTypeId = new Guid(eAccountType.Delivery),
                 orderedItems = MapItem(),
                 IsProcessed = false
             };

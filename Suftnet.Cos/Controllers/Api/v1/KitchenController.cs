@@ -2,7 +2,8 @@
 {
     using Suftnet.Cos.Common;
     using Suftnet.Cos.DataAccess;
-    using Suftnet.Cos.Extension;    
+    using Suftnet.Cos.Extension;
+    using Suftnet.Cos.Web.ActionFilter;
     using System;
     using System.Net;
     using System.Net.Http;
@@ -27,7 +28,7 @@
         }
    
         [HttpGet]
-        // [JwtAuthenticationAttribute]
+        [JwtAuthenticationAttribute]
         [Route("fetch")]
         public async Task<IHttpActionResult> Fetch([FromUri]ExternalParam param)
         {
@@ -42,7 +43,7 @@
         }
 
         [HttpGet]
-        // [JwtAuthenticationAttribute]
+        [JwtAuthenticationAttribute]
         [Route("fetchDelivery")]
         public async Task<IHttpActionResult> FetchDelivery([FromUri]ExternalParam param)
         {

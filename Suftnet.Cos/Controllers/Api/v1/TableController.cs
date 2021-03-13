@@ -2,6 +2,7 @@
 {
     using Suftnet.Cos.DataAccess;
     using Suftnet.Cos.Extension;
+    using Suftnet.Cos.Web.ActionFilter;
     using Suftnet.Cos.Web.ViewModel;
     using System;
     using System.Net;
@@ -27,7 +28,7 @@
         }
 
         [HttpGet]
-       // [JwtAuthenticationAttribute]
+        [JwtAuthenticationAttribute]
         [Route("getBy")]
         public async Task<IHttpActionResult> Fetch([FromUri]Param param)
         {

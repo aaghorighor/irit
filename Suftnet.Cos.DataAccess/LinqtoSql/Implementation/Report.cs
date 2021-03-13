@@ -12,55 +12,46 @@
         public Report(IMenu menu)
         {
             _menu = menu;          
-        }
-
-        public IEnumerable<OrderDto> GetSales(TermDto term)
-        {
-            using (var context = DataContextFactory.CreateContext())
-            {
-                var objResult = (from o in context.Orders
-                                 join ot in context.OrderTypes on o.OrderTypeId equals ot.Id                            
-                                 where o.TenantId == term.TenantId && (o.CreatedDt >= term.StartDate && o.CreatedDt <= term.EndDate) && o.StatusId == term.StatusId
-                                 orderby o.CreatedDt descending
-                                 select new OrderDto { GrandTotal = o.GrandTotal, OrderType = ot.Name,  OrderTypeId = o.OrderTypeId, Total = o.Total,CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
-                return objResult;
-            }
-        }
-        public IEnumerable<OrderDto> GetSalesByUserName(TermDto term)
-        {
-            using (var context = DataContextFactory.CreateContext())
-            {
-                var objResult = (from o in context.Orders
-                                 join ot in context.OrderTypes on o.OrderTypeId equals ot.Id                               
-                                 where (o.TenantId == term.TenantId && o.CreatedBy == term.UserName) && (o.CreatedDt >= term.StartDate && o.CreatedDt <= term.EndDate.Date) && o.StatusId == term.StatusId
-                                 orderby o.CreatedDt descending
-                                 select new OrderDto { GrandTotal = o.GrandTotal, OrderType = ot.Name, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
-                return objResult;
-            }
-        }       
+        }                    
                                                
         public IEnumerable<PaymentDto> GetPaymentByDates(TermDto term) 
         {
             using (var context = DataContextFactory.CreateContext())
             {
                 var objResult = (from o in context.Payments
-                                 join m in context.OrderTypes on o.PaymentMethodId equals m.Id                          
-                                 where  (o.CreatedDt >= term.StartDate && o.CreatedDt <= term.EndDate)
+                                 join m in context.PaymentMethods on o.PaymentMethodId equals m.Id
+                                 join a in context.AccountTypes on o.AccountTypeId equals a.Id
+                                 where  (o.CreatedDt >= term.StartDate && o.CreatedDt <= term.EndDate) && (o.TenantId == term.TenantId)
                                  orderby o.CreatedDt descending
-                                 select new PaymentDto {  Reference = o.Reference, PaymentMethodId = o.PaymentMethodId, PaymentMethod = m.Name, Amount = o.Amount, CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
+                                 select new PaymentDto { AccountType = a.Name, AccountTypeId = o.AccountTypeId, Reference = o.Reference, PaymentMethodId = o.PaymentMethodId, PaymentMethod = m.Name, Amount = o.Amount, CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
                 return objResult;
             }
         }
-      
+
+        public IEnumerable<MobilePaymentDto> FetchPaymentByDates(TermDto term)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objResult = (from o in context.Payments
+                                 join m in context.PaymentMethods on o.PaymentMethodId equals m.Id
+                                 join a in context.AccountTypes on o.AccountTypeId equals a.Id
+                                 where (o.CreatedDt >= term.StartDate && o.CreatedDt <= term.EndDate) && (o.TenantId == term.TenantId)
+                                 orderby o.CreatedDt descending
+                                 select new MobilePaymentDto { AccountType = a.Name, AccountTypeId = o.AccountTypeId, Reference = o.Reference,PaymentMethod = m.Name, Amount = o.Amount, CreatedAt = o.CreatedDt.ToLongDateString() }).ToList();
+                return objResult;
+            }
+        }
+
         public IEnumerable<PaymentDto> GetPaymentByDatesAndUsername(TermDto term)
         {
             using (var context = DataContextFactory.CreateContext())
             {
                 var objResult = (from o in context.Payments
-                                 join m in context.OrderTypes on o.PaymentMethodId equals m.Id                                
+                                 join m in context.PaymentMethods on o.PaymentMethodId equals m.Id
+                                 join a in context.AccountTypes on o.AccountTypeId equals a.Id
                                  where (o.CreatedDt >= term.StartDate && o.CreatedDt <= term.EndDate) && o.CreatedBy.ToLower() == term.UserName.ToLower()
                                  orderby o.CreatedDt descending
-                                 select new PaymentDto {Reference = o.Reference, PaymentMethodId = o.PaymentMethodId, PaymentMethod = m.Name, Amount = o.Amount, CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
+                                 select new PaymentDto { AccountType = a.Name, AccountTypeId = o.AccountTypeId, Reference = o.Reference, PaymentMethodId = o.PaymentMethodId, PaymentMethod = m.Name, Amount = o.Amount, CreatedDT = o.CreatedDt, CreatedBy = o.CreatedBy, Id = o.Id }).ToList();
                 return objResult;
             }
         }
