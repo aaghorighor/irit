@@ -24,8 +24,8 @@
         public decimal? Balance { get; set; }       
         public string Time { get; set; }
         public int? ExpectedGuest { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string FirstName { get; set; } = "";
+        public string LastName { get; set; } = "";
         public bool ChangeTable { get; set; }
         public  string FullName
         {
@@ -49,6 +49,7 @@
         public Guid PaymentStatusId { get; set; }
         public string PaymentStatus { get; set; }
         public string TableNumber { get; set; }
+        public string Driver { get; set; }
     }
     public class ItemOrderDto 
     {

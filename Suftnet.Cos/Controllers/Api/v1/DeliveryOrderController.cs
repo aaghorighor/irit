@@ -2,7 +2,9 @@
 {
     using Suftnet.Cos.Common;
     using Suftnet.Cos.DataAccess;
-    using Suftnet.Cos.Extension;   
+    using Suftnet.Cos.Extension;
+    using Suftnet.Cos.Web.ActionFilter;
+    using Suftnet.Cos.Web.Command;
     using System;
     using System.Net;
     using System.Net.Http;
@@ -14,10 +16,18 @@
     {     
         private readonly ICustomerOrder _customerOrder;
         private readonly IOrderDetail _orderDetail;
-        public DeliveryOrderController(ICustomerOrder customerOrder, IOrderDetail orderDetail)
+        private readonly IDeliveryOrder _deliveryOrder;
+        private readonly IAcceptDeliveryOrderCommand _acceptDeliveryOrderCommand;
+        private readonly IUpdateDeliveryOrderStatusCommand _updateDeliveryOrderStatusCommand;
+        public DeliveryOrderController(ICustomerOrder customerOrder, IUpdateDeliveryOrderStatusCommand updateDeliveryOrderStatusCommand,
+            IDeliveryOrder deliveryOrder, IAcceptDeliveryOrderCommand acceptDeliveryOrderCommand,
+            IOrderDetail orderDetail)
         {
             _customerOrder = customerOrder;
             _orderDetail = orderDetail;
+            _deliveryOrder = deliveryOrder;
+            _acceptDeliveryOrderCommand = acceptDeliveryOrderCommand;
+            _updateDeliveryOrderStatusCommand = updateDeliveryOrderStatusCommand;
         }
 
         [HttpGet]
@@ -28,7 +38,7 @@
         }
 
         [HttpGet]
-        // [JwtAuthenticationAttribute]
+        [JwtAuthenticationAttribute]
         [Route("fetchBy")]
         public async Task<IHttpActionResult> FetchBy([FromUri]ExternalParam externalParam)
         {
@@ -40,10 +50,25 @@
             var model = await Task.Run(() => _customerOrder.FetchBy(new Guid(externalParam.ExternalId), new Guid(eOrderStatus.Completed.ToUpper())));
 
             return Ok(model);
-        }        
+        }
 
         [HttpGet]
-        // [JwtAuthenticationAttribute]
+        [JwtAuthenticationAttribute]
+        [Route("fetchByJob")]
+        public async Task<IHttpActionResult> FetchByJob([FromUri] ExternalParam externalParam)
+        {
+            if (!ModelState.IsValid)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
+            }
+
+            var model = await Task.Run(() => _customerOrder.FetchByJob(new Guid(externalParam.ExternalId), new Guid(eOrderStatus.Ready.ToUpper())));
+
+            return Ok(model);
+        }
+
+        [HttpGet]
+        [JwtAuthenticationAttribute]
         [Route("fetchByOrder")]
         public async Task<IHttpActionResult> FetchByOrder([FromUri]OrderQuery orderQuery)
         {
@@ -55,7 +80,79 @@
             var model = await Task.Run(() => _orderDetail.FetchMobileBasket(new Guid(orderQuery.OrderId)));
 
             return Ok(model);
-        }        
+        }
 
+        [HttpGet]
+        [JwtAuthenticationAttribute]
+        [Route("fetchByDriver")]
+        public async Task<IHttpActionResult> FetchByDriver([FromUri]DriveQuery driveQuery)
+        {
+            if (!ModelState.IsValid)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
+            }
+
+            var model = await Task.Run(() => _deliveryOrder.FetchBy(driveQuery.UserId, new Guid(eOrderStatus.Delivered.ToUpper())));
+
+            return Ok(model);
+        }
+
+        [HttpGet]
+        [JwtAuthenticationAttribute]
+        [Route("fetchByDelivered")]
+        public async Task<IHttpActionResult> FetchByDelivered([FromUri] DriveQuery driveQuery)
+        {
+            if (!ModelState.IsValid)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
+            }
+
+            var model = await Task.Run(() => _deliveryOrder.FetchByDelivered(driveQuery.UserId, new Guid(eOrderStatus.Delivered.ToUpper())));
+
+            return Ok(model);
+        }
+
+        [HttpPost]
+        [JwtAuthenticationAttribute]
+        [Route("create")]
+        public async Task<IHttpActionResult> Create([FromBody]DeliveryOrderDto deliveryOrderDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
+            }
+
+            _acceptDeliveryOrderCommand.deliveryOrderDto = deliveryOrderDto;    
+            _acceptDeliveryOrderCommand.UserId = this.UserId;          
+            _acceptDeliveryOrderCommand.UserName = this.UserName;         
+            _acceptDeliveryOrderCommand.TenantId = new Guid(this.ExternalId);
+            _acceptDeliveryOrderCommand.StatusId = new Guid(eOrderStatus.Accepted);
+
+            await Task.Run(()=> _acceptDeliveryOrderCommand.Execute());
+
+            return Ok(true);
+        }
+
+        [HttpPost]
+        [JwtAuthenticationAttribute]
+        [Route("updateStatus")]
+        public async Task<IHttpActionResult> UpdateStatus([FromBody]UpdateDeliveryStatusDto updateDeliveryStatusDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
+            }
+         
+            _updateDeliveryOrderStatusCommand.UserId = this.UserId;
+            _updateDeliveryOrderStatusCommand.CreatedAt = DateTime.UtcNow;
+            _updateDeliveryOrderStatusCommand.UserName = this.UserName;
+            _updateDeliveryOrderStatusCommand.TenantId = new Guid(this.ExternalId);
+            _updateDeliveryOrderStatusCommand.OrderId = updateDeliveryStatusDto.OrderId;
+            _updateDeliveryOrderStatusCommand.StatusId = updateDeliveryStatusDto.StatusId;
+
+            await Task.Run(() => _updateDeliveryOrderStatusCommand.Execute());
+
+            return Ok(true);
+        }
     }
 }

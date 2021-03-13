@@ -272,6 +272,9 @@
                 case (int)eArea.FrontOffice:
                     title = "Front Office";
                     break;
+                case (int)eArea.DeliveryOffice:
+                    title = "Delivery Office";
+                    break;
                 default:
                     title = "Front Office";
                     break;

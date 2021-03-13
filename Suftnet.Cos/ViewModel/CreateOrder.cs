@@ -41,4 +41,11 @@
         [StringLength(50)]
         public string CustomerId { get; set; }
     }
+
+    public class DriveQuery
+    {
+        [Required]
+        [StringLength(50)]
+        public string UserId { get; set; }
+    }
 }

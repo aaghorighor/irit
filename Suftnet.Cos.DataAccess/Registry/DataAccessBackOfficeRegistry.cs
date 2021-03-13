@@ -30,7 +30,7 @@
             For<IOrderType>().Use<OrderType>();
             For<IPaymentMethod>().Use<PaymentMethod>();
             For<IPaymentStatus>().Use<PaymentStatus>();
-            //For<IDeliveryAddress>().Use<DeliveryAddress>();
+            For<IDeliveryOrder>().Use<DeliveryOrder>();
             For<ITenantStatus>().Use<TenantStatus>();
             For<ICustomer>().Use<Customer>();
             For<ICustomerAddress>().Use<CustomerAddress>();

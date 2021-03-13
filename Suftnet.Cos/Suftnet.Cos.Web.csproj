@@ -298,6 +298,8 @@
     <Compile Include="Areas\Subscription\Controllers\PlanController.cs" />
     <Compile Include="Areas\Subscription\Controllers\TrialController.cs" />
     <Compile Include="Areas\Subscription\Models\DeleteCard.cs" />
+    <Compile Include="Command\UpdateDeliveryOrderStatusCommand.cs" />
+    <Compile Include="Command\AcceptOrderCommand.cs" />
     <Compile Include="Command\OrderPaymentCommand.cs" />
     <Compile Include="Command\CreateDeliveryOrderCommand.cs" />
     <Compile Include="Command\CustomerBoostrapCommand.cs" />

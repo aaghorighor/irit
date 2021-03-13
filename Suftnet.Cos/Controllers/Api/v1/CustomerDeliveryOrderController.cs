@@ -2,6 +2,7 @@
 {
     using Suftnet.Cos.DataAccess;
     using Suftnet.Cos.Extension;
+    using Suftnet.Cos.Web.ActionFilter;
     using Suftnet.Cos.Web.Command;
     using Suftnet.Cos.Web.ViewModel;
     using System;
@@ -35,7 +36,7 @@
         }
 
         [HttpGet]
-        // [JwtAuthenticationAttribute]
+        [JwtAuthenticationAttribute]
         [Route("fetch")]
         public async Task<IHttpActionResult> Fetch([FromUri]CustomerOrderQuery customerOrderQuery)
         {
@@ -50,7 +51,7 @@
         }        
 
         [HttpGet]
-        // [JwtAuthenticationAttribute]
+        [JwtAuthenticationAttribute]
         [Route("fetchBasket")]
         public async Task<IHttpActionResult> FetchBasket([FromUri] OrderQuery orderQuery)
         {
@@ -66,7 +67,7 @@
 
 
         [HttpPost]
-       // [JwtAuthenticationAttribute]
+        [JwtAuthenticationAttribute]
         [Route("create")]
         public IHttpActionResult Create([FromBody]DeliveryOrderAdapter entityToCreate)
         {

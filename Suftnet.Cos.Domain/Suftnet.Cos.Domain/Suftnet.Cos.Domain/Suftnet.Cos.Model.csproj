@@ -63,6 +63,7 @@
     <Compile Include="Dto\CustomerDto.cs" />
     <Compile Include="Dto\CustomerOrderDeliveryDto.cs" />
     <Compile Include="Dto\CustomerOrderDto.cs" />
+    <Compile Include="Dto\DeliveryOrderDto.cs" />
     <Compile Include="Dto\CustomerOrderNotificationDto.cs" />
     <Compile Include="Dto\DeliveryAddressDto.cs" />
     <Compile Include="Dto\MobileLoggerDto.cs" />

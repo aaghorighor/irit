@@ -131,6 +131,7 @@
     <Compile Include="Interface\ICommon.cs" />
     <Compile Include="Interface\ICommonType.cs" />
     <Compile Include="Interface\IDeliveryAddress.cs" />
+    <Compile Include="Interface\IDeliveryOrder.cs" />
     <Compile Include="Interface\IDevice.cs" />
     <Compile Include="Interface\IDiscount.cs" />
     <Compile Include="Interface\IEditor.cs" />
@@ -177,6 +178,7 @@
     <Compile Include="LinqtoSql\Action\CustomerAddress.cs" />
     <Compile Include="LinqtoSql\Action\CustomerDeliveryStatus.cs" />
     <Compile Include="LinqtoSql\Action\CustomerOrder.cs" />
+    <Compile Include="LinqtoSql\Action\DeliveryOrder.cs" />
     <Compile Include="LinqtoSql\Action\CustomerOrderDelivery.cs" />
     <Compile Include="LinqtoSql\Action\CustomerOrderNotification.cs" />
     <Compile Include="LinqtoSql\Action\DataContext.cs" />
@@ -219,6 +221,7 @@
     <Compile Include="LinqtoSql\Identity\ApplicationUser.cs" />
     <Compile Include="LinqtoSql\Implementation\CustomerNotification.cs" />
     <Compile Include="LinqtoSql\Implementation\CustomerOrder.cs" />
+    <Compile Include="LinqtoSql\Implementation\DeliveryOrder.cs" />
     <Compile Include="LinqtoSql\Implementation\CustomerOrderDelivery.cs" />
     <Compile Include="LinqtoSql\Implementation\CustomerDeliveryStatus.cs" />
     <Compile Include="LinqtoSql\Implementation\CustomerAddress.cs" />

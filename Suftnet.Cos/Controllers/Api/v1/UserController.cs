@@ -76,15 +76,16 @@
         {            
             dynamic model = new
             {
+                userId = user.Id,
                 externalId = user.ExternalId,
                 firstName = user.FirstName.EmptyOrNull(),
                 lastName = user.LastName.EmptyOrNull(),
                 areaId = user.AreaId,
-                area = user.Area,
+                area = user.Area,             
                 phoneNumber = user.PhoneNumber.EmptyOrNull(),
                 userName = user.UserName.EmptyOrNull(),
                 permissions = GetUserPermissions(user),
-                jwtToken = _jwToken.Create(user.UserName, user.Id)
+                jwtToken = _jwToken.Create(user.UserName, user.Id, user.TenantId.ToString())
             };
 
             return Ok(model);

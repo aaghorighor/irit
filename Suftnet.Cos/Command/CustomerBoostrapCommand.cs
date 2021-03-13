@@ -52,7 +52,7 @@
                             customerId = User.CustomerId,
                             permissions = GetUserPermissions(),
                             fcmToken = "",
-                            jwtToken = _jwToken.Create(User.UserName, User.Id)
+                            jwtToken = _jwToken.Create(User.UserName, User.Id, TenantId.ToString())
                         },                       
                         tenant = new
                         {

@@ -74,6 +74,13 @@
                     return null;
                 }
 
+                var claimSid = identity.FindFirst(ClaimTypes.GroupSid);
+
+                if (string.IsNullOrEmpty(claimSid?.Value))
+                {
+                    return null;
+                }
+
                 var userIdClaim = identity.FindFirst(ClaimTypes.NameIdentifier);
 
                 if (string.IsNullOrEmpty(userIdClaim?.Value))

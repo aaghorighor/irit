@@ -1,94 +1,18 @@
-20210302 13:37:16 [9] ERROR Web [(null)] - StackTrace
-   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)
-   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)
-   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController& controller, IControllerFactory& factory)
-   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
-   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
-   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
-   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
-   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
-   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)Messages
-The controller for path '/tes' was not found or does not implement IController.
---------------------------------------------
-
---------------------------------------------------------------------------------------------
-20210303 17:57:13 [10] ERROR Web [(null)] - StackTrace
-   at Stripe.Infrastructure.Requestor.ExecuteRequest(HttpRequestMessage requestMessage)
-   at Stripe.Service`1.PostRequest[T](String url, BaseOptions options, RequestOptions requestOptions)
-   at Stripe.ChargeService.Create(ChargeCreateOptions options, RequestOptions requestOptions)
-   at Suftnet.Cos.Stripe.ChargeProvider.Charge(Int64 amount, String currency, String customerId, String sourceToken, String description, String& error) in E:\Git\Web\Irit\Irit\Suftnet.Cos.Stripe\ServiceProvider\ChargeProvider.cs:line 31
-   at Suftnet.Cos.Web.Command.OrderPaymentCommand.Charge() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\OrderPaymentCommand.cs:line 76Messages
-This value must be greater than or equal to 1.
---------------------------------------------
-
---------------------------------------------------------------------------------------------
-20210303 18:08:30 [15] ERROR Web [(null)] - StackTrace
-   at Suftnet.Cos.Web.Command.OrderPaymentCommand.CreateCustomer(String stripeCustomerId) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\OrderPaymentCommand.cs:line 97
-   at Suftnet.Cos.Web.Command.OrderPaymentCommand.Charge() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\OrderPaymentCommand.cs:line 66Messages
-Object reference not set to an instance of an object.
---------------------------------------------
-
---------------------------------------------------------------------------------------------
-20210303 18:10:12 [15] ERROR Web [(null)] - StackTrace
-   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
-   at System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
-   at System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
-   at System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
-   at System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
-   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
-   at System.Data.SqlClient.SqlDataReader.get_MetaData()
-   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
-   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
-   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
-   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
-   at System.Data.SqlClient.SqlCommand.ExecuteReader()
-   at Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`1.VerifyColumns(SqlConnection conn, String table, String[] columns)
-   at Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`1.IsIdentityV1Schema(DbContext db)
-   at Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`1..ctor(String nameOrConnectionString, Boolean throwIfV1Schema)
-   at Suftnet.Cos.DataAccess.Action.DataContext..ctor(String connectionString) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Action\DataContext.cs:line 17
-   at Suftnet.DataFactory.LinqToSql.DataContextFactory.CreateContext() in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\DataContextFactory.cs:line 15
-   at Suftnet.Cos.DataAccess.Logger.Insert(LogDto entity) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\Logger.cs:line 49
-   at Suftnet.Cos.Core.LogAdapter.Logger(String message) in E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\Implementation\Log4NetAdapter.cs:line 138
-   at Suftnet.Cos.Core.LogAdapter.LogError(Exception ex) in E:\Git\Web\Irit\Irit\Suftnet.Cos.Core\Implementation\Log4NetAdapter.cs:line 79
-   at Suftnet.Cos.Web.Command.OrderPaymentCommand.Charge() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\OrderPaymentCommand.cs:line 90
-   at Suftnet.Cos.Web.Command.OrderPaymentCommand.Execute() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\OrderPaymentCommand.cs:line 31
-   at Suftnet.Cos.Mobile.CustomerDeliveryOrderController.Create(DeliveryOrderAdapter entityToCreate) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerDeliveryOrderController.cs:line 79
-   at lambda_method(Closure , Object , Object[] )
-   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
-   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
---------------------------------------------
-HelpLink.ProdName = Microsoft SQL Server
-HelpLink.EvtSrc = MSSQLServer
-HelpLink.EvtID = -1
-HelpLink.BaseHelpUrl = http://go.microsoft.com/fwlink
-HelpLink.LinkId = 20476
-Request.Body = {"amount":150.96,"baskets":[{"addonIds":"57,61","addonNames":"Bebidas,BOTTLEGREEN-APPLE-CORDIAL","category":"SOUP MEALS SPECIAL","id":5,"imageUrl":"179f3c81-8c2a-432a-960d-b89c69f4f9ef.jpg","menu":"AFANG SOUP","menuId":"8c9de96d-39dc-41cc-8e2d-74533df463d0","price":24.979999999999997,"quantity":1},{"addonIds":"","addonNames":"","category":"STARTERS","id":6,"imageUrl":"20297964-1d30-48d8-96c8-a25ae8ae5b20.jpg","menu":"CINNAMON FRENCH TOAST STICKS","menuId":"0f85ffe5-2e7b-409a-955e-a390bd40c64f","price":14.0,"quantity":2},{"addonIds":"","addonNames":"","category":"STARTERS","id":7,"imageUrl":"20297964-1d30-48d8-96c8-a25ae8ae5b20.jpg","menu":"CINNAMON FRENCH TOAST STICKS","menuId":"0f85ffe5-2e7b-409a-955e-a390bd40c64f","price":14.0,"quantity":2},{"addonIds":"","addonNames":"","category":"MAIN COURSE","id":8,"imageUrl":"834bcd13-4ae5-403d-a7c9-7fcad7c5aa7d.jpg","menu":"JOLLOF RICE","menuId":"6c55fc4d-d92b-42ca-a3eb-51f130e62981","price":60.0,"quantity":3},{"addonIds":"","addonNames":"","category":"STARTERS","id":9,"imageUrl":"690afbd9-bb03-4710-b2fc-f56651c89565.jpg","menu":"YAM PEPPER SOUP","menuId":"8010d9df-ced6-46a7-8a6e-a891e2eeb00d","price":37.98,"quantity":2}],"customerId":"61397851-b219-4964-af1d-9da1ad3a1a73","externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","firstName":"James","lastName":"Micheal","mobile":"074070227236","order":{"addressId":"d667c8fd-59c1-49a7-a506-72ba4ccaa0e0","balance":0.0,"customerId":"61397851-b219-4964-af1d-9da1ad3a1a73","discount":0.0,"externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","grandTotal":0.0,"orderDate":"3/03/2021 06:08:57","paid":0.0,"tax":0.0,"total":150.95999999999998,"totalDiscount":0.0,"totalTax":0.0},"sourceToken":"tok_1IQz82F5qtVzXXPMoqGzQ2IF","userName":"JamesMicheal"}
-
---------------------------------------------------------------------------------------------
-20210305 20:33:19 [18] ERROR Web [(null)] - StackTrace
+20210312 15:59:28 [83] ERROR Web [(null)] - StackTrace
    at System.Data.Entity.Internal.InternalContext.SaveChanges()
-   at Suftnet.Cos.DataAccess.Customer.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\Customer.cs:line 121
-   at Suftnet.Cos.Mobile.CustomerController.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerController.cs:line 101
-   at lambda_method(Closure , Object , Object[] )
-   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
-   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+   at Suftnet.Cos.DataAccess.DeliveryOrder.Insert(DeliveryOrderDto entity) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\DeliveryOrder.cs:line 52
+   at Suftnet.Cos.Mobile.DeliveryOrderController.<>c__DisplayClass8_0.<Create>b__0() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\DeliveryOrderController.cs:line 93
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Suftnet.Cos.Mobile.DeliveryOrderController.<Create>d__8.MoveNext() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\DeliveryOrderController.cs:line 93
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Threading.Tasks.TaskHelpersExtensions.<CastToObject>d__3`1.MoveNext()
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
@@ -101,18 +25,31 @@ Request.Body = {"amount":150.96,"baskets":[{"addonIds":"57,61","addonNames":"Beb
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+An error occurred while updating the entries. See the inner exception for details.
 --------------------------------------------
-Request.Body = {"customerId":"611047c7-3142-4d63-890b-376a06f85811","externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","fcmToken":"epIX3veVyhg:APA91bHNoh0gWAk9gGhSE9kfSDmYDNmt1mwLhGwf2IP_DBjGEU_wW2dXcj2vWJwobcT8QiluqeoTZ677nc2vpc3HeC4nHop9ohc5SlaqnU0WWkCZat5gySp2oBpTr3_0O8_7X_HHaVVf"}
-
+Request.Body = {"orderId":"fdce2caf-2c11-4b4a-9895-6916e79f2ce4","userId":"fee9a2ef-c152-45b6-a2ee-5c74fe1cabf9"}
+--------------------------------------------
+Inner Exception
+Messages
+An error occurred while updating the entries. See the inner exception for details.Messages
+The conversion of a datetime2 data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
 --------------------------------------------------------------------------------------------
-20210305 20:54:35 [22] ERROR Web [(null)] - StackTrace
+20210312 16:00:10 [83] ERROR Web [(null)] - StackTrace
    at System.Data.Entity.Internal.InternalContext.SaveChanges()
-   at Suftnet.Cos.DataAccess.Customer.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\Customer.cs:line 121
-   at Suftnet.Cos.Mobile.CustomerController.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerController.cs:line 101
-   at lambda_method(Closure , Object , Object[] )
-   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
-   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+   at Suftnet.Cos.DataAccess.DeliveryOrder.Insert(DeliveryOrderDto entity) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\DeliveryOrder.cs:line 52
+   at Suftnet.Cos.Mobile.DeliveryOrderController.<>c__DisplayClass8_0.<Create>b__0() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\DeliveryOrderController.cs:line 93
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Suftnet.Cos.Mobile.DeliveryOrderController.<Create>d__8.MoveNext() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\DeliveryOrderController.cs:line 93
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Threading.Tasks.TaskHelpersExtensions.<CastToObject>d__3`1.MoveNext()
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
@@ -125,18 +62,30 @@ Request.Body = {"customerId":"611047c7-3142-4d63-890b-376a06f85811","externalId"
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+An error occurred while updating the entries. See the inner exception for details.
 --------------------------------------------
-Request.Body = {"customerId":"aed10fef-2b1b-48f0-8bc7-293bff635ae3","externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","fcmToken":"epIX3veVyhg:APA91bHNoh0gWAk9gGhSE9kfSDmYDNmt1mwLhGwf2IP_DBjGEU_wW2dXcj2vWJwobcT8QiluqeoTZ677nc2vpc3HeC4nHop9ohc5SlaqnU0WWkCZat5gySp2oBpTr3_0O8_7X_HHaVVf"}
-
+Request.Body = {"orderId":"6ad41dbf-ed84-4ee5-8274-ba1d94bef3f6","userId":"fee9a2ef-c152-45b6-a2ee-5c74fe1cabf9"}
+--------------------------------------------
+Inner Exception
+Messages
+An error occurred while updating the entries. See the inner exception for details.Messages
+The conversion of a datetime2 data type to a smalldatetime data type resulted in an out-of-range value.
+The statement has been terminated.
 --------------------------------------------------------------------------------------------
-20210305 20:59:16 [41] ERROR Web [(null)] - StackTrace
-   at System.Data.Entity.Internal.InternalContext.SaveChanges()
-   at Suftnet.Cos.DataAccess.Customer.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\Customer.cs:line 121
-   at Suftnet.Cos.Mobile.CustomerController.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerController.cs:line 101
-   at lambda_method(Closure , Object , Object[] )
-   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
-   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+20210312 17:51:10 [18] ERROR Web [(null)] - StackTrace
+   at Suftnet.Cos.Web.Command.AcceptDeliveryOrderCommand.AcceptOrder() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\AcceptOrderCommand.cs:line 42
+   at Suftnet.Cos.Web.Command.AcceptDeliveryOrderCommand.Execute() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\AcceptOrderCommand.cs:line 35
+   at Suftnet.Cos.Mobile.DeliveryOrderController.<Create>b__9_0() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\DeliveryOrderController.cs:line 99
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at Suftnet.Cos.Mobile.DeliveryOrderController.<Create>d__9.MoveNext() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\DeliveryOrderController.cs:line 99
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Threading.Tasks.TaskHelpersExtensions.<CastToObject>d__3`1.MoveNext()
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
@@ -148,301 +97,35 @@ Request.Body = {"customerId":"aed10fef-2b1b-48f0-8bc7-293bff635ae3","externalId"
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
---------------------------------------------
-Request.Body = {"customerId":"3e753502-514e-4e0b-a314-8bd944448f86","externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","fcmToken":"epIX3veVyhg:APA91bHNoh0gWAk9gGhSE9kfSDmYDNmt1mwLhGwf2IP_DBjGEU_wW2dXcj2vWJwobcT8QiluqeoTZ677nc2vpc3HeC4nHop9ohc5SlaqnU0WWkCZat5gySp2oBpTr3_0O8_7X_HHaVVf"}
-
---------------------------------------------------------------------------------------------
-20210305 21:05:11 [55] ERROR Web [(null)] - StackTrace
-   at System.Data.Entity.Internal.InternalContext.SaveChanges()
-   at Suftnet.Cos.DataAccess.Customer.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\Customer.cs:line 121
-   at Suftnet.Cos.Mobile.CustomerController.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerController.cs:line 101
-   at lambda_method(Closure , Object , Object[] )
-   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
-   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Suftnet.Cos.Web.ActionFilter.AddChallengeOnUnauthorizedResult.<ExecuteAsync>d__7.MoveNext() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Infrastructure\ActionFilter\AddChallengeOnUnauthorizedResult.cs:line 25
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
---------------------------------------------
-Request.Body = {"customerId":"53b627c5-6328-49de-ba77-1e4abfce20c2","externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","fcmToken":"epIX3veVyhg:APA91bHNoh0gWAk9gGhSE9kfSDmYDNmt1mwLhGwf2IP_DBjGEU_wW2dXcj2vWJwobcT8QiluqeoTZ677nc2vpc3HeC4nHop9ohc5SlaqnU0WWkCZat5gySp2oBpTr3_0O8_7X_HHaVVf"}
-
---------------------------------------------------------------------------------------------
-20210305 21:51:25 [9] ERROR Web [(null)] - StackTrace
-   at System.Data.Entity.Internal.InternalContext.SaveChanges()
-   at Suftnet.Cos.DataAccess.Customer.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\Customer.cs:line 121
-   at Suftnet.Cos.Mobile.CustomerController.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerController.cs:line 101
-   at lambda_method(Closure , Object , Object[] )
-   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
-   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
---------------------------------------------
-Request.Body = {"customerId":"cf845d3c-0776-4948-b8e2-3b37679c140c","externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","fcmToken":"epIX3veVyhg:APA91bHNoh0gWAk9gGhSE9kfSDmYDNmt1mwLhGwf2IP_DBjGEU_wW2dXcj2vWJwobcT8QiluqeoTZ677nc2vpc3HeC4nHop9ohc5SlaqnU0WWkCZat5gySp2oBpTr3_0O8_7X_HHaVVf"}
-
---------------------------------------------------------------------------------------------
-20210305 21:54:33 [9] ERROR Web [(null)] - StackTrace
-   at System.Data.Entity.Internal.InternalContext.SaveChanges()
-   at Suftnet.Cos.DataAccess.Customer.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\LinqtoSql\Implementation\Customer.cs:line 121
-   at Suftnet.Cos.Mobile.CustomerController.UpdateFcmToken(UpdateFcmTokenDto updateFcmTokenDto) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\CustomerController.cs:line 101
-   at lambda_method(Closure , Object , Object[] )
-   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
-   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
---------------------------------------------
-Request.Body = {"customerId":"5309f555-e7e0-4c5e-836b-19bb3be54623","externalId":"115924fb-79f9-4e0c-ab5f-d4e1dfc1c893","fcmToken":"epIX3veVyhg:APA91bHNoh0gWAk9gGhSE9kfSDmYDNmt1mwLhGwf2IP_DBjGEU_wW2dXcj2vWJwobcT8QiluqeoTZ677nc2vpc3HeC4nHop9ohc5SlaqnU0WWkCZat5gySp2oBpTr3_0O8_7X_HHaVVf"}
-
---------------------------------------------------------------------------------------------
-20210308 15:10:26 [7] ERROR Web [(null)] - StackTrace
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-A task was canceled.
---------------------------------------------
-Request.Body = 
-
---------------------------------------------------------------------------------------------
-20210308 15:31:02 [14] ERROR Web [(null)] - StackTrace
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-A task was canceled.
---------------------------------------------
-Request.Body = 
-
---------------------------------------------------------------------------------------------
-20210308 15:34:23 [27] ERROR Web [(null)] - StackTrace
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-A task was canceled.
---------------------------------------------
-Request.Body = 
-
---------------------------------------------------------------------------------------------
-20210308 15:36:44 [10] ERROR Web [(null)] - StackTrace
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-A task was canceled.
---------------------------------------------
-Request.Body = 
-
---------------------------------------------------------------------------------------------
-20210308 16:06:37 [11] ERROR Web [(null)] - StackTrace
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-A task was canceled.
---------------------------------------------
-Request.Body = 
-
---------------------------------------------------------------------------------------------
-20210308 16:11:35 [24] ERROR Web [(null)] - StackTrace
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-A task was canceled.
---------------------------------------------
-Request.Body = 
-
---------------------------------------------------------------------------------------------
-20210308 16:24:10 [54] ERROR Web [(null)] - StackTrace
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-A task was canceled.
---------------------------------------------
-Request.Body = 
-
---------------------------------------------------------------------------------------------
-20210308 16:42:28 [57] ERROR Web [(null)] - StackTrace
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-A task was canceled.
---------------------------------------------
-Request.Body = 
-
---------------------------------------------------------------------------------------------
-20210308 16:48:18 [60] ERROR Web [(null)] - StackTrace
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-A task was canceled.
---------------------------------------------
-Request.Body = 
-
---------------------------------------------------------------------------------------------
-20210308 17:02:27 [91] ERROR Web [(null)] - StackTrace
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-A task was canceled.
---------------------------------------------
-Request.Body = 
-
---------------------------------------------------------------------------------------------
-20210310 10:18:34 [29] ERROR Web [(null)] - StackTrace
-   at Suftnet.Cos.Mobile.AccountController.VerifyAppCode(VerifyAppCode param) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\AccountController.cs:line 45
-   at lambda_method(Closure , Object , Object[] )
-   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
-   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
 Object reference not set to an instance of an object.
 --------------------------------------------
-Request.Body = 
+Request.Body = {"orderId":"0900b42b-3b3f-43b9-9d2d-6fa7a802488d"}
 
 --------------------------------------------------------------------------------------------
-20210310 10:20:08 [26] ERROR Web [(null)] - StackTrace
-   at Suftnet.Cos.Mobile.AccountController.VerifyAppCode(VerifyAppCode param) in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\AccountController.cs:line 45
-   at lambda_method(Closure , Object , Object[] )
-   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
-   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+20210313 10:37:56 [12] ERROR Web [(null)] - StackTrace
+   at Suftnet.Cos.Web.Command.AcceptDeliveryOrderCommand.AcceptOrder() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\AcceptOrderCommand.cs:line 34
+   at Suftnet.Cos.Web.Command.AcceptDeliveryOrderCommand.Execute() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Command\AcceptOrderCommand.cs:line 28
+   at Suftnet.Cos.Mobile.DeliveryOrderController.<UpdateStatus>b__12_0() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\DeliveryOrderController.cs:line 138
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at Suftnet.Cos.Mobile.DeliveryOrderController.<UpdateStatus>d__12.MoveNext() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Controllers\Api\v1\DeliveryOrderController.cs:line 138
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Threading.Tasks.TaskHelpersExtensions.<CastToObject>d__3`1.MoveNext()
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
@@ -451,96 +134,21 @@ Request.Body =
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Suftnet.Cos.Web.ActionFilter.AddChallengeOnUnauthorizedResult.<ExecuteAsync>d__7.MoveNext() in E:\Git\Web\Irit\Irit\Suftnet.Cos\Infrastructure\ActionFilter\AddChallengeOnUnauthorizedResult.cs:line 25
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
 --- End of stack trace from previous location where exception was thrown ---
    at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
 Object reference not set to an instance of an object.
 --------------------------------------------
-Request.Body = 
-
---------------------------------------------------------------------------------------------
-20210311 12:36:14 [20] ERROR Web [(null)] - StackTrace
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-A task was canceled.
---------------------------------------------
-Request.Body = 
-
---------------------------------------------------------------------------------------------
-20210311 12:36:14 [24] ERROR Web [(null)] - StackTrace
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-A task was canceled.
---------------------------------------------
-Request.Body = 
-
---------------------------------------------------------------------------------------------
-20210311 12:36:14 [23] ERROR Web [(null)] - StackTrace
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-A task was canceled.
---------------------------------------------
-Request.Body = 
-
---------------------------------------------------------------------------------------------
-20210311 14:22:23 [31] ERROR Web [(null)] - StackTrace
-   at System.Threading.CancellationToken.ThrowOperationCanceledException()
-   at System.Net.Http.HttpContentExtensions.<ReadAsAsyncCore>d__0`1.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
---- End of stack trace from previous location where exception was thrown ---
-   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
-   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()Messages
-The operation was canceled.
---------------------------------------------
-Request.Body = {"AVAILABLE_MEM_SIZE":38857625600,"BUILD":{"BOARD":"msm8998","BOOTLOADER":"G950USQU7DSL3","BRAND":"samsung","CPU_ABI":"arm64-v8a","CPU_ABI2":"","DEVICE":"dreamqltesq","DISPLAY":"PPR1.180610.011.G950USQU7DSL3","FINGERPRINT":"samsung\/dreamqltesq\/dreamqltesq:9\/PPR1.180610.011\/G950USQU7DSL3:user\/release-keys","HARDWARE":"qcom","HOST":"SWDH2820","ID":"PPR1.180610.011","IS_DEBUGGABLE":false,"IS_EMULATOR":false,"MANUFACTURER":"samsung","MODEL":"SM-G950U","PERMISSIONS_REVIEW_REQUIRED":false,"PRODUCT":"dreamqltesq","RADIO":"unknown","SERIAL":"unknown","SUPPORTED_32_BIT_ABIS":["armeabi-v7a","armeabi"],"SUPPORTED_64_BIT_ABIS":["arm64-v8a"],"SUPPORTED_ABIS":["arm64-v8a","armeabi-v7a","armeabi"],"TAGS":"release-keys","TIME":1575639168000,"TYPE":"user","UNKNOWN":"unknown","USER":"dpi","VERSION":{"ACTIVE_CODENAMES":[],"BASE_OS":"","CODENAME":"REL","FIRST_SDK_INT":24,"INCREMENTAL":"G950USQU7DSL3","PREVIEW_SDK_INT":0,"RELEASE":"9","RESOURCES_SDK_INT":28,"SDK":"28","SDK_INT":28,"SECURITY_INDEX":"1","SECURITY_PATCH":"2019-12-01","SEM_FIRST_SDK_INT":24,"SEM_INT":2801,"SEM_PLATFORM_INT":100000}},"ANDROID_VERSION":"9","STACK_TRACE":"java.lang.RuntimeException: Unable to instantiate activity ComponentInfo{com.suftnet.irit.debug\/com.suftnet.irit.ui.DeliveryActivity}: java.lang.IllegalStateException: System services not available to Activities before onCreate()\n\tat android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3022)\n\tat android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3259)\n\tat android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:78)\n\tat android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:108)\n\tat android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:68)\n\tat android.app.ActivityThread$H.handleMessage(ActivityThread.java:1950)\n\tat android.os.Handler.dispatchMessage(Handler.java:106)\n\tat android.os.Looper.loop(Looper.java:214)\n\tat android.app.ActivityThread.main(ActivityThread.java:7073)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:494)\n\tat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:964)\nCaused by: java.lang.IllegalStateException: System services not available to Activities before onCreate()\n\tat android.app.Activity.getSystemService(Activity.java:6136)\n\tat android.app.Dialog.<init>(Dialog.java:226)\n\tat android.app.Dialog.<init>(Dialog.java:211)\n\tat androidx.appcompat.app.AppCompatDialog.<init>(AppCompatDialog.java:57)\n\tat com.google.android.material.bottomsheet.BottomSheetDialog.<init>(BottomSheetDialog.java:60)\n\tat com.suftnet.irit.ui.DeliveryActivity.<init>(DeliveryActivity.kt:38)\n\tat java.lang.Class.newInstance(Native Method)\n\tat android.app.AppComponentFactory.instantiateActivity(AppComponentFactory.java:69)\n\tat androidx.core.app.CoreComponentFactory.instantiateActivity(CoreComponentFactory.java:45)\n\tat android.app.Instrumentation.newActivity(Instrumentation.java:1215)\n\tat android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3010)\n\t... 11 more\njava.lang.IllegalStateException: System services not available to Activities before onCreate()\n\tat android.app.Activity.getSystemService(Activity.java:6136)\n\tat android.app.Dialog.<init>(Dialog.java:226)\n\tat android.app.Dialog.<init>(Dialog.java:211)\n\tat androidx.appcompat.app.AppCompatDialog.<init>(AppCompatDialog.java:57)\n\tat com.google.android.material.bottomsheet.BottomSheetDialog.<init>(BottomSheetDialog.java:60)\n\tat com.suftnet.irit.ui.DeliveryActivity.<init>(DeliveryActivity.kt:38)\n\tat java.lang.Class.newInstance(Native Method)\n\tat android.app.AppComponentFactory.instantiateActivity(AppComponentFactory.java:69)\n\tat androidx.core.app.CoreComponentFactory.instantiateActivity(CoreComponentFactory.java:45)\n\tat android.app.Instrumentation.newActivity(Instrumentation.java:1215)\n\tat android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3010)\n\tat android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3259)\n\tat android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:78)\n\tat android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:108)\n\tat android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:68)\n\tat android.app.ActivityThread$H.handleMessage(ActivityThread.java:1950)\n\tat android.os.Handler.dispatchMessage(Handler.java:106)\n\tat android.os.Looper.loop(Looper.java:214)\n\tat android.app.ActivityThread.main(ActivityThread.java:7073)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:494)\n\tat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:964)\n","CRASH_CONFIGURATION":{"FlipFont":0,"boldFont":0,"colorMode":9,"densityDpi":480,"dexCompatEnabled":0,"dexCompatUiMode":0,"fontScale":1,"hardKeyboardHidden":"HARDKEYBOARDHIDDEN_YES","keyboard":"KEYBOARD_NOKEYS","keyboardHidden":"KEYBOARDHIDDEN_NO","locale":"en_US","mcc":234,"mnc":15,"navigation":"NAVIGATION_NONAV","navigationHidden":"NAVIGATIONHIDDEN_YES","orientation":"ORIENTATION_LANDSCAPE","rilSetLocale":false,"screenHeightDp":336,"screenLayout":"SCREENLAYOUT_SIZE_NORMAL+SCREENLAYOUT_LONG_YES+SCREENLAYOUT_LAYOUTDIR_LTR+SCREENLAYOUT_ROUND_NO","screenWidthDp":692,"semButtonShapeEnabled":0,"semDesktopModeEnabled":0,"semMobileKeyboardCovered":0,"seq":470,"showButtonBackground":0,"smallestScreenWidthDp":360,"themeSeq":0,"touchscreen":"TOUCHSCREEN_FINGER","uiMode":"UI_MODE_TYPE_NORMAL+UI_MODE_NIGHT_NO","userSetLocale":false,"windowConfiguration":"{ mBounds=Rect(0, 0 - 2076, 1080) mAppBounds=Rect(0, 0 - 2076, 1080) mWindowingMode=fullscreen mActivityType=undefined}"},"REPORT_ID":"2eb2041d-5585-4810-8992-eff2efaec602","USER_APP_START_DATE":"2021-03-11T14:22:21.861+00:00","APP_VERSION_CODE":1,"IS_SILENT":false,"LOGCAT":"03-11 14:22:20.806 E\/ACRA    (25741): java.lang.RuntimeException: Unable to instantiate activity ComponentInfo{com.suftnet.irit.debug\/com.suftnet.irit.ui.DeliveryActivity}: java.lang.IllegalStateException: System services not available to Activities before onCreate()\n03-11 14:22:20.806 E\/ACRA    (25741): \tat android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3022)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3259)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:78)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:108)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:68)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat android.app.ActivityThread$H.handleMessage(ActivityThread.java:1950)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat android.os.Handler.dispatchMessage(Handler.java:106)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat android.os.Looper.loop(Looper.java:214)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat android.app.ActivityThread.main(ActivityThread.java:7073)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat java.lang.reflect.Method.invoke(Native Method)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:494)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:964)\n03-11 14:22:20.806 E\/ACRA    (25741): Caused by: java.lang.IllegalStateException: System services not available to Activities before onCreate()\n03-11 14:22:20.806 E\/ACRA    (25741): \tat android.app.Activity.getSystemService(Activity.java:6136)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat android.app.Dialog.<init>(Dialog.java:226)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat android.app.Dialog.<init>(Dialog.java:211)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat androidx.appcompat.app.AppCompatDialog.<init>(AppCompatDialog.java:57)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat com.google.android.material.bottomsheet.BottomSheetDialog.<init>(BottomSheetDialog.java:60)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat com.suftnet.irit.ui.DeliveryActivity.<init>(DeliveryActivity.kt:38)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat java.lang.Class.newInstance(Native Method)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat android.app.AppComponentFactory.instantiateActivity(AppComponentFactory.java:69)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat androidx.core.app.CoreComponentFactory.instantiateActivity(CoreComponentFactory.java:45)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat android.app.Instrumentation.newActivity(Instrumentation.java:1215)\n03-11 14:22:20.806 E\/ACRA    (25741): \tat android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3010)\n03-11 14:22:20.806 E\/ACRA    (25741): \t... 11 more\n03-11 14:22:20.935 I\/Process (25741): Sending signal. PID: 25741 SIG: 9\n03-11 14:22:20.959 I\/ACRA    (23789): Sending report \/data\/user\/0\/com.suftnet.irit.debug\/app_ACRA-approved\/2021-03-11T14:22:20.902+00:00-IS_SILENT.stacktrace\n03-11 14:22:20.982 I\/System.out(23789): (HTTPLog)-Static: isSBSettingEnabled false\n03-11 14:22:20.983 I\/System.out(23789): (HTTPLog)-Static: isSBSettingEnabled false\n03-11 14:22:21.024 I\/tnet.irit.debu(25774): Late-enabling -Xcheck:jni\n03-11 14:22:21.726 I\/ACRA    (23789): Request received by server\n03-11 14:22:21.860 I\/ACRA    (25774): ACRA is enabled for com.suftnet.irit.debug, initializing...\n03-11 14:22:21.876 D\/BTService(25774): Main thread created\n03-11 14:22:21.879 W\/BluetoothAdapter(25774): getBluetoothService() called with no BluetoothManagerCallback\n03-11 14:22:21.881 D\/BTService(25774): Main thread started\n03-11 14:22:21.886 W\/FirebaseApp(25774): Default FirebaseApp failed to initialize because no default options were found. This usually means that com.google.gms:google-services was not applied to your gradle project.\n03-11 14:22:21.886 I\/FirebaseInitProvider(25774): FirebaseApp initialization unsuccessful\n03-11 14:22:21.945 D\/vndksupport(25774): Loading \/vendor\/lib64\/egl\/libEGL_adreno.so from current namespace instead of sphal namespace.\n03-11 14:22:21.948 D\/libEGL  (25774): loaded \/vendor\/lib64\/egl\/libEGL_adreno.so\n03-11 14:22:21.954 D\/vndksupport(25774): Loading \/vendor\/lib64\/egl\/libGLESv1_CM_adreno.so from current namespace instead of sphal namespace.\n03-11 14:22:21.955 D\/libEGL  (25774): loaded \/vendor\/lib64\/egl\/libGLESv1_CM_adreno.so\n03-11 14:22:21.969 D\/vndksupport(25774): Loading \/vendor\/lib64\/egl\/libGLESv2_adreno.so from current namespace instead of sphal namespace.\n03-11 14:22:21.969 D\/libEGL  (25774): loaded \/vendor\/lib64\/egl\/libGLESv2_adreno.so\n03-11 14:22:21.977 D\/AndroidRuntime(25774): Shutting down VM\n03-11 14:22:21.979 E\/AndroidRuntime(25774): FATAL EXCEPTION: main\n03-11 14:22:21.979 E\/AndroidRuntime(25774): Process: com.suftnet.irit.debug, PID: 25774\n03-11 14:22:21.979 E\/AndroidRuntime(25774): java.lang.RuntimeException: Unable to instantiate activity ComponentInfo{com.suftnet.irit.debug\/com.suftnet.irit.ui.DeliveryActivity}: java.lang.IllegalStateException: System services not available to Activities before onCreate()\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3022)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3259)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:78)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:108)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:68)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat android.app.ActivityThread$H.handleMessage(ActivityThread.java:1950)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat android.os.Handler.dispatchMessage(Handler.java:106)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat android.os.Looper.loop(Looper.java:214)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat android.app.ActivityThread.main(ActivityThread.java:7073)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat java.lang.reflect.Method.invoke(Native Method)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:494)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:964)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): Caused by: java.lang.IllegalStateException: System services not available to Activities before onCreate()\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat android.app.Activity.getSystemService(Activity.java:6136)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat android.app.Dialog.<init>(Dialog.java:226)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat android.app.Dialog.<init>(Dialog.java:211)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat androidx.appcompat.app.AppCompatDialog.<init>(AppCompatDialog.java:57)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat com.google.android.material.bottomsheet.BottomSheetDialog.<init>(BottomSheetDialog.java:60)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat com.suftnet.irit.ui.DeliveryActivity.<init>(DeliveryActivity.kt:38)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat java.lang.Class.newInstance(Native Method)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat android.app.AppComponentFactory.instantiateActivity(AppComponentFactory.java:69)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat androidx.core.app.CoreComponentFactory.instantiateActivity(CoreComponentFactory.java:45)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat android.app.Instrumentation.newActivity(Instrumentation.java:1215)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \tat android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3010)\n03-11 14:22:21.979 E\/AndroidRuntime(25774): \t... 11 more\n03-11 14:22:21.980 E\/ACRA    (25774): ACRA caught a RuntimeException for com.suftnet.irit.debug\n03-11 14:22:21.980 E\/ACRA    (25774): java.lang.RuntimeException: Unable to instantiate activity ComponentInfo{com.suftnet.irit.debug\/com.suftnet.irit.ui.DeliveryActivity}: java.lang.IllegalStateException: System services not available to Activities before onCreate()\n03-11 14:22:21.980 E\/ACRA    (25774): \tat android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3022)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:3259)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:78)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat android.app.servertransaction.TransactionExecutor.executeCallbacks(TransactionExecutor.java:108)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:68)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat android.app.ActivityThread$H.handleMessage(ActivityThread.java:1950)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat android.os.Handler.dispatchMessage(Handler.java:106)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat android.os.Looper.loop(Looper.java:214)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat android.app.ActivityThread.main(ActivityThread.java:7073)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat java.lang.reflect.Method.invoke(Native Method)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:494)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:964)\n03-11 14:22:21.980 E\/ACRA    (25774): Caused by: java.lang.IllegalStateException: System services not available to Activities before onCreate()\n03-11 14:22:21.980 E\/ACRA    (25774): \tat android.app.Activity.getSystemService(Activity.java:6136)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat android.app.Dialog.<init>(Dialog.java:226)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat android.app.Dialog.<init>(Dialog.java:211)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat androidx.appcompat.app.AppCompatDialog.<init>(AppCompatDialog.java:57)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat com.google.android.material.bottomsheet.BottomSheetDialog.<init>(BottomSheetDialog.java:60)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat com.suftnet.irit.ui.DeliveryActivity.<init>(DeliveryActivity.kt:38)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat java.lang.Class.newInstance(Native Method)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat android.app.AppComponentFactory.instantiateActivity(AppComponentFactory.java:69)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat androidx.core.app.CoreComponentFactory.instantiateActivity(CoreComponentFactory.java:45)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat android.app.Instrumentation.newActivity(Instrumentation.java:1215)\n03-11 14:22:21.980 E\/ACRA    (25774): \tat android.app.ActivityThread.performLaunchActivity(ActivityThread.java:3010)\n03-11 14:22:21.980 E\/ACRA    (25774): \t... 11 more","PACKAGE_NAME":"com.suftnet.irit.debug","USER_CRASH_DATE":"2021-03-11T14:22:22.070+00:00","PHONE_MODEL":"SM-G950U"}
+Request.Body = {"orderId":"d2a5959d-682e-4095-a282-9a6f17382fec","statusId":"1e6f1192-c4f3-428c-9762-152753b059b7"}
 
 --------------------------------------------------------------------------------------------

@@ -12,7 +12,7 @@
 
     public class JwToken : IJwToken
     {
-        public string Create(string username, string userId)
+        public string Create(string username, string userId, string tenantId)
         {
             //Set issued at date
             var issuedAt = DateTime.UtcNow;
@@ -26,7 +26,8 @@
             var claimsIdentity = new ClaimsIdentity(new[]
             {
                 new Claim(ClaimTypes.Name, username),
-                new Claim(ClaimTypes.NameIdentifier, userId)
+                new Claim(ClaimTypes.NameIdentifier, userId),
+                new Claim(ClaimTypes.GroupSid, tenantId)
             });
 
             var Secret = SecurityTokenGenerator.SecretKey;

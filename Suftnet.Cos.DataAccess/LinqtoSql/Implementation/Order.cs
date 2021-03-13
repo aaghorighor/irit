@@ -405,6 +405,35 @@
                 return response;
             }
         }
+        public bool UpdateOrderStatus(Guid orderId, Guid statusId, DateTime createDt, string createdBy, string driver, Guid tenantId)
+        {
+            bool response = false;
+
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objToUpdate = context.Orders.SingleOrDefault(o => o.Id == orderId && o.TenantId == tenantId);
+
+                if (objToUpdate != null)
+                {
+                    objToUpdate.StatusId = statusId;
+                    objToUpdate.Driver = driver;
+                    objToUpdate.UpdateBy = createdBy;
+                    objToUpdate.UpdateDt = createDt;
+
+                    try
+                    {
+                        context.SaveChanges();
+                        response = true;
+                    }
+                    catch (ChangeConflictException)
+                    {
+                        response = false;
+                    }
+                }
+
+                return response;
+            }
+        }
         public bool CancelOrder(Guid orderId, Guid orderStatusId, Guid paymentStatusId, DateTime createDt, string createdBy, Guid tenantId)
         {
             bool response = false;

@@ -38,9 +38,7 @@
                 TenantId = new Guid(entityToCreate.ExternalId),
                 Id = Guid.NewGuid(),
 
-                ExpectedGuest = entityToCreate.TableFor,
-                FirstName = string.Empty,
-                LastName = string.Empty
+                ExpectedGuest = entityToCreate.TableFor               
             };
 
            _order.Insert(order);

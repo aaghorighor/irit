@@ -44,6 +44,7 @@ namespace Suftnet.Cos.DataAccess
         public Guid CustomerId { get; set; }
         public Guid AddressId { get; set; }
         public string CompletedAddress { get; set; }
+        public string PickUpAddress { get; set; }
         public Guid StatusId { get; set; }
         public Guid OrderId { get; set; }
         public DateTime CreatedAt { get; set; }
@@ -54,6 +55,7 @@ namespace Suftnet.Cos.DataAccess
                 return this.CreatedAt.ToLongDateString();
             }
         }
-      
+        public string Driver { get; set; }
+
     }
 }

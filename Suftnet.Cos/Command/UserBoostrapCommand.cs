@@ -35,10 +35,11 @@
                         lastName = User.LastName,                      
                         areaId = User.AreaId,
                         area = User.Area,
+                        userId =User.Id,
                         phoneNumber = User.PhoneNumber,
                         userName = User.UserName,                      
                         permissions = GetUserPermissions(),
-                        token = _jwToken.Create(User.UserName, User.Id)
+                        jwtToken = _jwToken.Create(User.UserName, User.Id, User.ExternalId)
                     }                   
                 };
 

@@ -59,6 +59,8 @@
                 x.For<ICustomerBoostrapCommand>().Use<CustomerBoostrapCommand>();
                 x.For<ICreateDeliveryOrderCommand>().Use<CreateDeliveryOrderCommand>();
                 x.For<IOrderPaymentCommand>().Use<OrderPaymentCommand>();
+                x.For<IAcceptDeliveryOrderCommand>().Use<AcceptDeliveryOrderCommand>();
+                x.For<IUpdateDeliveryOrderStatusCommand>().Use<UpdateDeliveryOrderStatusCommand>();
             });           
         }
     }

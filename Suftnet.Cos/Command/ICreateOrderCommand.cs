@@ -30,6 +30,29 @@
         IList<BasketDto> Baskets { get; set; }
     }
 
+    public interface IAcceptDeliveryOrderCommand
+    {       
+        Guid StatusId { get; set; }      
+        string CreatedBy { get; set; }
+        Guid TenantId { get; set; }
+        DeliveryOrderDto deliveryOrderDto { get; set; }
+        string UserName { get; set; }
+        string UserId { get; set; }
+        void Execute();
+    }
+
+    public interface IUpdateDeliveryOrderStatusCommand
+    {
+        Guid StatusId { get; set; }
+        string CreatedBy { get; set; }
+        DateTime CreatedAt { get; set; }
+        Guid TenantId { get; set; }   
+        string UserName { get; set; }
+        string UserId { get; set; }
+        Guid OrderId { get; set; }
+        void Execute();
+    }
+    
     public interface ICancelOrderCommand
     {
         Guid OrderId { get; set; }

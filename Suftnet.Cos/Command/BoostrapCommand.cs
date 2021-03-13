@@ -52,7 +52,7 @@
                             userId = User.Id,
                             externalId = User.TenantId,
                             permissions = GetUserPermissions(),
-                            jwtToken = _jwToken.Create(User.UserName, User.Id)
+                            jwtToken = _jwToken.Create(User.UserName, User.Id,TenantId.ToString())
                         },                       
                         tenant = new
                         {

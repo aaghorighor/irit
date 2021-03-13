@@ -59,7 +59,7 @@
                                  join p in context.PaymentStatuses on o.PaymentStatusId equals p.Id
                                  where a.CustomerId == customerId
                                  orderby o.CreatedDt descending
-                                 select new MobileCustomerOrderDto { OrderTypeId = o.OrderTypeId, DiscountRate = o.DiscountRate, CreatedAt = o.CreatedDt, OrderId = o.Id, StatusId = o.StatusId, CompletedAddress = d.CompleteAddress, AddressId = e.AddressId, CustomerId = customerId, Email = c.Email, PaymentStatus = p.Name, Mobile = c.Mobile, FirstName = c.FirstName, LastName = c.LastName, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, TotalDiscount = o.TotalDiscount, DeliveryCost = o.DeliveryCost, TaxRate = o.TaxRate, Status = s.Name, GrandTotal = o.GrandTotal, Total = o.Total }).ToList();
+                                 select new MobileCustomerOrderDto { Driver = o.Driver, OrderTypeId = o.OrderTypeId, DiscountRate = o.DiscountRate, CreatedAt = o.CreatedDt, OrderId = o.Id, StatusId = o.StatusId, CompletedAddress = d.CompleteAddress, AddressId = e.AddressId, CustomerId = customerId, Email = c.Email, PaymentStatus = p.Name, Mobile = c.Mobile, FirstName = c.FirstName, LastName = c.LastName, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, TotalDiscount = o.TotalDiscount, DeliveryCost = o.DeliveryCost, TaxRate = o.TaxRate, Status = s.Name, GrandTotal = o.GrandTotal, Total = o.Total }).ToList();
                 return objResult;
             }
         }
@@ -77,7 +77,24 @@
                                  join p in context.PaymentStatuses on o.PaymentStatusId equals p.Id
                                  where o.TenantId == tenantId && o.StatusId != statusId
                                  orderby o.CreatedDt descending
-                                 select new MobileCustomerOrderDto { OrderTypeId = o.OrderTypeId, DiscountRate = o.DiscountRate, CreatedAt = o.CreatedDt, OrderId = o.Id, StatusId = o.StatusId, CompletedAddress = d.CompleteAddress, AddressId = e.AddressId, CustomerId = a.CustomerId, Email = c.Email, PaymentStatus = p.Name, Mobile = c.Mobile, FirstName = c.FirstName, LastName = c.LastName, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, TotalDiscount = o.TotalDiscount, DeliveryCost = o.DeliveryCost, TaxRate = o.TaxRate, Status = s.Name, GrandTotal = o.GrandTotal, Total = o.Total }).ToList();
+                                 select new MobileCustomerOrderDto { Driver = o.Driver, OrderTypeId = o.OrderTypeId, DiscountRate = o.DiscountRate, CreatedAt = o.CreatedDt, OrderId = o.Id, StatusId = o.StatusId, CompletedAddress = d.CompleteAddress, AddressId = e.AddressId, CustomerId = a.CustomerId, Email = c.Email, PaymentStatus = p.Name, Mobile = c.Mobile, FirstName = c.FirstName, LastName = c.LastName, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, TotalDiscount = o.TotalDiscount, DeliveryCost = o.DeliveryCost, TaxRate = o.TaxRate, Status = s.Name, GrandTotal = o.GrandTotal, Total = o.Total }).ToList();
+                return objResult;
+            }
+        }
+
+        public List<MobileCustomerOrderDto> FetchByJob(Guid tenantId, Guid statusId)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objResult = (from a in context.CustomerOrders
+                                 join o in context.Orders on a.OrderId equals o.Id
+                                 join c in context.Customers on a.CustomerId equals c.Id
+                                 join e in context.CustomerOrderDeliveries on a.Id equals e.CustomerOrderId
+                                 join d in context.CustomerAddresses on e.AddressId equals d.Id
+                                 join s in context.OrderStatuses on o.StatusId equals s.Id                                
+                                 where o.TenantId == tenantId && o.StatusId == statusId
+                                 orderby o.CreatedDt descending
+                                 select new MobileCustomerOrderDto { Driver = o.Driver, OrderTypeId = o.OrderTypeId, DiscountRate = o.DiscountRate, CreatedAt = o.CreatedDt, OrderId = o.Id, StatusId = o.StatusId, CompletedAddress = d.CompleteAddress, AddressId = e.AddressId, CustomerId = a.CustomerId, Email = c.Email, Mobile = c.Mobile, FirstName = c.FirstName, LastName = c.LastName, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, TotalDiscount = o.TotalDiscount, DeliveryCost = o.DeliveryCost, TaxRate = o.TaxRate, Status = s.Name, GrandTotal = o.GrandTotal, Total = o.Total }).ToList();
                 return objResult;
             }
         }

@@ -24,6 +24,7 @@ namespace Suftnet.Cos.DataAccess.Action
         public virtual DbSet<CustomerDeliveryStatus> CustomerDeliveryStatuses { get; set; }
         public virtual DbSet<CustomerOrder> CustomerOrders { get; set; }
         public virtual DbSet<CustomerOrderDelivery> CustomerOrderDeliveries { get; set; }
+        public virtual DbSet<DeliveryOrder> DeliveryOrders { get; set; }
         public virtual DbSet<CustomerOrderNotification> CustomerOrderNotifications { get; set; }
         public virtual DbSet<Addon> Addons { get; set; }
         public virtual DbSet<AddonType> AddonTypes { get; set; }
