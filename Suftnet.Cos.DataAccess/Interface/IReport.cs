@@ -11,6 +11,9 @@
         IEnumerable<BestSellerDto> GetBestSellers(TermDto term);    
         IEnumerable<OrderDto> GetOrders(TermDto term);       
         IEnumerable<OrderDto> GetReservationOrders(TermDto term);
+        IEnumerable<MobilePaymentDto> FetchPayments(Guid externalId, int take);
+        IEnumerable<MobilePaymentDto> FetchPaymentByDates(DateQueryDto dateQueryDto);
+        IEnumerable<MobilePaymentDto> FetchPaymentByAccountType(DateQueryDto dateQueryDto);
 
      }
 }

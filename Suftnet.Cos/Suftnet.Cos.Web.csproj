@@ -343,6 +343,7 @@
     <Compile Include="Controllers\Api\v1\DeliveryOrderController.cs" />
     <Compile Include="Controllers\Api\v1\CustomerDeliveryOrderController.cs" />
     <Compile Include="Controllers\Api\v1\KitchenController.cs" />
+    <Compile Include="Controllers\Api\v1\ReportController.cs" />
     <Compile Include="Controllers\Api\v1\PaymentController.cs" />
     <Compile Include="Controllers\Api\v1\UserController.cs" />
     <Compile Include="Controllers\Api\v1\AccountController.cs" />
