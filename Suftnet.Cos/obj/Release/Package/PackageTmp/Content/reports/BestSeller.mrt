@@ -139,7 +139,7 @@
         </PageFooterBand1>
         <ReportTitleBand1 Ref="7" type="ReportTitleBand" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,0.4,19,5.2</ClientRectangle>
+          <ClientRectangle>0,0.4,19,5</ClientRectangle>
           <Components isList="true" count="10">
             <Text1 Ref="8" type="Text" isKey="true">
               <Border>Bottom;Black;1;Solid;False;4;Black</Border>
@@ -304,7 +304,7 @@
         <HeaderBand1 Ref="18" type="HeaderBand" isKey="true">
           <Border>Bottom;Black;1;Solid;False;4;Black</Border>
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,6.4,19,0.8</ClientRectangle>
+          <ClientRectangle>0,6.2,19,0.8</ClientRectangle>
           <Components isList="true" count="3">
             <Text30 Ref="19" type="Text" isKey="true">
               <Border>All;[63:63:63];1;Solid;False;4;Black</Border>
@@ -365,7 +365,7 @@
         <DataBand1 Ref="22" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <BusinessObjectGuid>bb617c2e088943b9a863bfdfad02ab1a</BusinessObjectGuid>
-          <ClientRectangle>0,8,19,0.4</ClientRectangle>
+          <ClientRectangle>0,7.8,19,0.4</ClientRectangle>
           <Components isList="true" count="3">
             <Text13 Ref="23" type="Text" isKey="true">
               <Border>All;[216:216:216];1;Solid;False;4;Black</Border>
@@ -428,7 +428,7 @@
         </DataBand1>
         <FooterBand1 Ref="26" type="FooterBand" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,9.2,19,0.4</ClientRectangle>
+          <ClientRectangle>0,9,19,0.4</ClientRectangle>
           <Components isList="true" count="0" />
           <Conditions isList="true" count="0" />
           <Name>FooterBand1</Name>
@@ -456,10 +456,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>10/28/2020 4:47:52 PM</ReportChanged>
+  <ReportChanged>3/15/2021 6:37:28 PM</ReportChanged>
   <ReportCreated>4/12/2013 11:56:34 PM</ReportCreated>
   <ReportFile>E:\Git\Web\Irit\Irit\Suftnet.Cos\Content\reports\BestSeller.mrt</ReportFile>
-  <ReportGuid>1d0684bb288f4778b315d0ca0e71342d</ReportGuid>
+  <ReportGuid>53438b9bbdf245019e2f808fa0dd0ba4</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2020.3.2.0</ReportVersion>

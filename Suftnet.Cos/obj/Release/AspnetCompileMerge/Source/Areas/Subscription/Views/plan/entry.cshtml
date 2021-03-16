@@ -1,0 +1,72 @@
+﻿@using Suftnet.Cos.Common
+@model Suftnet.Cos.Web.StripeAdapterModel
+
+<div class="slim-mainpanel">
+    <div class="container">
+
+        <div class="slim-pageheader">
+            <ol class="breadcrumb slim-breadcrumb">
+                <li class="breadcrumb-item"><a href="@Url.Action("index","dashboard", new { area ="subscription" } )">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Plans</li>
+            </ol>
+            <h6 class="slim-pagetitle">Plans</h6>
+        </div><!-- slim-pageheader -->
+
+        <div class="card card-dash-headline mb-4">
+            <h4>Choose the plan that best fit your needs</h4>
+            <p>Our plans are affortable and includes all features irrespective of the price (excluding VAT). Select your desire plan from the plans below to kick off the subscription process.</p>           
+        </div><!-- card -->
+
+        <div class="row row-sm">
+
+            <div class="col-lg-4 mg-t-20 mg-lg-t-0">
+                <div class="card card-pricing-two">
+                    <h6 class="pricing-title">Basic</h6>
+                    <h1 class="pricing-price">£20</h1>
+                    <p class="mg-b-25">per month</p>
+
+                    <p class="mg-b-1">Save <strong>£0</strong></p>
+                    @if (Model.Tenant.PlanTypeId != PlanType.Basic)
+                    {
+                        <a href="@Url.Action("entry","card", new { area = "subscription", planTypeId ="1" })" class="btn btn-primary btn-pricing">Select</a>
+                    }
+
+                </div><!-- card-pricing-two -->
+            </div><!-- col -->
+
+            <div class="col-lg-4 mg-t-20 mg-lg-t-0">
+                <div class="card card-pricing-two">
+                    <h6 class="pricing-title">Premium</h6>
+                    <h1 class="pricing-price">£100 </h1>
+                    <p class="mg-b-25">every 6 months</p>
+
+                    <p class="mg-b-1">Save <strong>£20</strong></p>
+                    @if (Model.Tenant.PlanTypeId != PlanType.Premium)
+                    {
+                        <a href="@Url.Action("entry","card", new { area = "subscription", planTypeId = "2" })" class="btn btn-primary btn-pricing">Select</a>
+                    }
+
+                </div><!-- card-pricing-two -->
+            </div><!-- col -->
+
+            <div class="col-lg-4 mg-t-20 mg-lg-t-0">
+                <div class="card card-pricing-two">
+                    <h6 class="pricing-title">Premium Plus</h6>
+                    <h1 class="pricing-price">£200</h1>
+                    <p class="mg-b-25">every 1 year</p>
+
+                    <p class="mg-b-1">Save <strong>£40</strong></p>
+                    @if (Model.Tenant.PlanTypeId != PlanType.PremiumPlus)
+                    {
+                        <a href="@Url.Action("entry","card", new { area = "subscription", planTypeId = "3" })" class="btn btn-primary btn-pricing">Select</a>
+                    }
+
+                </div><!-- card-pricing-two -->
+            </div><!-- col -->
+
+        </div><!-- row -->
+
+    </div><!-- container -->
+</div><!-- slim-mainpanel -->
+
+

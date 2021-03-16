@@ -34,8 +34,7 @@
         [Required]
         public DateTime EndDate { get; set; }
         [Required]
-        public string AccountTypeId { get; set; }
-        [Required]
+        public string AccountTypeId { get; set; }     
         public Guid ExernalId { get; set; }
      
     }

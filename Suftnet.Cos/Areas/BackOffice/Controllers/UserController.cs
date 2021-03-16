@@ -102,7 +102,7 @@
                     isValid = true,
                     errors = ModelState.AjaxErrors()
                 });
-            }
+            }                      
 
             entityToCreate.Id = Guid.NewGuid().ToString();
             entityToCreate.UserCode = GetHashCode(new Guid(entityToCreate.Id));

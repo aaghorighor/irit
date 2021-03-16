@@ -18,8 +18,7 @@ var backOffice_dashboard = {
 
                     $("#freeTable").text(objectdata.FreeTables);
                     $("#dineIn").text(objectdata.DineIn);
-                    $("#delivery").text(objectdata.PendingDeliveries);
-                    $("#reservation").text(objectdata.Reservations);                 
+                    $("#delivery").text(objectdata.PendingDeliveries);                                  
                 };
             });          
     }

@@ -5,9 +5,6 @@
     ViewBag.Title = "JERUR | PRIVACY POLICY";
     Layout = "~/Views/Shared/_slim-event-layout.cshtml";
 }
-@{   
-    var privacyPolicy = Url.Cms(CmsType.PrivacyPolicy);
-}
 
 <div class="slim-header">
 
@@ -30,7 +27,7 @@
         </div><!-- slim-pageheader -->
 
         <div class="card pd-25">
-            <p class="">@Html.Raw(privacyPolicy.Contents)</p>       
+           
        </div><!-- section-wrapper -->
      
     </div>

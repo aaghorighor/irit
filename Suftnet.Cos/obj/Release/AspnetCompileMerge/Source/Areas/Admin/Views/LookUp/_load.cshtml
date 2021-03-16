@@ -1,0 +1,91 @@
+﻿@using Suftnet.Cos.Extension
+@model IEnumerable<Suftnet.Cos.DataAccess.SettingsDTO>
+
+<table id="tdlookups" class="display">
+    <thead>
+        <tr>
+            <th align="left">Id#</th>
+            <th align="left">Title</th>
+            <th align="left">Class</th>
+            <th>Active</th>
+            <th style="text-align:center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var _item in Model)
+        {
+            <tr id="@_item.Id">
+                <td align="left">@_item.Id</td>
+                <td align="left">@_item.Title</td>
+                <td align="left">@_item.Class</td>
+                <td>@_item.Active</td>
+                <td style="text-align:center">
+                    <a>
+                        <span id="GroupLink" style="margin:10px;" viewId="@_item.Id" queryTitle="@_item.QueryTitle.ToFriendlyUrl()" title="add item to settings">
+                            <img src="@Url.Asset("list.png")" alt="" />
+                        </span>
+                    </a>
+                    <a>
+                        <span style="margin:10px;" id="EditLink" editid="@_item.Id" title="Edit this row">
+                            <img src="@Url.Asset("edit.png")" alt="" />
+                        </span>
+                    </a>
+                    <a>
+                        <span id="Delete" style="margin:10px;" deleteid="@_item.Id" title="Delete this row">
+                            <img src="@Url.Asset("delete.png")" alt="" />
+                        </span>
+                    </a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<div class="hide">  
+    <span id="viewUrl" name="viewUrl" data-viewUrl="@Url.Action("entry", "Common")"></span>
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $(document).on("click", "#GroupLink", function ()
+        {          
+            window.location.href = $("#viewUrl").attr("data-viewUrl") + "/" + $(this).attr("queryTitle") + "/" + $(this).attr("viewId");
+        });     
+
+        $(document).on("click", "#Delete", function (e) {
+            e.preventDefault();
+
+            js.confirm('@Url.Action("Delete", "LookUp")', { Id: $(this).attr("DeleteId") }, $(this).attr("DeleteId"), "#tdlookups").then(
+            function (data) {
+
+            });
+        });
+
+        $(document).on("click", "#EditLink", function (e) {
+            e.preventDefault();
+
+            js.ajaxGet('@Url.Action("Get", "LookUp")', { Id: $(this).attr("EditId") }).then(
+             function (data) {
+                 var dataobject = data.dataobject;
+
+                 $("#Title").val(dataobject.Title);
+                 $("#Description").val(dataobject.Description);
+                 $("#ClassId").val(dataobject.ClassId);
+                 $("#Id").val(dataobject.Id);
+                 $("#ImageUrl").val(dataobject.ImageUrl);
+                 $("#Active").attr('checked', dataobject.Active);
+
+             });
+        });
+
+        suftnet_Settings.TableInit('#tdlookups', [0, 4]);
+      
+    });
+
+</script>
+
+

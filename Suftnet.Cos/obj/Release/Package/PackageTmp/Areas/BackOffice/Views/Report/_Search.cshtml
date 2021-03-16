@@ -6,12 +6,11 @@
         <div class="grid-3-12">
 
             <label class="forms-lbl">Report Type: </label>
-            <select name="ReportTypeId" id="ReportTypeId" class="validate[required]">
-                <option value="277">Sales</option>
+            <select name="ReportTypeId" id="ReportTypeId" class="validate[required]">               
                 <option value="276">Menus</option>
                 <option value="5179">Payments</option>
                 <option value="2661">Dine In Orders</option>
-                <option value="2662">Reservation Orders</option>
+                @*<option value="2662">Reservation Orders</option>*@
                 <option value="2663">Delivery Orders</option>
                 <option value="2664">Best Sellers</option>
             </select>
@@ -166,7 +165,8 @@ $(function () {
             break;
 
         case 2661: //// Dine In Orders Orders   
-                               
+                $("#dStartDate").show();
+                $("#dEndDate").show();       
 
             break;
         case 2662: //// Reservation Orders Orders  
@@ -175,7 +175,8 @@ $(function () {
             break;
 
         case 2663: //// Delivery Orders Orders 
-                               
+                $("#dStartDate").show();
+                $("#dEndDate").show();   
             break;
 
         case 2664: //// Best Sellers  

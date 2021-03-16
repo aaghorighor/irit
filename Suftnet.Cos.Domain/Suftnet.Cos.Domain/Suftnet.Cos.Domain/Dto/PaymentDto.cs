@@ -11,8 +11,15 @@
         public Guid AccountTypeId { get; set; }
         public string AccountType { get; set; }
         public Guid OrderId { get; set; }    
-        public decimal Amount { get; set; }      
-      
+        public decimal Amount { get; set; }
+        public string OrderReference
+        {
+            get
+            {
+                return this.Reference.ToString().Substring(0, 8);
+            }
+        }
+
     }
      
     public class MobilePaymentDto 
@@ -24,8 +31,16 @@
                 return this.CreatedDT.ToShortDateString();
             }
         }
-    
-        public string Reference { get; set; }
+
+        public string Reference
+        {
+            get
+            {
+                return this.OrderId.ToString().Substring(0, 8);
+            }
+        }
+      
+        public string OrderId { get; set; }
         public string PaymentMethod { get; set; }
         public string AccountType { get; set; }
         public Guid AccountTypeId { get; set; }

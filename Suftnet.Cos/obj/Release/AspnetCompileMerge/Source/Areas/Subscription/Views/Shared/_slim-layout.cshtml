@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+    @Html.Partial("_slim-meta")
+
+    <title>SUFTNET | SUBSCRIPTION</title>
+ 
+    @Html.Partial("_slim-css")
+    @Html.Partial("_slim-font")
+
+    @Scripts.Render("~/bundle/slim-lib-jquery")
+
+</head>
+<body>
+
+    @Html.Partial("_slim-header")
+    @Html.Partial("_slim-nav")
+
+    @RenderBody()
+
+    @*@Html.Partial("_slim-footer")*@
+
+</body>
+
+    @Html.Partial("_slim-js")
+</html>

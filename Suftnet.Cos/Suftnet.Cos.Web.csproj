@@ -150,19 +150,19 @@
     </Reference>
     <Reference Include="Stimulsoft.Base, Version=2015.3.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SharedAssembly\Stimulsoft.Base.dll</HintPath>
+      <HintPath>..\..\..\..\..\Libs\stimulsoft-Reports.Web-2020.5.2\.NETFramework4.5\Stimulsoft.Base.dll</HintPath>
     </Reference>
     <Reference Include="Stimulsoft.Report, Version=2015.3.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SharedAssembly\Stimulsoft.Report.dll</HintPath>
+      <HintPath>..\..\..\..\..\Libs\stimulsoft-Reports.Web-2020.5.2\.NETFramework4.5\Stimulsoft.Report.dll</HintPath>
     </Reference>
     <Reference Include="Stimulsoft.Report.Mvc, Version=2015.3.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SharedAssembly\Stimulsoft.Report.Mvc.dll</HintPath>
+      <HintPath>..\..\..\..\..\Libs\stimulsoft-Reports.Web-2020.5.2\.NETFramework4.5\Stimulsoft.Report.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Stimulsoft.Report.Web, Version=2015.3.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SharedAssembly\Stimulsoft.Report.Web.dll</HintPath>
+      <HintPath>..\..\..\..\..\Libs\stimulsoft-Reports.Web-2020.5.2\.NETFramework4.5\Stimulsoft.Report.Web.dll</HintPath>
     </Reference>
     <Reference Include="Stripe.net, Version=25.15.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Stripe.net.25.15.0\lib\net45\Stripe.net.dll</HintPath>
@@ -277,14 +277,6 @@
     <Compile Include="Areas\BackOffice\Controllers\SettingsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TableController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\UserController.cs" />
-    <Compile Include="Areas\FrontOffice\Controllers\CartController.cs" />
-    <Compile Include="Areas\FrontOffice\Controllers\DeliveryController.cs" />
-    <Compile Include="Areas\FrontOffice\Controllers\ReservationController.cs" />
-    <Compile Include="Areas\FrontOffice\Controllers\DashBoardController.cs" />
-    <Compile Include="Areas\FrontOffice\Controllers\TableController.cs" />
-    <Compile Include="Areas\FrontOffice\FrontOfficeAreaRegistration.cs" />
-    <Compile Include="Areas\FrontOffice\Controllers\FrontOfficeBaseController.cs" />
-    <Compile Include="Areas\FrontOffice\Controllers\DineInController.cs" />
     <Compile Include="Areas\SiteAdmin\Controllers\TopicSubController.cs" />
     <Compile Include="Areas\Admin\Controllers\TopicController.cs" />
     <Compile Include="Areas\SiteAdmin\Controllers\SubscriptionController.cs" />
@@ -375,11 +367,7 @@
     <Compile Include="Infrastructure\ActionFilter\AuthorizeActionFilter.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\SiteAdmin\Controllers\DashboardController.cs" />
-    <Compile Include="Areas\SiteAdmin\Controllers\PageHeaderController.cs" />
-    <Compile Include="Areas\SiteAdmin\Controllers\FeatureController.cs" />
     <Compile Include="Areas\SiteAdmin\SiteAdminAreaRegistration.cs" />
-    <Compile Include="Areas\SiteAdmin\Controllers\FaqController.cs" />
-    <Compile Include="Areas\SiteAdmin\Controllers\SliderController.cs" />
     <Compile Include="Areas\SiteAdmin\Controllers\ChapterController.cs" />
     <Compile Include="Areas\SiteAdmin\Controllers\TourController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
@@ -3823,9 +3811,6 @@
     <Content Include="Areas\Admin\Views\Chapter\_form.cshtml" />
     <Content Include="Areas\Admin\Views\Chapter\Index.cshtml" />
     <Content Include="Areas\SiteAdmin\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\SiteAdmin\Views\Faq\_Faqform.cshtml" />
-    <Content Include="Areas\SiteAdmin\Views\Faq\_LoadFaq.cshtml" />
-    <Content Include="Areas\SiteAdmin\Views\Faq\Index.cshtml" />
     <Content Include="Areas\SiteAdmin\Views\Shared\_dashboardheader.cshtml" />
     <Content Include="Areas\SiteAdmin\Views\Shared\_DashboardLayout.cshtml" />
     <Content Include="Areas\SiteAdmin\Views\Shared\_dashboardmenu.cshtml" />
@@ -3835,23 +3820,12 @@
     <Content Include="Areas\SiteAdmin\Views\Slider\_LoadSlider.cshtml" />
     <Content Include="Areas\SiteAdmin\Views\Slider\_Sliderform.cshtml" />
     <Content Include="Areas\SiteAdmin\Views\Slider\Index.cshtml" />
-    <Content Include="Areas\SiteAdmin\Views\Ticket\_LoadTicket.cshtml" />
-    <Content Include="Areas\SiteAdmin\Views\Ticket\_LoadTicketThread.cshtml" />
-    <Content Include="Areas\SiteAdmin\Views\Ticket\_Ticketform.cshtml" />
-    <Content Include="Areas\SiteAdmin\Views\Ticket\_TicketThreadform.cshtml" />
-    <Content Include="Areas\SiteAdmin\Views\Ticket\Index.cshtml" />
     <Content Include="Areas\SiteAdmin\Views\Tour\_LoadTour.cshtml" />
     <Content Include="Areas\SiteAdmin\Views\Tour\_Tourform.cshtml" />
     <Content Include="Areas\SiteAdmin\Views\Tour\Index.cshtml" />
     <Content Include="Areas\SiteAdmin\Views\Web.config" />
     <Content Include="Areas\SiteAdmin\Views\Dashboard\_footer.cshtml" />
     <Content Include="Areas\SiteAdmin\Views\Dashboard\Index.cshtml" />
-    <Content Include="Areas\SiteAdmin\Views\Feature\_commonform.cshtml" />
-    <Content Include="Areas\SiteAdmin\Views\Feature\_loadCommon.cshtml" />
-    <Content Include="Areas\SiteAdmin\Views\Feature\index.cshtml" />
-    <Content Include="Areas\SiteAdmin\Views\PageHeader\_commonform.cshtml" />
-    <Content Include="Areas\SiteAdmin\Views\PageHeader\_loadCommon.cshtml" />
-    <Content Include="Areas\SiteAdmin\Views\PageHeader\index.cshtml" />
     <Content Include="Areas\Subscription\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_resetPassword.cshtml" />
     <Content Include="Areas\SiteAdmin\Views\Backend\_form.cshtml" />
@@ -4151,18 +4125,6 @@
     <Content Include="Areas\BackOffice\Views\Addon\entry.cshtml" />
     <Content Include="Areas\BackOffice\Views\Addon\_form.cshtml" />
     <Content Include="Areas\BackOffice\Views\Addon\_load.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Dashboard\_footer.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Dashboard\Index.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Table\Index.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Shared\_footer.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Shared\_header.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Shared\_frontofficeLayout.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Web.config" />
-    <Content Include="Areas\FrontOffice\Views\Shared\_init.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Shared\_master-header-css.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Table\_table.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Table\_create.cshtml" />
     <Content Include="Areas\Admin\Views\OrderType\_form.cshtml" />
     <Content Include="Areas\Admin\Views\OrderType\_load.cshtml" />
     <Content Include="Areas\Admin\Views\OrderType\index.cshtml" />
@@ -4176,23 +4138,6 @@
     <Content Include="Areas\Admin\Views\PaymentMethod\_load.cshtml" />
     <Content Include="Areas\Admin\Views\PaymentMethod\index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_adminHybridLayout.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Table\_load.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Reservation\_load.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Delivery\_load.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Reservation\_form.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Delivery\_form.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Table\_edit.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Delivery\_locationPicker.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Delivery\_delivery.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Delivery\Index.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Reservation\Index.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\cart\entry.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\cart\_cart.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\cart\_category.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\cart\_menu.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\cart\_payment.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\cart\_menuAddon.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\cart\_cartSummary.cshtml" />
     <Content Include="Areas\Admin\Views\TenantStatus\_form.cshtml" />
     <Content Include="Areas\Admin\Views\TenantStatus\_load.cshtml" />
     <Content Include="Areas\Admin\Views\TenantStatus\index.cshtml" />
@@ -4256,7 +4201,8 @@
     <Content Include="Areas\BackOffice\Views\User\index.cshtml" />
     <Content Include="Areas\BackOffice\Views\User\_form.cshtml" />
     <Content Include="Areas\BackOffice\Views\User\_photo.cshtml" />
-    <Content Include="Areas\FrontOffice\Views\Reservation\_lookUp.cshtml" />
+    <Content Include="App_Data\license\stimulsoft\license.key" />
+    <Content Include="App_Data\license\stimulsoft\License.rtf" />
     <None Include="Properties\PublishProfiles\OneChurch - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\OneChurch - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\OneChurch1.0.0.pubxml" />

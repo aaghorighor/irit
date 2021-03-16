@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "SUFTNET | ADDON TYPE ";
+}
+
+<ul style="margin-left:0px; margin-top :5px" class="uibutton-group">
+    <li><span><a href="@Url.Action("entry", "addon", new { name = this.ViewContext.RouteData.Values["name"].ToString(), menuId = this.ViewContext.RouteData.Values["menuId"].ToString() })" class="uibutton icon add normal etip" title="Back to Addons">Back</a></span></li>
+</ul>
+
+<div class="widgets" style="display:none">
+
+    <div class="twoOne">
+        <div class="widget">
+            <div class="header"><span><span class="ico gray window"></span>Addon Type </span></div>
+            <div class="content">
+                <div class="tableName">
+                    @Html.Partial("_load")
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="oneThree">
+        <div class="widget">
+            <div class="header"><span><span class="ico gray window"></span></span></div>
+                <div class="content">
+                    @Html.Partial("_form")
+                </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        commonType.pageInit();
+
+        setTimeout(function () {
+            $(".widgets").show();
+        }, 0);
+
+    });
+</script>
+
+
+
+
+

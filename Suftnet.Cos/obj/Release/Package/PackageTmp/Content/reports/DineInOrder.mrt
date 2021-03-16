@@ -166,7 +166,7 @@
       <Components isList="true" count="4">
         <ReportTitleBand1 Ref="6" type="ReportTitleBand" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,0.4,27.7,5</ClientRectangle>
+          <ClientRectangle>0,0.4,27.7,4.8</ClientRectangle>
           <Components isList="true" count="10">
             <Text1 Ref="7" type="Text" isKey="true">
               <Border>Bottom;Black;1;Solid;False;4;Black</Border>
@@ -245,7 +245,7 @@
             <address Ref="12" type="Text" isKey="true">
               <Border>Bottom;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>0.2,2.4,27.7,0.6</ClientRectangle>
+              <ClientRectangle>0.2,2.4,27.5,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,12</Font>
               <Guid>13cea5914a5b41078c61eb1a2de85abe</Guid>
@@ -331,7 +331,7 @@
         <HeaderBand1 Ref="17" type="HeaderBand" isKey="true">
           <Border>Bottom;Black;1;Solid;False;4;Black</Border>
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,6.2,27.7,0.8</ClientRectangle>
+          <ClientRectangle>0,6,27.7,0.8</ClientRectangle>
           <Components isList="true" count="11">
             <Text35 Ref="18" type="Text" isKey="true">
               <Border>All;[12:12:12];1;Solid;False;4;Black</Border>
@@ -524,7 +524,7 @@
         <DataBand1 Ref="29" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <BusinessObjectGuid>d0024af71513401eaf00d37d28228244</BusinessObjectGuid>
-          <ClientRectangle>0,7.8,27.7,0.4</ClientRectangle>
+          <ClientRectangle>0,7.6,27.7,0.4</ClientRectangle>
           <Components isList="true" count="11">
             <Text40 Ref="30" type="Text" isKey="true">
               <Border>All;[216:216:216];1;Dot;False;4;Black</Border>
@@ -720,7 +720,7 @@
         <FooterBand1 Ref="41" type="FooterBand" isKey="true">
           <Border>None;[165:165:165];1;Solid;False;4;Black</Border>
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,9,27.7,1</ClientRectangle>
+          <ClientRectangle>0,8.8,27.7,1</ClientRectangle>
           <Components isList="true" count="0" />
           <Conditions isList="true" count="0" />
           <Name>FooterBand1</Name>
@@ -749,10 +749,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>10/28/2020 5:37:26 PM</ReportChanged>
+  <ReportChanged>3/15/2021 6:36:38 PM</ReportChanged>
   <ReportCreated>4/12/2013 11:56:34 PM</ReportCreated>
   <ReportFile>E:\Git\Web\Irit\Irit\Suftnet.Cos\Content\reports\DineInOrder.mrt</ReportFile>
-  <ReportGuid>5baa4bf83d3f4f6cae65fd6e79bd19b5</ReportGuid>
+  <ReportGuid>ffe120de25aa47b08f9d6714a8e58a83</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2020.3.2.0</ReportVersion>

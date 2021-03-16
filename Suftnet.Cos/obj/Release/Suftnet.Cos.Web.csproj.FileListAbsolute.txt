@@ -104,7 +104,7 @@ E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Check.pdb
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Check.xml
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Helper.pdb
 E:\Git\Web\Irit\Irit\Suftnet.Cos\bin\Stimulsoft.Report.Helper.xml
-E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Release\Suftnet.Cos.Web.csprojAssemblyReference.cache
 E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Release\Suftnet.Cos.Web.csproj.CoreCompileInputs.cache
 E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Release\Suftnet.Cos.Web.csproj.CopyComplete
 E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Release\Suftnet.Cos.Web.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos\obj\Release\Suftnet.Cos.Web.csprojAssemblyReference.cache

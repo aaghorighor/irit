@@ -1,0 +1,87 @@
+﻿@using Suftnet.Cos.Extension
+
+<div class="container-fluid py-3 demo-blocks">
+
+    <section class="block bg-contrast">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-4 mt-5">
+                    <div class="card text-center">
+                        <div class="pricing card-header bg-light-gradient d-flex align-items-center flex-column">
+                            <h4>Basic</h4>
+                            <div class="pricing-value"><span class="price bold">0.99</span></div>
+                            <p>Includes simple but powerful functionality for individuals and small teams. You can upgrade on the way</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item strike-through">Cras justo odio</li>
+                            <li class="list-group-item strike-through">Dapibus ac facilisis in</li>
+                            <li class="list-group-item strike-through">Morbi leo risus</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                        <div class="card-body"><a href="@Url.SubscriptionHref(1000, "1")" class="btn btn-outline-secondary">Get Started Now</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-5">
+                    <div class="card text-center">
+                        <div class="pricing card-header bg-primary-gradient text-contrast d-flex align-items-center flex-column">
+                            <h4>Premium</h4>
+                            <div class="pricing-value"><span class="price bold">29.99</span></div>
+                            <p>For settle companies looking to stay competitive in the market and growing with the technology</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item strike-through">Cras justo odio</li>
+                            <li class="list-group-item strike-through">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                        <div class="card-body"><a href="@Url.SubscriptionHref(1000, "2")" class="btn btn-primary">Get Started Now</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-5">
+                    <div class="card text-center">
+                        <div class="pricing card-header bg-light-gradient d-flex align-items-center flex-column">
+                            <h4>Premium Plus</h4>
+                            <div class="pricing-value"><span class="price bold">99.99</span></div>
+                            <p>Everything you can get from a professional solution to keep your business on its way to success</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                        <div class="card-body"><a href="@Url.SubscriptionHref(1000, "3")" class="btn btn-outline-secondary">Get Started Now</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pricing block bg-contrast">
+        <div class="container py-4">
+            <div class="section-heading text-center">
+                <h2>Not ready to buy?</h2>
+            </div>
+            <div class="border">
+                <div class="row py-5">
+                    <div class="col-sm-5 mx-auto">
+                        <h4>You can give DashCore a try !!!</h4>
+                        <ul class="list mt-4">
+                            <li><i class="font-regular icon lnr-magic-wand"></i>Lorem ipsum dolor sit amet</li>
+                            <li><i class="font-regular icon lnr-database"></i>Adipisci blanditiis consequuntur debitis</li>
+                            <li><i class="font-regular icon lnr-heart"></i>Alias aliquam eaque nisi non</li>
+                            <li><i class="font-regular icon lnr-layers"></i>Doloribus, inventore, quo! Amet culpa debitis</li>
+                            <li><i class="font-regular icon lnr-history"></i>Minus modi nisi repellat reprehenderit!</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-5 mx-auto text-center">
+                        <h4>Start using DashCore for free</h4>
+                        <p class="pricing-value"><span class="price font-xl">0</span></p><!-- <a class="btn btn-lg btn-success">Get started NOW</a> --> <a href="@Url.Action("Entry","Checkout", new { planId = 1000, planTypeId = 3})" class="btn btn-rounded btn-primary py-3 px-5">Get started NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

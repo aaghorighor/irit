@@ -66,6 +66,13 @@
             settings.MobileLink = ConfigurationSettings.AppSettings["mobilelink"];
             settings.OnlineLink = ConfigurationSettings.AppSettings["onlinelink"];
 
+            try
+            {              
+                Stimulsoft.Base.StiLicense.LoadFromFile(ctx.Server.MapPath("~/App_Data/license/stimulsoft/license.key"));
+            }
+            catch (Exception ex)
+            { GeneralConfiguration.Configuration.Logger.LogError(ex); }
+
             GeneralConfiguration.Configuration.HosterName = ConfigurationSettings.AppSettings["HostName"] ?? "Irit";
             GeneralConfiguration.Configuration.Settings = settings;
             GeneralConfiguration.Configuration.Logger.Log("Website configuration enabled", Cos.Common.EventLogSeverity.Information);

@@ -5,10 +5,7 @@
     ViewBag.Title = "JERUR | TERMS OF USE";
     Layout = "~/Views/Shared/_slim-event-layout.cshtml";
 }
-@{
-    var termsConditions = Url.Cms(CmsType.TermsofService);
-    var privacyPolicy = Url.Cms(CmsType.PrivacyPolicy);
-}
+
 
 <div class="slim-header">
 
@@ -31,7 +28,7 @@
         </div><!-- slim-pageheader -->
 
         <div class="card pd-25">
-            <p class="">@Html.Raw(termsConditions.Contents)</p>       
+        
        </div><!-- section-wrapper -->
      
     </div>

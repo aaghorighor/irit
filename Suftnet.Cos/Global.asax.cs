@@ -1,8 +1,10 @@
 ﻿namespace Suftnet.Cos.Web
 {
     using Suftnet.Cos.Core;
-    using System;   
-    using System.Web; 
+    using System;
+    using System.Security.Claims;
+    using System.Web;
+    using System.Web.Helpers;
     using System.Web.Mvc;
 
     public class MvcApplication : System.Web.HttpApplication
@@ -12,7 +14,12 @@
 
         protected void Application_Start()
         {
+            ViewEngines.Engines.Clear();
+            ViewEngines.Engines.Add(new RazorViewEngine());
             AreaRegistration.RegisterAllAreas();
+
+            AntiForgeryConfig.SuppressXFrameOptionsHeader = true;
+            System.Web.Helpers.AntiForgeryConfig.UniqueClaimTypeIdentifier = ClaimsIdentity.DefaultNameClaimType;
             MvcHandler.DisableMvcResponseHeader = true;
         }
 

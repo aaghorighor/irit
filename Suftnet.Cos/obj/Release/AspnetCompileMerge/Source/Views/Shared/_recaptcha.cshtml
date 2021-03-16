@@ -1,0 +1,15 @@
+﻿@using Suftnet.Cos.Extension
+@model string
+@{ 
+    var reCAPTCHA = Html.ReCAPTCHA();
+}
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script src='@string.Format("https://www.google.com/recaptcha/api.js?render={0}", reCAPTCHA)'></script>
+<script>
+    grecaptcha.ready(function () {
+               
+        grecaptcha.execute('@reCAPTCHA', { action: '@Model' }).then(function (token) {
+            document.getElementById("token").value = token;
+        });
+    });
+</script>

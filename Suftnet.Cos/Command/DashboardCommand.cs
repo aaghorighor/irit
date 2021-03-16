@@ -31,8 +31,7 @@
         public DashboardModel DashboardAsync()
         {
             var continuation = Task.WhenAll(
-                Task.Run(() => _table.GetFreeCount(TenantId)),
-                Task.Run(() => _order.Count(new Guid(eOrderStatus.Reserved), TenantId, new Guid(eOrderType.Reservation))),
+                Task.Run(() => _table.GetFreeCount(TenantId)),              
                 Task.Run(() => _order.Count(TenantId, new Guid(eOrderType.Delivery), new Guid(eOrderStatus.Pending), new Guid(eOrderStatus.Processing), new Guid(eOrderStatus.Ready))),
                 Task.Run(() => _order.CountByOrderType(new Guid(eOrderType.DineIn), TenantId, new Guid(ePaymentStatus.Pending))));                
             try
@@ -48,10 +47,9 @@
             {
                 var test = new DashboardModel
                 {
-                    FreeTables = continuation.Result[0],
-                    Reservations = continuation.Result[1],
-                    PendingDeliveries = continuation.Result[2],
-                    DineIn = continuation.Result[3]                    
+                    FreeTables = continuation.Result[0],                 
+                    PendingDeliveries = continuation.Result[1],
+                    DineIn = continuation.Result[2]                    
                 };
 
                 return test;

@@ -37,23 +37,30 @@
                                  join a in context.AccountTypes on o.AccountTypeId equals a.Id
                                  where o.TenantId == externalId
                                  orderby o.CreatedDt descending
-                                 select new MobilePaymentDto { AccountType = a.Name, AccountTypeId = o.AccountTypeId, Reference = o.Reference, PaymentMethod = m.Name, Amount = o.Amount, CreatedDT = o.CreatedDt }).Take(take).ToList();
+                                 select new MobilePaymentDto { AccountType = a.Name, AccountTypeId = o.AccountTypeId, OrderId = o.Reference, PaymentMethod = m.Name, Amount = o.Amount, CreatedDT = o.CreatedDt }).Take(take).ToList();
                 return objResult;
             }
         }
 
         public IEnumerable<MobilePaymentDto> FetchPaymentByDates(DateQueryDto dateQueryDto)
         {
-            using (var context = DataContextFactory.CreateContext())
+            if(string.IsNullOrEmpty(dateQueryDto.AccountTypeId))
             {
-                var objResult = (from o in context.Payments
-                                 join m in context.PaymentMethods on o.PaymentMethodId equals m.Id
-                                 join a in context.AccountTypes on o.AccountTypeId equals a.Id
-                                 where (o.CreatedDt >= dateQueryDto.StartDate && o.CreatedDt <= dateQueryDto.EndDate) && (o.TenantId == dateQueryDto.ExernalId)
-                                 orderby o.CreatedDt descending
-                                 select new MobilePaymentDto { AccountType = a.Name, AccountTypeId = o.AccountTypeId, Reference = o.Reference,PaymentMethod = m.Name, Amount = o.Amount, CreatedDT = o.CreatedDt }).ToList();
-                return objResult;
+                using (var context = DataContextFactory.CreateContext())
+                {
+                    var objResult = (from o in context.Payments
+                                     join m in context.PaymentMethods on o.PaymentMethodId equals m.Id
+                                     join a in context.AccountTypes on o.AccountTypeId equals a.Id
+                                     where (o.CreatedDt >= dateQueryDto.StartDate && o.CreatedDt <= dateQueryDto.EndDate) && (o.TenantId == dateQueryDto.ExernalId)
+                                     orderby o.CreatedDt descending
+                                     select new MobilePaymentDto { AccountType = a.Name, AccountTypeId = o.AccountTypeId, OrderId = o.Reference, PaymentMethod = m.Name, Amount = o.Amount, CreatedDT = o.CreatedDt }).ToList();
+                    return objResult;
+                }
+            }else
+            {
+                return FetchPaymentByAccountType(dateQueryDto);
             }
+            
         }
 
         public IEnumerable<MobilePaymentDto> FetchPaymentByAccountType(DateQueryDto dateQueryDto)
@@ -65,7 +72,7 @@
                                  join a in context.AccountTypes on o.AccountTypeId equals a.Id
                                  where (o.CreatedDt >= dateQueryDto.StartDate && o.CreatedDt <= dateQueryDto.EndDate) && (o.TenantId == dateQueryDto.ExernalId && o.AccountTypeId == new Guid(dateQueryDto.AccountTypeId))
                                  orderby o.CreatedDt descending
-                                 select new MobilePaymentDto { AccountType = a.Name, AccountTypeId = o.AccountTypeId, Reference = o.Reference, PaymentMethod = m.Name, Amount = o.Amount, CreatedDT = o.CreatedDt }).ToList();
+                                 select new MobilePaymentDto { AccountType = a.Name, AccountTypeId = o.AccountTypeId, OrderId = o.Reference, PaymentMethod = m.Name, Amount = o.Amount, CreatedDT = o.CreatedDt }).ToList();
                 return objResult;
             }
         }

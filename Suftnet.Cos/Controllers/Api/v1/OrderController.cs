@@ -42,8 +42,23 @@
 
         [HttpGet]
         [JwtAuthenticationAttribute]
-        [Route("fetch")]
-        public async Task<IHttpActionResult> Fetch([FromUri] OrderQuery orderQuery)
+        [Route("fetchOrders")]
+        public async Task<IHttpActionResult> FetchOrders([FromUri] ExternalParam externalParam)
+        {
+            if (!ModelState.IsValid)
+            {
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
+            }
+
+            var model = await Task.Run(() => _order.FetchOrders(new Guid(externalParam.ExternalId),50));
+
+            return Ok(model);
+        }
+
+        [HttpGet]
+        [JwtAuthenticationAttribute]
+        [Route("fetchBy")]
+        public async Task<IHttpActionResult> FetchBy([FromUri] OrderQuery orderQuery)
         {
             if (!ModelState.IsValid)
             {

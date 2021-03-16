@@ -1,0 +1,31 @@
+﻿@using Stimulsoft.Report.Mvc;
+@using Stimulsoft.Report.Web;
+
+@{
+    ViewBag.Title = "SUFTNET  | REPORTS";
+}
+
+<ul class="tabs">
+    <li><a href="#tab1" title="View Reports">Report Viewer</a></li>
+    <li><a href="#tab2" title="Filter Reports">Filter </a></li>
+</ul>
+
+<div class="tab_container">
+
+    <div id="tab1" class="tab_content">
+        @Html.Stimulsoft().StiMvcViewer(new StiMvcViewerOptions()
+       {
+            Actions =
+            {
+                GetReport = "GetSalesReport",
+                ViewerEvent = "ViewerEvent"
+            }
+       })
+
+    </div>
+    <div id="tab2" class="tab_content">
+
+        @Html.Partial("_Search")
+    </div>
+
+</div>

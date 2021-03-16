@@ -31,7 +31,8 @@
         [Route("fetch")]
         public async Task<IHttpActionResult> Fetch()
         {
-            var model = await Task.Run(() => _report.FetchPayments(new Guid(ExternalId), 50));
+            var model = 
+                await Task.Run(() => _report.FetchPayments(new Guid(ExternalId), 50));
             return Ok(model);
         }
 

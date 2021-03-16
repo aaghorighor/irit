@@ -73,9 +73,9 @@
         <Alias>Payment</Alias>
         <BusinessObjects isList="true" count="0" />
         <Category>Payments</Category>
-        <Columns isList="true" count="17">
-          <value>Account,System.String</value>
-          <value>AccountId,System.Int32</value>
+        <Columns isList="true" count="18">
+          <value>AccountType,System.String</value>
+          <value>AccountTypeId,System.Guid</value>
           <value>Amount,System.Decimal</value>
           <value>CreatedBy,System.String</value>
           <value>CreatedDT,System.DateTime</value>
@@ -91,6 +91,7 @@
           <value>UpdateBy,System.String</value>
           <value>UpdateDate,System.Nullable`1[System.DateTime]</value>
           <value>UpdatedOn,System.String</value>
+          <value>OrderReference,System.String</value>
         </Columns>
         <Dictionary isRef="1" />
         <Guid>406b2eb6f08949cf8432ce1afd10a9fc</Guid>
@@ -143,8 +144,8 @@
       <Components isList="true" count="4">
         <ReportTitleBand1 Ref="6" type="ReportTitleBand" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,0.4,19,5.4</ClientRectangle>
-          <Components isList="true" count="12">
+          <ClientRectangle>0,0.4,19,4.6</ClientRectangle>
+          <Components isList="true" count="10">
             <Text1 Ref="7" type="Text" isKey="true">
               <Border>Bottom;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
@@ -299,66 +300,34 @@
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text18>
-            <Text19 Ref="17" type="Text" isKey="true">
-              <Border>All;[242:242:242];1;Solid;False;4;Black</Border>
-              <Brush>[12:12:12]</Brush>
-              <ClientRectangle>0,4.6,2.2,0.6</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>Arial,12</Font>
-              <Guid>fd7f3685f2df4d4b9a1167c8dafa87d2</Guid>
-              <Margins>4,4,4,4</Margins>
-              <Name>Text19</Name>
-              <Page isRef="5" />
-              <Parent isRef="6" />
-              <Text>Cashier</Text>
-              <TextBrush>White</TextBrush>
-              <Type>Expression</Type>
-              <VertAlignment>Center</VertAlignment>
-            </Text19>
-            <Text20 Ref="18" type="Text" isKey="true">
-              <Border>All;[127:127:127];1;Solid;False;4;Black</Border>
-              <Brush>Transparent</Brush>
-              <ClientRectangle>2.4,4.6,9.2,0.6</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>Arial,11</Font>
-              <Guid>33ceac94cc134d4cb60aeba1dbdd6dd3</Guid>
-              <Margins>4,4,4,4</Margins>
-              <Name>Text20</Name>
-              <Page isRef="5" />
-              <Parent isRef="6" />
-              <Text>{Term.UserName}</Text>
-              <TextBrush>[12:12:12]</TextBrush>
-              <Type>DataColumn</Type>
-              <VertAlignment>Center</VertAlignment>
-            </Text20>
           </Components>
           <Conditions isList="true" count="0" />
           <Name>ReportTitleBand1</Name>
           <Page isRef="5" />
           <Parent isRef="5" />
         </ReportTitleBand1>
-        <HeaderBand1 Ref="19" type="HeaderBand" isKey="true">
+        <HeaderBand1 Ref="17" type="HeaderBand" isKey="true">
           <Border>Bottom;Black;1;Solid;False;4;Black</Border>
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,6.6,19,0.6</ClientRectangle>
-          <Components isList="true" count="5">
-            <Text32 Ref="20" type="Text" isKey="true">
+          <ClientRectangle>0,5.8,19,0.8</ClientRectangle>
+          <Components isList="true" count="6">
+            <Text32 Ref="18" type="Text" isKey="true">
               <Border>All;[12:12:12];1;Solid;False;4;Black</Border>
               <Brush>White</Brush>
-              <ClientRectangle>4.4,0,7,0.6</ClientRectangle>
+              <ClientRectangle>4.4,0,3,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,12</Font>
               <Guid>6c6bfff008f244bf86350b41bac86f5e</Guid>
               <Margins>4,4,4,4</Margins>
               <Name>Text32</Name>
               <Page isRef="5" />
-              <Parent isRef="19" />
+              <Parent isRef="17" />
               <Text>Reference</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text32>
-            <Text33 Ref="21" type="Text" isKey="true">
+            <Text33 Ref="19" type="Text" isKey="true">
               <Border>All;[12:12:12];1;Solid;False;4;Black</Border>
               <Brush>White</Brush>
               <ClientRectangle>11.4,0,3.8,0.6</ClientRectangle>
@@ -368,13 +337,13 @@
               <Margins>4,4,4,4</Margins>
               <Name>Text33</Name>
               <Page isRef="5" />
-              <Parent isRef="19" />
+              <Parent isRef="17" />
               <Text>Payment Method</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text33>
-            <Text34 Ref="22" type="Text" isKey="true">
+            <Text34 Ref="20" type="Text" isKey="true">
               <Border>All;[12:12:12];1;Solid;False;4;Black</Border>
               <Brush>White</Brush>
               <ClientRectangle>15.2,0,3.8,0.6</ClientRectangle>
@@ -385,13 +354,13 @@
               <Margins>4,4,4,4</Margins>
               <Name>Text34</Name>
               <Page isRef="5" />
-              <Parent isRef="19" />
+              <Parent isRef="17" />
               <Text>Amount Paid</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text34>
-            <Text36 Ref="23" type="Text" isKey="true">
+            <Text36 Ref="21" type="Text" isKey="true">
               <Border>All;[12:12:12];1;Solid;False;4;Black</Border>
               <Brush>White</Brush>
               <ClientRectangle>0,0,1,0.6</ClientRectangle>
@@ -401,13 +370,13 @@
               <Margins>4,4,4,4</Margins>
               <Name>Text36</Name>
               <Page isRef="5" />
-              <Parent isRef="19" />
+              <Parent isRef="17" />
               <Text>Sn#</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text36>
-            <Text25 Ref="24" type="Text" isKey="true">
+            <Text25 Ref="22" type="Text" isKey="true">
               <Border>All;[12:12:12];1;Solid;False;4;Black</Border>
               <Brush>White</Brush>
               <ClientRectangle>1,0,3.4,0.6</ClientRectangle>
@@ -417,40 +386,56 @@
               <Margins>4,4,4,4</Margins>
               <Name>Text25</Name>
               <Page isRef="5" />
-              <Parent isRef="19" />
-              <Text>Date</Text>
+              <Parent isRef="17" />
+              <Text>CreatedAt</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text25>
+            <Text2 Ref="23" type="Text" isKey="true">
+              <Border>All;[12:12:12];1;Solid;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>7.4,0,4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,12</Font>
+              <Guid>cd2abcf6395d44d4a73be3c7440ab312</Guid>
+              <Margins>4,4,4,4</Margins>
+              <Name>Text2</Name>
+              <Page isRef="5" />
+              <Parent isRef="17" />
+              <Text>Account Type</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
           </Components>
           <Conditions isList="true" count="0" />
           <Name>HeaderBand1</Name>
           <Page isRef="5" />
           <Parent isRef="5" />
         </HeaderBand1>
-        <DataBand1 Ref="25" type="DataBand" isKey="true">
+        <DataBand1 Ref="24" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <BusinessObjectGuid>406b2eb6f08949cf8432ce1afd10a9fc</BusinessObjectGuid>
-          <ClientRectangle>0,8,19,0.4</ClientRectangle>
-          <Components isList="true" count="5">
-            <Text37 Ref="26" type="Text" isKey="true">
+          <ClientRectangle>0,7.4,19,0.4</ClientRectangle>
+          <Components isList="true" count="6">
+            <Text37 Ref="25" type="Text" isKey="true">
               <Border>All;[216:216:216];1;Dot;False;4;Black</Border>
               <Brush>White</Brush>
-              <ClientRectangle>4.4,0,7,0.6</ClientRectangle>
+              <ClientRectangle>4.4,0,3,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,8</Font>
               <Guid>51479a52b49e4b8fb6c936d07ba13b29</Guid>
               <Margins>4,4,4,4</Margins>
               <Name>Text37</Name>
               <Page isRef="5" />
-              <Parent isRef="25" />
-              <Text>{Payment.Reference}</Text>
+              <Parent isRef="24" />
+              <Text>{Payment.OrderReference}</Text>
               <TextBrush>Black</TextBrush>
               <Type>DataColumn</Type>
               <VertAlignment>Center</VertAlignment>
             </Text37>
-            <Text38 Ref="27" type="Text" isKey="true">
+            <Text38 Ref="26" type="Text" isKey="true">
               <Border>All;[216:216:216];1;Dot;False;4;Black</Border>
               <Brush>White</Brush>
               <ClientRectangle>11.4,0,3.8,0.6</ClientRectangle>
@@ -460,13 +445,13 @@
               <Margins>4,4,4,4</Margins>
               <Name>Text38</Name>
               <Page isRef="5" />
-              <Parent isRef="25" />
+              <Parent isRef="24" />
               <Text>{Payment.PaymentMethod}</Text>
               <TextBrush>Black</TextBrush>
               <Type>DataColumn</Type>
               <VertAlignment>Center</VertAlignment>
             </Text38>
-            <Text39 Ref="28" type="Text" isKey="true">
+            <Text39 Ref="27" type="Text" isKey="true">
               <Border>All;[216:216:216];1;Dot;False;4;Black</Border>
               <Brush>White</Brush>
               <ClientRectangle>15.2,0,3.8,0.6</ClientRectangle>
@@ -477,13 +462,13 @@
               <Margins>4,4,4,4</Margins>
               <Name>Text39</Name>
               <Page isRef="5" />
-              <Parent isRef="25" />
+              <Parent isRef="24" />
               <Text>{Setting.CurrencySymbol}{Payment.Amount}</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text39>
-            <Text41 Ref="29" type="Text" isKey="true">
+            <Text41 Ref="28" type="Text" isKey="true">
               <Border>All;[216:216:216];1;Solid;False;4;Black</Border>
               <Brush>White</Brush>
               <ClientRectangle>0,0,1,0.6</ClientRectangle>
@@ -493,13 +478,13 @@
               <Margins>4,4,4,4</Margins>
               <Name>Text41</Name>
               <Page isRef="5" />
-              <Parent isRef="25" />
+              <Parent isRef="24" />
               <Text>{Line}</Text>
               <TextBrush>Black</TextBrush>
               <Type>SystemVariables</Type>
               <VertAlignment>Center</VertAlignment>
             </Text41>
-            <Text26 Ref="30" type="Text" isKey="true">
+            <Text26 Ref="29" type="Text" isKey="true">
               <Border>All;[216:216:216];1;Dot;False;4;Black</Border>
               <Brush>White</Brush>
               <ClientRectangle>1,0,3.4,0.6</ClientRectangle>
@@ -509,12 +494,28 @@
               <Margins>4,4,4,4</Margins>
               <Name>Text26</Name>
               <Page isRef="5" />
-              <Parent isRef="25" />
+              <Parent isRef="24" />
               <Text>{Payment.CreatedOn}</Text>
               <TextBrush>Black</TextBrush>
               <Type>DataColumn</Type>
               <VertAlignment>Center</VertAlignment>
             </Text26>
+            <Text3 Ref="30" type="Text" isKey="true">
+              <Border>All;[216:216:216];1;Dot;False;4;Black</Border>
+              <Brush>White</Brush>
+              <ClientRectangle>7.4,0,4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,11</Font>
+              <Guid>282c9313413d4cb0b8395776101a862d</Guid>
+              <Margins>4,4,4,4</Margins>
+              <Name>Text3</Name>
+              <Page isRef="5" />
+              <Parent isRef="24" />
+              <Text>{Payment.AccountType}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
           </Components>
           <Conditions isList="true" count="0" />
           <DataSourceName isNull="true" />
@@ -527,7 +528,7 @@
         <FooterBand1 Ref="31" type="FooterBand" isKey="true">
           <Border>None;[165:165:165];1;Solid;False;4;Black</Border>
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,9.2,19,1.2</ClientRectangle>
+          <ClientRectangle>0,8.6,19,1.2</ClientRectangle>
           <Components isList="true" count="2">
             <Text9 Ref="32" type="Text" isKey="true">
               <Border>All;[12:12:12];1;Solid;False;4;Black</Border>
@@ -590,10 +591,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>10/28/2020 5:44:17 PM</ReportChanged>
+  <ReportChanged>3/15/2021 6:34:15 PM</ReportChanged>
   <ReportCreated>4/12/2013 11:56:34 PM</ReportCreated>
   <ReportFile>E:\Git\Web\Irit\Irit\Suftnet.Cos\Content\reports\Payment.mrt</ReportFile>
-  <ReportGuid>4ad54ec3abb64798a2f8db524027876a</ReportGuid>
+  <ReportGuid>3f8847ec14614589b30a79fbd54022bb</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2020.3.2.0</ReportVersion>

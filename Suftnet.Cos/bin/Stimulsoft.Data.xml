@@ -9,9 +9,30 @@
             Used in the CodeDom report compiler.
             </summary>
         </member>
-        <member name="M:Stimulsoft.Data.Engine.StiDataSorter.GetFixedDataSortRules(System.Collections.Generic.IEnumerable{Stimulsoft.Data.Engine.StiDataSortRule},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+        <member name="T:Stimulsoft.Data.Engine.StiDataFilterHelper">
             <summary>
-            Replaces column name which used as key by real column key.
+            Class contains methods to work with filters.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Data.Engine.StiDataFilterRule.SaveToString">
+            <summary>
+            Saves element to string.
+            </summary>
+            <returns>String representation which contains schema.</returns>
+        </member>
+        <member name="M:Stimulsoft.Data.Engine.StiDataFilterRuleHelper.ToList(Stimulsoft.Data.Engine.StiDataFilterRule[])">
+            <summary>
+            Used in the CodeDom report compiler.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Data.Engine.StiDataFilterRuleHelper.GetValue(System.Type,System.String)">
+            <summary>
+            Tries to resave numbers in en-US culture.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Data.Engine.StiDataLink.Key">
+            <summary>
+            Gets or sets the key to the data relation in the report dictionary.
             </summary>
         </member>
         <member name="M:Stimulsoft.Data.Engine.StiDataPicker.Fetch(Stimulsoft.Data.Engine.IStiQueryObject,System.String,Stimulsoft.Data.Engine.StiDataRequestOption,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.List{Stimulsoft.Data.Engine.StiDataLink})">
@@ -30,11 +51,10 @@
             </summary>
             <returns>A new object that is a copy of this instance.</returns>
         </member>
-        <member name="M:Stimulsoft.Data.Engine.StiDataFilterRule.SaveToString">
+        <member name="M:Stimulsoft.Data.Engine.StiDataSorter.GetFixedDataSortRules(System.Collections.Generic.IEnumerable{Stimulsoft.Data.Engine.StiDataSortRule},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
             <summary>
-            Saves element to string.
+            Replaces column name which used as key by real column key.
             </summary>
-            <returns>String representation which contains schema.</returns>
         </member>
         <member name="M:Stimulsoft.Data.Engine.StiDataSortRule.SaveToString">
             <summary>
@@ -42,29 +62,9 @@
             </summary>
             <returns>String representation which contains schema.</returns>
         </member>
-        <member name="M:Stimulsoft.Data.Engine.StiDataFilterRuleHelper.ToList(Stimulsoft.Data.Engine.StiDataFilterRule[])">
-            <summary>
-            Used in the CodeDom report compiler.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Data.Engine.StiDataFilterRuleHelper.GetValue(System.Type,System.String)">
-            <summary>
-            Tries to resave numbers in en-US culture.
-            </summary>
-        </member>
         <member name="M:Stimulsoft.Data.Engine.StiDataSortRuleHelper.ToList(Stimulsoft.Data.Engine.StiDataSortRule[])">
             <summary>
             Used in the CodeDom report compiler.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Data.Engine.StiDataLink.Key">
-            <summary>
-            Gets or sets the key to the data relation in the report dictionary.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Data.Engine.StiDataFilterHelper">
-            <summary>
-            Class contains methods to work with filters.
             </summary>
         </member>
         <member name="M:Stimulsoft.Data.Engine.StiDataTopN.Clone">
@@ -3121,6 +3121,11 @@
         <member name="M:Stimulsoft.Data.Functions.StiDayOfWeekToStrHelper.DayOfWeek(System.DateTime,System.Boolean)">
             <summary>
             Returns the day of the week.
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Data.Functions.StiExtValueConverter">
+            <summary>
+            MonthToStr helper.
             </summary>
         </member>
         <member name="T:Stimulsoft.Data.Functions.StiMonthToStrHelper">

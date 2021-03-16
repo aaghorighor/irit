@@ -1,0 +1,29 @@
+﻿
+<div class="tableName">
+    <table id="tblTenant" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th align="left">Begin At</th>
+                <th align="left">End At</th>
+                <th align="left">Stripe CustomerId</th>
+                <th align="left">Name</th>
+                <th align="left">Email</th>
+                <th align="left">Mobile</th>
+                <th align="left">Status</th>
+                <th class="align-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<div class="hide">
+    <span id="loadUrl" name="loadUrl" data-loadUrl="@Url.Action("fetch", "tenants", new { area = "admin" })"></span>
+    <span id="viewUrl" name="viewUrl" data-viewUrl="@Url.Action("entry", "tenants", new { area = "admin" })"></span>
+    <span id="userUrl" name="userUrl" data-userUrl="@Url.Action("entry", "user", new { area = "admin" })"></span>
+
+</div>
+
+
+
+
+

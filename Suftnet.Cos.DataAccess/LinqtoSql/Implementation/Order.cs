@@ -299,8 +299,21 @@
                                  select new OrderDto { PaymentStatus = p.Name, UpdateDate = o.UpdateDt, UpdateBy = o.UpdateBy, OrderType = r.Name, Mobile = o.Mobile, FirstName = o.FirstName, LastName = o.LastName, ExpectedGuest = o.ExpectedGuest, Time = o.Time, Balance = o.Balance, Payment = o.Payment, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, Status = s.Name, Table = t.Number, GrandTotal = o.GrandTotal, OrderTypeId = o.OrderTypeId, Total = o.Total, CreatedBy = o.CreatedBy, Id = o.Id }).Skip(iskip).Take(itake).ToList();
                 return objResult;
             }
-        }           
-       
+        }
+        public List<DineInOrderDto> FetchOrders(Guid tenantId,int itake)
+        {
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objResult = (from o in context.Orders
+                                 join s in context.OrderStatuses on o.StatusId equals s.Id                    
+                                 join t in context.Tables on o.TableId equals t.Id                
+                                 where (o.TenantId == tenantId)
+                                 orderby o.CreatedDt descending
+                                 select new DineInOrderDto { Status = s.Name, CreatedDt = o.CreatedDt, Discount = o.DiscountRate, Tax = o.TaxRate, Paid = o.Payment, TotalDiscount = o.TotalDiscount,  Balance = o.Balance, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, TableNumber = t.Number, GrandTotal = o.GrandTotal, Total = o.Total, OrderId = o.Id }).Take(itake).ToList();
+                return objResult;
+            }
+        }
+
         public List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch)
         {
             if (!string.IsNullOrEmpty(isearch))

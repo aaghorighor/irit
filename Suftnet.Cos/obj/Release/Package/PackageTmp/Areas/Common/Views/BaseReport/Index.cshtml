@@ -1,6 +1,4 @@
-﻿@using System.Web.UI.WebControls;
-@using Stimulsoft.Report.Mvc;
-@Html.Stimulsoft().RenderMvcViewerScripts()
+﻿@using Stimulsoft.Report.Mvc;
 
 @{
     ViewBag.Title = "SUFTNET  | REPORTS";
@@ -8,12 +6,10 @@
 }
 
 @Html.Stimulsoft().StiMvcViewer(new StiMvcViewerOptions()
-{
-        Theme = StiTheme.Windows7,
-        ActionGetReportSnapshot = "GetReportSnapshot",
-        ActionViewerEvent = "ViewerEvent",
-        ActionPrintReport = "PrintReport",
-        ActionExportReport = "ExportReport",
-        ActionInteraction = "Interaction",
-        Width = Unit.Percentage(100)
-})
+     {
+          Actions =
+          {
+              GetReport = "GetReportSnapshot",
+              ViewerEvent = "ViewerEvent"
+          }
+     })

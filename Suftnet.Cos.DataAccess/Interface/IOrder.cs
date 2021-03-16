@@ -13,7 +13,8 @@
         bool UpdateOrderStatus(Guid tenantId, Guid orderId, Guid statusId, Guid orderTypeId, DateTime createDt, string createdBy);
         bool UpdateOrderStatus(Guid orderId, Guid statusId, DateTime createDt, string createdBy, Guid tenantId);
         List<OrderDto> GetAll(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch);
-        List<OrderDto> GetAll(Guid orderTypeId, Guid tenantId, int iskip, int itake);        
+        List<OrderDto> GetAll(Guid orderTypeId, Guid tenantId, int iskip, int itake);
+        List<DineInOrderDto> FetchOrders(Guid tenantId, int itake);
         IEnumerable<OrderDto> GetAllOrderByStatus(TermDto term);    
         List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch);
         List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake);

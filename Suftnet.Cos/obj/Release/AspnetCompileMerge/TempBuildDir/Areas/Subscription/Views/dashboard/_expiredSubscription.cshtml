@@ -1,0 +1,37 @@
+﻿@model Suftnet.Cos.Web.StripeAdapterModel
+@using Suftnet.Cos.Common
+
+@switch (Model.Subscription.Plan.Id)
+{
+    case PlanType.Basic:
+    case PlanType.Premium:
+
+    <div class="card card-dash-headline">
+        <h4>Thanks for subscribing Jerur app. Your subscription has expired.</h4>
+        <p>We hope you are happy with our services and may want to continue with your subscription. To continue with your subscription Plan or upgrade to another plan, click the Renew Plan button. However, if you are no longer interested in our services, you are free to download your church data and do nothing. You data will be kept for the next 30 days before deleted. Thanks</p>
+        <div class="row row-sm">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-4">
+                <a href="@Url.Action("entry","Plan", new { area = "Subscription" })" class="btn btn-primary btn-block center">Renew Plan</a>
+            </div>
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-2">
+            </div>
+        </div>
+    </div><!-- card -->
+
+        break;
+
+    case PlanType.PremiumPlus:
+
+        <div class="card card-dash-headline">
+            <h4>Thanks for subscribing Jerur app. Your subscription has expired.</h4>
+            <p>We hope you are happy with our services and may want to continue with your subscription. However, if you no longer interested in our services, you are free to download your church data and do nothing. You data will be kept for the next 30 days before deleted. Thanks</p>
+        </div><!-- card -->
+
+     break;
+}

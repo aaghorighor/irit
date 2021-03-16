@@ -1,0 +1,38 @@
+﻿@using Suftnet.Cos.Extension;
+@model Suftnet.Cos.Web.StripeAdapterModel
+
+<div class="slim-header">
+    <div class="container">
+        <div class="slim-header-left">
+            <h2 class="slim-logo"><a href="#">Jerur<span></span></a></h2>
+                  
+        </div><!-- slim-header-left -->
+        <div class="slim-header-right">
+                    
+            @if (!Model.Tenant.IsExpired)
+            {
+                <div class="dropdown">
+                    <a href="@Url.Action("index","dashboard", new { area ="backoffice" } )" class="">
+                        <i class="icon ion-home"></i>
+                        <span>Home</span>
+                    </a>
+                </div>
+            }
+
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="logged-user">    
+                    <i class="icon ion-person"></i>        
+                    <span>@Url.CurrentUserName()</span>
+                </a>
+            </div>                
+                        
+            <div class="dropdown dropdown-b">
+                <a href="@Url.LogoutHref()" class="header-notification" title="Logout">
+                    <i class="icon ion-log-out"></i>
+                    <span class="indicator"></span>
+                </a>
+            </div>               
+           
+        </div><!-- header-right -->
+    </div><!-- container -->
+</div><!-- slim-header -->

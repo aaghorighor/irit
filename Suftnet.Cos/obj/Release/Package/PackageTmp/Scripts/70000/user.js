@@ -8,6 +8,10 @@ var user = {
 
             e.preventDefault();
 
+            if (!$("#ChangePassword").is(":visible")) {
+                $("#Password").addClass("validate[required],maxSize[20],minSize[6]]"); 
+            }
+
             if (!suftnet_validation.isValid("form")) {
                 return false;
             }
@@ -22,7 +26,7 @@ var user = {
                 $("#ChangePassword").val(true);
             } else {
                 $("#ChangePassword").val(false);
-            }
+            }           
 
             js.ajaxPost($("#form").attr("action"), $("#form").serialize()).then(
                   function (data) {

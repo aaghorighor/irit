@@ -77,7 +77,7 @@
             dynamic model = new
             {
                 userId = user.Id,
-                externalId = user.ExternalId,
+                externalId = user.TenantId,
                 firstName = user.FirstName.EmptyOrNull(),
                 lastName = user.LastName.EmptyOrNull(),
                 areaId = user.AreaId,

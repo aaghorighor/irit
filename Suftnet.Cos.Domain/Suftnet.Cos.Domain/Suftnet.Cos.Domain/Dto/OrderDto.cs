@@ -68,6 +68,32 @@
         public Guid StatusId { get; set; }
 
     }
+
+    public class DineInOrderDto
+    {
+        public Guid TableId { get; set; }
+        public Guid OrderId { get; set; }
+        public string TableNumber { get; set; }
+        public decimal? Tax { get; set; } = 0;
+        public decimal? Discount { get; set; } = 0;
+        public decimal? TotalDiscount { get; set; } = 0;
+        public decimal? TotalTax { get; set; } = 0;
+        public decimal? Paid { get; set; } = 0;
+        public decimal? Total { get; set; } = 0;
+        public decimal? Balance { get; set; } = 0;
+        public decimal? GrandTotal { get; set; } = 0;
+        public Guid StatusId { get; set; }
+        public string Status { get; set; }
+        public string CreatedAt
+        {
+            get
+            {
+                return this.CreatedDt.ToShortDateString();
+            }
+        }
+        public DateTime CreatedDt { get; set; }
+
+    }
     public class CartOrderDto 
     {
         public string UserName { get; set; }
