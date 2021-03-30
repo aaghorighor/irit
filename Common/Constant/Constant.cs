@@ -150,45 +150,9 @@ namespace Suftnet.Cos.Common
         public const int Remove = 5145;
         public const int Edit = 5144;
         public const int Create = 5143;
-    }     
+    }       
+                  
   
-        
-    public static class Slider
-    {
-        public const int Type1 = 5189;
-        public const int Type2 = 5190;
-        public const int Type3 = 5191;
-    }
-
-    public static class Tour
-    {
-        public const int Type1 = 5192;
-        public const int Type2 = 5193;
-        public const int Type3 = 5194;
-        public const int Type4 = 5196;
-    }
-    public static class FaqType
-    {
-        public const int GeneralEnquiries = 5188;
-        public const int Features = 5187;
-        public const int PermissionPrivacy = 5195;
-        public const int PricingPlans = 5186;
-    }
-       
-    public static class CmsType
-    {
-        public const int About = 33;
-        public const int Features = 34;
-        public const int Howitworks = 35;
-        public const int YourSuccess = 36;
-        public const int TermsofService = 38;
-        public const int PrivacyPolicy = 39;
-        public const int CancelSubscription = 40;
-        public const int CancelTrial = 41;
-        public const int WelcomeToJerur = 42;
-        public const int SubscriptionExpired = 43;
-        public const int TrialExpired = 44;
-    }
     public static class CommonType
     {
         public const int Support = 2305;    
@@ -215,50 +179,17 @@ namespace Suftnet.Cos.Common
 
     public static class BackOfficeViews
     {
-        public const int Member = 5131;
-        public const int Events = 5132;     
-        public const int Case = 5135;
-        public const int Reports = 5136;
-        public const int Venue = 5137;
-        public const int Assest = 5138;
-        public const int Settings = 5139;
-        public const int User = 5140;
-        public const int SmallGroup = 5141;
-        public const int Attendance = 5142;          
-        public const int Fellowship = 7332;
-        public const int Notification = 5161;
-        public const int Give = 5159;   
+       
     }
 
     public static class FrontOfficeViews
     {
-        public const int Slider = 7331;
-        public const int ServiceTimeLine = 7330;
-        public const int ServiceTime = 7329;
-        public const int PrayerRequest = 7328;
-        public const int Prayer = 7327;
-        public const int Campaign = 7326;
-        public const int Media = 7324;
-        public const int Lookup = 7323;
-        public const int Gallery = 7322;
-        public const int Devotion = 7321;
-        public const int Contact = 7320;
-        public const int BibleVerse = 7319;
-        public const int Article = 7318;
-        public const int Album = 7317;
+       
     }
 
     public static class SiteAdminOfficeViews
     {
-        public const int Tutorial = 7340;
-        public const int Tour = 7339;
-        public const int Ticket = 7338;
-        public const int Support = 7337;
-        public const int Slider = 7336;
-        public const int Campaign = 7326;
-        public const int PageHeader = 7335;
-        public const int Feature = 7334;
-        public const int Faq = 7333;        
+       
     }
 
     public static class ChargeCurrency

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Views/faq/_faqs.cshtml" hash="1d884bfe" filehash="ffffef25517f357f" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_faq__faqs_cshtml">
+  <filedeps>
+    <filedep name="/Views/faq/_faqs.cshtml" />
+  </filedeps>
+</preserve>

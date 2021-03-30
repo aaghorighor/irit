@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Areas/Admin/Views/User/_adminform.cshtml" hash="1d884bfe" filehash="448d1f367ecc" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_User__adminform_cshtml">
+  <filedeps>
+    <filedep name="/Areas/Admin/Views/User/_adminform.cshtml" />
+  </filedeps>
+</preserve>

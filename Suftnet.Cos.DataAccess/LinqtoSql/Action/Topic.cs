@@ -9,32 +9,33 @@ namespace Suftnet.Cos.DataAccess.Action
     [Table("Topic")]
     public partial class Topic
     {
-        public int Id { get; set; }
-
-        [Required]
+        public int Id { get; set; }       
+               
         public string Description { get; set; }
-
         [Column(TypeName = "smalldatetime")]
-        public DateTime CreatedDt { get; set; }
-
+        public DateTime CreatedDT { get; set; }
         [Required]
         [StringLength(50)]
         public string CreatedBy { get; set; }
-
+        [Required]
         public int TopicId { get; set; }
-
+        [Required]
+        public int ChapterId { get; set; }
         public bool Publish { get; set; }
-
         [Column(TypeName = "timestamp")]
         [MaxLength(8)]
         [Timestamp]
         public byte[] TimeStamp { get; set; }
-
         [StringLength(50)]
         public string ImageUrl { get; set; }
-
-        public int ChapterId { get; set; }
-
+        [Required]
         public int IndexNo { get; set; }
+        [StringLength(50)]
+        [Required]
+        public string VideoId { get; set; }
+        [StringLength(150)]
+        [Required]
+        public string VideoUrl { get; set; }
+
     }
 }

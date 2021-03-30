@@ -17,11 +17,9 @@ var chapter = {
                 $("#Publish").val(true);
             } else {
                 $("#Publish").val(false);
-            }                  
+            }                 
 
-            $("#Description").val(tinymce.activeEditor.getContent());
-
-            js.ajaxPost($("#form").attr("action"), $("#form").serialize()).then(
+           js.ajaxPost($("#form").attr("action"), $("#form").serialize()).then(
                 function (data) {
                     switch (data.flag) {
                         case 1:                                        
@@ -74,10 +72,8 @@ var chapter = {
                 function (data) {
                     var dataobject = data.dataobject;
                                        
-                    $("#Id").val(dataobject.Id);
-                         
-                    tinymce.get('Description').setContent(dataobject.Description);
-
+                    $("#Id").val(dataobject.Id);                         
+                
                     $("#TopicId").val(dataobject.TopicId);
                     $("#SectionId").val(dataobject.SectionId);
                     $("#ImageUrl").val(dataobject.ImageUrl);

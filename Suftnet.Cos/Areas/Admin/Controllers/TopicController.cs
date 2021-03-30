@@ -52,9 +52,20 @@
         public JsonResult Create(TopicDto entityToCreate)
         {
             try
-            {                 
-                    entityToCreate.CreatedBy = this.UserName;
-                    entityToCreate.CreatedDT = DateTime.Now;
+            {
+                entityToCreate.CreatedBy = this.UserName;
+                entityToCreate.CreatedDT = DateTime.Now;
+
+                if (!string.IsNullOrEmpty(entityToCreate.Description))
+                {
+                    entityToCreate.Description = entityToCreate.Description.Trim();
+                }
+                else
+                {
+                    entityToCreate.Description = string.Empty;
+                }
+
+                entityToCreate.VideoId = entityToCreate.VideoUrl.ToYouTubeVideoId();
 
                 if (entityToCreate.Id == 0)
                 {

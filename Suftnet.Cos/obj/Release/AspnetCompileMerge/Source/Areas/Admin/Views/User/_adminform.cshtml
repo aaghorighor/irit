@@ -4,7 +4,6 @@
 
     <input type="hidden" id="ImageUrl" name="ImageUrl" />
     <input type="hidden" name="UserId" value="" id="UserId" />
-    <input type="hidden" name="AreaId" value="@eArea.Admin" id="AreaId" />
 
     <div class="forms">
 
@@ -22,10 +21,21 @@
             <label class="forms-lbl">Email: </label>
             <input type="text" name="Email" id="Email" class="forms-txt validate[required]" size="50" maxlength="50" />
         </div>
-               
+
         <div class="grid-6-12">
             <label class="forms-lbl">Password: </label>
             <input type="password" name="Password" id="Password" class="forms-txt" size="20" maxlength="20" autocomplete="off" />
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="grid-6-12">
+            <label class="forms-lbl">Area: </label>
+            <select class="validate[required]" id="AreaId" name="AreaId" style="padding: 6px;">
+                <option value="">-- SELECT --</option>
+                <option value="2033">Admin</option>               
+                <option value="6241">Site Admin</option>
+            </select>
         </div>
 
         <div class="grid-12-12">
@@ -35,8 +45,8 @@
 
         <div class="grid-12-12">
             <ul style="margin-left:0px; margin-top :0px" class="display01">
-                <li class="display01"><span class="etip"><a class="uibutton normal " id="btnSaveChanges" title="Save Changes"><i class="fa fa-save"></i> Save Changes</a></span></li>
-                <li class="display01"><span class="etip"><a class="uibutton normal" id="btnCloseEdit" title=""><i class="fa fa-close"></i> Close</a></span></li>
+                <li class="display01"><span class="etip"><a class="uibutton normal " id="btnSubmit" title="Save Changes"><i class="fa fa-save"></i> Save Changes</a></span></li>
+                <li class="display01"><span class="etip"><a class="uibutton normal" id="btnClose" title=""><i class="fa fa-close"></i> Close</a></span></li>
             </ul>
         </div>
 

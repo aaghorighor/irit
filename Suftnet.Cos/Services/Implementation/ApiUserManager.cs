@@ -41,8 +41,8 @@
 
             if (user == false)
             {
-                model.AreaId = isBackoffice == true ? (int)eArea.BackOffice : (int)eArea.FrontOffice;
-                model.Area = isBackoffice == true ? "BackOffice" : "FrontOffice";
+                model.AreaId = (int)eArea.BackOffice;
+                model.Area = "BackOffice";
                 model.Active = true;
               
                 if (string.IsNullOrEmpty(password))

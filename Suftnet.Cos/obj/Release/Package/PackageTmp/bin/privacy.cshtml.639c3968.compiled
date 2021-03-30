@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Views/Shared/privacy.cshtml" hash="1d884bfe" filehash="ffffdea2e74e6c70" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_Shared_privacy_cshtml">
+  <filedeps>
+    <filedep name="/Views/Shared/privacy.cshtml" />
+  </filedeps>
+</preserve>

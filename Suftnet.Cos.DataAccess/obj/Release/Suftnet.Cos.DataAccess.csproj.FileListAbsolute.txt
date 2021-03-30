@@ -1,3 +1,4 @@
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.csproj.CoreCompileInputs.cache
 E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Release\Suftnet.Cos.DataAccess.dll.config
 E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Release\Suftnet.Cos.DataAccess.dll
 E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Release\EntityFramework.dll
@@ -25,7 +26,6 @@ E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Release\Microsoft.Owin.Security.
 E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Release\Microsoft.Owin.Security.Cookies.xml
 E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Release\Microsoft.Owin.Security.OAuth.xml
 E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\bin\Release\Newtonsoft.Json.xml
-E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.csprojAssemblyReference.cache
-E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.csproj.CoreCompileInputs.cache
 E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.csproj.CopyComplete
 E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.DataAccess\obj\Release\Suftnet.Cos.DataAccess.csprojAssemblyReference.cache

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Areas/BackOffice/Views/Addon/_form.cshtml" hash="1d884bfe" filehash="ffffd5f4b3aaaaf0" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_BackOffice_Views_Addon__form_cshtml">
+  <filedeps>
+    <filedep name="/Areas/BackOffice/Views/Addon/_form.cshtml" />
+  </filedeps>
+</preserve>

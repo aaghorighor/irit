@@ -32,10 +32,7 @@ namespace Suftnet.Cos.Common
       PlanStatus = 3321,    
       Permission = 3322,
       View = 3323,      
-      Faq = 3331,
-      SliderType = 3332,
-      TourType = 3333,
-      TaskType =2313,     
+      Faq = 3331,      
       MediaFormat = 3338,
       MediaType = 291,
       SupportSectionType = 3339,
@@ -49,7 +46,7 @@ namespace Suftnet.Cos.Common
       Backofficepages = 3323,
       FrontOfficepages = 4351,
       SiteAdminOffice = 4352,
-      SupportTopic = 4354
+      SupportTopic = 3333
     }
 
     public enum EventLogSeverity
@@ -112,8 +109,7 @@ namespace Suftnet.Cos.Common
         AccountExpired = 690
     }
     public enum eEditor : ushort
-    {
-        Event = 77,
+    {       
         UserAccount = 1080,
         PaymentRenewal = 1003,
         SubscriptionExpired = 2,
@@ -132,8 +128,7 @@ namespace Suftnet.Cos.Common
         ChargeRefunded = 18,
         CheckOut = 22,
         SubscriptionTrialConfirmation =32,
-        SubscriptionConfirmation =31,
-        MemberRegistration = 37,
+        SubscriptionConfirmation =31,    
         PrivacyPolicy =39,
         TermsOfUsed = 38
    
@@ -142,8 +137,7 @@ namespace Suftnet.Cos.Common
     {
         SiteAdmin = 6241,
         Admin = 2033,
-        BackOffice = 2034,
-        FrontOffice = 5219,
+        BackOffice = 2034, 
         Customer = 5218,
         DeliveryOffice = 6239
     }

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Areas/Common/Views/Error/Index.cshtml" hash="1a24dacd" filehash="ffffe15c9d66ef3b" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Common_Views_Error_Index_cshtml">
+  <filedeps>
+    <filedep name="/Areas/Common/Views/Error/Index.cshtml" />
+  </filedeps>
+</preserve>

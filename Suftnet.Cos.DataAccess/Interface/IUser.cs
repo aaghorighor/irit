@@ -21,8 +21,8 @@
         int Count();
         ApplicationUser GetByUserId(string userId);
         bool CheckEmailAddress(string email, Guid tenantId);
-        IList<UserAccountDto> Fetch(int areaId, int iskip, int itake, string isearch);
-        IList<UserAccountDto> Fetch(int areaId, int iskip, int itake);
+        IList<UserAccountDto> Fetch(int iskip, int itake, string isearch, params int[] areaId);
+        IList<UserAccountDto> Fetch(int iskip, int itake, params int[] areaId);
         bool Delete(string userId);
         ApplicationUser GetUserByUserName(string userName, string code);
         MobileTenantDto VerifyUser(Guid externalId, string userCode);

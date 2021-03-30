@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Views/contact/_contact.cshtml" hash="1d884bfe" filehash="2780861d9dec" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_contact__contact_cshtml">
+  <filedeps>
+    <filedep name="/Views/contact/_contact.cshtml" />
+  </filedeps>
+</preserve>

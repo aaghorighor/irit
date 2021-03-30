@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Areas/Subscription/Views/trial/confirmation.cshtml" hash="1d884bfe" filehash="269c4e233fd5" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_trial_confirmation_cshtml">
+  <filedeps>
+    <filedep name="/Areas/Subscription/Views/trial/confirmation.cshtml" />
+  </filedeps>
+</preserve>

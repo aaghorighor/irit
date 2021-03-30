@@ -13,10 +13,7 @@ namespace Suftnet.Cos.SiteAdmin
         }
 
         public override void RegisterArea(AreaRegistrationContext context)
-        {
-            context.Routes.LowercaseUrls = true;
-            context.Routes.AppendTrailingSlash = false;
-
+        {           
             context.MapRoute(
               "Topic_",
               "siteadmin/topic/entry/{subSection}/{Id}",
@@ -35,8 +32,8 @@ namespace Suftnet.Cos.SiteAdmin
                        
             context.MapRoute(
                 "SiteAdmin_default",
-                "SiteAdmin/{controller}/{action}/{id}",
-                new { AreaName = "SiteAdmin", Controller = "Dashboard", action = "Index", id = UrlParameter.Optional },
+                "siteadmin/{controller}/{action}/{id}",
+                new { AreaName = "siteadmin", Controller = "dashboard", action = "Index", id = UrlParameter.Optional },
                 new string[] { "Suftnet.Cos.SiteAdmin.Controllers" }
             );
         }

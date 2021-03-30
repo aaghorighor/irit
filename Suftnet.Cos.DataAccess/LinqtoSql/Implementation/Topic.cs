@@ -14,7 +14,7 @@
                 var objResult = (from o in context.Topics
                                  join s in context.Commons on o.TopicId equals s.ID                               
                                  where o.Id == Id
-                                 select new TopicDto { IndexNo = o.IndexNo, ImageUrl = o.ImageUrl, Topic = s.Title,  Publish = o.Publish, TopicId = o.TopicId, Description = o.Description, CreatedBy = o.CreatedBy,CreatedDT= o.CreatedDt, Id = o.Id }).FirstOrDefault();
+                                 select new TopicDto { VideoUrl = o.VideoUrl, VideoId = o.VideoId, IndexNo = o.IndexNo, ImageUrl = o.ImageUrl, Topic = s.Title,  Publish = o.Publish, TopicId = o.TopicId, Description = o.Description, CreatedBy = o.CreatedBy,CreatedDT= o.CreatedDT, Id = o.Id }).FirstOrDefault();
                 return objResult;
             }
         }
@@ -51,7 +51,7 @@
         {          
             using (var context = DataContextFactory.CreateContext())
             {
-                var obj = new Action.Topic() { IndexNo = entity.IndexNo, ImageUrl = entity.ImageUrl, Description = entity.Description, Publish = entity.Publish, ChapterId = entity.ChapterId, TopicId = entity.TopicId, CreatedBy = entity.CreatedBy, CreatedDt = entity.CreatedDT };
+                var obj = new Action.Topic() { VideoUrl =entity.VideoUrl, VideoId = entity.VideoId, IndexNo = entity.IndexNo, ImageUrl = entity.ImageUrl, Description = entity.Description, Publish = entity.Publish, ChapterId = entity.ChapterId, TopicId = entity.TopicId, CreatedBy = entity.CreatedBy, CreatedDT = entity.CreatedDT };
                 context.Topics.Add(obj);
                 context.SaveChanges();
                 return obj.Id;
@@ -71,7 +71,9 @@
                     objToUpdate.TopicId = entity.TopicId;                    
                     objToUpdate.ImageUrl = entity.ImageUrl;
                     objToUpdate.IndexNo = entity.IndexNo;
-                  
+                    objToUpdate.VideoId = entity.VideoId;
+                    objToUpdate.VideoUrl = entity.VideoUrl;
+
                     try
                     {
                         context.SaveChanges();
@@ -97,7 +99,7 @@
                                  join s in context.Commons on o.TopicId equals s.ID                                
                                  where o.ChapterId == Id
                                  orderby o.IndexNo ascending
-                                 select new TopicDto { IndexNo = o.IndexNo, ImageUrl = o.ImageUrl, Topic = s.Title, Publish = o.Publish, TopicId = o.TopicId, Description = o.Description, CreatedBy = o.CreatedBy, CreatedDT= o.CreatedDt, Id = o.Id }).ToList();
+                                 select new TopicDto { VideoUrl = o.VideoUrl, VideoId = o.VideoId, IndexNo = o.IndexNo, ImageUrl = o.ImageUrl, Topic = s.Title, Publish = o.Publish, TopicId = o.TopicId, Description = o.Description, CreatedBy = o.CreatedBy, CreatedDT= o.CreatedDT, Id = o.Id }).ToList();
                 return objResult;
             }
         }
@@ -108,13 +110,9 @@
             {
                 var objResult = (from o in context.Topics
                                  join t in context.Commons on o.TopicId equals t.ID
-                                 let subTopic = (from s in context.SubTopics
-                                                where s.TopicId == o.Id
-                                                orderby s.IndexNo ascending
-                                                select new SubTopicDto { IndexNo = s.IndexNo, ImageUrl = s.ImageUrl, Description = s.Description }).ToList()
                                  where o.ChapterId == Id && o.Publish == true
                                  orderby o.IndexNo ascending
-                                 select new TopicDto { SubTopics= subTopic, IndexNo = o.IndexNo, ImageUrl = o.ImageUrl, Topic = t.Title, Publish = o.Publish, TopicId = o.TopicId, Description = o.Description, CreatedBy = o.CreatedBy, CreatedDT = o.CreatedDt, Id = o.Id }).ToList();
+                                 select new TopicDto { VideoUrl = o.VideoUrl, VideoId = o.VideoId,  IndexNo = o.IndexNo, ImageUrl = o.ImageUrl, Topic = t.Title, Publish = o.Publish, TopicId = o.TopicId, Description = o.Description, CreatedBy = o.CreatedBy, CreatedDT = o.CreatedDT, Id = o.Id }).ToList();
                 return objResult;
             }
         }

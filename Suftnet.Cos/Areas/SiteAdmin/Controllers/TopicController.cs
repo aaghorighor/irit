@@ -77,7 +77,7 @@
         private Dictionary<string, string> GetVersions()
         {
             Dictionary<string, string> versions = new Dictionary<string, string>();
-            versions.Add("_630x455", "width=1184&height=561&crop=auto&format=jpg");
+            versions.Add("_630x455", "width=1920&height=1080&crop=auto&format=jpg");
             return versions;
         }
     }    

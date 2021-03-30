@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Areas/Admin/Views/PaymentStatus/index.cshtml" hash="1d884bfe" filehash="21b83f219f8a" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_PaymentStatus_index_cshtml">
+  <filedeps>
+    <filedep name="/Areas/Admin/Views/PaymentStatus/index.cshtml" />
+  </filedeps>
+</preserve>

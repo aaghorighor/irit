@@ -3,7 +3,8 @@
     using Suftnet.Cos.DataAccess;
     using Suftnet.Cos.Web.ViewModel;
     using System.Collections.Generic;
-    using System.Web.Mvc; 
+    using System.Threading.Tasks;
+    using System.Web.Mvc;
     public class ArticleController : MainController
     {
         private readonly IChapter _chapter;
@@ -14,26 +15,27 @@
             _chapter = chapter;
             _topic = topic;
         }
-        public ActionResult Entry(int sectionId, int supportId)
+        public ActionResult Entry(int sectionId, int chapterId)
         {
             var model = new TopicModel
             {
-                Section = Section(supportId),
-                Topics = Topics(supportId)
+                Section = Chapter(chapterId)         
             };
 
             return View(model);
         }
 
+        [ChildActionOnly]
+        public async Task<ActionResult> Sections(int Id)
+        {
+            var model = await Task.Run(() => _topic.Fetch(Id));
+            return PartialView("_timeLineContainer", model);
+        }
+
         #region private function
-        private ChapterDto Section(int Id)
+        private ChapterDto Chapter(int Id)
         {
             var model = _chapter.Get(Id);
-            return model;
-        }
-        private IEnumerable<TopicDto> Topics(int Id)
-        {
-            var model = _topic.Fetch(Id);
             return model;
         }
 

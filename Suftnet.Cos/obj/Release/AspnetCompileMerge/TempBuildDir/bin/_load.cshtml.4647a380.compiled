@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Areas/Admin/Views/LookUp/_load.cshtml" hash="1d884bfe" filehash="fffff009b906cb92" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_LookUp__load_cshtml">
+  <filedeps>
+    <filedep name="/Areas/Admin/Views/LookUp/_load.cshtml" />
+  </filedeps>
+</preserve>

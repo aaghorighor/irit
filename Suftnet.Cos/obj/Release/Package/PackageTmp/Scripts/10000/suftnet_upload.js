@@ -23,25 +23,23 @@ var suftnet_upload =
                     $("#FileName").val(obj.FileName);
                     $("#ImageUrl").val(obj.FileName);                             
                                     
-                    $("#imageSrc").attr('src', obj.FilePath);                  
+                    $("#imageSrc").attr('src', obj.FilePath);    
+                    $('#btnSubmit').button({ disabled: false }); 
                 }
             },
+            'onUpload': function (file) {
 
+                $('#btnSubmit').button({ disabled: true });
+            },
             'onSelectOnce': function (event, data) {
-                $('#upload_c').removeClass('disable').addClass('special');
-                $('#uploadButtondisable').css({ 'display': 'none' });
-                $('#uploadFile').removeClass('disable').addClass('uploadFilepics confirm');
-                $('#status-message').html('Ready');
+               
             },
 
             'onFallback': function () {
 
             },
             'onClearQueue': function (queueItemCount) {
-
-                $('#upload_c').removeClass('special').addClass('disable');
-                $('#uploadFile').removeClass('uploadFilepics confirm').addClass('disable');
-                $('#status-message').html(' ');
+              
 
             },
             'onQueueComplete': function (queueData) {

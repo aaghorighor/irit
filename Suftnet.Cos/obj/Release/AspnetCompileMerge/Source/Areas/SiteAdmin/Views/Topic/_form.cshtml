@@ -1,11 +1,10 @@
-﻿
-@using Suftnet.Cos.Common;
+﻿@using Suftnet.Cos.Common;
 @using Suftnet.Cos.Extension;
 
 <form action="@Url.Action("Create", "Topic")" method="post" id="form">
     <div class="forms">
         <input id="Id" name="Id" type="hidden" />
-        <input id="ImageUrl" name="ImageUrl" type="hidden" />
+        <input id="ImageUrl" name="ImageUrl" type="hidden" value="Not set" />
         <input id="ChapterId" name="ChapterId" value="@ViewContext.RouteData.Values["Id"].ToString()" type="hidden" />
 
         <div class="grid-3-12">
@@ -17,19 +16,19 @@
 
         </div>
 
-        <div class="grid-12-12">
-            <label class="form-lbl">Description :</label>
-            <div style="margin-top:10px"></div>
-            <div> <textarea name="Description" id="Description" rows="60" cols="80" style="height:200px" class="validate[required]"></textarea></div><br />
+        <div class="grid-3-12">
+            <label class="forms-lbl">Youtube Video Url: </label>
+            <input type="text" name="VideoUrl" id="VideoUrl" class="forms-txt validate[required]" maxlength="50" />
         </div>
 
         <div class="clear">
 
         </div>
 
-        <div class="grid-3-12">
-            <label class="forms-lbl">Upload File :</label>
-            <input style="width:50%" type="file" name="file_upload[]" id="file_upload" />
+        <div class="grid-12-12">
+            <label class="form-lbl">Short Description :</label>
+            <div style="margin-top:5px"></div>
+            <div> <textarea name="Description" id="Description" rows="60" cols="80" style="height:50px" class=""></textarea></div>
         </div>
 
         <div class="clear">
@@ -45,7 +44,11 @@
                 }
             </select>
         </div>
-               
+
+        <div class="clear">
+
+        </div>
+
         <div class="grid-12-12">
             <input name="Publish" id="Publish" type="checkbox" /> <label class="form-lbl">Publish</label>
         </div>
@@ -61,12 +64,6 @@
     </div>
 
 </form>
-
-<div class="hide">
-    <span id="uploadUrl" name="uploadUrl" data-uploadUrl="@Url.Action("upload", "topic", new { area ="SiteAdmin" } )"></span>
-    <span id="buttonText" name="buttonText">Add Image</span>
-</div>
-
 
 <script type="text/javascript">
     $(function () {

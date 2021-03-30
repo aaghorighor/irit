@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Areas/Admin/Views/TenantStatus/index.cshtml" hash="1d884bfe" filehash="ffffbf272bf8d10d" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_TenantStatus_index_cshtml">
+  <filedeps>
+    <filedep name="/Areas/Admin/Views/TenantStatus/index.cshtml" />
+  </filedeps>
+</preserve>

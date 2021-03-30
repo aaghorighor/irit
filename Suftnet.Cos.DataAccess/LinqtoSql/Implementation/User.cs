@@ -227,14 +227,14 @@
                 return objResult;
             }
         }
-        public IList<UserAccountDto> Fetch(int areaId, int iskip, int itake, string isearch)
+        public IList<UserAccountDto> Fetch(int iskip, int itake, string isearch, params int[] areaId)
         {
             if (!string.IsNullOrEmpty(isearch))
             {
                 using (var context = DataContextFactory.CreateContext())
                 {
                     var objResult = (from u in context.Users
-                                     where u.AreaId == areaId && (u.FirstName.Contains(isearch) || u.LastName.Contains(isearch) || u.UserName.Contains(isearch))
+                                     where areaId.Contains(u.AreaId) && (u.FirstName.Contains(isearch) || u.LastName.Contains(isearch) || u.UserName.Contains(isearch))
                                      orderby u.Id descending
                                      select new UserAccountDto { UserCode = u.UserCode, UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id = u.Id, UserName = u.UserName }).Skip(iskip).Take(itake).ToList();
                     return objResult;
@@ -242,15 +242,15 @@
             }
             else
             {
-                return Fetch(areaId, iskip, itake);
+                return Fetch(iskip, itake, areaId);
             }
         }
-        public IList<UserAccountDto> Fetch(int areaId, int iskip, int itake)
+        public IList<UserAccountDto> Fetch(int iskip, int itake, params int[] areaId)
         {
             using (var context = DataContextFactory.CreateContext())
             {
                 var objResult = (from u in context.Users
-                                 where u.AreaId == areaId
+                                 where areaId.Contains(u.AreaId)
                                  orderby u.Id descending
                                  select new UserAccountDto { UserCode = u.UserCode, UserId = u.Id, ImageUrl = u.ImageUrl, Active = u.Active, Area = u.Area, AreaId = u.AreaId, FirstName = u.FirstName, LastName = u.LastName, Email = u.Email, Id = u.Id, UserName = u.UserName }).Skip(iskip).Take(itake).ToList();
                 return objResult;

@@ -46,7 +46,7 @@
         }
 
         [HttpPost]
-        [PermissionFilter(BackOfficeViews.Member, PermissionType.Create)]
+        //[PermissionFilter(BackOfficeViews.Member, PermissionType.Create)]
         [ValidateAntiForgeryToken]
         public JsonResult Create(MenuDto entityToCreate)
         {
@@ -75,7 +75,7 @@
         }
 
         [HttpPost]
-        [PermissionFilter(BackOfficeViews.Member, PermissionType.Edit)]
+        //[PermissionFilter(BackOfficeViews.Member, PermissionType.Edit)]
         [ValidateAntiForgeryToken]
         public JsonResult Edit(MenuDto entityToCreate)
         {
@@ -98,7 +98,7 @@
         }
 
         [HttpPost]
-        [PermissionFilter(BackOfficeViews.Member, PermissionType.Remove)]
+        //[PermissionFilter(BackOfficeViews.Member, PermissionType.Remove)]
         public JsonResult Delete(string Id)
         {
             Ensure.NotNull(Id);

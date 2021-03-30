@@ -76,7 +76,7 @@
                             //productDs.WriteXmlSchema(@"c:\menu.sxd");
                             //productDs.WriteXml(@"c:\menu.xml");
 
-                           report = new Reports.Suftnet_Menu();
+                          // report = new Reports.Suftnet_Menu();
                            report.RegData(menuDataSets);
                            report.Dictionary.Synchronize();
 

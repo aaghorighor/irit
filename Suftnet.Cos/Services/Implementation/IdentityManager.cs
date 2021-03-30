@@ -67,6 +67,9 @@
                 if (account.TenantMobile == null)
                 {
                     claims.Add(new Claim("TenantMobile", "0000000000"));
+                }else
+                {
+                    claims.Add(new Claim("TenantMobile", account.TenantMobile));
                 }   
                 
                 if (!string.IsNullOrEmpty(account.CurrencyCode))

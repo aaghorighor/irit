@@ -1,8 +1,7 @@
 ﻿
 var topic = {
 
-    create: function ()
-    {        
+    create: function () {
         $("#btnSubmit").bind("click", function (event) {
 
             event.preventDefault();
@@ -15,18 +14,16 @@ var topic = {
                 $("#Publish").val(true);
             } else {
                 $("#Publish").val(false);
-            }            
-
-            $("#Description").val(tinymce.activeEditor.getContent());
+            }
 
             js.ajaxPost($("#form").attr("action"), $("#form").serialize()).then(
                 function (data) {
                     switch (data.flag) {
-                        case 1:                                        
+                        case 1:
 
                             suftnet_grid.addTopic(data.objrow);
                             break;
-                        case 2: 
+                        case 2:
 
                             suftnet_grid.updateTopic(data.objrow);
 
@@ -47,10 +44,15 @@ var topic = {
         });
 
         suftnet_Settings.ClearErrorMessages("#form");
-        suftnet_upload.init($('#uploadUrl').attr('data-uploadUrl'));
     },
 
     load: function () {
+
+        $(document).on("click", "#clearImage", function (e) {
+            e.preventDefault();
+            $("#ImageUrl").val("");
+        });
+
         $(document).on("click", "#Delete", function (e) {
             e.preventDefault();
 
@@ -60,10 +62,6 @@ var topic = {
                 });
         });
 
-        $(document).on("click", "#View", function () {
-            window.location.href = $("#viewUrl").attr("data-viewUrl") + "/" + $('#sectionId').attr('data-sectionId') + "/" + $('#subSection').attr('data-subSection') + "/" + $(this).attr("topic") + "/" + $(this).attr("viewId");
-        });
-                
         $(document).on("click", "#Edit", function (e) {
 
             e.preventDefault();
@@ -71,23 +69,25 @@ var topic = {
             js.ajaxGet($('#editUrl').attr('data-editUrl'), { Id: $(this).attr("editid") }).then(
                 function (data) {
                     var dataobject = data.dataobject;
-                                       
-                    $("#Id").val(dataobject.Id);
-                         
-                    tinymce.get('Description').setContent(dataobject.Description);
 
-                    $("#TopicId").val(dataobject.TopicId);                   
+                    $("#Id").val(dataobject.Id);
+
+                    $("#Description").val(dataobject.Description);
+                    $("#TopicId").val(dataobject.TopicId);
                     $("#ImageUrl").val(dataobject.ImageUrl);
                     $("#IndexNo").val(dataobject.IndexNo);
+                    $("#VideoId").val(dataobject.VideoId);
+                    $("#VideoUrl").val(dataobject.VideoUrl);
+
                     $("#Publish").attr("checked", dataobject.Publish);
-                   
+
                     $("#MainCollapsible").accordion({ collapsible: true });
-                    $("#MainCollapsible").accordion("activate", 0);                    
+                    $("#MainCollapsible").accordion("activate", 0);
                 });
 
         });
-   
-        suftnet_Settings.TableInit('#tdTopic', [0, 1, 2, 3, 4,5,6]);
-    }    
-   
+
+        suftnet_Settings.TableInit('#tdTopic', [0, 1, 2, 3, 4, 5, 6]);
+    }
+
 }

@@ -70,7 +70,7 @@ var userAdmin = {
                 $("#ChangePassword").val(true);
             } else {
                 $("#ChangePassword").val(false);
-            }
+            }         
 
             js.ajaxPost($("#form").attr("action"), $("#form").serialize()).then(
                 function (data) {
@@ -92,12 +92,11 @@ var userAdmin = {
                     $("#Active").attr("checked", false);
                     $("#ChangePassword").attr("checked", false);
                     $("#Password").removeClass("validate[required],maxSize[20],minSize[6]]");
-                    $("#form").attr("action", $("#createUrl").attr("data-createUrl"));
 
                     iuHelper.resetForm("#form");
                 });
 
-            $("#form").attr("action", $("#editUrl").attr("data-editUrl"));
+            $("#form").attr("action", $("#createUrl").attr("data-createUrl"));
         });
     },
 
@@ -155,7 +154,7 @@ var userAdmin = {
             suftnet.tab(1);
         });
 
-        userAdmin.create();
+        userAdmin.adminCreate();
         userAdmin.load();
 
         $("#form").attr("action", $("#createUrl").attr("data-createUrl"));

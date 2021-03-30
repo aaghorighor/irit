@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Views/test/_header.cshtml" hash="1d884bfe" filehash="301c4ee976a8" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_test__header_cshtml">
+  <filedeps>
+    <filedep name="/Views/test/_header.cshtml" />
+  </filedeps>
+</preserve>

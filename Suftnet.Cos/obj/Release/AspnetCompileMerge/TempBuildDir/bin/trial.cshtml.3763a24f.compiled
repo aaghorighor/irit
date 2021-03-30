@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Views/checkout/trial.cshtml" hash="1d884bfe" filehash="ffffe6f279acfd40" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_checkout_trial_cshtml">
+  <filedeps>
+    <filedep name="/Views/checkout/trial.cshtml" />
+  </filedeps>
+</preserve>

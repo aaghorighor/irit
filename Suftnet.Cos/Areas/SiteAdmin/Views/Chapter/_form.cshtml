@@ -7,10 +7,13 @@
         <div class="grid-3-12">
             <label class="forms-lbl">Sections: </label>
             <select class="validate[required]" id="SectionId" name="SectionId" style="padding: 6px;">
-                <option value="">-- SELECT --</option>
-                <option value="4351">Front office</option>
+                <option value="">-- SELECT --</option>               
                 <option value="3323">Back Office</option>
-                <option value="4353">Subscription</option>
+                <option value="4353">Subscription Panel</option>
+                <option value="4355">How to Subscribe to Paying Plan</option>             
+                <option value="4357">How to Subscribe to 15 Trials</option>
+                <option value="4358">How to Renew Subscription</option>
+                <option value="4359">Android Mobile App</option>            
             </select>
         </div>
 
@@ -26,8 +29,14 @@
         </div>
 
         <div class="grid-3-12">
-            <label class="forms-lbl">Upload File :</label>
-            <input style="width:50%" type="file" name="file_upload[]" id="file_upload" />
+            <ul style="margin-left:0px; margin-top :5px" class="uibutton-group">
+                <li>
+                    <span class="nwtip">
+                        <input style="width:50%" type="file" name="file_upload[]" id="file_upload" />
+                    </span>
+                </li>
+                <li><span class="nwtip"><a style="margin-left:10px;" class="uibutton normal" id="clearImage" title="Clear Image">Clear Image</a></span></li>
+            </ul>
         </div>
 
         <div class="grid-12-12">

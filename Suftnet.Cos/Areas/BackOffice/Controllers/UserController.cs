@@ -171,7 +171,7 @@
         }
        
        [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
-       [PermissionFilter(BackOfficeViews.User, PermissionType.Remove)]
+       //[PermissionFilter(BackOfficeViews.User, PermissionType.Remove)]
        public JsonResult Delete(string Id)
         {
             Ensure.Argument.NotNull(Id);
@@ -201,16 +201,7 @@
                     backOffice.Execute();
 
                     break;
-
-                case (int)eArea.FrontOffice:
-
-                    var frontOffice = GeneralConfiguration.Configuration.DependencyResolver.GetService<PermissionCommand>();
-                    frontOffice.UserId = entityToCreate.Id;
-                    frontOffice.PermissionTypeId = (int)eSettings.FrontOfficepages;
-                    frontOffice.CreatedBy = this.UserName;
-                    frontOffice.Execute();
-
-                    break;              
+                           
             }
         }     
        private ApplicationUser Map(UserAccountDto model, ApplicationUser user)
@@ -267,16 +258,12 @@
             {
                 case (int)eArea.BackOffice:
                     title = "Back Office";
-                    break;               
-
-                case (int)eArea.FrontOffice:
-                    title = "Front Office";
-                    break;
+                    break;             
                 case (int)eArea.DeliveryOffice:
                     title = "Delivery Office";
                     break;
                 default:
-                    title = "Front Office";
+                    title = "Delivery Office";
                     break;
             }
 

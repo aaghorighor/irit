@@ -1,6 +1,8 @@
 ﻿@{
     ViewBag.Title = "SUFTNET | SUPPORT DETAILS TOPIC";
+    Layout = "~/Areas/BackOffice/Views/Shared/_backofficeLayout.cshtml";
 }
+
 
 <ul style="margin-left:2px; margin-top :5px" class="uibutton-group">
     <li><span class="etip"><a href="@Url.Action("Index","chapter")" class="uibutton icon prev normal" title="Back">Back</a></span></li>
@@ -28,7 +30,6 @@
     </div>
 </div>
 
-@Html.Partial("_tinymce")
 @Html.Partial("_supportScripts")
 
 

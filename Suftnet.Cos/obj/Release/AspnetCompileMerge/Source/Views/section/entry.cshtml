@@ -1,0 +1,56 @@
+﻿@using Suftnet.Cos.Extension
+@model Suftnet.Cos.Web.ViewModel.SectionModel
+@{
+    ViewBag.Title = "SUFTNET | SECTION ";
+    Layout = "~/Views/Shared/_knowledgeBaseLayout.cshtml";
+}
+
+<div class="section-hero uk-background-blend-color-burn uk-background-top-center uk-background-cover uk-section-large1 cta" style="background-image: url(/Content/knowledge/assets/img/logo.png)">
+    <nav class="uk-navbar-container uk-margin uk-navbar-transparent uk-light">
+        <div class="uk-container">
+            <div uk-navbar>
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo uk-text" href="#"><span class="uk-margin-small-right" uk-icon="icon: lifesaver"></span> iRit</a>
+                </div>
+                <div class="uk-navbar-right">
+                    <a class="uk-navbar-item uk-logo uk-text-uppercase" href="@Url.Action("index","knowledgeBase")"><span class="uk-margin-small-right" uk-icon="icon: chevron-left"></span> Back</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="uk-section uk-section-small uk-padding-remove-bottom section-content">
+    <div class="uk-container">
+        <div class="uk-grid-medium" uk-grid>
+            <div class="uk-width-5-6@m uk-flex-last@m">
+                <h1>@Model.Header.Title</h1>
+                <p class="uk-text-lead uk-margin-medium-bottom">@Model.Header.Description</p>
+
+                @if (!string.IsNullOrEmpty(Model.Header.ImageUrl))
+                {
+                    <figure class="right uk-margin-medium-bottom"><img src="@Url.Image630x455(Model.Header.ImageUrl)" class="img-fluid" alt=""></figure>
+                }
+
+            </div>           
+
+            <div class="uk-width-small text-dark sidebar">
+                <h3></h3>
+                <ul class="uk-list uk-list-large uk-margin-medium-bottom">
+
+                    @{
+                        foreach (var item in Model.Sections)
+                        {
+                            <li>
+                                <a href="@Url.Action("entry","article", new { sectionId = item.SectionId, chapterId = item.Id })">@item.SubSection</a>
+                            </li>
+                        }
+                    }
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>

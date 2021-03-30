@@ -71,7 +71,7 @@
         [HttpPost]
         public JsonResult Fetch(DataTableAjaxPostModel param)
         {
-            var model = _user.Fetch((int)eArea.Admin, param.start, param.length, param.search.value);
+            var model = _user.Fetch(param.start, param.length, param.search.value, (int)eArea.Admin, (int)eArea.SiteAdmin);
 
             return Json(new
             {
@@ -242,7 +242,8 @@
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 UserName = model.Email,
-                Email = model.Email               
+                Email = model.Email,
+                UserCode = "000000"
             };
 
             return applicationUser;
@@ -266,12 +267,9 @@
                 case (int)eArea.Admin:
                     title = "Admin";
                     break;
-
-                case (int)eArea.FrontOffice:
-                    title = "Front Office";
-                    break;               
+                       
                 default:
-                    title = "Front Office";
+                    title = "Admin";
                     break;
             }
 

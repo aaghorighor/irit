@@ -959,6 +959,61 @@
             return (decimal)value;
         }
 
+        public static double ToDouble(this decimal value)
+        {
+            if (value == 0)
+            {
+                return 0;
+            }
+
+            return (double)value;
+        }
+        public static string ToYouTubeVideoId(this string url)
+        {
+            Uri uri = null;
+            if (!Uri.TryCreate(url, UriKind.Absolute, out uri))
+            {
+                try
+                {
+                    uri = new UriBuilder("http", url).Uri;
+                }
+                catch
+                {
+                    // invalid url
+                    return "";
+                }
+            }
+
+            string host = uri.Host;
+            string[] youTubeHosts = { "www.youtube.com", "youtube.com", "youtu.be", "www.youtu.be" };
+            if (!youTubeHosts.Contains(host))
+                return "";
+
+            var query = HttpUtility.ParseQueryString(uri.Query);
+
+            if (query.AllKeys.Contains("v"))
+            {
+                return Regex.Match(query["v"], @"^[a-zA-Z0-9_-]{11}$").Value;
+            }
+            else if (query.AllKeys.Contains("u"))
+            {
+                // some urls have something like "u=/watch?v=AAAAAAAAA16"
+                return Regex.Match(query["u"], @"/watch\?v=([a-zA-Z0-9_-]{11})").Groups[1].Value;
+            }
+            else
+            {
+                // remove a trailing forward space
+                var last = uri.Segments.Last().Replace("/", "");
+                if (Regex.IsMatch(last, @"^v=[a-zA-Z0-9_-]{11}$"))
+                    return last.Replace("v=", "");
+
+                string[] segments = uri.Segments;
+                if (segments.Length > 2 && segments[segments.Length - 2] != "v/" && segments[segments.Length - 2] != "watch/")
+                    return "";
+
+                return Regex.Match(last, @"^[a-zA-Z0-9_-]{11}$").Value;
+            }
+        }
         public static string ReCAPTCHA(this HtmlHelper helper)
         {
             return GeneralConfiguration.Configuration.Settings.CaptchaSiteKey;
@@ -994,6 +1049,10 @@
             builder.MergeAttribute("href", helper.Content("~/Content/frontoffice/assets/" + filePath));
 
             return new MvcHtmlString(builder.ToString(TagRenderMode.Normal));
+        }
+        public static string SlimImage(this UrlHelper helper, string imageUrl)
+        {
+            return helper.Content("~/Content/slim/img/" + imageUrl);
         }
         public static string HomeImage(this UrlHelper helper, string filePath)
         {
@@ -1034,27 +1093,7 @@
             {
                 return urlHelper.Content($"~/Content/Photo/Setting/100x100/{imageUrl}");
             }
-        }
-        public static string SlimImage(this UrlHelper helper, string imageUrl)
-        {
-            return helper.Content("~/Content/slim/img/" + imageUrl);
-        }
-        public static string FamilyImage(this UrlHelper urlHelper, string imageUrl)
-        {
-            if (string.IsNullOrEmpty(imageUrl))
-            {
-                return urlHelper.Content("~/Content/Photo/Blank.png");
-            }
-
-            if (!File.Exists(System.Web.HttpContext.Current.Server.MapPath(string.Format("~/Content/Photo/Member/216X196/{0}", imageUrl))))
-            {
-                return urlHelper.Content("~/Content/Photo/Blank.png");
-            }
-            else
-            {
-                return urlHelper.Content($"~/Content/Photo/Member/216X196/{imageUrl}");
-            }
-        }
+        }      
 
         public static string Image630x455(this UrlHelper urlHelper, string imageUrl)
         {
@@ -1081,38 +1120,7 @@
                 return urlHelper.Content($"~/Content/photo/events/_177X266/{imageUrl}");
             }
         }
-        public static string SupportImage60x60(this UrlHelper urlHelper, string imageUrl)
-        {
-            if (string.IsNullOrEmpty(imageUrl))
-            {
-                return urlHelper.Content("~/Content/frontoffice/images/info-ico.png");
-            }
-
-            if (!File.Exists(System.Web.HttpContext.Current.Server.MapPath(string.Format("~/Content/photo/common/_60x60/{0}", imageUrl))))
-            {
-                return urlHelper.Content("~/Content/frontoffice/images/info-ico.png");
-            }
-            else
-            {
-                return urlHelper.Content($"~/Content/photo/common/_60x60/{imageUrl}");
-            }
-        }
-        public static string SupportImage630x455(this UrlHelper urlHelper, string imageUrl)
-        {
-            if (string.IsNullOrEmpty(imageUrl))
-            {
-                return urlHelper.Content("~/Content/frontoffice/images/awesome-design-img.png");
-            }
-
-            if (!File.Exists(System.Web.HttpContext.Current.Server.MapPath(string.Format("~/Content/photo/common/_630x455/{0}", imageUrl))))
-            {
-                return urlHelper.Content("~/Content/frontoffice/images/awesome-design-img.png");
-            }
-            else
-            {
-                return urlHelper.Content($"~/Content/photo/common/_630x455/{imageUrl}");
-            }
-        }
+     
         public static string Image563x376(this UrlHelper urlHelper, string imageUrl)
         {
             if (string.IsNullOrEmpty(imageUrl))
@@ -1129,58 +1137,8 @@
                 return urlHelper.Content($"~/Content/photo/events/_563x376/{imageUrl}");
             }
         }
-        public static string CmsImage(this UrlHelper urlHelper, string imageUrl)
-        {
-            if (string.IsNullOrEmpty(imageUrl))
-            {
-                return urlHelper.Content("~/Content/frontoffice/images/404-bg.png");
-            }
-
-            if (!File.Exists(System.Web.HttpContext.Current.Server.MapPath(string.Format("~/Content/Photo/cms/_1921x987/{0}", imageUrl))))
-            {
-                return urlHelper.Content("~/Content/frontoffice/images/404-bg.png");
-            }
-            else
-            {
-                return urlHelper.Content($"~/Content/Photo/cms/_1921x987/{imageUrl}");
-            }
-        }
-        public static string Slider(this UrlHelper urlHelper, string imageUrl, int slideTypeId)
-        {
-            if(slideTypeId == Suftnet.Cos.Common.Slider.Type1)
-            {
-                if (string.IsNullOrEmpty(imageUrl))
-                {
-                    return urlHelper.Content("~/Content/frontoffice/images/banner-img2.png");
-                }
-
-                if (!File.Exists(System.Web.HttpContext.Current.Server.MapPath(string.Format("~/Content/Photo/Slider/_1921x987/{0}", imageUrl))))
-                {
-                    return urlHelper.Content("~/Content/frontoffice/images/banner-img2.png");
-                }
-                else
-                {
-                    return urlHelper.Content($"~/Content/Photo/Slider/_1921x987/{imageUrl}");
-                }
-            }
-            else
-            {
-                if (string.IsNullOrEmpty(imageUrl))
-                {
-                    return urlHelper.Content("~/Content/frontoffice/images/banner-slide2.png");
-                }
-
-                if (!File.Exists(System.Web.HttpContext.Current.Server.MapPath(string.Format("~/Content/Photo/Slider/_1921x987/{0}", imageUrl))))
-                {
-                    return urlHelper.Content("~/Content/frontoffice/images/banner-slide2.png");
-                }
-                else
-                {
-                    return urlHelper.Content($"~/Content/Photo/Slider/_1921x987/{imageUrl}");
-                }
-            }          
-
-        }
+    
+      
         public static string MapImageUrl(this UrlHelper urlHelper, string imageUrl)
         {
             if (string.IsNullOrEmpty(imageUrl))
@@ -1197,78 +1155,7 @@
                 return urlHelper.Content($"~/Content/Photo/Common/_60x60/{imageUrl}");
             }
         }
-        public static string Tour(this UrlHelper urlHelper, string imageUrl, int tourTypeId)
-        {
-            switch (tourTypeId)
-            {
-                case Suftnet.Cos.Common.Tour.Type1:
-
-                    if (string.IsNullOrEmpty(imageUrl))
-                    {
-                        return urlHelper.Content("~/Content/frontoffice/images/how-it-works-img-1.png");
-                    }
-
-                    if (!File.Exists(System.Web.HttpContext.Current.Server.MapPath(string.Format("~/Content/Photo/tour/_1921x987/{0}", imageUrl))))
-                    {
-                        return urlHelper.Content("~/Content/frontoffice/images/how-it-works-img-1.png");
-                    }
-                    else
-                    {
-                        return urlHelper.Content($"~/Content/Photo/tour/_1921x987/{imageUrl}");
-                    }
-
-                case Suftnet.Cos.Common.Tour.Type2:
-
-                    if (string.IsNullOrEmpty(imageUrl))
-                    {
-                        return urlHelper.Content("~/Content/frontoffice/images/how-it-works-img-2.png");
-                    }
-
-                    if (!File.Exists(System.Web.HttpContext.Current.Server.MapPath(string.Format("~/Content/Photo/tour/_1921x987/{0}", imageUrl))))
-                    {
-                        return urlHelper.Content("~/Content/frontoffice/images/how-it-works-img-2.png");
-                    }
-                    else
-                    {
-                        return urlHelper.Content($"~/Content/Photo/tour/_1921x987/{imageUrl}");
-                    }
-
-                case Suftnet.Cos.Common.Tour.Type3:
-
-                    if (string.IsNullOrEmpty(imageUrl))
-                    {
-                        return urlHelper.Content("~/Content/frontoffice/images/how-it-works-img-3.png");
-                    }
-
-                    if (!File.Exists(System.Web.HttpContext.Current.Server.MapPath(string.Format("~/Content/Photo/tour/_1921x987/{0}", imageUrl))))
-                    {
-                        return urlHelper.Content("~/Content/frontoffice/images/how-it-works-img-3.png");
-                    }
-                    else
-                    {
-                        return urlHelper.Content($"~/Content/Photo/tour/_1921x987/{imageUrl}");
-                    }
-                case Suftnet.Cos.Common.Tour.Type4:
-
-                    if (string.IsNullOrEmpty(imageUrl))
-                    {
-                        return urlHelper.Content("~/Content/frontoffice/images/how-it-works-img-4.png");
-                    }
-
-                    if (!File.Exists(System.Web.HttpContext.Current.Server.MapPath(string.Format("~/Content/Photo/tour/_1921x987/{0}", imageUrl))))
-                    {
-                        return urlHelper.Content("~/Content/frontoffice/images/how-it-works-img-4.png");
-                    }
-                    else
-                    {
-                        return urlHelper.Content($"~/Content/Photo/tour/_1921x987/{imageUrl}");
-                    }
-
-                default:
-                      return urlHelper.Content("~/Content/frontoffice/images/banner-img2.png");
-            }          
-           
-        }
+    
         public static MvcHtmlString MaviaJs(this UrlHelper helper, string filePath)
         {
             TagBuilder builder = new TagBuilder("script");

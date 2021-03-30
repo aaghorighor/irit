@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Areas/BackOffice/Views/Settings/_stripe.cshtml" hash="1d884bfe" filehash="20e25ad26220" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_BackOffice_Views_Settings__stripe_cshtml">
+  <filedeps>
+    <filedep name="/Areas/BackOffice/Views/Settings/_stripe.cshtml" />
+  </filedeps>
+</preserve>

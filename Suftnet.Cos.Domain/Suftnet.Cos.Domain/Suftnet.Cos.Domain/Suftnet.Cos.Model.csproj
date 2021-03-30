@@ -67,6 +67,7 @@
     <Compile Include="Dto\CustomerOrderNotificationDto.cs" />
     <Compile Include="Dto\DeliveryAddressDto.cs" />
     <Compile Include="Dto\MobileLoggerDto.cs" />
+    <Compile Include="Dto\TopicDto.cs" />
     <Compile Include="Dto\UnitDto.cs" />
     <Compile Include="Dto\DiscountDto.cs" />
     <Compile Include="Dto\TenantAddressDto.cs" />
@@ -97,7 +98,6 @@
     <Compile Include="Dto\SubTopicDto.cs" />
     <Compile Include="Dto\TableDto.cs" />
     <Compile Include="Dto\TermDto.cs" />
-    <Compile Include="Dto\TopicDto.cs" />
     <Compile Include="Dto\ChapterDto.cs" />
     <Compile Include="Dto\FaqDto.cs" />
     <Compile Include="Dto\FilterModel.cs" />

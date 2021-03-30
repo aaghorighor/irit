@@ -40,31 +40,25 @@
         #region Routes
 
         public virtual void Register()
-        {
-            SubDomainRoute();
+        {          
             FrontOfficeRoute();     
             DefaultRoute();
         }      
- 
-        protected virtual void SubDomainRoute()
-        {
-           // m_Routes.Add("DomainRoute", new DomainRoute(
-           //    "test.localhost:5007",                                     // Domain with parameters
-           //    "{action}/{id}",                                        // URL with parameters
-           //    new { controller = "Home", action = "Index", id = "" }  // Parameter defaults
-           //));
-        }
-
+        
         protected virtual void FrontOfficeRoute()
         {
-            m_Routes.LowercaseUrls = true;
-            m_Routes.AppendTrailingSlash = true;
-            
+            m_Routes.MapOneChurchRoute(
+               "support_"
+                , "support/entry/{Id}"
+                , new { controller = "support", action = "entry", Id = UrlParameter.Optional }
+                , m_namespaces
+            );
+
             m_Routes.MapOneChurchRoute(
               SUPPORT_DETAILS
-               , "article/entry/{sectionId}/{supportId}"
-               , new { controller = "article", action = "entry", sectionId = UrlParameter.Optional, supportId = UrlParameter.Optional },
-                 new { sectionId = @"\d+", supportId = @"\d+" }              
+               , "article/entry/{sectionId}/{chapterId}"
+               , new { controller = "article", action = "entry", sectionId = UrlParameter.Optional, chapterId = UrlParameter.Optional },
+                 new { sectionId = @"\d+", chapterId = @"\d+" }
                , m_namespaces
            );
 
@@ -163,10 +157,7 @@
         }
 
         protected virtual void DefaultRoute()
-        {
-           m_Routes.LowercaseUrls = false;
-           m_Routes.AppendTrailingSlash = false;
-           
+        {                     
             m_Routes.MapOneChurchRoute(
                 HOME
                 , "{controller}/{action}/{id}"

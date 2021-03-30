@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Views/knowledgeBase/_topic.cshtml" hash="1d884bfe" filehash="24e1afe781ce" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_knowledgeBase__topic_cshtml">
+  <filedeps>
+    <filedep name="/Views/knowledgeBase/_topic.cshtml" />
+  </filedeps>
+</preserve>
