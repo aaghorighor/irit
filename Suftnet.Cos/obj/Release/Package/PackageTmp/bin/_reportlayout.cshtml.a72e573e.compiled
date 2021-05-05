@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/BackOffice/Views/Shared/_reportLayout.cshtml" hash="1d884bfe" filehash="fffff4f433322c20" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_BackOffice_Views_Shared__reportLayout_cshtml">
-  <filedeps>
-    <filedep name="/Areas/BackOffice/Views/Shared/_reportLayout.cshtml" />
-  </filedeps>
-</preserve>

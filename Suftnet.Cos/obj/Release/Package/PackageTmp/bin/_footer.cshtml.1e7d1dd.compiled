@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/BackOffice/Views/Dashboard/_footer.cshtml" hash="1d884bfe" filehash="2798b24bdbf2" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_BackOffice_Views_Dashboard__footer_cshtml">
-  <filedeps>
-    <filedep name="/Areas/BackOffice/Views/Dashboard/_footer.cshtml" />
-  </filedeps>
-</preserve>

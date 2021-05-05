@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Subscription/Views/trial/cancel.cshtml" hash="1d884bfe" filehash="ffffe2e83a5f52b1" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_trial_cancel_cshtml">
-  <filedeps>
-    <filedep name="/Areas/Subscription/Views/trial/cancel.cshtml" />
-  </filedeps>
-</preserve>

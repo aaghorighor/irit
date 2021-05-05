@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/BackOffice/Views/AddonType/_load.cshtml" hash="1d884bfe" filehash="ffffcf835ac4ed25" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_BackOffice_Views_AddonType__load_cshtml">
-  <filedeps>
-    <filedep name="/Areas/BackOffice/Views/AddonType/_load.cshtml" />
-  </filedeps>
-</preserve>

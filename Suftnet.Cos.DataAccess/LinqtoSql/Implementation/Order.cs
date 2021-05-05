@@ -300,19 +300,39 @@
                 return objResult;
             }
         }
-        public List<DineInOrderDto> FetchOrders(Guid tenantId,int itake)
+        public List<DineInOrderDto> FetchOrders(string orderTypeId, Guid tenantId, int iskip, int itake, string search)
+        {
+            if (!string.IsNullOrEmpty(orderTypeId))
+            {
+                using (var context = DataContextFactory.CreateContext())
+                {
+                    var objResult = (from o in context.Orders
+                                     join s in context.OrderStatuses on o.StatusId equals s.Id
+                                     join t in context.Tables on o.TableId equals t.Id
+                                     where (o.TenantId == tenantId) && o.OrderTypeId == new Guid(orderTypeId)
+                                     orderby o.CreatedDt descending
+                                     select new DineInOrderDto { TableId = o.TableId, TableNumber = t.Number, Status = s.Name, CreatedDt = o.CreatedDt, Discount = o.DiscountRate, Tax = o.TaxRate, Paid = o.Payment, TotalDiscount = o.TotalDiscount, Balance = o.Balance, TotalTax = o.TotalTax, StatusId = o.StatusId, GrandTotal = o.GrandTotal, Total = o.Total, OrderId = o.Id }).Skip(iskip).Take(itake).ToList();
+                    return objResult;
+                }
+            }
+
+            return FetchOrders(orderTypeId,tenantId, iskip, itake);
+
+        }
+        public List<DineInOrderDto> FetchOrders(string orderTypeId, Guid tenantId, int iskip, int itake)
         {
             using (var context = DataContextFactory.CreateContext())
             {
                 var objResult = (from o in context.Orders
-                                 join s in context.OrderStatuses on o.StatusId equals s.Id                    
-                                 join t in context.Tables on o.TableId equals t.Id                
-                                 where (o.TenantId == tenantId)
+                                 join s in context.OrderStatuses on o.StatusId equals s.Id
+                                 join t in context.Tables on o.TableId equals t.Id
+                                 where (o.TenantId == tenantId) && o.OrderTypeId == new Guid(orderTypeId)
                                  orderby o.CreatedDt descending
-                                 select new DineInOrderDto { Status = s.Name, CreatedDt = o.CreatedDt, Discount = o.DiscountRate, Tax = o.TaxRate, Paid = o.Payment, TotalDiscount = o.TotalDiscount,  Balance = o.Balance, TotalTax = o.TotalTax, StatusId = o.StatusId, TableId = o.TableId, TableNumber = t.Number, GrandTotal = o.GrandTotal, Total = o.Total, OrderId = o.Id }).Take(itake).ToList();
+                                 select new DineInOrderDto { TableId=o.TableId, TableNumber = t.Number, Status = s.Name, CreatedDt = o.CreatedDt, Discount = o.DiscountRate, Tax = o.TaxRate, Paid = o.Payment, TotalDiscount = o.TotalDiscount, Balance = o.Balance, TotalTax = o.TotalTax, StatusId = o.StatusId, GrandTotal = o.GrandTotal, Total = o.Total, OrderId = o.Id }).Skip(iskip).Take(itake).ToList();
                 return objResult;
             }
         }
+
 
         public List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch)
         {
@@ -521,12 +541,12 @@
                 return objResult;
             }
         }
-        public int CountByOrderType(Guid tenantId, Guid orderTypeId)
+        public int CountByOrderType(Guid tenantId, string orderTypeId)
         {
             using (var context = DataContextFactory.CreateContext())
             {
                 var objResult = (from o in context.Orders
-                                 where o.TenantId == tenantId && o.OrderTypeId.Equals(orderTypeId)
+                                 where o.TenantId == tenantId && o.OrderTypeId == new Guid(orderTypeId)
                                  select o
                                  ).Count();
                 return objResult;

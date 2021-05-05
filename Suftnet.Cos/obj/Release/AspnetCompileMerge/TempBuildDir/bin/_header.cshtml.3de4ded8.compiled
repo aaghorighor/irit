@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/SiteAdmin/Views/Shared/_header.cshtml" hash="1d884bfe" filehash="ffffcd83ca19eb7b" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_SiteAdmin_Views_Shared__header_cshtml">
-  <filedeps>
-    <filedep name="/Areas/SiteAdmin/Views/Shared/_header.cshtml" />
-  </filedeps>
-</preserve>

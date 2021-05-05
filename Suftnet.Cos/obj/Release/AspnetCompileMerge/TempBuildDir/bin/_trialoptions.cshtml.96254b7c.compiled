@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Subscription/Views/dashboard/_trialOptions.cshtml" hash="1d884bfe" filehash="fffffa5a2d0c3965" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_dashboard__trialOptions_cshtml">
-  <filedeps>
-    <filedep name="/Areas/Subscription/Views/dashboard/_trialOptions.cshtml" />
-  </filedeps>
-</preserve>

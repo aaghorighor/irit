@@ -10,10 +10,10 @@
             </div>
         </div>
         <div class="col-md-5 col-lg-4 mx-auto">
-            <div class="forgot-form mt-5 mt-md-0">
+            <div class="forgot-form mt-md-0">
                 <img src="img/logo.png" class="logo img-responsive mb-4 mb-md-6" alt="">
                 <h1 class="text-darker bold">Forgot your password?</h1>
-                <p class="text-secondary mt-0 mb-4 mb-md-6">Enter your email bellow to retrieve your account or <a href="login.html" class="text-primary bold">Login</a></p>
+                <p class="text-secondary mb-4 mb-md-6">Enter your email bellow to retrieve your account or <a href="@Url.LoginHref()" class="text-primary bold">Login</a></p>
                 <form class="cozy" action="@Url.Action("forgotten","account")" method="post">
 
                     @Html.AntiForgeryToken()

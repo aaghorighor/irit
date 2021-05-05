@@ -10,6 +10,8 @@
     using Extension;   
     using Suftnet.Cos.Common;
     using Suftnet.Cos.Services.Interface;
+    using Suftnet.Cos.Web.ActionFilter;
+    using System.Threading.Tasks;
 
     [RoutePrefix("api/v1/user")]
     public class UserController : BaseController
@@ -33,8 +35,22 @@
         public IHttpActionResult Get()
         {
             return Ok(DateTime.Now);
-        }     
-        
+        }
+
+        [HttpPost]
+        [JwtAuthenticationAttribute]
+        [Route("update")]
+        public async Task<IHttpActionResult> Update([FromBody] MobileUserDto mobileUserDto)
+        {
+            if (!ModelState.IsValid)
+            { return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() })); }
+
+            mobileUserDto.Id = UserId;
+            await Task.Run(() => _user.Update(mobileUserDto));
+
+            return Ok(true);
+        }
+
         [HttpGet]
         [Route("verifyUser")]
         public IHttpActionResult VerifyCode([FromUri]VerifyUser param)

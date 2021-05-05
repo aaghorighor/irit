@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Subscription/Views/Shared/_slim-nav.cshtml" hash="1d884bfe" filehash="ffffd311d72dd387" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_Shared__slim_nav_cshtml">
-  <filedeps>
-    <filedep name="/Areas/Subscription/Views/Shared/_slim-nav.cshtml" />
-  </filedeps>
-</preserve>

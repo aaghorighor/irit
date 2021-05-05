@@ -5,6 +5,7 @@
     using DataFactory.LinqToSql;
     using System.Linq;
     using System.Collections.Generic;
+    using System.Data.Linq;
 
     public class User : IUser
     {
@@ -299,6 +300,34 @@
 
             return null;
         }
+
+        public bool Update(MobileUserDto entity)
+        {
+            bool response = false;
+            using (var context = DataContextFactory.CreateContext())
+            {
+                var objToUpdate = context.Users.SingleOrDefault(o => o.Id == entity.Id);
+                if (objToUpdate != null)
+                {
+                    objToUpdate.FirstName = entity.FirstName;
+                    objToUpdate.LastName = entity.LastName;
+                    objToUpdate.PhoneNumber = entity.Phone;
+
+                    try
+                    {
+                        context.SaveChanges();
+                        response = true;
+                    }
+                    catch (ChangeConflictException)
+                    {
+                        context.SaveChanges();
+                        response = true;
+                    }
+                }
+            }
+            return response;
+        }
+
         public MobileTenantDto VerifyUser(Guid tenantId, string userCode)
         {
             using (var context = DataContextFactory.CreateContext())

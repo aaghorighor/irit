@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/knowledgeBase/_primaryHeader.cshtml" hash="1d884bfe" filehash="ffffdd8b7f3c2532" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_knowledgeBase__primaryHeader_cshtml">
-  <filedeps>
-    <filedep name="/Views/knowledgeBase/_primaryHeader.cshtml" />
-  </filedeps>
-</preserve>

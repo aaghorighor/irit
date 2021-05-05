@@ -37,7 +37,7 @@
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
             }
                         
-            var model = await Task.Run(()=> _table.GetBy(new Guid(param.ExternalId)));
+            var model = await Task.Run(()=> _table.GetBy(new Guid(ExternalId)));
             return Ok(model);           
         }       
 

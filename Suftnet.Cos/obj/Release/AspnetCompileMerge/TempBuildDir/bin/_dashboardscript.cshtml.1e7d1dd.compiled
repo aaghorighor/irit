@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/BackOffice/Views/Dashboard/_dashBoardScript.cshtml" hash="1d884bfe" filehash="11592db2d0cd" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_BackOffice_Views_Dashboard__dashBoardScript_cshtml">
-  <filedeps>
-    <filedep name="/Areas/BackOffice/Views/Dashboard/_dashBoardScript.cshtml" />
-  </filedeps>
-</preserve>

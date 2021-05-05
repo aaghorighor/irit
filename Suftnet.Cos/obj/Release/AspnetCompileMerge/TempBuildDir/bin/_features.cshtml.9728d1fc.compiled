@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/test/_features.cshtml" hash="1d884bfe" filehash="ffffe27c5878f993" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_test__features_cshtml">
-  <filedeps>
-    <filedep name="/Views/test/_features.cshtml" />
-  </filedeps>
-</preserve>

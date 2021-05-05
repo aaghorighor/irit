@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/Shared/_collapsibleMenu.cshtml" hash="1d884bfe" filehash="ffffcb2582d07cc3" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_Shared__collapsibleMenu_cshtml">
-  <filedeps>
-    <filedep name="/Views/Shared/_collapsibleMenu.cshtml" />
-  </filedeps>
-</preserve>

@@ -1,6 +1,7 @@
 ﻿namespace Suftnet.Cos.Mobile
 {
     using Suftnet.Cos.Extension;
+    using Suftnet.Cos.Web.ActionFilter;
     using Suftnet.Cos.Web.ViewModel;
     using System;
     using System.Net;
@@ -27,16 +28,16 @@
         }
 
         [HttpGet]
-       // [JwtAuthenticationAttribute]
+        [JwtAuthenticationAttribute]
         [Route("fetch")]
-        public async Task<IHttpActionResult> Fetch([FromUri]Param param)
+        public async Task<IHttpActionResult> Fetch()
         {
             if (!ModelState.IsValid)
             {
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
             }
 
-            _itemCommand.TenantId = new Guid(param.ExternalId);
+            _itemCommand.TenantId = new Guid(ExternalId);
              var model = await Task.Run(()=> _itemCommand.Execute());
 
             return Ok(model);           

@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/SiteAdmin/Views/Chapter/_load.cshtml" hash="1d884bfe" filehash="2967a7241e55" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_SiteAdmin_Views_Chapter__load_cshtml">
-  <filedeps>
-    <filedep name="/Areas/SiteAdmin/Views/Chapter/_load.cshtml" />
-  </filedeps>
-</preserve>

@@ -26,5 +26,6 @@
         bool Delete(string userId);
         ApplicationUser GetUserByUserName(string userName, string code);
         MobileTenantDto VerifyUser(Guid externalId, string userCode);
+        bool Update(MobileUserDto entity);
     }
 }

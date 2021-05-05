@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/SiteAdmin/Views/Topic/_form.cshtml" hash="1d884bfe" filehash="1e0d1723ef94" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_SiteAdmin_Views_Topic__form_cshtml">
-  <filedeps>
-    <filedep name="/Areas/SiteAdmin/Views/Topic/_form.cshtml" />
-  </filedeps>
-</preserve>

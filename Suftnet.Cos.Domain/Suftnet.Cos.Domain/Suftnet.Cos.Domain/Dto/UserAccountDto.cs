@@ -42,4 +42,19 @@
         public string AppCode { get; set; }       
         public string UserCode { get; set; }
     }
+
+    public class MobileUserDto
+    {
+        public string Id { get; set; }
+        [Required()]
+        [StringLength(50)]
+        public string FirstName { get; set; }
+        [Required()]
+        [StringLength(50)]
+        public string LastName { get; set; }
+        [Required()]
+        [StringLength(50)]
+        public string Phone { get; set; }
+
+    }
 }

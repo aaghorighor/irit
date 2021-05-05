@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/BackOffice/Views/Category/Index.cshtml" hash="1d884bfe" filehash="168fcb72fcbc" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_BackOffice_Views_Category_Index_cshtml">
-  <filedeps>
-    <filedep name="/Areas/BackOffice/Views/Category/Index.cshtml" />
-  </filedeps>
-</preserve>

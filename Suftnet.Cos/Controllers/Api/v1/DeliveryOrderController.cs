@@ -39,17 +39,23 @@
 
         [HttpGet]
         [JwtAuthenticationAttribute]
-        [Route("fetchBy")]
-        public async Task<IHttpActionResult> FetchBy([FromUri]ExternalParam externalParam)
+        [Route("fetchByPaging")]
+        public async Task<IHttpActionResult> FetchByPaging([FromUri] DeliveryOrderPager deliveryOrderPager)
         {
             if (!ModelState.IsValid)
             {
                 return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = ModelState.Error() }));
             }
 
-            var model = await Task.Run(() => _customerOrder.FetchBy(new Guid(externalParam.ExternalId), new Guid(eOrderStatus.Completed.ToUpper())));
+            var model = await Task.Run(() => _customerOrder.FetchBy(
+               new Guid(ExternalId), deliveryOrderPager.StatusId, (deliveryOrderPager.Page * deliveryOrderPager.Count), deliveryOrderPager.Count, deliveryOrderPager.Query));
 
-            return Ok(model);
+            return Ok(new
+            {
+                total = _customerOrder.Count(new Guid(ExternalId), new Guid(deliveryOrderPager.StatusId)),
+                count = model.Count,
+                deliveryOrders = model
+            });
         }
 
         [HttpGet]

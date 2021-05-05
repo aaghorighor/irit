@@ -14,7 +14,6 @@
         bool UpdateOrderStatus(Guid orderId, Guid statusId, DateTime createDt, string createdBy, Guid tenantId);
         List<OrderDto> GetAll(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch);
         List<OrderDto> GetAll(Guid orderTypeId, Guid tenantId, int iskip, int itake);
-        List<DineInOrderDto> FetchOrders(Guid tenantId, int itake);
         IEnumerable<OrderDto> GetAllOrderByStatus(TermDto term);    
         List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake, string isearch);
         List<OrderDto> GetReserveOrders(Guid orderTypeId, Guid tenantId, int iskip, int itake);
@@ -23,7 +22,7 @@
         int Count(Guid statusId, Guid tenantId);
         int Count(Guid statusId, Guid tenantId, Guid orderTypeId);
         bool UpdateReserve(OrderDto entity);
-        int CountByOrderType(Guid tenantId, Guid orderTypeId);
+        int CountByOrderType(Guid tenantId, string orderTypeId);
         bool UpdateDelivery(OrderDto entity);
         CartOrderDto FetchOrder(Guid orderId);
         OrderDto FetchDeliveryOrder(Guid orderId);
@@ -32,5 +31,6 @@
         bool UpdatePayment(OrderDto entity);
         bool CancelOrder(Guid orderId, Guid orderStatusId, Guid paymentStatusId, DateTime createDt, string createdBy, Guid tenantId);
         int CountByOrderType(Guid orderTypeId, Guid tenantId, Guid paymentStatusId);
+        List<DineInOrderDto> FetchOrders(string orderTypeId, Guid tenantId, int iskip, int itake, string search);
     }
 }

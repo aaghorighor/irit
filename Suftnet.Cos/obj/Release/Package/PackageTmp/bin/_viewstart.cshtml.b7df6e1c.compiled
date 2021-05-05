@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Admin/Views/_ViewStart.cshtml" hash="1d884bfe" filehash="20090ffc16f0" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views__ViewStart_cshtml">
-  <filedeps>
-    <filedep name="/Areas/Admin/Views/_ViewStart.cshtml" />
-  </filedeps>
-</preserve>

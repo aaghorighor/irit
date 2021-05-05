@@ -59,10 +59,7 @@
             builder.AppendLine("Hi,");
             builder.AppendLine("");
             builder.AppendLine("Feed back from one of our visitors");
-            builder.AppendLine("");
-            builder.AppendLine("FirstName :" + contactModel.FirstName);
-            builder.AppendLine("LastName :" + contactModel.LastName);
-            builder.AppendLine("Phone :" + contactModel.Phone);
+            builder.AppendLine("");           
             builder.AppendLine("Email :" + contactModel.Email);
             builder.AppendLine("Messages :" + contactModel.Message);
 

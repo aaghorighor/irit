@@ -48,4 +48,24 @@
         [StringLength(50)]
         public string UserId { get; set; }
     }
+
+    public class OrderPager
+    {
+        [Required]
+        public int Page { get; set; }
+        [Required]
+        public int Count { get; set; }       
+    }
+
+    public class DeliveryOrderPager
+    {
+        [Required]
+        public int Page { get; set; }
+        [Required]
+        public int Count { get; set; }
+        [StringLength(50)]
+        public string StatusId { get; set; }
+        [StringLength(50)]
+        public string Query { get; set; }
+    }
 }
