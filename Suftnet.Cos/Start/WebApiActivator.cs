@@ -20,7 +20,7 @@
             GeneralConfiguration.Configuration.DependencyResolver = new StructureMapDependencyResolver(container);
             config.DependencyResolver = new StructureMapDependencyResolver(container);
 
-            config.MessageHandlers.Add(new LoggerHandler());
+            //config.MessageHandlers.Add(new LoggerHandler());
             //config.MessageHandlers.Add(new AuthHandler());
                        
             config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;

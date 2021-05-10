@@ -14,10 +14,8 @@
         }
 
         public void RegisterBundles(System.Web.HttpContextBase context)
-        {                       
-            BundleTable.Bundles.Add(new StyleBundle("~/Content/zice-OneChurch/components/chosen").Include(
-                    "~/Content/zice-OneChurch/components/chosen/chosen.css"
-             ));
+        {                      
+            
             BundleTable.Bundles.Add(new StyleBundle("~/Content/zice-OneChurch/components/confirm/jqueryconfirm").Include(
                      "~/Content/zice-OneChurch/components/confirm/jquery.confirm.css"
              ));                  
@@ -29,13 +27,8 @@
             ));
             BundleTable.Bundles.Add(new StyleBundle("~/Content/zice-OneChurch/components/tipsy/css/tipsy").Include(
                "~/Content/zice-OneChurch/components/tipsy/css/jquery.tipsy.css"
-            ));
-            BundleTable.Bundles.Add(new StyleBundle("~/Content/zice-OneChurch/components/sourcerer/sourcerer").Include(
-                    "~/Content/zice-OneChurch/components/sourcerer/sourcerer.css"
-            ));
-            BundleTable.Bundles.Add(new StyleBundle("~/Content/zice-OneChurch/components/Jcrop/jqueryjcrop").Include(
-                    "~/Content/zice-OneChurch/components/Jcrop/jquery.Jcrop.css"
-            ));
+            ));           
+           
             BundleTable.Bundles.Add(new StyleBundle("~/Content/slim/lib/font-awesome/css").Include(
                     "~/Content/slim/lib/font-awesome/css/font-awesome.css"
             ));
@@ -57,14 +50,7 @@
             ));
             BundleTable.Bundles.Add(new StyleBundle("~/Content/css/custom").Include(                
                        "~/Content/css/form.css",
-                       "~/Content/css/error.css",
-                       "~/Content/css/booking.css",                  
-                       "~/Content/css/wModal.css",
-                       "~/Content/css/salesorder.css",
-                       "~/Content/css/easytabbed.css",
-                       "~/Content/css/category.css",
-                       "~/Content/css/basicSlider.css",
-                       "~/Content/css/kitchen.css"
+                       "~/Content/css/error.css"                       
             ));
             BundleTable.Bundles.Add(new StyleBundle("~/bundle/perfectscrollbar").Include(
                         "~/Content/perfect-scrollbar/css/perfect-scrollbar.min.css"
@@ -109,13 +95,8 @@
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/lib").Include(                
                        "~/Scripts/lib/modernizr-1.7.js",
                        "~/Scripts/lib/rsvp-3.1.0.min.js",                    
-                       "~/Scripts/lib/jquery.loading.min.js",
-                       "~/Scripts/lib/jquery.mask.js",
-                       "~/Scripts/lib/perfect-scrollbar.jquery.min.js",
-                       "~/Scripts/lib/jquery.easytabs.min.js",
-                       "~/Scripts/lib/moment.js",
-                       "~/Scripts/lib/masonry.js",                   
-                       "~/Scripts/lib/knockout.js"
+                       "~/Scripts/lib/jquery.loading.min.js",                 
+                       "~/Scripts/lib/perfect-scrollbar.jquery.min.js"         
             ));
 
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/rsvp").Include(
@@ -124,12 +105,7 @@
 
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/zebra_tooltips_js").Include(                   
                        "~/Content/zebra-tooltips/zebra_tooltips.min.js"
-            ));                                
-
-            BundleTable.Bundles.Add(new ScriptBundle("~/bundle/ckeditor").Include(
-                       "~/Scripts/ckeditor/ckeditor.js",
-                       "~/Scripts/ckeditor/adapters/jquery.js"
-            ));
+            ));      
 
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/checkout").Include(
                        "~/Scripts/checkout/jquery.payment.js",
@@ -143,15 +119,7 @@
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/ajax").Include(
                        "~/Scripts/ajax/suftnet.Http.js",
                        "~/Scripts/ajax/suftnet.tools.js"
-            ));
-
-            BundleTable.Bundles.Add(new ScriptBundle("~/bundle/jsBxslider").Include(
-                    "~/Content/frontoffice/assets/bxslider/js/bxslider.min.js"                   
-            ));
-
-            BundleTable.Bundles.Add(new StyleBundle("~/bundle/cssBxslider").Include(
-                   "~/Content/frontoffice/assets/bxslider/css/bxslider.min.css"                  
-            ));
+            ));            
 
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/LoadingSpinnerSprite").Include(
                   "~/Content/Loading-Spinner-Sprite/jquery.preloaders.min.js",
@@ -193,20 +161,10 @@
 
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/60000").Include(
                    "~/Scripts/60000/support.js"
-            ));
-
-            BundleTable.Bundles.Add(new ScriptBundle("~/bundle/20000").Include(
-                  "~/Scripts/20000/locationPicker.js"
-           ));
-
-            BundleTable.Bundles.Add(new ScriptBundle("~/bundle/90000")
-                .IncludeDirectory("~/Scripts/90000", "*.js"));
-
+            ));                      
+            
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/70000")
-               .IncludeDirectory("~/Scripts/70000", "*.js"));
-
-            BundleTable.Bundles.Add(new ScriptBundle("~/bundle/50000")
-              .IncludeDirectory("~/Scripts/50000", "*.js"));
+               .IncludeDirectory("~/Scripts/70000", "*.js"));           
 
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/zice-OneChurch/dashbaord").Include(              
                     "~/Content/zice-OneChurch/js/jquery.cookie.js",
@@ -227,15 +185,7 @@
 
             BundleTable.Bundles.Add(new StyleBundle("~/bundle/multislider-css").Include(
                     "~/Content/css/multislider.css"  
-            ));
-
-            BundleTable.Bundles.Add(new StyleBundle("~/bundle/baze-css").Include(
-                    "~/Content/css/baze.modal.css"
-            ));           
-
-            BundleTable.Bundles.Add(new StyleBundle("~/bundle/custom-1").Include(
-                    "~/Content/frontoffice/css/custom-1.css"
-            ));                      
+            ));                                
 
             BundleTable.Bundles.Add(new StyleBundle("~/bundle/confirmDialog-css").Include(
                     "~/Content/confirmDialog/confirmDialog.css"
@@ -243,19 +193,8 @@
 
             BundleTable.Bundles.Add(new ScriptBundle("~/bundle/confirmDialog-js").Include(
                     "~/Content/confirmDialog/confirmDialog.js"
-            ));
-         
-            BundleTable.Bundles.Add(new ScriptBundle("~/bundle/baze").Include(
-                    "~/Scripts/lib/baze.modal.js"
-            ));                        
-
-            BundleTable.Bundles.Add(new ScriptBundle("~/bundle/tinymc").Include(
-                    "~/Scripts/80000/tinymc.js"
-            ));
-
-            BundleTable.Bundles.Add(new ScriptBundle("~/bundle/tinymceEditor").Include(
-                    "~/Content/tinymce/jscripts/tiny_mce/tiny_mce.js"
-            ));
+            ));        
+           
 
             BundleTable.EnableOptimizations = true;
         }        

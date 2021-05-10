@@ -1,0 +1,40 @@
+﻿@model Suftnet.Cos.Web.ViewModel.TopicModel
+@{
+    ViewBag.Title = "SUFTNET | TUTORIAL ";
+    Layout = "~/Views/Shared/_knowledgeBaseLayout.cshtml";
+}
+
+<link href="@Url.Content("~/Content/frontoffice-2/iconmoon/css/iconmoon.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/frontoffice-2/magnific-popup/css/magnific-popup.css")" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+<div class="section-hero uk-background-blend-color-burn uk-background-top-center uk-background-cover uk-section-large1 cta" style="background-image: url('/Content/logo/logo.png')">
+    <nav class="uk-navbar-container uk-margin uk-navbar-transparent uk-light">
+        <div class="uk-container">
+            <div uk-navbar>
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo uk-text-uppercase" href="#"><span class="uk-margin-small-right" uk-icon="icon: lifesaver"></span> irit</a>
+                </div>
+                <div class="uk-navbar-right">
+                    <a class="uk-navbar-item uk-logo uk-text-uppercase" href="@ViewContext.HttpContext.Request.UrlReferrer.AbsoluteUri"><span class="uk-margin-small-right" uk-icon="icon: chevron-left"></span> Back</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="uk-container hero ">
+        <h1 class="uk-heading-primary uk-text-center uk-light ">@Model.Section.SubSection</h1>
+        <br /><br /><br /><br />
+        <p class="uk-text-lead uk-text-center uk-light">
+
+        </p>
+        <div class="uk-flex uk-flex-center">
+
+        </div>
+    </div>
+</div>
+
+@{Html.RenderAction("Sections", new { Id = Model.Section.Id });}
+<script src="@Url.Content("~/Content/frontoffice-2/magnific-popup/js/magnific-popup.min.js")"></script>
+<script src="@Url.Content("~/Content/knowledge/assets/js/youtubeVideo.js")"></script>

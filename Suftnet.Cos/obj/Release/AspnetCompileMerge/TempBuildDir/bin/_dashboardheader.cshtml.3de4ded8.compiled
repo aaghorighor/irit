@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Areas/SiteAdmin/Views/Shared/_dashboardheader.cshtml" hash="ffffffffb87d95f8" filehash="1701c22c84e7" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_SiteAdmin_Views_Shared__dashboardheader_cshtml">
+  <filedeps>
+    <filedep name="/Areas/SiteAdmin/Views/Shared/_dashboardheader.cshtml" />
+  </filedeps>
+</preserve>

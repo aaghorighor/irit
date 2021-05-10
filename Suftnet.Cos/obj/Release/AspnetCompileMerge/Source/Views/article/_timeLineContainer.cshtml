@@ -1,0 +1,18 @@
+﻿@model List<Suftnet.Cos.DataAccess.TopicDto>
+
+<div class="uk-section">
+    <div class="uk-container">
+        <div class="uk-child-width-1-3@s uk-grid-match uk-grid-medium uk-text-center" uk-grid>
+
+            @foreach (var item in Model)
+            {
+                <div>
+                    <a href="@item.VideoUrl" class="box uk-border-rounded video">
+                        <h3>@item.Topic</h3>
+                    </a>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

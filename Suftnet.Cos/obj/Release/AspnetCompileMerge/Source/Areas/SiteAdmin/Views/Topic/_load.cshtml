@@ -1,0 +1,62 @@
+﻿@using Suftnet.Cos.Extension
+@model IEnumerable<Suftnet.Cos.DataAccess.TopicDto>
+
+<table id="tdTopic" class="display">
+    <thead>
+        <tr>
+            <th>Id#</th>
+            <th align="left">Index</th>
+            <th align="left">Date</th>
+            <th align="left">User</th>
+            <th align="left">Topic</th>
+            <th>Active</th>
+            <th style="text-align:center ">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var _item in Model)
+        {
+            <tr id="@_item.Id">
+                <td>@_item.Id</td>
+                <td align="left">@_item.IndexNo</td>
+                <td align="left">@_item.CreatedOn</td>
+                <td align="left">@_item.CreatedBy</td>
+                <td align="left">@_item.Topic</td>
+                <td>@_item.Publish</td>
+                <td style="text-align:center ">
+                    <a href="javascript:void(0)">
+                        <span id="Edit" style="margin:10px;" editid="@_item.Id" title="Edit this row">
+                            <img src="@Url.Asset("edit.png")" alt="" />
+                        </span>
+                    </a>
+                    <a href="javascript:void(0)">
+                        <span id="Delete" style="margin:10px;" deleteid="@_item.Id" title="Delete this row">
+                            <img src="@Url.Asset("delete.png")" alt="" />
+                        </span>
+                    </a>
+                </td>
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+
+<div class="hide">
+    <span id="editUrl" name="editUrl" data-editUrl="@Url.Action("Get", "Topic")"></span>
+    <span id="deleteUrl" name="deleteUrl" data-deleteUrl="@Url.Action("Delete", "Topic")"></span>
+    <span id="sectionId" name="sectionId" data-sectionId="@ViewContext.RouteData.Values["Id"].ToString()"></span>
+    <span id="subSection" name="subSection" data-subSection="@ViewContext.RouteData.Values["subSection"].ToString()"></span>
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+        topic.load();
+    });
+
+</script>
+
+
+

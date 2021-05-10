@@ -1,0 +1,17 @@
+﻿@model Suftnet.Cos.DataAccess.TenantDto
+
+<div class="card card-map-widget mg-t-20">
+    <div id="googleMap" style="width:100%;height:937px;"></div>
+    <div class="card-body">     
+        <p>@Model.CompleteAddress</p>   
+    </div><!-- card-body -->
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKIqelT2-EaRO3pJhTdL1xnV-BNDKeYgg"></script>
+<script>
+    $(function () {
+
+        map.init({ latitude: '@Model.Latitude', longitude: '@Model.Longitude' });
+    })
+</script>
+
+@Scripts.Render("~/bundle/80000")

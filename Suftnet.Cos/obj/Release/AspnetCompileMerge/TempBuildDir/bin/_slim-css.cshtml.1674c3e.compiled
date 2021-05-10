@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Areas/Subscription/Views/Shared/_slim-css.cshtml" hash="ffffffffb87d95f8" filehash="fffff9f29d635da2" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_Shared__slim_css_cshtml">
+  <filedeps>
+    <filedep name="/Areas/Subscription/Views/Shared/_slim-css.cshtml" />
+  </filedeps>
+</preserve>

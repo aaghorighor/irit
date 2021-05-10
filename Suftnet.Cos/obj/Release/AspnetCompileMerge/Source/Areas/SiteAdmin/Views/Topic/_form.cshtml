@@ -1,0 +1,80 @@
+﻿@using Suftnet.Cos.Common;
+@using Suftnet.Cos.Extension;
+
+<form action="@Url.Action("Create", "Topic")" method="post" id="form">
+    <div class="forms">
+        <input id="Id" name="Id" type="hidden" />
+        <input id="ImageUrl" name="ImageUrl" type="hidden" value="Not set" />
+        <input id="ChapterId" name="ChapterId" value="@ViewContext.RouteData.Values["Id"].ToString()" type="hidden" />
+
+        <div class="grid-3-12">
+            <label class="forms-lbl">Topic: </label>
+            @Html.Dropdown("TopicId", "validate[required]", (int)eSettings.SupportTopic)
+        </div>
+
+        <div class="clear">
+
+        </div>
+
+        <div class="grid-3-12">
+            <label class="forms-lbl">Youtube Video Url: </label>
+            <input type="text" name="VideoUrl" id="VideoUrl" class="forms-txt validate[required]" maxlength="50" />
+        </div>
+
+        <div class="clear">
+
+        </div>
+
+        <div class="grid-12-12">
+            <label class="form-lbl">Short Description :</label>
+            <div style="margin-top:5px"></div>
+            <div> <textarea name="Description" id="Description" rows="60" cols="80" style="height:50px" class=""></textarea></div>
+        </div>
+
+        <div class="clear">
+
+        </div>
+
+        <div class="grid-3-12">
+            <label class="forms-lbl">Sort Order: </label>
+            <select name="IndexNo" id="IndexNo" class="validate[required]">
+                @foreach (var _item in Enumerable.Range(1, 200))
+                {
+                    <option value="@_item">@_item</option>
+                }
+            </select>
+        </div>
+
+        <div class="clear">
+
+        </div>
+
+        <div class="grid-12-12">
+            <input name="Publish" id="Publish" type="checkbox" /> <label class="form-lbl">Publish</label>
+        </div>
+
+    </div>
+
+    <div class="grid-12-12">
+
+        <ul style="margin-left:0px; margin-top :5px" class="uibutton-group">
+            <li><span class="nwtip"><a class="uibutton icon add normal" id="btnSubmit" title="Save">Save Changes</a></span></li>
+        </ul>
+
+    </div>
+
+</form>
+
+<script type="text/javascript">
+    $(function () {
+        topic.create();
+    });
+
+</script>
+
+
+
+
+
+
+

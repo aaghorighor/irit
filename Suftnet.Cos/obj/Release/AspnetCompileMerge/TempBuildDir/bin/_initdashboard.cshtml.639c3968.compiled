@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Views/Shared/_initDashboard.cshtml" hash="ffffffffb87d95f8" filehash="ffffd195ba8cfa4b" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_Shared__initDashboard_cshtml">
+  <filedeps>
+    <filedep name="/Views/Shared/_initDashboard.cshtml" />
+  </filedeps>
+</preserve>

@@ -433,7 +433,7 @@
             }
             else if (GeneralConfiguration.Configuration.ExecutingContext.Equals(ExecutingContext.LIVE))
             {
-                System.Threading.Tasks.Task.Run(()=> SendGridEmail(title, message, email));
+                System.Threading.Tasks.Task.Run(()=> SendSmtpEmail(title, message, email));
             }
         }
         private void SendSmtpEmail(string title, string message, string email)

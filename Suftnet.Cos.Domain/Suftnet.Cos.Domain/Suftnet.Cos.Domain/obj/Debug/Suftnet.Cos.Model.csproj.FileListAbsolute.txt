@@ -77,3 +77,6 @@ E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bi
 E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\obj\Debug\Suftnet.Cos.Model.csproj.CoreCompileInputs.cache
 E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\obj\Debug\Suftnet.Cos.Model.csproj.CopyComplete
 E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\obj\Debug\Suftnet.Cos.Model.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Debug\Suftnet.Cos.Common.dll
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\bin\Debug\Suftnet.Cos.Common.pdb
+E:\Git\Web\Irit\Irit\Suftnet.Cos.Domain\Suftnet.Cos.Domain\Suftnet.Cos.Domain\obj\Debug\Suftnet.Cos.Model.csprojAssemblyReference.cache

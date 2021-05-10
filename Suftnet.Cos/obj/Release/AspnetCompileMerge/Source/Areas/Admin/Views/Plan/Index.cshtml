@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "SUFTNET | PLANS ";   
+}
+
+<div id="MainCollapsible" style="display:none">
+
+    <h6><a href="#">Plans </a></h6>
+    <div>
+
+        <div class="widgets">
+            <div class="twoOne">
+                <div class="widget">
+                    <div class="header"><span><span class="ico  gray random"></span> Plans </span></div>
+                    <div class="content">
+                        @Html.Partial("_LoadPlan")
+
+                    </div><!-- End content -->
+                </div><!-- End full width -->
+            </div>
+            <div class="oneThree">
+                <div class="widget">
+                    <div class="header"><span><span class="ico gray window"></span></span></div>
+                    <div class="content">
+                        @Html.Partial("_Planform")
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <h6><a href="#">Plan Features </a></h6>
+    <div>
+        <div class="widgets">
+            <div class="twoOne">
+                <div class="widget">
+                    <div class="header"><span><span class="ico  gray random"></span> Plan Features </span></div>
+                    <div class="content">
+                        @Html.Partial("_LoadPlanFeature")
+
+                    </div><!-- End content -->
+                </div><!-- End full width -->
+            </div>
+            <div class="oneThree">
+                <div class="widget">
+                    <div class="header"><span><span class="ico gray window"></span></span></div>
+                    <div class="content">
+                        @Html.Partial("_PlanFeatureform")
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+ $(function () {
+
+         setTimeout(function () {
+             $("#MainCollapsible").show();
+         }, 0);
+
+        var _opt = {
+            active: false,
+            collapsible: false,
+            autoHeight: false,
+            animated: "bounceslide"
+        };
+
+        $("#MainCollapsible").accordion(_opt);
+        $("#MainCollapsible").accordion("activate", 0);
+
+    });
+</script>

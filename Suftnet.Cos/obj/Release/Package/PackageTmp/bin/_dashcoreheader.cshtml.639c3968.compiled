@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Views/Shared/_dashcoreHeader.cshtml" hash="ffffffffb87d95f8" filehash="2d5aa79a7c8f" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_Shared__dashcoreHeader_cshtml">
+  <filedeps>
+    <filedep name="/Views/Shared/_dashcoreHeader.cshtml" />
+  </filedeps>
+</preserve>

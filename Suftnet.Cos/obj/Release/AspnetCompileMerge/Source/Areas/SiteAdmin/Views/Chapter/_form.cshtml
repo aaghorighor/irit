@@ -1,0 +1,81 @@
+﻿
+<form action="@Url.Action("Create", "Chapter")" method="post" id="form">
+    <div class="forms">
+        <input id="Id" name="Id" type="hidden" />
+        <input id="ImageUrl" name="ImageUrl" type="hidden" />
+           
+        <div class="grid-3-12">
+            <label class="forms-lbl">Sections: </label>
+            <select class="validate[required]" id="SectionId" name="SectionId" style="padding: 6px;">
+                <option value="">-- SELECT --</option>               
+                <option value="3323">Back Office</option>
+                <option value="4353">Subscription Panel</option>
+                <option value="4355">How to Subscribe to Paying Plan</option>             
+                <option value="4357">How to Subscribe to 15 Trials</option>
+                <option value="4358">How to Renew Subscription</option>
+                <option value="4359">Android Mobile App</option>            
+            </select>
+        </div>
+
+        <div class="grid-3-12">
+            <label class="forms-lbl">Topics: </label>
+            <select class="validate[required]" id="SubSectionId" name="SubSectionId" style="padding: 6px;">
+                <option value="">-- SELECT --</option>
+            </select>
+        </div>
+
+        <div class="clear">
+
+        </div>
+
+        <div class="grid-3-12">
+            <ul style="margin-left:0px; margin-top :5px" class="uibutton-group">
+                <li>
+                    <span class="nwtip">
+                        <input style="width:50%" type="file" name="file_upload[]" id="file_upload" />
+                    </span>
+                </li>
+                <li><span class="nwtip"><a style="margin-left:10px;" class="uibutton normal" id="clearImage" title="Clear Image">Clear Image</a></span></li>
+            </ul>
+        </div>
+
+        <div class="grid-12-12">
+            <label class="form-lbl">Description :</label>
+            <div style="margin-top:10px"></div>
+            <div> <textarea name="Description" id="Description" rows="60" cols="80" style="height:200px"  class="validate[required]"></textarea></div><br />
+        </div>
+
+        <div class="grid-12-12">
+            <input name="Publish" id="Publish" type="checkbox" /> <label class="form-lbl">Publish</label>
+        </div>
+    </div>
+
+    <div class="grid-12-12">
+
+        <ul style="margin-left:0px; margin-top :5px" class="uibutton-group">
+            <li><span class="nwtip"><a class="uibutton icon add normal" id="btnSubmit" title="Save">Save Changes</a></span></li>
+        </ul>
+
+    </div>
+
+</form>
+
+<div class="hide">    
+    <span id="uploadUrl" name="uploadUrl" data-uploadUrl="@Url.Action("upload", "chapter", new { area ="SiteAdmin" } )"></span>
+    <span id="buttonText" name="buttonText">Add Image</span>
+</div>
+
+
+<script type="text/javascript">
+    $(function () {
+        chapter.create();
+    });
+   
+</script>
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Areas/BackOffice/Views/Addon/entry.cshtml" hash="ffffffffb87d95f8" filehash="1847bab1c7ec" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_BackOffice_Views_Addon_entry_cshtml">
+  <filedeps>
+    <filedep name="/Areas/BackOffice/Views/Addon/entry.cshtml" />
+  </filedeps>
+</preserve>

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Areas/Admin/Views/Dashboard/Index.cshtml" hash="ffffffffb87d95f8" filehash="3921c6d323ba" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_Dashboard_Index_cshtml">
+  <filedeps>
+    <filedep name="/Areas/Admin/Views/Dashboard/Index.cshtml" />
+  </filedeps>
+</preserve>

@@ -43,7 +43,7 @@
             }
             else if (GeneralConfiguration.Configuration.ExecutingContext.Equals(ExecutingContext.LIVE))
             {
-                SendGridEmailConfirmation();
+                SendEmailConfirmation();
             }
         }
 
