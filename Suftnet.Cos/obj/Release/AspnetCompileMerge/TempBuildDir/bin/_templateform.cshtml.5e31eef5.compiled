@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Admin/Views/Template/_Templateform.cshtml" hash="ffffffffb87d95f8" filehash="fffff356692dad79" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_Template__Templateform_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Admin/Views/Template/_Templateform.cshtml" hash="ffffffffb87d95f8" filehash="fffff4c0c3a0c08e" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_Template__Templateform_cshtml">
   <filedeps>
     <filedep name="/Areas/Admin/Views/Template/_Templateform.cshtml" />
   </filedeps>

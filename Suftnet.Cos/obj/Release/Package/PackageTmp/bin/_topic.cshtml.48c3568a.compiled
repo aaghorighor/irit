@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/knowledgeBase/_topic.cshtml" hash="ffffffffb87d95f8" filehash="25cad93eb1d0" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_knowledgeBase__topic_cshtml">
+<preserve resultType="2" virtualPath="/Views/knowledgeBase/_topic.cshtml" hash="ffffffffb87d95f8" filehash="253e0168e249" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_knowledgeBase__topic_cshtml">
   <filedeps>
     <filedep name="/Views/knowledgeBase/_topic.cshtml" />
   </filedeps>

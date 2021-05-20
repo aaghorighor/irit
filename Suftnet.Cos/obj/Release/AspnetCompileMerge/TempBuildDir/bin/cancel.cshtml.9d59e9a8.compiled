@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Subscription/Views/paid/cancel.cshtml" hash="ffffffffb87d95f8" filehash="ffffba75d4231f8a" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_paid_cancel_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Subscription/Views/paid/cancel.cshtml" hash="ffffffffb87d95f8" filehash="ffffbbd2017e1746" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_paid_cancel_cshtml">
   <filedeps>
     <filedep name="/Areas/Subscription/Views/paid/cancel.cshtml" />
   </filedeps>

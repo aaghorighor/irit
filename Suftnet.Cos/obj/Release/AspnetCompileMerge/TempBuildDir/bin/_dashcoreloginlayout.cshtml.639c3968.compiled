@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/Shared/_dashcoreLoginLayout.cshtml" hash="ffffffffb87d95f8" filehash="1ad17744e36b" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_Shared__dashcoreLoginLayout_cshtml">
+<preserve resultType="2" virtualPath="/Views/Shared/_dashcoreLoginLayout.cshtml" hash="ffffffffb87d95f8" filehash="19c3a24a3357" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_Shared__dashcoreLoginLayout_cshtml">
   <filedeps>
     <filedep name="/Views/Shared/_dashcoreLoginLayout.cshtml" />
   </filedeps>

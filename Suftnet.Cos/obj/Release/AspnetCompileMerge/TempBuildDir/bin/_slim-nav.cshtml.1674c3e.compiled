@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Subscription/Views/Shared/_slim-nav.cshtml" hash="ffffffffb87d95f8" filehash="ffffd1cb35cf068d" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_Shared__slim_nav_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Subscription/Views/Shared/_slim-nav.cshtml" hash="ffffffffb87d95f8" filehash="ffffd3299f6886ef" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_Shared__slim_nav_cshtml">
   <filedeps>
     <filedep name="/Areas/Subscription/Views/Shared/_slim-nav.cshtml" />
   </filedeps>

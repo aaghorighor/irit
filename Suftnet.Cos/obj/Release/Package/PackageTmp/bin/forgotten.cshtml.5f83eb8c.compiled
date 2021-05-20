@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/account/forgotten.cshtml" hash="ffffffffb87d95f8" filehash="ffffed6c467a59ae" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_account_forgotten_cshtml">
+<preserve resultType="2" virtualPath="/Views/account/forgotten.cshtml" hash="ffffffffb87d95f8" filehash="ffffee021bc4ba16" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_account_forgotten_cshtml">
   <filedeps>
     <filedep name="/Views/account/forgotten.cshtml" />
   </filedeps>

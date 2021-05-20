@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/pricing/index.cshtml" hash="ffffffffb87d95f8" filehash="ec2216556a6" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_pricing_index_cshtml">
+<preserve resultType="2" virtualPath="/Views/pricing/index.cshtml" hash="ffffffffb87d95f8" filehash="d6e5c827505" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_pricing_index_cshtml">
   <filedeps>
     <filedep name="/Views/pricing/index.cshtml" />
   </filedeps>

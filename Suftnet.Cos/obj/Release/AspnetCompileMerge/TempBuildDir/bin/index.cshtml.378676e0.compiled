@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Common/Views/BaseReport/Index.cshtml" hash="59cef4a0" filehash="fffffbf0560fffa2" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Common_Views_BaseReport_Index_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Common/Views/BaseReport/Index.cshtml" hash="59cef4a0" filehash="fffffd2ba541b570" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Common_Views_BaseReport_Index_cshtml">
   <filedeps>
     <filedep name="/Areas/Common/Views/BaseReport/Index.cshtml" />
   </filedeps>

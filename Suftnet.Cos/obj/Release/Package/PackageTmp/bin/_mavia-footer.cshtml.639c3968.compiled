@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/Shared/_mavia-footer.cshtml" hash="ffffffffb87d95f8" filehash="ffffce1db4351521" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_Shared__mavia_footer_cshtml">
+<preserve resultType="2" virtualPath="/Views/Shared/_mavia-footer.cshtml" hash="ffffffffb87d95f8" filehash="ffffcd633f04821a" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_Shared__mavia_footer_cshtml">
   <filedeps>
     <filedep name="/Views/Shared/_mavia-footer.cshtml" />
   </filedeps>

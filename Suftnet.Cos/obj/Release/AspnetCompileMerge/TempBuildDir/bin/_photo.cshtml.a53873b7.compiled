@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Admin/Views/User/_photo.cshtml" hash="ffffffffb87d95f8" filehash="32f06b4292b0" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_User__photo_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Admin/Views/User/_photo.cshtml" hash="ffffffffb87d95f8" filehash="318453c0fb8c" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_User__photo_cshtml">
   <filedeps>
     <filedep name="/Areas/Admin/Views/User/_photo.cshtml" />
   </filedeps>

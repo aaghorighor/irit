@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/Shared/_frontOffice-meta.cshtml" hash="ffffffffb87d95f8" filehash="35b6f5f8196a" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_Shared__frontOffice_meta_cshtml">
+<preserve resultType="2" virtualPath="/Views/Shared/_frontOffice-meta.cshtml" hash="ffffffffb87d95f8" filehash="374a9a67c426" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_Shared__frontOffice_meta_cshtml">
   <filedeps>
     <filedep name="/Views/Shared/_frontOffice-meta.cshtml" />
   </filedeps>

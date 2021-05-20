@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Admin/Views/Tenants/_stripe.cshtml" hash="ffffffffb87d95f8" filehash="ffffd1534648d2be" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_Tenants__stripe_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Admin/Views/Tenants/_stripe.cshtml" hash="ffffffffb87d95f8" filehash="ffffd2af5865fe6b" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_Tenants__stripe_cshtml">
   <filedeps>
     <filedep name="/Areas/Admin/Views/Tenants/_stripe.cshtml" />
   </filedeps>

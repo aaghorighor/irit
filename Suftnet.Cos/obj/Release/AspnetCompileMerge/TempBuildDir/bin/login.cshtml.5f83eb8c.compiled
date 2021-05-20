@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/account/login.cshtml" hash="ffffffffb87d95f8" filehash="3646eb24dbe1" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_account_login_cshtml">
+<preserve resultType="2" virtualPath="/Views/account/login.cshtml" hash="ffffffffb87d95f8" filehash="3598338a7b3c" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_account_login_cshtml">
   <filedeps>
     <filedep name="/Views/account/login.cshtml" />
   </filedeps>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/knowledgeBase/_contactScripts.cshtml" hash="ffffffffb87d95f8" filehash="fffffc66947b7746" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_knowledgeBase__contactScripts_cshtml">
+<preserve resultType="2" virtualPath="/Views/knowledgeBase/_contactScripts.cshtml" hash="ffffffffb87d95f8" filehash="fffffdb453a31702" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_knowledgeBase__contactScripts_cshtml">
   <filedeps>
     <filedep name="/Views/knowledgeBase/_contactScripts.cshtml" />
   </filedeps>

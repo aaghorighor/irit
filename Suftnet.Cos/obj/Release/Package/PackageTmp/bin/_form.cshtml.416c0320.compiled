@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Admin/Views/OrderStatus/_form.cshtml" hash="ffffffffb87d95f8" filehash="36bf35885776" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_OrderStatus__form_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Admin/Views/OrderStatus/_form.cshtml" hash="ffffffffb87d95f8" filehash="353396652f3d" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_OrderStatus__form_cshtml">
   <filedeps>
     <filedep name="/Areas/Admin/Views/OrderStatus/_form.cshtml" />
   </filedeps>

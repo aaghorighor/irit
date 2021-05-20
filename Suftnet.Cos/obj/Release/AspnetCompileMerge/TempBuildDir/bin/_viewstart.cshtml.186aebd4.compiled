@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Subscription/_ViewStart.cshtml" hash="ffffffffb87d95f8" filehash="e83a73e4a80" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription__ViewStart_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Subscription/_ViewStart.cshtml" hash="ffffffffb87d95f8" filehash="d8fc71f8325" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription__ViewStart_cshtml">
   <filedeps>
     <filedep name="/Areas/Subscription/_ViewStart.cshtml" />
   </filedeps>

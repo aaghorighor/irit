@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/Shared/_master-header-css.cshtml" hash="ffffffffb87d95f8" filehash="ffffdc898eef1701" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_Shared__master_header_css_cshtml">
+<preserve resultType="2" virtualPath="/Views/Shared/_master-header-css.cshtml" hash="ffffffffb87d95f8" filehash="ffffddd2d32e523a" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_Shared__master_header_css_cshtml">
   <filedeps>
     <filedep name="/Views/Shared/_master-header-css.cshtml" />
   </filedeps>

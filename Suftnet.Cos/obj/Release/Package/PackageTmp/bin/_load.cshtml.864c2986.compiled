@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Admin/Views/PaymentStatus/_load.cshtml" hash="ffffffffb87d95f8" filehash="e9fd8e9a502" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_PaymentStatus__load_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Admin/Views/PaymentStatus/_load.cshtml" hash="ffffffffb87d95f8" filehash="d93d3441fd3" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_PaymentStatus__load_cshtml">
   <filedeps>
     <filedep name="/Areas/Admin/Views/PaymentStatus/_load.cshtml" />
   </filedeps>

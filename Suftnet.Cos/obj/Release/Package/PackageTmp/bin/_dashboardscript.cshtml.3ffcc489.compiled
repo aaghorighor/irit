@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Admin/Views/Dashboard/_dashBoardScript.cshtml" hash="ffffffffb87d95f8" filehash="1934a378b177" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_Dashboard__dashBoardScript_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Admin/Views/Dashboard/_dashBoardScript.cshtml" hash="ffffffffb87d95f8" filehash="184703e3ab02" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_Dashboard__dashBoardScript_cshtml">
   <filedeps>
     <filedep name="/Areas/Admin/Views/Dashboard/_dashBoardScript.cshtml" />
   </filedeps>

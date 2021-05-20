@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Admin/Views/Tenants/_aboutus.cshtml" hash="ffffffffb87d95f8" filehash="ffffde83f320a7b3" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_Tenants__aboutus_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Admin/Views/Tenants/_aboutus.cshtml" hash="ffffffffb87d95f8" filehash="ffffe00cadec4144" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_Tenants__aboutus_cshtml">
   <filedeps>
     <filedep name="/Areas/Admin/Views/Tenants/_aboutus.cshtml" />
   </filedeps>
