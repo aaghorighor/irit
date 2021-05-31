@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Subscription/Views/dashboard/_paymentCard.cshtml" hash="ffffffffb87d95f8" filehash="3a32b6395b52" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_dashboard__paymentCard_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Subscription/Views/dashboard/_paymentCard.cshtml" hash="ffffffffb87d95f8" filehash="ffffc567fbe7fac6" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_dashboard__paymentCard_cshtml">
   <filedeps>
     <filedep name="/Areas/Subscription/Views/dashboard/_paymentCard.cshtml" />
   </filedeps>

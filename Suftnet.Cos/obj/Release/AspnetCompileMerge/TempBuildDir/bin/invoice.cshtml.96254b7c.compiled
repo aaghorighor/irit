@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Subscription/Views/dashboard/invoice.cshtml" hash="ffffffffb87d95f8" filehash="ffffe77243038fa9" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_dashboard_invoice_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Subscription/Views/dashboard/invoice.cshtml" hash="ffffffffb87d95f8" filehash="182ce8f3a258" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_dashboard_invoice_cshtml">
   <filedeps>
     <filedep name="/Areas/Subscription/Views/dashboard/invoice.cshtml" />
   </filedeps>

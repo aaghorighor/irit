@@ -17,6 +17,7 @@
     using System.Text;
 
     [ExceptionActionFilter]
+    [RequireHttps]
     public class BaseController : OneChurchRoutes
     {
         public string UserName {

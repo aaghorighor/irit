@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/about/_header.cshtml" hash="ffffffffb87d95f8" filehash="ffffc1213c2b875d" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_about__header_cshtml">
+<preserve resultType="2" virtualPath="/Views/about/_header.cshtml" hash="ffffffffb87d95f8" filehash="3e50c30589bd" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_about__header_cshtml">
   <filedeps>
     <filedep name="/Views/about/_header.cshtml" />
   </filedeps>

@@ -122,11 +122,10 @@ namespace Suftnet.Cos.Common
     public static class PlanPrice
     {
         public const decimal Trial = 0;
-        public const decimal Basic = 20;
-        public const decimal Premium = 100;
-        public const decimal PremiumPlus = 200;
+        public const decimal Basic = 30;
+        public const decimal Premium = 150;
+        public const decimal PremiumPlus = 300;
     }
-
    
     public static class CutOff
     {

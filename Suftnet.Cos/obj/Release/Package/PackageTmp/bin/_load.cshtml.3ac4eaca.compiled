@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/BackOffice/Views/AddonType/_load.cshtml" hash="ffffffffb87d95f8" filehash="ffffcf56a331211e" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_BackOffice_Views_AddonType__load_cshtml">
+<preserve resultType="2" virtualPath="/Areas/BackOffice/Views/AddonType/_load.cshtml" hash="ffffffffb87d95f8" filehash="2f3e3b0fc88f" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_BackOffice_Views_AddonType__load_cshtml">
   <filedeps>
     <filedep name="/Areas/BackOffice/Views/AddonType/_load.cshtml" />
   </filedeps>

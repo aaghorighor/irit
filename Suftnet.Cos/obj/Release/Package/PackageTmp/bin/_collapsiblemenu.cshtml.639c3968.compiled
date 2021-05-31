@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/Shared/_collapsibleMenu.cshtml" hash="ffffffffb87d95f8" filehash="ffffcaee52d8812b" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_Shared__collapsibleMenu_cshtml">
+<preserve resultType="2" virtualPath="/Views/Shared/_collapsibleMenu.cshtml" hash="ffffffffb87d95f8" filehash="3363c1ed1a3e" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_Shared__collapsibleMenu_cshtml">
   <filedeps>
     <filedep name="/Views/Shared/_collapsibleMenu.cshtml" />
   </filedeps>

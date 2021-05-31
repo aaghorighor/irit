@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/BackOffice/Views/Report/index.cshtml" hash="ffffffffb87d95f8" filehash="ffffe1578106c77e" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_BackOffice_Views_Report_index_cshtml">
+<preserve resultType="2" virtualPath="/Areas/BackOffice/Views/Report/index.cshtml" hash="ffffffffb87d95f8" filehash="1f33ceeca3b0" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_BackOffice_Views_Report_index_cshtml">
   <filedeps>
     <filedep name="/Areas/BackOffice/Views/Report/index.cshtml" />
   </filedeps>

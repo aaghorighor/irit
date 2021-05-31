@@ -225,6 +225,7 @@
                 permissionCommand.CreatedBy = checkoutModel.Email;
                 permissionCommand.UserId = _user.Id;
 
+
                 await Task.Run(() => permissionCommand.Execute());
 
                 var sendTrialCommand = _factoryCommand.Create<SendTrialConfirmationCommand>();
@@ -252,7 +253,6 @@
             }
             catch (Exception ex)
             {
-
                 var logger = GeneralConfiguration.Configuration.DependencyResolver.GetService<ILogger>();
                 logger.LogError(ex);
                 success = false;

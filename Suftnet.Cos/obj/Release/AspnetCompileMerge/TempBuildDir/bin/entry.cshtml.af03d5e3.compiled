@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Admin/Views/MobilePermission/entry.cshtml" hash="ffffffffb87d95f8" filehash="fffff0079a4d20f2" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_MobilePermission_entry_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Admin/Views/MobilePermission/entry.cshtml" hash="ffffffffb87d95f8" filehash="104627235006" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_MobilePermission_entry_cshtml">
   <filedeps>
     <filedep name="/Areas/Admin/Views/MobilePermission/entry.cshtml" />
   </filedeps>

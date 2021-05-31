@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/Shared/_initAdmin.cshtml" hash="ffffffffb87d95f8" filehash="32d1d86231e2" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_Shared__initAdmin_cshtml">
+<preserve resultType="2" virtualPath="/Views/Shared/_initAdmin.cshtml" hash="ffffffffb87d95f8" filehash="ffffce9c922c9762" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_Shared__initAdmin_cshtml">
   <filedeps>
     <filedep name="/Views/Shared/_initAdmin.cshtml" />
   </filedeps>

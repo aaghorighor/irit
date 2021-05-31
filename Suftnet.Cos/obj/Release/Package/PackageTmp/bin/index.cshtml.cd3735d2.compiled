@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Views/hardware/index.cshtml" hash="ffffffffb87d95f8" filehash="ffffce839dac19c5" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_hardware_index_cshtml">
+  <filedeps>
+    <filedep name="/Views/hardware/index.cshtml" />
+  </filedeps>
+</preserve>

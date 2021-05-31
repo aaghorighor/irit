@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Subscription/Views/card/index.cshtml" hash="ffffffffb87d95f8" filehash="ffffbc7fdf777568" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_card_index_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Subscription/Views/card/index.cshtml" hash="ffffffffb87d95f8" filehash="422d438267df" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_card_index_cshtml">
   <filedeps>
     <filedep name="/Areas/Subscription/Views/card/index.cshtml" />
   </filedeps>

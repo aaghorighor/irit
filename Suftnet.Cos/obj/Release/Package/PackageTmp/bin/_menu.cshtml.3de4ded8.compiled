@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/SiteAdmin/Views/Shared/_menu.cshtml" hash="ffffffffb87d95f8" filehash="146e9a703aa9" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_SiteAdmin_Views_Shared__menu_cshtml">
+<preserve resultType="2" virtualPath="/Areas/SiteAdmin/Views/Shared/_menu.cshtml" hash="ffffffffb87d95f8" filehash="ffffec33be10db73" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_SiteAdmin_Views_Shared__menu_cshtml">
   <filedeps>
     <filedep name="/Areas/SiteAdmin/Views/Shared/_menu.cshtml" />
   </filedeps>

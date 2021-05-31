@@ -183,6 +183,39 @@
                         SendEmailFactory("Irit Charge Refund Updated", emailBody, customer.Email);
 
                         break;
+
+                    case "charge.failed":
+
+                        test = StripeEventType(stripeEvent);
+
+                        if (test.StatusCode != (int)HttpStatusCode.OK)
+                        {
+                            return test;
+                        }
+
+                        try
+                        {
+                            System.Threading.Tasks.Task.Run(() => _tenant.UpdateStatus(tenantId, true));
+                        }
+                        catch (Exception ex)
+                        { GeneralConfiguration.Configuration.Logger.LogError(ex); }
+
+                        emailBody = PaymentFailedContent(tenantName,
+                               obj.HostedInvoiceUrl);
+
+                        SendEmailFactory("Irit cannot charge card", emailBody, customer.Email);
+
+                        break;
+
+                    default:
+                        test = StripeEventType(stripeEvent);
+
+                        if (test.StatusCode != (int)HttpStatusCode.OK)
+                        {
+                            return test;
+                        }
+
+                        break;
                 }
 
                 return new HttpStatusCodeResult(HttpStatusCode.OK);
@@ -233,6 +266,15 @@
                     obj = stripeEvent.Data.Object;
                     customerId = obj.CustomerId;
 
+                    break;
+                case "charge.failed":
+                    obj = stripeEvent.Data.Object;
+                    customerId = obj.CustomerId;
+
+                    break;
+                default:
+                    obj = stripeEvent.Data.Object;
+                    customerId = obj.CustomerId;
                     break;
             }
 

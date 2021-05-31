@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/article/_timeLineContainer.cshtml" hash="ffffffffb87d95f8" filehash="ffffc71a493ab24b" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_article__timeLineContainer_cshtml">
+<preserve resultType="2" virtualPath="/Views/article/_timeLineContainer.cshtml" hash="ffffffffb87d95f8" filehash="38280fab6341" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_article__timeLineContainer_cshtml">
   <filedeps>
     <filedep name="/Views/article/_timeLineContainer.cshtml" />
   </filedeps>

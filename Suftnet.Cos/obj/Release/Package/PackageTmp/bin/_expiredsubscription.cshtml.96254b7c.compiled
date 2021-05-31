@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Subscription/Views/dashboard/_expiredSubscription.cshtml" hash="ffffffffb87d95f8" filehash="2a514f09f6e8" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_dashboard__expiredSubscription_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Subscription/Views/dashboard/_expiredSubscription.cshtml" hash="ffffffffb87d95f8" filehash="ffffd72ff15de3da" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_dashboard__expiredSubscription_cshtml">
   <filedeps>
     <filedep name="/Areas/Subscription/Views/dashboard/_expiredSubscription.cshtml" />
   </filedeps>

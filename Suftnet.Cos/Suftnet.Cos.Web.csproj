@@ -338,6 +338,7 @@
     <Compile Include="Controllers\Api\v1\ItemController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\HardwaresController.cs" />
     <Compile Include="Controllers\KnowledgeBaseController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\SectionController.cs" />
@@ -504,6 +505,12 @@
     <Content Include="App_Data\Email\subscriptionTrial.html" />
     <Content Include="App_Data\Email\passwordReset.html" />
     <Content Include="App_Data\Email\otp.html" />
+    <Content Include="Content\frontoffice-2\css\theme.css" />
+    <Content Include="Content\frontoffice-2\img\irit\phone.jpg" />
+    <Content Include="Content\frontoffice-2\img\irit\printer.jpg" />
+    <Content Include="Content\frontoffice-2\img\irit\scanner.jpg" />
+    <Content Include="Content\frontoffice-2\img\irit\tables.jpeg" />
+    <Content Include="Content\frontoffice-2\img\irit\tablet.png" />
     <Content Include="Content\reports\BestSeller.mrt" />
     <Content Include="Content\reports\Blank.mrt" />
     <Content Include="Content\reports\DeliveryOrder.mrt" />
@@ -807,6 +814,9 @@
     <Content Include="Views\section\entry.cshtml" />
     <Content Include="Views\article\_timeLineContainer.cshtml" />
     <Content Include="Views\Shared\_googletagmanager.cshtml" />
+    <Content Include="Views\hardware\index.cshtml" />
+    <Content Include="Views\hardware\_header.cshtml" />
+    <Content Include="Views\hardware\_features.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

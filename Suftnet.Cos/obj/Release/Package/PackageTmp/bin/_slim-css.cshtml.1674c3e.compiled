@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Subscription/Views/Shared/_slim-css.cshtml" hash="ffffffffb87d95f8" filehash="fffffae2a2585764" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_Shared__slim_css_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Subscription/Views/Shared/_slim-css.cshtml" hash="ffffffffb87d95f8" filehash="5d7d2569e43" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Subscription_Views_Shared__slim_css_cshtml">
   <filedeps>
     <filedep name="/Areas/Subscription/Views/Shared/_slim-css.cshtml" />
   </filedeps>

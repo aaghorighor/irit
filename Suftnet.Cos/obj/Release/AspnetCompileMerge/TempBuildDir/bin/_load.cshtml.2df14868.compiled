@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Admin/Views/Logger/_load.cshtml" hash="ffffffffb87d95f8" filehash="ffffd9902ffd58c1" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_Logger__load_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Admin/Views/Logger/_load.cshtml" hash="ffffffffb87d95f8" filehash="27f394482448" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_Logger__load_cshtml">
   <filedeps>
     <filedep name="/Areas/Admin/Views/Logger/_load.cshtml" />
   </filedeps>

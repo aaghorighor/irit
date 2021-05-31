@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Areas/Admin/Views/Plan/_LoadPlanFeature.cshtml" hash="ffffffffb87d95f8" filehash="26eca00b7440" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_Plan__LoadPlanFeature_cshtml">
+<preserve resultType="2" virtualPath="/Areas/Admin/Views/Plan/_LoadPlanFeature.cshtml" hash="ffffffffb87d95f8" filehash="ffffd8625d100383" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Areas_Admin_Views_Plan__LoadPlanFeature_cshtml">
   <filedeps>
     <filedep name="/Areas/Admin/Views/Plan/_LoadPlanFeature.cshtml" />
   </filedeps>

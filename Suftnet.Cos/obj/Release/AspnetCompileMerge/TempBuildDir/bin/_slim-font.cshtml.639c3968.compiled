@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/Shared/_slim-font.cshtml" hash="ffffffffb87d95f8" filehash="4437887f9e26" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_Shared__slim_font_cshtml">
+<preserve resultType="2" virtualPath="/Views/Shared/_slim-font.cshtml" hash="ffffffffb87d95f8" filehash="ffffba5e1d880542" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_Shared__slim_font_cshtml">
   <filedeps>
     <filedep name="/Views/Shared/_slim-font.cshtml" />
   </filedeps>

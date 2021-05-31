@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/checkout/trial.cshtml" hash="ffffffffb87d95f8" filehash="ffffe6b8011dcd13" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_checkout_trial_cshtml">
+<preserve resultType="2" virtualPath="/Views/checkout/trial.cshtml" hash="ffffffffb87d95f8" filehash="17eb7ae4a86c" flags="110000" assembly="Suftnet.Cos.Assembly" type="ASP._Page_Views_checkout_trial_cshtml">
   <filedeps>
     <filedep name="/Views/checkout/trial.cshtml" />
   </filedeps>
